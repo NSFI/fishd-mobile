@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+lib/
+es/
+dist/
+npm-debug.log
+yarn-error.log
+.idea
+*.iml
+.vscode

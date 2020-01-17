@@ -1,0 +1,21 @@
+{
+  "presets": [
+    ["@babel/preset-env", { "modules": "commonjs" }],
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "@babel/plugin-proposal-numeric-separator",
+    "@babel/plugin-proposal-logical-assignment-operators",
+    ["@babel/plugin-proposal-class-properties", { "loose": false }],
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    [
+      "babel-plugin-transform-imports",
+      {
+        "ppfish": {
+          "transform": "ppfish/es/components/${member}"
+        }
+      }
+    ]
+  ]
+}
