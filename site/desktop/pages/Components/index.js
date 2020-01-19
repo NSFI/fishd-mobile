@@ -180,7 +180,7 @@ export default class Components extends React.Component {
                   {
                     prevLink &&
                     <a href={`#/${lang}/components/${prevLink.key}`}>
-                      <Icon type="left" className="prev-page-icon"/>{prevLink.name}
+                      <Icon type="left" className="prev-page-icon"/>{prevLink[nameKey]}
                     </a>
                   }
                 </Col>
@@ -188,7 +188,7 @@ export default class Components extends React.Component {
                   {
                     nextLink &&
                     <a href={`#/${lang}/components/${nextLink.key}`}>
-                      {nextLink.name}<Icon type="right" className="next-page-icon"/>
+                      {nextLink[nameKey]}<Icon type="right" className="next-page-icon"/>
                     </a>
                   }
                 </Col>
