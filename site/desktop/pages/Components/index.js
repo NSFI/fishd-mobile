@@ -79,7 +79,7 @@ export default class Components extends React.Component {
     const nextLink = this.plainComponentList[componentIndex + 1]
     const { isMobile } = this.state
     const demoName = this.props.params.demo || ''
-    const demoUrl = `${config.demoBaseUrl}${lang}/${demoName}`
+    const demoUrl = config.genDemoUrl(lang, demoName)
     const menuChild = (
       <nav className="side-nav">
         <Menu

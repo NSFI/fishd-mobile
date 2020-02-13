@@ -17,10 +17,10 @@ module.exports = {
   // 文件输出路径
   outputPath: './dist/mobile',
   // 同webpack publicPath
-  publicPath: '/',
+  publicPath: './',
   // dll配置
   dll: {
-    name: 'siteMobile',
+    name: 'mobile-dll',
     value: [
       'react',
       'react-dom',

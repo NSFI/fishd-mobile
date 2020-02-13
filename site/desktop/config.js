@@ -7,7 +7,11 @@ export const config = {
    * 组件预览地址
    * 如果是非H5组件库，请自行实现组件预览效果，并在此配置预览路径
    */
-  demoBaseUrl: isProd ? 'http://localhost:3500/#/' : 'http://localhost:4100/#/',
+  demoBaseUrl: isProd ? 'https://hangaoke1.github.io/fishd-page/#/' : 'http://localhost:4100/#/',
+  // 如果是自己启动的项目，请注意demo路径是否正确
+  genDemoUrl (lang, demoName) {
+    return `${this.demoBaseUrl}${lang}/${demoName}`
+  },
   codeEdit: true,
   nav: [
     {
@@ -27,7 +31,7 @@ export const config = {
           type: 'react',
           name: '色彩',
           nameEn: 'Color',
-          component: require('./reactDoc/ruleColor'),
+          component: require('../docs/react/ruleColor'),
           published: true
         }
       ]

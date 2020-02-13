@@ -4,12 +4,13 @@ import CodeMirror from 'codemirror'
 import 'codemirror/mode/jsx/jsx'
 import 'codemirror/keymap/sublime'
 import 'codemirror/addon/comment/comment'
+import { config } from '../../config'
 
 export default class Editor extends Component {
   static propTypes = {
     onChange: PropTypes.func,
     value: PropTypes.string
-  };
+  }
 
   constructor (props) {
     super(props)
@@ -25,15 +26,15 @@ export default class Editor extends Component {
       keyMap: 'sublime',
       viewportMargin: Infinity,
       lineNumbers: false,
-      dragDrop: false
-      // readOnly: 'nocursor'
+      dragDrop: false,
+      readOnly: config.codeEdit ? false : 'nocursor'
     })
 
     setTimeout(() => {
       this.cm.setValue(value)
     }, 0)
 
-    this.cm.on('changes', cm => {
+    this.cm.on('changes', (cm) => {
       if (onChange) {
         clearTimeout(this.timeout)
 
@@ -49,6 +50,6 @@ export default class Editor extends Component {
   }
 
   render () {
-    return <div className="editor" ref={ref => (this.editor = ref)}/>
+    return <div className='editor' ref={(ref) => (this.editor = ref)} />
   }
 }

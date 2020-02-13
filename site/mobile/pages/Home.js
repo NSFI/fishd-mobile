@@ -10,7 +10,7 @@ export default class Home extends Component {
 
   handleClick = (key) => {
     const lang = window.$lang
-    location.assign(`/#/${lang}/${key}`)
+    location.hash = `/${lang}/${key}`
   }
 
   render () {
@@ -19,7 +19,7 @@ export default class Home extends Component {
     const nameKey = lang === 'zh-CN' ? 'name' : 'nameEn'
     const { nav } = config
     const menuList = nav.map(menu => {
-      const subMenuList = menu.children.map(subMenu => {
+      const subMenuList = menu.children.filter(item => item.published).map(subMenu => {
         return (
           <div className="u-demo" key={subMenu[nameKey]} onClick={this.handleClick.bind(this, subMenu.key)}>{subMenu[nameKey]}</div>
         )

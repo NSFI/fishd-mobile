@@ -13,7 +13,8 @@ export default function initIframe () {
         const lang = arr[1]
         const demo = arr[2]
         if (demo) {
-          location.assign(`/#/${lang}/components/${demo}`)
+          // location.assign(`/#/${lang}/components/${demo}`)
+          location.hash = `/${lang}/components/${demo}`
         }
         break
     }

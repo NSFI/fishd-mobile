@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import { Row, Col, Affix, Dropdown, Menu } from 'ppfish'
+import { Row, Col, Affix } from 'ppfish'
 
 export default class Header extends Component {
   constructor (props) {
@@ -41,7 +41,8 @@ export default class Header extends Component {
     const newLang = currentLang === 'zh-CN' ? 'en-US' : 'zh-CN'
     const urlArr = location.hash.split('/')
     urlArr[1] = newLang
-    location.replace('/' + urlArr.join('/'))
+    // location.replace('/' + urlArr.join('/'))
+    location.hash = urlArr.join('/')
     location.reload()
   }
 

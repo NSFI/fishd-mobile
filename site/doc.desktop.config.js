@@ -17,10 +17,10 @@ module.exports = {
   // 文件输出目录
   outputPath: './dist/desktop',
   // 同webpack publicPath
-  publicPath: '/',
+  publicPath: './',
   // dll配置
   dll: {
-    name: 'siteDesktop',
+    name: 'desktop-dll',
     value: [
       'react',
       'react-dom',

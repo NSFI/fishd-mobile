@@ -5,7 +5,7 @@ import { cold } from 'react-hot-loader'
 import { transform } from 'babel-standalone'
 import collect from '@/lib/collect'
 import eventbus from '@/lib/eventbus'
-import * as source from '../../../source/components'
+import * as source from '../../../source/components/index'
 
 import './Demo.less'
 
@@ -109,7 +109,8 @@ class Demo extends Component {
         </div>
       )
     } else {
-      location.assign('/#/')
+      // location.assign('/#/')
+      location.hash = '/'
       return null
     }
   }
