@@ -33,11 +33,17 @@ const genRoutes = function (lang) {
   )
 }
 
-const App = () => (
-  <Router history={hashHistory}>
+const routes = (
+  <div>
     {genRoutes(langs[0])}
     {genRoutes(langs[1])}
     <Redirect from="*" to={`/${currentLang}`} />
+  </div>
+)
+
+const App = () => (
+  <Router history={hashHistory}>
+    {routes}
   </Router>
 )
 

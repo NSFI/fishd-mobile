@@ -21,9 +21,11 @@ export default class Components extends React.Component {
     enquireScreen((b) => {
       isMobile = b
     }, 'only screen and (max-width: 992px)')
+
     this.state = {
       page: '',
-      isMobile: isMobile
+      isMobile: isMobile,
+      demoUrl: config.genDemoUrl(window.$lang, props.params.demo || '')
     }
   }
 
@@ -70,16 +72,16 @@ export default class Components extends React.Component {
   }
 
   render () {
-    // TODO:
     const lang = window.$lang
     const nameKey = window.$lang === 'zh-CN' ? 'name' : 'nameEn'
     const SubMenu = Menu.SubMenu
     const componentIndex = this.plainComponentList.findIndex((menuItem) => menuItem.key === this.state.page)
     const prevLink = this.plainComponentList[componentIndex - 1]
     const nextLink = this.plainComponentList[componentIndex + 1]
-    const { isMobile } = this.state
-    const demoName = this.props.params.demo || ''
-    const demoUrl = config.genDemoUrl(lang, demoName)
+    const { isMobile, demoUrl } = this.state
+    // TODO: 如果动态g改变iframe url会导致影响父页面的浏览器历史栈，导致前进后退异常
+    // const demoName = this.props.params.demo || ''
+    // const demoUrl = config.genDemoUrl(lang, demoName)
     const menuChild = (
       <nav className="side-nav">
         <Menu
@@ -172,33 +174,41 @@ export default class Components extends React.Component {
           <Col xs={24} sm={24} md={24} lg={18} xl={19} xxl={20} className="component-content">
             <div className="content">
               <article className="markdown">
-                {this.props.children}
+                <div className="u-fished">
+                  <div className='u-fished__doc'>
+                    {this.props.children}
+                    <Divider/>
+                    <Row className="u-navigation-btm">
+                      <Col span={12} className="prev-page">
+                        {
+                          prevLink &&
+                          <a href={`#/${lang}/components/${prevLink.key}`}>
+                            <Icon type="left" className="prev-page-icon"/>{prevLink[nameKey]}
+                          </a>
+                        }
+                      </Col>
+                      <Col span={12} className="next-page">
+                        {
+                          nextLink &&
+                          <a href={`#/${lang}/components/${nextLink.key}`}>
+                            {nextLink[nameKey]}<Icon type="right" className="next-page-icon"/>
+                          </a>
+                        }
+                      </Col>
+                    </Row>
+                  </div>
+                  <div className="u-fished__simulator">
+                    <div className="u-address" onClick={this.handleCopyUrl.bind(this, demoUrl)}>{demoUrl}</div>
+                    <div className="u-refresh"></div>
+                    <iframe
+                      className="u-iframe"
+                      sandbox="allow-scripts allow-top-navigation allow-same-origin allow-forms"
+                      frameBorder="0"
+                      src={demoUrl}></iframe>
+                  </div>
+                </div>
               </article>
-              <Divider/>
-              <Row className="u-navigation-btm">
-                <Col span={12} className="prev-page">
-                  {
-                    prevLink &&
-                    <a href={`#/${lang}/components/${prevLink.key}`}>
-                      <Icon type="left" className="prev-page-icon"/>{prevLink[nameKey]}
-                    </a>
-                  }
-                </Col>
-                <Col span={12} className="next-page">
-                  {
-                    nextLink &&
-                    <a href={`#/${lang}/components/${nextLink.key}`}>
-                      {nextLink[nameKey]}<Icon type="right" className="next-page-icon"/>
-                    </a>
-                  }
-                </Col>
-              </Row>
               <BackTop/>
-              <div className="u-simulator">
-                <div className="u-address" onClick={this.handleCopyUrl.bind(this, demoUrl)}>{demoUrl}</div>
-                <div className="u-refresh"></div>
-                <iframe className="u-iframe" sandbox="allow-scripts allow-top-navigation allow-same-origin allow-forms" frameBorder="0" src={demoUrl}></iframe>
-              </div>
             </div>
           </Col>
         </Row>

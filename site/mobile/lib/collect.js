@@ -4,9 +4,9 @@ import marked from 'marked'
 import less from 'less'
 
 // 依赖收集
-module.exports = function(WrappedComponent) {
+module.exports = function (WrappedComponent, DefaultComponent) {
   return class DocComponent extends React.Component {
-    constructor(props) {
+    constructor (props) {
       super(props)
       this.renderer = new marked.Renderer()
       this.renderer.table = (header, body) => {
@@ -27,7 +27,7 @@ module.exports = function(WrappedComponent) {
       if (this.props.renderer) this.renderer = this.props.renderer
     }
 
-    render() {
+    render () {
       let markdown = ''
       let demos = []
       // TODO: 国际化
@@ -37,57 +37,66 @@ module.exports = function(WrappedComponent) {
         markdown = require(`@docs/zh-CN/quickStart.md`).default
       }
 
-      const html = marked(markdown.replace(/:::\s?(demo|display)\s?([^]+?):::/g, (match, p1, p2, offset) => {
-        const id = 'fishd_' + offset.toString(36);
-        //分类匹配出less/js/jsx/css
-        const descriptionSource = p2.replace(/(`{3})([^`]|[^`][\s\S]*?[^`])\1(?!`)/ig, (markdown) => {
-          const [all, type, code] = markdown.match(/```(.*)\n?([^]+)```/);
-          switch (type.trim()) {
-            case 'js':
-            case 'jsx':
-              this.jsCode = code;
-              break;
-            case 'less':
-              this.lessCodeSource = marked(all);
-              less.render(`
+      const html = marked(
+        markdown.replace(/:::\s?(demo|display)\s?([^]+?):::/g, (match, p1, p2, offset) => {
+          const id = 'fishd_' + offset.toString(36)
+          //分类匹配出less/js/jsx/css
+          const descriptionSource = p2.replace(/(`{3})([^`]|[^`][\s\S]*?[^`])\1(?!`)/gi, (markdown) => {
+            const [ all, type, code ] = markdown.match(/```(.*)\n?([^]+)```/)
+            switch (type.trim()) {
+              case 'js':
+              case 'jsx':
+                this.jsCode = code
+                break
+              case 'less':
+                this.lessCodeSource = marked(all)
+                less.render(
+                  `
                 #${id} {
                   ${code}
                 }
-              `, (e, compiledCode) => {
-                this.lessCode = compiledCode.css;
-              });
-              break;
-            case 'css':
-              this.cssCodeSource = marked(all);
-              less.render(`
+              `,
+                  (e, compiledCode) => {
+                    this.lessCode = compiledCode.css
+                  }
+                )
+                break
+              case 'css':
+                this.cssCodeSource = marked(all)
+                less.render(
+                  `
                 #${id} {
                   ${code}
                 }
-              `, (e, compiledCode) => {
-                this.cssCode = compiledCode.css;
-              });
-              break;
-            default:
-              break;
-          }
-          return '';
-        });
-        //replace剩下的是description
-        this.description = marked(descriptionSource);
-        demos.push({
-          id,
-          description: this.description,
-          jsCode: this.jsCode,
-          lessCodeSource: this.lessCodeSource,
-          cssCodeSource: this.cssCodeSource,
-          lessCode: this.lessCode,
-          cssCode: this.cssCode
-        })
+              `,
+                  (e, compiledCode) => {
+                    this.cssCode = compiledCode.css
+                  }
+                )
+                break
+              default:
+                break
+            }
+            return ''
+          })
+          //replace剩下的是description
+          this.description = marked(descriptionSource)
+          demos.push({
+            id,
+            description: this.description,
+            jsCode: this.jsCode,
+            lessCodeSource: this.lessCodeSource,
+            cssCodeSource: this.cssCodeSource,
+            lessCode: this.lessCode,
+            cssCode: this.cssCode
+          })
 
-        return `<div id=${id} class="demo-container"></div>`;
-      }), {renderer: this.renderer});
+          return `<div id=${id} class="demo-container"></div>`
+        }),
+        { renderer: this.renderer }
+      )
 
-      return <WrappedComponent {...this.props} html={html} demos={demos} />
+      return demos.length ? <WrappedComponent {...this.props} html={html} demos={demos} /> : <DefaultComponent />
     }
   }
-};
+}

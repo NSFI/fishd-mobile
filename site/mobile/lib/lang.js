@@ -8,7 +8,7 @@ const langMap = {
   'zh-CN': {
     title: 'Fish - 轻量、可靠的移动端 React 组件库',
     messages: {
-      introduce: '轻量、可靠的移动端 React 组件库'
+      introduce: '轻量化、高性能的移动端UI组件库'
     }
   }
 };

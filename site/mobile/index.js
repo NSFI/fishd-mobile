@@ -12,7 +12,6 @@ import './styles/base.less'
 
 initIframe()
 
-// TODO:
 const currentLang = window.$lang
 const langs = ['en-US', 'zh-CN']
 
@@ -21,17 +20,21 @@ const genRoutes = function (lang) {
     <Route path={`/${lang}`} component={Layout}>
       <IndexRoute component={Home} />
       <Route path={`/${lang}/:demo`} component={Demo}></Route>
-      <Redirect from="*" to="/" />
       <Redirect from="*" to={`/${lang}`} />
     </Route>
   )
 }
 
-const App = () => (
-  <Router history={hashHistory}>
+const routes = (
+  <div>
     {genRoutes(langs[0])}
     {genRoutes(langs[1])}
     <Redirect from="*" to={`/${currentLang}`} />
+  </div>
+)
+const App = () => (
+  <Router history={hashHistory}>
+    {routes}
   </Router>
 )
 

@@ -13,7 +13,7 @@ const langMap = {
     messages: {
       home: '主页',
       component: '组件',
-      demo: '示例',
+      demo: '演示环境',
       search: '在 Fish Design 中搜索'
     }
   }

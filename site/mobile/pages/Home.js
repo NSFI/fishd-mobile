@@ -21,12 +21,12 @@ export default class Home extends Component {
     const menuList = nav.map(menu => {
       const subMenuList = menu.children.filter(item => item.published).map(subMenu => {
         return (
-          <div className="u-demo" key={subMenu[nameKey]} onClick={this.handleClick.bind(this, subMenu.key)}>{subMenu[nameKey]}</div>
+          <div className="u-home__demo" key={subMenu[nameKey]} onClick={this.handleClick.bind(this, subMenu.key)}>{subMenu[nameKey]}</div>
         )
       })
       return (
         <div key={menu[nameKey]}>
-          <h2 className="u-title">{menu[nameKey]}</h2>
+          <h2 className="u-home__title">{menu[nameKey]}</h2>
           {subMenuList}
         </div>
       )

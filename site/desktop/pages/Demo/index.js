@@ -25,7 +25,6 @@ export default class Demo extends Component {
         )
       }
     } else {
-      // location.assign(`/#/${lang}/home`)
       location.hash = `/${lang}/home`
       return null
     }

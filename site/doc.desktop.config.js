@@ -20,7 +20,7 @@ module.exports = {
   publicPath: './',
   // dll配置
   dll: {
-    name: 'desktop-dll',
+    name: 'desktopDll',
     value: [
       'react',
       'react-dom',

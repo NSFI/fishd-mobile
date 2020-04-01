@@ -35,7 +35,6 @@ body {
     left: 0;
     width: 100%;
     position: relative;
-    overflow: hidden;
     @media (max-width: @screen-lg) {
       height: 128px;
     }
@@ -71,16 +70,19 @@ body {
     }
 
     .search-box {
+      position: relative;
       float: left;
       height: 22px;
       line-height: 22px;
       padding-left: 60px;
       margin: 22px auto 0;
-      .search-icon {
-        width: 16px;
-        height: 16px;
-        margin-right: -4px;
-        margin-bottom: 2px;
+      .icon-search {
+        position: absolute;
+        left: 38px;
+        top: 1px;
+        font-size: 16px;
+        color: #337eff;
+        margin-right: 4px;
       }
       input {
         font-size: 14px;

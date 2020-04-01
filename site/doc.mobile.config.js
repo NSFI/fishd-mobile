@@ -20,7 +20,7 @@ module.exports = {
   publicPath: './',
   // dll配置
   dll: {
-    name: 'mobile-dll',
+    name: 'mobileDll',
     value: [
       'react',
       'react-dom',
