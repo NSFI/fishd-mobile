@@ -28,7 +28,7 @@ export default function initIframe () {
         // #/zh-CN/components/button
         const arr = event.data.split('/')
         const lang = arr[1]
-        const demo = arr[3]
+        const demo = arr[3] || ''
         if (demo) {
           location.replace(`#/${lang}/${demo}`)
         }
