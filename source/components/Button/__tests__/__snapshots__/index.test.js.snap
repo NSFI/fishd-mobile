@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> <Button /> snapshot 1`] = `
+<a
+  aria-disabled="false"
+  class="fm-button"
+  role="button"
+/>
+`;
+
+exports[`<Button /> <Button /> snapshot 2`] = `
+<a
+  aria-disabled="false"
+  class="fm-button"
+  role="button"
+>
+  hello world
+</a>
+`;

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "jsx": "react",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports":true,
+    "target": "es6",
+    "noImplicitAny": true
+  },
+  // "include": [
+  //   "source/"
+  // ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false
+}

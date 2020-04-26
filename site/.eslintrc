@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "import",
+    "react",
+    "html"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "settings": {
+    "import/ignore": [
+      "\\.(jpg|png|less|css|json)$"
+    ]
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "jest": true
+  },
+  "extends": ["standard"],
+  "rules": {
+    "no-unused-vars": 0
+  },
+  "globals": {
+    "define": true,
+    "AMap": true
+  }
+}
