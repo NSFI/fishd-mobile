@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ./source/components/Button/demo/index.js correctly 1`] = `
+Array [
+  <a
+    aria-disabled="false"
+    class="fm-button fm-button-primary"
+    role="button"
+  >
+    primary button
+  </a>,
+  <a
+    aria-disabled="false"
+    class="fm-button"
+    role="button"
+  >
+    large button
+  </a>,
+]
+`;
