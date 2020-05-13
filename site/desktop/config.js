@@ -59,6 +59,13 @@ export const config = {
               name: 'Demo 按钮',
               nameEn: 'Demo',
               published: true
+            },
+            {
+              key: 'actionSheet',
+              type: 'markdown',
+              name: 'ActionSheet 动作面板',
+              nameEn: 'ActionSheet',
+              published: true,
             }
           ]
         }

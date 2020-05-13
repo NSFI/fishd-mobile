@@ -7,4 +7,16 @@ module.exports = {
       '<rootDir>/source/tests/fileMock.js',
     '\\.(css|less)$': 'identity-obj-proxy',
   },
+  moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx', 'md'],
+  transform: {
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.md$': '<rootDir>/source/tests/markdownDemoTransformer.js',
+  },
+  globals: {
+    'ts-jest': {
+      babelConfig: '.babelrc',
+      tsConfig: 'tsconfig.json',
+    },
+  },
 };

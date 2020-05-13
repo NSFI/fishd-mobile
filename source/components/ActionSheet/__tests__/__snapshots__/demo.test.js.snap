@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders ActionSheet demo correctly 1`] = `
+<div>
+  <div
+    class="components-actionSheet-demo-basic"
+  >
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-primary"
+      role="button"
+    >
+      打开ActionSheet
+    </a>
+  </div>
+</div>
+`;

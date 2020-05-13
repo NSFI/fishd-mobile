@@ -93,7 +93,7 @@ export default class Header extends Component {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to={`${lang}/components/quickStart`}>{this.i18n.component}</Link>
+                <Link to={`${lang}/components`}>{this.i18n.component}</Link>
               </li>
               <li className='nav-item'>
                 <a href='//nsfi.github.io/ppfish-demo' target='_blank'>

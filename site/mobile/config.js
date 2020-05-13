@@ -19,6 +19,13 @@ export const config = {
           nameEn: 'Demo',
           published: true,
         },
+        {
+          key: 'actionSheet',
+          type: 'markdown',
+          name: 'ActionSheet 动作面板',
+          nameEn: 'ActionSheet',
+          published: true,
+        }
       ],
     },
   ],
