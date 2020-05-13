@@ -2,6 +2,18 @@
 
 ![Build Status](https://travis-ci.org/zrj1031/fishd-mobile.svg?branch=master)
 
+## 快速开始
+```
+# 安装依赖
+npm install
+# 启动开发环境
+npm run dev
+# 编译组件库
+npm run build:mobile
+# 编译文档站点
+npm run build
+```
+
 ## 全局样式
 
 去ant-design-mobile先copy一套，再在开发中具体用到一些定义，再参照ppfish的规范去修正
