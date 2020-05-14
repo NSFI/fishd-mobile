@@ -1,20 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders ./source/components/Button/demo/index.js correctly 1`] = `
-Array [
-  <a
-    aria-disabled="false"
-    class="fm-button fm-button-primary"
-    role="button"
+exports[`Renders Button demo correctly 1`] = `
+<div>
+  <div
+    class="components-button-demo-basic"
   >
-    primary button
-  </a>,
-  <a
-    aria-disabled="false"
-    class="fm-button"
-    role="button"
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-primary"
+      role="button"
+    >
+      Primary
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      Default
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      Danger
+    </a>
+  </div>
+  <div
+    class="components-button-demo-size"
   >
-    large button
-  </a>,
-]
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-small"
+      role="button"
+    >
+      small
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      middle
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      large
+    </a>
+  </div>
+</div>
 `;
