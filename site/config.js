@@ -12,18 +12,18 @@ export default [
         published: true
       },
       {
-        key: 'demo',
-        type: 'markdown',
-        name: 'Demo 按钮',
-        nameEn: 'Demo',
-        published: true
-      },
-      {
         key: 'actionSheet',
         type: 'markdown',
         name: 'ActionSheet 动作面板',
         nameEn: 'ActionSheet',
         published: true
+      },
+      {
+        key: 'switch',
+        type: 'markdown',
+        name: 'switch 滑动开关',
+        nameEn: 'switch',
+        published: true,
       }
     ]
   }
