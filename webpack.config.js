@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    'fishd-mobile': './source/components/index.js',
+    'fishd-mobile': '.index.js',
   },
   output: {
     library: 'fishd-mobile',
