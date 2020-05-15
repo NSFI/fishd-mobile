@@ -21,11 +21,16 @@ class Demo extends Component {
   componentDidMount () {
     this.renderDemoList()
     eventbus.on('reloadDemo', this.reloadDemo)
-    console.log(this.props)
   }
 
   componentWillUnmount () {
     eventbus.removeAllListeners('reloadDemo')
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.params.demo !== this.props.params.demo) {
+      this.renderDemoList()
+    }
   }
 
   reloadDemo = (data) => {

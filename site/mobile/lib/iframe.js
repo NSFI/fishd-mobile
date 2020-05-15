@@ -1,4 +1,5 @@
 import eventbus from './eventbus'
+import { hashHistory } from 'react-router';
 let init = false
 export default function initIframe () {
   if (init) {
@@ -30,7 +31,7 @@ export default function initIframe () {
         const lang = arr[1]
         const demo = arr[3] || ''
         if (demo) {
-          location.replace(`#/${lang}/${demo}`)
+          hashHistory.replace(`/${lang}/${demo}`)
         }
         break
     }

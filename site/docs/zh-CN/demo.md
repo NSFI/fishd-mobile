@@ -29,42 +29,6 @@ render(){
 
 :::
 
-## 按钮尺寸
-
-:::demo 按钮有大、中、小三种尺寸。
-
-通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。
-
-```js
-  state = {
-    size: 'large',
-  };
-
-  handleSizeChange = (e) => {
-    this.setState({ size: e.target.value });
-  }
-
-  render() {
-    const size = this.state.size;
-    return (
-      <div className="components-button-demo-size">
-        <Button size="small">small</Button>
-        <Button>middle</Button>
-        <Button size="large">large</Button>
-      </div>
-    );
-  }
-```
-
-```less
-[class^="components-button-demo-"] .fm-button {
-  margin-right: 8px;
-  margin-bottom: 12px;
-}
-```
-
-:::
-
 ## API
 
 通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `shape` -> `size` -> `loading` -> `disabled`

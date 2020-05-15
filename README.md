@@ -14,6 +14,20 @@ npm run build:mobile
 npm run build
 ```
 
+## 如何开发一个组件
+1. 全局安装fishd-mobile-tools
+```
+npm i fishd-mobile-tools -g
+```
+2. 在组件库项目根目录执行命令
+```
+fm create 组件名称
+```
+3. 在/source/components/index 引入创建的组件
+4. 在site/docs/zh-CN 中创建组件说明文档
+5. 在site/desktop/config 配置组件
+6. site/mobile/config 配置组件
+
 ## 全局样式
 
 去ant-design-mobile先copy一套，再在开发中具体用到一些定义，再参照ppfish的规范去修正
@@ -54,7 +68,3 @@ npm run build:mobile对应组件库（有点疑惑 doc的webpack没有读取该�
 ## 文档部分(高钶)
 
 config.js抽离下  不希望在mobile/desk 配俩遍
-
-本地run时候 eslint终端报错太多，属于fishd-doc读取了我们的eslint配置，site下的代码不符合我们的规则，暂时注释掉了源码中webpack eslint-loader的相关配置，且在.eslintignore中忽略site/ tools/ public/
-
-package.json中关于eslint的依赖项还要再整理下，最好把文档部分的eslint抽出去
