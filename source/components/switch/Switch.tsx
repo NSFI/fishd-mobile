@@ -1,7 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { SwitchPropsType } from './PropsType';
-import './style/index.less';
 
 export interface SwitchProps extends SwitchPropsType {
   prefixCls?: string;
@@ -12,7 +11,7 @@ export interface SwitchProps extends SwitchPropsType {
 
 export default class Switch extends React.Component<SwitchProps, any> {
   static defaultProps = {
-    prefixCls: 'am-switch',
+    prefixCls: 'fm-switch',
     name: '',
     checked: false,
     disabled: false,
