@@ -24,6 +24,13 @@ export default [
         name: 'switch 滑动开关',
         nameEn: 'switch',
         published: true,
+      },
+      {
+        key: 'navbar',
+        type: 'markdown',
+        name: 'NavBar 导航栏',
+        nameEn: 'NavBar',
+        published: true,
       }
     ]
   }
