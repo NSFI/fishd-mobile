@@ -10,7 +10,9 @@ exports[`Renders ActionSheet demo correctly 1`] = `
       class="fm-button fm-button-primary"
       role="button"
     >
-      打开ActionSheet
+      <span>
+        打开ActionSheet
+      </span>
     </a>
   </div>
 </div>

@@ -8,15 +8,26 @@
 
 ## 按钮类型
 
-<!-- :::demo 按钮有四种类型：主按钮、次按钮、危险按钮,主按钮在同一个操作区域最多出现一次。 -->
+:::demo 按钮有四种类型：主按钮、次按钮、危险按钮,主按钮在同一个操作区域最多出现一次。
 
 ```js
 render(){
- return(<div className="components-button-demo-basic">
-    <Button type="primary" onClick={() => console.log('hello world')}>Primary</Button>
-    <Button>Default</Button>
-    <Button type="danger">Danger</Button>
-  </div>)
+ return(
+   <div className="components-button-demo-basic">
+    <Button>default</Button>
+    <Button disabled>default disabled</Button>
+
+    <Button type="primary">primary</Button>
+    <Button type="primary" disabled>primary disabled</Button>
+
+    <Button type="warning">warning</Button>
+    <Button type="warning" disabled>warning disabled</Button>
+
+    <Button loading>loading button</Button>
+    <Button icon="fm-start">icon button</Button>
+
+  </div>
+  )
 }
 ```
 
@@ -27,7 +38,7 @@ render(){
 }
 ```
 
-<!-- ::: -->
+:::
 
 ## 按钮尺寸
 

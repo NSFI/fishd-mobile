@@ -6,6 +6,7 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/source/tests/fileMock.js',
     '\\.(css|less)$': 'identity-obj-proxy',
+    '\\iconfont.js$': '<rootDir>/source/tests/fileMock.js',
   },
   moduleFileExtensions: ['js', 'jsx', 'json', 'ts', 'tsx', 'md'],
   transform: {
