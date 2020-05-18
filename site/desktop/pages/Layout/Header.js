@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
 import { Row, Col, Affix } from 'ppfish'
 
 export default class Header extends Component {
@@ -51,9 +51,9 @@ export default class Header extends Component {
   switchLang = () => {
     const currentLang = window.$lang
     const newLang = currentLang === 'zh-CN' ? 'en-US' : 'zh-CN'
-    const urlArr = location.hash.split('/')
-    urlArr[1] = newLang
-    location.hash = urlArr.join('/')
+    const urlArr = location.hash.split('/').slice(1)
+    urlArr[0] = newLang
+    hashHistory.push(urlArr.join('/'))
     location.reload()
   }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { hashHistory } from 'react-router';
 import { config } from '../config'
 import './Home.less'
 
@@ -10,11 +11,10 @@ export default class Home extends Component {
 
   handleClick = (key) => {
     const lang = window.$lang
-    location.hash = `/${lang}/${key}`
+    hashHistory.push(`/${lang}/${key}`)
   }
 
   render () {
-    // TODO:
     const lang = window.$lang
     const nameKey = lang === 'zh-CN' ? 'name' : 'nameEn'
     const { nav } = config

@@ -5,7 +5,6 @@ import renderer from './renderer'
 import './style/index.less'
 export default class Demo extends Component {
   render () {
-    // TODO:
     const lang = window.$lang
     const menuItem = plainComponents.find(itm => itm.key === this.props.params.demo)
 

@@ -15,6 +15,7 @@
     "build:demo": "fishd-doc build --config ./site/doc.mobile.config.js",
     "build:mobile": "tools/buildMobile.sh",
     "winbuild:mobile": "tools\\buildMobile.sh",
+    "publish:site": "tools/githubPage.sh",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest --config jest.config.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
