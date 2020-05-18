@@ -1,7 +1,5 @@
 # ppfish-design-mobile
 
-![Build Status](https://travis-ci.org/zrj1031/fishd-mobile.svg?branch=master)
-
 ## 快速开始
 ```
 # 安装依赖
@@ -27,14 +25,6 @@ fm create 组件名称
 4. 在site/docs/zh-CN 中创建组件说明文档
 5. 在site/config 配置组件
 
-## 全局样式
-
-去ant-design-mobile先copy一套，再在开发中具体用到一些定义，再参照ppfish的规范去修正
-还是先把所有规范先定下来
-
-## 公共前缀
-
-fishd? 应该和web端区分开 参照ant-design-mobile 取了am 我们取fm？
 
 ## 单元测试
 
@@ -50,20 +40,22 @@ fishd? 应该和web端区分开 参照ant-design-mobile 取了am 我们取fm？
 husky lint-staged travis-ci commitizen conventional-changelog
 husky cnpm时会有问题 => https://github.com/typicode/husky/issues/640
 
+## travis
 [travis-ci](https://travis-ci.org/)需要github owner激活下travis
+![Build Status](https://travis-ci.org/zrj1031/fishd-mobile.svg?branch=master)
 
-## 代码规范
+## 直接script引入
 
-eslint stylelint prettier
-eslint-plugin-jsx-a11y不集成？
+引入dist下的fishd-mobile.min.js和fishd-mobile.min.css
 
-## webpack
+```js
+const Button = window['fishd-mobile'].Button;
 
-TODO 暂时没写
-npm run dev对应site中webpackConfig修改的webpack是对这个文档生成
-npm run build:mobile对应组件库（有点疑惑 doc的webpack没有读取该部分，怎么能保证一系列webpack配置后打出的包和文档包是完全一致的）
-
-
-## 文档部分(高钶)
-
-config.js抽离下  不希望在mobile/desk 配俩遍
+function App() {
+  return (
+    <div className="App">
+      <Button type="primary">button</Button>
+    </div>
+  );
+}
+```
