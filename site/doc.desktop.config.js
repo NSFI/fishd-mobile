@@ -18,6 +18,7 @@ module.exports = {
   outputPath: './dist/desktop',
   // 同webpack publicPath
   publicPath: './',
+  MiniCssExtractPluginPublicPath: '../',
   // dll配置
   dll: {
     name: 'desktopDll',
