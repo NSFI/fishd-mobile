@@ -1,12 +1,12 @@
 # ActionSheet 动作面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
 
-按钮用于开始一个即时操作。
+底部弹起的模态面板，包含与当前情境相关的多个选项
 
 ## 何时使用
 
 从底部弹出的模态框，提供和当前场景相关的2个以上的操作动作，支持提供标题和描述。
 
-## 按钮类型
+## 基础用法
 
 :::demo
 
@@ -17,17 +17,12 @@ handleClick = () => {
     options: BUTTONS,
     cancelText: 'cancel',
     destructiveButtonIndex: BUTTONS.length - 1,
-    // title: '标题',
     message: '标题或描述',
     maskClosable: true,
     cancelButtonText: '取消',
-    'data-seed': 'logId',
     wrapProps: {},
     onSelect: (buttonIndex) => {
-      console.log('>>> 点击了', buttonIndex)
-      // return new Promise((resolve) => {
-      //   setTimeout(resolve, 1000);
-      // });
+      console.log(`>>> 选择buttonIndex ${buttonIndex}`)
     },
     onCancel: () => {
       console.log('>>> 取消操作')
@@ -37,13 +32,73 @@ handleClick = () => {
 
 render(){
  return(<div className="components-actionSheet-demo-basic">
-    <Button type="primary" onClick={this.handleClick}>打开ActionSheet</Button>
+    <Button type="primary" onClick={this.handleClick}>基础用法</Button>
   </div>)
 }
 ```
 
 ```less
-[class^="components-button-demo-"] .fm-button {
+[class^="components-actionSheet-demo-"] .fm-button {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+```
+
+:::
+
+:::demo
+
+```js
+handleClick = () => {
+  const BUTTONS = [[{
+    icon: <div>hello</div>,
+    title: '你好'
+  }, {
+    icon: <div>hello</div>,
+    title: '你好'
+  }, {
+    icon: <div>hello</div>,
+    title: '你好'
+  }, {
+    icon: <div>hello</div>,
+    title: '你好'
+  }, {
+    icon: <div>hello</div>,
+    title: '你好'
+  }, {
+    icon: <div>hello</div>,
+    title: '你好'
+  }], [{
+    icon: <div>hello</div>,
+    title: '你好'
+  }, {
+    icon: <div>hello</div>,
+    title: '你好'
+  }]];
+  ActionSheet.showShareActionSheetWithOptions({
+    options: BUTTONS,
+    cancelText: 'cancel',
+    message: '标题或描述',
+    maskClosable: true,
+    cancelButtonText: '取消',
+    onSelect: (buttonIndex, rowIndex) => {
+      console.log(`>>> 选择buttonIndex ${buttonIndex}, rowIndex ${rowIndex}`)
+    },
+    onCancel: () => {
+      console.log('>>> 取消操作')
+    }
+  });
+}
+
+render(){
+ return(<div className="components-actionSheet-demo-basic">
+    <Button type="primary" onClick={this.handleClick}>展示分享</Button>
+  </div>)
+}
+```
+
+```less
+[class^="components-actionSheet-demo-"] .fm-button {
   margin-right: 8px;
   margin-bottom: 12px;
 }
@@ -53,10 +108,32 @@ render(){
 
 ## API
 组件提供了一些静态方法，使用方式和参数如下：
-ActionSheet.showActionSheetWithOptions(options)
 
-options属性:
+ActionSheet.showActionSheetWithOptions(config)
+
 | 属性 | 说明         | 类型                                            | 默认值    |
 | ---- | ------------ | ----------------------------------------------- | --------- |
-| options | 设置按钮大小 | Enum {'small', 'large', 'default'}              | 'default' |
-| type | 设置按钮类型 | Enum {'primary', 'dashed', 'danger', 'default'} | 'default' |
+| options | 按钮标题列表 | 	Array< string >  | - |
+| title | 标题 | string | - |
+| message | 描述 | string | - |
+| cancelText | 取消按钮文本 | string | '取消' |
+| destructiveButtonIndex | 按钮列表中破坏性按钮（一般为删除）的索引位置 | number | - |
+| maskClosable | 点击蒙层是否允许关闭 | boolean | true |
+| onSelect | 点击选项时触发，禁用或加载状态下不会触发 | (buttonIndex: number) : Promise | - |
+| onCancel | 点击取消按钮时触发 | () : Promise | - |
+| onClose | 关闭面板时触发 | () : Promise | - |
+
+
+ActionSheet.showShareActionSheetWithOptions(config)
+
+| 属性 | 说明         | 类型                                            | 默认值    |
+| ---- | ------------ | ----------------------------------------------- | --------- |
+| options | 分享按钮列表 | 	Array< {icon: ReactNode, title: string} > 或 二维数组  | - |
+| title | 标题 | string | - |
+| message | 描述 | string | - |
+| cancelText | 取消按钮文本 | string | '取消' |
+| maskClosable | 点击蒙层是否允许关闭 | boolean | true |
+| onSelect | 点击选项时触发，禁用或加载状态下不会触发 | (buttonIndex: number, rowIndex: number) : Promise | - |
+| onCancel | 点击取消按钮时触发 | () : Promise | - |
+| onClose | 关闭面板时触发 | () : Promise | - |
+

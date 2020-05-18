@@ -25,8 +25,7 @@ fm create 组件名称
 ```
 3. 在/source/components/index 引入创建的组件
 4. 在site/docs/zh-CN 中创建组件说明文档
-5. 在site/desktop/config 配置组件
-6. site/mobile/config 配置组件
+5. 在site/config 配置组件
 
 ## 全局样式
 

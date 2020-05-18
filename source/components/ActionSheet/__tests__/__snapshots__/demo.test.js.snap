@@ -11,7 +11,20 @@ exports[`Renders ActionSheet demo correctly 1`] = `
       role="button"
     >
       <span>
-        打开ActionSheet
+        基础用法
+      </span>
+    </a>
+  </div>
+  <div
+    class="components-actionSheet-demo-basic"
+  >
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-primary"
+      role="button"
+    >
+      <span>
+        展示分享
       </span>
     </a>
   </div>

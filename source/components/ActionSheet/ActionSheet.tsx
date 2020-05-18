@@ -5,6 +5,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import Dialog from 'rmc-dialog';
 import TouchFeedback from 'rmc-feedback';
+import { ActionSheetWithOptions, ShareActionSheetWithOptions, ShareOption } from './PropsType';
 
 import './style/index.less';
 
@@ -18,37 +19,13 @@ const getDataAttr = (props: { [key: string]: any }) => {
 };
 
 const NORMAL = 'NORMAL';
+const SHARE = 'SHARE';
 const queue: any[] = [];
 
-export type SelectCallBack = (index: number, rowIndex: number) => PromiseLike<any> | void;
-
-export type CancelCallBack = () => PromiseLike<any> | void;
-
-export type CloseCallBack = () => PromiseLike<any> | void;
-
-export interface ActionSheetOptions {
-  maskClosable?: boolean;
-  cancelButtonIndex?: number;
-  destructiveButtonIndex?: number;
-  title?: React.ReactNode;
-  message?: React.ReactNode;
-  className?: string;
-  transitionName?: string;
-  maskTransitionName?: string;
-  cancelButtonText?: string;
-  onSelect?: SelectCallBack;
-  onCancel?: CancelCallBack;
-  onClose?: CloseCallBack;
-}
-
-export interface ActionSheetWithOptions extends ActionSheetOptions {
-  options: string[];
-}
-
-function createActionSheet(flag: string, config: ActionSheetWithOptions) {
+function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareActionSheetWithOptions) {
   const props = {
     prefixCls: 'fm-action-sheet',
-    cancelButtonText: '',
+    cancelButtonText: '取消',
     ...config,
   };
   const {
@@ -174,6 +151,45 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions) {
         </div>
       );
       break;
+    case SHARE:
+      mode = 'share';
+      const multipleLine = (options.length && Array.isArray(options[0])) || false;
+      const createList = (item: ShareOption, index: number, rowIndex = 0) => (
+        <div className={`${prefixCls}-share-list-item`} role="button" key={index} onClick={() => cb(index, rowIndex)}>
+          <div className={`${prefixCls}-share-list-item-icon`}>{item.icon}</div>
+          <div className={`${prefixCls}-share-list-item-title`}>{item.title}</div>
+        </div>
+      );
+      children = (
+        <div {...getDataAttr(props)}>
+          <div className={`${prefixCls}-top`}>
+            {titleMsg}
+            <div className={`${prefixCls}-share`}>
+              {multipleLine ? (
+                (options as ShareOption[][]).map((item, index) => (
+                  <div key={index} className={`${prefixCls}-share-list`}>
+                    {item.map((ii, ind) => createList(ii, ind, index))}
+                  </div>
+                ))
+              ) : (
+                <div className={`${prefixCls}-share-list`}>
+                  {(options as ShareOption[]).map((item, index) => createList(item, index))}
+                </div>
+              )}
+            </div>
+          </div>
+          {cancelButtonText && (
+            <div className={`${prefixCls}-bottom`}>
+              <TouchFeedback activeClassName={`${prefixCls}-share-cancel-button-active`}>
+                <div className={`${prefixCls}-share-cancel-button`} role="button" onClick={() => handleCancel()}>
+                  {cancelButtonText}
+                </div>
+              </TouchFeedback>
+            </div>
+          )}
+        </div>
+      );
+      break;
     default:
       break;
   }
@@ -206,6 +222,9 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions) {
 export default {
   showActionSheetWithOptions(config: ActionSheetWithOptions) {
     createActionSheet(NORMAL, config);
+  },
+  showShareActionSheetWithOptions(config: ShareActionSheetWithOptions) {
+    createActionSheet(SHARE, config);
   },
   close() {
     queue.forEach(q => q());

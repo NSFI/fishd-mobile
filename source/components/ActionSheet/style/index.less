@@ -1,6 +1,6 @@
 @import '../../../assets/css/index';
 @ActionSheetPrefixCls: fm-action-sheet;
-@hd: 1;
+@hd: 1px;
 
 .@{ActionSheetPrefixCls} {
   position: fixed;
@@ -9,10 +9,12 @@
   bottom: 5px;
   padding-bottom: env(safe-area-inset-bottom);
   overflow: hidden;
+
   &-top {
     border-radius: 4px;
     overflow: hidden;
   }
+
   &-bottom {
     margin-top: 5px;
     border-radius: 4px;
@@ -40,37 +42,42 @@
     color: #000;
 
     &-item {
-      font-size: 18px;
+      font-size: 16px;
       padding: 0 8 * @hd;
       margin: 0;
       position: relative;
-      height: 50px;
-      line-height: 50px;
+      height: 40px;
+      line-height: 40px;
       box-sizing: border-box;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow-x: hidden;
       background-color: #fff;
       .hairline('top');
+
       &&-active {
         background-color: #ddd;
       }
     }
+
     &-badge {
       display: flex;
       align-items: center;
       justify-content: center;
+
       .am-badge {
         margin-left: 8 * @hd;
         flex-shrink: 0;
       }
     }
+
     &-item-content {
       display: inline-block;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .@{ActionSheetPrefixCls}-cancel-button {
       position: relative;
 
@@ -88,6 +95,60 @@
 
     .@{ActionSheetPrefixCls}-destructive-button {
       color: red;
+    }
+  }
+
+  &-share {
+    &-list {
+      position: relative;
+      display: flex;
+      padding: 15px 0 15px 10px;
+      background-color: #f2f2f2;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      .hairline('top');
+      &-item {
+        flex: none;
+        margin: 0 12 * @hd 0 0;
+
+        &-icon {
+          margin-bottom: 9px;
+          width: 60 * @hd;
+          height: 60 * @hd;
+          background-color: #fff;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &-title {
+          color: #000;
+          font-size: 10px;
+          text-align: center;
+        }
+      }
+    }
+
+    &-cancel-button {
+      position: relative;
+      font-size: 16px;
+      text-align: center;
+      color: #000;
+      padding: 0 8 * @hd;
+      margin: 0;
+      height: 40px;
+      line-height: 40px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow-x: hidden;
+      background-color: #fff;
+      .hairline('top');
+
+      &&-active {
+        background-color: #ddd;
+      }
     }
   }
 
@@ -117,6 +178,7 @@
       display: none;
     }
   }
+
   // 隐藏掉 dialog 默认的 x 按钮
   &-close {
     display: none;
