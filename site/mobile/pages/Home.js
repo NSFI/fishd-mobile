@@ -34,7 +34,7 @@ export default class Home extends Component {
     return (
       <div className="u-home">
         <div className="u-logo">
-          <img src="//ysf.nosdn.127.net/unanqvsjrxhnpwqrulcuumqxicpwsojh"></img>
+          <img src="https://hgkcdn.oss-cn-shanghai.aliyuncs.com/test/unanqvsjrxhnpwqrulcuumqxicpwsojh.png"></img>
         </div>
         <p className="u-desc">{this.messages.introduce}</p>
         {menuList}
