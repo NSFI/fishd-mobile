@@ -3,6 +3,7 @@ node_modules/
 /lib/
 es/
 dist/
+_site/
 npm-debug.log
 yarn-error.log
 .idea

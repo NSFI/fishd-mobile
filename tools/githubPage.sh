@@ -5,7 +5,7 @@
 # get current version
 VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g');
 
-cd dist
+cd _site
 
 rm -rf gitDesktop
 rm -rf gitMobile
