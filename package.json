@@ -20,7 +20,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest --config jest.config.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "build:webpack": "webpack --config webpack.config.js"
+    "build:dist": "webpack --config webpack.config.js"
   },
   "license": "ISC",
   "dependencies": {
@@ -74,6 +74,7 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^10.1.6",
     "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^4.0.3",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
