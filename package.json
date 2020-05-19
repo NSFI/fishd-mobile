@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "fishd-mobile",
   "main": "lib/components/index.js",
+  "module": "es/components/index.js",
   "scripts": {
     "dll": "concurrently 'npm run dll:demo' 'npm run dll:site'",
     "dev": "concurrently 'fishd-doc start --config ./site/doc.mobile.config.js' 'fishd-doc start --config ./site/doc.desktop.config.js'",
@@ -19,7 +20,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest --config jest.config.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "build:webpack": "webpack --config webpack.config.js"
+    "build:dist": "webpack --config webpack.config.js"
   },
   "license": "ISC",
   "dependencies": {
