@@ -46,7 +46,12 @@ husky cnpm时会有问题 => https://github.com/typicode/husky/issues/640
 
 ## 直接script引入
 
-引入dist下的fishd-mobile.min.js和fishd-mobile.min.css
+引入dist下的fishd-mobile.min.js和fishd-mobile.min.css和cdn的react react-dom
+
+```js
+<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+```
 
 ```js
 const Button = window['fishd-mobile'].Button;
