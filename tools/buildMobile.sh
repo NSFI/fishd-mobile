@@ -65,7 +65,7 @@ mkdir $es_dir
 # typescript 编译为 es6
 cd tools/compileTs/
 node copy.js $source_dir $temp_dir
-tsc --strict
+tsc --strict -d
 node clean.js $temp_dir
 
 node copy.js $temp_dir $lib_dir

@@ -14,8 +14,10 @@ function del (p) {
     // 读取文件信息，以便于判断是否是一个文件或目录
     const stats = fs.statSync(fullPath)
     const ext = path.extname(fullPath)
+    // const isInvaildFile = (esType === 'lib' && ext === '.jsx') ||
+    //                     (esType === 'temp' && (ext === '.tsx' || ext === '.ts'))
     const isInvaildFile = (esType === 'lib' && ext === '.jsx') ||
-                        (esType === 'temp' && (ext === '.tsx' || ext === '.ts'))
+                        (esType === 'temp' && (ext === '.tsx'))
 
     if (stats.isFile()) {
       if (isInvaildFile) {

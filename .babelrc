@@ -5,7 +5,7 @@
     "@babel/preset-typescript"
   ],
   "plugins": [
-    "react-hot-loader/babel",
+    // "react-hot-loader/babel",
     "@babel/plugin-proposal-numeric-separator",
     "@babel/plugin-proposal-logical-assignment-operators",
     ["@babel/plugin-proposal-class-properties", { "loose": false }],
