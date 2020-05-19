@@ -50,33 +50,21 @@ render(){
 
 ```js
 handleClick = () => {
-  const BUTTONS = [[{
-    icon: <div>hello</div>,
-    title: '你好'
-  }, {
-    icon: <div>hello</div>,
-    title: '你好'
-  }, {
-    icon: <div>hello</div>,
-    title: '你好'
-  }, {
-    icon: <div>hello</div>,
-    title: '你好'
-  }, {
-    icon: <div>hello</div>,
-    title: '你好'
-  }, {
-    icon: <div>hello</div>,
-    title: '你好'
-  }], [{
-    icon: <div>hello</div>,
-    title: '你好'
-  }, {
-    icon: <div>hello</div>,
-    title: '你好'
-  }]];
+  const BUTTONS = [
+    { url: 'OpHiXAcYzmPQHcdlLFrc', title: '发送给朋友' },
+    { url: 'wvEzCMiDZjthhAOcwTOu', title: '新浪微博' },
+    { url: 'cTTayShKtEIdQVEMuiWt', title: '生活圈' },
+    { url: 'umnHwvEgSyQtXlZjNJTt', title: '微信好友' },
+    { url: 'SxpunpETIwdxNjcJamwB', title: 'QQ' },
+  ].map(obj => ({
+    icon: <img src={`https://gw.alipayobjects.com/zos/rmsportal/${obj.url}.png`} alt={obj.title} style={{ width: 36 }} />,
+    title: obj.title,
+  }));
   ActionSheet.showShareActionSheetWithOptions({
-    options: BUTTONS,
+    options: [
+      [...BUTTONS, BUTTONS[0], BUTTONS[1]],
+      [BUTTONS[0], BUTTONS[1]]
+    ],
     cancelText: 'cancel',
     message: '标题或描述',
     maskClosable: true,
