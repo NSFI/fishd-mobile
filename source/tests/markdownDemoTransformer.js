@@ -236,7 +236,7 @@ function transformCode(codes, filename) {
     import PropTypes from 'prop-types';
     // Table 组件的“可伸缩列” Demo 使用
     ${components.includes('Table') ? `import { Resizable } from 'react-resizable'` : ''};
-    ${components.length ? `import {${components.join(',')}} from '../../../source/components/index.js';` : ''}
+    ${components.length ? `import {${components.join(',')}} from '../../../source/components/index.tsx';` : ''}
 
     ${classNames.map((classname, index) => `let ${classname} = (() => {
       ${codeBodys[index]}
@@ -253,7 +253,7 @@ function transformCode(codes, filename) {
   `;
 
   let transformed = babel.transform(composedCode, {...babelrc, filename: 'demo.js'});
-
+    
   return transformed.code;
 }
 

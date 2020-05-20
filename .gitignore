@@ -4,6 +4,7 @@ node_modules/
 es/
 dist/
 _site/
+temp/
 npm-debug.log
 yarn-error.log
 .idea

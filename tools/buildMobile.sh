@@ -72,6 +72,7 @@ node copy.js $temp_dir $lib_dir
 node copy.js $temp_dir $es_dir
 cd ../../
 
+export NODE_ENV=production
 # CommonJS
 babel "./$temp_dir/" --out-dir "./$lib_dir/"
 # less 编译为 css

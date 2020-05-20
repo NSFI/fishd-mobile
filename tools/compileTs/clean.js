@@ -60,7 +60,7 @@ function fileDisplay (filePath) {
         }
         if (isDir) {
           const dirArr = filedir.split(pathSep)
-          if (dirArr[dirArr.length - 1] === '__tests__') {
+          if (dirArr[dirArr.length - 1] === '__tests__' || dirArr[dirArr.length - 1] === 'tests') {
             delTest(filedir)
           } else {
             fileDisplay(filedir)// 递归，如果是文件夹，就继续遍历该文件夹下面的文件
