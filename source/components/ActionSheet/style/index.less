@@ -1,23 +1,22 @@
 @import '../../../assets/css/index';
 @ActionSheetPrefixCls: fm-action-sheet;
-@hd: 1px;
 
 .@{ActionSheetPrefixCls} {
   position: fixed;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+  left: @h-spacing-sm;
+  right: @h-spacing-sm;
+  bottom: @h-spacing-sm;
   padding-bottom: env(safe-area-inset-bottom);
   overflow: hidden;
 
   &-top {
-    border-radius: 4px;
+    border-radius: @radius-md;
     overflow: hidden;
   }
 
   &-bottom {
-    margin-top: 5px;
-    border-radius: 4px;
+    margin-top: @h-spacing-sm;
+    border-radius: @radius-md;
     overflow: hidden;
   }
 
@@ -29,25 +28,25 @@
   }
 
   &-title {
-    font-size: 16px;
+    font-size: @font-size-heading;
   }
 
   &-message {
-    color: #888;
-    font-size: 14px;
+    color: @color-text-caption;
+    font-size: @font-size-base;
   }
 
   &-button-list {
     text-align: center;
-    color: #000;
+    color: @color-text-base;
 
     &-item {
-      font-size: 16px;
+      font-size: @actionsheet-item-font-size;
       padding: 0 8 * @hd;
       margin: 0;
       position: relative;
-      height: 60px;
-      line-height: 60px;
+      height: @actionsheet-item-height;
+      line-height: @actionsheet-item-height;
       box-sizing: border-box;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -86,7 +85,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 6px;
+        height: @h-spacing-sm;
         background-color: rgba(0, 0, 0, 0.4);
         .hairline('top');
         .hairline('bottom');
@@ -94,7 +93,7 @@
     }
 
     .@{ActionSheetPrefixCls}-destructive-button {
-      color: red;
+      color: @color-red;
     }
   }
 
@@ -103,7 +102,7 @@
       position: relative;
       display: flex;
       padding: 15px 0 15px 10px;
-      background-color: #f2f2f2;
+      background-color: @fill-body;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       .hairline('top');
@@ -115,16 +114,16 @@
           margin-bottom: 9px;
           width: 60 * @hd;
           height: 60 * @hd;
-          background-color: #fff;
-          border-radius: 5px;
+          background-color: @fill-base;
+          border-radius: @radius-md;
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
         &-title {
-          color: #000;
-          font-size: 10px;
+          color: @color-text-base;
+          font-size: @font-size-icontext;
           text-align: center;
         }
       }
@@ -132,22 +131,22 @@
 
     &-cancel-button {
       position: relative;
-      font-size: 16px;
+      font-size: @actionsheet-item-font-size;
       text-align: center;
-      color: #000;
+      color: @color-text-base;
       padding: 0 8 * @hd;
       margin: 0;
-      height: 60px;
-      line-height: 60px;
+      height: @actionsheet-item-height;
+      line-height: @actionsheet-item-height;
       box-sizing: border-box;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
-      background-color: #fff;
+      background-color: @fill-base;
       .hairline('top');
 
       &&-active {
-        background-color: #ddd;
+        background-color: @fill-tap;
       }
     }
   }

@@ -46,6 +46,57 @@ render(){
 
 :::
 
+## 单行展示分享
+
+:::demo
+
+```js
+handleClick = () => {
+  const BUTTONS = [
+    { url: 'OpHiXAcYzmPQHcdlLFrc', title: '发送给朋友' },
+    { url: 'wvEzCMiDZjthhAOcwTOu', title: '新浪微博' },
+    { url: 'cTTayShKtEIdQVEMuiWt', title: '生活圈' },
+    { url: 'umnHwvEgSyQtXlZjNJTt', title: '微信好友' },
+    { url: 'SxpunpETIwdxNjcJamwB', title: 'QQ' },
+  ].map(obj => ({
+    icon: <img src={`https://gw.alipayobjects.com/zos/rmsportal/${obj.url}.png`} alt={obj.title} style={{ width: 36 }} />,
+    title: obj.title,
+  }));
+  ActionSheet.showShareActionSheetWithOptions({
+    options: [
+      [...BUTTONS, BUTTONS[0], BUTTONS[1]],
+    ],
+    cancelText: 'cancel',
+    message: '标题或描述',
+    maskClosable: true,
+    cancelButtonText: '取消',
+    onSelect: (buttonIndex, rowIndex) => {
+      console.log(`>>> 选择buttonIndex ${buttonIndex}, rowIndex ${rowIndex}`)
+    },
+    onCancel: () => {
+      console.log('>>> 取消操作')
+    }
+  });
+}
+
+render(){
+ return(<div className="components-actionSheet-demo-basic">
+    <Button type="primary" onClick={this.handleClick}>单行分享</Button>
+  </div>)
+}
+```
+
+```less
+[class^="components-actionSheet-demo-"] .fm-button {
+  margin-right: 8px;
+  margin-bottom: 12px;
+}
+```
+
+:::
+
+## 多行展示分享
+
 :::demo
 
 ```js
@@ -80,7 +131,7 @@ handleClick = () => {
 
 render(){
  return(<div className="components-actionSheet-demo-basic">
-    <Button type="primary" onClick={this.handleClick}>展示分享</Button>
+    <Button type="primary" onClick={this.handleClick}>多行分享</Button>
   </div>)
 }
 ```
