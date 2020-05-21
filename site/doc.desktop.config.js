@@ -1,7 +1,7 @@
 /**
  * 定制webpack相关配置
  */
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   // 启动端口
@@ -15,28 +15,22 @@ module.exports = {
   // html输出名称，默认值`index`
   htmlFileName: 'index',
   // 文件输出目录
-  outputPath: './dist/desktop',
+  outputPath: './_site/desktop',
   // 同webpack publicPath
   publicPath: './',
+  MiniCssExtractPluginPublicPath: '../',
   // dll配置
   dll: {
     name: 'desktopDll',
-    value: [
-      'react',
-      'react-dom',
-      'react-router',
-      'codemirror',
-      'marked',
-      'less',
-      'prismjs'
-    ]
+    value: ['react', 'react-dom', 'react-router', 'codemirror', 'marked', 'less', 'prismjs'],
   },
   // 自定义webpack配置
-  webpackConfig (config) {
-    config.resolve.alias = Object.assign({}, config.resolve.alias, {
+  webpackConfig(config) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
       '@docs': path.join(__dirname, './docs'),
-      '@': path.join(__dirname, './desktop')
-    })
-    return config
-  }
-}
+      '@': path.join(__dirname, './desktop'),
+    };
+    return config;
+  },
+};

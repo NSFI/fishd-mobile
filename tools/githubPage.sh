@@ -5,15 +5,15 @@
 # get current version
 VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g');
 
-cd dist
+cd _site
 
 rm -rf gitDesktop
 rm -rf gitMobile
 
 # 文档地址
-git clone git@github.com:请填写项目地址/fishd-desktop.git gitDesktop
+git clone https://github.com/NSFI/fishd-mobile-site.git gitDesktop
 # demo地址
-git clone git@github.com:请填写项目地址/fishd-page.git gitMobile
+git clone https://github.com/NSFI/fishd-mobile-demo.git gitMobile
 
 cd gitDesktop
 rm -rf *

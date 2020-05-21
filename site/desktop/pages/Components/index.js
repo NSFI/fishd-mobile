@@ -80,7 +80,8 @@ export default class Components extends React.Component {
     const nextLink = this.plainComponentList[componentIndex + 1]
     const { isMobile, demoUrl } = this.state
     // TODO: 如果动态g改变iframe url会导致影响父页面的浏览器历史栈，导致前进后退异常
-    // const demoName = this.props.params.demo || ''
+    const demoName = this.props.params.demo || ''
+    const demoLink = config.genDemoUrl(window.$lang, demoName)
     // const demoUrl = config.genDemoUrl(lang, demoName)
     const menuChild = (
       <nav className="side-nav">
@@ -198,7 +199,7 @@ export default class Components extends React.Component {
                     </Row>
                   </div>
                   <div className="u-fished__simulator">
-                    <div className="u-address" onClick={this.handleCopyUrl.bind(this, demoUrl)}>{demoUrl}</div>
+                    <div className="u-address" onClick={this.handleCopyUrl.bind(this, demoLink)}>{demoLink}</div>
                     <div className="u-refresh"></div>
                     <iframe
                       className="u-iframe"

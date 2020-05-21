@@ -1,7 +1,7 @@
 /**
  * 定制webpack相关配置
  */
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   // 启动端口
@@ -15,26 +15,21 @@ module.exports = {
   // html输出名称，默认值`index`
   htmlFileName: 'index',
   // 文件输出路径
-  outputPath: './dist/mobile',
+  outputPath: './_site/mobile',
   // 同webpack publicPath
   publicPath: './',
   // dll配置
   dll: {
     name: 'mobileDll',
-    value: [
-      'react',
-      'react-dom',
-      'react-router',
-      'marked',
-      'less'
-    ]
+    value: ['react', 'react-dom', 'react-router', 'marked', 'less'],
   },
   // 自定义webpack配置
-  webpackConfig (config) {
-    config.resolve.alias = Object.assign({}, config.resolve.alias, {
+  webpackConfig(config) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
       '@docs': path.join(__dirname, './docs'),
-      '@': path.join(__dirname, './mobile')
-    })
-    return config
-  }
-}
+      '@': path.join(__dirname, './mobile'),
+    };
+    return config;
+  },
+};

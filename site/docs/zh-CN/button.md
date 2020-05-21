@@ -9,25 +9,36 @@
 ## 按钮类型
 
 :::demo 按钮有四种类型：主按钮、次按钮、危险按钮,主按钮在同一个操作区域最多出现一次。
+
 ```js
 render(){
- return(<div className="components-button-demo-basic">
-    <Button type="primary">Primary</Button>
-    <Button>Default</Button>
-    <Button type="danger">Danger</Button>
-  </div>)
+ return(
+   <div className="components-button-demo-basic">
+    <Button>default</Button>
+    <Button disabled>default disabled</Button>
+
+    <Button type="primary">primary</Button>
+    <Button type="primary" disabled>primary disabled</Button>
+
+    <Button type="warning">warning</Button>
+    <Button type="warning" disabled>warning disabled</Button>
+
+    <Button loading>loading button</Button>
+    <Button icon="fm-start">icon button</Button>
+
+  </div>
+  )
 }
 ```
 
 ```less
-[class^="components-button-demo-"] .fishd-btn {
+[class^="components-button-demo-"] .fm-button {
   margin-right: 8px;
   margin-bottom: 12px;
 }
-
 ```
-:::
 
+:::
 
 ## 按钮尺寸
 
@@ -35,9 +46,7 @@ render(){
 
 通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。
 
-
 ```js
-
   state = {
     size: 'large',
   };
@@ -57,12 +66,14 @@ render(){
     );
   }
 ```
+
 ```less
-[class^="components-button-demo-"] .fishd-btn {
+[class^="components-button-demo-"] .fm-button {
   margin-right: 8px;
   margin-bottom: 12px;
 }
 ```
+
 :::
 
 ## API
@@ -71,7 +82,7 @@ render(){
 
 按钮的属性说明如下：
 
-| 属性 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| size | 设置按钮大小 | Enum {'small', 'large', 'default'} | 'default' |
+| 属性 | 说明         | 类型                                            | 默认值    |
+| ---- | ------------ | ----------------------------------------------- | --------- |
+| size | 设置按钮大小 | Enum {'small', 'large', 'default'}              | 'default' |
 | type | 设置按钮类型 | Enum {'primary', 'dashed', 'danger', 'default'} | 'default' |

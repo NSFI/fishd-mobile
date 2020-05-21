@@ -65,13 +65,14 @@ mkdir $es_dir
 # typescript 编译为 es6
 cd tools/compileTs/
 node copy.js $source_dir $temp_dir
-tsc --strict
+tsc --strict -d
 node clean.js $temp_dir
 
 node copy.js $temp_dir $lib_dir
 node copy.js $temp_dir $es_dir
 cd ../../
 
+export NODE_ENV=production
 # CommonJS
 babel "./$temp_dir/" --out-dir "./$lib_dir/"
 # less 编译为 css

@@ -8,7 +8,7 @@ import collect from '@/lib/collect'
 import eventbus from '@/lib/eventbus'
 import Home from '@/pages/Home'
 
-import * as source from '../../../source/components/index'
+import * as source from '../../../index'
 
 import './Demo.less'
 
@@ -25,6 +25,12 @@ class Demo extends Component {
 
   componentWillUnmount () {
     eventbus.removeAllListeners('reloadDemo')
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.params.demo !== this.props.params.demo) {
+      this.renderDemoList()
+    }
   }
 
   reloadDemo = (data) => {

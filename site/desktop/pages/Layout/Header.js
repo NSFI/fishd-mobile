@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
 import { Row, Col, Affix } from 'ppfish'
 
 export default class Header extends Component {
@@ -36,8 +36,9 @@ export default class Header extends Component {
 
     function setHighlight (menuItems, cls) {
       Array.from(menuItems).forEach((menuItem) => {
-        const key = menuItem.getAttribute('href')
-        if (key && current.indexOf(key) > -1) {
+        const key = menuItem.getAttribute('href') || ''
+        const isComponentPage = key.indexOf('components') > 1 && current.indexOf('components') > -1
+        if (key && current.indexOf(key) > -1 || isComponentPage) {
           menuItem.classList.add(cls)
         } else {
           menuItem.classList.remove(cls)
@@ -51,9 +52,9 @@ export default class Header extends Component {
   switchLang = () => {
     const currentLang = window.$lang
     const newLang = currentLang === 'zh-CN' ? 'en-US' : 'zh-CN'
-    const urlArr = location.hash.split('/')
-    urlArr[1] = newLang
-    location.hash = urlArr.join('/')
+    const urlArr = location.hash.split('/').slice(1)
+    urlArr[0] = newLang
+    hashHistory.push(urlArr.join('/'))
     location.reload()
   }
 

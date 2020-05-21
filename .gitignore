@@ -3,8 +3,11 @@ node_modules/
 /lib/
 es/
 dist/
+_site/
+temp/
 npm-debug.log
 yarn-error.log
 .idea
 *.iml
 .vscode
+/coverage

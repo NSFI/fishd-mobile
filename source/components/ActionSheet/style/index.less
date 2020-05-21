@@ -1,0 +1,185 @@
+@import '../../../assets/css/index';
+@ActionSheetPrefixCls: fm-action-sheet;
+
+.@{ActionSheetPrefixCls} {
+  position: fixed;
+  left: @h-spacing-sm;
+  right: @h-spacing-sm;
+  bottom: @h-spacing-sm;
+  padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
+
+  &-top {
+    border-radius: @radius-md;
+    overflow: hidden;
+  }
+
+  &-bottom {
+    margin-top: @h-spacing-sm;
+    border-radius: @radius-md;
+    overflow: hidden;
+  }
+
+  &-title,
+  &-message {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+  }
+
+  &-title {
+    font-size: @font-size-heading;
+  }
+
+  &-message {
+    color: @color-text-caption;
+    font-size: @font-size-base;
+  }
+
+  &-button-list {
+    text-align: center;
+    color: @color-text-base;
+
+    &-item {
+      font-size: @actionsheet-item-font-size;
+      padding: 0 8 * @hd;
+      margin: 0;
+      position: relative;
+      height: @actionsheet-item-height;
+      line-height: @actionsheet-item-height;
+      box-sizing: border-box;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      background-color: #fff;
+      .hairline('top');
+
+      &&-active {
+        background-color: #ddd;
+      }
+    }
+
+    &-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .am-badge {
+        margin-left: 8 * @hd;
+        flex-shrink: 0;
+      }
+    }
+
+    &-item-content {
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .@{ActionSheetPrefixCls}-cancel-button {
+      position: relative;
+
+      &-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: @h-spacing-sm;
+        background-color: rgba(0, 0, 0, 0.4);
+        .hairline('top');
+        .hairline('bottom');
+      }
+    }
+
+    .@{ActionSheetPrefixCls}-destructive-button {
+      color: @color-red;
+    }
+  }
+
+  &-share {
+    &-list {
+      position: relative;
+      display: flex;
+      padding: 15px 0 15px 10px;
+      background-color: @fill-body;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      .hairline('top');
+      &-item {
+        flex: none;
+        margin: 0 12 * @hd 0 0;
+
+        &-icon {
+          margin-bottom: 9px;
+          width: 60 * @hd;
+          height: 60 * @hd;
+          background-color: @fill-base;
+          border-radius: @radius-md;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &-title {
+          color: @color-text-base;
+          font-size: @font-size-icontext;
+          text-align: center;
+        }
+      }
+    }
+
+    &-cancel-button {
+      position: relative;
+      font-size: @actionsheet-item-font-size;
+      text-align: center;
+      color: @color-text-base;
+      padding: 0 8 * @hd;
+      margin: 0;
+      height: @actionsheet-item-height;
+      line-height: @actionsheet-item-height;
+      box-sizing: border-box;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      background-color: @fill-base;
+      .hairline('top');
+
+      &&-active {
+        background-color: @fill-tap;
+      }
+    }
+  }
+
+  &-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+  }
+
+  &-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    z-index: 1000;
+
+    &-hidden {
+      display: none;
+    }
+  }
+
+  // 隐藏掉 dialog 默认的 x 按钮
+  &-close {
+    display: none;
+  }
+}
