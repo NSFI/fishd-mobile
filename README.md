@@ -22,9 +22,12 @@ npm i fishd-mobile-tools -g
 fm create 组件名称
 ```
 3. 在/source/components/index 引入创建的组件
-4. 在site/docs/zh-CN 中创建组件说明文档
+4. 在site/docs/zh-CN 中创建组件说明文档，文档中:::demo部分会被编译成预览demo
 5. 在site/config 配置组件
 
+## 文档即DEMO
+* 在开发组件时，我们只需要单独维护【组件.md】即可，fishd-doc插件会自动编译markdown中的demo并通过文档库站点实时预览。
+* 具体使用方法参见[fishd-doc](https://github.com/NSFI/fishd-doc#markdown%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83)
 
 ## 单元测试
 
