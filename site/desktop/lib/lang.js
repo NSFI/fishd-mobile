@@ -4,6 +4,9 @@ const langMap = {
     messages: {
       home: 'Home',
       component: 'Component',
+      design: 'Design',
+      web: 'Web',
+      mobile: 'Mobile',
       demo: 'Demo',
       search: 'Search in Fish Design'
     }
@@ -13,6 +16,9 @@ const langMap = {
     messages: {
       home: '主页',
       component: '组件',
+      design: '设计语言',
+      web: 'Web',
+      mobile: 'Mobile',
       demo: '演示环境',
       search: '在 Fish Design 中搜索'
     }

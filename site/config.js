@@ -26,10 +26,31 @@ export default [
         published: true,
       },
       {
+        key: 'numberKeyboard',
+        type: 'markdown',
+        name: 'NumberKeyboard 数字键盘',
+        nameEn: 'NumberKeyboard',
+        published: true,
+      }
+    ]
+  },
+  {
+    name: '导航组件',
+    nameEn: 'NavigationComponents',
+    key: 'NavigationComponents',
+    children: [
+      {
         key: 'navbar',
         type: 'markdown',
         name: 'NavBar 导航栏',
         nameEn: 'NavBar',
+        published: true,
+      },
+      {
+        key: 'grid',
+        type: 'markdown',
+        name: 'Grid 宫格',
+        nameEn: 'Grid',
         published: true,
       }
     ]

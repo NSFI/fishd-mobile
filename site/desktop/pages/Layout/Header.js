@@ -37,7 +37,7 @@ export default class Header extends Component {
     function setHighlight (menuItems, cls) {
       Array.from(menuItems).forEach((menuItem) => {
         const key = menuItem.getAttribute('href') || ''
-        const isComponentPage = key.indexOf('components') > 1 && current.indexOf('components') > -1
+        const isComponentPage = key.indexOf('/components') > 1 && current.indexOf('/components') > -1
         if (key && current.indexOf(key) > -1 || isComponentPage) {
           menuItem.classList.add(cls)
         } else {
@@ -71,7 +71,6 @@ export default class Header extends Component {
   }
 
   render () {
-    // TODO:
     const lang = window.$lang
 
     const CommonHeader = (
@@ -94,7 +93,12 @@ export default class Header extends Component {
                 </Link>
               </li>
               <li className='nav-item'>
-                <Link to={`${lang}/components/quickStart`}>{this.i18n.component}</Link>
+                <Link to={`${lang}/components/quickStart`}>{this.i18n.mobile}</Link>
+              </li>
+              <li className='nav-item'>
+                <a href='//nsfi.github.io/ppfish-components/#/home' target='_blank'>
+                  {this.i18n.web}
+                </a>
               </li>
               <li className='nav-item'>
                 <a href='//nsfi.github.io/ppfish-demo' target='_blank'>

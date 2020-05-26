@@ -6,6 +6,18 @@
     animation-timing-function: cubic-bezier(.55, 0, .55, .2);
   }
 
+  .effect-easeIn() {
+    animation-duration: .2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in;
+  }
+
+  .effect-easeOut() {
+    animation-duration: .2s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-out;
+  }
+
   &-fade-enter,
   &-fade-appear {
     opacity: 0;
@@ -53,13 +65,13 @@
 
   &-slide-up-enter,
   &-slide-up-appear {
-    transform: translate(0, 100%);
+    .effect-easeOut();
+    transform: translate3d(0, 100%, 0);
+    animation-play-state: paused;
   }
 
-  &-slide-up-enter,
-  &-slide-up-appear,
   &-slide-up-leave {
-    .effect();
+    .effect-easeIn();
 
     animation-play-state: paused;
   }
@@ -77,21 +89,21 @@
 
   @keyframes amSlideUpIn {
     0% {
-      transform: translate(0, 100%);
+      transform: translate3d(0, 100%, 0);
     }
 
     100% {
-      transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
   @keyframes amSlideUpOut {
     0% {
-      transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
     }
 
     100% {
-      transform: translate(0, 100%);
+      transform: translate3d(0, 100%, 0);
     }
   }
 
@@ -185,13 +197,13 @@
     }
 
     100% {
-      transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
     }
   }
 
   @keyframes amSlideDownOut {
     0% {
-      transform: translate(0, 0);
+      transform: translate3d(0, 0, 0);
     }
 
     100% {

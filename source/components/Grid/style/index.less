@@ -1,0 +1,89 @@
+@import '../../../assets/css/index';
+
+@flexPrefixCls: fm-flexbox;
+@gridPrefixCls: fm-grid;
+
+/* flexbox */
+.@{gridPrefixCls} {
+  .@{flexPrefixCls} {
+    .@{gridPrefixCls}-null-item {
+      background-color: @fill-base;
+    }
+    .@{flexPrefixCls}-item {
+      margin-left: 0;
+      // background-color: @fill-base;
+
+      &.@{gridPrefixCls}-item {
+        position: relative;
+      }
+
+      &.@{gridPrefixCls}-item-active {
+        .@{gridPrefixCls}-item-content {
+          background-color: @fill-tap;
+        }
+      }
+
+      .@{gridPrefixCls}-item-content {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: @v-spacing-lg 10px;
+        background-color: @fill-base;
+
+        &__border {
+          border: 1PX solid @border-color-base;
+        }
+        .@{gridPrefixCls}-icon {
+          max-width: 100%;
+        }
+
+        .@{gridPrefixCls}-text {
+          margin-top: @v-spacing-md;
+          font-size: @font-size-caption-sm;
+          color: @color-text-base;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  &.@{gridPrefixCls}-line {
+    position: relative;
+    .hairline('left');
+    .hairline('top');
+
+    .@{flexPrefixCls} {
+      position: relative;
+
+      .@{flexPrefixCls}-item {
+        position: relative;
+        .hairline('right');
+        .hairline('bottom');
+      }
+    }
+  }
+
+  &.@{gridPrefixCls}-square {
+    .@{gridPrefixCls}-item {
+      &:before {
+        display: block;
+        content: ' ';
+        padding-bottom: 100%;
+      }
+      .@{gridPrefixCls}-item-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+      .@{gridPrefixCls}-icon {
+        width: 50%!important;
+      }
+    }
+  }
+}
