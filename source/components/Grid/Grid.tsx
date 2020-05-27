@@ -21,7 +21,7 @@ class Grid extends React.Component<GridProps, any> {
     border: true,
     gutter: 0,
     columnNum: 4,
-    square: true,
+    square: false,
     itemStyle: {},
   };
 

@@ -11,7 +11,7 @@ exports[`Renders Grid demo correctly 1`] = `
       基础用法
     </div>
     <div
-      class="fm-grid fm-grid-square fm-grid-line"
+      class="fm-grid fm-grid-line"
       style="padding-left:0"
     >
       <div
@@ -210,7 +210,7 @@ exports[`Renders Grid demo correctly 1`] = `
       自定义-列数
     </div>
     <div
-      class="fm-grid fm-grid-square fm-grid-line"
+      class="fm-grid fm-grid-line"
       style="padding-left:0"
     >
       <div
@@ -397,7 +397,7 @@ exports[`Renders Grid demo correctly 1`] = `
       自定义-内容
     </div>
     <div
-      class="fm-grid fm-grid-square"
+      class="fm-grid"
       style="padding-left:0"
     >
       <div
@@ -410,6 +410,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
+            style="padding:0"
           >
             <div
               style="display:flex;align-items:center;justify-content:center;height:100%"
@@ -417,7 +418,7 @@ exports[`Renders Grid demo correctly 1`] = `
               <img
                 alt=""
                 src="https://img.yzcdn.cn/vant/apple-1.jpg"
-                style="width:60px;height:60px"
+                style="width:100%;height:80px"
               />
             </div>
           </div>
@@ -428,6 +429,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
+            style="padding:0"
           >
             <div
               style="display:flex;align-items:center;justify-content:center;height:100%"
@@ -435,7 +437,7 @@ exports[`Renders Grid demo correctly 1`] = `
               <img
                 alt=""
                 src="https://img.yzcdn.cn/vant/apple-2.jpg"
-                style="width:60px;height:60px"
+                style="width:100%;height:80px"
               />
             </div>
           </div>
@@ -446,6 +448,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
+            style="padding:0"
           >
             <div
               style="display:flex;align-items:center;justify-content:center;height:100%"
@@ -453,7 +456,7 @@ exports[`Renders Grid demo correctly 1`] = `
               <img
                 alt=""
                 src="https://img.yzcdn.cn/vant/apple-3.jpg"
-                style="width:60px;height:60px"
+                style="width:100%;height:80px"
               />
             </div>
           </div>
@@ -665,7 +668,7 @@ exports[`Renders Grid demo correctly 1`] = `
       无边框
     </div>
     <div
-      class="fm-grid fm-grid-square"
+      class="fm-grid"
       style="padding-left:0"
     >
       <div
@@ -1247,7 +1250,7 @@ exports[`Renders Grid demo correctly 1`] = `
       自定义背景
     </div>
     <div
-      class="fm-grid fm-grid-square fm-grid-line"
+      class="fm-grid fm-grid-line"
       style="padding-left:0"
     >
       <div
@@ -1260,7 +1263,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1279,7 +1282,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1298,7 +1301,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1322,7 +1325,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1341,7 +1344,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1360,7 +1363,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1384,7 +1387,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1403,7 +1406,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
@@ -1422,7 +1425,7 @@ exports[`Renders Grid demo correctly 1`] = `
         >
           <div
             class="fm-grid column-num-3 fm-grid-item-content"
-            style="background:pink"
+            style="background:#337EFF"
           >
             <img
               class="fm-grid-icon"
