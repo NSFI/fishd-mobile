@@ -61,6 +61,13 @@ export default [
     key: 'Data Entry',
     children: [
       {
+        key: 'checkbox',
+        type: 'markdown',
+        name: 'Checkbox 复选框',
+        nameEn: 'Checkbox',
+        published: true,
+      },
+      {
         key: 'radio',
         type: 'markdown',
         name: 'Radio 单选框',
