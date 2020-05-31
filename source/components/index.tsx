@@ -5,3 +5,4 @@ export { default as NavBar } from './NavBar/index';
 export { default as NumberKeyboard } from './NumberKeyboard/index';
 export { default as Grid } from './Grid/index';
 export { default as List } from './List/index';
+export { default as Radio } from './Radio/index';

@@ -56,6 +56,20 @@ export default [
     ]
   },
   {
+    name: '数据录入 Data Entry',
+    nameEn: 'DataEntry',
+    key: 'Data Entry',
+    children: [
+      {
+        key: 'radio',
+        type: 'markdown',
+        name: 'Radio 单选框',
+        nameEn: 'Radio',
+        published: true,
+      },
+    ]
+  },
+  {
     name: '数据展示 Data Display',
     nameEn: 'DataDisplay',
     key: 'Data Display',
