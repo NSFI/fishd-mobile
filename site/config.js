@@ -54,5 +54,19 @@ export default [
         published: true,
       }
     ]
+  },
+  {
+    name: '数据展示 Data Display',
+    nameEn: 'DataDisplay',
+    key: 'Data Display',
+    children: [
+      {
+        key: 'list',
+        type: 'markdown',
+        name: 'List 列表',
+        nameEn: 'List',
+        published: true,
+      },
+    ]
   }
 ]
