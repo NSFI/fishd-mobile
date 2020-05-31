@@ -56,8 +56,8 @@ export default [
     ]
   },
   {
-    name: '数据录入 Data Entry',
-    nameEn: 'DataEntry',
+    name: '数据录入',
+    nameEn: 'Data Entry',
     key: 'Data Entry',
     children: [
       {
@@ -77,8 +77,8 @@ export default [
     ]
   },
   {
-    name: '数据展示 Data Display',
-    nameEn: 'DataDisplay',
+    name: '数据展示',
+    nameEn: 'Data Display',
     key: 'Data Display',
     children: [
       {
