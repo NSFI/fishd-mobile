@@ -88,6 +88,13 @@ export default [
         nameEn: 'List',
         published: true,
       },
+      {
+        key: 'noticeBar',
+        type: 'markdown',
+        name: 'NoticeBar 通告栏',
+        nameEn: 'NoticeBar',
+        published: true,
+      },
     ]
   }
 ]
