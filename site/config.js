@@ -31,6 +31,13 @@ export default [
         name: 'NavBar 导航栏',
         nameEn: 'NavBar',
         published: true,
+      },
+      {
+        key: 'tabs',
+        type: 'markdown',
+        name: 'Tabs 标签页',
+        nameEn: 'Tabs',
+        published: true,
       }
     ]
   }
