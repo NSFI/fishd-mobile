@@ -169,3 +169,19 @@
     display: none !important;
   }
 }
+
+.hairlineAll(@borderColor, @radius: 0) {
+  position: absolute;
+  box-sizing: border-box;
+  content: ' ';
+  pointer-events: none;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0 solid @borderColor;
+  border-radius: @radius * 2;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  z-index: 1;
+}

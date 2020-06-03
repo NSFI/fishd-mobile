@@ -11,7 +11,6 @@
     }
     .@{flexPrefixCls}-item {
       margin-left: 0;
-      // background-color: @fill-base;
 
       &.@{gridPrefixCls}-item {
         position: relative;
@@ -24,6 +23,7 @@
       }
 
       .@{gridPrefixCls}-item-content {
+        position: relative;
         box-sizing: border-box;
         display: flex;
         align-items: center;
@@ -36,7 +36,10 @@
         background-color: @fill-base;
 
         &__border {
-          border: 1PX solid @border-color-base;
+          &::after {
+            .hairlineAll(@border-color-base);
+            border-width: 1px;
+          }
         }
         .@{gridPrefixCls}-icon {
           width: 24 * @hd;
@@ -54,16 +57,20 @@
 
   &.@{gridPrefixCls}-line {
     position: relative;
-    .hairline('left');
-    .hairline('top');
+    &::after {
+      .hairlineAll(@border-color-base);
+      border-width: 1px 0 0 1px;
+    }
 
     .@{flexPrefixCls} {
       position: relative;
 
       .@{flexPrefixCls}-item {
         position: relative;
-        .hairline('right');
-        .hairline('bottom');
+        &::after {
+          .hairlineAll(@border-color-base);
+          border-width: 0 1px 1px 0;
+        }
       }
     }
   }
