@@ -8,3 +8,4 @@ export { default as List } from './List/index';
 export { default as Radio } from './Radio/index';
 export { default as Checkbox } from './Checkbox/index';
 export { default as NoticeBar } from './NoticeBar/index';
+export { default as Input } from './Input/index';

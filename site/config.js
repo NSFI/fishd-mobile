@@ -61,6 +61,13 @@ export default [
     key: 'Data Entry',
     children: [
       {
+        key: 'input',
+        type: 'markdown',
+        name: 'Input 输入框',
+        nameEn: 'Input',
+        published: true,
+      },
+      {
         key: 'checkbox',
         type: 'markdown',
         name: 'Checkbox 复选框',
