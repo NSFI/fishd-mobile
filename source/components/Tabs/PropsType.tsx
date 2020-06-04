@@ -1,9 +1,4 @@
-import * as React from 'react';
-
-type tabData = {
-  title: React.ReactNode;
-  key: string;
-};
+import { Models } from './Models';
 
 export interface TabsPropsType {
   tabDirection?: 'horizontal' | 'vertical';
@@ -13,7 +8,7 @@ export interface TabsPropsType {
   tabsUnderlineStyle?: any;
   tabBarActiveTextColor?: string;
   tabBarInactiveTextColor?: string;
-  tabs: tabData[];
+  tabs: Models.TabData[];
   tabBarPosition?: 'bottom' | 'top' | 'left' | 'right';
   count?: number;
   initialPage?: number | string;

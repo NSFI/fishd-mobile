@@ -1,8 +1,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { Tabs as RMCTabs } from 'rmc-tabs';
 import { TabsPropsType } from './PropsType';
-import 'rmc-tabs/assets/index.css';
+import TabBar from './TabBar';
 
 export interface TabsProps extends TabsPropsType {
   prefixCls?: string;
@@ -20,41 +19,33 @@ class Tabs extends React.Component<TabsProps, any> {
     tabsUnderlineStyle: {},
     tabBarActiveTextColor: '',
     tabBarInactiveTextColor: '',
+    count: 4,
   };
 
   render() {
     const {
       prefixCls,
-      tabs,
+      // tabs,
       tabDirection,
       style,
-      tabBarPosition,
+      // tabBarPosition,
       // count,
-      initialPage,
+      // initialPage,
       children,
-      animated,
+      // animated,
       // tabsUnderlineStyle,
       // tabBarActiveTextColor,
       // tabBarInactiveTextColor,
     } = this.props;
 
-    const wrapCls = classnames(prefixCls, {});
+    const wrapCls = classnames(prefixCls, `${prefixCls}-${tabDirection}`, {});
 
     return (
       <div className={wrapCls} style={style}>
-        <RMCTabs
-          tabs={tabs}
-          // prefixCls={prefixCls}
-          // tabsUnderlineStyle={tabsUnderlineStyle || {}}
-          // tabBarActiveTextColor={tabBarActiveTextColor || ''}
-          // tabBarInactiveTextColor={tabBarInactiveTextColor || ''}
-          tabDirection={tabDirection}
-          tabBarPosition={tabBarPosition}
-          initialPage={initialPage}
-          animated={animated}
-        >
-          {children}
-        </RMCTabs>
+        <div className={`${prefixCls}-${tabDirection}-nav-wrap`}>
+          <TabBar {...this.props} />
+        </div>
+        <div className={`${prefixCls}-${tabDirection}-content`}>{children}</div>
       </div>
     );
   }

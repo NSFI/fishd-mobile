@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Tabs demo correctly 1`] = `
+<div>
+  <div>
+    <div>
+      一般用法
+    </div>
+    <div
+      class="fm-tabs fm-tabs-vertical"
+      style="height:200px;margin-top:10px"
+    >
+      <div
+        class="fm-tabs-vertical-nav-wrap"
+      >
+        <div
+          class="fm-tabs-vertical-nav"
+          id="tabs-nav"
+        >
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs1
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs2
+          </div>
+          <div
+            class="fm-tabs-vertical-tab fm-tabs-vertical-tab-active"
+            style="height:33.333333333333336%"
+          >
+            Tabs3
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs4
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs5
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs6
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs7
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs8
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs9
+          </div>
+          <div
+            class="fm-tabs-vertical-active-bar fm-tabs-vertical-active-bar-animated"
+            style="top:66.66666666666667%;height:33.333333333333336%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-vertical-content"
+      >
+        <div>
+          <p>
+            content1
+          </p>
+        </div>
+        <div>
+          <p>
+            content2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
