@@ -1,4 +1,6 @@
-import React from 'react';
-import Input from '../Input.tsx';
-
-describe('<Input />', () => {});
+describe('<NumberKeyboard />', () => {
+  it('trigger event correctly', () => {
+    // todos: write test!
+    expect(true).toBe(true);
+  });
+});

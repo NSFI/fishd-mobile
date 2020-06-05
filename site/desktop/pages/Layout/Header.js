@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, hashHistory } from 'react-router'
 import { Row, Col, Affix } from 'ppfish'
-
+import { algolia } from '../../../config';
 export default class Header extends Component {
   static loadSDK (callback) {
     // algolia：https://community.algolia.com/docsearch/documentation/docsearch-FAQ/customize-configuration-file/
@@ -61,12 +61,7 @@ export default class Header extends Component {
   // 初始化algolia框
   initSearchBox = () => {
     Header.loadSDK(() => {
-      window.docsearch({
-        apiKey: 'ddba94e7e0f7ae0fee63b1645548fc00',
-        indexName: 'ppfish',
-        inputSelector: '#search-box input',
-        debug: false // Set debug to true if you want to inspect the dropdown
-      })
+      window.docsearch(algolia)
     })
   }
 

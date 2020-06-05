@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders ./components/checkbox/demo/basic.md correctly 1`] = `
+exports[`Renders Checkbox demo correctly 1`] = `
 <div>
   <div
     class="am-list"
@@ -164,39 +164,6 @@ exports[`renders ./components/checkbox/demo/basic.md correctly 1`] = `
           class="am-list-ripple"
           style="display:none"
         />
-      </div>
-    </div>
-  </div>
-  <div
-    class="am-flexbox am-flexbox-align-center"
-  >
-    <div
-      class="am-flexbox-item"
-    >
-      <div
-        class="am-checkbox-agree"
-        data-seed="logId"
-      >
-        <label
-          class="am-checkbox-wrapper am-checkbox-agree-label"
-        >
-          <span
-            class="am-checkbox"
-          >
-            <input
-              class="am-checkbox-input"
-              data-seed="logId"
-              type="checkbox"
-            />
-            <span
-              class="am-checkbox-inner"
-            />
-          </span>
-          Agree 
-          <a>
-            agreement
-          </a>
-        </label>
       </div>
     </div>
   </div>

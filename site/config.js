@@ -1,3 +1,10 @@
+export const algolia = {
+  apiKey: 'ddba94e7e0f7ae0fee63b1645548fc00',
+  indexName: 'ppfish',
+  inputSelector: '#search-box input',
+  debug: false // Set debug to true if you want to inspect the dropdown
+}
+
 export default [
   {
     name: '基础组件',
@@ -56,7 +63,7 @@ export default [
     ]
   },
   {
-    name: '数据录入',
+    name: '表单组件',
     nameEn: 'Data Entry',
     key: 'Data Entry',
     children: [

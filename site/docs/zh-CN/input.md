@@ -15,7 +15,7 @@ render(){
  return(
     <div className="components-input-demo-basic">
       <div className="sub-title">基础用法</div>
-      <Input />
+      <Input type="digit" placeholder="请输入金额" labelWidth='90'>价格</Input>
     </div>
   )
 }
