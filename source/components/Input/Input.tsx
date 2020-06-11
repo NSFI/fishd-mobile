@@ -301,7 +301,7 @@ class Input extends React.Component<InputProps, any> {
     const controlCls = `${prefixCls}-control`;
 
     let inputType: any = 'text';
-    let inputMode: any = 'none';
+    let inputMode: any = 'text';
     if (type === 'bankCard' || type === 'phone') {
       inputType = 'tel';
       inputMode = 'numeric';
