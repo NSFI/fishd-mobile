@@ -2,23 +2,24 @@
 
 @inputPrefixCls: fm-input;
 
+.@{inputPrefixCls}-center {
+  align-items: center;
+}
 .@{inputPrefixCls}-item {
-  height: @list-item-height;
-  padding-left: @h-spacing-lg;
-  padding-right: @h-spacing-lg;
+  padding: 10px 16px;
   background-color: #fff;
   display: flex;
-  align-items: center;
 
   .@{inputPrefixCls}-label {
+    flex: 0 0 auto;
     color: @color-text-base;
     font-size: @font-size-base;
     margin-left: 0;
     margin-right: @h-spacing-sm;
+    line-height: 24px;
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
-    padding: 2 * @hd 0;
   }
 
   .@{inputPrefixCls}-control {
@@ -26,20 +27,19 @@
     flex: 1;
 
     input {
+      flex: 1;
+      width: 100%;
       color: @color-text-base;
       font-size: @font-size-base;
       appearance: none;
-      width: 100%;
-      padding: 2 * @hd 0;
       border: 0;
       background-color: transparent;
-      line-height: @line-height-base;
+      line-height: 24px;
       box-sizing: border-box;
       outline: none;
 
       &::placeholder {
         color: @color-text-placeholder;
-        line-height: 1.2;
       }
 
       &:disabled {
@@ -47,6 +47,11 @@
         background-color: #fff;
       }
     }
+  }
+
+  .@{inputPrefixCls}-body {
+    display: flex;
+    align-items: center;
   }
 
   .@{inputPrefixCls}-clear {
@@ -76,12 +81,11 @@
   }
 
   .@{inputPrefixCls}-extra {
-    flex: initial;
+    flex: 0 0 auto;
     min-width: 0;
-    max-height: @icon-size-sm;
     overflow: hidden;
     padding-right: 0;
-    line-height: @line-height-base;
+    line-height: 24px;
     color: @color-text-caption;
     font-size: @font-size-subhead;
     margin-left: @h-spacing-sm;
@@ -90,17 +94,14 @@
   &.@{inputPrefixCls}-error {
     .@{inputPrefixCls}-control {
       input {
-        color: #f50;
+        color: #F24957;
       }
     }
 
-    .@{inputPrefixCls}-error-extra {
-      height: @icon-size-sm;
-      width: @icon-size-sm;
-      margin-left: @v-spacing-sm;
-      .encoded-svg-background('error');
-
-      background-size: @icon-size-sm auto;
+    .@{inputPrefixCls}-errorMessage {
+      margin-top: 5px;
+      font-size: @font-size-base;
+      color: #F24957;
     }
   }
 
@@ -109,16 +110,4 @@
       color: @color-text-disabled;
     }
   }
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }

@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { hot } from 'react-hot-loader';
 import { Router, hashHistory, Route, IndexRoute, Redirect } from 'react-router';
 import initIframe from '@/lib/iframe';
-import { setLang } from '@/lib/lang';
+import '@/lib/lang'
 
 import Layout from './pages/Layout';
 import Home from './pages/Home';

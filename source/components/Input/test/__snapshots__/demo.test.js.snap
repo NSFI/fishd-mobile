@@ -1,36 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Renders Input demo correctly 1`] = `
-<div>
-  <div
-    class="components-input-demo-basic"
-  >
-    <div
-      class="sub-title"
-    >
-      基础用法
-    </div>
-    <div
-      class="fm-input-item"
-    >
-      <div
-        class="fm-input-label"
-        style="width:90px"
-      >
-        价格
-      </div>
-      <div
-        class="fm-input-control"
-      >
-        <input
-          class="h5numInput"
-          inputmode="decimal"
-          placeholder="请输入金额"
-          type="text"
-          value=""
-        />
-      </div>
-    </div>
-  </div>
-</div>
-`;
+exports[`Renders Input demo correctly 1`] = `<div />`;

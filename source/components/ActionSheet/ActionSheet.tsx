@@ -132,6 +132,7 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareA
             </div>
             {cancelButtonText && (
               <div className={`${prefixCls}-bottom`}>
+                <div className={`${prefixCls}-gap`}></div>
                 <TouchFeedback activeClassName={`${prefixCls}-button-list-item-active`}>
                   <div
                     className={classnames(`${prefixCls}-button-list-item`, {
@@ -165,8 +166,8 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareA
             <div className={`${prefixCls}-share`}>
               {multipleLine ? (
                 (options as ShareOption[][]).map((item, index) => (
-                  <div key={index} className={`${prefixCls}-share-list`}>
-                    {item.map((ii, ind) => createList(ii, ind, index))}
+                  <div key={index} className={`${prefixCls}-share-wrap`}>
+                    <div className={`${prefixCls}-share-list`}>{item.map((ii, ind) => createList(ii, ind, index))}</div>
                   </div>
                 ))
               ) : (
@@ -178,6 +179,7 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareA
           </div>
           {cancelButtonText && (
             <div className={`${prefixCls}-bottom`}>
+              <div className={`${prefixCls}-gap`}></div>
               <TouchFeedback activeClassName={`${prefixCls}-share-cancel-button-active`}>
                 <div className={`${prefixCls}-share-cancel-button`} role="button" onClick={() => handleCancel()}>
                   {cancelButtonText}

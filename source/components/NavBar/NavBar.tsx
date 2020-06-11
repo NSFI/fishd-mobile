@@ -23,17 +23,10 @@ export default class NavBar extends React.Component<NavBarProps, any> {
     } = this.props;
 
     return (
-      <div
-        {...restProps}
-        className={classnames(className, prefixCls, `${prefixCls}-${mode}`)}
-      >
-        <div
-          className={`${prefixCls}-left`}
-          role="button"
-          onClick={onLeftClick}
-        >
+      <div {...restProps} className={classnames(className, prefixCls, `${prefixCls}-${mode}`)}>
+        <div className={`${prefixCls}-left`} role="button" onClick={onLeftClick}>
           {icon ? (
-          // tslint:disable-next-line:jsx-no-multiline-js
+            // tslint:disable-next-line:jsx-no-multiline-js
             <span className={`${prefixCls}-left-icon`} aria-hidden="true">
               {icon}
             </span>

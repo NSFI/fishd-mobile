@@ -9,6 +9,20 @@ export default class Home extends Component {
     this.messages = window.$messages
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+    window.scrollTo(0, window.st || 0)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll = () => {
+    const st = document.documentElement.scrollTop || document.body.scrollTop
+    window.st = st
+  }
+
   handleClick = (key) => {
     const lang = window.$lang
     hashHistory.push(`/${lang}/${key}`)

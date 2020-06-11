@@ -3,21 +3,25 @@
 
 .@{ActionSheetPrefixCls} {
   position: fixed;
-  left: @h-spacing-sm;
-  right: @h-spacing-sm;
-  bottom: @h-spacing-sm;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding-bottom: env(safe-area-inset-bottom);
   overflow: hidden;
 
   &-top {
-    border-radius: @radius-md;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     overflow: hidden;
   }
 
   &-bottom {
-    margin-top: @h-spacing-sm;
-    border-radius: @radius-md;
     overflow: hidden;
+  }
+
+  &-gap {
+    height: 8px;
+    background-color: @fill-body;
   }
 
   &-title,
@@ -98,14 +102,17 @@
   }
 
   &-share {
+    &-wrap {
+      position: relative;
+      .hairline('top');
+    }
     &-list {
       position: relative;
       display: flex;
       padding: 15px 0 15px 10px;
-      background-color: @fill-body;
+      background-color: @fill-base;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      .hairline('top');
       &-item {
         flex: none;
         margin: 0 12 * @hd 0 0;

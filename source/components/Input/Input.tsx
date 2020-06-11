@@ -39,12 +39,14 @@ class Input extends React.Component<InputProps, any> {
     disabled: false,
     placeholder: '',
     clear: false,
+    center: false,
     onChange: noop,
     onBlur: noop,
     onFocus: noop,
     extra: '',
     onExtraClick: noop,
     error: false,
+    errorMessage: '',
     onErrorClick: noop,
     labelWidth: 90,
     updatePlaceholder: false,
@@ -60,6 +62,20 @@ class Input extends React.Component<InputProps, any> {
       placeholder: props.placeholder,
       value: normalizeValue(props.value || props.defaultValue),
     };
+  }
+
+  // eslint-disable-next-line react/no-deprecated
+  componentWillReceiveProps(nextProps: InputProps) {
+    if ('placeholder' in nextProps && !nextProps.updatePlaceholder) {
+      this.setState({
+        placeholder: nextProps.placeholder,
+      });
+    }
+    if ('value' in nextProps) {
+      this.setState({
+        value: nextProps.value,
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -257,6 +273,8 @@ class Input extends React.Component<InputProps, any> {
       clear,
       children,
       error,
+      errorMessage,
+      center,
       className,
       extra,
       labelWidth,
@@ -275,6 +293,7 @@ class Input extends React.Component<InputProps, any> {
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-error`]: error,
       [`${prefixCls}-focus`]: focus,
+      [`${prefixCls}-center`]: center,
     });
 
     const labelCls = classnames(`${prefixCls}-label`);
@@ -313,42 +332,44 @@ class Input extends React.Component<InputProps, any> {
     return (
       <div className={wrapCls}>
         {children ? (
-          <div className={labelCls} style={{ width: 90 }}>
+          <div className={labelCls} style={{ width: labelWidth }}>
             {children}
           </div>
         ) : null}
         <div className={controlCls}>
-          <InputItem
-            {...patternProps}
-            {...restProps}
-            {...classNameProps}
-            value={normalizeValue(value)}
-            defaultValue={undefined}
-            ref={(el: any) => (this.inputRef = el)}
-            style={style}
-            type={inputType}
-            inputMode={inputMode}
-            maxLength={maxLength}
-            name={name}
-            placeholder={placeholder}
-            onChange={this.onInputChange}
-            onFocus={this.onInputFocus}
-            onBlur={this.onInputBlur}
-            readOnly={!editable}
-            disabled={disabled}
-          />
-        </div>
-        {clear && editable && !disabled && value && `${value}`.length > 0 ? (
-          <TouchFeedback activeClassName={`${prefixCls}-clear-active`}>
-            <div className={`${prefixCls}-clear`} onClick={this.clearInput} />
-          </TouchFeedback>
-        ) : null}
-        {error ? <div className={`${prefixCls}-error-extra`} onClick={onErrorClick} /> : null}
-        {extra !== '' ? (
-          <div className={`${prefixCls}-extra`} onClick={onExtraClick}>
-            {extra}
+          <div className={`${prefixCls}-body`}>
+            <InputItem
+              {...patternProps}
+              {...restProps}
+              {...classNameProps}
+              value={normalizeValue(value)}
+              defaultValue={undefined}
+              ref={(el: any) => (this.inputRef = el)}
+              style={style}
+              type={inputType}
+              inputMode={inputMode}
+              maxLength={maxLength}
+              name={name}
+              placeholder={placeholder}
+              onChange={this.onInputChange}
+              onFocus={this.onInputFocus}
+              onBlur={this.onInputBlur}
+              readOnly={!editable}
+              disabled={disabled}
+            />
+            {clear && editable && !disabled && value && `${value}`.length > 0 ? (
+              <TouchFeedback activeClassName={`${prefixCls}-clear-active`}>
+                <div className={`${prefixCls}-clear`} onClick={this.clearInput} />
+              </TouchFeedback>
+            ) : null}
+            {extra !== '' ? (
+              <div className={`${prefixCls}-extra`} onClick={onExtraClick}>
+                {extra}
+              </div>
+            ) : null}
           </div>
-        ) : null}
+          {error && errorMessage && <div className={`${prefixCls}-errorMessage`}>手机号格式错误</div>}
+        </div>
       </div>
     );
   }

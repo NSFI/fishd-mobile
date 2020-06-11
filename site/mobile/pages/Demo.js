@@ -8,6 +8,7 @@ import collect from '@/lib/collect'
 import eventbus from '@/lib/eventbus'
 import Home from '@/pages/Home'
 
+import * as rcForm from 'rc-form'
 import * as source from '../../../index'
 
 import './Demo.less'
@@ -21,6 +22,7 @@ class Demo extends Component {
   componentDidMount () {
     this.renderDemoList()
     eventbus.on('reloadDemo', this.reloadDemo)
+    window.scrollTo(0, 0)
   }
 
   componentWillUnmount () {
@@ -30,6 +32,7 @@ class Demo extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps.params.demo !== this.props.params.demo) {
       this.renderDemoList()
+      window.scrollTo(0, 0)
     }
   }
 
@@ -49,8 +52,8 @@ class Demo extends Component {
 
   renderSource = (value, playerId) => {
     new Promise((resolve) => {
-      const args = [ 'context', 'React', 'ReactDOM' ]
-      const argv = [ this, React, ReactDOM ]
+      const args = [ 'context', 'React', 'ReactDOM', 'rcForm' ]
+      const argv = [ this, React, ReactDOM, rcForm]
       source &&
         Object.keys(source).forEach((key) => {
           args.push(key)
@@ -109,7 +112,7 @@ class Demo extends Component {
         <div className='u-demo__list'>
           {this.props.demos.map((item, index) => {
             return (
-              <div id={item.id} key={index}>
+              <div id={item.id} key={item.id}>
                 <div id={`${this.playerId}-${index}`} />
                 {item.lessCode && <style>{item.lessCode}</style>}
                 {item.cssCode && <style>{item.cssCode}</style>}

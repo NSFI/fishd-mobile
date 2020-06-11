@@ -9,6 +9,8 @@ export interface InputPropsType {
   placeholder?: string;
   clear?: boolean;
   maxLength?: number;
+  center?: boolean;
+  errorMessage?: string;
   extra?: React.ReactNode;
   error?: boolean;
   labelWidth?: number | string; // 标签的宽度

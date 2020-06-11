@@ -27,7 +27,7 @@ render(){
 .components-navbar-demo_title {
   padding: 5px 10px;
   border-left: 2px solid #108ee9;
-  margin: 10px 0px;
+  margin: 10px 0;
   color: 10px;
 }
 ```
@@ -60,7 +60,7 @@ render(){
 .components-navbar-demo_title {
   padding: 5px 10px;
   border-left: 2px solid #108ee9;
-  margin: 10px 0px;
+  margin: 10px 0;
   color: 10px;
 }
 ```
@@ -96,7 +96,7 @@ render(){
 .components-navbar-demo_title {
   padding: 5px 10px;
   border-left: 2px solid #108ee9;
-  margin: 10px 0px;
+  margin: 10px 0;
   color: 10px;
 }
 ```
@@ -133,7 +133,7 @@ render(){
 .components-navbar-demo_title {
   padding: 5px 10px;
   border-left: 2px solid #108ee9;
-  margin: 10px 0px;
+  margin: 10px 0;
   color: 10px;
 }
 ```
