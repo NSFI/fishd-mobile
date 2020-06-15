@@ -46,10 +46,10 @@ render(){
         <div className='sub-title'>带间距</div>
         <Carousel className="space-carousel"
           frameOverflow="visible"
-          cellSpacing={10}
-          slideWidth={0.6}
+          cellSpacing={-40}
+          slideWidth={0.8}
           autoplay
-          // infinite
+          infinite
           // beforeChange={(from, to) => this.setState({ slideIndex: to })}
           afterChange={index => this.setState({ slideIndex: index })}
         >
@@ -59,11 +59,9 @@ render(){
               style={{
                 display: 'block',
                 position: 'relative',
-                // top: this.state.slideIndex === index ? -10 : 0,
                 height: this.state.imgHeight,
-                boxShadow: '2px 1px 1px rgba(0, 0, 0, 0.2)',
                 transition: 'all 0.3s ease',
-                transform: `scale(${this.state.slideIndex === index ? 1.2 : 1})`,
+                transform: `scale(${this.state.slideIndex === index ? 1 : 0.85})`,
                 zIndex: `${this.state.slideIndex === index ? 100 : 1}`
               }}
             >

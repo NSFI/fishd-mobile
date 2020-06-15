@@ -36,11 +36,49 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
     dotActiveStyle: {},
   };
 
+  firstClientX: any;
+
+  firstClientY: any;
+
+  clientX: any;
+
+  clientY: any;
+
   constructor(props: CarouselProps) {
     super(props);
     this.state = {
       selectedIndex: this.props.selectedIndex,
     };
+  }
+
+  componentDidMount() {
+    window.addEventListener('touchstart', this.touchStart);
+    window.addEventListener('touchmove', this.preventTouch, { passive: false });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('touchstart', this.touchStart);
+    window.removeEventListener('touchmove', this.preventTouch);
+  }
+
+  touchStart(e: any) {
+    this.firstClientX = e.touches[0].clientX;
+    this.firstClientY = e.touches[0].clientY;
+  }
+
+  // eslint-disable-next-line consistent-return
+  preventTouch(e: any) {
+    const minValue = 5; // threshold
+
+    this.clientX = e.touches[0].clientX - this.firstClientX;
+    this.clientY = e.touches[0].clientY - this.firstClientY;
+
+    // Vertical scrolling does not work when you start swiping horizontally.
+    if (Math.abs(this.clientX) > minValue) {
+      e.preventDefault();
+      e.returnValue = false;
+      return false;
+    }
   }
 
   onChange = (index: number) => {
