@@ -28,8 +28,8 @@ export default [
       {
         key: 'switch',
         type: 'markdown',
-        name: 'switch 滑动开关',
-        nameEn: 'switch',
+        name: 'Switch 滑动开关',
+        nameEn: 'Switch',
         published: true,
       },
       {
@@ -100,6 +100,13 @@ export default [
         type: 'markdown',
         name: 'List 列表',
         nameEn: 'List',
+        published: true,
+      },
+      {
+        key: 'carousel',
+        type: 'markdown',
+        name: 'Carousel 走马灯',
+        nameEn: 'Carousel',
         published: true,
       },
       {

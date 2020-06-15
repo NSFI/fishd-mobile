@@ -53,6 +53,7 @@ class InputDemo extends React.Component {
   render () {
     const { getFieldProps } = this.props.form
     const { mark, phone, hasError } = this.state
+    const { TextArea } = Input;
     return (
       <div className='components-input-demo-basic'>
         <div className='sub-title'>基础用法</div>
@@ -131,6 +132,16 @@ class InputDemo extends React.Component {
         <Input type='phone' value={phone} onChange={this.handlePhoneChange}  error={hasError} clear errorMessage='请输入正确的手机号' placeholder='请输入11位手机号码' labelWidth={80}>
           手机号码
         </Input>
+
+        <div className='sub-title'>多行输入-自适应高度</div>
+        <TextArea placeholder='请输入备注' autoHeight labelWidth={80} clear>
+          标题
+        </TextArea>
+
+        <div className='sub-title'>多行输入-显示字数</div>
+        <TextArea rows={3} count={100} placeholder='请输入备注' autoHeight labelWidth={80} clear>
+          标题
+        </TextArea>
       </div>
     )
   }

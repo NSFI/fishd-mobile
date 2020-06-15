@@ -108,7 +108,9 @@ class Demo extends Component {
           <div className='u-demo__back iconfont icon-arrowleft' onClick={this.goBack}></div>
           <div>{name.charAt(0).toUpperCase() + name.slice(1)}</div>
         </div>
-        <h3 className='u-demo__title'>组件{this.props.params.demo}示例</h3>
+        <h3 className='u-demo__title'>
+          <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
+        </h3>
         <div className='u-demo__list'>
           {this.props.demos.map((item, index) => {
             return (

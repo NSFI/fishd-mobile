@@ -5,6 +5,7 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import TouchFeedback from 'rmc-feedback';
+import TextArea from './TextArea';
 import { InputPropsType } from './PropsType';
 import { formatNumber } from '../../utils/format/number';
 
@@ -18,7 +19,6 @@ export interface InputProps extends InputPropsType, HTMLInputProps {
   prefixCls?: string;
   className?: string;
   autoAdjustHeight?: boolean;
-  onErrorClick?: React.MouseEventHandler<HTMLDivElement>;
   onExtraClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
@@ -32,6 +32,8 @@ function normalizeValue(value?: string) {
 function noop() {}
 
 class Input extends React.Component<InputProps, any> {
+  static TextArea: typeof TextArea;
+
   static defaultProps = {
     prefixCls: 'fm-input',
     type: 'text',
@@ -47,7 +49,6 @@ class Input extends React.Component<InputProps, any> {
     onExtraClick: noop,
     error: false,
     errorMessage: '',
-    onErrorClick: noop,
     labelWidth: 90,
     updatePlaceholder: false,
   };
@@ -280,7 +281,6 @@ class Input extends React.Component<InputProps, any> {
       labelWidth,
       type,
       onExtraClick,
-      onErrorClick,
       autoAdjustHeight,
       ...restProps
     } = props;
@@ -368,7 +368,7 @@ class Input extends React.Component<InputProps, any> {
               </div>
             ) : null}
           </div>
-          {error && errorMessage && <div className={`${prefixCls}-errorMessage`}>手机号格式错误</div>}
+          {error && errorMessage && <div className={`${prefixCls}-errorMessage`}>{errorMessage}</div>}
         </div>
       </div>
     );
