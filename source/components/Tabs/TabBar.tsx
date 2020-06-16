@@ -1,10 +1,13 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { TabsPropsType } from './PropsType';
-import { Models } from './Models';
 
 export interface TabsProps extends TabsPropsType {
   prefixCls?: string;
+  activeTabIndex?: number;
+  changeTab?: (index: number, scroll?: boolean) => void;
+  getScrollDistance?: (index: number) => number;
+  rowCount?: number;
 }
 
 class TabBar extends React.Component<TabsProps, any> {
@@ -19,63 +22,37 @@ class TabBar extends React.Component<TabsProps, any> {
     tabsUnderlineStyle: {},
     tabBarActiveTextColor: '',
     tabBarInactiveTextColor: '',
+    activeTabIndex: 0,
   } as TabsProps;
 
   timer: object | null = null;
 
-  constructor(props: TabsProps) {
-    super(props);
-    const getIndex = () => {
-      if (props.initialPage) {
-        if (typeof props.initialPage === 'number' && props.initialPage < props.tabs.length) {
-          return props.initialPage;
-        }
-        if (typeof props.initialPage === 'string') {
-          const activeTabIndex = props.tabs.findIndex((tab: Models.TabData) => tab.key === props.initialPage);
-          return activeTabIndex || 0;
-        }
-      }
-      return 0;
-    };
-    const getCount = () => {
-      if (props.count && props.count < props.tabs.length) {
-        return props.count;
-      }
-      if (props.tabs.length > 3) {
-        return 3;
-      }
-      return props.tabs.length;
-    };
-    this.state = {
-      activeTabIndex: getIndex(),
-      count: getCount(),
-    };
-  }
+  navScroller: HTMLDivElement | null;
 
   componentDidMount(): void {
-    document.getElementById('tabs-nav')![
-      this.props.tabDirection === 'horizontal' ? 'scrollLeft' : 'scrollTop'
-    ] = this.getScrollDistance(this.state.activeTabIndex);
+    this.navScroller![this.props.tabDirection === 'horizontal' ? 'scrollLeft' : 'scrollTop'] = this.getScrollDistance!(
+      this.props.activeTabIndex || 0,
+    );
+  }
+
+  componentDidUpdate(prevProps: Readonly<TabsProps>): void {
+    if (prevProps.activeTabIndex !== this.props.activeTabIndex) {
+      this.handleScroll(this.props.activeTabIndex!);
+    }
   }
 
   changeTab = (index: number) => {
-    this.setState({
-      activeTabIndex: index,
-    });
-    if (this.props.useOnPan) {
-      // 跟手滚动
-      this.handleScroll(index);
-    }
+    this.props.changeTab!(index, true);
   };
 
+  // tabs-nav的移动距离
   getScrollDistance = (index: number) => {
-    const { prefixCls, tabDirection, tabs } = this.props;
-    const { count } = this.state;
-    const activeTabDom = document.getElementsByClassName(`${prefixCls}-${tabDirection}-tab`)[index];
+    const { tabDirection, tabs, rowCount } = this.props;
+    const activeTabDom = this.navScroller!.children[index];
     const distancePx = window.getComputedStyle(activeTabDom)[tabDirection === 'horizontal' ? 'width' : 'height'];
-    const distance = +distancePx.slice(0, distancePx.length - 2) * (index - Math.floor(count / 2));
+    const distance = +distancePx.slice(0, distancePx.length - 2) * (index - Math.floor(rowCount! / 2));
     const minDistance = 0;
-    const maxDistance = (tabs.length - count) * +distancePx.slice(0, distancePx.length - 2);
+    const maxDistance = (tabs.length - rowCount!) * +distancePx.slice(0, distancePx.length - 2);
     if (distance < minDistance) {
       return minDistance;
     }
@@ -85,13 +62,17 @@ class TabBar extends React.Component<TabsProps, any> {
     return distance;
   };
 
+  // tabs-nav 移动
   handleScroll = (index: number) => {
-    const scroller = document.getElementById('tabs-nav');
+    const scroller = this.navScroller;
     if (scroller) {
       const scrollKey = this.props.tabDirection === 'horizontal' ? 'scrollLeft' : 'scrollTop';
       const oldScrollDistance = scroller[scrollKey];
       const newScrollDistance = this.getScrollDistance(index);
       if (Math.abs(newScrollDistance - oldScrollDistance) < 1) {
+        return;
+      }
+      if (this.timer) {
         return;
       }
       let count = 16; // 移动16下
@@ -120,10 +101,11 @@ class TabBar extends React.Component<TabsProps, any> {
       tabsUnderlineStyle,
       tabBarActiveTextColor,
       tabBarInactiveTextColor,
+      activeTabIndex,
+      rowCount,
     } = this.props;
-    const { activeTabIndex, count } = this.state;
 
-    const tabPer = 100 / count;
+    const tabPer = 100 / rowCount!;
     const getTextColor = (index: number) => {
       if (index === activeTabIndex) {
         if (tabBarActiveTextColor) {
@@ -137,12 +119,17 @@ class TabBar extends React.Component<TabsProps, any> {
       return undefined;
     };
     const defaultUnderLineStyle = {
-      [tabDirection === 'horizontal' ? 'left' : 'top']: `${tabPer * activeTabIndex}%`,
+      [tabDirection === 'horizontal' ? 'left' : 'top']: `${tabPer * activeTabIndex!}%`,
       [tabDirection === 'horizontal' ? 'width' : 'height']: `${tabPer}%`,
     };
 
     return (
-      <div className={`${prefixCls}-${tabDirection}-nav`} id={'tabs-nav'}>
+      <div
+        className={`${prefixCls}-${tabDirection}-nav`}
+        ref={ref => {
+          this.navScroller = ref;
+        }}
+      >
         {tabs.map((tab, index) => (
           <div
             key={`${tab.title}-${index}`}

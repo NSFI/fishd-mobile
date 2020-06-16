@@ -3,18 +3,78 @@
 
 ## 一般用法
 
-:::demo 一般用法。
+:::demo 基础用法
 ```js
 render(){
  return(
     <div>
       <div>
-        一般用法
+        基础用法
+      </div>
+      <Tabs style={{height: "200px", marginTop: "10px"}}
+            tabDirection={"horizontal"}
+            tabs={[{key: "t1", title: "Tabs1"},
+{key: "t2", title: "Tabs2"},
+{key: "t3", title: "Tabs3"}]}>
+      <div key="t1">
+        content1
+      </div>
+      <div key="t2">
+        content2
+      </div>
+<div key="t3">
+        content3
+      </div>
+      </Tabs>
+    </div>
+  )
+}
+```
+
+:::
+
+:::demo 纵向Tabs标签页
+```js
+render(){
+ return(
+    <div>
+      <div>
+        纵向Tabs标签页
+      </div>
+      <Tabs style={{height: "200px", marginTop: "10px"}}
+            tabDirection={"vertical"}
+            tabs={[{key: "t1", title: "Tabs1"},
+{key: "t2", title: "Tabs2"},
+{key: "t3", title: "Tabs3"}]}>
+      <div key="t1">
+        content1
+      </div>
+      <div key="t2">
+        content2
+      </div>
+<div key="t3">
+        content3
+      </div>
+      </Tabs>
+    </div>
+  )
+}
+```
+
+:::
+
+:::demo 跟手滚动。
+```js
+render(){
+ return(
+    <div>
+      <div>
+        跟手滚动
       </div>
       <Tabs style={{height: "200px", marginTop: "10px"}}
             initialPage={2}
             useOnPan={true}
-            tabDirection={"vertical"}
+            tabDirection={"horizontal"}
             tabs={[{key: "t1", title: "Tabs1"},
 {key: "t2", title: "Tabs2"},
 {key: "t3", title: "Tabs3"},
@@ -27,10 +87,50 @@ render(){
 count={3}
       >
       <div key="t1">
-        <p>content1</p>
+        content1
       </div>
       <div key="t2">
-        <p>content2</p>
+        content2
+<br/>
+        content2
+<br/>
+        content2
+<br/>
+        content2
+<br/>
+        content2
+<br/>
+content2
+<br/>
+        content2
+<br/>
+        content2
+<br/>
+        content2
+<br/>
+        content2
+
+      </div>
+<div key="t3">
+        content3
+      </div>
+<div key="t4">
+        content4
+      </div>
+<div key="t5">
+        content5
+      </div>
+<div key="t6">
+        content6
+      </div>
+<div key="t7">
+        content7
+      </div>
+<div key="t8">
+        content8
+      </div>
+<div key="t9">
+        content9
       </div>
       </Tabs>
     </div>

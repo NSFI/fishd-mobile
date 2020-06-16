@@ -12,4 +12,5 @@ export interface TabsPropsType {
   tabBarPosition?: 'bottom' | 'top' | 'left' | 'right';
   count?: number;
   initialPage?: number | string;
+  onChange?: (index: number) => void;
 }

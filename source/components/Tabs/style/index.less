@@ -4,6 +4,7 @@
 @tabsPrefixCls: fm-tabs;
 
 .@{tabsPrefixCls} {
+  overflow: hidden;
   &-horizontal {
     &-nav-wrap {
       height: 44px;
@@ -39,6 +40,23 @@
       left: 0;
       &-animated {
         transition: left 0.5s ease-in-out;
+      }
+    }
+    &-content-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    &-content {
+      white-space: nowrap;
+      &-animated {
+        transition: left 0.5s ease-in-out;
+      }
+      &-tab {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
       }
     }
   }
@@ -79,6 +97,9 @@
       &-animated {
         transition: top 0.5s ease-in-out;
       }
+    }
+    &-content {
+      overflow: auto;
     }
   }
 }
