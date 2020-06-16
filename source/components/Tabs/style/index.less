@@ -1,0 +1,105 @@
+@import '../../../assets/css/mixin.less';
+@import '../../../assets/css/themes/default.less';
+
+@tabsPrefixCls: fm-tabs;
+
+.@{tabsPrefixCls} {
+  overflow: hidden;
+  &-horizontal {
+    &-nav-wrap {
+      height: 44px;
+      overflow: hidden;
+      border-bottom: 1px solid rgb(211, 211, 211);
+    }
+    &-nav {
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      padding-bottom: 10px;
+      box-sizing: content-box;
+      height: 100%;
+    }
+    &-tab {
+      overflow: hidden;
+      white-space: nowrap;
+      text-align: center;
+      padding: 8px 0;
+      display: inline-block;
+      &-active {
+        color: @color-blue;
+      }
+    }
+    &-active-bar {
+      position: absolute;
+      bottom: 10px;
+      background: @color-blue;
+      height: 2px;
+      left: 0;
+      &-animated {
+        transition: left 0.5s ease-in-out;
+      }
+    }
+    &-content-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    &-content {
+      white-space: nowrap;
+      &-animated {
+        transition: left 0.5s ease-in-out;
+      }
+      &-tab {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        vertical-align: top;
+      }
+    }
+  }
+  &-vertical {
+    display: flex;
+    &-nav-wrap {
+      height: 100%;
+      width: 80px;
+      overflow: hidden;
+      border-right: 1px solid rgb(211, 211, 211);
+    }
+    &-nav {
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      padding-right: 10px;
+      box-sizing: content-box;
+      width: 100%;
+      height: 100%;
+    }
+    &-tab {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-active {
+        color: @color-blue;
+      }
+    }
+    &-active-bar {
+      position: absolute;
+      right: 10px;
+      background: @color-blue;
+      width: 2px;
+      height: 100%;
+      top: 0;
+      &-animated {
+        transition: top 0.5s ease-in-out;
+      }
+    }
+    &-content {
+      overflow: auto;
+    }
+  }
+}
