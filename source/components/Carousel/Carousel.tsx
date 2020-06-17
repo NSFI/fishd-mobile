@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import ReactCarousel from 'rmc-nuka-carousel';
+import ReactCarousel from 'fishd-nuka-carousel';
 import { CarouselPropsType } from './PropsType';
 
 type IFrameOverFlow = 'visible' | 'hidden';

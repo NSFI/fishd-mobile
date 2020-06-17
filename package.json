@@ -30,14 +30,14 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
+    "fishd-nuka-carousel": "^1.0.0",
     "rc-animate": "^3.0.0",
     "rc-checkbox": "~2.0.0",
     "rc-form": "^1.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "rmc-dialog": "1.0.1",
-    "rmc-feedback": "^2.0.0",
-    "rmc-nuka-carousel": "^3.0.1"
+    "rmc-feedback": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.4",

@@ -43,14 +43,12 @@ render(){
             </div>
           ))}
         </Carousel>
-        <div className='sub-title'>带间距</div>
+        <div className='sub-title'>异形走马灯</div>
         <Carousel className="space-carousel"
           frameOverflow="visible"
-          cellSpacing={-40}
           slideWidth={0.8}
           autoplay
           infinite
-          // beforeChange={(from, to) => this.setState({ slideIndex: to })}
           afterChange={index => this.setState({ slideIndex: index })}
         >
           {this.state.data.map((val, index) => (
