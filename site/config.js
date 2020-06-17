@@ -58,6 +58,12 @@ export default [
         type: 'markdown',
         name: 'Grid 宫格',
         nameEn: 'Grid',
+      },
+      {
+        key: 'tabs',
+        type: 'markdown',
+        name: 'Tabs 标签页',
+        nameEn: 'Tabs',
         published: true,
       }
     ]
