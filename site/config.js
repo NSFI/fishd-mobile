@@ -65,6 +65,13 @@ export default [
         name: 'Tabs 标签页',
         nameEn: 'Tabs',
         published: true,
+      },
+      {
+        key: 'modal',
+        type: 'markdown',
+        name: 'Modal 对话框',
+        nameEn: 'Modal',
+        published: true,
       }
     ]
   },
