@@ -197,7 +197,9 @@ class Tabs extends React.Component<TabsProps, any> {
           }
         }
         // 执行自定义事件
-        this.props.onChange!(index);
+        if (this.props.onChange) {
+          this.props.onChange(index);
+        }
       },
     );
   };
