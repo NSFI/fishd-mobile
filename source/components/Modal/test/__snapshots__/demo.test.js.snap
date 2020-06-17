@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Input demo correctly 1`] = `<div />`;
+
+exports[`Renders Modal demo correctly 1`] = `<div />`;

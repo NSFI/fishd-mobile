@@ -27,6 +27,7 @@ class ModalExample extends React.Component {
     this.state = {
       modal1: false,
       modal2: false,
+      modal3: false
     };
   }
 
@@ -56,40 +57,49 @@ onWrapTouchStart = (e) => {
   render() {
     return (
       <div className="components-modal-demo-basic">
-            <span>基础</span>
-            <Button onClick={this.showModal('modal1')}>basic</Button>
+            <span className="sub-title">基础</span>
+            <div className="sub-content">
+              <div className="sub-btn" onClick={this.showModal('modal1')} >提示弹窗</div>
+              <div className="sub-btn" onClick={this.showModal('modal2')} >提示弹窗-无内文</div>
+              <div className="sub-btn" onClick={this.showModal('modal3')} >提示弹窗-无标题</div>
+            </div>
             <Modal
                 visible={this.state.modal1}
                 transparent
                 maskClosable={false}
                 onClose={this.onClose('modal1')}
-                title="Title"
-                footer={[{ text: 'Ok', onPress: () => { console.log('ok'); this.onClose('modal1')(); } }]}
+                title="标题"
+                footer={[{ text: '确认', onPress: () => { console.log('ok'); this.onClose('modal1')(); } }]}
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
                 afterClose={() => { alert('afterClose'); }}
                 >
-                <div style={{ height: 100, overflow: 'scroll' }}>
-                    scoll content...<br />
-                    scoll content...<br />
-                    scoll content...<br />
-                    scoll content...<br />
-                    scoll content...<br />
-                    scoll content...<br />
+                <div>
+                形式追随功能，而功能的存在是为了更好地解决问题
                 </div>
             </Modal>
-
-            <Button onClick={this.showModal('modal2')}>popup</Button>
             <Modal
-                popup
                 visible={this.state.modal2}
+                transparent
+                maskClosable={false}
                 onClose={this.onClose('modal2')}
-                animationType="slide-up"
+                title="标题"
+                footer={[{ text: '确认', onPress: () => { console.log('ok'); this.onClose('modal2')(); } }]}
+                wrapProps={{ onTouchStart: this.onWrapTouchStart }}
                 afterClose={() => { alert('afterClose'); }}
                 >
-                <div>股票名称</div>
-                <div>股票代码</div>
-                <div>买入价格</div>
-                <Button type="primary" onClick={this.onClose('modal2')}>买入</Button>
+            </Modal>
+            <Modal
+                visible={this.state.modal3}
+                transparent
+                maskClosable={false}
+                onClose={this.onClose('modal3')}
+                footer={[{ text: '确认', onPress: () => { console.log('ok'); this.onClose('modal3')(); } }]}
+                wrapProps={{ onTouchStart: this.onWrapTouchStart }}
+                afterClose={() => { alert('afterClose'); }}
+                >
+                <div>
+                形式追随功能，而功能的存在是为了更好地解决问题
+                </div>
             </Modal>
        </div>
     );
@@ -106,6 +116,26 @@ ReactDOM.render(<ModalExample />, mountNode);
   height: 210px;
   overflow: auto;
 }
+[class^="components-modal-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+[class^="components-modal-demo-"] .sub-content{
+  overflow: hidden;
+  div{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+[class^="components-modal-demo-"] .sub-btn{
+  background-color: #337EFF;
+  padding: 12px;
+  display: inline-block;
+  float: left;
+  color: #fff;
+  border-radius: 2px;
+}
 ```
 
 :::
@@ -116,9 +146,9 @@ ReactDOM.render(<ModalExample />, mountNode);
 const alert = Modal.alert;
 
 const showAlert = () => {
-  const alertInstance = alert('Delete', 'Are you sure???', [
-    { text: 'Cancel', onPress: () => console.log('cancel'), style: 'default' },
-    { text: 'OK', onPress: () => console.log('ok') },
+  const alertInstance = alert('标题', '形式追随功能，而功能的存在是为了更好地解决问题', [
+    { text: '取消', onPress: () => console.log('cancel'), style: 'default' },
+    { text: '确认', onPress: () => console.log('ok') },
   ]);
   setTimeout(() => {
     // 可以调用close方法以在外部close
@@ -127,59 +157,144 @@ const showAlert = () => {
   }, 500000);
 };
 
-const App = () => (
-  <div className="components-modal-demo-basic">
-    <span>警告弹窗</span>
-    <Button onClick={showAlert}>customized buttons</Button>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+      <div className="components-modal-demo-basic">
+        <span className="sub-title">确认弹窗</span>
+        <div className="sub-content">
+          <div className="sub-btn" onClick={showAlert} >确认弹窗</div>
+          <div className="sub-btn" onClick={() =>
+            alert('标题', '', [
+              { text: '取消', onPress: () => console.log('cancel') },
+              { text: '确认', onPress: () => console.log('ok') },
+            ])
+          } >确认弹窗-无内文</div>
+          <div className="sub-btn" onClick={() =>
+            alert('', '形式追随功能，而功能的存在是为了更好地解决问题', [
+              { text: '取消', onPress: () => console.log('cancel') },
+              { text: '确认', onPress: () => console.log('ok') },
+            ])
+          } >确认弹窗-无标题</div>
+        </div>
 
-    <Button
-      onClick={() =>
-        alert('Delete', 'Are you sure???', [
-          { text: 'Cancel', onPress: () => console.log('cancel') },
-          { text: 'Ok', onPress: () => console.log('ok') },
-        ])
-      }
-    >
-      confirm
-    </Button>
+      </div>
+    )
+  };
+}
 
-    <Button
-      onClick={() =>
-        alert('Much Buttons', <div>More than two buttons</div>, [
-          { text: 'Button1', onPress: () => console.log('第0个按钮被点击了') },
-          { text: 'Button2', onPress: () => console.log('第1个按钮被点击了') },
-          { text: 'Button3', onPress: () => console.log('第2个按钮被点击了') },
-        ])
-      }
-    >
-      more than two buttons
-    </Button>
-
-
-    <Button
-      onClick={() =>
-        alert('Delete', 'Are you sure???', [
-          { text: 'Cancel', onPress: () => console.log('cancel') },
-          {
-            text: 'Ok',
-            onPress: () =>
-              new Promise((resolve) => {
-                // Toast.info('onPress Promise', 1);
-                setTimeout(resolve, 1000);
-              }),
-          },
-        ])
-      }
-    >
-      promise
-    </Button>
-
-  </div>
-);
 
 ReactDOM.render(<App />, mountNode);
 
 
+```
+```less
+.popup-list .fm-list-body {
+  height: 210px;
+  overflow: auto;
+}
+[class^="components-modal-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+[class^="components-modal-demo-"] .sub-content{
+  overflow: hidden;
+  div{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+[class^="components-modal-demo-"] .sub-btn{
+  background-color: #337EFF;
+  padding: 12px;
+  display: inline-block;
+  float: left;
+  color: #fff;
+  border-radius: 2px;
+}
+```
+
+
+:::
+
+:::demo
+
+```js
+const alert = Modal.alert;
+
+const showAlert = () => {
+  const alertInstance = alert('标题', '形式追随功能，而功能的存在是为了更好地解决问题', [
+    { text: '取消', onPress: () => console.log('cancel'), style: 'default' },
+    { text: <span style={{color: '#F24957'}}>删除</span>, onPress: () => console.log('ok') },
+  ]);
+  setTimeout(() => {
+    // 可以调用close方法以在外部close
+    console.log('auto close');
+    alertInstance.close();
+  }, 500000);
+};
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+      <div className="components-modal-demo-basic">
+        <span className="sub-title">警告弹窗</span>
+        <div className="sub-content">
+          <div className="sub-btn" onClick={showAlert} >警告弹窗</div>
+          <div className="sub-btn" onClick={() =>
+            alert('标题', '', [
+              { text: '取消', onPress: () => console.log('cancel') },
+              { text: <span style={{color: '#F24957'}}>删除</span>, onPress: () => console.log('ok') },
+            ])
+          } >警告弹窗-无内文</div>
+          <div className="sub-btn" onClick={() =>
+            alert('', '形式追随功能，而功能的存在是为了更好地解决问题', [
+              { text: '取消', onPress: () => console.log('cancel') },
+              { text: <span style={{color: '#F24957'}}>删除</span>, onPress: () => console.log('ok') },
+            ])
+          } >警告弹窗-无标题</div>
+        </div>
+
+      </div>
+    );
+  }
+}
+ReactDOM.render(<App />, mountNode);
+
+
+```
+```less
+.popup-list .fm-list-body {
+  height: 210px;
+  overflow: auto;
+}
+[class^="components-modal-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+[class^="components-modal-demo-"] .sub-content{
+  overflow: hidden;
+  div{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+[class^="components-modal-demo-"] .sub-btn{
+  background-color: #337EFF;
+  padding: 12px;
+  display: inline-block;
+  float: left;
+  color: #fff;
+  border-radius: 2px;
+}
 ```
 
 
@@ -189,75 +304,148 @@ ReactDOM.render(<App />, mountNode);
 ```js
 const prompt = Modal.prompt;
 
-const App = () => (
-  <div className="components-modal-demo-basic">
-    <span>输入弹窗</span>
-    <Button onClick={() => prompt('input name', 'please input your name',
-      [
-        {
-          text: 'Close',
-          onPress: value => new Promise((resolve) => {
-            // Toast.info('onPress promise resolve', 1);
-            setTimeout(() => {
-              resolve();
-              console.log(`value:${value}`);
-            }, 1000);
-          }),
-        },
-        {
-          text: 'Hold on',
-          onPress: value => new Promise((resolve, reject) => {
-            // Toast.info('onPress promise reject', 1);
-            setTimeout(() => {
-              reject();
-              console.log(`value:${value}`);
-            }, 1000);
-          }),
-        },
-      ], 'default', null, ['input your name'])}
-    >promise</Button>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+      <div className="components-modal-demo-basic">
+        <span className="sub-title">输入弹窗</span>
 
-    <Button onClick={() => prompt('defaultValue', 'defaultValue for prompt', [
-      { text: 'Cancel' },
-      { text: 'Submit', onPress: value => console.log(`输入的内容:${value}`) },
-    ], 'default', '100')}
-    >defaultValue</Button>
+        <div className="sub-content">
+          <div className="sub-btn" onClick={() => prompt('签到场景', '请输入你的信息',
+          [
+            {
+              text: '取消',
+              onPress: value => new Promise((resolve) => {
+                // Toast.info('onPress promise resolve', 1);
+                setTimeout(() => {
+                  resolve();
+                  console.log(`value:${value}`);
+                }, 1000);
+              }),
+            },
+            {
+              text: '确认',
+              onPress: value => new Promise((resolve, reject) => {
+                // Toast.info('onPress promise reject', 1);
+                setTimeout(() => {
+                  reject();
+                  console.log(`value:${value}`);
+                }, 1000);
+              }),
+            },
+          ], 'default', null, ['input your name'])} >输入弹窗-promise</div>
+          <div className="sub-btn"  onClick={() => prompt('默认值场景', '提示文案', [
+            { text: '取消' },
+            { text: '确认', onPress: value => console.log(`输入的内容:${value}`) },
+          ], 'default', '100')} >提示弹窗-默认值</div>
+          <div className="sub-btn"  onClick={() => prompt('安全密码', '密码信息', [
+            { text: '取消' },
+            { text: '确认', onPress: password => console.log(`password: ${password}`) },
+          ], 'secure-text')} >提示弹窗-安全密码</div>
+          <div className="sub-btn"  onClick={() => prompt('登陆', '请输入登陆信息', [
+            { text: '取消' },
+            { text: '确认', onPress: (login, password) => console.log(`login: ${login}, password: ${password}`) },
+          ], 'login-password',
+          null,
+          ['请输入你的名字', '请输入你的密码'],
+          )} >提示弹窗-登陆</div>
+        </div>
+        
 
-    <Button onClick={() => prompt(
-      'Password',
-      'Password Message',
-      password => console.log(`password: ${password}`),
-      'secure-text',
-    )}
-    >secure-text</Button>
-
-    <Button onClick={() => prompt(
-      'Password',
-      'You can custom buttons',
-      [
-        { text: '取消' },
-        { text: '提交', onPress: password => console.log(`密码为:${password}`) },
-      ],
-      'secure-text',
-    )}
-    >custom buttons</Button>
-
-    <Button onClick={() => prompt(
-      'Login',
-      'Please input login information',
-      (login, password) => console.log(`login: ${login}, password: ${password}`),
-      'login-password',
-      null,
-      ['Please input name', 'Please input password'],
-    )}
-    >login-password</Button>
-
-  </div>
-);
+      </div>
+    )
+  }
+}
 
 
 ReactDOM.render(<App />, mountNode);
 
+```
+```less
+.popup-list .fm-list-body {
+  height: 210px;
+  overflow: auto;
+}
+[class^="components-modal-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+[class^="components-modal-demo-"] .sub-content{
+  overflow: hidden;
+  div{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+[class^="components-modal-demo-"] .sub-btn{
+  background-color: #337EFF;
+  padding: 12px;
+  display: inline-block;
+  float: left;
+  color: #fff;
+  border-radius: 2px;
+}
+```
+:::
+
+:::demo
+```js
+const alert = Modal.alert;
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+      <div className="components-modal-demo-basic">
+        <span className="sub-title">自定义内容</span>
+
+        <div className="sub-content">
+          <div className="sub-btn" onClick={() =>
+            alert('自定义内容', <img width="200px" src="https://ysf.nosdn.127.net/ausunifcvhchdzbexjvxcswemqeojqdf"/>, [
+              { text: '取消', onPress: () => console.log('cancel') },
+              { text: '确认', onPress: () => console.log('ok') },
+            ])
+          } >自定义内容</div>
+        </div>
+      </div>
+    )
+  }
+}
+
+
+ReactDOM.render(<App />, mountNode);
+
+```
+```less
+.popup-list .fm-list-body {
+  height: 210px;
+  overflow: auto;
+}
+[class^="components-modal-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+[class^="components-modal-demo-"] .sub-content{
+  overflow: hidden;
+  div{
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+[class^="components-modal-demo-"] .sub-btn{
+  background-color: #337EFF;
+  padding: 12px;
+  display: inline-block;
+  float: left;
+  color: #fff;
+  border-radius: 2px;
+}
 ```
 :::
 
