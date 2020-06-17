@@ -94,7 +94,7 @@ exports[`Renders Carousel demo correctly 1`] = `
     <div
       class="sub-title"
     >
-      带间距
+      异形走马灯
     </div>
     <div
       class="slider fm-carousel space-carousel"
@@ -106,14 +106,14 @@ exports[`Renders Carousel demo correctly 1`] = `
       >
         <ul
           class="slider-list"
-          style="transform:translate3d(0px, 0px, 0);-webkit-transform:translate3d(0px, 0px, 0);-ms-transform:translate(0px, 0px);position:relative;display:block;margin:0px -5px;padding:0;height:0;width:30px;cursor:inherit;box-sizing:border-box;-moz-box-sizing:border-box"
+          style="transform:translate3d(0px, 0px, 0);-webkit-transform:translate3d(0px, 0px, 0);-ms-transform:translate(0px, 0px);position:relative;display:block;margin:0px 0px;padding:0;height:0;width:0;cursor:inherit;box-sizing:border-box;-moz-box-sizing:border-box"
         >
           <li
             class="slider-slide"
-            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:5px;margin-right:5px;margin-top:auto;margin-bottom:auto"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
           >
             <div
-              style="display:block;position:relative;height:176px;box-shadow:2px 1px 1px rgba(0, 0, 0, 0.2);transition:all 0.3s ease;transform:scale(1.2);z-index:100"
+              style="display:block;position:relative;height:176px;transition:all 0.3s ease;transform:scale(1);z-index:100"
             >
               <img
                 alt=""
@@ -124,10 +124,10 @@ exports[`Renders Carousel demo correctly 1`] = `
           </li>
           <li
             class="slider-slide"
-            style="position:absolute;left:10px;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:5px;margin-right:5px;margin-top:auto;margin-bottom:auto"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
           >
             <div
-              style="display:block;position:relative;height:176px;box-shadow:2px 1px 1px rgba(0, 0, 0, 0.2);transition:all 0.3s ease;transform:scale(1);z-index:1"
+              style="display:block;position:relative;height:176px;transition:all 0.3s ease;transform:scale(0.85);z-index:1"
             >
               <img
                 alt=""
@@ -138,10 +138,10 @@ exports[`Renders Carousel demo correctly 1`] = `
           </li>
           <li
             class="slider-slide"
-            style="position:absolute;left:20px;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:5px;margin-right:5px;margin-top:auto;margin-bottom:auto"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
           >
             <div
-              style="display:block;position:relative;height:176px;box-shadow:2px 1px 1px rgba(0, 0, 0, 0.2);transition:all 0.3s ease;transform:scale(1);z-index:1"
+              style="display:block;position:relative;height:176px;transition:all 0.3s ease;transform:scale(0.85);z-index:1"
             >
               <img
                 alt=""

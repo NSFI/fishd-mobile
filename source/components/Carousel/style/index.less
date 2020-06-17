@@ -19,16 +19,17 @@
 
       >span {
         display: block;
-        width: 8 * @hd;
-        height: 8 * @hd;
+        width: 6 * @hd;
+        height: 2 * @hd;
         margin: 0 3 * @hd;
-        border-radius: @radius-circle;
-        background: @color-icon-base;
+        border-radius: 2 * @hd;
+        background: rgba(255, 255, 255, 0.3);
       }
 
       &-active {
         >span {
-          background: #888;
+          background: #fff;
+          width: 12 * @hd;
         }
       }
     }
