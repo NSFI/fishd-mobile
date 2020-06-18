@@ -1,0 +1,174 @@
+@hd: 1px; // 基本单位
+
+// 色彩
+
+// 主题色
+@color-blue: #337eff;
+
+// 辅助色
+@color-red: #f24957;
+@color-green: #26bd71;
+@color-orange: #f2a60f;
+
+// 拓展色
+@color-pink: #f260b6;
+@color-purple: #8875ff;
+@color-sky-blue: #33bbff;
+@color-blue-green: #3dd9af;
+@color-grass-green: #aacc00;
+@color-light-yellow: #ffe23d;
+
+// 中性色
+@color-neutral-1: #222;
+@color-neutral-2: #333;
+@color-neutral-3: #666;
+@color-neutral-4: #999;
+@color-neutral-5: #ccc;
+@color-neutral-6: #e1e3e6;
+@color-neutral-7: #f2f3f5;
+@color-neutral-8: #f7f8fa;
+
+// 文字色
+@color-text-base: #333;                  // 基本
+@color-text-base-inverse: #fff;          // 基本 - 反色
+@color-text-secondary: #a4a9b0;          // 辅助色
+@color-text-placeholder: #bbb;           // 文本框提示
+@color-text-disabled: #bbb;              // 失效
+@color-text-caption: #888;               // 辅助描述
+@color-text-paragraph: #333;             // 段落
+@color-link: @brand-primary;
+
+// 背景色
+@fill-base: #fff;                           // 组件默认背景
+@fill-body: #f5f5f9;                        // 页面背景
+@fill-tap: #ddd;                            // 组件默认背景 - 按下
+@fill-disabled: #ddd;                       // 通用失效背景
+@fill-mask: rgba(0, 0, 0, 0.4);              // 遮罩背景
+@color-icon-base: #ccc;                      // 许多小图标的背景，比如一些小圆点，加减号
+@fill-grey: #f7f7f7;
+
+// 全局/品牌色
+@brand-primary: #108ee9;
+@brand-primary-tap: #0e80d2;
+@brand-success: #6abf47;
+@brand-warning: #ffc600;
+@brand-error: #f4333c;
+@brand-important: #ff5b05;  // 用于小红点
+@brand-wait: #108ee9;
+
+// 边框色
+@border-color-base: #ebedf0;
+
+// 字体大小
+@font-size-icontext: 10 * @hd;
+@font-size-caption-sm: 12 * @hd;
+@font-size-base: 14 * @hd;
+@font-size-subhead: 15 * @hd;
+@font-size-caption: 16 * @hd;
+@font-size-heading: 17 * @hd;
+
+// 圆角
+@radius-xs: 2 * @hd;
+@radius-sm: 3 * @hd;
+@radius-md: 5 * @hd;
+@radius-lg: 7 * @hd;
+@radius-circle: 50%;
+
+// 边框尺寸
+// ---
+@border-width-sm: 1PX;
+@border-width-md: 1PX;
+@border-width-lg: 2 * @hd;
+
+// 间距
+// ---
+// 水平间距
+@h-spacing-sm: 5 * @hd;
+@h-spacing-md: 8 * @hd;
+@h-spacing-lg: 15 * @hd;
+
+// 垂直间距
+@v-spacing-xs: 3 * @hd;
+@v-spacing-sm: 6 * @hd;
+@v-spacing-md: 9 * @hd;
+@v-spacing-lg: 15 * @hd;
+@v-spacing-xl: 21 * @hd;
+
+// 高度
+@line-height-base: 1;           // 单行行高
+@line-height-paragraph: 1.5;    // 多行行高
+
+// 图标尺寸
+// ---
+@icon-size-xxs: 15 * @hd;
+@icon-size-xs: 18 * @hd;
+@icon-size-sm: 21 * @hd;
+@icon-size-md: 22 * @hd;       // 导航条上的图标、grid的图标大小
+@icon-size-lg: 36 * @hd;
+
+
+// 字体尺寸
+// ---
+@font-size-icontext: 10 * @hd;
+@font-size-caption-sm: 12 * @hd;
+@font-size-base: 14 * @hd;
+@font-size-subhead: 15 * @hd;
+@font-size-caption: 16 * @hd;
+@font-size-heading: 17 * @hd;
+
+
+// 组件变量
+@actionsheet-item-height: 50 * @hd;
+@actionsheet-item-font-size: 16 * @hd;
+
+// button
+@button-height: 47 * @hd;
+@button-font-size: 18 * @hd;
+
+@button-height-sm: 30 * @hd;
+@button-font-size-sm: 13 * @hd;
+
+@primary-button-fill: @brand-primary;
+@primary-button-fill-tap: @brand-primary-tap;
+
+@ghost-button-color: @brand-primary;    // 同时应用于背景、文字颜色、边框色
+@ghost-button-fill-tap: fade(@brand-primary, 60%);
+
+@warning-button-fill: #e94f4f;
+@warning-button-fill-tap: #d24747;
+
+@link-button-fill-tap: #ddd;
+@link-button-font-size: 16 * @hd;
+
+// switch
+@switch-fill: #4dd865;
+@switch-fill-android: @brand-primary;
+
+// 透明度
+@opacity-disabled: 0.3;   // switch checkbox radio 等组件禁用的透明度
+
+// list
+@list-title-height: 30 * @hd;
+@list-item-height-sm: 35 * @hd;
+@list-item-height: 44 * @hd;
+
+// notice-bar
+@notice-bar-fill: #fefcec;
+@notice-bar-height: 36 * @hd;
+@notice-bar-color: #f76a24;
+
+// input
+@input-label-width: 17 * @hd;       // InputItem、TextareaItem 文字长度基础值
+@input-font-size: 17 * @hd;
+@input-color-icon: #7f7f83; // input clear icon 的背景色
+@input-color-icon-tap: @brand-primary;
+@input-icon-size: 16 * @hd;
+@input-error-color: #F24957;
+
+@modal-zindex: 999; // modal.alert 应该最大，其他应该较小
+
+
+// modal
+@modal-font-size-heading: 18 * @hd;
+@modal-button-font-size: 18 * @hd; // 按钮字号
+@modal-button-height: 50 * @hd; // 按钮高度

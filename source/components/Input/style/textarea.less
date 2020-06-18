@@ -1,0 +1,138 @@
+@import '../../../assets/css/index';
+
+@textareaPrefixCls: fm-textarea;
+
+.@{textareaPrefixCls}-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  background-color: @fill-base;
+  .hairline('bottom');
+
+  &.@{textareaPrefixCls}-item-single-line {
+    align-items: center;
+
+    .@{textareaPrefixCls}-label {
+      align-self: center;
+    }
+
+    .@{textareaPrefixCls}-control {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      textarea {
+        line-height: @line-height-paragraph * @font-size-heading;
+      }
+    }
+
+    .@{textareaPrefixCls}-clear {
+      margin-top: 0;
+    }
+  }
+}
+
+.@{textareaPrefixCls}-label {
+  align-self: flex-start;
+  color: @color-neutral-1;
+  text-align: left;
+  font-size: @font-size-base;
+  line-height: 24px;
+  margin-left: 0;
+  margin-right: @h-spacing-sm;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.@{textareaPrefixCls}-control {
+  flex: 1;
+  font-size: @input-font-size;
+
+  textarea {
+    color: @color-neutral-1;
+    font-size: @font-size-base;
+    line-height: 24px;
+    appearance: none;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    overflow: visible;
+    display: block;
+    resize: none;
+    word-break: break-word;
+    word-wrap: break-word;
+    outline: none;
+    caret-color: @brand-primary;
+
+    &::placeholder {
+      color: @color-text-placeholder;
+    }
+
+    &:disabled {
+      color: @color-text-disabled;
+      background-color: #fff;
+    }
+  }
+}
+
+.@{textareaPrefixCls}-body {
+  display: flex;
+}
+
+.@{textareaPrefixCls}-clear {
+  flex: 0 0 auto;
+  display: none;
+  width: @input-icon-size;
+  height: @input-icon-size;
+  margin-top: 4 * @hd;
+  border-radius: @radius-circle;
+  overflow: hidden;
+  font-style: normal;
+  color: @fill-base;
+  background-color: @input-color-icon;
+  background-repeat: no-repeat;
+  .encoded-svg-background('input_item_delete');
+
+  background-size: @input-icon-size auto;
+  background-position: 2 * @hd 2 * @hd;
+}
+
+&.@{textareaPrefixCls}-focus {
+  .@{textareaPrefixCls}-clear {
+    display: block;
+  }
+}
+
+.@{textareaPrefixCls}-has-count {
+  padding-bottom: 14px;
+}
+
+.@{textareaPrefixCls}-count {
+  position: absolute;
+  bottom: @v-spacing-sm;
+  right: @h-spacing-sm;
+  color: @color-neutral-3;
+  font-size: @font-size-caption-sm;
+}
+
+&.@{textareaPrefixCls}-error {
+  .@{textareaPrefixCls}-control {
+    textarea {
+      color: @input-error-color;
+    }
+  }
+
+  .@{textareaPrefixCls}-errorMessage {
+    margin-top: 5px;
+    font-size: @font-size-base;
+    color: @input-error-color;
+  }
+}
+
+&.@{textareaPrefixCls}-disabled {
+  .@{textareaPrefixCls}-label {
+    color: @color-text-disabled;
+  }
+}

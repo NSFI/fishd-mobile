@@ -1,0 +1,49 @@
+.u-demo {
+  box-sizing: border-box;
+  min-height: 100vh;
+  background: url(//ysf.nosdn.127.net/zeenqqdsasgclvvedsbvueqvkzpufgoj) top right no-repeat;
+  background-color: #f7f8fa;
+  background-position-y: 40px;
+  background-size: 100px 59px;
+  overflow-x: hidden;
+  &__header {
+    position: sticky;
+    top: 0;
+    height: 40px;
+    margin-bottom: 20px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+    z-index: 100;
+  }
+  &__back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+  &__title {
+    position: relative;
+    padding: 0 10px;
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 40px;
+    margin-top: 48px;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 48px;
+      background: #337EFF;
+      border-radius: 0 100px 100px 0;
+    }
+  }
+  &__list {
+    padding: 0 10px;
+  }
+}

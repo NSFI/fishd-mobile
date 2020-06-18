@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Carousel demo correctly 1`] = `
+<div>
+  <div
+    class="components-carousel-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      基础用法
+    </div>
+    <div
+      class="slider fm-carousel"
+      style="position:relative;display:block;width:100%;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;visibility:hidden"
+    >
+      <div
+        class="slider-frame"
+        style="position:relative;display:block;overflow:hidden;height:auto;margin:0px;padding:0;transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);-ms-transform:translate(0, 0);box-sizing:border-box;-moz-box-sizing:border-box"
+      >
+        <ul
+          class="slider-list"
+          style="transform:translate3d(0px, 0px, 0);-webkit-transform:translate3d(0px, 0px, 0);-ms-transform:translate(0px, 0px);position:relative;display:block;margin:0px 0px;padding:0;height:0;width:0;cursor:inherit;box-sizing:border-box;-moz-box-sizing:border-box"
+        >
+          <li
+            class="slider-slide"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
+          >
+            <div
+              style="display:inline-block;width:100%;height:176px"
+            >
+              <img
+                alt=""
+                src="https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png"
+                style="width:100%;vertical-align:top"
+              />
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
+          >
+            <div
+              style="display:inline-block;width:100%;height:176px"
+            >
+              <img
+                alt=""
+                src="https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png"
+                style="width:100%;vertical-align:top"
+              />
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
+          >
+            <div
+              style="display:inline-block;width:100%;height:176px"
+            >
+              <img
+                alt=""
+                src="https://zos.alipayobjects.com/rmsportal/IJOtIlfsYdTyaDTRVrLI.png"
+                style="width:100%;vertical-align:top"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="slider-decorator-0"
+        style="position:absolute;bottom:0;width:100%;text-align:center"
+      >
+        <div
+          class="fm-carousel-wrap"
+        >
+          <div
+            class="fm-carousel-wrap-dot fm-carousel-wrap-dot-active"
+          >
+            <span />
+          </div>
+          <div
+            class="fm-carousel-wrap-dot"
+          >
+            <span />
+          </div>
+          <div
+            class="fm-carousel-wrap-dot"
+          >
+            <span />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="sub-title"
+    >
+      异形走马灯
+    </div>
+    <div
+      class="slider fm-carousel space-carousel"
+      style="position:relative;display:block;width:100%;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;visibility:hidden"
+    >
+      <div
+        class="slider-frame"
+        style="position:relative;display:block;overflow:visible;height:auto;margin:0px;padding:0;transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);-ms-transform:translate(0, 0);box-sizing:border-box;-moz-box-sizing:border-box"
+      >
+        <ul
+          class="slider-list"
+          style="transform:translate3d(0px, 0px, 0);-webkit-transform:translate3d(0px, 0px, 0);-ms-transform:translate(0px, 0px);position:relative;display:block;margin:0px 0px;padding:0;height:0;width:0;cursor:inherit;box-sizing:border-box;-moz-box-sizing:border-box"
+        >
+          <li
+            class="slider-slide"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
+          >
+            <div
+              style="display:block;position:relative;height:176px;transition:all 0.3s ease;transform:scale(1);z-index:100"
+            >
+              <img
+                alt=""
+                src="https://zos.alipayobjects.com/rmsportal/AiyWuByWklrrUDlFignR.png"
+                style="width:100%;vertical-align:top"
+              />
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
+          >
+            <div
+              style="display:block;position:relative;height:176px;transition:all 0.3s ease;transform:scale(0.85);z-index:1"
+            >
+              <img
+                alt=""
+                src="https://zos.alipayobjects.com/rmsportal/TekJlZRVCjLFexlOCuWn.png"
+                style="width:100%;vertical-align:top"
+              />
+            </div>
+          </li>
+          <li
+            class="slider-slide"
+            style="position:absolute;left:0;top:0;display:inline-block;list-style-type:none;vertical-align:top;width:0;height:auto;box-sizing:border-box;-moz-box-sizing:border-box;margin-left:0;margin-right:0;margin-top:auto;margin-bottom:auto"
+          >
+            <div
+              style="display:block;position:relative;height:176px;transition:all 0.3s ease;transform:scale(0.85);z-index:1"
+            >
+              <img
+                alt=""
+                src="https://zos.alipayobjects.com/rmsportal/IJOtIlfsYdTyaDTRVrLI.png"
+                style="width:100%;vertical-align:top"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="slider-decorator-0"
+        style="position:absolute;bottom:0;width:100%;text-align:center"
+      >
+        <div
+          class="fm-carousel-wrap"
+        >
+          <div
+            class="fm-carousel-wrap-dot fm-carousel-wrap-dot-active"
+          >
+            <span />
+          </div>
+          <div
+            class="fm-carousel-wrap-dot"
+          >
+            <span />
+          </div>
+          <div
+            class="fm-carousel-wrap-dot"
+          >
+            <span />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

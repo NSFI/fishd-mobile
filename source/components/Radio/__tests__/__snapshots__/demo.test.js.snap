@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Radio demo correctly 1`] = `
+<div>
+  <div
+    class="am-list"
+  >
+    <div
+      class="am-list-body"
+    >
+      <div
+        checked=""
+        class="am-list-item am-radio-item am-list-item-middle"
+      >
+        <div
+          class="am-list-line"
+        >
+          <div
+            class="am-list-content"
+          >
+            doctor
+          </div>
+          <div
+            class="am-list-extra"
+          >
+            <label
+              class="am-radio-wrapper"
+            >
+              <span
+                class="am-radio am-radio-checked"
+              >
+                <input
+                  checked=""
+                  class="am-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="am-radio-inner"
+                />
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="am-list-ripple"
+          style="display:none"
+        />
+      </div>
+      <div
+        class="am-list-item am-radio-item am-list-item-middle"
+      >
+        <div
+          class="am-list-line"
+        >
+          <div
+            class="am-list-content"
+          >
+            bachelor
+          </div>
+          <div
+            class="am-list-extra"
+          >
+            <label
+              class="am-radio-wrapper"
+            >
+              <span
+                class="am-radio"
+              >
+                <input
+                  class="am-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="am-radio-inner"
+                />
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="am-list-ripple"
+          style="display:none"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

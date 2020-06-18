@@ -1,0 +1,37 @@
+@import '../../../assets/css/index';
+
+@prefix: fm-carousel;
+
+.@{prefix} {
+  position: relative;
+
+  &-wrap {
+    font-size: 18 * @hd;
+    color: @color-text-base;
+    background: none;
+    text-align: center;
+    zoom: 1;
+    width: 100%;
+
+    &-dot {
+      display: inline-block;
+      zoom: 1;
+
+      >span {
+        display: block;
+        width: 6 * @hd;
+        height: 2 * @hd;
+        margin: 0 3 * @hd;
+        border-radius: 2 * @hd;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      &-active {
+        >span {
+          background: #fff;
+          width: 12 * @hd;
+        }
+      }
+    }
+  }
+}

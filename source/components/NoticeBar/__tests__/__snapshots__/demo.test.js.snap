@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders NoticeBar demo correctly 1`] = `
+<div>
+  <div
+    class="am-notice-bar"
+    role="alert"
+  >
+    <div
+      aria-hidden="true"
+      class="am-notice-bar-icon"
+    >
+      <svg
+        class="fm-icon fm-icon-voice fm-icon-xxs"
+      >
+        <use
+          href="#voice"
+        />
+      </svg>
+    </div>
+    <div
+      class="am-notice-bar-content"
+    >
+      <div
+        class="am-notice-bar-marquee-wrap "
+        role="marquee"
+        style="overflow:hidden"
+      >
+        <div
+          class="am-notice-bar-marquee"
+          style="position:relative;right:0;white-space:nowrap;display:inline-block;padding:0 7.5px"
+        >
+          Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

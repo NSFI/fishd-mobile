@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Button demo correctly 1`] = `
+<div>
+  <div
+    class="components-button-demo-basic"
+  >
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        default
+      </span>
+    </a>
+    <a
+      aria-disabled="true"
+      class="fm-button fm-button-disabled"
+      role="button"
+    >
+      <span>
+        default disabled
+      </span>
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-primary"
+      role="button"
+    >
+      <span>
+        primary
+      </span>
+    </a>
+    <a
+      aria-disabled="true"
+      class="fm-button fm-button-primary fm-button-disabled"
+      role="button"
+    >
+      <span>
+        primary disabled
+      </span>
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-warning"
+      role="button"
+    >
+      <span>
+        warning
+      </span>
+    </a>
+    <a
+      aria-disabled="true"
+      class="fm-button fm-button-warning fm-button-disabled"
+      role="button"
+    >
+      <span>
+        warning disabled
+      </span>
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-loading fm-button-icon"
+      role="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="fm-button-icon fm-icon fm-icon-loading fm-icon-md"
+      >
+        <use
+          href="#loading"
+        />
+      </svg>
+      <span>
+        loading button
+      </span>
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-icon"
+      role="button"
+    >
+      <svg
+        aria-hidden="true"
+        class="fm-button-icon fm-icon fm-icon-fm-start fm-icon-md"
+      >
+        <use
+          href="#fm-start"
+        />
+      </svg>
+      <span>
+        icon button
+      </span>
+    </a>
+  </div>
+  <div
+    class="components-button-demo-size"
+  >
+    <a
+      aria-disabled="false"
+      class="fm-button fm-button-small"
+      role="button"
+    >
+      <span>
+        small
+      </span>
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        middle
+      </span>
+    </a>
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        large
+      </span>
+    </a>
+  </div>
+</div>
+`;

@@ -1,0 +1,316 @@
+//右侧内容区样式
+.markdown {
+  position: relative;
+  .md-paragraph {
+    font-size: 14px;
+    color: #45454d;
+  }
+  .md-listitem {
+    font-size: 14px;
+    color: #45454d;
+    margin: 4px 0 0 20px;
+    list-style-type: circle;
+    padding-left: 4px;
+  }
+  h1.md-heading {
+    color: #0d1a26;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-top: 8px;
+    font-family: Lato, Monospaced Number, Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  h2.md-heading {
+    font-size: 24px;
+    line-height: 45px;
+  }
+
+  h2.md-heading,
+  h3.md-heading,
+  h4.md-heading,
+  h5.md-heading,
+  h6.md-heading {
+    color: #18181a;
+    font-family: Lato, Monospaced Number, Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+    margin: 1.6em 0 0.6em;
+    clear: both;
+  }
+
+  h3.md-heading {
+    font-size: 18px;
+  }
+
+  h4.md-heading {
+    font-size: 14px;
+  }
+
+  h5.md-heading {
+    font-size: 12px;
+  }
+
+  h6.md-heading {
+    font-size: 10px;
+  }
+  img {
+    max-width: 100%;
+  }
+
+  .meta {
+    color: #45454d;
+    .description p {
+      white-space: pre-wrap;
+    }
+    p > img {
+      margin: 34px 0;
+      -webkit-box-shadow: 0 8px 20px rgba(143, 168, 191, 0.35);
+      box-shadow: 0 8px 20px rgba(143, 168, 191, 0.35);
+    }
+
+    hr {
+      height: 1px;
+      border: 0;
+      background: #ebedf0;
+      margin: 72px 0;
+      clear: both;
+    }
+    pre {
+      border-radius: 2px;
+    }
+    pre code {
+      border: none;
+      margin: 0;
+      font-size: 13px;
+      overflow: auto;
+    }
+    p code {
+      border: none;
+      margin: 0;
+      font-size: 13px;
+      overflow: auto;
+    }
+    pre span {
+      border: none;
+      margin: 0;
+      padding: 0;
+      font-size: 13px;
+      overflow: auto;
+      font-family: Menlo, Monaco, Consolas, Courier, monospace;
+    }
+    b,
+    strong {
+      font-weight: 500;
+    }
+    pre span.cm-variable,
+    pre span.cm-tag {
+      color: #f81d22;
+    }
+    pre span.cm-tag.cm-bracket {
+      color: #999;
+    }
+    pre span.cm-keyword,
+    pre span.cm-string {
+      color: #008dff;
+    }
+    pre span.cm-attribute {
+      color: #0b8235;
+    }
+    pre span.cm-def,
+    pre span.cm-property {
+      color: #45454d;
+    }
+    .CodeMirror-line {
+      display: block;
+    }
+  }
+  table.grid {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    color: #5e6d82;
+    font-size: 14px;
+    margin-bottom: 45px;
+
+    strong {
+      font-weight: normal;
+    }
+
+    th {
+      text-align: left;
+      border-top: 1px solid #eaeefb;
+      background-color: #fafafa;
+      white-space: nowrap;
+    }
+
+    td,
+    th {
+      word-break: break-all;
+      border: 1px solid #e6e6eb;
+      padding: 10px;
+      max-width: 250px;
+    }
+
+    th:first-child,
+    td:first-child {
+      padding-left: 10px;
+    }
+  }
+  code {
+    margin: 0 1px;
+    background: #f2f4f5;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    border: 1px solid #eee;
+  }
+  > div > div > div:not(.demo-container) {
+
+    ul > li {
+      margin: 4px 0 0 20px;
+      padding-left: 4px;
+      code {
+        margin: 0 4px;
+      }
+    }
+    ol > li {
+      margin: 4px 0 0 20px;
+      list-style-type: decimal;
+      padding-left: 4px;
+      code {
+        margin: 0 4px;
+      }
+    }
+    .icon-list > li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul > li:empty {
+      display: none;
+    }
+
+    ol > li > p,
+    ul > li > p {
+      margin: 0.2em 0;
+    }
+    img {
+      max-width: calc(100% - 32px);
+    }
+  }
+}
+
+//组件负责人弹窗样式
+.md-owner {
+  display: inline-block;
+  position: relative;
+  font-weight: normal;
+  margin-left: 8px;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  .owner-title {
+    font-size: 12px;
+    cursor: default;
+  }
+  .owner-list {
+    display: none;
+    list-style: none;
+    position: absolute;
+    border-radius: 2px;
+    // width: 130px;
+    // right: -145px;
+    min-width: 100px;
+    width: max-content;
+    left: 25px;
+    bottom: -10px;
+    font-size: 14px;
+    padding: 12px;
+    color: #333;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    &:after {
+      left: -5px;
+      bottom: 12px;
+      width: 9px;
+      height: 9px;
+      background: #fff;
+      box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.05);
+      transform: rotate(45deg);
+      position: absolute;
+      content: '';
+    }
+    .item {
+      height: 12px;
+      line-height: 12px;
+      font-size: 12px;
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+  &:hover {
+    .owner-title {
+      color: #337eff;
+    }
+    .owner-list {
+      display: block;
+    }
+  }
+}
+
+//```js ``` 样式
+code[class*=language-],
+pre[class*=language-] {
+  color: #000;
+  background: #f9fafc;
+  direction: ltr;
+  text-align: left;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+//iframe嵌入样式
+.browser-mockup {
+  border-top: 2em solid rgba(230, 230, 230, 0.7);
+  -webkit-box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.28);
+  position: relative;
+  border-radius: 3px 3px 0 0;
+}
+
+.browser-mockup:before {
+  display: block;
+  position: absolute;
+  content: '';
+  top: -1.25em;
+  left: 1em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background-color: #f44;
+  -webkit-box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+  box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+}
+
+.browser-mockup:after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: -1.6em;
+  left: 5.5em;
+  width: calc(100% - 6em);
+  height: 1.2em;
+  border-radius: 2px;
+  background-color: white;
+}
+
+.browser-mockup iframe {
+  width: 100%;
+  border: 0;
+}
