@@ -24,13 +24,14 @@
     "publish:site": "HUSKY_SKIP_HOOKS=1 tools/githubPage.sh",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest --config jest.config.js --no-cache",
+    "test:update": "jest --updateSnapshot",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "build:dist": "webpack --config webpack.config.js"
   },
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
-    "fishd-nuka-carousel": "^1.0.0",
+    "fishd-nuka-carousel": "^1.0.1",
     "rc-animate": "^3.0.0",
     "rc-checkbox": "~2.0.0",
     "rc-form": "^1.5.0",
