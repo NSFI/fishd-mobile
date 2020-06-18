@@ -15,8 +15,10 @@ git clone https://github.com/NSFI/fishd-mobile-site.git gitDesktop
 # demo地址
 git clone https://github.com/NSFI/fishd-mobile-demo.git gitMobile
 
+rm -rf ./gitDesktop/*
+rm -rf ./gitMobile/*
+
 cd gitDesktop
-rm -rf *
 cp -r ../desktop/* ./
 git add .
 git commit -m "$VERSION publish!"
@@ -25,7 +27,6 @@ git push -u origin master
 cd ..
 
 cd gitMobile
-rm -rf *
 cp -r ../mobile/* ./
 git add .
 git commit -m "$VERSION publish!"
