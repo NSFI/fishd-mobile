@@ -47,7 +47,7 @@ export default class CheckboxItem extends React.Component<
     }
 
     const extraProps: any = {};
-    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled'].forEach(i => {
+    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled', 'checkedColor'].forEach(i => {
       if (i in this.props) {
         extraProps[i] = (this.props as any)[i];
       }

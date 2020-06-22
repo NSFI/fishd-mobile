@@ -7,6 +7,7 @@ export interface CheckboxPropsType {
   defaultChecked?: boolean;
   checked?: boolean;
   disabled?: boolean;
+  checkedColor?: string;
   onChange?: (params: OnChangeParams) => void;
 }
 

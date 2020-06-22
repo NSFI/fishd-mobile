@@ -7,7 +7,7 @@
 
 ## 基本用法
 
-:::demo 简单的 Checkbox
+:::demo 基础样式
 
 ```js
   onChange = (val) => {
@@ -16,28 +16,21 @@
   
   render() {
     const CheckboxItem = Checkbox.CheckboxItem;
-    const AgreeItem = Checkbox.AgreeItem;
-
-    const data = [
-      { value: 0, label: 'Ph.D.' },
-      { value: 1, label: 'Bachelor' },
-      { value: 2, label: 'College diploma' },
-    ];
 
     return (
-      <List renderHeader={() => 'CheckboxItem demo'}>
-        {data.map(i => (
-          <CheckboxItem key={i.value} onChange={() => this.onChange(i.value)}>
-            {i.label}
-          </CheckboxItem>
-        ))}
-        <CheckboxItem key="disabled" data-seed="logId" disabled defaultChecked multipleLine>
-          Undergraduate<List.Item.Brief>Auxiliary text</List.Item.Brief>
+      <List>
+        <CheckboxItem defaultChecked shape="square" >基础样式</CheckboxItem>
+        <CheckboxItem defaultChecked checkedColor="#07c160">自定义颜色</CheckboxItem>
+        <CheckboxItem>选项三</CheckboxItem>
+        <CheckboxItem disabled>禁用状态</CheckboxItem>
+        <CheckboxItem key="disabled" disabled defaultChecked multipleLine>
+          禁用选中状态
         </CheckboxItem>
       </List>);
   }
 ```
 :::
+
 
 
 ## API
@@ -48,6 +41,7 @@
 |----|-----|------|------|
 | defaultChecked  |  初始是否选中  | Boolean   | 无  |
 | checked         |   指定当前是否选中   | Boolean  | 无  |
+| checkedColor    |   选中状态颜色   | Boolean  | 无  |
 | disabled        |    失效状态    | Boolean |  false  |
 | onChange        | change 事件触发的回调函数 | (e: Object): void |   无  |
 

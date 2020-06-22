@@ -4,3 +4,4 @@ declare module 'rc-animate' {
 }
 
 declare module 'rc-checkbox';
+declare module 'fishd-checkbox';
