@@ -80,22 +80,26 @@
 .@{listPrefixCls} {
   & &-item {
     &.@{checkboxWarpPrefixCls}-item {
-      .@{listPrefixCls}-thumb {
-        width: @icon-size-sm;
-        height: @icon-size-sm;
+      .@{listPrefixCls}-line {
+        .hairline-remove('bottom');
 
-        .@{checkboxWarpPrefixCls} {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: @list-item-height;
+        .@{listPrefixCls}-thumb {
+          width: @icon-size-sm;
+          height: @icon-size-sm;
 
-          &-inner {
-            left: @h-spacing-lg;
-            top: 12 * @hd;
+          .@{checkboxWarpPrefixCls} {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: @list-item-height;
+
+            &-inner {
+              left: @h-spacing-lg;
+              top: 12 * @hd;
+            }
           }
         }
       }

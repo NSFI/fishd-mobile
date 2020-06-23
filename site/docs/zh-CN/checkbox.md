@@ -5,29 +5,218 @@
 - 在一组可选项中进行多项选择时；
 - 单独使用可以表示两种状态之间的切换，和 `switch` 类似。区别在于切换 `switch` 会直接触发状态改变，而 `checkbox` 一般用于状态标记，需要和提交操作配合。
 
-## 基本用法
+## 基本样式
 
 :::demo 基础样式
 
 ```js
-  onChange = (e) => {
-    console.log('Checkbox', e);
+  constructor(props){
+    super(props);
+    this.state = {
+      valList: [0, 1, 4],
+    };    
+  }
+
+  onChange = (value, e) => {
+    const { valList } = this.state;
+    const checked = e.target.checked;
+
+    if(checked) {
+      valList.push(value);
+    }else {
+      const idx = valList.indexOf(value);
+      if(idx > -1) {
+        valList.splice(idx, 1);
+      }
+    }
+
+    this.setState({
+      valList,
+    });
   }
   
   render() {
     const CheckboxItem = Checkbox.CheckboxItem;
+    const { valList } = this.state;
+    const data = [
+      {value: 0, label: '选项一'},
+      {value: 1, label: '选项二'},
+      {value: 2, label: '选项三'},
+      {value: 3, label: '选项四'},
+      {value: 4, label: '选项五'},
+    ]
 
     return (
-      <List>
-        <CheckboxItem defaultChecked onChange={this.onChange}>基础样式</CheckboxItem>
-        <CheckboxItem defaultChecked checkedColor="#07c160">自定义颜色</CheckboxItem>
-        <CheckboxItem shape="square" defaultChecked>自定义形状</CheckboxItem>
-        <CheckboxItem disabled>禁用状态</CheckboxItem>
-        <CheckboxItem key="disabled" disabled defaultChecked multipleLine>
-          禁用选中状态
-        </CheckboxItem>
-      </List>);
+      <div className='components-checkbox-demo-basic'>
+        <div className='sub-title'>基础样式</div>
+        <List>
+        {data.map(i => (
+          <CheckboxItem
+            key={i.value}
+            onChange={(e) => this.onChange(i.value, e)}
+            checked={valList.includes(i.value)}
+            disabled={i.value === 3 || i.value === 4}>
+            {i.label}
+          </CheckboxItem>
+        ))}
+        </List>
+      </div>);
   }
+```
+
+```less
+.components-checkbox-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-checkbox-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 自定义颜色
+
+:::demo 自定义颜色
+
+```js
+  constructor(props){
+    super(props);
+    this.state = {
+      valList: [0, 1, 4],
+    };    
+  }
+
+  onChange = (value, e) => {
+    const { valList } = this.state;
+    const checked = e.target.checked;
+
+    if(checked) {
+      valList.push(value);
+    }else {
+      const idx = valList.indexOf(value);
+      if(idx > -1) {
+        valList.splice(idx, 1);
+      }
+    }
+
+    this.setState({
+      valList,
+    });
+  }
+  
+  render() {
+    const CheckboxItem = Checkbox.CheckboxItem;
+    const { valList } = this.state;
+    const data = [
+      {value: 0, label: '选项一'},
+      {value: 1, label: '选项二'},
+      {value: 2, label: '选项三'},
+      {value: 3, label: '选项四'},
+      {value: 4, label: '选项五'},
+    ]
+
+    return (
+      <div className='components-checkbox-demo-basic'>
+        <div className='sub-title'>自定义颜色</div>
+        <List>
+        {data.map(i => (
+          <CheckboxItem
+            key={i.value}
+            onChange={(e) => this.onChange(i.value, e)}
+            checked={valList.includes(i.value)}
+            disabled={i.value === 3 || i.value === 4}
+            checkedColor="#07c160">
+            {i.label}
+          </CheckboxItem>
+        ))}
+        </List>
+      </div>);
+  }
+```
+
+```less
+.components-checkbox-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-checkbox-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 自定义形状
+
+:::demo 自定义形状
+
+```js
+  constructor(props){
+    super(props);
+    this.state = {
+      valList: [0, 1, 4],
+    };    
+  }
+
+  onChange = (value, e) => {
+    const { valList } = this.state;
+    const checked = e.target.checked;
+
+    if(checked) {
+      valList.push(value);
+    }else {
+      const idx = valList.indexOf(value);
+      if(idx > -1) {
+        valList.splice(idx, 1);
+      }
+    }
+
+    this.setState({
+      valList,
+    });
+  }
+  
+  render() {
+    const CheckboxItem = Checkbox.CheckboxItem;
+    const { valList } = this.state;
+    const data = [
+      {value: 0, label: '选项一'},
+      {value: 1, label: '选项二'},
+      {value: 2, label: '选项三'},
+      {value: 3, label: '选项四'},
+      {value: 4, label: '选项五'},
+    ]
+
+    return (
+      <div className='components-checkbox-demo-basic'>
+        <div className='sub-title'>自定义形状</div>
+        <List>
+        {data.map(i => (
+          <CheckboxItem
+            key={i.value}
+            onChange={(e) => this.onChange(i.value, e)}
+            checked={valList.includes(i.value)}
+            disabled={i.value === 3 || i.value === 4}
+            shape="square">
+            {i.label}
+          </CheckboxItem>
+        ))}
+        </List>
+      </div>);
+  }
+```
+
+```less
+.components-checkbox-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-checkbox-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
 ```
 :::
 
