@@ -11,22 +11,120 @@
 
 ## 基础用法
 
-:::demo
+:::demo 基础用法。
 ```js
 render() {
+  const Item = List.Item;
 
 return (
-    <div>
-        <List renderHeader={() => 'Basic Style'} className="my-list">
-            <List.Item extra={'extra content'}>Title</List.Item>
-        </List>
+  <div className='components-noticebar-demo-basic'>
+  <div className='sub-title'>基础用法</div>
+    <List className="my-list" renderHeader={() => 'This is Header'}>
+      <Item extra={'extra'}>one</Item>
+      <Item onClick={() => {console.log('click listItem')}}>two</Item>
+      <Item arrow="up">Long Text Long Text Long Text Long Text Long Text Long Text</Item>
+    </List>
     </div>);
 }
 ```
 
 ```less
-.my-list .spe .am-list-extra {
-  flex-basis: initial;
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 多行
+
+:::demo 多行。
+```js
+render() {
+  const Item = List.Item;
+
+return (
+  <div className='components-noticebar-demo-basic'>
+  <div className='sub-title'>多行</div>
+    <List>
+      <Item multipleLine align="top" wrap>Long Text Long Text Long Text Long Text Long Text Long Text</Item>
+    </List>
+    </div>);
+}
+```
+
+```less
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 缩略图
+
+:::demo 缩略图。
+```js
+render() {
+  const Item = List.Item;
+  const Brief = Item.Brief;
+
+return (
+  <div className='components-noticebar-demo-basic'>
+  <div className='sub-title'>缩略图</div>
+    <List>
+      <Item arrow="horizontal" thumb={<i className="iconfont fm-home" style={{color: '#337eff'}}></i>}>Title</Item>
+    </List>
+    </div>);
+}
+```
+
+```less
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 辅助说明
+
+:::demo 辅助说明。
+```js
+render() {
+  const Item = List.Item;
+  const Brief = Item.Brief;
+
+return (
+  <div className='components-noticebar-demo-basic'>
+  <div className='sub-title'>辅助说明</div>
+    <List>
+      <Item extra={'extra'} arrow="horizontal">Title<Brief>subtitle</Brief></Item>
+    </List>
+    </div>);
+}
+```
+
+```less
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
 }
 ```
 :::
