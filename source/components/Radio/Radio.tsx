@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import RcCheckbox from 'rc-checkbox';
+import FCheckbox from 'fishd-checkbox';
 import * as React from 'react';
 import { RadioPropsType } from './PropsType';
 
@@ -7,20 +7,29 @@ export interface RadioProps extends RadioPropsType {
   prefixCls?: string;
   listPrefixCls?: string;
   className?: string;
+  checkedColor?: string;
+  shape?: string;
   style?: React.CSSProperties;
+  innerStyle?: React.CSSProperties;
 }
 
 export default class Radio extends React.Component<RadioProps, any> {
   static RadioItem: any;
 
   static defaultProps = {
-    prefixCls: 'am-radio',
+    prefixCls: 'fm-radio',
     wrapLabel: true,
   };
 
   render() {
-    const { className, style, ...restProps } = this.props;
+    const { className, style, checkedColor, shape, ...restProps } = this.props;
     const { prefixCls, children } = restProps;
+    const innerStyle: any = this.props.innerStyle || {};
+
+    if(shape === 'square') {
+      innerStyle.borderRadius = '3px';
+    }
+
     const wrapCls = classnames(`${prefixCls}-wrapper`, className);
     if ('class' in restProps) {
       // Todo https://github.com/developit/preact-compat/issues/422
@@ -29,13 +38,13 @@ export default class Radio extends React.Component<RadioProps, any> {
     }
     const mark = (
       <label className={wrapCls} style={style}>
-        <RcCheckbox {...restProps} type="radio" />
+        <FCheckbox {...restProps} type="radio" innerStyle={innerStyle} color={checkedColor} />
         {children}
       </label>
     );
     if (this.props.wrapLabel) {
       return mark;
     }
-    return <RcCheckbox {...this.props} type="radio" />;
+    return <FCheckbox {...this.props} type="radio" innerStyle={innerStyle} color={checkedColor} />;
   }
 }

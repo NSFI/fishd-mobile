@@ -15,8 +15,8 @@ function noop() {}
 
 export default class RadioItem extends React.Component<RadioItemProps, any> {
   static defaultProps = {
-    prefixCls: 'am-radio',
-    listPrefixCls: 'am-list',
+    prefixCls: 'fm-radio',
+    listPrefixCls: 'fm-list',
     radioProps: {},
   };
 
@@ -41,7 +41,7 @@ export default class RadioItem extends React.Component<RadioItemProps, any> {
     }
 
     const extraProps: any = {};
-    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled'].forEach(i => {
+    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled', 'checkedColor', 'shape'].forEach(i => {
       if (i in this.props) {
         extraProps[i] = (this.props as any)[i];
       }
@@ -52,7 +52,7 @@ export default class RadioItem extends React.Component<RadioItemProps, any> {
         {...otherProps}
         prefixCls={listPrefixCls}
         className={wrapCls}
-        extra={<Radio {...radioProps} {...extraProps} />}
+        thumb={<Radio {...radioProps} {...extraProps} />}
       >
         {children}
       </ListItem>

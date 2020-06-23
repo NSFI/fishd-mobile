@@ -1,8 +1,8 @@
 @import '../../../assets/css/mixin.less';
 @import '../../../assets/css/themes/default.less';
 
-@listPrefixCls: am-list;
-@radioWarpPrefixCls: am-radio;
+@listPrefixCls: fm-list;
+@radioWarpPrefixCls: fm-radio;
 @radioInnerPrefixCls: ~"@{radioWarpPrefixCls}-inner";
 
 .@{radioWarpPrefixCls} {
@@ -15,21 +15,23 @@
   &-inner {
     position: absolute;
     right: 0;
-    width: @icon-size-xxs;
-    height: @icon-size-xxs;
-    box-sizing: border-box;
+    width: @icon-size-sm;
+    height: @icon-size-sm;
+    border: 1 * @hd solid #ccc;
+    border-radius: @radius-circle;
     transform: rotate(0deg);
+    box-sizing: border-box;
 
     &:after {
       position: absolute;
       display: none;
-      top: -2.5 * @hd;
-      right: 5 * @hd;
+      top: 1.5 * @hd;
+      right: 6 * @hd;
       z-index: 999;
-      width: 7 * @hd;
-      height: 14 * @hd;
+      width: 5 * @hd;
+      height: 11 * @hd;
       border-style: solid;
-      border-width: 0 1.5 * @hd 1.5 * @hd 0;
+      border-width: 0 1 * @hd 1 * @hd 0;
       content: '\0020';
       transform: rotate(45deg);
     }
@@ -49,18 +51,22 @@
 
   &.@{radioWarpPrefixCls}-checked {
     .@{radioInnerPrefixCls} {
-      border-width: 0;
+      border-color: @brand-primary;
+      background: @brand-primary;
 
       &:after {
         display: block;
-        border-color: @brand-primary;
+        border-color: #fff;
       }
     }
   }
 
   &.@{radioWarpPrefixCls}-disabled {
+    opacity: @opacity-disabled;
     &.@{radioWarpPrefixCls}-checked {
       .@{radioInnerPrefixCls} {
+        border-color: @color-text-caption;
+        background: none;
         &:after {
           display: block;
           border-color: @color-text-disabled;
@@ -74,8 +80,9 @@
   & &-item {
     &.@{radioWarpPrefixCls}-item {
       .@{listPrefixCls}-line {
-        .@{listPrefixCls}-extra {
-          flex: 0;
+        .@{listPrefixCls}-thumb {
+          width: @icon-size-sm;
+          height: @icon-size-sm;
 
           .@{radioWarpPrefixCls} {
             position: absolute;

@@ -24,7 +24,7 @@ export interface BriefProps extends BriefBasePropsType {
 export class Brief extends React.Component<BriefProps, any> {
   render() {
     return (
-      <div className="am-list-brief" style={this.props.style}>
+      <div className="fm-list-brief" style={this.props.style}>
         {this.props.children}
       </div>
     );
@@ -33,7 +33,7 @@ export class Brief extends React.Component<BriefProps, any> {
 
 class ListItem extends React.Component<ListItemProps, any> {
   static defaultProps: Partial<ListItemProps> = {
-    prefixCls: 'am-list',
+    prefixCls: 'fm-list',
     align: 'middle',
     error: false,
     multipleLine: false,

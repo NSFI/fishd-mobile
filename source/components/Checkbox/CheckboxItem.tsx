@@ -22,8 +22,8 @@ export default class CheckboxItem extends React.Component<
   any
 > {
   static defaultProps = {
-    prefixCls: 'am-checkbox',
-    listPrefixCls: 'am-list',
+    prefixCls: 'fm-checkbox',
+    listPrefixCls: 'fm-list',
     checkboxProps: {},
   };
 

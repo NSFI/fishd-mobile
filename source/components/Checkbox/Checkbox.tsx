@@ -27,7 +27,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
     const { className, style, checkedColor, shape, ...restProps } = this.props;
     const { prefixCls, children } = restProps;
     const innerStyle: any = this.props.innerStyle || {};
-    
+
     if(shape === 'square') {
       innerStyle.borderRadius = '3px';
     }
@@ -47,6 +47,6 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
     if (this.props.wrapLabel) {
       return mark;
     }
-    return <FCheckbox {...this.props} innerStyle={innerStyle}/>;
+    return <FCheckbox {...this.props} innerStyle={innerStyle} color={checkedColor}/>;
   }
 }

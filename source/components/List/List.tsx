@@ -15,7 +15,7 @@ export default class List extends React.Component<ListProps, any> {
   static Item = Item;
 
   static defaultProps: Partial<ListProps> = {
-    prefixCls: 'am-list',
+    prefixCls: 'fm-list',
   };
 
   render() {
