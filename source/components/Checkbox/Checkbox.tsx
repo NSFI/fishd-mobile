@@ -10,6 +10,7 @@ export interface CheckboxProps extends CheckboxPropsType {
   name?: string;
   wrapLabel?: boolean;
   checkedColor?: string;
+  shape?: string;
   style?: React.CSSProperties;
   innerStyle?: React.CSSProperties;
 }
@@ -23,10 +24,13 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
   };
 
   render() {
-    const { className, style, checkedColor, ...restProps } = this.props;
+    const { className, style, checkedColor, shape, ...restProps } = this.props;
     const { prefixCls, children } = restProps;
-
     const innerStyle: any = this.props.innerStyle || {};
+    
+    if(shape === 'square') {
+      innerStyle.borderRadius = '3px';
+    }
 
     const wrapCls = classnames(`${prefixCls}-wrapper`, className);
     // Todo: wait for https://github.com/developit/preact-compat/issues/422, then we can remove class below
