@@ -17,7 +17,7 @@ export default class AgreeItem extends React.Component<
   any
 > {
   static defaultProps = {
-    prefixCls: 'am-checkbox',
+    prefixCls: 'fm-checkbox',
   };
 
   render() {
