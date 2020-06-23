@@ -5,52 +5,9 @@
 - 用于在多个备选项中选中单个状态。
 - 和 Select 的区别是，Radio 所有选项默认可见，方便用户在比较中选择，因此选项不宜过多。
 
-## 基本用法
+## 基础样式
 
-:::demo 最简单的用法。
-
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 0,
-    };    
-  }
-
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
-
-  render() {
-    const { value } = this.state;
-    const RadioItem = Radio.RadioItem;
-
-    const data = [
-      { value: 0, label: 'doctor' },
-      { value: 1, label: 'bachelor' },
-    ];
-
-    return (
-      <List>
-        {data.map(i => (
-          <Radio.RadioItem shape="square" key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
-            {i.label}
-          </Radio.RadioItem>
-        ))}
-      </List>);
-  }
-
-```
-
-:::
-
-
-
-## 自定义颜色
-
-:::demo 最简单的用法。
+:::demo 基础样式。
 
 ```js
   constructor(props){
@@ -76,17 +33,257 @@
     ];
 
     return (
-      <List>
-        {data.map(i => (
-          <Radio.RadioItem checkedColor="#07c160" key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
-            {i.label}
-          </Radio.RadioItem>
-        ))}
-      </List>);
+      <div className='components-radio-demo-basic'>
+       <div className='sub-title'>基础样式</div>
+        <List>
+          {data.map(i => (
+            <Radio.RadioItem key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
+              {i.label}
+            </Radio.RadioItem>
+          ))}
+        </List>
+      </div>);
   }
-
 ```
 
+```less
+.components-radio-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-radio-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+
+## 水平排列
+
+:::demo 水平排列。
+
+```js
+  constructor(props){
+    super(props);
+    this.state = {
+      value: 0,
+    };    
+  }
+
+  onChange = (value) => {
+    this.setState({
+      value,
+    });
+  };
+
+  render() {
+    const { value } = this.state;
+    const RadioItem = Radio.RadioItem;
+
+    const data = [
+      { value: 0, label: '选项一' },
+      { value: 1, label: '选项二' },
+    ];
+
+    return (
+      <div className='components-radio-demo-basic'>
+       <div className='sub-title'>水平排列</div>
+        <List className="m-radio-list">
+          {data.map(i => (
+            <Radio.RadioItem key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
+              {i.label}
+            </Radio.RadioItem>
+          ))}
+        </List>
+      </div>);
+  }
+```
+
+```less
+.components-radio-demo-basic {
+  padding-bottom: 20px;
+}
+.m-radio-list {
+  .fm-list-body {
+    display: flex;
+  }
+}
+[class^="components-radio-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 禁用状态
+
+:::demo 禁用状态。
+
+```js
+  constructor(props){
+    super(props);
+    this.state = {
+      value: 0,
+    };    
+  }
+
+  onChange = (value) => {
+    this.setState({
+      value,
+    });
+  };
+
+  render() {
+    const { value } = this.state;
+    const RadioItem = Radio.RadioItem;
+
+    const data = [
+      { value: 0, label: '选项一' },
+      { value: 1, label: '选项二' },
+    ];
+
+    return (
+      <div className='components-radio-demo-basic'>
+       <div className='sub-title'>禁用状态</div>
+        <List>
+          {data.map(i => (
+            <Radio.RadioItem key={i.value} disabled checked={value === i.value} onChange={() => this.onChange(i.value)}>
+              {i.label}
+            </Radio.RadioItem>
+          ))}
+        </List>
+      </div>);
+  }
+```
+
+```less
+.components-radio-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-radio-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 自定义颜色
+
+:::demo 自定义颜色。
+
+```js
+  constructor(props){
+    super(props);
+    this.state = {
+      value: 0,
+    };    
+  }
+
+  onChange = (value) => {
+    this.setState({
+      value,
+    });
+  };
+
+  render() {
+    const { value } = this.state;
+    const RadioItem = Radio.RadioItem;
+
+    const data = [
+      { value: 0, label: '选项一' },
+      { value: 1, label: '选项二' },
+    ];
+
+    return (
+      <div className='components-radio-demo-basic'>
+        <div className='sub-title'>自定义颜色</div>
+        <List>
+          {data.map(i => (
+            <Radio.RadioItem checkedColor="#07c160" key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
+              {i.label}
+            </Radio.RadioItem>
+          ))}
+        </List>
+      </div>);
+  }
+```
+
+```less
+.components-radio-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-radio-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+```less
+.components-radio-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-radio-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 自定义形状
+
+:::demo 自定义形状。
+
+```js
+  constructor(props){
+    super(props);
+    this.state = {
+      value: 0,
+    };    
+  }
+
+  onChange = (value) => {
+    this.setState({
+      value,
+    });
+  };
+
+  render() {
+    const { value } = this.state;
+    const RadioItem = Radio.RadioItem;
+
+    const data = [
+      { value: 0, label: '选项一' },
+      { value: 1, label: '选项二' },
+    ];
+
+    return (
+      <div className='components-radio-demo-basic'>
+       <div className='sub-title'>自定义形状</div>
+        <List>
+          {data.map(i => (
+            <Radio.RadioItem key={i.value} shape="square" checked={value === i.value} onChange={() => this.onChange(i.value)}>
+              {i.label}
+            </Radio.RadioItem>
+          ))}
+        </List>
+      </div>);
+  }
+```
+
+```less
+.components-radio-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-radio-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
 :::
 
 
