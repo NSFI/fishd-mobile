@@ -5,20 +5,139 @@
 ## 何时使用
 - 需要引起用户关注时使用，重要级别低于 Modal ，高于 Toast。
 
-## 基础用法
+## 基本用法
 
 :::demo
 ```js
 
 render() {
   return (
-    <NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
-      Notice: The arrival time of incomes and transfers of Yu &#39;E Bao will be delayed during National Day.
-    </NoticeBar>
-  );
+    <div className='components-noticebar-demo-basic'>
+      <div className='sub-title'>基本用法</div>
+      <NoticeBar style={{marginBottom: 10}}>真正的创新是没有原型可以参考的</NoticeBar>
+      <NoticeBar icon={null}>真正的创新是没有原型可以参考的</NoticeBar>
+    </div>);
 }
 ```
 
+```less
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+
+## 支持关闭
+
+:::demo
+```js
+
+render() {
+  return (
+    <div className='components-noticebar-demo-basic'>
+      <div className='sub-title'>支持关闭</div>
+      <NoticeBar mode="closable" style={{marginBottom: 10}}>真正的创新是没有原型可以参考的</NoticeBar>
+      
+      <NoticeBar
+        mode="closable"
+        action={<span style={{ color: '#a1a1a1' }}
+        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}>不再提醒</span>}>
+        真正的创新是没有原型可以参考的
+      </NoticeBar>
+    </div>);
+}
+```
+
+```less
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 滚动播放
+
+:::demo
+```js
+
+render() {
+  return (
+    <div className='components-noticebar-demo-basic'>
+      <div className='sub-title'>滚动播放</div>
+      <NoticeBar
+        style={{marginBottom: 10}}
+        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}>
+        不同盯着空白页太久，勇敢的跨出第一步，其他的自然而然就发生
+      </NoticeBar>
+
+      <NoticeBar
+        icon={null}
+        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}>
+        不同盯着空白页太久，勇敢的跨出第一步，其他的自然而然就发生
+      </NoticeBar>
+    </div>);
+}
+```
+
+```less
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
+:::
+
+## 查看更多
+
+:::demo
+```js
+
+render() {
+  return (
+    <div className='components-noticebar-demo-basic'>
+      <div className='sub-title'>查看更多</div>
+      <NoticeBar
+        style={{marginBottom: 10}}
+        mode="link"
+        onClick={() => console.log("查看更多")}>
+        真正的创新是没有原型可以参考的
+      </NoticeBar>
+
+      <NoticeBar
+        mode="link"
+        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}
+        action={<span>查看更多</span>} onClick={() => console.log("查看更多")}>
+        真正的创新是没有原型可以参考的
+      </NoticeBar>
+    </div>);
+}
+```
+
+```less
+.components-noticebar-demo-basic {
+  padding-bottom: 20px;
+}
+[class^="components-noticebar-demo-"] .sub-title {
+  padding: 20px 0 10px 0;
+  color: #ccc;
+  font-size: 12px;
+}
+```
 :::
 
 ## API

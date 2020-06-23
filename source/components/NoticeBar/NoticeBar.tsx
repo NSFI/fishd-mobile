@@ -1,6 +1,5 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import Icon from '../Icon/index';
 import Marquee, { MarqueeProps } from './Marquee';
 import { NoticeBarPropsType } from './PropsType';
 
@@ -13,9 +12,9 @@ export interface NoticeWebProps extends NoticeBarPropsType {
 
 export default class NoticeBar extends React.Component<NoticeWebProps, any> {
   static defaultProps = {
-    prefixCls: 'am-notice-bar',
+    prefixCls: 'fm-notice-bar',
     mode: '',
-    icon: <Icon type="voice" size="xxs" />,
+    icon: <i className="iconfont fm-laba" style={{fontSize: 12}}></i>,
     onClick() {},
   };
 
@@ -61,7 +60,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
           role="button"
           aria-label="close"
         >
-          {action ? action : <Icon type="cross" size="md" />}
+          {action ? action : <i className="iconfont fm-close" ></i>}
         </div>
       );
     } else {
@@ -72,7 +71,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
             role="button"
             aria-label="go to detail"
           >
-            {action ? action : <Icon type="right" size="md" />}
+            {action ? action :  <i className="iconfont fm-moreinfo-copy" ></i>}
           </div>
         );
       }
