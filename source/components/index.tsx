@@ -12,3 +12,4 @@ export { default as Input } from './Input/index';
 export { default as Carousel } from './Carousel/index';
 export { default as Tabs } from './Tabs/index';
 export { default as Modal } from './Modal/index';
+export { default as Toast } from './Toast/index';

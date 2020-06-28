@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Toast demo correctly 1`] = `
+<div>
+  <div
+    class="components-toast-demo"
+  >
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        文 本
+      </span>
+    </a>
+    <br />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        loading
+      </span>
+    </a>
+    <br />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        success
+      </span>
+    </a>
+    <br />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        error
+      </span>
+    </a>
+    <br />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        network failure
+      </span>
+    </a>
+    <br />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        自定义
+      </span>
+    </a>
+  </div>
+</div>
+`;

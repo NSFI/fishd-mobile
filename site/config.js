@@ -38,6 +38,13 @@ export default [
         name: 'NumberKeyboard 数字键盘',
         nameEn: 'NumberKeyboard',
         published: true,
+      },
+      {
+        key: 'toast',
+        type: 'markdown',
+        name: 'Toast 轻提示',
+        nameEn: 'Toast',
+        published: true,
       }
     ]
   },
