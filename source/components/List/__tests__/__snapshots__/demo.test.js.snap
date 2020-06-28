@@ -2,37 +2,210 @@
 
 exports[`Renders List demo correctly 1`] = `
 <div>
-  <div>
+  <div
+    class="components-noticebar-demo-basic"
+  >
     <div
-      class="am-list my-list"
+      class="sub-title"
+    >
+      基础用法
+    </div>
+    <div
+      class="fm-list my-list"
     >
       <div
-        class="am-list-header"
+        class="fm-list-header"
       >
-        Basic Style
+        This is Header
       </div>
       <div
-        class="am-list-body"
+        class="fm-list-body"
       >
         <div
-          class="am-list-item am-list-item-middle"
+          class="fm-list-item fm-list-item-middle"
         >
           <div
-            class="am-list-line"
+            class="fm-list-line"
           >
             <div
-              class="am-list-content"
+              class="fm-list-content"
+            >
+              one
+            </div>
+            <div
+              class="fm-list-extra"
+            >
+              extra
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              two
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              Long Text Long Text Long Text Long Text Long Text Long Text
+            </div>
+            <div
+              aria-hidden="true"
+              class="fm-list-arrow fm-list-arrow-vertical fm-list-arrow-vertical-up"
+            />
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-noticebar-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      多行
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          class="fm-list-item fm-list-item-top"
+        >
+          <div
+            class="fm-list-line fm-list-line-multiple fm-list-line-wrap"
+          >
+            <div
+              class="fm-list-content"
+            >
+              Long Text Long Text Long Text Long Text Long Text Long Text
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-noticebar-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      缩略图
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <i
+              class="iconfont fm-home"
+              style="color:#337eff"
+            />
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
             >
               Title
             </div>
             <div
-              class="am-list-extra"
-            >
-              extra content
-            </div>
+              aria-hidden="true"
+              class="fm-list-arrow fm-list-arrow-horizontal"
+            />
           </div>
           <div
-            class="am-list-ripple"
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-noticebar-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      辅助说明
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              Title
+              <div
+                class="fm-list-brief"
+              >
+                subtitle
+              </div>
+            </div>
+            <div
+              class="fm-list-extra"
+            >
+              extra
+            </div>
+            <div
+              aria-hidden="true"
+              class="fm-list-arrow fm-list-arrow-horizontal"
+            />
+          </div>
+          <div
+            class="fm-list-ripple"
             style="display:none"
           />
         </div>

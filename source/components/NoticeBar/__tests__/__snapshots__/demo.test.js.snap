@@ -3,35 +3,303 @@
 exports[`Renders NoticeBar demo correctly 1`] = `
 <div>
   <div
-    class="am-notice-bar"
-    role="alert"
+    class="components-noticebar-demo-basic"
   >
     <div
-      aria-hidden="true"
-      class="am-notice-bar-icon"
+      class="sub-title"
     >
-      <svg
-        class="fm-icon fm-icon-voice fm-icon-xxs"
-      >
-        <use
-          href="#voice"
-        />
-      </svg>
+      基本用法
     </div>
     <div
-      class="am-notice-bar-content"
+      class="fm-notice-bar"
+      role="alert"
+      style="margin-bottom:10px"
     >
       <div
-        class="am-notice-bar-marquee-wrap "
-        role="marquee"
-        style="overflow:hidden"
+        aria-hidden="true"
+        class="fm-notice-bar-icon"
+      >
+        <i
+          class="iconfont fm-laba"
+          style="font-size:12px"
+        />
+      </div>
+      <div
+        class="fm-notice-bar-content"
       >
         <div
-          class="am-notice-bar-marquee"
-          style="position:relative;right:0;white-space:nowrap;display:inline-block;padding:0 7.5px"
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
         >
-          Notice: The arrival time of incomes and transfers of Yu 'E Bao will be delayed during National Day.
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block"
+          >
+            真正的创新是没有原型可以参考的
+          </div>
         </div>
+      </div>
+    </div>
+    <div
+      class="fm-notice-bar"
+      role="alert"
+    >
+      <div
+        class="fm-notice-bar-content"
+      >
+        <div
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
+        >
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block"
+          >
+            真正的创新是没有原型可以参考的
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-noticebar-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      支持关闭
+    </div>
+    <div
+      class="fm-notice-bar"
+      role="alert"
+      style="margin-bottom:10px"
+    >
+      <div
+        aria-hidden="true"
+        class="fm-notice-bar-icon"
+      >
+        <i
+          class="iconfont fm-laba"
+          style="font-size:12px"
+        />
+      </div>
+      <div
+        class="fm-notice-bar-content"
+      >
+        <div
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
+        >
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block"
+          >
+            真正的创新是没有原型可以参考的
+          </div>
+        </div>
+      </div>
+      <div
+        aria-label="close"
+        class="fm-notice-bar-operation"
+        role="button"
+      >
+        <i
+          class="iconfont fm-close"
+        />
+      </div>
+    </div>
+    <div
+      class="fm-notice-bar"
+      role="alert"
+    >
+      <div
+        aria-hidden="true"
+        class="fm-notice-bar-icon"
+      >
+        <i
+          class="iconfont fm-laba"
+          style="font-size:12px"
+        />
+      </div>
+      <div
+        class="fm-notice-bar-content"
+      >
+        <div
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
+        >
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block"
+          >
+            真正的创新是没有原型可以参考的
+          </div>
+        </div>
+      </div>
+      <div
+        aria-label="close"
+        class="fm-notice-bar-operation"
+        role="button"
+      >
+        <span
+          marqueeprops="[object Object]"
+          style="color:#a1a1a1"
+        >
+          不再提醒
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-noticebar-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      滚动播放
+    </div>
+    <div
+      class="fm-notice-bar"
+      role="alert"
+      style="margin-bottom:10px"
+    >
+      <div
+        aria-hidden="true"
+        class="fm-notice-bar-icon"
+      >
+        <i
+          class="iconfont fm-laba"
+          style="font-size:12px"
+        />
+      </div>
+      <div
+        class="fm-notice-bar-content"
+      >
+        <div
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
+        >
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block;padding:0 7.5px"
+          >
+            不同盯着空白页太久，勇敢的跨出第一步，其他的自然而然就发生
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fm-notice-bar"
+      role="alert"
+    >
+      <div
+        class="fm-notice-bar-content"
+      >
+        <div
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
+        >
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block;padding:0 7.5px"
+          >
+            不同盯着空白页太久，勇敢的跨出第一步，其他的自然而然就发生
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-noticebar-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      查看更多
+    </div>
+    <div
+      class="fm-notice-bar"
+      role="alert"
+      style="margin-bottom:10px"
+    >
+      <div
+        aria-hidden="true"
+        class="fm-notice-bar-icon"
+      >
+        <i
+          class="iconfont fm-laba"
+          style="font-size:12px"
+        />
+      </div>
+      <div
+        class="fm-notice-bar-content"
+      >
+        <div
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
+        >
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block"
+          >
+            真正的创新是没有原型可以参考的
+          </div>
+        </div>
+      </div>
+      <div
+        aria-label="go to detail"
+        class="fm-notice-bar-operation"
+        role="button"
+      >
+        <i
+          class="iconfont fm-moreinfo-copy"
+        />
+      </div>
+    </div>
+    <div
+      class="fm-notice-bar"
+      role="alert"
+    >
+      <div
+        aria-hidden="true"
+        class="fm-notice-bar-icon"
+      >
+        <i
+          class="iconfont fm-laba"
+          style="font-size:12px"
+        />
+      </div>
+      <div
+        class="fm-notice-bar-content"
+      >
+        <div
+          class="fm-notice-bar-marquee-wrap "
+          role="marquee"
+          style="overflow:hidden"
+        >
+          <div
+            class="fm-notice-bar-marquee"
+            style="position:relative;right:0;white-space:nowrap;display:inline-block;padding:0 7.5px"
+          >
+            真正的创新是没有原型可以参考的
+          </div>
+        </div>
+      </div>
+      <div
+        aria-label="go to detail"
+        class="fm-notice-bar-operation"
+        role="button"
+      >
+        <span>
+          查看更多
+        </span>
       </div>
     </div>
   </div>

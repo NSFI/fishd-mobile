@@ -3,84 +3,466 @@
 exports[`Renders Radio demo correctly 1`] = `
 <div>
   <div
-    class="am-list"
+    class="components-radio-demo-basic"
   >
     <div
-      class="am-list-body"
+      class="sub-title"
+    >
+      基础样式
+    </div>
+    <div
+      class="fm-list"
     >
       <div
-        checked=""
-        class="am-list-item am-radio-item am-list-item-middle"
+        class="fm-list-body"
       >
         <div
-          class="am-list-line"
+          checked=""
+          class="fm-list-item fm-radio-item fm-list-item-middle"
         >
           <div
-            class="am-list-content"
-          >
-            doctor
-          </div>
-          <div
-            class="am-list-extra"
+            class="fm-list-thumb"
           >
             <label
-              class="am-radio-wrapper"
+              class="fm-radio-wrapper"
             >
               <span
-                class="am-radio am-radio-checked"
+                class="fm-radio fm-radio-checked"
               >
                 <input
                   checked=""
-                  class="am-radio-input"
+                  class="fm-radio-input"
                   type="radio"
                 />
                 <span
-                  class="am-radio-inner"
+                  class="fm-radio-inner"
                 />
               </span>
             </label>
           </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项一
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
         </div>
         <div
-          class="am-list-ripple"
-          style="display:none"
-        />
-      </div>
-      <div
-        class="am-list-item am-radio-item am-list-item-middle"
-      >
-        <div
-          class="am-list-line"
+          class="fm-list-item fm-radio-item fm-list-item-middle"
         >
           <div
-            class="am-list-content"
-          >
-            bachelor
-          </div>
-          <div
-            class="am-list-extra"
+            class="fm-list-thumb"
           >
             <label
-              class="am-radio-wrapper"
+              class="fm-radio-wrapper"
             >
               <span
-                class="am-radio"
+                class="fm-radio"
               >
                 <input
-                  class="am-radio-input"
+                  class="fm-radio-input"
                   type="radio"
                 />
                 <span
-                  class="am-radio-inner"
+                  class="fm-radio-inner"
                 />
               </span>
             </label>
           </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项二
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-radio-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      水平排列
+    </div>
+    <div
+      class="fm-list m-radio-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          checked=""
+          class="fm-list-item fm-radio-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio fm-radio-checked"
+              >
+                <input
+                  checked=""
+                  class="fm-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项一
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
         </div>
         <div
-          class="am-list-ripple"
-          style="display:none"
-        />
+          class="fm-list-item fm-radio-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio"
+              >
+                <input
+                  class="fm-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项二
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-radio-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      禁用状态
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          checked=""
+          class="fm-list-item fm-radio-item fm-radio-item-disabled fm-list-item-middle"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio fm-radio-checked fm-radio-disabled"
+              >
+                <input
+                  checked=""
+                  class="fm-radio-input"
+                  disabled=""
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项一
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-radio-item fm-radio-item-disabled fm-list-item-middle"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio fm-radio-disabled"
+              >
+                <input
+                  class="fm-radio-input"
+                  disabled=""
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项二
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-radio-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      自定义颜色
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          checked=""
+          checkedcolor="#07c160"
+          class="fm-list-item fm-radio-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio fm-radio-checked"
+              >
+                <input
+                  checked=""
+                  class="fm-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                  style="background-color:#07c160;border-color:#07c160"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项一
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          checkedcolor="#07c160"
+          class="fm-list-item fm-radio-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio"
+              >
+                <input
+                  class="fm-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项二
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-radio-demo-basic"
+  >
+    <div
+      class="sub-title"
+    >
+      自定义形状
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          checked=""
+          class="fm-list-item fm-radio-item fm-list-item-middle"
+          shape="square"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio fm-radio-checked"
+              >
+                <input
+                  checked=""
+                  class="fm-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                  style="border-radius:3px"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项一
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-radio-item fm-list-item-middle"
+          shape="square"
+        >
+          <div
+            class="fm-list-thumb"
+          >
+            <label
+              class="fm-radio-wrapper"
+            >
+              <span
+                class="fm-radio"
+              >
+                <input
+                  class="fm-radio-input"
+                  type="radio"
+                />
+                <span
+                  class="fm-radio-inner"
+                  style="border-radius:3px"
+                />
+              </span>
+            </label>
+          </div>
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              选项二
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
       </div>
     </div>
   </div>
