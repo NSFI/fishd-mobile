@@ -116,6 +116,13 @@ export default [
     key: 'Data Display',
     children: [
       {
+        key: 'badge',
+        type: 'markdown',
+        name: 'Badge 徽标数',
+        nameEn: 'Badge',
+        published: true,
+      },
+      {
         key: 'list',
         type: 'markdown',
         name: 'List 列表',
