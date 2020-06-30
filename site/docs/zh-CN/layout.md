@@ -17,6 +17,17 @@ render(){
       基础用法
     </div>
     <Row>
+      <Col span="12">ospan:12</Col>
+      <Col span="12">span:12</Col>
+    </Row>
+
+    <Row>
+      <Col span="8">span:8</Col>
+      <Col span="8">span:8</Col>
+      <Col span="8">span:8</Col>
+    </Row>
+
+    <Row>
       <Col span="8">span:8</Col>
       <Col span="8">span:8</Col>
       <Col span="8">span:8</Col>
@@ -27,20 +38,26 @@ render(){
       <Col span="10" offset="4">offset:4,span:10</Col>
     </Row>
 
-    <Row>
-      <Col span="12" offset="12">offset:12,span:12</Col>
-    </Row>
-
     <div className="components-layout-demo_title">
-      在列元素之间增加间距
+      元素间增加间距
     </div>
+    <Row gutter="20">
+      <Col span="12">span: 12</Col>
+      <Col span="12">span: 12</Col>
+    </Row>
     <Row gutter="20">
       <Col span="8">span: 8</Col>
       <Col span="8">span: 8</Col>
       <Col span="8">span: 8</Col>
     </Row>
+    <Row gutter="20">
+      <Col span="6">span: 6</Col>
+      <Col span="6">span: 6</Col>
+      <Col span="6">span: 6</Col>
+      <Col span="6">span: 6</Col>
+    </Row>
     <div className="components-layout-demo_title">
-      Flex 布局
+      柔性布局
     </div>
     {/* 左对齐 */}
     <Row type="flex">
@@ -104,7 +121,8 @@ render(){
     }
 
     &:nth-child(even) {
-      background-color: #66d4ff;
+      background-color: #337EFF;
+      opacity: 0.8;
     }
   }
 }

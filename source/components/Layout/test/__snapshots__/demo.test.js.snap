@@ -14,6 +14,39 @@ exports[`Renders Layout demo correctly 1`] = `
       class="fm-row"
     >
       <div
+        class="fm-col fm-col-12"
+      >
+        ospan:12
+      </div>
+      <div
+        class="fm-col fm-col-12"
+      >
+        span:12
+      </div>
+    </div>
+    <div
+      class="fm-row"
+    >
+      <div
+        class="fm-col fm-col-8"
+      >
+        span:8
+      </div>
+      <div
+        class="fm-col fm-col-8"
+      >
+        span:8
+      </div>
+      <div
+        class="fm-col fm-col-8"
+      >
+        span:8
+      </div>
+    </div>
+    <div
+      class="fm-row"
+    >
+      <div
         class="fm-col fm-col-8"
       >
         span:8
@@ -44,18 +77,25 @@ exports[`Renders Layout demo correctly 1`] = `
       </div>
     </div>
     <div
+      class="components-layout-demo_title"
+    >
+      元素间增加间距
+    </div>
+    <div
       class="fm-row"
     >
       <div
-        class="fm-col fm-col-12 fm-col-offset-12"
+        class="fm-col fm-col-12"
+        style="padding-left:0px;padding-right:10px"
       >
-        offset:12,span:12
+        span: 12
       </div>
-    </div>
-    <div
-      class="components-layout-demo_title"
-    >
-      在列元素之间增加间距
+      <div
+        class="fm-col fm-col-12"
+        style="padding-left:10px;padding-right:0px"
+      >
+        span: 12
+      </div>
     </div>
     <div
       class="fm-row"
@@ -80,9 +120,37 @@ exports[`Renders Layout demo correctly 1`] = `
       </div>
     </div>
     <div
+      class="fm-row"
+    >
+      <div
+        class="fm-col fm-col-6"
+        style="padding-left:0px;padding-right:15px"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+        style="padding-left:5px;padding-right:10px"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+        style="padding-left:10px;padding-right:5px"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+        style="padding-left:15px;padding-right:0px"
+      >
+        span: 6
+      </div>
+    </div>
+    <div
       class="components-layout-demo_title"
     >
-      Flex 布局
+      柔性布局
     </div>
     <div
       class="fm-row fm-row-flex fm-row-align-top fm-row-justify-start"
