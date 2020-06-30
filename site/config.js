@@ -81,6 +81,13 @@ export default [
         published: true,
       },
       {
+        key: 'tabBar',
+        type: 'markdown',
+        name: 'TabBar 标签栏',
+        nameEn: 'TabBar',
+        published: true,
+      },
+      {
         key: 'modal',
         type: 'markdown',
         name: 'Modal 对话框',
