@@ -102,6 +102,11 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "concurrently 'lint-staged' 'npm run test'"
+    }
+  },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
