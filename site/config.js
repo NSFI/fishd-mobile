@@ -12,6 +12,13 @@ export default [
     key: 'baseGeneral',
     children: [
       {
+        key: 'layout',
+        type: 'markdown',
+        name: 'Layout 布局',
+        nameEn: 'Layout',
+        published: true
+      },
+      {
         key: 'button',
         type: 'markdown',
         name: 'Button 按钮',

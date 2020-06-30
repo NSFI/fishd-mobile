@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Layout demo correctly 1`] = `
+<div>
+  <div
+    class="components-layout-demo-basic"
+  >
+    <div
+      class="components-layout-demo_title"
+    >
+      基础用法
+    </div>
+    <div
+      class="fm-row"
+    >
+      <div
+        class="fm-col fm-col-8"
+      >
+        span:8
+      </div>
+      <div
+        class="fm-col fm-col-8"
+      >
+        span:8
+      </div>
+      <div
+        class="fm-col fm-col-8"
+      >
+        span:8
+      </div>
+    </div>
+    <div
+      class="fm-row"
+    >
+      <div
+        class="fm-col fm-col-4"
+      >
+        span:4
+      </div>
+      <div
+        class="fm-col fm-col-10 fm-col-offset-4"
+      >
+        offset:4,span:10
+      </div>
+    </div>
+    <div
+      class="fm-row"
+    >
+      <div
+        class="fm-col fm-col-12 fm-col-offset-12"
+      >
+        offset:12,span:12
+      </div>
+    </div>
+    <div
+      class="components-layout-demo_title"
+    >
+      在列元素之间增加间距
+    </div>
+    <div
+      class="fm-row"
+    >
+      <div
+        class="fm-col fm-col-8"
+        style="padding-left:0px;padding-right:13.333333333333334px"
+      >
+        span: 8
+      </div>
+      <div
+        class="fm-col fm-col-8"
+        style="padding-left:6.666666666666666px;padding-right:6.666666666666668px"
+      >
+        span: 8
+      </div>
+      <div
+        class="fm-col fm-col-8"
+        style="padding-left:13.333333333333332px;padding-right:1.7763568394002505e-15px"
+      >
+        span: 8
+      </div>
+    </div>
+    <div
+      class="components-layout-demo_title"
+    >
+      Flex 布局
+    </div>
+    <div
+      class="fm-row fm-row-flex fm-row-align-top fm-row-justify-start"
+    >
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+    </div>
+    <div
+      class="fm-row fm-row-flex fm-row-align-top fm-row-justify-center"
+    >
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+    </div>
+    <div
+      class="fm-row fm-row-flex fm-row-align-top fm-row-justify-end"
+    >
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+    </div>
+    <div
+      class="fm-row fm-row-flex fm-row-align-top fm-row-justify-space-between"
+    >
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+    </div>
+    <div
+      class="fm-row fm-row-flex fm-row-align-top fm-row-justify-space-around"
+    >
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+      <div
+        class="fm-col fm-col-6"
+      >
+        span: 6
+      </div>
+    </div>
+  </div>
+</div>
+`;
