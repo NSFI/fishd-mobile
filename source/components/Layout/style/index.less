@@ -1,0 +1,64 @@
+@import '../../../assets/css/index';
+
+@rowPrefixCls: fm-row;
+@colPrefixCls: fm-col;
+
+/* flexbox */
+.@{rowPrefixCls} {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+
+  &-flex {
+    display: flex;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &-justify-center {
+    justify-content: center;
+  }
+
+  &-justify-end {
+    justify-content: flex-end;
+  }
+
+  &-justify-space-between {
+    justify-content: space-between;
+  }
+
+  &-justify-space-around {
+    justify-content: space-around;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+
+  &-align-bottom {
+    align-items: flex-end;
+  }
+}
+
+.@{colPrefixCls} {
+  float: left;
+  box-sizing: border-box;
+  min-height: 1px;
+}
+
+.generate-col(24);
+.generate-col(@n, @i: 1) when (@i =< @n) {
+  .@{colPrefixCls}-@{i} {
+    width: @i * 100% / 24;
+  }
+
+  .@{colPrefixCls}-offset-@{i} {
+    margin-left: @i * 100% / 24;
+  }
+
+  .generate-col(@n, (@i + 1));
+}

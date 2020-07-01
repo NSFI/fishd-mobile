@@ -1,3 +1,4 @@
+export { default as Layout } from './Layout/index';
 export { default as Button } from './Button/index';
 export { default as ActionSheet } from './ActionSheet/index';
 export { default as Switch } from './Switch/index';
@@ -16,3 +17,4 @@ export { default as Toast } from './Toast/index';
 export { default as Badge } from './Badge/index';
 export { default as DatePickerView } from './DatePickerView/index';
 export { default as DatePicker } from './DatePicker/index';
+export { default as TabBar } from './TabBar/index';

@@ -12,6 +12,13 @@ export default [
     key: 'baseGeneral',
     children: [
       {
+        key: 'layout',
+        type: 'markdown',
+        name: 'Layout 布局',
+        nameEn: 'Layout',
+        published: true
+      },
+      {
         key: 'button',
         type: 'markdown',
         name: 'Button 按钮',
@@ -71,6 +78,13 @@ export default [
         type: 'markdown',
         name: 'Tabs 标签页',
         nameEn: 'Tabs',
+        published: true,
+      },
+      {
+        key: 'tabBar',
+        type: 'markdown',
+        name: 'TabBar 标签栏',
+        nameEn: 'TabBar',
         published: true,
       },
       {
