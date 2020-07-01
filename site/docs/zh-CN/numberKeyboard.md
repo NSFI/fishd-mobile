@@ -37,8 +37,8 @@ render(){
   const { keyboard } = this.state
  return(
     <div className="components-numberKeyboard-demo-basic">
-      <Button onTouchStart={this.handleShow}>显示键盘1</Button>
-      <Button onTouchStart={this.handleShowTwo}>显示键盘2</Button>
+      <Button onMouseDown={this.handleShow}>显示键盘1</Button>
+      <Button onMouseDown={this.handleShowTwo}>显示键盘2</Button>
       <NumberKeyboard show={keyboard === 'A'} onBlur={this.handleBlur}>显示键盘1</NumberKeyboard>
       <NumberKeyboard show={keyboard === 'B'} onBlur={this.handleBlur}>显示键盘2</NumberKeyboard>
     </div>

@@ -21,10 +21,12 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
 
   componentDidMount() {
     document.addEventListener('touchstart', this.doBlur, false);
+    document.addEventListener('mousedown', this.doBlur, false);
   }
 
   componentWillUnmount() {
     document.removeEventListener('touchstart', this.doBlur, false);
+    document.addEventListener('mousedown', this.doBlur, false);
   }
 
   doBlur = () => {

@@ -110,6 +110,7 @@ class Demo extends Component {
         </div>
         <h3 className='u-demo__title'>
           <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
+          <div className='u-demo__subTitle'>UI组件</div>
         </h3>
         <div className='u-demo__list'>
           {this.props.demos.map((item, index) => {
