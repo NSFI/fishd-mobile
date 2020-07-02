@@ -122,6 +122,20 @@ export default [
         nameEn: 'Radio',
         published: true,
       },
+      {
+        key: 'datePickerView',
+        type: 'markdown',
+        name: 'DataPickerView 日期选择面板',
+        nameEn: 'DataPickerView',
+        published: true,
+      },
+      {
+        key: 'datePicker',
+        type: 'markdown',
+        name: 'DatePicker 日期选择器',
+        nameEn: 'DatePicker',
+        published: true,
+      },
     ]
   },
   {

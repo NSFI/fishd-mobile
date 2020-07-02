@@ -15,4 +15,6 @@ export { default as Tabs } from './Tabs/index';
 export { default as Modal } from './Modal/index';
 export { default as Toast } from './Toast/index';
 export { default as Badge } from './Badge/index';
+export { default as DatePickerView } from './DatePickerView/index';
+export { default as DatePicker } from './DatePicker/index';
 export { default as TabBar } from './TabBar/index';

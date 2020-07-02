@@ -38,6 +38,7 @@
     "rc-form": "^1.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "rmc-date-picker": "6.0.8",
     "rmc-dialog": "1.0.1",
     "rmc-feedback": "^2.0.0",
     "rmc-notification": "^1.0.0",

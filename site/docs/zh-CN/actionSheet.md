@@ -22,7 +22,7 @@ handleClick = () => {
     cancelButtonText: '取消',
     wrapProps: {},
     onSelect: (buttonIndex) => {
-      console.log(`>>> 选择buttonIndex ${buttonIndex}`)
+      Toast.info(`点击${BUTTONS[buttonIndex]}`, 1, false);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
@@ -53,7 +53,7 @@ render(){
 ```js
 handleClick = () => {
   const BUTTONS = [
-    { url: 'OpHiXAcYzmPQHcdlLFrc', title: '发送给朋友' },
+    { url: 'OpHiXAcYzmPQHcdlLFrc', title: '支付宝' },
     { url: 'wvEzCMiDZjthhAOcwTOu', title: '新浪微博' },
     { url: 'cTTayShKtEIdQVEMuiWt', title: '生活圈' },
     { url: 'umnHwvEgSyQtXlZjNJTt', title: '微信好友' },
@@ -71,7 +71,7 @@ handleClick = () => {
     maskClosable: true,
     cancelButtonText: '取消',
     onSelect: (buttonIndex, rowIndex) => {
-      console.log(`>>> 选择buttonIndex ${buttonIndex}, rowIndex ${rowIndex}`)
+      Toast.info(`点击${BUTTONS[buttonIndex].title}`, 1, false);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
@@ -102,7 +102,7 @@ render(){
 ```js
 handleClick = () => {
   const BUTTONS = [
-    { url: 'OpHiXAcYzmPQHcdlLFrc', title: '发送给朋友' },
+    { url: 'OpHiXAcYzmPQHcdlLFrc', title: '支付宝' },
     { url: 'wvEzCMiDZjthhAOcwTOu', title: '新浪微博' },
     { url: 'cTTayShKtEIdQVEMuiWt', title: '生活圈' },
     { url: 'umnHwvEgSyQtXlZjNJTt', title: '微信好友' },
@@ -111,17 +111,18 @@ handleClick = () => {
     icon: <img src={`https://gw.alipayobjects.com/zos/rmsportal/${obj.url}.png`} alt={obj.title} style={{ width: 36 }} />,
     title: obj.title,
   }));
-  ActionSheet.showShareActionSheetWithOptions({
-    options: [
+  const OPTIONS = [
       [...BUTTONS, BUTTONS[0], BUTTONS[1]],
       [BUTTONS[0], BUTTONS[1]]
-    ],
+    ]
+  ActionSheet.showShareActionSheetWithOptions({
+    options: OPTIONS,
     cancelText: 'cancel',
     message: '标题或描述',
     maskClosable: true,
     cancelButtonText: '取消',
     onSelect: (buttonIndex, rowIndex) => {
-      console.log(`>>> 选择buttonIndex ${buttonIndex}, rowIndex ${rowIndex}`)
+      Toast.info(`点击${OPTIONS[rowIndex][buttonIndex].title}`, 1, false);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
