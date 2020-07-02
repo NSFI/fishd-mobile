@@ -9,8 +9,7 @@ export interface TabsPropsType {
   tabBarActiveTextColor?: string;
   tabBarInactiveTextColor?: string;
   tabs: Models.TabData[];
-  tabBarPosition?: 'bottom' | 'top' | 'left' | 'right';
   count?: number;
   initialPage?: number | string;
-  onChange?: (index: number) => void;
+  onChange?: (index: number, key: string | undefined) => void;
 }

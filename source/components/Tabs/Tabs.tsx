@@ -176,7 +176,7 @@ class Tabs extends React.Component<TabsProps, any> {
   }
 
   handleTabChange = (index: number, scroll?: boolean) => {
-    const { animated, tabDirection } = this.props;
+    const { animated, tabDirection, tabs } = this.props;
     this.setState(
       {
         activeTabIndex: index,
@@ -198,7 +198,7 @@ class Tabs extends React.Component<TabsProps, any> {
         }
         // 执行自定义事件
         if (this.props.onChange) {
-          this.props.onChange(index);
+          this.props.onChange(index, tabs[index] ? tabs[index].key : undefined);
         }
       },
     );
