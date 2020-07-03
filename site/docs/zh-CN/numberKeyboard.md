@@ -33,14 +33,16 @@ handleShowTwo = (e) => {
   })
 }
 
+hanldeInput = (text) => {
+  Toast.show(`点击${text}`, 1, false);
+}
+
 render(){
   const { keyboard } = this.state
  return(
     <div className="components-numberKeyboard-demo-basic">
       <Button onMouseDown={this.handleShow}>显示键盘1</Button>
-      <Button onMouseDown={this.handleShowTwo}>显示键盘2</Button>
-      <NumberKeyboard show={keyboard === 'A'} onBlur={this.handleBlur}>显示键盘1</NumberKeyboard>
-      <NumberKeyboard show={keyboard === 'B'} onBlur={this.handleBlur}>显示键盘2</NumberKeyboard>
+      <NumberKeyboard show={keyboard === 'A'} onBlur={this.handleBlur} onInput={this.hanldeInput}>显示键盘1</NumberKeyboard>
     </div>
   )
 }

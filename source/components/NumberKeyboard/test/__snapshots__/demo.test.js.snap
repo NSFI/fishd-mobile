@@ -14,16 +14,6 @@ exports[`Renders NumberKeyboard demo correctly 1`] = `
         显示键盘1
       </span>
     </a>
-    <a
-      aria-disabled="false"
-      class="fm-button"
-      role="button"
-    >
-      <span>
-        显示键盘2
-      </span>
-    </a>
-    <span />
     <span />
   </div>
 </div>

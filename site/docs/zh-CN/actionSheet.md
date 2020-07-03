@@ -22,7 +22,7 @@ handleClick = () => {
     cancelButtonText: '取消',
     wrapProps: {},
     onSelect: (buttonIndex) => {
-      Toast.info(`点击${BUTTONS[buttonIndex]}`, 1, false);
+      Toast.show(`点击${BUTTONS[buttonIndex]}`, 1, false);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
@@ -71,7 +71,7 @@ handleClick = () => {
     maskClosable: true,
     cancelButtonText: '取消',
     onSelect: (buttonIndex, rowIndex) => {
-      Toast.info(`点击${BUTTONS[buttonIndex].title}`, 1, false);
+      Toast.show(`点击${BUTTONS[buttonIndex].title}`, 1, false);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
@@ -122,7 +122,7 @@ handleClick = () => {
     maskClosable: true,
     cancelButtonText: '取消',
     onSelect: (buttonIndex, rowIndex) => {
-      Toast.info(`点击${OPTIONS[rowIndex][buttonIndex].title}`, 1, false);
+      Toast.show(`点击${OPTIONS[rowIndex][buttonIndex].title}`, 1, false);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
