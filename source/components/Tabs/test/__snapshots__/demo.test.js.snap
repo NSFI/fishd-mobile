@@ -77,79 +77,6 @@ exports[`Renders Tabs demo correctly 1`] = `
   </div>
   <div>
     <div>
-      纵向Tabs标签页
-    </div>
-    <div
-      class="fm-tabs fm-tabs-vertical"
-      style="height:200px;margin-top:10px"
-    >
-      <div
-        class="fm-tabs-vertical-nav-wrap"
-      >
-        <div
-          class="fm-tabs-vertical-nav"
-        >
-          <div
-            class="fm-tabs-vertical-tab fm-tabs-vertical-tab-active"
-            style="height:33.333333333333336%"
-          >
-            Tabs1
-          </div>
-          <div
-            class="fm-tabs-vertical-tab"
-            style="height:33.333333333333336%"
-          >
-            Tabs2
-          </div>
-          <div
-            class="fm-tabs-vertical-tab"
-            style="height:33.333333333333336%"
-          >
-            Tabs3
-          </div>
-          <div
-            class="fm-tabs-vertical-active-bar fm-tabs-vertical-active-bar-animated"
-            style="top:0%;height:33.333333333333336%"
-          />
-        </div>
-      </div>
-      <div
-        class="fm-tabs-vertical-content-wrap"
-      >
-        <div
-          class="fm-tabs-vertical-content"
-          style="height:300%"
-        >
-          <div
-            class="fm-tabs-vertical-content-tab"
-            style="height:33.333333333333336%"
-          >
-            <div>
-              content1
-            </div>
-          </div>
-          <div
-            class="fm-tabs-vertical-content-tab"
-            style="height:33.333333333333336%"
-          >
-            <div>
-              content2
-            </div>
-          </div>
-          <div
-            class="fm-tabs-vertical-content-tab"
-            style="height:33.333333333333336%"
-          >
-            <div>
-              content3
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <div>
       跟手滚动
     </div>
     <div
@@ -243,24 +170,6 @@ exports[`Renders Tabs demo correctly 1`] = `
           >
             <div>
               content2
-              <br />
-              content2
-              <br />
-              content2
-              <br />
-              content2
-              <br />
-              content2
-              <br />
-              content2
-              <br />
-              content2
-              <br />
-              content2
-              <br />
-              content2
-              <br />
-              content2
             </div>
           </div>
           <div
@@ -317,6 +226,79 @@ exports[`Renders Tabs demo correctly 1`] = `
           >
             <div>
               content9
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      纵向Tabs标签页
+    </div>
+    <div
+      class="fm-tabs fm-tabs-vertical"
+      style="height:200px;margin-top:10px"
+    >
+      <div
+        class="fm-tabs-vertical-nav-wrap"
+      >
+        <div
+          class="fm-tabs-vertical-nav"
+        >
+          <div
+            class="fm-tabs-vertical-tab fm-tabs-vertical-tab-active"
+            style="height:33.333333333333336%"
+          >
+            Tabs1
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs2
+          </div>
+          <div
+            class="fm-tabs-vertical-tab"
+            style="height:33.333333333333336%"
+          >
+            Tabs3
+          </div>
+          <div
+            class="fm-tabs-vertical-active-bar fm-tabs-vertical-active-bar-animated"
+            style="top:0%;height:33.333333333333336%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-vertical-content-wrap"
+      >
+        <div
+          class="fm-tabs-vertical-content"
+          style="height:300%"
+        >
+          <div
+            class="fm-tabs-vertical-content-tab"
+            style="height:33.333333333333336%"
+          >
+            <div>
+              content1
+            </div>
+          </div>
+          <div
+            class="fm-tabs-vertical-content-tab"
+            style="height:33.333333333333336%"
+          >
+            <div>
+              content2
+            </div>
+          </div>
+          <div
+            class="fm-tabs-vertical-content-tab"
+            style="height:33.333333333333336%"
+          >
+            <div>
+              content3
             </div>
           </div>
         </div>
