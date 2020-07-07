@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, createRef } from 'react';
 import classNames from 'classnames';
+import { CSSTransition } from 'react-transition-group';
 import { DropdownMenuPropsType } from './PropsType';
 import DropdownItem from './DropdownItem';
 
@@ -9,6 +10,7 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
 } = ({ activeColor = '#1989fa', direction = 'down', children }) => {
   const [dropDownMenuValue, setDropDownMenuValue] = useState('');
   const dropDownMenuRef = useRef<HTMLDivElement>(null);
+  const cssTransitionNodeRefs = useRef<any[]>(children.map(() => createRef()));
 
   useEffect(() => {
     const fn = () => setDropDownMenuValue('');
@@ -40,39 +42,50 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
         ))}
       </div>
       {children.map(({ props: { options, value, onChange } }, index) => (
-        <div
+        <CSSTransition
+          in={value === dropDownMenuValue}
+          timeout={0}
+          classNames={direction}
+          unmountOnExit
           key={index}
-          className={classNames('fm-dropdown-item', {
-            selected: value === dropDownMenuValue,
-          })}
-          style={
-            direction === 'down'
-              ? {
-                  top: dropDownMenuRef.current?.getBoundingClientRect().bottom,
-                  bottom: 0,
-                }
-              : {
-                  top: 0,
-                  bottom: `calc(100vh - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
-                }
-          }
+          nodeRef={cssTransitionNodeRefs.current[index]}
         >
-          <div className="fm-overlay" />
-          <div className="fm-dropdown-item__content" style={direction === 'down' ? { top: 0 } : { bottom: 0 }}>
-            {options.map(({ text, value: optionValue }, optionIndex) => (
-              <div key={optionIndex} className="fm-cell fm-dropdown-item__option" onClick={() => onChange(optionValue)}>
+          <div
+            ref={cssTransitionNodeRefs.current[index]}
+            className="fm-dropdown-item"
+            style={
+              direction === 'down'
+                ? {
+                    top: dropDownMenuRef.current?.getBoundingClientRect().bottom,
+                    bottom: 0,
+                  }
+                : {
+                    top: 0,
+                    bottom: `calc(100vh - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
+                  }
+            }
+          >
+            <div className="fm-overlay" />
+            <div className="fm-dropdown-item__content" style={direction === 'down' ? { top: 0 } : { bottom: 0 }}>
+              {options.map(({ text, value: optionValue }, optionIndex) => (
                 <div
-                  className="fm-cell__title"
-                  style={{
-                    color: value === optionValue ? activeColor : '#323233',
-                  }}
+                  key={optionIndex}
+                  className="fm-cell fm-dropdown-item__option"
+                  onClick={() => onChange(optionValue)}
                 >
-                  {text}
+                  <div
+                    className="fm-cell__title"
+                    style={{
+                      color: value === optionValue ? activeColor : '#323233',
+                    }}
+                  >
+                    {text}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </CSSTransition>
       ))}
     </div>
   );

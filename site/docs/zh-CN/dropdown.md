@@ -80,14 +80,9 @@ ReactDOM.render(<DropDownDemo />, mountNode)
 ```
 
 ```less
-body {
-  background-color: #f7f8fa;
-}
-
 .u-demo__list {
   padding: 0;
 }
-
 .demo-item {
   margin-bottom: 150px;
 }
