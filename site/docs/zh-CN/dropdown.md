@@ -40,7 +40,7 @@ class DropDownDemo extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className="dropdown-container">
         <div className='demo-item'>
           <DropdownMenu>
             <DropdownItem
@@ -80,12 +80,15 @@ ReactDOM.render(<DropDownDemo />, mountNode)
 ```
 
 ```less
-.u-demo__list {
-  padding: 0;
+.dropdown-container {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  .demo-item {
+    margin-bottom: 150px;
+  }
 }
-.demo-item {
-  margin-bottom: 150px;
-}
+
 ```
 
 :::
