@@ -14,7 +14,7 @@
 const dropdownOptions1 = [
   { text: '全部商品', value: 0 },
   { text: '新款商品', value: 1 },
-  { text: '活动商品', value: 2 },
+  { text: '活动商品', value: 2, disabled: true },
 ]
 const dropdownOptions2 = [
   { text: '默认排序', value: 'a' },
@@ -65,11 +65,17 @@ class DropDownDemo extends React.Component {
               value={this.state.dropDownValue1}
               onChange={this.setDropDownValue1}
             />
-            <DropdownItem
-              options={dropdownOptions2}
-              value={this.state.dropDownValue2}
-              onChange={this.setDropDownValue2}
-            />
+            <DropdownItem title="筛选">
+              <div className="fm-switch-cell">
+                <div className="title">包邮</div>
+                <Switch />
+              </div>
+               <div className="fm-switch-cell">
+                  <div className="title">团购</div>
+                  <Switch />
+                </div>
+                <Button type="primary">确定</Button>
+            </DropdownItem>
           </DropdownMenu>
         </div>
       </div>
@@ -83,9 +89,34 @@ ReactDOM.render(<DropDownDemo />, mountNode)
 .dropdown-container {
   position: absolute;
   left: 0;
-  width: 100vw;
+  width: 100%;
+  background-color: #f7f8fa;
   .demo-item {
     margin-bottom: 150px;
+  }
+  .fm-switch-cell {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 16px;
+    box-sizing: border-box;
+    width: 100%;
+    color: #323233;
+    font-size: 14px;
+    line-height: 24px;
+    &::after {
+      position: absolute;
+      box-sizing: border-box;
+      content: ' ';
+      pointer-events: none;
+      right: 16px;
+      bottom: 0;
+      left: 16px;
+      border-bottom: 1px solid #ebedf0;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
   }
 }
 

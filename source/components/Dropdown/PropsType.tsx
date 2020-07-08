@@ -5,12 +5,13 @@ export interface DropdownMenuPropsType {
 }
 
 export interface DropdownItemPropsType {
-  options: {
+  options?: {
     text: string;
     value: any;
   }[];
-  value: any;
-  dropDownMenuValue: any;
-  setDropDownMenuValue: (e) => {};
-  activeColor: string;
+  value?: any;
+  dropDownMenuValue?: any;
+  setDropDownMenuValue?: (e) => {};
+  activeColor?: string;
+  title?: string;
 }

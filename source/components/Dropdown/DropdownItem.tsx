@@ -8,21 +8,22 @@ const DropdownItem: React.FC<DropdownItemPropsType> = ({
   dropDownMenuValue,
   setDropDownMenuValue,
   activeColor,
+  title = '',
 }) => {
   const handleItemClick = e => {
     e.stopPropagation();
-    setDropDownMenuValue(pre => (pre === value ? '' : value));
+    setDropDownMenuValue?.(pre => (pre === value ? '' : value));
   };
   return (
     <div className="fm-dropdown-menu__item">
       <div
         className="fm-dropdown-menu__title"
         style={{
-          color: dropDownMenuValue === value ? activeColor : '#323233',
+          color: dropDownMenuValue === value ? activeColor : '#222',
         }}
         onClick={handleItemClick}
       >
-        {options.find(option => option.value === value)?.text}
+        {title || options?.find(option => option.value === value)?.text}
       </div>
     </div>
   );

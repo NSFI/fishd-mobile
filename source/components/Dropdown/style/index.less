@@ -6,9 +6,9 @@
   &_bar {
     position: relative;
     display: flex;
-    height: 48px;
+    height: 50px;
     background-color: #fff;
-    box-shadow: 0 2px 12px rgba(100, 101, 102, 0.08);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
     &--opened {
       z-index: 11;
     }
@@ -54,6 +54,7 @@
     width: 100%;
     max-height: 80%;
     z-index: 2021;
+    background-color: #fff;
     transition: transform .3s ease;
     .fm-cell {
       position: relative;
@@ -64,7 +65,7 @@
       overflow: hidden;
       font-size: 14px;
       line-height: 24px;
-      background-color: #fff;
+      box-shadow: inset 0 0 1px 0 #E6E7EB;
     }
   }
 }
