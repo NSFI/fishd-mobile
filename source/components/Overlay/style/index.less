@@ -1,0 +1,12 @@
+@import '../../../assets//css/mixin.less';
+@import '../../../assets//css/themes/default.less';
+@overlayPrefixCls: fm-overlay;
+.@{overlayPrefixCls} {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: @overlay-z-index;
+  width: 100%;
+  height: 100%;
+  background-color: @overlay-background-color;
+}

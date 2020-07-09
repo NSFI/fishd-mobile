@@ -178,6 +178,13 @@ export default [
         nameEn: 'Dropdown',
         published: true,
       },
+      {
+        key: 'overlay',
+        type: 'markdown',
+        name: 'Overlay 遮罩',
+        nameEn: 'Overlay',
+        published: true,
+      }
     ]
   }
 ]
