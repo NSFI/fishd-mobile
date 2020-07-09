@@ -45,13 +45,17 @@ class NumberKey extends React.Component<NumberKeyProps, any> {
   };
 
   render() {
-    const { className, prefixCls } = this.props;
+    const { className, prefixCls, large, wider, color } = this.props;
 
-    const wrapCls = classnames(`${prefixCls}__wrapper`, className, {});
-
+    const wrapCls = classnames(`${prefixCls}__wrapper`, className, wider ? `${prefixCls}__wider` : '');
+    const keyCls = classnames(
+      `${prefixCls}__key`,
+      large ? `${prefixCls}__large` : '',
+      color ? `${prefixCls}__${color}` : '',
+    );
     return (
       <div className={wrapCls}>
-        <div className={`${prefixCls}__key`} onClick={this.hanldeClick}>
+        <div className={keyCls} onClick={this.hanldeClick}>
           {this.genContent()}
         </div>
       </div>

@@ -13,10 +13,15 @@ export interface NumberKeyboardProps extends NumberKeyboardPropsType {
   className?: string;
   value: string;
   show: boolean;
-  extraKey: string | number;
-  showDeleteKey: boolean;
-  deleteButtonText: string;
-  theme: 'custom' | 'default';
+  title: string | React.ReactNode; // 标题
+  titleLeft: string | React.ReactNode; // 标题左侧
+  extraKey: string | number | Array<string | number>; // 额外键盘按钮
+  showDeleteKey: boolean; // 是否显示删除按钮
+  deleteButtonText: string; // 删除文案
+  theme: 'custom' | 'default'; // 键盘类型
+  hideOnClickOutside: boolean; // 点击外部是否隐藏键盘
+  closeButtonText: string;
+  closeButtonLoading: boolean;
   onBlur?: () => void;
   onShow?: () => void;
   onHide?: () => void;
@@ -33,16 +38,19 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
     show: false,
     theme: 'default',
     showDeleteKey: true,
+    hideOnClickOutside: true,
     onBlur: () => {},
   };
 
   wrapRef: any;
 
   componentDidMount() {
-    if (supportTouch) {
-      document.addEventListener('touchstart', this.doBlur, false);
-    } else {
-      document.addEventListener('mousedown', this.doBlur, false);
+    if (this.props.hideOnClickOutside) {
+      if (supportTouch) {
+        document.addEventListener('touchstart', this.doBlur, false);
+      } else {
+        document.addEventListener('mousedown', this.doBlur, false);
+      }
     }
   }
 
@@ -63,7 +71,7 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
     const { extraKey, showDeleteKey, deleteButtonText } = this.props;
     return [
       ...this.genBasicKeys(),
-      { text: extraKey, type: 'extra' },
+      { text: Array.isArray(extraKey) ? extraKey[0] : extraKey, type: 'extra' },
       { text: 0 },
       {
         text: showDeleteKey ? deleteButtonText : '',
@@ -74,13 +82,13 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
 
   genCustomKeys() {
     const keys = this.genBasicKeys();
-    const { extraKey } = this.state;
+    const { extraKey } = this.props;
     const extraKeys = Array.isArray(extraKey) ? extraKey : [extraKey];
 
     if (extraKeys.length === 1) {
-      keys.push({ text: 0, wider: true }, { text: extraKey[0], type: 'extra' });
+      keys.push({ text: 0, wider: true }, { text: extraKeys[0], type: 'extra' });
     } else if (extraKeys.length === 2) {
-      keys.push({ text: extraKey[0], type: 'extra' }, { text: 0 }, { text: extraKey[1], type: 'extra' });
+      keys.push({ text: extraKeys[0], type: 'extra' }, { text: 0 }, { text: extraKeys[1], type: 'extra' });
     }
 
     return keys;
@@ -95,16 +103,75 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
     }
     return keys.map(key => {
       const renderKey = key.text + (key.type || '');
-      return <NumberKey key={renderKey} type={key.type} text={key.text} onPress={this.handlePress}></NumberKey>;
+      return (
+        <NumberKey
+          wider={key.wider}
+          key={renderKey}
+          type={key.type}
+          text={key.text}
+          onPress={this.handlePress}
+        ></NumberKey>
+      );
     });
+  };
+
+  genSidebar = () => {
+    const { prefixCls, theme, showDeleteKey, deleteButtonText, closeButtonText, closeButtonLoading } = this.props;
+    if (theme === 'custom') {
+      return (
+        <div className={`${prefixCls}__sidebar`}>
+          {showDeleteKey && (
+            <NumberKey large text={deleteButtonText} type="delete" onPress={this.handlePress}></NumberKey>
+          )}
+          <NumberKey
+            large
+            text={closeButtonText}
+            type="close"
+            color="blue"
+            loading={closeButtonLoading}
+            onPress={this.handlePress}
+          />
+        </div>
+      );
+    }
+    return null;
+  };
+
+  genTitle() {
+    const { title, theme, closeButtonText, titleLeft, prefixCls } = this.props;
+    const showClose = closeButtonText && theme === 'default';
+    const showTitle = title || showClose || titleLeft;
+
+    if (!showTitle) {
+      return null;
+    }
+
+    return (
+      <div className={`${prefixCls}__header`}>
+        {titleLeft && <span className={`${prefixCls}__header-left`}>{titleLeft}</span>}
+        {title && <h2 className={`${prefixCls}__header-title`}>{title}</h2>}
+        {showClose && (
+          <button type="button" className={`${prefixCls}__header-right`} onClick={this.doClose}>
+            {closeButtonText}
+          </button>
+        )}
+      </div>
+    );
+  }
+
+  doClose = () => {
+    this.doBlur();
+    if (this.props.onClose) {
+      this.props.onClose();
+    }
   };
 
   handlePress = (type: string, text: string | number) => {
     if (text === '') {
       if (type === 'extra') {
         this.doBlur();
+        return;
       }
-      return;
     }
 
     // eslint-disable-next-line no-console
@@ -119,9 +186,7 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
         this.props.onChange(newValue);
       }
     } else if (type === 'close') {
-      if (this.props.onClose) {
-        this.props.onClose();
-      }
+      this.doClose();
     } else {
       if (this.props.onInput) {
         this.props.onInput(text);
@@ -169,12 +234,12 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
         transitionAppear
       >
         {show ? (
-          <div
-            className={`${wrapCls} ${prefixCls}__body`}
-            onTouchStart={this.hanldeClick}
-            onMouseDown={this.hanldeClick}
-          >
-            <div className={`${wrapCls}__keys`}>{this.genKeys()}</div>
+          <div className={wrapCls} onTouchStart={this.hanldeClick} onMouseDown={this.hanldeClick}>
+            {this.genTitle()}
+            <div className={`${prefixCls}__body`}>
+              <div className={`${wrapCls}__keys`}>{this.genKeys()}</div>
+              {this.genSidebar()}
+            </div>
           </div>
         ) : null}
       </Animate>

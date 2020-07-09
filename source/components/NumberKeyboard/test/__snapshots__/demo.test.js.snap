@@ -11,7 +11,57 @@ exports[`Renders NumberKeyboard demo correctly 1`] = `
       role="button"
     >
       <span>
-        显示键盘1
+        普通键盘
+      </span>
+    </a>
+    <span />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        右侧栏键盘
+      </span>
+    </a>
+    <span />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        身份证键盘
+      </span>
+    </a>
+    <span />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        带标题键盘
+      </span>
+    </a>
+    <span />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        配置多个按键
+      </span>
+    </a>
+    <span />
+    <a
+      aria-disabled="false"
+      class="fm-button"
+      role="button"
+    >
+      <span>
+        双向绑定
       </span>
     </a>
     <span />
