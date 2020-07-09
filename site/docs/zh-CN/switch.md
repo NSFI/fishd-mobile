@@ -67,13 +67,14 @@ class SwitchExample extends React.Component {
                     loading
                     disabled
                 />
-                <Switch
-                    style={{marginLeft: '20px'}}
-                    checked={this.state.checked7}
-                    platform="android"
-                    loading
-                    disabled
-                />
+                <span style={{marginLeft: '20px'}}>
+                    <Switch
+                        platform="android"
+                        loading
+                        disabled
+                    />
+                </span>
+                
             </div>
             <div className="switch-title">自定义颜色</div>
             <div className="switch-content">
@@ -89,10 +90,10 @@ class SwitchExample extends React.Component {
                 />
                 <Switch
                     style={{marginLeft: '20px'}}
-                    checked={this.state.checked7}
+                    checked={this.state.checked4}
                     onChange={() => {
                         this.setState({
-                            checked7: !this.state.checked7,
+                            checked4: !this.state.checked4,
                         });
                     }}
                     platform="android"
