@@ -236,13 +236,13 @@ render(){
 
 | 属性 | 说明         | 类型      | 默认值    |
 |----|-----|------|------
-| tabs   | 标签数据   | array |   无|
-| tabDirection | 标签页方向, "vertical" 或 "horizontal" | string | "horizontal"
-|initialPage|初始标签页的下标或者key值|number或string|无|
-|count|一屏展示的标签数量|number|4|
-|useOnPan|是否跟手滚动|boolean|true|
-|swipeable|是否可以通过左右滑动来切换Tab(只适用于横向标签页)|boolean|false|
-|animated|Tab切换是否使用动画|boolean|true|
-|tabsUnderlineStyle|被激活Tab下划线的样式|object|无|
-|tabBarActiveTextColor|被激活Tab的文字颜色|string|"#337eff"|
-|tabBarInactiveTextColor|未被激活Tab的文字颜色|string|"black"|
+| tabs   | 标签数据   | array |   -|
+| tabDirection | 标签页方向, "vertical" 或 "horizontal" | string | `horizontal`
+|initialPage|初始标签页的下标或者key值|number或string|-|
+|count|一屏展示的标签数量|number|`4`|
+|useOnPan|是否跟手滚动|boolean|`true`|
+|swipeable|是否可以通过左右滑动来切换Tab(只适用于横向标签页)|boolean|`false`|
+|animated|Tab切换是否使用动画|boolean|`true`|
+|tabsUnderlineStyle|被激活Tab下划线的样式|object|-|
+|tabBarActiveTextColor|被激活Tab的文字颜色|string|`#337eff`|
+|tabBarInactiveTextColor|未被激活Tab的文字颜色|string|-|
