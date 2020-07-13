@@ -18,6 +18,64 @@ exports[`Renders Tabs demo correctly 1`] = `
         >
           <div
             class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
+            style="width:50%"
+          >
+            Tabs1
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:50%"
+          >
+            Tabs2
+          </div>
+          <div
+            class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
+            style="left:0%;width:50%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-horizontal-content-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-content"
+          style="height:100%"
+        >
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content1
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fm-tabs fm-tabs-horizontal"
+      style="height:200px;margin-top:10px"
+    >
+      <div
+        class="fm-tabs-horizontal-nav-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-nav"
+        >
+          <div
+            class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
             style="width:33.333333333333336%"
           >
             Tabs1
@@ -51,7 +109,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content1
             </div>
           </div>
@@ -59,7 +119,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content2
             </div>
           </div>
@@ -67,7 +129,180 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
+              content3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fm-tabs fm-tabs-horizontal"
+      style="height:200px;margin-top:10px"
+    >
+      <div
+        class="fm-tabs-horizontal-nav-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-nav"
+        >
+          <div
+            class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
+            style="width:25%"
+          >
+            Tabs1
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            Tabs2
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            Tabs3
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            Tabs4
+          </div>
+          <div
+            class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
+            style="left:0%;width:25%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-horizontal-content-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-content"
+          style="height:100%"
+        >
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content1
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content2
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content3
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content4
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="margin-top:30px"
+  >
+    <div>
+      无动画
+    </div>
+    <div
+      class="fm-tabs fm-tabs-horizontal"
+      style="height:200px;margin-top:10px"
+    >
+      <div
+        class="fm-tabs-horizontal-nav-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-nav"
+        >
+          <div
+            class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
+            style="width:33.333333333333336%"
+          >
+            Tabs1
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:33.333333333333336%"
+          >
+            Tabs2
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:33.333333333333336%"
+          >
+            Tabs3
+          </div>
+          <div
+            class="fm-tabs-horizontal-active-bar"
+            style="left:0%;width:33.333333333333336%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-horizontal-content-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-content"
+          style="height:100%"
+        >
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content1
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content2
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
               content3
             </div>
           </div>
@@ -75,7 +310,9 @@ exports[`Renders Tabs demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div>
+  <div
+    style="margin-top:30px"
+  >
     <div>
       跟手滚动
     </div>
@@ -160,7 +397,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content1
             </div>
           </div>
@@ -168,7 +407,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content2
             </div>
           </div>
@@ -176,7 +417,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content3
             </div>
           </div>
@@ -184,7 +427,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content4
             </div>
           </div>
@@ -192,7 +437,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content5
             </div>
           </div>
@@ -200,7 +447,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content6
             </div>
           </div>
@@ -208,7 +457,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content7
             </div>
           </div>
@@ -216,7 +467,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content8
             </div>
           </div>
@@ -224,7 +477,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-content-tab"
             style="height:100%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content9
             </div>
           </div>
@@ -232,7 +487,9 @@ exports[`Renders Tabs demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div>
+  <div
+    style="margin-top:30px"
+  >
     <div>
       纵向Tabs标签页
     </div>
@@ -281,7 +538,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-vertical-content-tab"
             style="height:33.333333333333336%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content1
             </div>
           </div>
@@ -289,7 +548,9 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-vertical-content-tab"
             style="height:33.333333333333336%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
               content2
             </div>
           </div>
@@ -297,7 +558,90 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-vertical-content-tab"
             style="height:33.333333333333336%"
           >
-            <div>
+            <div
+              class="demo-tabs-content"
+            >
+              content3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style="margin-top:30px"
+  >
+    <div>
+      自定义样式
+    </div>
+    <div
+      class="fm-tabs fm-tabs-horizontal"
+      style="height:200px;margin-top:10px"
+    >
+      <div
+        class="fm-tabs-horizontal-nav-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-nav"
+        >
+          <div
+            class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
+            style="width:33.333333333333336%;color:#000000"
+          >
+            Tabs1
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:33.333333333333336%;color:#333333"
+          >
+            Tabs2
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:33.333333333333336%;color:#333333"
+          >
+            Tabs3
+          </div>
+          <div
+            class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
+            style="background:#26BD71;left:0%;width:33.333333333333336%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-horizontal-content-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-content"
+          style="height:100%"
+        >
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content1
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              content2
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
               content3
             </div>
           </div>

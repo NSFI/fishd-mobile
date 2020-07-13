@@ -48,11 +48,11 @@ module.exports = function (api) {
 __注意：由于组件引入公共样式时使用的是 reference 方式，按需加载时公共的样式不会打包出去，需要使用 `import 'fishd-mobile/es/assets/css/index.less'` 手动引入。__
 
 
-## 使用CDN上的ppfish组件库
+## 使用CDN上的fishd-mobile组件库
 
-请使用已经存在的CDN资源或自行打包并上传至CDN上。从CDN上引入ppfish组件库与使用CDN上的React库文件的方式是一样的，都是在html文件中使用script标签引用CDN资源。由于ppfish组件库依赖于react、react-dom这两个库文件，所以请确保这两个文件的位置在组件库的CDN资源之前。另外还需要手动引入组件库的样式CDN资源。
+请使用已经存在的CDN资源或自行打包并上传至CDN上。从CDN上引入fishd-mobile组件库与使用CDN上的React库文件的方式是一样的，都是在html文件中使用script标签引用CDN资源。由于fishd-mobile组件库依赖于react、react-dom这两个库文件，所以请确保这两个文件的位置在组件库的CDN资源之前。另外还需要手动引入组件库的样式CDN资源。
 
-使用CDN上的组件库时，如果需要自定义主题，需要在项目中安装ppfish组件库作为依赖，然后在代码中引入 `ppfish/dist/style.less` 这个样式文件。具体细节，可参考**开发指南 - 定制主题**。
+使用CDN上的组件库时，如果需要自定义主题，需要在项目中安装fishd-mobile组件库作为依赖，然后在代码中引入 `fishd-mobile/dist/style.less` 这个样式文件。具体细节，可参考**开发指南 - 定制主题**。
 ```html
 <html>
   <head>
@@ -92,7 +92,3 @@ __注意：由于组件引入公共样式时使用的是 reference 方式，按�
   </body>
 </html>
 ```
-
-## 演示环境
-
-[Fish Design 演示环境](https://nsfi.github.io/ppfish-demo/#/homePage/home)

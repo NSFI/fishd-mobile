@@ -5,3 +5,4 @@ declare module 'rc-animate' {
 declare module 'rmc-notification';
 declare module 'rc-checkbox';
 declare module 'fishd-checkbox';
+declare module 'react-transition-group';
