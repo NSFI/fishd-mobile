@@ -1,6 +1,6 @@
 {
   "name": "fishd-mobile",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "fishd-mobile",
   "main": "lib/components/index.js",
   "module": "es/components/index.js",

@@ -16,6 +16,7 @@
     "baseUrl": "../../temp/",
     "moduleResolution": "node",
     "strictPropertyInitialization": false,
+    "noImplicitAny": false,
     "typeRoots": [
       "../../source/typings",
       "../../node_modules/@types"
