@@ -5,7 +5,7 @@
 若安装缓慢报错，可尝试用 cnpm 或别的镜像源自行安装：`rm -rf node_modules && cnpm install`。
 
 ```shell
-npm i ppfish --save
+npm i fishd-mobile --save
 ```
 
 ## 使用
@@ -13,7 +13,7 @@ npm i ppfish --save
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button } from 'ppfish';
+import { Button } from 'fishd-mobile';
 
 ReactDOM.render(
   <Button type="primary">Primary</Button>, document.getElementById('app')
@@ -23,9 +23,9 @@ ReactDOM.render(
 
 ## 按需加载
 
-通常情况下可能只使用了部分组件，如果你使用 `import { Button } from 'ppfish'`，babel通常会把整个ppfish打包出来。
-你可以使用babel插件，比如 [babel-plugin-transform-imports](https://www.npmjs.com/package/babel-plugin-transform-imports)，将这种写法在编译时自动转换成 `import Button from 'ppfish/es/components/Button'`; 
-不过你需要告诉 [babel-plugin-transform-imports]((https://www.npmjs.com/package/babel-plugin-transform-imports)) 插件ppfish组件的路径名规则。
+通常情况下可能只使用了部分组件，如果你使用 `import { Button } from 'fishd-mobile'`，babel通常会把整个fishd-mobile打包出来。
+你可以使用babel插件，比如 [babel-plugin-transform-imports](https://www.npmjs.com/package/babel-plugin-transform-imports)，将这种写法在编译时自动转换成 `import Button from 'fishd-mobile/es/components/Button'`; 
+不过你需要告诉 [babel-plugin-transform-imports]((https://www.npmjs.com/package/babel-plugin-transform-imports)) 插件fishd-mobile组件的路径名规则。
 
 ```js
 // 列举babel7支持的babel.config.js配置写法：
@@ -35,8 +35,8 @@ module.exports = function (api) {
   return {
     plugins: [
       "transform-imports", {
-        "ppfish": {
-          "transform": "ppfish/es/components/${member}"
+        "fishd-mobile": {
+          "transform": "fishd-mobile/es/components/${member}"
         },
       }
     ]
@@ -45,7 +45,7 @@ module.exports = function (api) {
 
 ```
 
-__注意：由于组件引入公共样式时使用的是 reference 方式，按需加载时公共的样式不会打包出去，需要使用 `import 'ppfish/es/assets/css/index.less'` 手动引入。__
+__注意：由于组件引入公共样式时使用的是 reference 方式，按需加载时公共的样式不会打包出去，需要使用 `import 'fishd-mobile/es/assets/css/index.less'` 手动引入。__
 
 
 ## 使用CDN上的ppfish组件库

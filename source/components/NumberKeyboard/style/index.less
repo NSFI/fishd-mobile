@@ -1,13 +1,116 @@
 @import '../../../assets/css/index';
-@ActionSheetPrefixCls: fm-number-keyboard;
 
-.@{ActionSheetPrefixCls} {
-  &-content {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 200px;
-    background-color: red;
+@prefixCls: fm-number-keyboard;
+@prefixClsKey: fm-number-key;
+
+.@{prefixCls} {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+
+  &__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding-top: 6px;
+    background-color: #f2f3f5;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    &-title {
+      font-weight: normal;
+      font-size: 14px;
+      color: #646566;
+    }
+    &-left {
+      position: absolute;
+      left: 0;
+      height: 100%;
+      padding: 0 16px;
+    }
+    &-right {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      padding: 0 16px;
+      color: #576b95;
+      font-size: 14px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    background-color: #f2f3f5;
+    padding: 6px 0 0 6px;
+    display: flex;
+  }
+
+  &__keys {
+    flex: 3;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.@{prefixClsKey} {
+  &__wrapper {
+    box-sizing: border-box;
+    flex: 1;
+    flex-basis: 33%;
+    padding: 0 6px 6px 0;
+  }
+
+  &__key {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+    font-size: 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+
+    &:active {
+      background-color: #ebedf0;
+    }
+  }
+
+  &__blue {
+    font-size: 16px;
+    color: #fff;
+    background-color: #1989fa;
+
+    &:active {
+      background-color: #0570db;
+    }
+  }
+
+  &__wider {
+    flex: 0 0 auto;
+    width: 66.6%;
+  }
+
+  &__large {
+    height: 100%;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 22px;
   }
 }

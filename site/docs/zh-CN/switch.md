@@ -28,8 +28,8 @@ class SwitchExample extends React.Component {
   render() {
     return (
       <div className="components-switch-demo-basic">
-            <div className="switch-item">
-                <label>off</label>
+            <div className="switch-title">基本用法</div>
+            <div className="switch-content">
                 <Switch
                     checked={this.state.checked}
                     onClick={() => {
@@ -38,10 +38,8 @@ class SwitchExample extends React.Component {
                         });
                     }}
                 />
-            </div>
-            <div className="switch-item">
-                <label>on</label>
                 <Switch
+                    style={{marginLeft: '20px'}}
                     checked={this.state.checked1}
                     onChange={() => {
                         this.setState({
@@ -50,62 +48,36 @@ class SwitchExample extends React.Component {
                     }}
                 />
             </div>
-
-            <div className="switch-item">
-                <label>Disabled off</label>
+            <div className="switch-title">禁用状态</div>
+            <div className="switch-content">
                 <Switch
                     disabled
                     checked={this.state.checked2}
                 />
-            </div>
-
-            <div className="switch-item">
-                <label>Disabled on</label>
                 <Switch
+                    style={{marginLeft: '20px'}}
                     disabled
                     checked={this.state.checked3}
                 />
             </div>
-            <div className="switch-item">
-                <label>Style for Android</label>
+            <div className="switch-title">加载状态</div>
+            <div className="switch-content">
                 <Switch
-                    checked={this.state.checked4}
-                    onChange={() => {
-                        this.setState({
-                            checked4: !this.state.checked4,
-                        });
-                    }}
-                    platform="android"
-                />
-            </div>
-            <div className="switch-item">
-                <label>Color for Android</label>
-                <Switch
-                    checked={this.state.checked5}
-                    onChange={() => {
-                        this.setState({
-                            checked5: !this.state.checked5,
-                        });
-                    }}
-                    platform="android"
-                    color="red"
-                />
-            </div>
-            <div className="switch-item">
-                <label>Style for iOS</label>
-                <Switch
-                    checked={this.state.checked6}
-                    onChange={() => {
-                        this.setState({
-                            checked6: !this.state.checked6,
-                        });
-                    }}
                     platform="ios"
+                    loading
+                    disabled
                 />
+                <span style={{marginLeft: '20px'}}>
+                    <Switch
+                        platform="android"
+                        loading
+                        disabled
+                    />
+                </span>
+                
             </div>
-
-            <div className="switch-item">
-                <label>Color for iOS</label>
+            <div className="switch-title">自定义颜色</div>
+            <div className="switch-content">
                 <Switch
                     checked={this.state.checked7}
                     onChange={() => {
@@ -114,9 +86,21 @@ class SwitchExample extends React.Component {
                         });
                     }}
                     platform="ios"
-                    color="red"
+                    color="#4dd865"
+                />
+                <Switch
+                    style={{marginLeft: '20px'}}
+                    checked={this.state.checked4}
+                    onChange={() => {
+                        this.setState({
+                            checked4: !this.state.checked4,
+                        });
+                    }}
+                    platform="android"
+                    color="#4dd865"
                 />
             </div>
+            
             
        </div>
     );
@@ -136,6 +120,13 @@ ReactDOM.render(<SwitchExample />, mountNode);
     border-bottom: 1px solid #ddd;
     align-items: center;
 }
+[class^="components-switch-demo-"] .switch-title {
+    color: #333333;
+    font-size: 12px;
+}
+[class^="components-switch-demo-"] .switch-content {
+    margin: 15px 0;
+}
 ```
 
 :::
@@ -149,7 +140,7 @@ ReactDOM.render(<SwitchExample />, mountNode);
 | checked    | 是否默认选中    | Boolean       |   false  |
 | disabled   | 是否不可修改    | Boolean       |   false  |
 | onChange   | change 事件触发的回调函数 | (checked: bool): void |  无  |
-| color | 开关打开后的颜色 | String | #4dd865 |
+| color | 开关打开后的颜色 | String | #337EFF  |
 | name | switch 的 name    | String   |      |
 | platform |  设定组件的平台特有样式, 可选值为 `android`, `ios`， 默认为 `ios`  | String | `'ios'`|
 | onClick   | click事件触发的回调函数，当switch为disabled时，入参的值始终是默认传入的checked值。 | (checked: bool): void |  无  |

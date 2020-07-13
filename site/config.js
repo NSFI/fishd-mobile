@@ -171,6 +171,20 @@ export default [
         nameEn: 'NoticeBar',
         published: true,
       },
+      {
+        key: 'dropdown',
+        type: 'markdown',
+        name: 'Dropdown 下拉框',
+        nameEn: 'Dropdown',
+        published: true,
+      },
+      {
+        key: 'overlay',
+        type: 'markdown',
+        name: 'Overlay 遮罩',
+        nameEn: 'Overlay',
+        published: true,
+      }
     ]
   }
 ]

@@ -10,13 +10,14 @@
 
 ```js
 state = {
-  keyboard: ''
+  keyboard: '',
+  value: ''
 }
 
-handleShow = (e) => {
+handleShow = (type, e) => {
   e.nativeEvent.stopImmediatePropagation();
   this.setState({
-    keyboard: 'A'
+    keyboard: type
   })
 }
 
@@ -26,21 +27,85 @@ handleBlur = () => {
   })
 }
 
-handleShowTwo = (e) => {
-  e.nativeEvent.stopImmediatePropagation();
-  this.setState({
-    keyboard: 'B'
-  })
+hanldeInput = (text) => {
+  Toast.show(`点击${text}`, 1, false);
+}
+
+hanldeDelete = () => {
+  Toast.show(`删除`, 1, false);
+}
+
+handleChange = (value) => {
+  console.log('>>> value', value);
+  this.setState({ value })
 }
 
 render(){
-  const { keyboard } = this.state
+  const { keyboard, value } = this.state
  return(
     <div className="components-numberKeyboard-demo-basic">
-      <Button onMouseDown={this.handleShow}>显示键盘1</Button>
-      <Button onMouseDown={this.handleShowTwo}>显示键盘2</Button>
-      <NumberKeyboard show={keyboard === 'A'} onBlur={this.handleBlur}>显示键盘1</NumberKeyboard>
-      <NumberKeyboard show={keyboard === 'B'} onBlur={this.handleBlur}>显示键盘2</NumberKeyboard>
+      <Button onMouseDown={this.handleShow.bind(this, 'A')}>普通键盘</Button>
+      <NumberKeyboard
+        show={keyboard === 'A'}
+        onBlur={this.handleBlur}
+        onInput={this.hanldeInput}
+        onDelete={this.hanldeDelete}
+      ></NumberKeyboard>
+
+      <Button onMouseDown={this.handleShow.bind(this, 'B')}>右侧栏键盘</Button>
+      <NumberKeyboard
+        show={keyboard === 'B'}
+        theme='custom'
+        onBlur={this.handleBlur}
+        onInput={this.hanldeInput}
+        onDelete={this.hanldeDelete}
+        extraKey="."
+        closeButtonText="完成"
+      ></NumberKeyboard>
+
+      <Button onMouseDown={this.handleShow.bind(this, 'C')}>身份证键盘</Button>
+      <NumberKeyboard
+        show={keyboard === 'C'}
+        onBlur={this.handleBlur}
+        onInput={this.hanldeInput}
+        onDelete={this.hanldeDelete}
+        extraKey="X"
+        closeButtonText="完成"
+      ></NumberKeyboard>
+
+      <Button onMouseDown={this.handleShow.bind(this, 'D')}>带标题键盘</Button>
+      <NumberKeyboard
+        show={keyboard === 'D'}
+        onBlur={this.handleBlur}
+        onInput={this.hanldeInput}
+        onDelete={this.hanldeDelete}
+        extraKey="."
+        title='键盘标题'
+        closeButtonText="完成"
+      ></NumberKeyboard>
+
+      <Button onMouseDown={this.handleShow.bind(this, 'E')}>配置多个按键</Button>
+      <NumberKeyboard
+        show={keyboard === 'E'}
+        onBlur={this.handleBlur}
+        onInput={this.hanldeInput}
+        onDelete={this.hanldeDelete}
+        theme='custom'
+        extraKey={['00', '.']}
+        title='多个按键'
+        closeButtonText="完成"
+      ></NumberKeyboard>
+
+      <Button onMouseDown={this.handleShow.bind(this, 'F')}>双向绑定</Button>
+      <NumberKeyboard
+        show={keyboard === 'F'}
+        onBlur={this.handleBlur}
+        onChange={this.handleChange}
+        extraKey="."
+        title={value || '请输入价格'}
+        value={value}
+        closeButtonText="完成"
+      ></NumberKeyboard>
     </div>
   )
 }

@@ -1,12 +1,15 @@
 import classnames from 'classnames';
 import * as React from 'react';
 import { SwitchPropsType } from './PropsType';
+import Icon from '../Icon';
 
 export interface SwitchProps extends SwitchPropsType {
   prefixCls?: string;
   className?: string;
   platform?: string;
   style?: React.CSSProperties;
+  loading?: boolean;
+  icon?: React.ReactNode;
 }
 
 export default class Switch extends React.Component<SwitchProps, any> {
@@ -17,6 +20,7 @@ export default class Switch extends React.Component<SwitchProps, any> {
     disabled: false,
     onChange() {},
     platform: 'ios',
+    loading: false,
     onClick() {},
   };
 
@@ -41,9 +45,13 @@ export default class Switch extends React.Component<SwitchProps, any> {
   };
 
   render() {
-    const { prefixCls, name, checked, disabled, className, platform, color, ...restProps } = this.props;
+    const { prefixCls, name, checked, disabled, className, platform, color, loading, icon, ...restProps } = this.props;
+    const iconType: any = loading ? 'fm-loading' : icon;
     const wrapCls = classnames(prefixCls, className, {
       [`${prefixCls}-android`]: platform === 'android',
+      [`${prefixCls}-checked`]: checked,
+      'fm-loadding': loading,
+      [`${prefixCls}-icon`]: !!iconType,
     });
 
     const fackInputCls = classnames('checkbox', {
@@ -78,6 +86,7 @@ export default class Switch extends React.Component<SwitchProps, any> {
           {...globalProps}
         />
         <div className={fackInputCls} style={style} {...(disabled ? { onClick: this.onClick } : {})} />
+        {loading ? <Icon type={iconType} size="lg" /> : null}
       </label>
     );
   }

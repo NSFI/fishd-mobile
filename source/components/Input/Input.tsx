@@ -53,9 +53,9 @@ class Input extends React.Component<InputProps, any> {
     updatePlaceholder: false,
   };
 
-  inputRef: Input | null;
+  inputRef!: Input | null;
 
-  private debounceTimeout: number | null;
+  private debounceTimeout!: number | null;
 
   constructor(props: InputProps) {
     super(props);
@@ -204,7 +204,7 @@ class Input extends React.Component<InputProps, any> {
     return pos;
   };
 
-  onInputFocus = (value: string) => {
+  onInputFocus = (value?: string) => {
     if (this.debounceTimeout) {
       clearTimeout(this.debounceTimeout);
       this.debounceTimeout = null;
@@ -217,7 +217,7 @@ class Input extends React.Component<InputProps, any> {
     }
   };
 
-  onInputBlur = (value: string) => {
+  onInputBlur = (value?: string) => {
     if (this.inputRef) {
       // this.inputRef may be null if customKeyboard unmount
       this.debounceTimeout = window.setTimeout(() => {
