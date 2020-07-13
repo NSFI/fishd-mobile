@@ -178,18 +178,22 @@ ReactDOM.render(<InputDemoWrapper />, mountNode)
 
 | 属性 | 说明         | 类型                                            | 默认值    |
 | ---- | ------------ | ----------------------------------------------- | --------- |
-| type | 	可以是银行卡`bankCard`; 手机号`phone`(此时最大长度固定为11,`maxLength`设置无效); 密码`password`; 数字`number`(为了尽量唤起`带小数点`的数字键盘，此类型并不是原生 number，而是`<input type="text" pattern="[0-9]*" />`); `digit`(表示原生的 number 类型); 以及其他标准 html input type 类型| String | `text` |
-| value | value 值(受控与否参考https://facebook.github.io/react/docs/forms.html) | String | `-` |
-| defaultValue | 设置初始默认值 | String | `-` |
-| placeholder | placeholder | String | `-` |
-| editable | 是否可编辑 | bool | `true` |
-| disabled | 是否禁用 | bool | `false` |
-| clear | 是否带清除功能(仅editable为true,disabled为false才生效) | bool | `false` |
-| maxLength | 最大长度 | number | `-` |
-| onChange | change 事件触发的回调函数 | (val: string): void | `-` |
-| onBlur | blur 事件触发的回调函数 | (val: string): void | `-` |
-| onFocus | focus 事件触发的回调函数 | (val: string): void | `-` |
-| error | 报错样式 | bool | `false` |
-| onErrorClick | 点击报错 icon 触发的回调函数 | (e: Object): void | `-` |
-| extra | 右边自定义内容 | string or node | `-` |
-| onExtraClick | extra 点击事件触发的回调函数 | (e: Object): void | `-` |
+| type | 	可以是银行卡`bankCard`; 手机号`phone`(此时最大长度固定为11,`maxLength`设置无效); 密码`password`; 数字`number`(为了尽量唤起`带小数点`的数字键盘，此类型并不是原生 number，而是`<input type="text" pattern="[0-9]*" />`); `digit`(表示原生的 number 类型); 以及其他标准 html input type 类型| string | `text` |
+| value | value 值(受控与否参考https://facebook.github.io/react/docs/forms.html) | string | - |
+| defaultValue | 设置初始默认值 | string | - |
+| placeholder | placeholder | string | - |
+| editable | 是否可编辑 | boolean | `true` |
+| disabled | 是否禁用 | boolean | `false` |
+| clear | 是否带清除功能(仅editable为true,disabled为false才生效) | boolean | `false` |
+| maxLength | 最大长度 | number | - |
+| error | 报错样式 | boolean | `false` |
+| extra | 右边自定义内容 | string \| ReactNode | - |
+
+## Event
+| 事件名 | 说明         | 回调参数                                            |
+| ---- | ------------ | ----------------------------------------------- |
+| onChange | change 事件触发的回调函数 | val: string |
+| onBlur | blur 事件触发的回调函数 | val: string |
+| onFocus | focus 事件触发的回调函数 | val: string |
+| onErrorClick | 点击报错 | event: object |
+| onExtraClick | extra 点击事件触发的回调函数 | event: object |

@@ -156,9 +156,9 @@ ActionSheet.showActionSheetWithOptions(config)
 | options | 按钮标题列表 | 	Array< string >  | - |
 | title | 标题 | string | - |
 | message | 描述 | string | - |
-| cancelText | 取消按钮文本 | string | '取消' |
+| cancelText | 取消按钮文本 | string | `取消` |
 | destructiveButtonIndex | 按钮列表中破坏性按钮（一般为删除）的索引位置 | number | - |
-| maskClosable | 点击蒙层是否允许关闭 | boolean | true |
+| maskClosable | 点击蒙层是否允许关闭 | boolean | `true` |
 | onSelect | 点击选项时触发，禁用或加载状态下不会触发 | (buttonIndex: number) : Promise | - |
 | onCancel | 点击取消按钮时触发 | () : Promise | - |
 | onClose | 关闭面板时触发 | () : Promise | - |
@@ -171,8 +171,8 @@ ActionSheet.showShareActionSheetWithOptions(config)
 | options | 分享按钮列表 | 	Array< {icon: ReactNode, title: string} > 或 二维数组  | - |
 | title | 标题 | string | - |
 | message | 描述 | string | - |
-| cancelText | 取消按钮文本 | string | '取消' |
-| maskClosable | 点击蒙层是否允许关闭 | boolean | true |
+| cancelText | 取消按钮文本 | string | `取消` |
+| maskClosable | 点击蒙层是否允许关闭 | boolean | `true` |
 | onSelect | 点击选项时触发，禁用或加载状态下不会触发 | (buttonIndex: number, rowIndex: number) : Promise | - |
 | onCancel | 点击取消按钮时触发 | () : Promise | - |
 | onClose | 关闭面板时触发 | () : Promise | - |
