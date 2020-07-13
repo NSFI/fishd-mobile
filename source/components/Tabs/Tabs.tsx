@@ -46,11 +46,11 @@ class Tabs extends React.Component<TabsProps, any> {
       return 0;
     };
     const getCount = () => {
-      if (props.count && props.count < props.tabs.length) {
+      if (props.count && props.count <= props.tabs.length) {
         return props.count;
       }
-      if (props.tabs.length > 3) {
-        return 3;
+      if (props.tabs.length > 4) {
+        return 4;
       }
       return props.tabs.length;
     };
