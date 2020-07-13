@@ -30,11 +30,11 @@ render() {
 
 ```less
 .components-badge-demo-basic {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-badge-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 ```
@@ -64,11 +64,11 @@ render() {
 
 ```less
 .components-badge-demo-overflow {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-badge-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 ```
@@ -97,11 +97,11 @@ render() {
 
 ```less
 .components-badge-demo-corner {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-badge-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 .corner-badge {
@@ -149,11 +149,11 @@ render() {
 
 ```less
 .components-badge-demo-hidden {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-badge-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 ```
@@ -183,11 +183,11 @@ render() {
 
 ```less
 .components-badge-demo-market {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-badge-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 ```
@@ -225,11 +225,11 @@ render() {
 
 ```less
 .components-badge-demo-custom {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-badge-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 ```

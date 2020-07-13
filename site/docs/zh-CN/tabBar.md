@@ -8,9 +8,9 @@
 - 即使某个 Tab 不可用，也不要禁用或者移除该 Tab。
 - 使用 Badge 进行提示，足不出户也能知道有内容更新。
 
-## 基础用法
+## 基本用法
 
-:::demo 基础用法。
+:::demo 基本用法。
 ```js
 class TabBarExample extends React.Component {
   constructor(props) {
@@ -23,11 +23,11 @@ class TabBarExample extends React.Component {
   render() {
     return (
       <div className='components-tabBar-demo-basic'>
-        <div className='sub-title'>基础用法</div>
+        <div className='sub-title'>基本用法</div>
         <div>
           <TabBar
-            unselectedTintColor="#949494"
-            tintColor="#33A3F4"
+            unselectedTintColor="#51565D"
+            tintColor="#337EFF"
             barTintColor="white"
             noRenderContent
           >
@@ -111,11 +111,11 @@ ReactDOM.render(<TabBarExample />, mountNode);
 
 ```less
 .components-tabBar-demo-basic {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-tabBar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 .components-tabBar-demo-content {
@@ -138,7 +138,7 @@ class TabBarExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'public',
+      selectedTab: 'life',
     };
   }
 
@@ -148,15 +148,14 @@ class TabBarExample extends React.Component {
         <div className='sub-title'>徽标提示</div>
         <div>
           <TabBar
-            unselectedTintColor="#949494"
-            tintColor="#33A3F4"
+            unselectedTintColor="#51565D"
+            tintColor="#337EFF"
             barTintColor="white"
             noRenderContent
           >
             <TabBar.Item
               title="生活"
               key="life"
-              badge={1}
               icon={
                 <div style={{
                   width: '22px',
@@ -177,7 +176,7 @@ class TabBarExample extends React.Component {
             <TabBar.Item
               title="口碑"
               key="public"
-              badge={'new'}
+              dot
               icon={
                 <div style={{
                   width: '22px',
@@ -198,7 +197,7 @@ class TabBarExample extends React.Component {
             <TabBar.Item
               title="朋友"
               key="friend"
-              dot
+              badge={3}
               icon={
                 <div style={{
                   width: '22px',
@@ -219,7 +218,7 @@ class TabBarExample extends React.Component {
             <TabBar.Item
               title="我的"
               key="my"
-              badge={'99+'}
+              badge={22}
               icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
               selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
               selected={this.state.selectedTab === 'my'}
@@ -237,11 +236,11 @@ ReactDOM.render(<TabBarExample />, mountNode);
 
 ```less
 .components-tabBar-demo-badge {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-tabBar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 .components-tabBar-demo-content {
@@ -264,7 +263,7 @@ class TabBarExample extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 'friend',
+      selectedTab: 'life',
     };
   }
 
@@ -274,9 +273,10 @@ class TabBarExample extends React.Component {
         <div className='sub-title'>自定义颜色</div>
         <div>
           <TabBar
-            unselectedTintColor="blue"
-            tintColor="red"
-            barTintColor="yellow"
+            unselectedTintColor="#51565D"
+            tintColor="#8875FF"
+            barTintColor="white"
+            noRenderContent
           >
             <TabBar.Item
               title="生活"
@@ -372,11 +372,11 @@ ReactDOM.render(<TabBarExample />, mountNode);
 
 ```less
 .components-tabBar-demo-custom {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 [class^="components-tabBar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
 }
 .components-tabBar-demo-content {
@@ -391,47 +391,25 @@ ReactDOM.render(<TabBarExample />, mountNode);
 ```
 :::
 
-## 隐藏标签栏
+## 布局与数量
 
-:::demo 隐藏标签栏。
+:::demo 布局与数量。
 ```js
 class TabBarExample extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedTab: 'my',
-      hidden: false,
-    };
-  }
-
-  renderContent(pageText) {
-    return (
-      <div className='components-tabBar-demo-content'>
-        <div>【{pageText}】内容</div>
-        <a style={{ marginTop: 10, color: '#108ee9', cursor: 'pointer' }}
-          onClick={(e) => {
-            e.preventDefault();
-            this.setState({
-              hidden: !this.state.hidden,
-            });
-          }}
-        >
-          点击 显示/隐藏 标签栏
-        </a>
-      </div>
-    );
   }
 
   render() {
     return (
-      <div className='components-tabBar-demo-hidden'>
-        <div className='sub-title'>隐藏标签栏</div>
-        <div style={{ height: 150 }}>
+      <div className='components-tabBar-demo-count'>
+        <div className='sub-title'>布局与数量</div>
+        <div className='components-tabBar-demo-example'>
           <TabBar
-            unselectedTintColor="#949494"
-            tintColor="#33A3F4"
+            unselectedTintColor="#51565D"
+            tintColor="#337EFF"
             barTintColor="white"
-            hidden={this.state.hidden}
+            noRenderContent
           >
             <TabBar.Item
               title="生活"
@@ -443,18 +421,28 @@ class TabBarExample extends React.Component {
                   background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
                 />
               }
-              selectedIcon={
+            />
+            <TabBar.Item
+              title="生活"
+              key="life"
+              icon={
                 <div style={{
                   width: '22px',
                   height: '22px',
-                  background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
                 />
               }
-              selected={this.state.selectedTab === 'life'}
-              onPress={() => { this.setState({ selectedTab: 'life' }) }}
-            >
-              {this.renderContent('生活')}
-            </TabBar.Item>
+            />
+          </TabBar>
+        </div>
+
+        <div className='components-tabBar-demo-example'>
+          <TabBar
+            unselectedTintColor="#51565D"
+            tintColor="#337EFF"
+            barTintColor="white"
+            noRenderContent
+          >
             <TabBar.Item
               title="口碑"
               key="public"
@@ -465,18 +453,39 @@ class TabBarExample extends React.Component {
                   background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
                 />
               }
-              selectedIcon={
+            />
+            <TabBar.Item
+              title="口碑"
+              key="public"
+              icon={
                 <div style={{
                   width: '22px',
                   height: '22px',
-                  background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat' }}
+                  background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
                 />
               }
-              selected={this.state.selectedTab === 'public'}
-              onPress={() => { this.setState({ selectedTab: 'public' }) }}
-            >
-              {this.renderContent('口碑')}
-            </TabBar.Item>
+            />
+            <TabBar.Item
+              title="口碑"
+              key="public"
+              icon={
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat' }}
+                />
+              }
+            />
+          </TabBar>
+        </div>
+
+        <div className='components-tabBar-demo-example'>
+          <TabBar
+            unselectedTintColor="#51565D"
+            tintColor="#337EFF"
+            barTintColor="white"
+            noRenderContent
+          >
             <TabBar.Item
               title="朋友"
               key="friend"
@@ -487,28 +496,75 @@ class TabBarExample extends React.Component {
                   background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
                 />
               }
-              selectedIcon={
+            />
+            <TabBar.Item
+              title="朋友"
+              key="friend"
+              icon={
                 <div style={{
                   width: '22px',
                   height: '22px',
-                  background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
                 />
               }
-              selected={this.state.selectedTab === 'friend'}
-              onPress={() => { this.setState({ selectedTab: 'friend' }) }}
-            >
-              {this.renderContent('朋友')}
-            </TabBar.Item>
+            />
+            <TabBar.Item
+              title="朋友"
+              key="friend"
+              icon={
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                />
+              }
+            />
+            <TabBar.Item
+              title="朋友"
+              key="friend"
+              icon={
+                <div style={{
+                  width: '22px',
+                  height: '22px',
+                  background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
+                />
+              }
+            />
+          </TabBar>
+        </div>
+
+        <div className='components-tabBar-demo-example'>
+          <TabBar
+            unselectedTintColor="#51565D"
+            tintColor="#337EFF"
+            barTintColor="white"
+            noRenderContent
+          >
             <TabBar.Item
               title="我的"
               key="my"
               icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-              selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-              selected={this.state.selectedTab === 'my'}
-              onPress={() => { this.setState({ selectedTab: 'my' }) }}
-            >
-              {this.renderContent('我的')}
-            </TabBar.Item>
+            />
+            <TabBar.Item
+              title="我的"
+              key="my"
+              icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
+            />
+            <TabBar.Item
+              title="我的"
+              key="my"
+              icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
+            />
+            <TabBar.Item
+              title="我的"
+              key="my"
+              icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
+            />
+            <TabBar.Item
+              title="我的"
+              key="my"
+              icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
+            />
           </TabBar>
         </div>
       </div>
@@ -520,13 +576,16 @@ ReactDOM.render(<TabBarExample />, mountNode);
 ```
 
 ```less
-.components-tabBar-demo-hidden {
-  padding-bottom: 20px;
+.components-tabBar-demo-count {
+  padding-bottom: 24px;
 }
 [class^="components-tabBar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
+  padding-bottom: 10px;
+  color: #333;
   font-size: 12px;
+}
+.components-tabBar-demo-example {
+  margin-bottom: 12px;
 }
 .components-tabBar-demo-content {
   background-color: white;
