@@ -9,7 +9,7 @@ export interface InputProps extends HTMLInputProps {
 }
 
 class InputItem extends React.Component<InputProps, any> {
-  inputRef: HTMLInputElement | null;
+  inputRef!: HTMLInputElement | null;
 
   onInputBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { value } = e.target as any;

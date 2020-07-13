@@ -15,6 +15,7 @@
     "esModuleInterop": true,
     "baseUrl": "../../temp/",
     "moduleResolution": "node",
+    "strictPropertyInitialization": false,
     "typeRoots": [
       "../../source/typings",
       "../../node_modules/@types"
