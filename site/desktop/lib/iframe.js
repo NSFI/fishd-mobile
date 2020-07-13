@@ -23,6 +23,7 @@ export default function initIframe () {
   // 监听hash事件，并同步子页面路由
   window.addEventListener('hashchange', () => {
     const iframe = document.querySelector('.u-iframe')
+    document.documentElement.scrollTop = 0
     if (iframe) {
       iframe.contentWindow.postMessage(
         {

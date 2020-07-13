@@ -98,4 +98,23 @@ render(){
 
 | 属性 | 说明         | 类型                                            | 默认值    |
 | ---- | ------------ | ----------------------------------------------- | --------- |
-| size | 设置按钮大小 | Enum {'small', 'large', 'default'}              | 'default' |
+| selectedIndex | 手动设置当前显示的索引 | number | `0` |
+| dots | 是否显示面板指示点 | boolean | `true` |
+| vertical | 垂直显示 | boolean | `false` |
+| autoplay | 是否自动切换 | boolean | `false` |
+| autoplayInterval | 自动切换的时间间隔 | number | `3000` |
+| infinite | 是否循环播放 | boolean | `false` |
+| dotStyle | 指示点样式 | object | - |
+| dotActiveStyle | 当前激活的指示点样式 | object | - |
+| frameOverflow | 设置 slider frame 的 overflow 样式 | string | `hidden` |
+| cellSpacing | 项目之间的间距，以px为单位 | number | - |
+| slideWidth | 手动设置项目宽度. 可以是slideWidth="20px"，也可以是相对容器的百分比slideWidth={0.8} | string \| number | - |
+| easing | 缓动函数，你可以使用这里提供的其他函数 | Function | `easeOutCirc` |
+| swipeSpeed | 滑动灵敏度 | number | `12` |
+
+## Event
+| 事件名 | 说明         | 回调参数                                            |
+| ---- | ------------ | ----------------------------------------------- |
+| afterChange | 切换面板后的回调函数 | current: number |
+| beforeChange | 切换面板前的回调函数 | from: number, to: number |
+

@@ -9,11 +9,10 @@
     "target": "es6",
     "noImplicitAny": false
   },
-  // "include": [
-  //   "source/"
-  // ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lib",
+    "es"
   ],
   "compileOnSave": false
 }

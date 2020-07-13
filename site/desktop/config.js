@@ -34,6 +34,34 @@ export const config = {
           nameEn: 'Color',
           component: require('../docs/react/ruleColor'),
           published: true
+        },
+        {
+          key: 'cra',
+          type: 'markdown',
+          name: '在create-react-app中使用',
+          nameEn: 'Use in create-react-app',
+          published: true
+        },
+        {
+          key: 'theme',
+          type: 'markdown',
+          name: '定制主题',
+          nameEn: 'Theme',
+          published: true
+        },
+        {
+          key: 'adaptation',
+          type: 'markdown',
+          name: '移动端适配',
+          nameEn: 'Adaptation',
+          published: true
+        },
+        {
+          key: 'update',
+          type: 'markdown',
+          name: '更新日志',
+          nameEn: 'Update logs',
+          published: true
         }
       ]
     },

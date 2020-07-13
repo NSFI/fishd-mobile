@@ -21,7 +21,7 @@ exports[`Renders DatePicker demo correctly 1`] = `
               <div
                 class="fm-list-content"
               >
-                日期时间
+                日期时间选择
               </div>
               <div
                 class="fm-list-extra"
@@ -45,7 +45,7 @@ exports[`Renders DatePicker demo correctly 1`] = `
               <div
                 class="fm-list-content"
               >
-                日期
+                日期选择
               </div>
               <div
                 class="fm-list-extra"
@@ -69,7 +69,7 @@ exports[`Renders DatePicker demo correctly 1`] = `
               <div
                 class="fm-list-content"
               >
-                时间
+                时间选择
               </div>
               <div
                 class="fm-list-extra"
