@@ -14,6 +14,7 @@ class InputDemo extends React.Component {
     mark: '',
     phone: '',
     hasError: false,
+    content: ''
   }
 
   handleClick = (e) => {
@@ -52,7 +53,7 @@ class InputDemo extends React.Component {
 
   render () {
     const { getFieldProps } = this.props.form
-    const { mark, phone, hasError } = this.state
+    const { mark, phone, hasError, content } = this.state
     const { TextArea } = Input;
     return (
       <div className='components-input-demo-basic'>
@@ -139,7 +140,9 @@ class InputDemo extends React.Component {
         </TextArea>
 
         <div className='sub-title'>多行输入-显示字数</div>
-        <TextArea rows={3} count={100} placeholder='请输入备注' autoHeight labelWidth={80} clear>
+        <TextArea rows={3} count={100} placeholder='请输入备注' autoHeight labelWidth={80} clear value={content} onChange={(v) => {
+          this.setState({content: v})
+        }}>
           标题
         </TextArea>
       </div>
