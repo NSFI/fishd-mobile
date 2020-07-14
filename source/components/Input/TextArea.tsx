@@ -163,7 +163,6 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
   };
 
   clearInput = () => {
-    console.log('>>> 清空');
     this.setState({ value: '' });
     this.setInputValue('');
 
