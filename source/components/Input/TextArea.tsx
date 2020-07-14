@@ -65,10 +65,6 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
     };
   }
 
-  focus = () => {
-    this.textareaRef.focus();
-  };
-
   // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps: TextareaItemProps) {
     if ('value' in nextProps) {
@@ -163,6 +159,14 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
 
     if (this.props.onChange) {
       this.props.onChange('');
+    }
+
+    this.focus();
+  };
+
+  focus = () => {
+    if (this.textareaRef) {
+      this.textareaRef.focus();
     }
   };
 

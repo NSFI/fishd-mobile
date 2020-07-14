@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, hashHistory } from 'react-router'
 import { Row, Col, Affix } from 'ppfish'
+import gitIcon from '../../assets/img/github.png'
 import packageJson from '../../../../package.json'
 import { algolia } from '../../../config'
 export default class Header extends Component {
@@ -108,7 +109,7 @@ export default class Header extends Component {
               </div> */}
               <a className='nav-version'>{packageJson.version}</a>
               <a className='u-github' href='//github.com/NSFI/fishd-mobile' target='_blank'>
-                <img style={{ width: 25, height: 25 }} src='../../assets/img/github.png' alt='' />
+                <img style={{ width: 25, height: 25 }} src={gitIcon} alt='' />
               </a>
             </ul>
           </Col>
