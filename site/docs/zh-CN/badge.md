@@ -240,7 +240,7 @@ render() {
 
 |属性 | 说明 | 类型 | 默认值
 |----|-----|------|------
-size | 大小，可选 `large` `small` | string | `small`
+size | 大小，可选 `large` `small` | string | `'small'`
 text | 展示的数字或文案，当为数字时候，大于 overflowCount <br/> 时显示为 ${overflowCount}+，为 0 时隐藏 | string\|number | -
 corner | 置于角落 | boolean | `false`
 dot | 不展示数字，只有一个小红点 | boolean | `false`
