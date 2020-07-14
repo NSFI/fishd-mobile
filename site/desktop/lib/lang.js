@@ -14,11 +14,11 @@ const langMap = {
   'zh-CN': {
     title: 'Fish - 轻量、可靠的移动端 React 组件库',
     messages: {
-      home: '主页',
+      home: '首页',
       component: '组件',
       design: '设计语言',
-      web: 'Web',
-      mobile: 'Mobile',
+      web: 'Web组件',
+      mobile: 'Mobile组件',
       demo: '演示环境',
       search: '在 Fish Design 中搜索'
     }

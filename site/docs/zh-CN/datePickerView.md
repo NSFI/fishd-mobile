@@ -1,10 +1,8 @@
-# DatePickerView 动作面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
-
-组件描述
+# DatePickerView 日期选择面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
 
 ## 何时使用
 
-场景描述
+用于选择日期或时间，支持展示标题。
 
 ## 日期时间选择
 
@@ -99,7 +97,7 @@ onValueChange = (...args) => {
 };
 render(){
  return(<div className="components-datePickerView-demo-basic">
-    <div className="components-datePickerView-demo-basic__title">日期选择</div>
+    <div className="components-datePickerView-demo-basic__title">时间选择</div>
     <DatePickerView
         mode="time"
         value={this.state.value}
@@ -135,7 +133,6 @@ render(){
 | minuteStep | 分钟数递增步长设置 | number | `1` |
 | disabled | 是否不可用 | boolean | `false` |
 
-## Event
 ## Event
 | 事件名 | 说明         | 回调参数                                            |
 | ---- | ------------ | ----------------------------------------------- |

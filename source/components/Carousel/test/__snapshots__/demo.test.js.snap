@@ -91,6 +91,10 @@ exports[`Renders Carousel demo correctly 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="components-carousel-demo-basic"
+  >
     <div
       class="sub-title"
     >
