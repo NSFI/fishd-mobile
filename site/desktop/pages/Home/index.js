@@ -23,7 +23,7 @@ export default class Home extends Component {
               <Popover
                 placement="bottom"
                 content={
-                  <img className="u-qrcode" src="https://nos.netease.com/ysf/5644281f609b5bb61c566b9cb7d43d31.png" />
+                  <img className="u-qrcode" src="https://nos.netease.com/ysf/9651582ccaba7d6296eed99eb4504c7e.png" />
                 }
                 trigger="click"
               >
