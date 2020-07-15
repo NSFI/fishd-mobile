@@ -85,7 +85,8 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
                   }
                 : {
                     top: 0,
-                    bottom: `calc(100vh - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
+                    // bottom: `calc(100vh - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
+                    bottom: `calc(${window.innerHeight}px - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
                   }
             }
           >
