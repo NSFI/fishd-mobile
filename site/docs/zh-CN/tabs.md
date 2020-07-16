@@ -6,56 +6,55 @@
 :::demo 基础用法
 ```js
 render(){
- return(
+  return(
     <div>
       <div>
         基础用法
       </div>
       <Tabs style={{height: "200px", marginTop: "10px"}}
-            tabDirection={"horizontal"}
             tabs={[{key: "t1", title: "Tabs1"},
-                   {key: "t2", title: "Tabs2"}]}>
-      <div key="t1" className="demo-tabs-content">
-        content1
-      </div>
-      <div key="t2" className="demo-tabs-content">
-        content2
-      </div>
+              {key: "t2", title: "Tabs2"}]}>
+        <div key="t1" className="demo-tabs-content">
+          content1
+        </div>
+        <div key="t2" className="demo-tabs-content">
+          content2
+        </div>
       </Tabs>
       <Tabs style={{height: "200px", marginTop: "10px"}}
             tabDirection={"horizontal"}
             tabs={[{key: "t1", title: "Tabs1"},
-                   {key: "t2", title: "Tabs2"},
-                   {key: "t3", title: "Tabs3"}]}>
-      <div key="t1" className="demo-tabs-content">
-        content1
-      </div>
-      <div key="t2" className="demo-tabs-content">
-        content2
-      </div>
-      <div key="t3" className="demo-tabs-content">
-        content3
-      </div>
+              {key: "t2", title: "Tabs2"},
+              {key: "t3", title: "Tabs3"}]}>
+        <div key="t1" className="demo-tabs-content">
+          content1
+        </div>
+        <div key="t2" className="demo-tabs-content">
+          content2
+        </div>
+        <div key="t3" className="demo-tabs-content">
+          content3
+        </div>
       </Tabs>
       <Tabs style={{height: "200px", marginTop: "10px"}}
             tabDirection={"horizontal"}
             count={4}
             tabs={[{key: "t1", title: "Tabs1"},
-                   {key: "t2", title: "Tabs2"},
-                   {key: "t3", title: "Tabs3"},
-                   {key: "t4", title: "Tabs4"}]}>
-      <div key="t1" className="demo-tabs-content">
-        content1
-      </div>
-      <div key="t2" className="demo-tabs-content">
-        content2
-      </div>
-      <div key="t3" className="demo-tabs-content">
-        content3
-      </div>
-      <div key="t4" className="demo-tabs-content">
-        content4
-      </div>
+              {key: "t2", title: "Tabs2"},
+              {key: "t3", title: "Tabs3"},
+              {key: "t4", title: "Tabs4"}]}>
+        <div key="t1" className="demo-tabs-content">
+          content1
+        </div>
+        <div key="t2" className="demo-tabs-content">
+          content2
+        </div>
+        <div key="t3" className="demo-tabs-content">
+          content3
+        </div>
+        <div key="t4" className="demo-tabs-content">
+          content4
+        </div>
       </Tabs>
     </div>
   )
@@ -72,7 +71,7 @@ render(){
 :::demo 无动画
 ```js
 render(){
- return(
+  return(
     <div style={{marginTop: "30px"}}>
       <div>
         无动画
@@ -80,17 +79,17 @@ render(){
       <Tabs style={{height: "200px", marginTop: "10px"}}
             animated={false}
             tabs={[{key: "t1", title: "Tabs1"},
-                   {key: "t2", title: "Tabs2"},
-                   {key: "t3", title: "Tabs3"}]}>
-      <div key="t1" className="demo-tabs-content">
-        content1
-      </div>
-      <div key="t2" className="demo-tabs-content">
-        content2
-      </div>
-      <div key="t3" className="demo-tabs-content">
-        content3
-      </div>
+              {key: "t2", title: "Tabs2"},
+              {key: "t3", title: "Tabs3"}]}>
+        <div key="t1" className="demo-tabs-content">
+          content1
+        </div>
+        <div key="t2" className="demo-tabs-content">
+          content2
+        </div>
+        <div key="t3" className="demo-tabs-content">
+          content3
+        </div>
       </Tabs>
     </div>
   )
@@ -111,18 +110,18 @@ render(){
 :::demo 跟手滚动
 ```js
 render(){
- const tabs = [
-   {key: "t1", title: "Tabs1"},
-   {key: "t2", title: "Tabs2"},
-   {key: "t3", title: "Tabs3"},
-   {key: "t4", title: "Tabs4"},
-   {key: "t5", title: "Tabs5"},
-   {key: "t6", title: "Tabs6"},
-   {key: "t7", title: "Tabs7"},
-   {key: "t8", title: "Tabs8"},
-   {key: "t9", title: "Tabs9"}
- ];
- return(
+  const tabs = [
+    {key: "t1", title: "Tabs1"},
+    {key: "t2", title: "Tabs2"},
+    {key: "t3", title: "Tabs3"},
+    {key: "t4", title: "Tabs4"},
+    {key: "t5", title: "Tabs5"},
+    {key: "t6", title: "Tabs6"},
+    {key: "t7", title: "Tabs7"},
+    {key: "t8", title: "Tabs8"},
+    {key: "t9", title: "Tabs9"}
+  ];
+  return(
     <div style={{marginTop: "30px"}}>
       <div>
         跟手滚动
@@ -157,7 +156,7 @@ render(){
 :::demo 纵向Tabs标签页
 ```js
 render(){
- return(
+  return(
     <div style={{marginTop: "30px"}}>
       <div>
         纵向Tabs标签页
@@ -165,17 +164,17 @@ render(){
       <Tabs style={{height: "200px", marginTop: "10px"}}
             tabDirection={"vertical"}
             tabs={[{key: "t1", title: "Tabs1"},
-                   {key: "t2", title: "Tabs2"},
-                   {key: "t3", title: "Tabs3"}]}>
-      <div key="t1" className="demo-tabs-content">
-        content1
-      </div>
-      <div key="t2" className="demo-tabs-content">
-        content2
-      </div>
-      <div key="t3" className="demo-tabs-content" >
-        content3
-      </div>
+              {key: "t2", title: "Tabs2"},
+              {key: "t3", title: "Tabs3"}]}>
+        <div key="t1" className="demo-tabs-content">
+          content1
+        </div>
+        <div key="t2" className="demo-tabs-content">
+          content2
+        </div>
+        <div key="t3" className="demo-tabs-content" >
+          content3
+        </div>
       </Tabs>
     </div>
   )
@@ -196,7 +195,7 @@ render(){
 
 ```js
 render(){
- return(
+  return(
     <div style={{marginTop: "30px"}}>
       <div>
         自定义样式
@@ -206,17 +205,17 @@ render(){
             tabBarActiveTextColor={"#000000"}
             tabBarInactiveTextColor={"#333333"}
             tabs={[{key: "t1", title: "Tabs1"},
-                   {key: "t2", title: "Tabs2"},
-                   {key: "t3", title: "Tabs3"}]}>
-      <div key="t1" className="demo-tabs-content">
-        content1
-      </div>
-      <div key="t2" className="demo-tabs-content">
-        content2
-      </div>
-      <div key="t3"className="demo-tabs-content">
-        content3
-      </div>
+              {key: "t2", title: "Tabs2"},
+              {key: "t3", title: "Tabs3"}]}>
+        <div key="t1" className="demo-tabs-content">
+          content1
+        </div>
+        <div key="t2" className="demo-tabs-content">
+          content2
+        </div>
+        <div key="t3"className="demo-tabs-content">
+          content3
+        </div>
       </Tabs>
     </div>
   );
