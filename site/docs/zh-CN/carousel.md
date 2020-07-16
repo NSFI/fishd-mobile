@@ -3,7 +3,7 @@
 ## 何时使用
 在有限空间内，循环播放同一类型的图片内容
 
-## 基本用法
+## 通栏模式
 :::demo
 
 ```js
@@ -17,10 +17,116 @@ render(){
   const { keyboard } = this.state
  return(
   <div className="components-carousel-demo-basic">
-    <div className='demo-title'>基础用法</div>
+    <div className="demo-title">通栏模式</div>
     <Carousel
       autoplay={false}
       infinite
+      beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+      afterChange={index => console.log('slide to', index)}
+    >
+      {this.state.data.map(val => (
+        <div
+          key={val}
+          style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+        >
+          <img
+            src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+            alt=""
+            style={{ width: '100%', verticalAlign: 'top' }}
+            onLoad={() => {
+              window.dispatchEvent(new Event('resize'));
+              this.setState({ imgHeight: 'auto' });
+            }}
+          />
+        </div>
+      ))}
+    </Carousel>
+  </div>
+  )
+}
+```
+
+:::
+
+## 非通栏模式
+:::demo
+
+```js
+state = {
+  data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+  imgHeight: 176,
+  slideIndex: 0,
+}
+
+render(){
+  const { keyboard } = this.state
+ return(
+  <div className="components-carousel-demo-basic">
+    <div className="demo-title">非通栏模式</div>
+    <div className="components-carousel-demo-basic__round">
+      <Carousel
+        autoplay={false}
+        infinite
+        beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+        afterChange={index => console.log('slide to', index)}
+      >
+        {this.state.data.map(val => (
+          <div
+            key={val}
+            style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+          >
+            <img
+              src={`https://zos.alipayobjects.com/rmsportal/${val}.png`}
+              alt=""
+              style={{ width: '100%', verticalAlign: 'top' }}
+              onLoad={() => {
+                window.dispatchEvent(new Event('resize'));
+                this.setState({ imgHeight: 'auto' });
+              }}
+            />
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  </div>
+  )
+}
+```
+```less
+.components-carousel-demo-basic {
+  &__round {
+    margin: 0 auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+```
+
+:::
+
+## 外置指示器
+:::demo
+
+```js
+state = {
+  data: ['AiyWuByWklrrUDlFignR', 'TekJlZRVCjLFexlOCuWn', 'IJOtIlfsYdTyaDTRVrLI'],
+  imgHeight: 176,
+  slideIndex: 0,
+}
+
+render(){
+  const { keyboard } = this.state
+ return(
+  <div className="components-carousel-demo-basic">
+    <div className="demo-title">外置指示器</div>
+    <Carousel
+      autoplay={false}
+      infinite
+      dotOut={true}
+      dotStyle={{background: 'rgba(51, 126, 255, 0.3)'}}
+      dotActiveStyle={{background: '#337EFF'}}
       beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
       afterChange={index => console.log('slide to', index)}
     >
@@ -63,7 +169,7 @@ render(){
   const { keyboard } = this.state
  return(
     <div className="components-carousel-demo-basic">
-      <div className='demo-title'>异形走马灯</div>
+      <div className="demo-title">异形走马灯</div>
       <Carousel className="space-carousel"
         frameOverflow="visible"
         slideWidth={0.8}
@@ -99,6 +205,13 @@ render(){
   )
 }
 ```
+```less
+.components-carousel-demo-basic {
+  &__round {
+    padding: 0 12px;
+  }
+}
+```
 
 :::
 
@@ -112,6 +225,7 @@ render(){
 | autoplay | 是否自动切换 | boolean | `false` |
 | autoplayInterval | 自动切换的时间间隔 | number | `3000` |
 | infinite | 是否循环播放 | boolean | `false` |
+| dotOut | 是否外置指示器 | boolean | `false` |
 | dotStyle | 指示点样式 | object | - |
 | dotActiveStyle | 当前激活的指示点样式 | object | - |
 | frameOverflow | 设置 slider frame 的 overflow 样式 | string | `hidden` |

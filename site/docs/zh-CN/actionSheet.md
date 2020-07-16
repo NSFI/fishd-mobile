@@ -43,7 +43,6 @@ render() {
 
 ```less
 [class^="components-actionSheet-demo-"] .fm-button {
-  margin-right: 8px;
   margin-bottom: 12px;
 }
 ```
@@ -96,7 +95,6 @@ render() {
 
 ```less
 [class^="components-actionSheet-demo-"] .fm-button {
-  margin-right: 8px;
   margin-bottom: 12px;
 }
 ```
