@@ -28,14 +28,14 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
     }
   }, [dropDownMenuValue]);
 
-  const handleOptionClick = (e, callback, disabled) => {
+  const handleOptionClick = (e: React.MouseEvent, callback: () => void, disabled: boolean) => {
     e.stopPropagation();
     if (!disabled) {
       callback();
     }
   };
 
-  const calcOptionStyle = (value, optionValue, disabled) => {
+  const calcOptionStyle = (value: string | number, optionValue: string | number, disabled: boolean) => {
     const style = {};
     Object.assign(style, {
       color: value === optionValue ? activeColor : '#333',
@@ -48,7 +48,7 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
     return style;
   };
 
-  const handleItemWrapperClick = e => {
+  const handleItemWrapperClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
 
@@ -85,7 +85,8 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
                   }
                 : {
                     top: 0,
-                    bottom: `calc(100vh - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
+                    // bottom: `calc(100vh - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
+                    bottom: `calc(${window.innerHeight}px - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
                   }
             }
           >
@@ -96,17 +97,19 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
               onClick={handleItemWrapperClick}
             >
               {options?.length > 0
-                ? options.map(({ text, value: optionValue, disabled }, optionIndex) => (
-                    <div
-                      key={optionIndex}
-                      className="fm-cell fm-dropdown-item__option"
-                      onClick={e => handleOptionClick(e, () => onChange(optionValue), disabled)}
-                    >
-                      <div className="fm-cell__title" style={calcOptionStyle(value, optionValue, disabled)}>
-                        {text}
+                ? (options as { text: string | number; value: string | number; disabled: boolean }[]).map(
+                    ({ text, value: optionValue, disabled }, optionIndex) => (
+                      <div
+                        key={optionIndex}
+                        className="fm-cell fm-dropdown-item__option"
+                        onClick={e => handleOptionClick(e, () => onChange(optionValue), disabled)}
+                      >
+                        <div className="fm-cell__title" style={calcOptionStyle(value, optionValue, disabled)}>
+                          {text}
+                        </div>
                       </div>
-                    </div>
-                  ))
+                    ),
+                  )
                 : DropdownItemChildren}
             </div>
           </div>

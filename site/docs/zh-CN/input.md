@@ -4,7 +4,7 @@
 
 ## 何时使用
 
-用于接受单行文本
+用于文本内容输入
 
 :::demo
 
@@ -14,6 +14,7 @@ class InputDemo extends React.Component {
     mark: '',
     phone: '',
     hasError: false,
+    content: ''
   }
 
   handleClick = (e) => {
@@ -52,16 +53,16 @@ class InputDemo extends React.Component {
 
   render () {
     const { getFieldProps } = this.props.form
-    const { mark, phone, hasError } = this.state
+    const { mark, phone, hasError, content } = this.state
     const { TextArea } = Input;
     return (
       <div className='components-input-demo-basic'>
-        <div className='sub-title'>基础用法</div>
+        <div className='demo-title'>基础用法</div>
         <Input placeholder='请输入标题' labelWidth={80} clear>
           标题
         </Input>
 
-        <div className='sub-title'>自定义类型</div>
+        <div className='demo-title'>自定义类型</div>
         <Input type='digit' placeholder='请输入价格' labelWidth={80}>
           价格
         </Input>
@@ -78,7 +79,7 @@ class InputDemo extends React.Component {
           密码
         </Input>
 
-        <div className='sub-title'>禁用输入框</div>
+        <div className='demo-title'>禁用输入框</div>
         <Input placeholder='输入框只读' value='输入框只读' labelWidth={80} editable={false}>
           标题
         </Input>
@@ -86,12 +87,12 @@ class InputDemo extends React.Component {
           标题
         </Input>
 
-        <div className='sub-title'>自定义右侧内容</div>
+        <div className='demo-title'>自定义右侧内容</div>
         <Input type='digit' placeholder='请输入价格' labelWidth={80} extra='¥'>
           标题
         </Input>
 
-        <div className='sub-title'>自定义左侧标题</div>
+        <div className='demo-title'>自定义左侧标题</div>
         <Input placeholder='请输入用户名' labelWidth={80}>
           <img
             src='https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png'
@@ -99,14 +100,14 @@ class InputDemo extends React.Component {
           />
         </Input>
 
-        <div className='sub-title'>自定义右侧按钮</div>
+        <div className='demo-title'>自定义右侧按钮</div>
         <Input center placeholder='请输入短信验证码' labelWidth={80} extra={
           <Button size='small' type='primary'>发送验证码</Button>
         }>
           短信验证码
         </Input>
 
-        <div className='sub-title'>手动聚焦</div>
+        <div className='demo-title'>手动聚焦</div>
         <Input placeholder='请输入内容' labelWidth={80} ref={(el) => (this.inputRef = el)} clear>
           标题
         </Input>
@@ -115,12 +116,12 @@ class InputDemo extends React.Component {
         </a>
 
 
-        <div className='sub-title'>普通受控组件</div>
+        <div className='demo-title'>普通受控组件</div>
         <Input value={mark} onChange={this.handleMarkChange} placeholder='请输入备注' labelWidth={80} >
           标题
         </Input>
 
-        <div className='sub-title'>rc-form受控组件</div>
+        <div className='demo-title'>rc-form受控组件</div>
         <Input {...getFieldProps('name')} placeholder='请输入内容' labelWidth={80} >
           标题
         </Input>
@@ -128,18 +129,20 @@ class InputDemo extends React.Component {
           提交
         </a>
 
-        <div className='sub-title'>错误验证</div>
+        <div className='demo-title'>错误验证</div>
         <Input type='phone' value={phone} onChange={this.handlePhoneChange}  error={hasError} clear errorMessage='请输入正确的手机号' placeholder='请输入11位手机号码' labelWidth={80}>
           手机号码
         </Input>
 
-        <div className='sub-title'>多行输入-自适应高度</div>
+        <div className='demo-title'>多行输入-自适应高度</div>
         <TextArea placeholder='请输入备注' autoHeight labelWidth={80} clear>
           标题
         </TextArea>
 
-        <div className='sub-title'>多行输入-显示字数</div>
-        <TextArea rows={3} count={100} placeholder='请输入备注' autoHeight labelWidth={80} clear>
+        <div className='demo-title'>多行输入-显示字数</div>
+        <TextArea rows={3} count={100} placeholder='请输入备注' autoHeight labelWidth={80} clear value={content} onChange={(v) => {
+          this.setState({content: v})
+        }}>
           标题
         </TextArea>
       </div>
@@ -155,11 +158,6 @@ ReactDOM.render(<InputDemoWrapper />, mountNode)
 ```less
 .components-input-demo-basic {
   padding-bottom: 40px;
-}
-[class^="components-input-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 [class^="components-input-demo-"] .u-button {
   display: block;

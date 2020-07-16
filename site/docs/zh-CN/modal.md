@@ -57,7 +57,7 @@ onWrapTouchStart = (e) => {
   render() {
     return (
       <div className="components-modal-demo-basic">
-            <span className="sub-title">基础</span>
+            <div className="demo-title">基础</div>
             <div className="sub-content">
               <div className="sub-btn" onClick={this.showModal('modal1')} >提示弹窗</div>
               <div className="sub-btn" onClick={this.showModal('modal2')} >提示弹窗-无内文</div>
@@ -164,7 +164,7 @@ class App extends React.Component {
   render(){
     return(
       <div className="components-modal-demo-basic">
-        <span className="sub-title">确认弹窗</span>
+        <div className="demo-title">确认弹窗</div>
         <div className="sub-content">
           <div className="sub-btn" onClick={showAlert} >确认弹窗</div>
           <div className="sub-btn" onClick={() =>
@@ -245,7 +245,7 @@ class App extends React.Component {
   render(){
     return(
       <div className="components-modal-demo-basic">
-        <span className="sub-title">警告弹窗</span>
+        <div className="demo-title">警告弹窗</div>
         <div className="sub-content">
           <div className="sub-btn" onClick={showAlert} >警告弹窗</div>
           <div className="sub-btn" onClick={() =>
@@ -311,7 +311,7 @@ class App extends React.Component {
   render(){
     return(
       <div className="components-modal-demo-basic">
-        <span className="sub-title">输入弹窗</span>
+        <div className="demo-title">输入弹窗</div>
 
         <div className="sub-content">
           <div className="sub-btn" onClick={() => prompt('签到场景', '请输入你的信息',
@@ -402,7 +402,7 @@ class App extends React.Component {
   render(){
     return(
       <div className="components-modal-demo-basic">
-        <span className="sub-title">自定义内容</span>
+        <div className="demo-title">自定义内容</div>
 
         <div className="sub-content">
           <div className="sub-btn" onClick={() =>

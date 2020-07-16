@@ -8,10 +8,11 @@ export interface DropdownItemPropsType {
   options?: {
     text: string;
     value: any;
+    disabled?: boolean;
   }[];
   value?: any;
   dropDownMenuValue?: any;
-  setDropDownMenuValue?: (e) => {};
+  setDropDownMenuValue?: (e: any) => void;
   activeColor?: string;
   title?: string;
 }

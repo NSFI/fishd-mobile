@@ -13,7 +13,7 @@
 render() {
   return (
     <div className='components-noticebar-demo-basic'>
-      <div className='sub-title'>基本用法</div>
+      <div className='demo-title'>基本用法</div>
       <NoticeBar style={{marginBottom: 10}}>真正的创新是没有原型可以参考的</NoticeBar>
       <NoticeBar icon={null}>真正的创新是没有原型可以参考的</NoticeBar>
     </div>);
@@ -23,11 +23,6 @@ render() {
 ```less
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::
@@ -41,7 +36,7 @@ render() {
 render() {
   return (
     <div className='components-noticebar-demo-basic'>
-      <div className='sub-title'>支持关闭</div>
+      <div className='demo-title'>支持关闭</div>
       <NoticeBar mode="closable" style={{marginBottom: 10}}>真正的创新是没有原型可以参考的</NoticeBar>
       
       <NoticeBar
@@ -58,11 +53,6 @@ render() {
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
 }
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
-}
 ```
 :::
 
@@ -74,7 +64,7 @@ render() {
 render() {
   return (
     <div className='components-noticebar-demo-basic'>
-      <div className='sub-title'>滚动播放</div>
+      <div className='demo-title'>滚动播放</div>
       <NoticeBar
         style={{marginBottom: 10}}
         marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}>
@@ -94,11 +84,6 @@ render() {
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
 }
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
-}
 ```
 :::
 
@@ -110,7 +95,7 @@ render() {
 render() {
   return (
     <div className='components-noticebar-demo-basic'>
-      <div className='sub-title'>查看更多</div>
+      <div className='demo-title'>查看更多</div>
       <NoticeBar
         style={{marginBottom: 10}}
         mode="link"
@@ -131,11 +116,6 @@ render() {
 ```less
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::

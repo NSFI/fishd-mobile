@@ -3,7 +3,7 @@
 exports[`Renders Button demo correctly 1`] = `
 <div>
   <div
-    class="components-button-demo-basic"
+    class="components-button-demo-basic demo-card"
   >
     <a
       aria-disabled="false"
@@ -95,7 +95,7 @@ exports[`Renders Button demo correctly 1`] = `
     </a>
   </div>
   <div
-    class="components-button-demo-size"
+    class="components-button-demo-size demo-card"
   >
     <a
       aria-disabled="false"

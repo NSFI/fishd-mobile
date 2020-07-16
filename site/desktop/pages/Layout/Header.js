@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Link, hashHistory } from 'react-router'
 import { Row, Col, Affix } from 'ppfish'
-import { algolia } from '../../../config';
+import gitIcon from '../../assets/img/github.png'
+import packageJson from '../../../../package.json'
+import { algolia } from '../../../config'
 export default class Header extends Component {
-  static loadSDK (callback) {
+  static loadSDK(callback) {
     // algolia：https://community.algolia.com/docsearch/documentation/docsearch-FAQ/customize-configuration-file/
     // algolia doc search配置文件：https://github.com/algolia/docsearch-configs/blob/master/configs/ppfish.json
     const e = document.createElement('script')
@@ -14,18 +16,18 @@ export default class Header extends Component {
     document.head.appendChild(e)
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.i18n = window.$messages
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.setMenuHighlight()
     this.initSearchBox()
     window.addEventListener('hashchange', this.setMenuHighlight, false)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     window.removeEventListener('hashchange', this.setMenuHighlight, false)
   }
 
@@ -34,11 +36,11 @@ export default class Header extends Component {
     const HIGHLIGHT_CLS = 'active'
     const menuItems = document.querySelectorAll('.nav-item a')
 
-    function setHighlight (menuItems, cls) {
+    function setHighlight(menuItems, cls){
       Array.from(menuItems).forEach((menuItem) => {
         const key = menuItem.getAttribute('href') || ''
         const isComponentPage = key.indexOf('/components') > 1 && current.indexOf('/components') > -1
-        if (key && current.indexOf(key) > -1 || isComponentPage) {
+        if ((key && current.indexOf(key) > -1) || isComponentPage) {
           menuItem.classList.add(cls)
         } else {
           menuItem.classList.remove(cls)
@@ -65,7 +67,7 @@ export default class Header extends Component {
     })
   }
 
-  render () {
+  render() {
     const lang = window.$lang
 
     const CommonHeader = (
@@ -78,7 +80,7 @@ export default class Header extends Component {
           </Col>
           <Col xs={24} sm={24} md={24} lg={18} xl={19} xxl={20} className='header-navbar'>
             <div id='search-box' className='search-box'>
-              <span className='iconfont icon-search'></span>
+              <span className='iconfont icon-search' />
               <input type='text' placeholder={this.i18n.search} className='fishd-input' />
             </div>
             <ul className='nav'>
@@ -95,17 +97,20 @@ export default class Header extends Component {
                   {this.i18n.web}
                 </a>
               </li>
-              <li className='nav-item'>
+              {/* <li className='nav-item'>
                 <a href='//nsfi.github.io/ppfish-demo' target='_blank'>
                   {this.i18n.demo}
                 </a>
-              </li>
-              <div className='nav-item' style={{ color: '#000' }}>
+              </li> */}
+              {/* <div className='nav-item' style={{ color: '#000' }}>
                 <div className='fishd-dropdown-link' onClick={this.switchLang}>
                   {lang === 'zh-CN' ? 'En' : '中文'}
                 </div>
-              </div>
-              <span className='nav-version'>1.0.0</span>
+              </div> */}
+              <a className='nav-version'>{packageJson.version}</a>
+              <a className='u-github' href='//github.com/NSFI/fishd-mobile' target='_blank'>
+                <img style={{ width: 25, height: 25 }} src={gitIcon} alt='' />
+              </a>
             </ul>
           </Col>
         </Row>

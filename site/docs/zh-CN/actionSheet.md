@@ -30,10 +30,14 @@ handleClick = () => {
   });
 }
 
-render(){
- return(<div className="components-actionSheet-demo-basic">
-    <Button type="primary" onClick={this.handleClick}>基础用法</Button>
-  </div>)
+render() {
+  return (
+    <div className="components-actionSheet-demo-basic demo-card">
+      <Button type="primary" onClick={this.handleClick}>
+        基础用法
+      </Button>
+    </div>
+  );
 }
 ```
 
@@ -79,10 +83,14 @@ handleClick = () => {
   });
 }
 
-render(){
- return(<div className="components-actionSheet-demo-basic">
-    <Button type="primary" onClick={this.handleClick}>单行分享</Button>
-  </div>)
+render() {
+  return (
+    <div className="components-actionSheet-demo-basic demo-card">
+      <Button type="primary" onClick={this.handleClick}>
+        单行分享
+      </Button>
+    </div>
+  );
 }
 ```
 
@@ -130,17 +138,14 @@ handleClick = () => {
   });
 }
 
-render(){
- return(<div className="components-actionSheet-demo-basic">
-    <Button type="primary" onClick={this.handleClick}>多行分享</Button>
-  </div>)
-}
-```
-
-```less
-[class^="components-actionSheet-demo-"] .fm-button {
-  margin-right: 8px;
-  margin-bottom: 12px;
+render() {
+  return (
+    <div className="components-actionSheet-demo-basic demo-card">
+      <Button type="primary" onClick={this.handleClick}>
+        多行分享
+      </Button>
+    </div>
+  );
 }
 ```
 

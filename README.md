@@ -1,15 +1,26 @@
 # ppfish-design-mobile
+[在线文档](https://nsfi.github.io/fishd-mobile-site/index.html#/zh-CN/components/quickStart)
 
 ## 快速开始
 ```
 # 安装依赖
 npm install
+
 # 启动开发环境
 npm run dev
-# 编译组件库
-npm run build:mobile
+
 # 编译文档站点
 npm run build
+
+# 发布文档站点
+npm run publish:site
+
+# 编译组件库
+npm run build:lib
+npm run build:dist
+
+# 发布组件库
+npm publish
 ```
 
 ## 如何开发一个组件
@@ -46,24 +57,3 @@ husky cnpm时会有问题 => https://github.com/typicode/husky/issues/640
 ## travis
 [travis-ci](https://travis-ci.org/)需要github owner激活下travis
 ![Build Status](https://travis-ci.org/zrj1031/fishd-mobile.svg?branch=master)
-
-## 直接script引入
-
-引入dist下的fishd-mobile.min.js和fishd-mobile.min.css和cdn的react react-dom
-
-```js
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-```
-
-```js
-const Button = window['fishd-mobile'].Button;
-
-function App() {
-  return (
-    <div className="App">
-      <Button type="primary">button</Button>
-    </div>
-  );
-}
-```

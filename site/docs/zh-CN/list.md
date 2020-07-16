@@ -18,7 +18,7 @@ render() {
 
 return (
   <div className='components-noticebar-demo-basic'>
-  <div className='sub-title'>基础用法</div>
+  <div className='demo-title'>基础用法</div>
     <List className="my-list" renderHeader={() => 'This is Header'}>
       <Item extra={'extra'}>one</Item>
       <Item onClick={() => {console.log('click listItem')}}>two</Item>
@@ -32,11 +32,6 @@ return (
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
 }
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
-}
 ```
 :::
 
@@ -49,7 +44,7 @@ render() {
 
 return (
   <div className='components-noticebar-demo-basic'>
-  <div className='sub-title'>多行</div>
+  <div className='demo-title'>多行</div>
     <List>
       <Item multipleLine align="top" wrap>Long Text Long Text Long Text Long Text Long Text Long Text</Item>
     </List>
@@ -60,11 +55,6 @@ return (
 ```less
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::
@@ -79,7 +69,7 @@ render() {
 
 return (
   <div className='components-noticebar-demo-basic'>
-  <div className='sub-title'>缩略图</div>
+  <div className='demo-title'>缩略图</div>
     <List>
       <Item arrow="horizontal" thumb={<i className="iconfont fm-home" style={{color: '#337eff'}}></i>}>Title</Item>
     </List>
@@ -90,11 +80,6 @@ return (
 ```less
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::
@@ -109,7 +94,7 @@ render() {
 
 return (
   <div className='components-noticebar-demo-basic'>
-  <div className='sub-title'>辅助说明</div>
+  <div className='demo-title'>辅助说明</div>
     <List>
       <Item extra={'extra'} arrow="horizontal">Title<Brief>subtitle</Brief></Item>
     </List>
@@ -120,11 +105,6 @@ return (
 ```less
 .components-noticebar-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-noticebar-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::

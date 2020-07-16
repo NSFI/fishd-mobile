@@ -13,7 +13,7 @@ render(){
   const {Row, Col} = Layout 
   return(
   <div className="components-layout-demo-basic">
-    <div className="components-layout-demo_title">
+    <div className="demo-title">
       基础用法
     </div>
     <Row>
@@ -38,7 +38,7 @@ render(){
       <Col span="10" offset="4">offset:4,span:10</Col>
     </Row>
 
-    <div className="components-layout-demo_title">
+    <div className="demo-title">
       元素间增加间距
     </div>
     <Row gutter="20">
@@ -56,7 +56,7 @@ render(){
       <Col span="6">span: 6</Col>
       <Col span="6">span: 6</Col>
     </Row>
-    <div className="components-layout-demo_title">
+    <div className="demo-title">
       柔性布局
     </div>
     {/* 左对齐 */}
@@ -101,15 +101,7 @@ render(){
 ```less
 
 .components-layout-demo-basic {
-  .components-layout-demo_title {
-    margin: 0;
-    padding: 16px 0;
-    color: rgba(69, 90, 100, 0.6);
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 16px;
-  }
-  .fm-col{
+  .fm-col {
     margin-bottom: 10px;
     color: #fff;
     font-size: 13px;

@@ -6,7 +6,7 @@ exports[`Renders Carousel demo correctly 1`] = `
     class="components-carousel-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       基础用法
     </div>
@@ -91,8 +91,12 @@ exports[`Renders Carousel demo correctly 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="components-carousel-demo-basic"
+  >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       异形走马灯
     </div>

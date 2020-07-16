@@ -28,8 +28,8 @@ class SwitchExample extends React.Component {
   render() {
     return (
       <div className="components-switch-demo-basic">
-            <div className="switch-title">基本用法</div>
-            <div className="switch-content">
+            <div className="demo-title">基本用法</div>
+            <div className="switch-content demo-card">
                 <Switch
                     checked={this.state.checked}
                     onClick={() => {
@@ -48,8 +48,8 @@ class SwitchExample extends React.Component {
                     }}
                 />
             </div>
-            <div className="switch-title">禁用状态</div>
-            <div className="switch-content">
+            <div className="demo-title">禁用状态</div>
+            <div className="switch-content demo-card">
                 <Switch
                     disabled
                     checked={this.state.checked2}
@@ -60,8 +60,8 @@ class SwitchExample extends React.Component {
                     checked={this.state.checked3}
                 />
             </div>
-            <div className="switch-title">加载状态</div>
-            <div className="switch-content">
+            <div className="demo-title">加载状态</div>
+            <div className="switch-content demo-card">
                 <Switch
                     platform="ios"
                     loading
@@ -76,8 +76,8 @@ class SwitchExample extends React.Component {
                 </span>
                 
             </div>
-            <div className="switch-title">自定义颜色</div>
-            <div className="switch-content">
+            <div className="demo-title">自定义颜色</div>
+            <div className="switch-content demo-card">
                 <Switch
                     checked={this.state.checked7}
                     onChange={() => {
@@ -119,13 +119,6 @@ ReactDOM.render(<SwitchExample />, mountNode);
     padding: 10px;
     border-bottom: 1px solid #ddd;
     align-items: center;
-}
-[class^="components-switch-demo-"] .switch-title {
-    color: #333333;
-    font-size: 12px;
-}
-[class^="components-switch-demo-"] .switch-content {
-    margin: 15px 0;
 }
 ```
 

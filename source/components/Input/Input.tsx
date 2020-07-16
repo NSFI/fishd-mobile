@@ -4,7 +4,6 @@
 /* eslint-disable no-return-assign */
 import classnames from 'classnames';
 import * as React from 'react';
-import TouchFeedback from 'rmc-feedback';
 import TextArea from './TextArea';
 import { InputPropsType } from './PropsType';
 import { formatNumber } from '../../utils/format/number';
@@ -358,9 +357,7 @@ class Input extends React.Component<InputProps, any> {
               disabled={disabled}
             />
             {clear && editable && !disabled && value && `${value}`.length > 0 ? (
-              <TouchFeedback activeClassName={`${prefixCls}-clear-active`}>
-                <div className={`${prefixCls}-clear`} onClick={this.clearInput} />
-              </TouchFeedback>
+              <div className={`${prefixCls}-clear`} onClick={this.clearInput} />
             ) : null}
             {extra !== '' ? (
               <div className={`${prefixCls}-extra`} onClick={onExtraClick}>

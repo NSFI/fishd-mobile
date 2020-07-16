@@ -2,7 +2,6 @@
 /* tslint:disable:jsx-no-multiline-js */
 import classnames from 'classnames';
 import * as React from 'react';
-import TouchFeedback from 'rmc-feedback';
 import { TextAreaItemPropsType } from './PropsType';
 
 export type HTMLTextAreaProps = Omit<
@@ -52,6 +51,8 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
     labelNumber: 5,
   };
 
+  isOnComposition: boolean;
+
   textareaRef: any;
 
   private debounceTimeout: any;
@@ -65,16 +66,13 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
     };
   }
 
-  focus = () => {
-    this.textareaRef.focus();
-  };
-
   // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps: TextareaItemProps) {
     if ('value' in nextProps) {
       this.setState({
         value: fixControlledValue(nextProps.value),
       });
+      this.setInputValue(fixControlledValue(nextProps.value));
     }
   }
 
@@ -82,6 +80,7 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
     if (this.props.autoHeight) {
       this.reAlignHeight();
     }
+    this.setInputValue(fixControlledValue(this.state.value));
   }
 
   componentDidUpdate() {
@@ -106,11 +105,18 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
   onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const { value } = e.target;
 
-    if ('value' in this.props) {
-      this.setState({ value: this.props.value });
-    } else {
-      this.setState({ value });
+    // fix: input 拼音输入导致计数问题
+    if (this.isOnComposition) {
+      return;
     }
+
+    let newValue = value;
+    if ('value' in this.props) {
+      newValue = fixControlledValue(this.props.value);
+    }
+
+    this.setState({ value: newValue });
+    this.setInputValue(newValue);
 
     const { onChange } = this.props;
     if (onChange) {
@@ -157,12 +163,35 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
   };
 
   clearInput = () => {
-    this.setState({
-      value: '',
-    });
+    this.setState({ value: '' });
+    this.setInputValue('');
 
     if (this.props.onChange) {
       this.props.onChange('');
+    }
+
+    this.focus();
+  };
+
+  setInputValue = (value: string) => {
+    if (this.textareaRef) {
+      this.textareaRef.value = value || '';
+    }
+  };
+
+  focus = () => {
+    if (this.textareaRef) {
+      this.textareaRef.focus();
+    }
+  };
+
+  handleComposition = (e: any) => {
+    // eslint-disable-next-line no-console
+    if (e.type === 'compositionend') {
+      this.isOnComposition = false;
+      this.onChange(e);
+    } else {
+      this.isOnComposition = true;
     }
   };
 
@@ -182,6 +211,7 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
       title,
       autoHeight,
       defaultValue,
+      value: propsValue,
       ...otherProps
     } = this.props;
     const { disabled } = otherProps;
@@ -215,17 +245,18 @@ export default class TextareaItem extends React.Component<TextareaItemProps, Tex
               ref={el => (this.textareaRef = el)}
               {...lengthCtrlProps}
               {...otherProps}
-              value={value}
+              // value={value}
               onChange={this.onChange}
               onBlur={this.onBlur}
               onFocus={this.onFocus}
               readOnly={!editable}
               style={style}
+              onCompositionStart={this.handleComposition}
+              onCompositionUpdate={this.handleComposition}
+              onCompositionEnd={this.handleComposition}
             />
             {clear && editable && !disabled && value && `${value}`.length > 0 ? (
-              <TouchFeedback activeClassName={`${prefixCls}-clear-active`}>
-                <div className={`${prefixCls}-clear`} onClick={this.clearInput} />
-              </TouchFeedback>
+              <div className={`${prefixCls}-clear`} onClick={this.clearInput}></div>
             ) : null}
           </div>
           {error && errorMessage && <div className={`${prefixCls}-errorMessage`}>{errorMessage}</div>}

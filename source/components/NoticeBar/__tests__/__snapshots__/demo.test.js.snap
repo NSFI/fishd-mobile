@@ -6,7 +6,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       基本用法
     </div>
@@ -67,7 +67,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       支持关闭
     </div>
@@ -158,7 +158,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       滚动播放
     </div>
@@ -219,7 +219,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       查看更多
     </div>

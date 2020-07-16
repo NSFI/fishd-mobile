@@ -6,7 +6,7 @@ exports[`Renders List demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       基础用法
     </div>
@@ -88,7 +88,7 @@ exports[`Renders List demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       多行
     </div>
@@ -122,7 +122,7 @@ exports[`Renders List demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       缩略图
     </div>
@@ -168,7 +168,7 @@ exports[`Renders List demo correctly 1`] = `
     class="components-noticebar-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       辅助说明
     </div>

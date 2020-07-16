@@ -5,15 +5,18 @@
 
 :::demo 基础用法
 ```js
-render(){
-  return(
+render() {
+  return (
     <div>
-      <div>
-        基础用法
-      </div>
-      <Tabs style={{height: "200px", marginTop: "10px"}}
-            tabs={[{key: "t1", title: "Tabs1"},
-              {key: "t2", title: "Tabs2"}]}>
+      <div className="demo-title">基础用法</div>
+      <Tabs
+        style={{ marginTop: 10 }}
+        tabDirection={'horizontal'}
+        tabs={[
+          { key: 't1', title: 'Tabs1' },
+          { key: 't2', title: 'Tabs2' },
+        ]}
+      >
         <div key="t1" className="demo-tabs-content">
           content1
         </div>
@@ -21,11 +24,15 @@ render(){
           content2
         </div>
       </Tabs>
-      <Tabs style={{height: "200px", marginTop: "10px"}}
-            tabDirection={"horizontal"}
-            tabs={[{key: "t1", title: "Tabs1"},
-              {key: "t2", title: "Tabs2"},
-              {key: "t3", title: "Tabs3"}]}>
+      <Tabs
+        style={{ marginTop: 10 }}
+        tabDirection={'horizontal'}
+        tabs={[
+          { key: 't1', title: 'Tabs1' },
+          { key: 't2', title: 'Tabs2' },
+          { key: 't3', title: 'Tabs3' },
+        ]}
+      >
         <div key="t1" className="demo-tabs-content">
           content1
         </div>
@@ -36,13 +43,17 @@ render(){
           content3
         </div>
       </Tabs>
-      <Tabs style={{height: "200px", marginTop: "10px"}}
-            tabDirection={"horizontal"}
-            count={4}
-            tabs={[{key: "t1", title: "Tabs1"},
-              {key: "t2", title: "Tabs2"},
-              {key: "t3", title: "Tabs3"},
-              {key: "t4", title: "Tabs4"}]}>
+      <Tabs
+        style={{ marginTop: 10 }}
+        tabDirection={'horizontal'}
+        count={4}
+        tabs={[
+          { key: 't1', title: 'Tabs1' },
+          { key: 't2', title: 'Tabs2' },
+          { key: 't3', title: 'Tabs3' },
+          { key: 't4', title: 'Tabs4' },
+        ]}
+      >
         <div key="t1" className="demo-tabs-content">
           content1
         </div>
@@ -57,30 +68,31 @@ render(){
         </div>
       </Tabs>
     </div>
-  )
+  );
 }
 ```
 
 ```less
 .demo-tabs-content {
   text-align: center;
-  padding-top: 50px;
+  padding: 50px 0;
 }
 ```
 :::
 :::demo 无动画
 ```js
-render(){
-  return(
-    <div style={{marginTop: "30px"}}>
-      <div>
-        无动画
-      </div>
-      <Tabs style={{height: "200px", marginTop: "10px"}}
-            animated={false}
-            tabs={[{key: "t1", title: "Tabs1"},
-              {key: "t2", title: "Tabs2"},
-              {key: "t3", title: "Tabs3"}]}>
+render() {
+  return (
+    <div>
+      <div className="demo-title">无动画</div>
+      <Tabs
+        animated={false}
+        tabs={[
+          { key: 't1', title: 'Tabs1' },
+          { key: 't2', title: 'Tabs2' },
+          { key: 't3', title: 'Tabs3' },
+        ]}
+      >
         <div key="t1" className="demo-tabs-content">
           content1
         </div>
@@ -92,14 +104,14 @@ render(){
         </div>
       </Tabs>
     </div>
-  )
+  );
 }
 ```
 
 ```less
 .demo-tabs-content {
   text-align: center;
-  padding-top: 50px;
+  padding: 50px 0;
 }
 ```
 
@@ -109,44 +121,35 @@ render(){
 ## 跟手滚动
 :::demo 跟手滚动
 ```js
-render(){
+render() {
   const tabs = [
-    {key: "t1", title: "Tabs1"},
-    {key: "t2", title: "Tabs2"},
-    {key: "t3", title: "Tabs3"},
-    {key: "t4", title: "Tabs4"},
-    {key: "t5", title: "Tabs5"},
-    {key: "t6", title: "Tabs6"},
-    {key: "t7", title: "Tabs7"},
-    {key: "t8", title: "Tabs8"},
-    {key: "t9", title: "Tabs9"}
+    { key: 't1', title: 'Tabs1' },
+    { key: 't2', title: 'Tabs2' },
+    { key: 't3', title: 'Tabs3' },
+    { key: 't4', title: 'Tabs4' },
+    { key: 't5', title: 'Tabs5' },
+    { key: 't6', title: 'Tabs6' },
+    { key: 't7', title: 'Tabs7' },
+    { key: 't8', title: 'Tabs8' },
+    { key: 't9', title: 'Tabs9' },
   ];
-  return(
-    <div style={{marginTop: "30px"}}>
-      <div>
-        跟手滚动
-      </div>
-      <Tabs style={{height: "200px", marginTop: "10px"}}
-            initialPage={2}
-            useOnPan={true}
-            tabDirection={"horizontal"}
-            tabs={tabs}
-            count={3}>
-        {
-          tabs.map((tab, index) => (
-            <div key={tab.key} className="demo-tabs-content">{`content${index+1}`}</div>
-          ))
-        }
+  return (
+    <div>
+      <div className="demo-title">跟手滚动</div>
+      <Tabs initialPage={2} useOnPan={true} tabDirection={'horizontal'} tabs={tabs} count={3}>
+        {tabs.map((tab, index) => (
+          <div key={tab.key} className="demo-tabs-content">{`content${index + 1}`}</div>
+        ))}
       </Tabs>
     </div>
-  )
+  );
 }
 ```
 
 ```less
 .demo-tabs-content {
   text-align: center;
-  padding-top: 50px;
+  padding: 50px 0;
 }
 ```
 
@@ -155,65 +158,26 @@ render(){
 ## 纵向Tabs标签页
 :::demo 纵向Tabs标签页
 ```js
-render(){
-  return(
-    <div style={{marginTop: "30px"}}>
-      <div>
-        纵向Tabs标签页
-      </div>
-      <Tabs style={{height: "200px", marginTop: "10px"}}
-            tabDirection={"vertical"}
-            tabs={[{key: "t1", title: "Tabs1"},
-              {key: "t2", title: "Tabs2"},
-              {key: "t3", title: "Tabs3"}]}>
+render() {
+  return (
+    <div>
+      <div className="demo-title">纵向Tabs标签页</div>
+      <Tabs
+        style={{ height: 200 }}
+        tabDirection={'vertical'}
+        tabs={[
+          { key: 't1', title: 'Tabs1' },
+          { key: 't2', title: 'Tabs2' },
+          { key: 't3', title: 'Tabs3' },
+        ]}
+      >
         <div key="t1" className="demo-tabs-content">
           content1
         </div>
         <div key="t2" className="demo-tabs-content">
           content2
         </div>
-        <div key="t3" className="demo-tabs-content" >
-          content3
-        </div>
-      </Tabs>
-    </div>
-  )
-}
-```
-
-```less
-.demo-tabs-content {
-  text-align: center;
-  padding: 50px 0 0 50px;
-}
-```
-:::
-
-## 自定义样式
-
-:::demo 自定义样式
-
-```js
-render(){
-  return(
-    <div style={{marginTop: "30px"}}>
-      <div>
-        自定义样式
-      </div>
-      <Tabs style={{height: "200px", marginTop: "10px"}}
-            tabsUnderlineStyle={{background: "#26BD71"}}
-            tabBarActiveTextColor={"#000000"}
-            tabBarInactiveTextColor={"#333333"}
-            tabs={[{key: "t1", title: "Tabs1"},
-              {key: "t2", title: "Tabs2"},
-              {key: "t3", title: "Tabs3"}]}>
-        <div key="t1" className="demo-tabs-content">
-          content1
-        </div>
-        <div key="t2" className="demo-tabs-content">
-          content2
-        </div>
-        <div key="t3"className="demo-tabs-content">
+        <div key="t3" className="demo-tabs-content">
           content3
         </div>
       </Tabs>
@@ -225,7 +189,49 @@ render(){
 ```less
 .demo-tabs-content {
   text-align: center;
-  padding-top: 50px;
+  padding: 20px;
+}
+```
+:::
+
+## 自定义样式
+
+:::demo 自定义样式
+
+```js
+render() {
+  return (
+    <div>
+      <div className="demo-title">自定义样式</div>
+      <Tabs
+        tabsUnderlineStyle={{ background: '#26BD71' }}
+        tabBarActiveTextColor={'#000000'}
+        tabBarInactiveTextColor={'#333333'}
+        tabs={[
+          { key: 't1', title: 'Tabs1' },
+          { key: 't2', title: 'Tabs2' },
+          { key: 't3', title: 'Tabs3' },
+        ]}
+      >
+        <div key="t1" className="demo-tabs-content">
+          content1
+        </div>
+        <div key="t2" className="demo-tabs-content">
+          content2
+        </div>
+        <div key="t3" className="demo-tabs-content">
+          content3
+        </div>
+      </Tabs>
+    </div>
+  );
+}
+```
+
+```less
+.demo-tabs-content {
+  text-align: center;
+  padding: 50px 0;
 }
 ```
 :::

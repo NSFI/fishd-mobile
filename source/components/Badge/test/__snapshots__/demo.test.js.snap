@@ -6,7 +6,7 @@ exports[`Renders Badge demo correctly 1`] = `
     class="components-badge-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       基础用法
     </div>
@@ -63,7 +63,7 @@ exports[`Renders Badge demo correctly 1`] = `
     class="components-badge-demo-overflow"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       展示封顶的数字值
     </div>
@@ -121,7 +121,7 @@ exports[`Renders Badge demo correctly 1`] = `
     class="components-badge-demo-corner"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       置于角落
     </div>
@@ -198,7 +198,7 @@ exports[`Renders Badge demo correctly 1`] = `
     class="components-badge-demo-hidden"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       text为0时隐藏
     </div>
@@ -255,7 +255,7 @@ exports[`Renders Badge demo correctly 1`] = `
     class="components-badge-demo-market"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       营销样式
     </div>
@@ -329,7 +329,7 @@ exports[`Renders Badge demo correctly 1`] = `
     class="components-badge-demo-custom"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义样式
     </div>

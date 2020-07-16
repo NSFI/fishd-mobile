@@ -1,10 +1,8 @@
-# DatePicker 动作面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
-
-组件描述
+# DatePicker 日期选择器 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
 
 ## 何时使用
 
-场景描述
+用于选择日期或时间，支持展示标题。
 
 ## 基础用法
 
@@ -49,10 +47,6 @@ render () {
 ```
 
 ```less
-[class^="components-tpl-demo-"] .fm-button {
-  margin-right: 8px;
-  margin-bottom: 12px;
-}
 [class^="components-tpl-demo-"] .fm-list-extra {
   flex: 0 0 auto;
 }

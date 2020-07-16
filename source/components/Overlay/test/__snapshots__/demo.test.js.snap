@@ -6,7 +6,7 @@ exports[`Renders Overlay demo correctly 1`] = `
     class="components-overlay-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       显示遮罩
     </div>
@@ -25,7 +25,7 @@ exports[`Renders Overlay demo correctly 1`] = `
     class="components-overlay-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       嵌入内容
     </div>

@@ -73,7 +73,7 @@ export default App;
 ```
 $ yarn add @craco/craco
 ```
-```
+```json
 /* package.json */
 "scripts": {
   "start": "craco start",

@@ -2,35 +2,49 @@ export const algolia = {
   apiKey: 'ddba94e7e0f7ae0fee63b1645548fc00',
   indexName: 'ppfish',
   inputSelector: '#search-box input',
-  debug: false // Set debug to true if you want to inspect the dropdown
-}
+  debug: false, // Set debug to true if you want to inspect the dropdown
+};
 
 export default [
   {
-    name: '基础组件',
-    nameEn: 'BaseGeneral',
-    key: 'baseGeneral',
+    name: '全局规范',
+    nameEn: 'Global Rule',
+    key: 'globalRule',
     children: [
       {
         key: 'layout',
         type: 'markdown',
         name: 'Layout 布局',
         nameEn: 'Layout',
-        published: true
+        published: true,
       },
+      {
+        key: 'grid',
+        type: 'markdown',
+        name: 'Grid 宫格',
+        nameEn: 'Grid',
+        published: true,
+      },
+    ],
+  },
+  {
+    name: '基础组件',
+    nameEn: 'BaseGeneral',
+    key: 'baseGeneral',
+    children: [
       {
         key: 'button',
         type: 'markdown',
         name: 'Button 按钮',
         nameEn: 'Button',
-        published: true
+        published: true,
       },
       {
-        key: 'actionSheet',
+        key: 'input',
         type: 'markdown',
-        name: 'ActionSheet 动作面板',
-        nameEn: 'ActionSheet',
-        published: true
+        name: 'Input 输入框',
+        nameEn: 'Input',
+        published: true,
       },
       {
         key: 'switch',
@@ -46,14 +60,7 @@ export default [
         nameEn: 'NumberKeyboard',
         published: true,
       },
-      {
-        key: 'toast',
-        type: 'markdown',
-        name: 'Toast 轻提示',
-        nameEn: 'Toast',
-        published: true,
-      }
-    ]
+    ],
   },
   {
     name: '导航组件',
@@ -68,10 +75,11 @@ export default [
         published: true,
       },
       {
-        key: 'grid',
+        key: 'tabBar',
         type: 'markdown',
-        name: 'Grid 宫格',
-        nameEn: 'Grid',
+        name: 'TabBar 标签栏',
+        nameEn: 'TabBar',
+        published: true,
       },
       {
         key: 'tabs',
@@ -80,32 +88,25 @@ export default [
         nameEn: 'Tabs',
         published: true,
       },
-      {
-        key: 'tabBar',
-        type: 'markdown',
-        name: 'TabBar 标签栏',
-        nameEn: 'TabBar',
-        published: true,
-      },
-      {
-        key: 'modal',
-        type: 'markdown',
-        name: 'Modal 对话框',
-        nameEn: 'Modal',
-        published: true,
-      }
-    ]
+    ],
   },
   {
-    name: '表单组件',
+    name: '数据录入',
     nameEn: 'Data Entry',
     key: 'Data Entry',
     children: [
       {
-        key: 'input',
+        key: 'actionSheet',
         type: 'markdown',
-        name: 'Input 输入框',
-        nameEn: 'Input',
+        name: 'ActionSheet 动作面板',
+        nameEn: 'ActionSheet',
+        published: true,
+      },
+      {
+        key: 'radio',
+        type: 'markdown',
+        name: 'Radio 单选框',
+        nameEn: 'Radio',
         published: true,
       },
       {
@@ -116,10 +117,10 @@ export default [
         published: true,
       },
       {
-        key: 'radio',
+        key: 'dropdown',
         type: 'markdown',
-        name: 'Radio 单选框',
-        nameEn: 'Radio',
+        name: 'Dropdown 下拉框筛选',
+        nameEn: 'Dropdown',
         published: true,
       },
       {
@@ -136,20 +137,13 @@ export default [
         nameEn: 'DatePicker',
         published: true,
       },
-    ]
+    ],
   },
   {
     name: '数据展示',
     nameEn: 'Data Display',
     key: 'Data Display',
     children: [
-      {
-        key: 'badge',
-        type: 'markdown',
-        name: 'Badge 徽标数',
-        nameEn: 'Badge',
-        published: true,
-      },
       {
         key: 'list',
         type: 'markdown',
@@ -158,10 +152,10 @@ export default [
         published: true,
       },
       {
-        key: 'carousel',
+        key: 'badge',
         type: 'markdown',
-        name: 'Carousel 走马灯',
-        nameEn: 'Carousel',
+        name: 'Badge 徽标数',
+        nameEn: 'Badge',
         published: true,
       },
       {
@@ -172,10 +166,10 @@ export default [
         published: true,
       },
       {
-        key: 'dropdown',
+        key: 'carousel',
         type: 'markdown',
-        name: 'Dropdown 下拉框',
-        nameEn: 'Dropdown',
+        name: 'Carousel 滑块视图容器',
+        nameEn: 'Carousel',
         published: true,
       },
       {
@@ -184,7 +178,28 @@ export default [
         name: 'Overlay 遮罩',
         nameEn: 'Overlay',
         published: true,
-      }
-    ]
-  }
-]
+      },
+    ],
+  },
+  {
+    name: '操作反馈',
+    nameEn: 'Action Feedback',
+    key: 'Action Feedback',
+    children: [
+      {
+        key: 'toast',
+        type: 'markdown',
+        name: 'Toast 轻提示',
+        nameEn: 'Toast',
+        published: true,
+      },
+      {
+        key: 'modal',
+        type: 'markdown',
+        name: 'Modal 对话框',
+        nameEn: 'Modal',
+        published: true,
+      },
+    ],
+  },
+];
