@@ -6,7 +6,7 @@ exports[`Renders Checkbox demo correctly 1`] = `
     class="components-checkbox-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       基础样式
     </div>
@@ -211,7 +211,7 @@ exports[`Renders Checkbox demo correctly 1`] = `
     class="components-checkbox-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义颜色
     </div>
@@ -423,7 +423,7 @@ exports[`Renders Checkbox demo correctly 1`] = `
     class="components-checkbox-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义形状
     </div>

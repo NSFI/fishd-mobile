@@ -17,7 +17,7 @@ render(){
   const { keyboard } = this.state
  return(
   <div className="components-carousel-demo-basic">
-    <div className='sub-title'>基础用法</div>
+    <div className='demo-title'>基础用法</div>
     <Carousel
       autoplay={false}
       infinite
@@ -46,14 +46,6 @@ render(){
 }
 ```
 
-```less
-[class^="components-carousel-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
-}
-```
-
 :::
 
 ## 异形样式
@@ -71,7 +63,7 @@ render(){
   const { keyboard } = this.state
  return(
     <div className="components-carousel-demo-basic">
-      <div className='sub-title'>异形走马灯</div>
+      <div className='demo-title'>异形走马灯</div>
       <Carousel className="space-carousel"
         frameOverflow="visible"
         slideWidth={0.8}
@@ -105,14 +97,6 @@ render(){
       </Carousel>
     </div>
   )
-}
-```
-
-```less
-[class^="components-carousel-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 

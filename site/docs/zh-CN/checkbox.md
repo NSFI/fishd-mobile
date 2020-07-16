@@ -48,7 +48,7 @@
 
     return (
       <div className='components-checkbox-demo-basic'>
-        <div className='sub-title'>基础样式</div>
+        <div className='demo-title'>基础样式</div>
         <List>
         {data.map(i => (
           <CheckboxItem
@@ -67,11 +67,6 @@
 ```less
 .components-checkbox-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-checkbox-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::
@@ -119,7 +114,7 @@
 
     return (
       <div className='components-checkbox-demo-basic'>
-        <div className='sub-title'>自定义颜色</div>
+        <div className='demo-title'>自定义颜色</div>
         <List>
         {data.map(i => (
           <CheckboxItem
@@ -139,11 +134,6 @@
 ```less
 .components-checkbox-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-checkbox-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::
@@ -191,7 +181,7 @@
 
     return (
       <div className='components-checkbox-demo-basic'>
-        <div className='sub-title'>自定义形状</div>
+        <div className='demo-title'>自定义形状</div>
         <List>
         {data.map(i => (
           <CheckboxItem
@@ -211,11 +201,6 @@
 ```less
 .components-checkbox-demo-basic {
   padding-bottom: 20px;
-}
-[class^="components-checkbox-demo-"] .sub-title {
-  padding: 20px 0 10px 0;
-  color: #ccc;
-  font-size: 12px;
 }
 ```
 :::

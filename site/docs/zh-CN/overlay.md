@@ -25,7 +25,7 @@ render() {
   const { show } = this.state;
   return (
     <div className='components-overlay-demo-basic'>
-    <div className='sub-title'>显示遮罩</div>
+    <div className='demo-title'>显示遮罩</div>
     <Button onClick={this.showOverlay}>显示遮罩</Button>
       <Overlay show={show} lockScroll={true} onClick={this.hideOverlay}>
       </Overlay>
@@ -70,7 +70,7 @@ render() {
   const { show } = this.state;
   return (
     <div className='components-overlay-demo-basic'>
-    <div className='sub-title'>嵌入内容</div>
+    <div className='demo-title'>嵌入内容</div>
     <Button onClick={this.showOverlay}>嵌入内容</Button>
       <Overlay show={show} onClick={this.hideOverlay}
       >

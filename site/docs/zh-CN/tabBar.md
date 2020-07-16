@@ -23,7 +23,7 @@ class TabBarExample extends React.Component {
   render() {
     return (
       <div className='components-tabBar-demo-basic'>
-        <div className='sub-title'>基本用法</div>
+        <div className='demo-title'>基本用法</div>
         <div>
           <TabBar
             unselectedTintColor="#51565D"
@@ -145,7 +145,7 @@ class TabBarExample extends React.Component {
   render() {
     return (
       <div className='components-tabBar-demo-badge'>
-        <div className='sub-title'>徽标提示</div>
+        <div className='demo-title'>徽标提示</div>
         <div>
           <TabBar
             unselectedTintColor="#51565D"
@@ -270,7 +270,7 @@ class TabBarExample extends React.Component {
   render() {
     return (
       <div className='components-tabBar-demo-custom'>
-        <div className='sub-title'>自定义颜色</div>
+        <div className='demo-title'>自定义颜色</div>
         <div>
           <TabBar
             unselectedTintColor="#51565D"
@@ -403,7 +403,7 @@ class TabBarExample extends React.Component {
   render() {
     return (
       <div className='components-tabBar-demo-count'>
-        <div className='sub-title'>布局与数量</div>
+        <div className='demo-title'>布局与数量</div>
         <div className='components-tabBar-demo-example'>
           <TabBar
             unselectedTintColor="#51565D"

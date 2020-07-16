@@ -3,12 +3,14 @@
 exports[`Renders Tabs demo correctly 1`] = `
 <div>
   <div>
-    <div>
+    <div
+      class="demo-title"
+    >
       基础用法
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
-      style="height:200px;margin-top:10px"
+      style="margin-top:10px"
     >
       <div
         class="fm-tabs-horizontal-nav-wrap"
@@ -66,7 +68,7 @@ exports[`Renders Tabs demo correctly 1`] = `
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
-      style="height:200px;margin-top:10px"
+      style="margin-top:10px"
     >
       <div
         class="fm-tabs-horizontal-nav-wrap"
@@ -140,7 +142,7 @@ exports[`Renders Tabs demo correctly 1`] = `
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
-      style="height:200px;margin-top:10px"
+      style="margin-top:10px"
     >
       <div
         class="fm-tabs-horizontal-nav-wrap"
@@ -229,15 +231,14 @@ exports[`Renders Tabs demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div
-    style="margin-top:30px"
-  >
-    <div>
+  <div>
+    <div
+      class="demo-title"
+    >
       无动画
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
-      style="height:200px;margin-top:10px"
     >
       <div
         class="fm-tabs-horizontal-nav-wrap"
@@ -310,15 +311,14 @@ exports[`Renders Tabs demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div
-    style="margin-top:30px"
-  >
-    <div>
+  <div>
+    <div
+      class="demo-title"
+    >
       跟手滚动
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
-      style="height:200px;margin-top:10px"
     >
       <div
         class="fm-tabs-horizontal-nav-wrap"
@@ -487,15 +487,15 @@ exports[`Renders Tabs demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div
-    style="margin-top:30px"
-  >
-    <div>
+  <div>
+    <div
+      class="demo-title"
+    >
       纵向Tabs标签页
     </div>
     <div
       class="fm-tabs fm-tabs-vertical"
-      style="height:200px;margin-top:10px"
+      style="height:200px"
     >
       <div
         class="fm-tabs-vertical-nav-wrap"
@@ -568,15 +568,14 @@ exports[`Renders Tabs demo correctly 1`] = `
       </div>
     </div>
   </div>
-  <div
-    style="margin-top:30px"
-  >
-    <div>
+  <div>
+    <div
+      class="demo-title"
+    >
       自定义样式
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
-      style="height:200px;margin-top:10px"
     >
       <div
         class="fm-tabs-horizontal-nav-wrap"

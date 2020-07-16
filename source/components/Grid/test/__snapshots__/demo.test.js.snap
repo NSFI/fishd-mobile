@@ -6,7 +6,7 @@ exports[`Renders Grid demo correctly 1`] = `
     class="components-grid-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       基础用法
     </div>
@@ -205,7 +205,7 @@ exports[`Renders Grid demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义-列数
     </div>
@@ -392,7 +392,7 @@ exports[`Renders Grid demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义-内容
     </div>
@@ -464,7 +464,7 @@ exports[`Renders Grid demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="sub-title"
+      class="demo-title"
     >
       正方形内容
     </div>
@@ -663,7 +663,7 @@ exports[`Renders Grid demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="sub-title"
+      class="demo-title"
     >
       无边框
     </div>
@@ -862,7 +862,7 @@ exports[`Renders Grid demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="sub-title"
+      class="demo-title"
     >
       格子间距
     </div>
@@ -1049,7 +1049,7 @@ exports[`Renders Grid demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="sub-title"
+      class="demo-title"
     >
       格子间距 + 正方形
     </div>
@@ -1245,7 +1245,7 @@ exports[`Renders Grid demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义背景
     </div>

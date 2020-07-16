@@ -6,7 +6,7 @@ exports[`Renders Layout demo correctly 1`] = `
     class="components-layout-demo-basic"
   >
     <div
-      class="components-layout-demo_title"
+      class="demo-title"
     >
       基础用法
     </div>
@@ -77,7 +77,7 @@ exports[`Renders Layout demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="components-layout-demo_title"
+      class="demo-title"
     >
       元素间增加间距
     </div>
@@ -148,7 +148,7 @@ exports[`Renders Layout demo correctly 1`] = `
       </div>
     </div>
     <div
-      class="components-layout-demo_title"
+      class="demo-title"
     >
       柔性布局
     </div>

@@ -20,7 +20,7 @@ onValueChange = (...args) => {
 };
 render(){
  return(<div className="components-datePickerView-demo-basic">
-    <div className="components-datePickerView-demo-basic__title">日期时间选择</div>
+    <div className="demo-title">日期时间选择</div>
     <DatePickerView
         value={this.state.value}
         onChange={this.onChange}
@@ -33,11 +33,6 @@ render(){
 ```less
 .components-datePickerView-demo-basic {
   margin-bottom: 10px;
-  &__title {
-    font-size: 16px;
-    height: 30px;
-    line-height: 30px;
-  }
 }
 ```
 
@@ -58,7 +53,7 @@ onValueChange = (...args) => {
 };
 render(){
  return(<div className="components-datePickerView-demo-basic">
-    <div className="components-datePickerView-demo-basic__title">日期选择</div>
+    <div className="demo-title">日期选择</div>
     <DatePickerView
         mode="date"
         value={this.state.value}
@@ -72,11 +67,6 @@ render(){
 ```less
 .components-datePickerView-demo-basic {
   margin-bottom: 10px;
-  &__title {
-    font-size: 16px;
-    height: 30px;
-    line-height: 30px;
-  }
 }
 ```
 
@@ -97,7 +87,7 @@ onValueChange = (...args) => {
 };
 render(){
  return(<div className="components-datePickerView-demo-basic">
-    <div className="components-datePickerView-demo-basic__title">时间选择</div>
+    <div className="demo-title">时间选择</div>
     <DatePickerView
         mode="time"
         value={this.state.value}
@@ -111,11 +101,6 @@ render(){
 ```less
 .components-datePickerView-demo-basic {
   margin-bottom: 10px;
-  &__title {
-    font-size: 16px;
-    height: 30px;
-    line-height: 30px;
-  }
 }
 ```
 

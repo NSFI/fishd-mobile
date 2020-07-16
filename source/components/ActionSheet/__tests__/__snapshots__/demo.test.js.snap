@@ -3,7 +3,7 @@
 exports[`Renders ActionSheet demo correctly 1`] = `
 <div>
   <div
-    class="components-actionSheet-demo-basic"
+    class="components-actionSheet-demo-basic demo-card"
   >
     <a
       aria-disabled="false"
@@ -16,7 +16,7 @@ exports[`Renders ActionSheet demo correctly 1`] = `
     </a>
   </div>
   <div
-    class="components-actionSheet-demo-basic"
+    class="components-actionSheet-demo-basic demo-card"
   >
     <a
       aria-disabled="false"
@@ -29,7 +29,7 @@ exports[`Renders ActionSheet demo correctly 1`] = `
     </a>
   </div>
   <div
-    class="components-actionSheet-demo-basic"
+    class="components-actionSheet-demo-basic demo-card"
   >
     <a
       aria-disabled="false"

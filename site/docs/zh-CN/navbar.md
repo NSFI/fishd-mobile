@@ -9,7 +9,7 @@
 render(){
  return(
     <div className="components-navbar-demo">
-      <div className="components-navbar-demo_title">
+      <div className="demo-title">
         一般用法
       </div>
       <NavBar
@@ -23,15 +23,6 @@ render(){
 }
 ```
 
-```less
-.components-navbar-demo_title {
-  padding: 5px 10px;
-  border-left: 2px solid #108ee9;
-  margin: 10px 0;
-  color: 10px;
-}
-```
-
 :::
 
 
@@ -42,7 +33,7 @@ render(){
 render(){
  return(
     <div className="components-navbar-demo">
-      <div className="components-navbar-demo_title">
+      <div className="demo-title">
         左侧定制
       </div>
        <NavBar
@@ -56,14 +47,6 @@ render(){
 }
 ```
 
-```less
-.components-navbar-demo_title {
-  padding: 5px 10px;
-  border-left: 2px solid #108ee9;
-  margin: 10px 0;
-  color: 10px;
-}
-```
 :::
 
 
@@ -74,7 +57,7 @@ render(){
 render(){
  return(
     <div className="components-navbar-demo">
-      <div className="components-navbar-demo_title">
+      <div className="demo-title">
         右侧定制
       </div>
       <NavBar
@@ -92,15 +75,6 @@ render(){
 }
 ```
 
-```less
-.components-navbar-demo_title {
-  padding: 5px 10px;
-  border-left: 2px solid #108ee9;
-  margin: 10px 0;
-  color: 10px;
-}
-```
-
 :::
 
 
@@ -111,7 +85,7 @@ render(){
 render(){
  return(
     <div className="components-navbar-demo">
-        <div className="components-navbar-demo_title">
+        <div className="demo-title">
           选择模式
         </div>
         <NavBar
@@ -126,15 +100,6 @@ render(){
         >NavBar导航栏示例</NavBar>
     </div>
   )
-}
-```
-
-```less
-.components-navbar-demo_title {
-  padding: 5px 10px;
-  border-left: 2px solid #108ee9;
-  margin: 10px 0;
-  color: 10px;
 }
 ```
 

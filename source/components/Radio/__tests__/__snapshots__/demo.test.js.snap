@@ -6,7 +6,7 @@ exports[`Renders Radio demo correctly 1`] = `
     class="components-radio-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       基础样式
     </div>
@@ -97,7 +97,7 @@ exports[`Renders Radio demo correctly 1`] = `
     class="components-radio-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       水平排列
     </div>
@@ -188,7 +188,7 @@ exports[`Renders Radio demo correctly 1`] = `
     class="components-radio-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       禁用状态
     </div>
@@ -281,7 +281,7 @@ exports[`Renders Radio demo correctly 1`] = `
     class="components-radio-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义颜色
     </div>
@@ -375,7 +375,7 @@ exports[`Renders Radio demo correctly 1`] = `
     class="components-radio-demo-basic"
   >
     <div
-      class="sub-title"
+      class="demo-title"
     >
       自定义形状
     </div>

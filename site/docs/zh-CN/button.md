@@ -13,7 +13,7 @@
 ```js
 render(){
  return(
-   <div className="components-button-demo-basic">
+   <div className="components-button-demo-basic demo-card">
     <Button>default</Button>
     <Button disabled>default disabled</Button>
 
@@ -33,7 +33,6 @@ render(){
 
 ```less
 [class^="components-button-demo-"] .fm-button {
-  margin-right: 8px;
   margin-bottom: 12px;
 }
 ```
@@ -58,7 +57,7 @@ render(){
   render() {
     const size = this.state.size;
     return (
-      <div className="components-button-demo-size">
+      <div className="components-button-demo-size demo-card">
         <Button size="small">small</Button>
         <Button>middle</Button>
         <Button size="large">large</Button>
@@ -69,7 +68,6 @@ render(){
 
 ```less
 [class^="components-button-demo-"] .fm-button {
-  margin-right: 8px;
   margin-bottom: 12px;
 }
 ```

@@ -14,7 +14,7 @@
 render() {
   return (
     <div className='components-badge-demo-basic'>
-    <div className='sub-title'>基础用法</div>
+    <div className='demo-title'>基础用法</div>
       <List>
         <List.Item extra="extra" arrow="horizontal">
           <Badge dot>
@@ -32,11 +32,6 @@ render() {
 .components-badge-demo-basic {
   padding-bottom: 24px;
 }
-[class^="components-badge-demo-"] .sub-title {
-  padding-bottom: 10px;
-  color: #333;
-  font-size: 12px;
-}
 ```
 :::
 
@@ -47,7 +42,7 @@ render() {
 render() {
   return (
     <div className='components-badge-demo-overflow'>
-    <div className='sub-title'>展示封顶的数字值</div>
+    <div className='demo-title'>展示封顶的数字值</div>
       <List>
         <List.Item
           thumb="https://zos.alipayobjects.com/rmsportal/faMhXAxhCzLvveJ.png"
@@ -66,11 +61,6 @@ render() {
 .components-badge-demo-overflow {
   padding-bottom: 24px;
 }
-[class^="components-badge-demo-"] .sub-title {
-  padding-bottom: 10px;
-  color: #333;
-  font-size: 12px;
-}
 ```
 :::
 
@@ -81,7 +71,7 @@ render() {
 render() {
   return (
     <div className='components-badge-demo-corner'>
-    <div className='sub-title'>置于角落</div>
+    <div className='demo-title'>置于角落</div>
       <List>
         <List.Item><Badge text={'促'} corner>
           <div className="corner-badge">Use corner prop</div>
@@ -98,11 +88,6 @@ render() {
 ```less
 .components-badge-demo-corner {
   padding-bottom: 24px;
-}
-[class^="components-badge-demo-"] .sub-title {
-  padding-bottom: 10px;
-  color: #333;
-  font-size: 12px;
 }
 .corner-badge {
   height: 50px;
@@ -135,7 +120,7 @@ render() {
 render() {
   return (
     <div className='components-badge-demo-hidden'>
-    <div className='sub-title'>text为0时隐藏</div>
+    <div className='demo-title'>text为0时隐藏</div>
       <List>
         <List.Item extra="extra" arrow="horizontal">
           <Badge text={0} style={{ marginLeft: 12 }}>Text 0</Badge>
@@ -151,11 +136,6 @@ render() {
 .components-badge-demo-hidden {
   padding-bottom: 24px;
 }
-[class^="components-badge-demo-"] .sub-title {
-  padding-bottom: 10px;
-  color: #333;
-  font-size: 12px;
-}
 ```
 :::
 
@@ -166,7 +146,7 @@ render() {
 render() {
   return (
     <div className='components-badge-demo-market'>
-    <div className='sub-title'>营销样式</div>
+    <div className='demo-title'>营销样式</div>
       <List>
         <List.Item>
           Marketing:
@@ -185,11 +165,6 @@ render() {
 .components-badge-demo-market {
   padding-bottom: 24px;
 }
-[class^="components-badge-demo-"] .sub-title {
-  padding-bottom: 10px;
-  color: #333;
-  font-size: 12px;
-}
 ```
 :::
 
@@ -200,7 +175,7 @@ render() {
 render() {
   return (
     <div className='components-badge-demo-custom'>
-    <div className='sub-title'>自定义样式</div>
+    <div className='demo-title'>自定义样式</div>
       <List>
         <List.Item>
           Customize
@@ -226,11 +201,6 @@ render() {
 ```less
 .components-badge-demo-custom {
   padding-bottom: 24px;
-}
-[class^="components-badge-demo-"] .sub-title {
-  padding-bottom: 10px;
-  color: #333;
-  font-size: 12px;
 }
 ```
 :::
