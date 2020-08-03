@@ -20,3 +20,4 @@ export { default as DatePicker } from './DatePicker/index';
 export { default as TabBar } from './TabBar/index';
 export { default as DropdownMenu } from './Dropdown/index';
 export { default as Overlay } from './Overlay/index';
+export { default as LoadMore } from './LoadMore/index';

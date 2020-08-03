@@ -1,6 +1,8 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
+    value-keyword-case: null,
+    declaration-block-trailing-semicolon: null,
     at-rule-empty-line-before: null,
     at-rule-name-space-after: null,
     at-rule-no-unknown: null,

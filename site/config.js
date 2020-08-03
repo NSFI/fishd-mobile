@@ -2,6 +2,7 @@ export const algolia = {
   apiKey: 'c105570827c2bd528077fbdec1d0eae4',
   indexName: 'fishd-mobile',
   inputSelector: '#search-box input',
+  algoliaOptions: { 'facetFilters': ['lang:zh-CN'] },
   debug: false // Set debug to true if you want to inspect the dropdown
 };
 
@@ -186,6 +187,13 @@ export default [
     nameEn: 'Action Feedback',
     key: 'Action Feedback',
     children: [
+      {
+        key: 'loadMore',
+        type: 'markdown',
+        name: 'LoadMore 加载更多',
+        nameEn: 'LoadMore',
+        published: true
+      },
       {
         key: 'toast',
         type: 'markdown',
