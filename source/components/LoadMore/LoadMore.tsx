@@ -1,10 +1,10 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import { LoadMorePropsType } from './PropsType';
 
-export interface LoadMoreProps extends LoadMorePropsType {
+export interface LoadMoreProps {
   prefixCls?: string;
   className?: string;
+  style?: React.CSSProperties;
   type?: 'circular' | 'spinner';
   color?: string;
   size?: string | number;
@@ -40,17 +40,22 @@ class LoadMore extends React.Component<LoadMoreProps, any> {
   };
 
   render() {
-    const { className, prefixCls, type, color, size, textSize, vertical, text } = this.props;
+    const { className, prefixCls, style, type, color, size, textSize, vertical, text } = this.props;
 
-    const wrapCls = classnames(prefixCls, className, vertical ? `${prefixCls}__vertical` : `${prefixCls}__normal`);
-    const spinnerCls = `${prefixCls}__spinner`;
+    const wrapCls = classnames(prefixCls, className, {
+      [`${prefixCls}__vertical`]: vertical,
+      [`${prefixCls}__normal`]: !vertical,
+    });
 
-    const style = { color, width: size, height: size };
+    const spinnerCls = classnames(`${prefixCls}__spinner`, `${prefixCls}__spinner--${type}`);
+
+    const spStyle = { color, width: size, height: size };
+
     const textStyle = { fontSize: textSize };
 
     return (
-      <div className={wrapCls}>
-        <span className={`${spinnerCls} ${spinnerCls}--${type}`} style={style}>
+      <div className={wrapCls} style={style}>
+        <span className={spinnerCls} style={spStyle}>
           {LoadMoreIcon(this.props)}
         </span>
         {text && (

@@ -167,6 +167,13 @@ export default [
         published: true
       },
       {
+        key: 'progress',
+        type: 'markdown',
+        name: 'Progress 进度条',
+        nameEn: 'Progress',
+        published: true
+      },
+      {
         key: 'carousel',
         type: 'markdown',
         name: 'Carousel 滑块视图容器',
