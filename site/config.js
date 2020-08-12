@@ -146,6 +146,13 @@ export default [
     key: 'Data Display',
     children: [
       {
+        key: 'imageView',
+        type: 'markdown',
+        name: 'ImageView 图片预览',
+        nameEn: 'ImageView',
+        published: true
+      },
+      {
         key: 'list',
         type: 'markdown',
         name: 'List 列表',

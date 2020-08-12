@@ -22,3 +22,4 @@ export { default as DropdownMenu } from './Dropdown/index';
 export { default as Overlay } from './Overlay/index';
 export { default as LoadMore } from './LoadMore/index';
 export { default as Progress } from './Progress/index';
+export { default as ImageView } from './ImageView/index';
