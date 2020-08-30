@@ -122,7 +122,7 @@
             onChange={(e) => this.onChange(i.value, e)}
             checked={valList.includes(i.value)}
             disabled={i.value === 3 || i.value === 4}
-            checkedColor="#07c160">
+            checkedcolor="#07c160">
             {i.label}
           </CheckboxItem>
         ))}
@@ -215,7 +215,7 @@
 |----|-----|------|------|
 | defaultChecked  |  初始是否选中  | Boolean   | 无  |
 | checked         |   指定当前是否选中   | Boolean  | 无  |
-| checkedColor    |   选中状态颜色   | Boolean  | 无  |
+| checkedcolor    |   选中状态颜色   | Boolean  | 无  |
 | shape           |   形状，可选值为 square   | String  | round  |
 | disabled        |    失效状态    | Boolean |  false  |
 | onChange        | change 事件触发的回调函数 | (e: Object): void |   无  |

@@ -187,7 +187,7 @@
         <div className='demo-title'>自定义颜色</div>
         <List>
           {data.map(i => (
-            <Radio.RadioItem checkedColor="#07c160" key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
+            <Radio.RadioItem checkedcolor="#07c160" key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
               {i.label}
             </Radio.RadioItem>
           ))}
@@ -266,7 +266,7 @@
 | name    |   name  | String |   无  |
 | defaultChecked |   初始是否选中   | Boolean  | 无  |
 | checked    |   指定当前是否选中  | Boolean  | 无  |
-| checkedColor    |   选中状态颜色   | Boolean  | 无  |
+| checkedcolor    |   选中状态颜色   | Boolean  | 无  |
 | shape           |   形状，可选值为 square   | String  | round  |
 | disabled      |  禁用  | Boolean |  false  |
 | onChange    | change 事件触发的回调函数 | (e: Object): void |   无  |
