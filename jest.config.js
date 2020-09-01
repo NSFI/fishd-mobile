@@ -1,6 +1,6 @@
 module.exports = {
   setupFiles: ['./source/tests/setup.js'],
-  testPathIgnorePatterns: ['/node_modules/', '/es/', '/lib/', '/dist/'],
+  testPathIgnorePatterns: ['/node_modules/', '/es/', '/lib/', '/dist/', '/site/'],
   // collectCoverage: true,
   collectCoverageFrom: ['source/components/**/*.{js,jsx,ts,tsx}', '!**/node_modules/**'],
   moduleNameMapper: {

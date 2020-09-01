@@ -22,7 +22,7 @@ handleClick = () => {
     cancelButtonText: '取消',
     wrapProps: {},
     onSelect: (buttonIndex) => {
-      Toast.show(`点击${BUTTONS[buttonIndex]}`, 1, false);
+      Toast.show(`点击${BUTTONS[buttonIndex]}`);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
@@ -65,16 +65,18 @@ handleClick = () => {
     icon: <img src={`https://gw.alipayobjects.com/zos/rmsportal/${obj.url}.png`} alt={obj.title} style={{ width: 36 }} />,
     title: obj.title,
   }));
+
+  const NEW_BUTTONS = [...BUTTONS, BUTTONS[0], BUTTONS[1]];
   ActionSheet.showShareActionSheetWithOptions({
     options: [
-      [...BUTTONS, BUTTONS[0], BUTTONS[1]],
+      NEW_BUTTONS
     ],
     cancelText: 'cancel',
     message: '标题或描述',
     maskClosable: true,
     cancelButtonText: '取消',
     onSelect: (buttonIndex, rowIndex) => {
-      Toast.show(`点击${BUTTONS[buttonIndex].title}`, 1, false);
+      Toast.show(`点击${NEW_BUTTONS[buttonIndex].title}`);
     },
     onCancel: () => {
       console.log('>>> 取消操作')
@@ -128,7 +130,7 @@ handleClick = () => {
     maskClosable: true,
     cancelButtonText: '取消',
     onSelect: (buttonIndex, rowIndex) => {
-      Toast.show(`点击${OPTIONS[rowIndex][buttonIndex].title}`, 1, false);
+      Toast.show(`点击${OPTIONS[rowIndex][buttonIndex].title}`);
     },
     onCancel: () => {
       console.log('>>> 取消操作')

@@ -137,7 +137,14 @@ export default [
         name: 'DatePicker 日期选择器',
         nameEn: 'DatePicker',
         published: true
-      }
+      },
+      {
+        key: 'upload',
+        type: 'markdown',
+        name: 'Upload 文件上传',
+        nameEn: 'Upload',
+        published: true
+      },
     ]
   },
   {
@@ -178,6 +185,13 @@ export default [
         type: 'markdown',
         name: 'Progress 进度条',
         nameEn: 'Progress',
+        published: true
+      },
+      {
+        key: 'steps',
+        type: 'markdown',
+        name: 'Steps 步骤条',
+        nameEn: 'Steps',
         published: true
       },
       {

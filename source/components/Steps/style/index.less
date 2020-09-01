@@ -1,0 +1,176 @@
+@import (reference) '../../../assets/css/index';
+@StepsPrefixCls: fm-steps;
+
+.@{StepsPrefixCls} {
+  padding: 10px 10px 22px 10px;
+  font-size: 12px;
+  color: #222;
+  background-color: #fff;
+
+  &__description {
+    margin-top: 5px;
+  }
+
+  &__vertical {
+    .@{StepsPrefixCls}__items {
+      box-sizing: border-box;
+      width: 100%;
+      position: relative;
+      padding-left: 20px;
+    }
+    .@{StepsPrefixCls}__step {
+      position: relative;
+      padding: 10px 0;
+
+      &-process {
+        .@{StepsPrefixCls}__title {
+          color: #26BD71;
+        }
+
+        .@{StepsPrefixCls}__icon {
+          background: #26BD71;
+        }
+      }
+
+      &-finish {
+        .@{StepsPrefixCls}__line {
+          background: #26BD71;
+        }
+
+        .@{StepsPrefixCls}__icon {
+          background: #26BD71;
+        }
+      }
+    }
+    .@{StepsPrefixCls}__dot {
+      display: flex;
+      position: absolute;
+      top: 10px;
+      left: -15px;
+      z-index: 1;
+      background-color: #fff;
+      transform: translate(-50%, 0);
+    }
+    .@{StepsPrefixCls}__icon {
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #D8D8D8;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .@{StepsPrefixCls}__line {
+      position: absolute;
+      top: 10px;
+      left: -15.5px;
+      width: 1px;
+      height: 100%;
+      background-color: #E1E3E6;
+      transition: background-color 0.3s;
+    }
+    .@{StepsPrefixCls}__step:last-child .@{StepsPrefixCls}__line {
+      width: 0;
+    }
+  }
+
+  &__horizontal {
+    .@{StepsPrefixCls}__items {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    .@{StepsPrefixCls}__step {
+      position: relative;
+      flex: 1;
+
+      &-process {
+        .@{StepsPrefixCls}__title {
+          color: #26BD71;
+        }
+
+        .@{StepsPrefixCls}__icon {
+          background: #26BD71;
+        }
+      }
+
+      &-finish {
+        .@{StepsPrefixCls}__line {
+          background: #26BD71;
+        }
+
+        .@{StepsPrefixCls}__icon {
+          background: #26BD71;
+        }
+      }
+    }
+
+    .@{StepsPrefixCls}__title {
+      display: inline-block;
+      transform: translateX(-50%);
+      transition: color 0.3s;
+    }
+
+    .@{StepsPrefixCls}__step:first-child .@{StepsPrefixCls}__title {
+      transform: none;
+    }
+
+    .@{StepsPrefixCls}__step:last-child .@{StepsPrefixCls}__title {
+      transform: none;
+    }
+
+    .@{StepsPrefixCls}__step:last-child {
+      flex: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .@{StepsPrefixCls}__dot {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+      padding: 0 6px;
+      background-color: #fff;
+      transform: translate(-50%, -50%);
+    }
+
+    .@{StepsPrefixCls}__icon {
+      display: block;
+      width: 5px;
+      height: 5px;
+      background-color: #D8D8D8;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .@{StepsPrefixCls}__step:first-child .@{StepsPrefixCls}__dot {
+      left: 0;
+      transform: translate(0, -50%);
+    }
+
+    .@{StepsPrefixCls}__step:last-child .@{StepsPrefixCls}__dot {
+      right: 0;
+      left: auto;
+      transform: translate(0, -50%);
+    }
+
+    .@{StepsPrefixCls}__line {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: calc(100%);
+      height: 1px;
+      background-color: #E1E3E6;
+      transition: background-color 0.3s;
+    }
+
+    .@{StepsPrefixCls}__step:last-child .@{StepsPrefixCls}__line {
+      height: 0;
+    }
+  }
+
+}

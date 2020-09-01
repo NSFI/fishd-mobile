@@ -1,3 +1,4 @@
+import _ from 'lodash';
 let init = false
 export default function initIframe () {
   if (init) {
@@ -20,8 +21,8 @@ export default function initIframe () {
     }
   })
 
-  // 监听hash事件，并同步子页面路由
-  window.addEventListener('hashchange', () => {
+  // 添加deboucne防止 父子页面相互触发事件造成死循环
+  const handleHashChange = _.debounce(() => {
     const iframe = document.querySelector('.u-iframe')
     document.documentElement.scrollTop = 0
     if (iframe) {
@@ -33,7 +34,10 @@ export default function initIframe () {
         '*'
       )
     }
-  })
+  }, 300)
+
+  // 监听hash事件，并同步子页面路由
+  window.addEventListener('hashchange', handleHashChange)
 
   // 重新加载demo
   window.reloadDemo = function (data) {

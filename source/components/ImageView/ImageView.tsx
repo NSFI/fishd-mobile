@@ -11,6 +11,7 @@ export interface ImageViewProps extends ImageViewPropsType, IPhotoSliderProps {
   prefixCls?: string;
   className?: string;
   isFn?: boolean;
+  defaultIndex?: number;
 }
 
 // TODO: 后续自己实现
@@ -21,9 +22,23 @@ class ImageView extends React.Component<ImageViewProps, any> {
 
   static preview: any; // 函数式调用
 
-  state = {
-    innerVisible: false, // 如果是函数式组件，则内部维护状态
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      innerVisible: false, // 如果是函数式组件，则内部维护状态
+      index: props.index || props.defaultIndex,
+    };
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.index !== undefined && nextProps.index !== prevState.index) {
+      return {
+        ...prevState,
+        index: nextProps.index,
+      };
+    }
+    return null;
+  }
 
   componentDidMount() {
     // 等待dom创建后在进行显示，否则会闪烁
@@ -41,14 +56,29 @@ class ImageView extends React.Component<ImageViewProps, any> {
     }
   };
 
+  handleIndexChange = index => {
+    const { onIndexChange } = this.props;
+    this.setState({ index });
+    if (onIndexChange) {
+      onIndexChange(index);
+    }
+  };
+
   render() {
     const { className, prefixCls, visible, isFn, ...restProps } = this.props;
+    const { index } = this.state;
     const { innerVisible } = this.state;
     const wrapCls = classnames(prefixCls, className, {});
     const v = isFn ? innerVisible : visible;
     return (
       <div className={wrapCls}>
-        <PhotoSlider visible={v} {...restProps} onClose={this.handleClose} />
+        <PhotoSlider
+          {...restProps}
+          visible={v}
+          index={index}
+          onClose={this.handleClose}
+          onIndexChange={this.handleIndexChange}
+        />
       </div>
     );
   }

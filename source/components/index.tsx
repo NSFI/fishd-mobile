@@ -23,3 +23,6 @@ export { default as Overlay } from './Overlay/index';
 export { default as LoadMore } from './LoadMore/index';
 export { default as Progress } from './Progress/index';
 export { default as ImageView } from './ImageView/index';
+export { default as Upload } from './Upload/index';
+export { default as Steps } from './Steps/index';
+export { default as Icon } from './Icon/index';

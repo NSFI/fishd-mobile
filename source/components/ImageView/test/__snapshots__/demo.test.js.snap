@@ -8,29 +8,7 @@ exports[`Renders ImageView demo correctly 1`] = `
     <div
       class="demo-title"
     >
-      基础用法
-    </div>
-    <div
-      class="demo-card"
-    >
-      <a
-        aria-disabled="false"
-        class="fm-button"
-        role="button"
-      >
-        <span>
-          函数式
-        </span>
-      </a>
-    </div>
-  </div>
-  <div
-    class="components-tpl-demo-basic"
-  >
-    <div
-      class="demo-title"
-    >
-      基础用法
+      函数式用法
     </div>
     <div
       class="demo-card"
@@ -44,6 +22,33 @@ exports[`Renders ImageView demo correctly 1`] = `
           显示图片
         </span>
       </a>
+    </div>
+  </div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      组件式用法
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="demo-img__wrap"
+      >
+        <img
+          alt="image"
+          class="demo-img"
+          src="https://placekitten.com/600/400"
+        />
+        <img
+          alt="image"
+          class="demo-img"
+          src="https://placekitten.com/1200/900"
+        />
+      </div>
       <div
         class="fm-imageView"
       />

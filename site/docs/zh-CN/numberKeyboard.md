@@ -28,11 +28,11 @@ handleBlur = () => {
 }
 
 hanldeInput = (text) => {
-  Toast.show(`点击${text}`, 1, false);
+  Toast.show(`点击${text}`);
 }
 
 hanldeDelete = () => {
-  Toast.show(`删除`, 1, false);
+  Toast.show(`删除`);
 }
 
 handleChange = (value) => {
