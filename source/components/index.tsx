@@ -26,3 +26,4 @@ export { default as ImageView } from './ImageView/index';
 export { default as Upload } from './Upload/index';
 export { default as Steps } from './Steps/index';
 export { default as Icon } from './Icon/index';
+export { default as Divider } from './Divider/index';

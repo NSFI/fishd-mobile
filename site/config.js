@@ -206,9 +206,16 @@ export default [
         type: 'markdown',
         name: 'Overlay 遮罩',
         nameEn: 'Overlay',
-        published: true
-      }
-    ]
+        published: true,
+      },
+      {
+        key: 'divider',
+        type: 'markdown',
+        name: 'Divider 分割线',
+        nameEn: 'Divider',
+        published: true,
+      },
+    ],
   },
   {
     name: '操作反馈',
