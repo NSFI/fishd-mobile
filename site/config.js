@@ -222,6 +222,13 @@ export default [
         nameEn: 'Overlay',
         published: true,
       },
+      {
+        key: 'divider',
+        type: 'markdown',
+        name: 'Divider 分割线',
+        nameEn: 'Divider',
+        published: true,
+      },
     ],
   },
   {
