@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Picker demo correctly 1`] = `
+<div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      基础用法
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="fm-list"
+      >
+        <div
+          class="fm-list-body"
+        >
+          <span>
+            <div
+              class="fm-list-item fm-list-item-middle"
+            >
+              <div
+                class="fm-list-line"
+              >
+                <div
+                  class="fm-list-content"
+                >
+                  单列
+                </div>
+                <div
+                  class="fm-list-extra"
+                >
+                  水果
+                </div>
+              </div>
+              <div
+                class="fm-list-ripple"
+                style="display:none"
+              />
+            </div>
+          </span>
+          <span>
+            <div
+              class="fm-list-item fm-list-item-middle"
+            >
+              <div
+                class="fm-list-line"
+              >
+                <div
+                  class="fm-list-content"
+                >
+                  多列
+                </div>
+                <div
+                  class="fm-list-extra"
+                >
+                  年份/季节
+                </div>
+              </div>
+              <div
+                class="fm-list-ripple"
+                style="display:none"
+              />
+            </div>
+          </span>
+          <span>
+            <div
+              class="fm-list-item fm-list-item-middle"
+            >
+              <div
+                class="fm-list-line"
+              >
+                <div
+                  class="fm-list-content"
+                >
+                  级联
+                </div>
+                <div
+                  class="fm-list-extra"
+                >
+                  地区选择
+                </div>
+              </div>
+              <div
+                class="fm-list-ripple"
+                style="display:none"
+              />
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

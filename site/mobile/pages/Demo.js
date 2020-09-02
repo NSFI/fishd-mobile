@@ -8,6 +8,7 @@ import collect from '@/lib/collect'
 import eventbus from '@/lib/eventbus'
 import Home from '@/pages/Home'
 
+import arrayTreeFilter from 'array-tree-filter'
 import * as rcForm from 'rc-form'
 import * as source from '../../../index'
 
@@ -52,8 +53,8 @@ class Demo extends Component {
 
   renderSource = (value, playerId) => {
     new Promise((resolve) => {
-      const args = [ 'context', 'React', 'ReactDOM', 'rcForm' ]
-      const argv = [ this, React, ReactDOM, rcForm]
+      const args = [ 'context', 'React', 'ReactDOM', 'rcForm', 'arrayTreeFilter' ]
+      const argv = [ this, React, ReactDOM, rcForm, arrayTreeFilter]
       source &&
         Object.keys(source).forEach((key) => {
           args.push(key)

@@ -197,8 +197,21 @@ render() {
 
 ## API
 
+## Steps
+
 | 属性 | 说明         | 类型                                            | 默认值    |
 | ---- | ------------ | ----------------------------------------------- | --------- |
-| title | 标题 | string | - |
+| active | 当前步骤 | `number | string` | `0` |
+| direction | 显示方向，可选值为`vertical` | string | `horizontal` |
+| activeColor | 激活状态颜色 | string | `0` |
+| inactiveColor | 未激活状态颜色 | string | `0` |
+| activeIcon | 激活状态底部图标 | ReactNode | `对勾` |
+| inactiveIcon | 未激活状态底部图标 | ReactNode | `圆点` |
 
+## Steps.Step
+
+| 属性 | 说明         | 类型                                            | 默认值    |
+| ---- | ------------ | ----------------------------------------------- | --------- |
+| activeIcon | 激活状态底部图标 | ReactNode | `对勾` |
+| inactiveIcon | 未激活状态底部图标 | ReactNode | `圆点` |
 
