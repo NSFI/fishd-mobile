@@ -229,6 +229,13 @@ export default [
         nameEn: 'Divider',
         published: true,
       },
+      {
+        key: 'label',
+        type: 'markdown',
+        name: 'Label 标签',
+        nameEn: 'Label',
+        published: true,
+      },
     ],
   },
   {
