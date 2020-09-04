@@ -24,7 +24,7 @@ class Rate extends React.Component<RateProps, any> {
     readOnly: false,
     disabled: false,
     onThumbChange: (val: ThumbType) => val,
-    character: () => <Icon type="fm-star-default" />,
+    character: () => <Icon type="fm-star-outline" />,
   };
 
   render() {
@@ -61,7 +61,9 @@ class Rate extends React.Component<RateProps, any> {
                       allowClear
                       allowHalf={false}
                       prefixCls={prefixCls}
-                      character={() => item}
+                      character={() =>
+                        item === 'up' ? <Icon type="fm-dianzan-up" /> : <Icon type="fm-dianzan-down" />
+                      }
                       style={this.props.style}
                       disabled={this.props.readonly || this.props.disabled}
                       value={this.props.thumb === item ? 1 : 0}

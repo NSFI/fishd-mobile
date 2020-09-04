@@ -138,7 +138,6 @@ onThumbChange = (value) => {
   this.setState({
     thumb: value,
   });
-  console.log(value);
 };
 
 render() {
