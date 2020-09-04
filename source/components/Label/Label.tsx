@@ -59,14 +59,6 @@ class Label extends React.Component<LabelProps, any> {
     });
 
     const key = type === 'plain' || type === 'shallow' ? 'color' : 'backgroundColor';
-    let iconSize;
-    if (size === 'sm') {
-      iconSize = 'xxs';
-    } else if (size === 'md') {
-      iconSize = 'xs';
-    } else {
-      iconSize = 'md';
-    }
 
     const labelStyle = {
       [key]: color,
@@ -74,7 +66,7 @@ class Label extends React.Component<LabelProps, any> {
     };
 
     const CloseIcon = closeable && (
-      <Icon className={`${prefixCls}-closeable`} type="fm-close" size={iconSize} onClick={this.handleClose} />
+      <Icon className={`${prefixCls}-closeable`} type="fm-close" size="xxs" onClick={this.handleClose} />
     );
 
     return !this.state.closed ? (

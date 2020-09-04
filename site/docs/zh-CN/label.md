@@ -10,7 +10,7 @@
   constructor(props){
     super(props);
     this.state = {
-      data: ['#337EFF','#26BD71','#F24957','#F29900'],
+      data: ['#337EFF','#26BD71','#F24957','#F29900','#8875FF','#969799'],
     };
   }
 
@@ -22,7 +22,7 @@
         <div className='demo-title'>基础样式</div>
         <div className='label-demo-body'>
           {data.map(c => (
-            <Label color={c} key={`1${c}`.toString()}>
+            <Label color={c} key={`1${c}`.toString()} className="label">
               <span>标签</span>
             </Label>
           ))}
@@ -31,7 +31,7 @@
         <div className='demo-title'>圆角样式</div>
         <div className='label-demo-body'>
           {data.map(c => (
-            <Label color={c} type='round' key={`2${c}`.toString()}>
+            <Label color={c} type='round' key={`2${c}`.toString()} className="label">
               <span>标签</span>
             </Label>
           ))}
@@ -40,7 +40,7 @@
         <div className='demo-title'>标记样式</div>
         <div className='label-demo-body'>
           {data.map(c => (
-            <Label color={c} type='mark' key={`3${c}`.toString()}>
+            <Label color={c} type='mark' key={`3${c}`.toString()} className="label">
               <span>标签</span>
             </Label>
           ))}
@@ -49,7 +49,7 @@
         <div className='demo-title'>浅底样式</div>
         <div className='label-demo-body'>
           {data.map(c => (
-            <Label color={c} type='shallow' key={`4${c}`.toString()}>
+            <Label color={c} type='shallow' key={`4${c}`.toString()} className="label">
               <span>标签</span>
             </Label>
           ))}
@@ -58,7 +58,7 @@
         <div className='demo-title'>空心样式</div>
         <div className='label-demo-body'>
           {data.map(c => (
-            <Label color={c} type='plain' key={`5${c}`.toString()}>
+            <Label color={c} type='plain' key={`5${c}`.toString()} className="label">
               <span>标签</span>
             </Label>
           ))}
@@ -72,7 +72,11 @@
 ```less
 .label-demo-body {
   display: flex;
-  justify-content: space-evenly;
+  align-items: flex-end;
+  padding-left: 16px;
+  .label {
+    margin-right: 8px;
+  }
 }
 ```
 :::
@@ -86,13 +90,13 @@
       <div className='components-label-demo-basic'>
         <div className='demo-title'>标签大小</div>
         <div className='label-demo-body'>
-          <Label size='sm'>
+          <Label size='sm' className="label">
             <span>标签</span>
           </Label>
-          <Label size='md'>
+          <Label size='md' className="label">
             <span>标签</span>
           </Label>
-          <Label size='lg'>
+          <Label size='lg' className="label">
             <span>标签</span>
           </Label>
         </div>
@@ -104,8 +108,11 @@
 ```less
 .label-demo-body {
   display: flex;
-  justify-content: space-evenly;
   align-items: flex-end;
+  padding-left: 16px;
+  .label {
+    margin-right: 8px;
+  }
 }
 ```
 :::
@@ -113,42 +120,31 @@
 :::demo
 
 ```js
+  constructor(props){
+    super(props);
+    this.state = {
+      data: ['#337EFF','#26BD71','#F24957','#F29900'],
+    };
+  }
   render() {
+    const {data} = this.state;
 
     return (
       <div className='components-label-demo-basic'>
         <div className='demo-title'>可关闭标签</div>
         <div className='label-demo-body'>
-            <Label color={'#337EFF'} size='sm' closeable
+          {data.map(c => (
+            <Label color={c} key={c} className="label" closeable
               onClose={() => {
-                console.log('close');
-              }}
-              afterClose={() => {
-                console.log('afterClose');
-              }}
-            >
+                  console.log('close');
+                }}
+                afterClose={() => {
+                  console.log('afterClose');
+                }}
+              >
               <span>标签</span>
             </Label>
-            <Label color={'#26BD71'} size='md' closeable
-              onClose={() => {
-                console.log('close');
-              }}
-              afterClose={() => {
-                console.log('afterClose');
-              }}
-            >
-              <span>标签</span>
-            </Label>
-            <Label color={'#F24957'} size='lg' closeable
-              onClose={() => {
-                console.log('close');
-              }}
-              afterClose={() => {
-                console.log('afterClose');
-              }}
-            >
-              <span>标签</span>
-            </Label>
+          ))}
         </div>
 
       </div>
@@ -159,8 +155,11 @@
 ```less
 .label-demo-body {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
+  padding-left: 16px;
+  .label {
+    margin-right: 8px;
+  }
 }
 ```
 :::

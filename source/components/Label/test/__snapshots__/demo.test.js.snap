@@ -14,7 +14,7 @@ exports[`Renders Label demo correctly 1`] = `
       class="label-demo-body"
     >
       <div
-        class="fm-label fm-label"
+        class="fm-label label fm-label"
         style="background-color:#337EFF"
       >
         <span>
@@ -22,7 +22,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label"
+        class="fm-label label fm-label"
         style="background-color:#26BD71"
       >
         <span>
@@ -30,7 +30,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label"
+        class="fm-label label fm-label"
         style="background-color:#F24957"
       >
         <span>
@@ -38,8 +38,24 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label"
+        class="fm-label label fm-label"
         style="background-color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#969799"
       >
         <span>
           标签
@@ -55,7 +71,7 @@ exports[`Renders Label demo correctly 1`] = `
       class="label-demo-body"
     >
       <div
-        class="fm-label fm-label-round"
+        class="fm-label label fm-label-round"
         style="background-color:#337EFF"
       >
         <span>
@@ -63,7 +79,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-round"
+        class="fm-label label fm-label-round"
         style="background-color:#26BD71"
       >
         <span>
@@ -71,7 +87,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-round"
+        class="fm-label label fm-label-round"
         style="background-color:#F24957"
       >
         <span>
@@ -79,8 +95,24 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-round"
+        class="fm-label label fm-label-round"
         style="background-color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#969799"
       >
         <span>
           标签
@@ -96,7 +128,7 @@ exports[`Renders Label demo correctly 1`] = `
       class="label-demo-body"
     >
       <div
-        class="fm-label fm-label-mark"
+        class="fm-label label fm-label-mark"
         style="background-color:#337EFF"
       >
         <span>
@@ -104,7 +136,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-mark"
+        class="fm-label label fm-label-mark"
         style="background-color:#26BD71"
       >
         <span>
@@ -112,7 +144,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-mark"
+        class="fm-label label fm-label-mark"
         style="background-color:#F24957"
       >
         <span>
@@ -120,8 +152,24 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-mark"
+        class="fm-label label fm-label-mark"
         style="background-color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#969799"
       >
         <span>
           标签
@@ -137,7 +185,7 @@ exports[`Renders Label demo correctly 1`] = `
       class="label-demo-body"
     >
       <div
-        class="fm-label fm-label-shallow"
+        class="fm-label label fm-label-shallow"
         style="color:#337EFF"
       >
         <span>
@@ -145,7 +193,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-shallow"
+        class="fm-label label fm-label-shallow"
         style="color:#26BD71"
       >
         <span>
@@ -153,7 +201,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-shallow"
+        class="fm-label label fm-label-shallow"
         style="color:#F24957"
       >
         <span>
@@ -161,8 +209,24 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-shallow"
+        class="fm-label label fm-label-shallow"
         style="color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#969799"
       >
         <span>
           标签
@@ -178,7 +242,7 @@ exports[`Renders Label demo correctly 1`] = `
       class="label-demo-body"
     >
       <div
-        class="fm-label fm-label-plain"
+        class="fm-label label fm-label-plain"
         style="color:#337EFF"
       >
         <span>
@@ -186,7 +250,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-plain"
+        class="fm-label label fm-label-plain"
         style="color:#26BD71"
       >
         <span>
@@ -194,7 +258,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-plain"
+        class="fm-label label fm-label-plain"
         style="color:#F24957"
       >
         <span>
@@ -202,8 +266,24 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label-plain"
+        class="fm-label label fm-label-plain"
         style="color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#969799"
       >
         <span>
           标签
@@ -223,7 +303,7 @@ exports[`Renders Label demo correctly 1`] = `
       class="label-demo-body"
     >
       <div
-        class="fm-label fm-label fm-label-sm"
+        class="fm-label label fm-label fm-label-sm"
         style="background-color:#337EFF"
       >
         <span>
@@ -231,7 +311,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label"
+        class="fm-label label fm-label"
         style="background-color:#337EFF"
       >
         <span>
@@ -239,7 +319,7 @@ exports[`Renders Label demo correctly 1`] = `
         </span>
       </div>
       <div
-        class="fm-label fm-label fm-label-lg"
+        class="fm-label label fm-label fm-label-lg"
         style="background-color:#337EFF"
       >
         <span>
@@ -260,7 +340,7 @@ exports[`Renders Label demo correctly 1`] = `
       class="label-demo-body"
     >
       <div
-        class="fm-label fm-label fm-label-sm"
+        class="fm-label label fm-label"
         style="background-color:#337EFF"
       >
         <span>
@@ -275,14 +355,14 @@ exports[`Renders Label demo correctly 1`] = `
         </svg>
       </div>
       <div
-        class="fm-label fm-label"
+        class="fm-label label fm-label"
         style="background-color:#26BD71"
       >
         <span>
           标签
         </span>
         <svg
-          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xs"
+          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xxs"
         >
           <use
             href="#fm-close"
@@ -290,40 +370,34 @@ exports[`Renders Label demo correctly 1`] = `
         </svg>
       </div>
       <div
-        class="fm-label fm-label fm-label-lg"
+        class="fm-label label fm-label"
         style="background-color:#F24957"
       >
         <span>
           标签
         </span>
         <svg
-          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-md"
+          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xxs"
         >
           <use
             href="#fm-close"
           />
         </svg>
       </div>
-    </div>
-  </div>
-  <div
-    class="components-label-demo-basic"
-  >
-    <div
-      class="demo-title"
-    >
-      自定义样式
-    </div>
-    <div
-      class="label-demo-body"
-    >
       <div
-        class="fm-label fm-label"
-        style="background-color:#337EFF"
+        class="fm-label label fm-label"
+        style="background-color:#F29900"
       >
         <span>
           标签
         </span>
+        <svg
+          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xxs"
+        >
+          <use
+            href="#fm-close"
+          />
+        </svg>
       </div>
     </div>
   </div>
