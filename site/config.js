@@ -234,6 +234,12 @@ export default [
         type: 'markdown',
         name: 'Label 标签',
         nameEn: 'Label',
+      },
+      {
+        key: 'rate',
+        type: 'markdown',
+        name: 'Rate 评分',
+        nameEn: 'Rate',
         published: true,
       },
     ],
