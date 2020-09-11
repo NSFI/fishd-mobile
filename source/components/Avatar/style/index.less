@@ -1,0 +1,111 @@
+
+@import '../../../assets/css/mixin.less';
+@import '../../../assets/css/themes/default.less';
+
+@avatarPrefixClass: fm-avatar;
+
+@sizeLG: 64px;
+@sizeMD: 48px;
+@sizeSM: 36px;
+@sizeXS: 24px;
+
+.@{avatarPrefixClass} {
+  // ------ basic ------
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  background: #D2D5DB;
+  vertical-align: middle;
+
+  &-disabled {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.4);
+    cursor: not-allowed;
+  }
+
+  // ------ type ------
+  &-icon {
+    &-content{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &-icon-font {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin: auto;
+    padding: 0;
+    
+    background: #369;
+  }
+  &-icon-custom {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &-image {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+  }
+  &-text{
+    position: relative;
+    font-family: PingFangSC-Regular;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    &-content{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &-icon {
+
+  }
+
+  // ------ round(shape) - circle / square |  rect - width/height/round ------
+  &-circle{
+    border-radius: 50%;
+  }
+  &-square{
+    border-radius: 4px;
+  }
+
+  // ------ size ------
+  &-xs {
+    width: @sizeXS;
+    height: @sizeXS;
+    font-size: 10.5px;
+  }
+  &-sm {
+    width: @sizeSM;
+    height: @sizeSM;
+    font-size: 14px;
+  }
+  &-md {
+    width: @sizeMD;
+    height: @sizeMD;
+    font-size: 21px;
+  }
+  &-lg {
+    width: @sizeLG;
+    height: @sizeLG;
+    font-size: 28px;
+  }
+
+  // ------ layout ------
+  &-inline {
+    
+  }
+}

@@ -242,7 +242,13 @@ export default [
         name: 'Rate 评分',
         nameEn: 'Rate',
         published: true,
-      },
+      },{
+        key: 'avatar',
+        type: 'markdown',
+        name: 'Avatar 头像',
+        nameEn: 'Avatar',
+        published: true,
+      }
     ],
   },
   {
