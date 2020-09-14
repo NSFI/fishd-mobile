@@ -1,0 +1,109 @@
+@import '../../../assets//css/mixin.less';
+@import '../../../assets//css/themes/default.less';
+@rate-prefix-cls: fm-rate;
+
+.@{rate-prefix-cls} {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: @rate-star-color;
+  line-height: unset;
+  list-style: none;
+  outline: none;
+
+  &-disable &-disabled {
+    color: @rate-star-disabled;
+  }
+
+  &-lg {
+    font-size: @icon-size-lg;
+
+    .fm-icon {
+      width: @icon-size-lg;
+      height: @icon-size-lg;
+    }
+  }
+
+  &-md {
+    font-size: @icon-size-md;
+
+    .fm-icon {
+      width: @icon-size-md;
+      height: @icon-size-md;
+    }
+  }
+
+  &-sm {
+    font-size: @icon-size-xxs;
+
+    .fm-icon {
+      width: @icon-size-xxs;
+      height: @icon-size-xxs;
+    }
+  }
+
+  &-disabled &-star {
+    cursor: default;
+    &:hover {
+      transform: scale(1);
+    }
+  }
+
+  &-star {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    > div {
+      &:focus {
+        outline: 0;
+      }
+
+      &:hover,
+      &:focus {
+        transform: @rate-star-hover-scale;
+      }
+    }
+
+    &-first,
+    &-second {
+      color: @rate-star-bg;
+      transition: all 0.3s;
+      user-select: none;
+    }
+
+    &-first {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    &-half &-first,
+    &-half &-second {
+      opacity: 1;
+    }
+
+    &-half &-first,
+    &-full &-second {
+      color: inherit;
+    }
+  }
+
+  &-text {
+    display: inline-block;
+    margin: 0 8px;
+    font-size: @font-size-base;
+  }
+}

@@ -235,6 +235,27 @@ export default [
         name: 'Divider 分割线',
         nameEn: 'Divider',
         published: true
+      },
+      {
+        key: 'label',
+        type: 'markdown',
+        name: 'Label 标签',
+        nameEn: 'Label',
+        published: true
+      },
+      {
+        key: 'rate',
+        type: 'markdown',
+        name: 'Rate 评分',
+        nameEn: 'Rate',
+        published: true
+      },
+      {
+        key: 'avatar',
+        type: 'markdown',
+        name: 'Avatar 头像',
+        nameEn: 'Avatar',
+        published: true
       }
     ]
   },

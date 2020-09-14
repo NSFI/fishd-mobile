@@ -30,3 +30,6 @@ export { default as PickerView } from './PickerView/index';
 export { default as Picker } from './Picker/index';
 export { default as Divider } from './Divider/index';
 export { default as SearchBar } from './SearchBar/index';
+export { default as Label } from './Label/index';
+export { default as Rate } from './Rate/index';
+export { default as Avatar } from './Avatar/index';
