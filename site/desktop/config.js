@@ -28,7 +28,7 @@ export const config = {
           published: true
         },
         {
-          key: 'contributing',
+          key: 'color',
           type: 'react',
           name: '色彩',
           nameEn: 'Color',
