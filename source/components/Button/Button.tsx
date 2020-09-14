@@ -39,7 +39,11 @@ function insertSpace(child: any) {
 class Button extends React.Component<ButtonProps, any> {
   static defaultProps = {
     prefixCls: 'fm-button',
-    size: 'large',
+    type: 'default',
+    size: 'normal',
+    plain: false,
+    round: false,
+    square: false,
     inline: false,
     disabled: false,
     loading: false,
@@ -53,6 +57,10 @@ class Button extends React.Component<ButtonProps, any> {
       prefixCls,
       type,
       size,
+      plain,
+      color,
+      round,
+      square,
       inline,
       disabled,
       icon,
@@ -65,10 +73,18 @@ class Button extends React.Component<ButtonProps, any> {
 
     const iconType: any = loading ? 'loading' : icon;
     const wrapCls = classnames(prefixCls, className, {
+      [`${prefixCls}-default`]: type === 'default',
       [`${prefixCls}-primary`]: type === 'primary',
-      [`${prefixCls}-ghost`]: type === 'ghost',
+      [`${prefixCls}-guide`]: type === 'guide',
       [`${prefixCls}-warning`]: type === 'warning',
+      [`${prefixCls}-danger`]: type === 'danger',
+      [`${prefixCls}-plain`]: plain,
+      [`${prefixCls}-large`]: size === 'large',
+      [`${prefixCls}-normal`]: size === 'normal',
       [`${prefixCls}-small`]: size === 'small',
+      [`${prefixCls}-mini`]: size === 'mini',
+      [`${prefixCls}-round`]: round,
+      [`${prefixCls}-square`]: square,
       [`${prefixCls}-inline`]: inline,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-loading`]: loading,
@@ -107,6 +123,15 @@ class Button extends React.Component<ButtonProps, any> {
           {...restProps}
           onClick={disabled ? undefined : onClick}
           aria-disabled={disabled}
+          style={
+            color
+              ? {
+                  color: plain ? color : '#fff',
+                  background: plain ? '#fff' : color,
+                  borderColor: plain ? color : '#fff',
+                }
+              : {}
+          }
         >
           {iconEl}
           {kids}

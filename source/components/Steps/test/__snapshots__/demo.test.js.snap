@@ -120,9 +120,8 @@ exports[`Renders Steps demo correctly 1`] = `
       </div>
       <a
         aria-disabled="false"
-        class="fm-button fm-button-small"
+        class="fm-button fm-button-default fm-button-small"
         role="button"
-        style="margin-top:10px;width:100px"
       >
         <span>
           下一步
@@ -248,9 +247,8 @@ exports[`Renders Steps demo correctly 1`] = `
       </div>
       <a
         aria-disabled="false"
-        class="fm-button fm-button-small"
+        class="fm-button fm-button-default fm-button-small"
         role="button"
-        style="margin-top:10px;width:100px"
       >
         <span>
           下一步
@@ -391,9 +389,8 @@ exports[`Renders Steps demo correctly 1`] = `
       </div>
       <a
         aria-disabled="false"
-        class="fm-button fm-button-small"
+        class="fm-button fm-button-default fm-button-small"
         role="button"
-        style="margin-top:10px;width:100px"
       >
         <span>
           下一步
@@ -539,9 +536,8 @@ exports[`Renders Steps demo correctly 1`] = `
       </div>
       <a
         aria-disabled="false"
-        class="fm-button fm-button-small"
+        class="fm-button fm-button-default fm-button-small"
         role="button"
-        style="margin-top:10px;width:100px"
       >
         <span>
           下一步

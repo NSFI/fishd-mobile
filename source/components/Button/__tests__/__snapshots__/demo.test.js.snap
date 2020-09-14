@@ -3,127 +3,247 @@
 exports[`Renders Button demo correctly 1`] = `
 <div>
   <div
-    class="components-button-demo-basic demo-card"
+    class="button-type-md"
   >
-    <a
-      aria-disabled="false"
-      class="fm-button"
-      role="button"
+    <div
+      class="label"
     >
-      <span>
-        default
-      </span>
-    </a>
-    <a
-      aria-disabled="true"
-      class="fm-button fm-button-disabled"
-      role="button"
+      按钮类型
+    </div>
+    <div
+      class="wrapper"
     >
-      <span>
-        default disabled
-      </span>
-    </a>
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-primary"
-      role="button"
-    >
-      <span>
-        primary
-      </span>
-    </a>
-    <a
-      aria-disabled="true"
-      class="fm-button fm-button-primary fm-button-disabled"
-      role="button"
-    >
-      <span>
-        primary disabled
-      </span>
-    </a>
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-warning"
-      role="button"
-    >
-      <span>
-        warning
-      </span>
-    </a>
-    <a
-      aria-disabled="true"
-      class="fm-button fm-button-warning fm-button-disabled"
-      role="button"
-    >
-      <span>
-        warning disabled
-      </span>
-    </a>
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-loading fm-button-icon"
-      role="button"
-    >
-      <svg
-        aria-hidden="true"
-        class="fm-button-icon fm-icon fm-icon-loading fm-icon-md"
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal"
+        role="button"
       >
-        <use
-          href="#loading"
-        />
-      </svg>
-      <span>
-        loading button
-      </span>
-    </a>
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-icon"
-      role="button"
-    >
-      <svg
-        aria-hidden="true"
-        class="fm-button-icon fm-icon fm-icon-fm-start fm-icon-md"
+        <span>
+          主要按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-guide fm-button-normal"
+        role="button"
       >
-        <use
-          href="#fm-start"
-        />
-      </svg>
-      <span>
-        icon button
-      </span>
-    </a>
+        <span>
+          引导按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-default fm-button-normal"
+        role="button"
+      >
+        <span>
+          默认按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-danger fm-button-normal"
+        role="button"
+      >
+        <span>
+          危险按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-warning fm-button-normal"
+        role="button"
+      >
+        <span>
+          警告按钮
+        </span>
+      </a>
+    </div>
   </div>
   <div
-    class="components-button-demo-size demo-card"
+    class="button-plain-md"
   >
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-small"
-      role="button"
+    <div
+      class="label"
     >
-      <span>
-        small
-      </span>
-    </a>
-    <a
-      aria-disabled="false"
-      class="fm-button"
-      role="button"
+      幽灵按钮
+    </div>
+    <div
+      class="wrapper"
     >
-      <span>
-        middle
-      </span>
-    </a>
-    <a
-      aria-disabled="false"
-      class="fm-button"
-      role="button"
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-plain fm-button-normal"
+        role="button"
+      >
+        <span>
+          主要按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-guide fm-button-plain fm-button-normal"
+        role="button"
+      >
+        <span>
+          引导按钮
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
+    class="button-hairline-md"
+  >
+    <div
+      class="label"
     >
-      <span>
-        large
-      </span>
-    </a>
+      细边框按钮
+    </div>
+    <div
+      class="wrapper"
+    >
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-plain fm-button-normal"
+        role="button"
+      >
+        <span>
+          主要按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-guide fm-button-plain fm-button-normal"
+        role="button"
+      >
+        <span>
+          引导按钮
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
+    class="button-size-md"
+  >
+    <div
+      class="label"
+    >
+      按钮形状
+    </div>
+    <div
+      class="wrapper"
+    >
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal fm-button-square"
+        role="button"
+      >
+        <span>
+          方形按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal fm-button-round"
+        role="button"
+      >
+        <span>
+          圆形按钮
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
+    class="button-size-md"
+  >
+    <div
+      class="label"
+    >
+      按钮尺寸
+    </div>
+    <div
+      class="wrapper"
+    >
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-large"
+        role="button"
+      >
+        <span>
+          大号按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal"
+        role="button"
+      >
+        <span>
+          普通按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-small"
+        role="button"
+      >
+        <span>
+          小型按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-mini"
+        role="button"
+      >
+        <span>
+          迷你按钮
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
+    class="button-color-md"
+  >
+    <div
+      class="label"
+    >
+      自定义颜色
+    </div>
+    <div
+      class="wrapper"
+    >
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-default fm-button-normal"
+        role="button"
+        style="color:#fff;background:#6850FF;border-color:#fff"
+      >
+        <span>
+          单色按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-default fm-button-plain fm-button-normal"
+        role="button"
+        style="color:#6850FF;background:#fff;border-color:#6850FF"
+      >
+        <span>
+          幽灵按钮
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-default fm-button-normal"
+        role="button"
+        style="color:#fff;background:linear-gradient(269deg, #A783FF 0%, #7921FF 100%);border-color:#fff"
+      >
+        <span>
+          渐变色按钮
+        </span>
+      </a>
+    </div>
   </div>
 </div>
 `;

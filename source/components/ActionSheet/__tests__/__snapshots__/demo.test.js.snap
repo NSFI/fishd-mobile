@@ -7,7 +7,7 @@ exports[`Renders ActionSheet demo correctly 1`] = `
   >
     <a
       aria-disabled="false"
-      class="fm-button fm-button-primary"
+      class="fm-button fm-button-primary fm-button-normal"
       role="button"
     >
       <span>
@@ -20,7 +20,7 @@ exports[`Renders ActionSheet demo correctly 1`] = `
   >
     <a
       aria-disabled="false"
-      class="fm-button fm-button-primary"
+      class="fm-button fm-button-primary fm-button-normal"
       role="button"
     >
       <span>
@@ -33,7 +33,7 @@ exports[`Renders ActionSheet demo correctly 1`] = `
   >
     <a
       aria-disabled="false"
-      class="fm-button fm-button-primary"
+      class="fm-button fm-button-primary fm-button-normal"
       role="button"
     >
       <span>

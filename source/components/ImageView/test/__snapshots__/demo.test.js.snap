@@ -15,7 +15,7 @@ exports[`Renders ImageView demo correctly 1`] = `
     >
       <a
         aria-disabled="false"
-        class="fm-button"
+        class="fm-button fm-button-default fm-button-normal"
         role="button"
       >
         <span>

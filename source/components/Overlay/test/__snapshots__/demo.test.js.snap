@@ -12,7 +12,7 @@ exports[`Renders Overlay demo correctly 1`] = `
     </div>
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
       <span>
@@ -31,7 +31,7 @@ exports[`Renders Overlay demo correctly 1`] = `
     </div>
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
       <span>
