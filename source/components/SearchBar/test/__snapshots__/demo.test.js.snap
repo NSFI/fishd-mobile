@@ -13,24 +13,35 @@ exports[`Renders SearchBar demo correctly 1`] = `
     <div
       class="demo-card"
     >
-      <a
-        aria-disabled="false"
-        class="fm-button fm-button-primary"
-        role="button"
+      <div
+        class="fm-searchbar"
       >
-        <span>
-          Primary
-        </span>
-      </a>
-      <a
-        aria-disabled="false"
-        class="fm-button fm-button-warning"
-        role="button"
-      >
-        <span>
-          Warning
-        </span>
-      </a>
+        <div
+          class="fm-searchbar__content"
+        >
+          <div
+            class="fm-searchbar__icon"
+          >
+            <svg
+              class="fm-icon fm-icon-fm-search fm-icon-md"
+              style="width:14px;height:14px;color:#333"
+            >
+              <use
+                href="#fm-search"
+              />
+            </svg>
+          </div>
+          <div
+            class="fm-searchbar__body"
+          >
+            <input
+              class="fm-searchbar__input"
+              placeholder="请输入搜索关键词"
+              type="search"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

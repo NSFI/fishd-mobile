@@ -1,0 +1,53 @@
+@import (reference) '../../../assets/css/index';
+@SearchBarPrefixCls: fm-searchbar;
+
+.@{SearchBarPrefixCls} {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 10px 12px;
+  background-color: #fff;
+
+  &__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 12px;
+    background-color: #f7f8fa;
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    margin-right: 5px;
+  }
+
+  &__body {
+    flex: 1;
+    line-height: 24px;
+  }
+
+  &__input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    color: #323233;
+    line-height: inherit;
+    text-align: left;
+    background-color: transparent;
+    border: 0;
+    resize: none;
+    outline: none;
+    appearance: none;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+}

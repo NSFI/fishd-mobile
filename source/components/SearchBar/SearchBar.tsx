@@ -1,15 +1,15 @@
-import classnames from 'classnames';
 import * as React from 'react';
-import { SearchBarPropsType } from './PropsType';
+import classnames from 'classnames';
+import Icon from '../Icon';
 
-export interface SearchBarProps extends SearchBarPropsType {
+export interface SearchBarProps {
   prefixCls?: string;
   className?: string;
 }
 
 class SearchBar extends React.Component<SearchBarProps, any> {
   static defaultProps = {
-    prefixCls: '',
+    prefixCls: 'fm-searchbar',
   };
 
   render() {
@@ -17,7 +17,18 @@ class SearchBar extends React.Component<SearchBarProps, any> {
 
     const wrapCls = classnames(prefixCls, className, {});
 
-    return <div className={wrapCls}>my component</div>;
+    return (
+      <div className={wrapCls}>
+        <div className={`${prefixCls}__content`}>
+          <div className={`${prefixCls}__icon`}>
+            <Icon type="fm-search" style={{ width: '14px', height: '14px', color: '#333' }} />
+          </div>
+          <div className={`${prefixCls}__body`}>
+            <input className={`${prefixCls}__input`} type="search" placeholder="请输入搜索关键词" />
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

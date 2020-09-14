@@ -17,8 +17,7 @@ render() {
     <div className="components-tpl-demo-basic">
       <div className="demo-title">基础用法</div>
       <div className="demo-card">
-        <Button type="primary">Primary</Button>
-        <Button type="warning">Warning</Button>
+        <SearchBar />
       </div>
     </div>
   );
