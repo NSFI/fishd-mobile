@@ -1,14 +1,15 @@
 # Avatar 头像 【交互：刘莹莹 |视觉：徐剑杰 |开发：张艳玲】
 
-头像用于开始一个即时操作。
+头像用于展示一个对象及其附带信息。
 
 ## 何时使用
 
-标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
+标记一个信息对象。
 
-## 头像类型
 
-:::demo 头像有四种类型：主头像、次头像、危险头像,主头像在同一个操作区域最多出现一次。
+##  基本用法
+
+:::demo 头像有三种类型：图片头像、图标头像、文字头像, 默认头像为圆形文字头像，可置为不可操作。
 
 ```js
 render(){
@@ -17,9 +18,9 @@ render(){
    <div className="components-avatar-demo-basic demo-card">
       <div className='demo-title'>基础用法</div>
       <List>
-        <Item><Avatar/> 默认圆形 </Item>
-        <Item><Avatar>default</Avatar> 默认文字头像</Item>
-        <Item><Avatar disabled/>不可操作</Item>
+        <Item><Avatar/>默认圆形 </Item>
+        <Item><Avatar>default</Avatar>默认文字头像</Item>
+        <Item><Avatar disabled>不可操作</Avatar>不可操作</Item>
       </List>
   </div>
   )
@@ -27,10 +28,20 @@ render(){
 ```
 
 ```less
+[class^="components-avatar-demo-"] .fm-badge{
+  margin-rgiht: 15px;
+  >.fm-avatar {
+    margin-right: 0 ;
+  }
+}
 [class^="components-avatar-demo-"] .fm-avatar {
-  margin-bottom: 15px ;
+  //margin-bottom: 15px ;
   margin-right: 15px ;
 }
+.fm-avatar-icon-font {
+    background: #3a7dbf;
+}
+
 ```
 :::
 
@@ -43,7 +54,7 @@ render(){
 ```js
   state = {
     type: 'text',
-    imageUrl: "https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI", //"https://unsplash.it/300/300",
+    imageUrl: "https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI", //https://unsplash.it/300/300
 
   };
 
@@ -75,10 +86,11 @@ render(){
 [class^="components-avatar-demo-"] .fm-avatar {
   margin-right: 15px ;
 }
+.fm-avatar-icon-font {
+    background: #3a7dbf;
+}
+
 ```
-
-:::
-
 
 
 
@@ -122,10 +134,32 @@ render(){
         ]}
       >
        <div key="default" className="demo-tabs-content default">
-          <Avatar size="xs">xsmall</Avatar>
-          <Avatar size="sm">small</Avatar>
-          <Avatar>middle</Avatar>
-          <Avatar size="lg">large</Avatar>
+          <List>
+            <Item>
+              <Avatar size="xs">xsmall</Avatar>
+              <Avatar size="sm">small</Avatar>
+              <Avatar>middle</Avatar>
+              <Avatar size="lg">large</Avatar>
+            </Item>
+            <Item>
+              <Avatar type="image" imageUrl={this.state.imageUrl} size="xs"/> 
+              <Avatar type="image" imageUrl={this.state.imageUrl} size="sm"/> 
+              <Avatar type="image" imageUrl={this.state.imageUrl} /> 
+              <Avatar type="image" imageUrl={this.state.imageUrl} size="lg"/> 
+            </Item>
+            <Item> 
+              <Avatar type="icon" icon="user" size="xs"/>
+              <Avatar type="icon" icon="user" size="sm"/>
+              <Avatar type="icon" icon="user" />
+              <Avatar type="icon" icon="user" size="lg"/>
+            </Item>
+            <Item>
+              <Avatar type="icon" icon={customIcon} size="xs"/>
+              <Avatar type="icon" icon={customIcon} size="sm"/>
+              <Avatar type="icon" icon={customIcon} />
+              <Avatar type="icon" icon={customIcon} size="lg"/>
+            </Item>
+          </List>
         </div>
         <div key="xs" className="demo-tabs-content">
            <List>
@@ -156,7 +190,7 @@ render(){
          <div key="lg" className="demo-tabs-content">
           <List>
             <Item><Avatar type="text" size="lg">文字图标</Avatar> 文字图标 </Item>
-            <Item><Avatar type="image" imageUrl={this.state.imageUrl} size="lg"/>>图片头像</Item>
+            <Item><Avatar type="image" imageUrl={this.state.imageUrl} size="lg"/>图片头像</Item>
             <Item><Avatar type="icon" icon="user" size="lg"/> 字体图标</Item>
             <Item><Avatar type="icon" icon={customIcon} size="lg"/> 自定义图标 </Item>
           </List>
@@ -175,14 +209,15 @@ render(){
 .demo-tabs-content.default {
   margin: 15px;
 }
+.fm-avatar-icon-font {
+    background: #3a7dbf;
+}
+
 ```
 
 :::
 
 
-
-
-:::
 
 ## 头像形状
 
@@ -219,6 +254,179 @@ render(){
   margin-bottom: 15px ;
   margin-right: 15px ;
 }
+.fm-avatar-icon-font {
+    background: #3a7dbf;
+}
+
+```
+
+:::
+
+
+## 头像徽章
+
+:::demo 头像有大、中、小、加小四种尺寸。
+
+通过设置特性`size` 为 `lg` `md` `sm` `xs` 调整头像的大、小尺寸。若不设置 `size`，则尺寸为中 `md`。
+
+```js
+  state = {
+    type: 'text',
+    imageUrl: "https://unsplash.it/300/300",
+
+  };
+
+  handleTypeChange = (e) => {
+    this.setState({ size: e.target.value });
+  }
+
+  render() {
+    let badgeDot = {dot: true},
+    badgeText = {text: '123'},
+     badgeNumberMax= {text: 123456789, overflowCount: 999};
+
+    const Item = List.Item;
+    const customIcon = <img
+          alt="scream icon"
+          src="https://img.icons8.com/ios/2x/scream.png" 
+          style={{height: 50, width: 50, background: '#bdeaff'}}/>;
+    return (
+      <div className="components-avatar-demo-badge demo-card">
+        <div className='demo-title'>徽章选择</div>
+        <Tabs
+        style={{ marginTop: 10 }}
+        tabDirection={'horizontal'}
+        tabs={[
+          { key: 'dot', title: '仅提醒' },
+          { key: 'text', title: '文字' },
+          { key: 'number', title: '数字' },
+          { key: 'numberMax', title: '数字含上限' },
+        ]}
+      >
+       <div key="dot" className="demo-tabs-content dot">
+          <List>
+            <Item>
+              <Avatar size="xs" badge={badgeDot}>xsmall</Avatar>
+              <Avatar size="sm"  badge={badgeDot}>small</Avatar>
+              <Avatar  badge={badgeDot}>middle</Avatar>
+              <Avatar size="lg"  badge={badgeDot}>large</Avatar>
+            </Item>
+            <Item>
+              <Avatar size="xs" shape={'square'} badge={badgeDot}>xsmall</Avatar>
+              <Avatar size="sm" shape={'square'}  badge={badgeDot}>small</Avatar>
+              <Avatar  shape={'square'} badge={badgeDot}>middle</Avatar>
+              <Avatar size="lg" shape={'square'} badge={badgeDot}>large</Avatar>
+            </Item>
+          </List>
+        </div>
+        <div key="text" className="demo-tabs-content text">
+          <List>
+            <Item>
+              <Avatar size="xs" badge={{text: '促销'}}>xsmall</Avatar>
+              <Avatar size="sm"  badge={{text: '特惠', hot: true}}>small</Avatar>
+              <Avatar  badge={{text: "打折", corner: true}}>middle</Avatar>
+              <Avatar size="lg"  badge={{text: "减免"}}>large</Avatar>
+            </Item>
+            <Item>
+              <Avatar size="xs" shape={'square'} badge={{text: '促销'}}>xsmall</Avatar>
+              <Avatar size="sm" shape={'square'}  badge={{text: '特惠'}}>small</Avatar>
+              <Avatar shape={'square'} badge={{text: "打折"}}>middle</Avatar>
+              <Avatar size="lg"  shape={'square'} badge={{text: "减免"}}>large</Avatar>
+            </Item>
+          </List>
+        </div>
+
+        <div key="number" className="demo-tabs-content number">
+          <List>
+            <Item>
+              <Avatar size="xs" badge={{text: 1234}}>xsmall</Avatar>
+              <Avatar size="sm"  badge={{text: 123}}>small</Avatar>
+              <Avatar  badge={{text: 12}}>middle</Avatar>
+              <Avatar size="lg"  badge={{text: 1}}>large</Avatar>
+            </Item>
+            <Item>
+              <Avatar size="xs" shape={'square'} badge={{text: 1}}>xsmall</Avatar>
+              <Avatar size="sm" shape={'square'}  badge={{text: 13}}>small</Avatar>
+              <Avatar  shape={'square'} badge={{text: 123}}>middle</Avatar>
+              <Avatar size="lg" shape={'square'} badge={{text: 1234}}>large</Avatar>
+            </Item>
+          </List>
+        </div>
+
+        <div key="numberMax" className="demo-tabs-content numberMax">
+          <List>
+            <Item>
+              <Avatar size="xs" badge={badgeNumberMax}>xsmall</Avatar>
+              <Avatar size="sm"  badge={badgeNumberMax}>small</Avatar>
+              <Avatar  badge={badgeNumberMax}>middle</Avatar>
+              <Avatar size="lg"  badge={badgeNumberMax}>large</Avatar>
+            </Item>
+            <Item>
+              <Avatar size="xs" shape={'square'} badge={badgeNumberMax}>xsmall</Avatar>
+              <Avatar size="sm" shape={'square'}  badge={badgeNumberMax}>small</Avatar>
+              <Avatar  shape={'square'} badge={badgeNumberMax}>middle</Avatar>
+              <Avatar size="lg" shape={'square'} badge={badgeNumberMax}>large</Avatar>
+            </Item>
+          </List>
+        </div>
+   
+
+         <div key="lg" className="demo-tabs-content">
+          <List>
+            <Item><Avatar type="text" size="lg">文字图标</Avatar> 文字图标 </Item>
+            <Item><Avatar type="image" imageUrl={this.state.imageUrl} size="lg"/>图片头像</Item>
+            <Item><Avatar type="icon" icon="user" size="lg"/> 字体图标</Item>
+            <Item><Avatar type="icon" icon={customIcon} size="lg"/> 自定义图标 </Item>
+          </List>
+        </div>
+      </Tabs>
+
+      </div>
+    );
+  }
+```
+
+```less
+[class^="components-avatar-demo"] .dot .fm-avatar {
+  margin-right: 26px ;
+}
+[class^="components-avatar-demo"] .text .fm-avatar {
+  margin-right: 35px ;
+}
+[class^="components-avatar-demo"] .number .fm-avatar {
+  margin-right: 35px ;
+}
+[class^="components-avatar-demo"] .numberMax .fm-avatar {
+  margin-right: 45px ;
+}
+.demo-tabs-content.default {
+  margin: 15px;
+}
+
+.fm-list-item .fm-list-line .fm-list-content{
+  overflow-x: scroll;
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px transparent;//rgba(0,0,0,0.3);
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 6px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: transparent;
+  }
+}
+
+.fm-avatar-icon-font {
+    background: #3a7dbf;
+}
+
 ```
 
 :::
@@ -237,4 +445,5 @@ render(){
 | shape | 头像形状 |  Number(\|px\|%\|em) \| Enum {'circle', 'square' } | 'circle' |
 | imageUrl | 当类型为`image`时，图片头像地址 |   url        | -- |
 | icon | 当类型为`icon`时，Icon类型 或自定义图标节点  | Icon[type] \| ReactNode     | -- |
+| badge | 头像带徽章，特性同\<Badge\> API, hot/corner特性除外  | [BadgeProps](#/zh-CN/components/badge)    | -- |
 

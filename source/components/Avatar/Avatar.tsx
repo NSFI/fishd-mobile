@@ -3,6 +3,7 @@ import * as React from 'react';
 import { AvatarPropsType } from './PropsType';
 
 import Icon from '../Icon';
+import Badge, { BadgeProps } from '../Badge';
 
 function getRound(shape) {
   const matchStr = /^[0-9]+(px|%|em)?$/;
@@ -12,7 +13,7 @@ function getRound(shape) {
   round = round && !isNaN(Number(round)) ? `${round}px` : round;
   return round;
 }
-
+// const badge:BadgeProps = {};
 export interface AvatarProps extends AvatarPropsType {
   prefixCls?: string;
   className?: string;
@@ -20,6 +21,7 @@ export interface AvatarProps extends AvatarPropsType {
   style?: React.CSSProperties;
   icon?: string | React.ReactNode;
   disabled?: boolean;
+  badge?: BadgeProps;
   // shape?: string | number | undefined;
 }
 
@@ -31,10 +33,86 @@ class Avatar extends React.Component<AvatarProps, any> {
     shape: 'circle', // outline
     type: 'text',
     disabled: false,
-    imageUrl: 'https://unsplash.it/300/300', // 'http://placekitten.com/300/300'
+    imageUrl: '', // https://unsplash.it/300/300
   };
 
   render() {
+    const {
+      // - hybird
+      badge,
+      // - basic
+      // className,
+      prefixCls,
+      // - pre
+      size,
+    } = this.props;
+
+    const clsSize = `${prefixCls}-${size}`;
+
+    const wrapBradgeCls = badge && `${prefixCls}-badge-wrap`;
+    const wrapCls = classnames(prefixCls, wrapBradgeCls, clsSize);
+
+    const { className, hot, corner, ...badgeRestProps } = badge || { className: '' };
+    const badgeCls = classnames(`${prefixCls}-badge`, className, {});
+
+    return (
+      <div className={`${wrapCls}`}>
+        {this.renderMain()}
+        {badge && (
+          <Badge className={badgeCls} {...badgeRestProps}>
+            &nbsp;
+          </Badge>
+        )}
+      </div>
+    );
+  }
+
+  renderMain() {
+    const {
+      // - basic
+      className,
+      prefixCls,
+      style,
+      disabled,
+      // - pre
+      shape,
+      type,
+      // - custom
+      imageUrl,
+    } = this.props;
+
+    let styleShape;
+    let clsShape;
+    const round = getRound(shape);
+    if (round) {
+      styleShape = { borderRadius: round };
+    } else if (['circle', 'square'].includes(String(shape))) {
+      clsShape = `${prefixCls}-${shape}`;
+    }
+
+    // const clsShape = `${prefixCls}-${shape}`;
+    const clsType = `${prefixCls}-${type}`;
+    const wrapCls = classnames(`${prefixCls}-main`, className, clsShape, clsType, {});
+    const contentCls = classnames(`${prefixCls}-content`, `${clsType}-content`);
+
+    const styleImage = type === 'image' && { backgroundImage: `url(${imageUrl})` };
+    const warpStyle = {
+      ...style,
+      ...styleImage,
+      ...styleShape,
+    };
+
+    return (
+      <div className={wrapCls} style={warpStyle}>
+        {/* <div className={`${prefixCls}-main`}></div> */}
+        <div className={contentCls}>{this.renderContent()}</div>
+
+        {disabled && <div className={`${prefixCls}-disabled`}></div>}
+      </div>
+    );
+  }
+
+  renderBasic() {
     const {
       // - basic
       className,
@@ -73,7 +151,9 @@ class Avatar extends React.Component<AvatarProps, any> {
 
     return (
       <div className={wrapCls} style={warpStyle}>
+        {/* <div className={`${prefixCls}-main`}></div> */}
         <div className={contentCls}>{this.renderContent()}</div>
+
         {disabled && <div className={`${prefixCls}-disabled`}></div>}
       </div>
     );
