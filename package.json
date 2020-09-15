@@ -1,6 +1,6 @@
 {
-  "name": "fishd-mobile",
-  "version": "0.1.2",
+  "name": "@ysf/fishd-mobile",
+  "version": "1.0.0",
   "description": "fishd-mobile",
   "main": "lib/components/index.js",
   "module": "es/components/index.js",
@@ -125,7 +125,7 @@
     }
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "http://rnpm.hz.netease.com"
   },
   "repository": {
     "type": "git",
