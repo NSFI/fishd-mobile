@@ -288,12 +288,12 @@ exports[`Renders Steps demo correctly 1`] = `
               class="fm-steps__dot"
             >
               <svg
-                class="fm-icon fm-icon-fm-start fm-icon-md"
+                class="fm-icon fm-icon-fm-star fm-icon-md"
                 color="blue"
                 style="width:14px;height:14px"
               >
                 <use
-                  href="#fm-start"
+                  href="#fm-star"
                 />
               </svg>
             </div>
