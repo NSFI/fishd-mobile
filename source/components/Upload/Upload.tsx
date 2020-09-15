@@ -209,7 +209,7 @@ class Upload extends React.Component<UploadProps, any> {
     }
   };
 
-  handleDelete = (file, index, e: React.TouchEvent) => {
+  handleDelete = (file, index, e: any) => {
     e.stopPropagation();
     e.preventDefault();
     const { onDelete } = this.props;

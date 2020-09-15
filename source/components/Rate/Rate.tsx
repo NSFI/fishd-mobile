@@ -40,7 +40,7 @@ class Rate extends React.Component<RateProps, any> {
             normal: <RcRate prefixCls={prefixCls} {...rest} disabled={this.props.readonly || this.props.disabled} />,
             thumb: (
               <div className={this.props.className}>
-                {['up', 'down'].map((item: ThumbType) => (
+                {(['up', 'down'] as ThumbType[]).map((item: ThumbType) => (
                   <span
                     key={item}
                     style={{ marginRight: 10 }}

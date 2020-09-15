@@ -46,7 +46,7 @@ render() {
 
 ```less
 [class^="components-tpl-demo-"] .fm-button {
-  margin-bottom: 12px;
+  margin-top: 10px;
 }
 ```
 
@@ -92,7 +92,7 @@ render() {
 
 ```less
 [class^="components-tpl-demo-"] .fm-button {
-  margin-bottom: 12px;
+  margin-top: 10px;
 }
 ```
 
@@ -126,7 +126,7 @@ render() {
         <Steps 
           active={active}
           activeColor='blue'
-          activeIcon={<Icon type="fm-start" color='blue' style={{ width: '14px', height: '14px' }}></Icon>}
+          activeIcon={<Icon type="fm-star" color='blue' style={{ width: '14px', height: '14px' }}></Icon>}
           inactiveIcon={<Icon type="fm-moreinfo-copy" color='#ccc' style={{ width: '14px', height: '14px' }}></Icon>}
         >
           <Step title="买家下单"></Step>
@@ -143,7 +143,7 @@ render() {
 
 ```less
 [class^="components-tpl-demo-"] .fm-button {
-  margin-bottom: 12px;
+  margin-top: 10px;
 }
 ```
 
@@ -189,7 +189,7 @@ render() {
 
 ```less
 [class^="components-tpl-demo-"] .fm-button {
-  margin-bottom: 12px;
+  margin-top: 10px;
 }
 ```
 
