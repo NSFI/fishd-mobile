@@ -1,7 +1,7 @@
 {
-  "name": "fishd-mobile",
+  "name": "ppfish-mobile",
   "version": "0.1.2",
-  "description": "fishd-mobile",
+  "description": "ppfish-mobile",
   "main": "lib/components/index.js",
   "module": "es/components/index.js",
   "files": [

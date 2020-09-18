@@ -3,14 +3,14 @@
 针对上述场景，下面罗列了两种常见的适配方案。
 
 ## 基于 Viewport 的适配方案 【推荐】
-fishd-mobile 中的样式默认使用px作为单位，如果需要使用vw单位，推荐使用以下工具：
+ppfish-mobile 中的样式默认使用px作为单位，如果需要使用vw单位，推荐使用以下工具：
 - [postcss-px-to-viewport](https://www.npmjs.com/package/postcss-px-to-viewport)
 
 `postcss.config.js`
 ```js
 module.exports = ({ file }) => {
   // 组件库设计尺寸是375，所以如果匹配组件库，则将布局尺寸设计成375
-  const designWidth = file.dirname.includes('node_modules/fishd-mobile') ? 375 : 750;
+  const designWidth = file.dirname.includes('node_modules/ppfish-mobile') ? 375 : 750;
 
   return {
     plugins: {
@@ -35,7 +35,7 @@ module.exports = ({ file }) => {
 ```
 
 ## 基于 Rem 的适配方案
-fishd-mobile 中的样式默认使用px作为单位，如果需要使用rem单位，推荐使用以下两个工具：
+ppfish-mobile 中的样式默认使用px作为单位，如果需要使用rem单位，推荐使用以下两个工具：
 - [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem) 是一款 postcss 插件，用于将单位转化为 rem
 - [lib-flexible](https://github.com/amfe/lib-flexible) 用于设置 rem 基准值
 
@@ -46,7 +46,7 @@ PostCSS 配置
 ```js
 module.exports = ({ file }) => {
   // 组件库设计尺寸是375，所以如果匹配组件库，则将布局尺寸设计成375
-  const designWidth = file.dirname.includes('node_modules/fishd-mobile') ? 375 : 750;
+  const designWidth = file.dirname.includes('node_modules/ppfish-mobile') ? 375 : 750;
 
   return {
     plugins: {
@@ -59,4 +59,4 @@ module.exports = ({ file }) => {
   };
 };
 ```
-在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 fishd-mobile 样式无法被编译
+在配置 postcss-loader 时，应避免 ignore node_modules 目录，否则将导致 ppfish-mobile 样式无法被编译
