@@ -186,7 +186,7 @@ render(){
 
 | 参数 | 说明         | 类型                                            | 默认值    |
 | ---- | ------------ | ----------------------------------------------- | --------- |
-| type | 类型，可选值为 primary guide warning danger | string | default
+| type | 内置 icon 名称 | string |
 | dot | 是否显示图标右上角小红点 | boolean             | false |
 | badge | 图标右上角徽标的内容| string | - |
 | color | 图标颜色| string | inherit |
