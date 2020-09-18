@@ -1,6 +1,6 @@
 {
   "name": "ppfish-mobile",
-  "version": "0.1.2",
+  "version": "0.0.1",
   "description": "ppfish-mobile",
   "main": "lib/components/index.js",
   "module": "es/components/index.js",
