@@ -13,8 +13,8 @@ npm i fishd-mobile --save
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from 'fishd-mobile/es/components/index.js';
-import 'fishd-mobile/es/components/style/index.less';
+import { Button } from 'fishd-mobile/es/components/index.js';
+import 'fishd-mobile/dist/fishd-mobile.min.css';
 
 ReactDOM.render(
   <Button type="primary">Primary</Button>, document.getElementById('app')
