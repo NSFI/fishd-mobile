@@ -19,7 +19,7 @@ function insertSpace(child: any) {
     if (isTwoCNChar(child)) {
       child = child.split('').join(' ');
     }
-    return <span>{child}</span>;
+    return <span className="fm-button-text">{child}</span>;
   }
   return child;
 }
@@ -86,20 +86,7 @@ class Button extends React.Component<ButtonPropsType, any> {
 
     let iconEl;
     if (typeof iconType === 'string') {
-      iconEl = (
-        <Icon
-          aria-hidden="true"
-          type={`fm-${iconType}`}
-          size={size === 'small' ? 'xxs' : 'md'}
-          className={`${prefixCls}-icon`}
-        />
-      );
-    } else if (iconType) {
-      const rawCls = iconType.props && iconType.props.className;
-      const cls = classnames('fm-icon', `${prefixCls}-icon`, size === 'small' ? 'fm-icon-xxs' : 'fm-icon-md');
-      iconEl = React.cloneElement(iconType, {
-        className: rawCls ? `${rawCls} ${cls}` : cls,
-      });
+      iconEl = <Icon type={iconType} />;
     }
 
     return (

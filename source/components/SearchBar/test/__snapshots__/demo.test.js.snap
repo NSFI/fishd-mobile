@@ -22,14 +22,10 @@ exports[`Renders SearchBar demo correctly 1`] = `
           <div
             class="fm-searchbar__icon"
           >
-            <svg
-              class="fm-icon fm-icon-fm-search fm-icon-md"
+            <i
+              class="icon iconfont fm-icon fm-icon-fm-search"
               style="width:14px;height:14px;color:#333"
-            >
-              <use
-                href="#fm-search"
-              />
-            </svg>
+            />
           </div>
           <div
             class="fm-searchbar__body"

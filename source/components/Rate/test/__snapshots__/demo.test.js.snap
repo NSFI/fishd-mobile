@@ -31,24 +31,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -65,24 +57,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -99,24 +83,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -133,24 +109,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -167,24 +135,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -220,24 +180,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -254,24 +206,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -288,24 +232,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -322,24 +258,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -356,24 +284,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -409,24 +329,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -443,24 +355,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -477,24 +381,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -536,24 +432,16 @@ exports[`Renders Rate demo correctly 1`] = `
                 <div
                   class="fm-rate-star-first"
                 >
-                  <svg
-                    class="fm-icon fm-icon-fm-dianzan-up fm-icon-md"
-                  >
-                    <use
-                      href="#fm-dianzan-up"
-                    />
-                  </svg>
+                  <i
+                    class="icon iconfont fm-icon fm-icon-fm-dianzan-up"
+                  />
                 </div>
                 <div
                   class="fm-rate-star-second"
                 >
-                  <svg
-                    class="fm-icon fm-icon-fm-dianzan-up fm-icon-md"
-                  >
-                    <use
-                      href="#fm-dianzan-up"
-                    />
-                  </svg>
+                  <i
+                    class="icon iconfont fm-icon fm-icon-fm-dianzan-up"
+                  />
                 </div>
               </div>
             </li>
@@ -580,24 +468,16 @@ exports[`Renders Rate demo correctly 1`] = `
                 <div
                   class="fm-rate-star-first"
                 >
-                  <svg
-                    class="fm-icon fm-icon-fm-dianzan-down fm-icon-md"
-                  >
-                    <use
-                      href="#fm-dianzan-down"
-                    />
-                  </svg>
+                  <i
+                    class="icon iconfont fm-icon fm-icon-fm-dianzan-down"
+                  />
                 </div>
                 <div
                   class="fm-rate-star-second"
                 >
-                  <svg
-                    class="fm-icon fm-icon-fm-dianzan-down fm-icon-md"
-                  >
-                    <use
-                      href="#fm-dianzan-down"
-                    />
-                  </svg>
+                  <i
+                    class="icon iconfont fm-icon fm-icon-fm-dianzan-down"
+                  />
                 </div>
               </div>
             </li>
@@ -635,24 +515,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
           </div>
         </li>
@@ -669,24 +541,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
           </div>
         </li>
@@ -703,24 +567,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
           </div>
         </li>
@@ -737,24 +593,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
           </div>
         </li>
@@ -771,24 +619,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-dian fm-icon-md"
-              >
-                <use
-                  href="#fm-dian"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-dian"
+              />
             </div>
           </div>
         </li>
@@ -824,24 +664,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -858,24 +690,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -892,24 +716,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -926,24 +742,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -960,24 +768,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -994,24 +794,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1047,24 +839,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1081,24 +865,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1115,24 +891,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1149,24 +917,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1183,24 +943,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1236,24 +988,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1270,24 +1014,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1304,24 +1040,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1338,24 +1066,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1372,24 +1092,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1425,24 +1137,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1459,24 +1163,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1493,24 +1189,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1527,24 +1215,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1561,24 +1241,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1614,24 +1286,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1648,24 +1312,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1682,24 +1338,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1716,24 +1364,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1750,24 +1390,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1803,24 +1435,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1837,24 +1461,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1871,24 +1487,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1905,24 +1513,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>
@@ -1939,24 +1539,16 @@ exports[`Renders Rate demo correctly 1`] = `
             <div
               class="fm-rate-star-first"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
             <div
               class="fm-rate-star-second"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star-outline fm-icon-md"
-              >
-                <use
-                  href="#fm-star-outline"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star-outline"
+              />
             </div>
           </div>
         </li>

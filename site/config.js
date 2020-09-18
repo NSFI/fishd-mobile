@@ -60,7 +60,14 @@ export default [
         name: 'NumberKeyboard 数字键盘',
         nameEn: 'NumberKeyboard',
         published: true
-      }
+      },
+      {
+        key: 'icon',
+        type: 'markdown',
+        name: 'Icon 图标',
+        nameEn: 'Icon',
+        published: true
+      },
     ]
   },
   {

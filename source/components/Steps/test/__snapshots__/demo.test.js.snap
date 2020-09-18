@@ -33,15 +33,10 @@ exports[`Renders Steps demo correctly 1`] = `
             <div
               class="fm-steps__dot"
             >
-              <svg
-                class="fm-icon fm-icon-fm-wancheng fm-icon-md"
-                color="#07c160"
-                style="width:14px;height:14px"
-              >
-                <use
-                  href="#fm-wancheng"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-wancheng"
+                style="width:14px;height:14px;color:#07c160"
+              />
             </div>
             <div
               class="fm-steps__line"
@@ -123,7 +118,9 @@ exports[`Renders Steps demo correctly 1`] = `
         class="fm-button fm-button-default fm-button-small"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           下一步
         </span>
       </a>
@@ -160,15 +157,10 @@ exports[`Renders Steps demo correctly 1`] = `
             <div
               class="fm-steps__dot"
             >
-              <svg
-                class="fm-icon fm-icon-fm-wancheng fm-icon-md"
-                color="blue"
-                style="width:14px;height:14px"
-              >
-                <use
-                  href="#fm-wancheng"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-wancheng"
+                style="width:14px;height:14px;color:blue"
+              />
             </div>
             <div
               class="fm-steps__line"
@@ -250,7 +242,9 @@ exports[`Renders Steps demo correctly 1`] = `
         class="fm-button fm-button-default fm-button-small"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           下一步
         </span>
       </a>
@@ -287,15 +281,10 @@ exports[`Renders Steps demo correctly 1`] = `
             <div
               class="fm-steps__dot"
             >
-              <svg
-                class="fm-icon fm-icon-fm-star fm-icon-md"
-                color="blue"
-                style="width:14px;height:14px"
-              >
-                <use
-                  href="#fm-star"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-star"
+                style="width:14px;height:14px;color:blue"
+              />
             </div>
             <div
               class="fm-steps__line"
@@ -315,15 +304,10 @@ exports[`Renders Steps demo correctly 1`] = `
             <div
               class="fm-steps__dot"
             >
-              <svg
-                class="fm-icon fm-icon-fm-moreinfo-copy fm-icon-md"
-                color="#ccc"
-                style="width:14px;height:14px"
-              >
-                <use
-                  href="#fm-moreinfo-copy"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-moreinfo-copy"
+                style="width:14px;height:14px;color:#ccc"
+              />
             </div>
             <div
               class="fm-steps__line"
@@ -343,15 +327,10 @@ exports[`Renders Steps demo correctly 1`] = `
             <div
               class="fm-steps__dot"
             >
-              <svg
-                class="fm-icon fm-icon-fm-moreinfo-copy fm-icon-md"
-                color="#ccc"
-                style="width:14px;height:14px"
-              >
-                <use
-                  href="#fm-moreinfo-copy"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-moreinfo-copy"
+                style="width:14px;height:14px;color:#ccc"
+              />
             </div>
             <div
               class="fm-steps__line"
@@ -371,15 +350,10 @@ exports[`Renders Steps demo correctly 1`] = `
             <div
               class="fm-steps__dot"
             >
-              <svg
-                class="fm-icon fm-icon-fm-moreinfo-copy fm-icon-md"
-                color="#ccc"
-                style="width:14px;height:14px"
-              >
-                <use
-                  href="#fm-moreinfo-copy"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-moreinfo-copy"
+                style="width:14px;height:14px;color:#ccc"
+              />
             </div>
             <div
               class="fm-steps__line"
@@ -392,7 +366,9 @@ exports[`Renders Steps demo correctly 1`] = `
         class="fm-button fm-button-default fm-button-small"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           下一步
         </span>
       </a>
@@ -434,15 +410,10 @@ exports[`Renders Steps demo correctly 1`] = `
             <div
               class="fm-steps__dot"
             >
-              <svg
-                class="fm-icon fm-icon-fm-wancheng fm-icon-md"
-                color="#07c160"
-                style="width:14px;height:14px"
-              >
-                <use
-                  href="#fm-wancheng"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-fm-wancheng"
+                style="width:14px;height:14px;color:#07c160"
+              />
             </div>
             <div
               class="fm-steps__line"
@@ -539,7 +510,9 @@ exports[`Renders Steps demo correctly 1`] = `
         class="fm-button fm-button-default fm-button-small"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           下一步
         </span>
       </a>

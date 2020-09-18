@@ -346,13 +346,9 @@ exports[`Renders Label demo correctly 1`] = `
         <span>
           标签
         </span>
-        <svg
-          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xxs"
-        >
-          <use
-            href="#fm-close"
-          />
-        </svg>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
       </div>
       <div
         class="fm-label label fm-label"
@@ -361,13 +357,9 @@ exports[`Renders Label demo correctly 1`] = `
         <span>
           标签
         </span>
-        <svg
-          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xxs"
-        >
-          <use
-            href="#fm-close"
-          />
-        </svg>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
       </div>
       <div
         class="fm-label label fm-label"
@@ -376,13 +368,9 @@ exports[`Renders Label demo correctly 1`] = `
         <span>
           标签
         </span>
-        <svg
-          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xxs"
-        >
-          <use
-            href="#fm-close"
-          />
-        </svg>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
       </div>
       <div
         class="fm-label label fm-label"
@@ -391,13 +379,9 @@ exports[`Renders Label demo correctly 1`] = `
         <span>
           标签
         </span>
-        <svg
-          class="fm-label-closeable fm-icon fm-icon-fm-close fm-icon-xxs"
-        >
-          <use
-            href="#fm-close"
-          />
-        </svg>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
       </div>
     </div>
   </div>

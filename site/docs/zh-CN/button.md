@@ -193,8 +193,8 @@ render(){
    <div className="button-loading-md">
     <div className="label">图标按钮</div>
     <div className="wrapper">
-      <Button type="primary" icon="dislike"></Button>
-      <Button type="guide" icon="dislike">按钮</Button>
+      <Button type="primary" icon="plus-x1x"></Button>
+      <Button type="guide" icon="plus-x1x">按钮</Button>
     </div>
   </div>
   )
