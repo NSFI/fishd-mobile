@@ -4,18 +4,6 @@ import TouchFeedback from 'rmc-feedback';
 import { ButtonPropsType } from './PropsType';
 import Icon from '../Icon';
 
-export interface ButtonProps extends ButtonPropsType {
-  prefixCls?: string;
-  className?: string;
-  role?: string;
-  inline?: boolean;
-  icon?: React.ReactNode;
-  activeClassName?: string;
-  activeStyle?: boolean | React.CSSProperties;
-  style?: React.CSSProperties;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-}
-
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
 function isString(str: any) {
@@ -36,33 +24,35 @@ function insertSpace(child: any) {
   return child;
 }
 
-class Button extends React.Component<ButtonProps, any> {
+class Button extends React.Component<ButtonPropsType, any> {
   static defaultProps = {
     prefixCls: 'fm-button',
     type: 'default',
     size: 'normal',
     plain: false,
+    hairline: false,
     round: false,
     square: false,
-    inline: false,
     disabled: false,
+    block: false,
     loading: false,
     activeStyle: {},
   };
 
   render() {
     const {
+      prefixCls,
       children,
       className,
-      prefixCls,
       type,
       size,
       plain,
+      hairline,
       color,
       round,
       square,
-      inline,
       disabled,
+      block,
       icon,
       loading,
       activeStyle,
@@ -79,14 +69,15 @@ class Button extends React.Component<ButtonProps, any> {
       [`${prefixCls}-warning`]: type === 'warning',
       [`${prefixCls}-danger`]: type === 'danger',
       [`${prefixCls}-plain`]: plain,
+      [`${prefixCls}-hairline`]: hairline,
       [`${prefixCls}-large`]: size === 'large',
       [`${prefixCls}-normal`]: size === 'normal',
       [`${prefixCls}-small`]: size === 'small',
       [`${prefixCls}-mini`]: size === 'mini',
       [`${prefixCls}-round`]: round,
       [`${prefixCls}-square`]: square,
-      [`${prefixCls}-inline`]: inline,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-block`]: block,
       [`${prefixCls}-loading`]: loading,
       [`${prefixCls}-icon`]: !!iconType,
     });
@@ -98,14 +89,14 @@ class Button extends React.Component<ButtonProps, any> {
       iconEl = (
         <Icon
           aria-hidden="true"
-          type={iconType}
+          type={`fm-${iconType}`}
           size={size === 'small' ? 'xxs' : 'md'}
           className={`${prefixCls}-icon`}
         />
       );
     } else if (iconType) {
       const rawCls = iconType.props && iconType.props.className;
-      const cls = classnames('am-icon', `${prefixCls}-icon`, size === 'small' ? 'am-icon-xxs' : 'am-icon-md');
+      const cls = classnames('fm-icon', `${prefixCls}-icon`, size === 'small' ? 'fm-icon-xxs' : 'fm-icon-md');
       iconEl = React.cloneElement(iconType, {
         className: rawCls ? `${rawCls} ${cls}` : cls,
       });

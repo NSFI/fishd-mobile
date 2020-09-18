@@ -21,10 +21,10 @@ const externals = {
 
 module.exports = {
   entry: {
-    'fishd-mobile': './index.js',
+    'ppfish-mobile': './index.js',
   },
   output: {
-    library: 'fishd-mobile',
+    library: 'ppfish-mobile',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].min.js',

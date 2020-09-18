@@ -1,7 +1,7 @@
 {
-  "name": "@ysf/fishd-mobile",
+  "name": "@ysf/ppfish-mobile",
   "version": "1.0.0",
-  "description": "fishd-mobile",
+  "description": "ppfish-mobile",
   "main": "lib/components/index.js",
   "module": "es/components/index.js",
   "files": [

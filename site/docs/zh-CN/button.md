@@ -36,10 +36,6 @@ render(){
     letter-spacing: 0;
     margin-bottom: 12px;
   }
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-  }
   .fm-button {
     margin: 12px 16px 0 0;
   }
@@ -48,7 +44,7 @@ render(){
 
 :::
 
-## 幽灵按钮
+## 朴素按钮
 
 :::demo
 
@@ -56,10 +52,10 @@ render(){
 render(){
  return(
    <div className="button-plain-md">
-    <div className="label">幽灵按钮</div>
+    <div className="label">朴素按钮</div>
     <div className="wrapper">
-      <Button type="primary" plain>主要按钮</Button>
-      <Button type="guide" plain>引导按钮</Button>
+      <Button type="primary" plain>朴素按钮</Button>
+      <Button type="guide" plain>朴素按钮</Button>
     </div>
   </div>
   )
@@ -74,10 +70,6 @@ render(){
     color: #333;
     letter-spacing: 0;
     margin-bottom: 12px;
-  }
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
   }
   .fm-button {
     margin: 12px 16px 0 0;
@@ -97,8 +89,8 @@ render(){
    <div className="button-hairline-md">
     <div className="label">细边框按钮</div>
     <div className="wrapper">
-      <Button type="primary" plain hairline>主要按钮</Button>
-      <Button type="guide" plain hairline>引导按钮</Button>
+      <Button type="primary" plain hairline>细边框按钮</Button>
+      <Button type="guide" plain hairline>细边框按钮</Button>
     </div>
   </div>
   )
@@ -114,9 +106,109 @@ render(){
     letter-spacing: 0;
     margin-bottom: 12px;
   }
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 禁用状态
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-hairline-md">
+    <div className="label">禁用状态</div>
+    <div className="wrapper">
+      <Button type="primary" disabled>禁用状态</Button>
+      <Button type="guide" plain disabled>禁用状态</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-hairline-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 加载状态
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-loading-md">
+    <div className="label">加载状态</div>
+    <div className="wrapper">
+      <Button type="primary" loading>加载状态</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-loading-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 图标按钮
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-loading-md">
+    <div className="label">图标按钮</div>
+    <div className="wrapper">
+      <Button type="primary" icon="dislike"></Button>
+      <Button type="guide" icon="dislike">按钮</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-loading-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
   }
   .fm-button {
     margin: 12px 16px 0 0;
@@ -152,11 +244,6 @@ render(){
     color: #333;
     letter-spacing: 0;
     margin-bottom: 12px;
-  }
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
   }
   .fm-button {
     margin: 12px 16px 0 0;
@@ -195,13 +282,45 @@ render(){
     letter-spacing: 0;
     margin-bottom: 12px;
   }
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 块级元素
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-color-md">
+    <div className="label">块级元素</div>
+    <div className="wrapper">
+      <Button type="guide" block>块级元素</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-color-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
   }
   .fm-button {
     margin: 12px 16px 0 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 ```
@@ -236,11 +355,6 @@ render(){
     letter-spacing: 0;
     margin-bottom: 12px;
   }
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
   .fm-button {
     margin: 12px 16px 0 0;
     &:last-child {
@@ -260,5 +374,6 @@ render(){
 | size | 尺寸，可选值为 large small mini | string             | normal |
 | color | 按钮颜色，支持传入linear-gradient渐变色| string | - |
 | plain | 是否为朴素按钮| boolean | false |
+| hairline | 是否使用 0.5px 边框| boolean | false |
 | square | 是否为方形按钮| boolean | false |
 | round | 是否为圆形按钮| boolean | false |
