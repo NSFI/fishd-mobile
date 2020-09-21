@@ -191,9 +191,52 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal fm-button-loading fm-button-icon"
         role="button"
       >
-        <i
-          class="icon iconfont fm-icon fm-icon-loading"
-        />
+        <div
+          class="fm-loading--circular fm-button__loading"
+        >
+          <span
+            class="fm-loading__spinner fm-loading__spinner--circular"
+            style="color:currentcolor;width:20px;height:20px"
+          >
+            <svg
+              class="fm-loading__circular"
+              viewBox="25 25 50 50"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="none"
+                r="20"
+              />
+            </svg>
+          </span>
+        </div>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal fm-button-loading fm-button-icon"
+        role="button"
+      >
+        <div
+          class="fm-loading--circular fm-button__loading"
+        >
+          <span
+            class="fm-loading__spinner fm-loading__spinner--circular"
+            style="color:currentcolor;width:20px;height:20px"
+          >
+            <svg
+              class="fm-loading__circular"
+              viewBox="25 25 50 50"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="none"
+                r="20"
+              />
+            </svg>
+          </span>
+        </div>
         <span
           class="fm-button-text"
         >
@@ -219,16 +262,16 @@ exports[`Renders Button demo correctly 1`] = `
         role="button"
       >
         <i
-          class="icon iconfont fm-icon fm-icon-plus-x1x"
+          class="icon iconfont fm-icon fm-icon-plus"
         />
       </a>
       <a
         aria-disabled="false"
-        class="fm-button fm-button-guide fm-button-normal fm-button-icon"
+        class="fm-button fm-button-guide fm-button-plain fm-button-normal fm-button-icon"
         role="button"
       >
         <i
-          class="icon iconfont fm-icon fm-icon-plus-x1x"
+          class="icon iconfont fm-icon fm-icon-chat-o"
         />
         <span
           class="fm-button-text"

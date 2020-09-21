@@ -32,8 +32,8 @@ export default class Icon extends React.Component<IconProps, any> {
     }
     return (
       <i className={cls} style={formatStyle} onClick={onClick}>
-        {dot && <div className="fm-icon-info fm-icon-dot" />}
-        {!!badge && <div className="fm-icon-info">{badge}</div>}
+        {dot && <div className="fm-icon-badge fm-icon-badge-dot" />}
+        {!!badge && <div className="fm-icon-badge">{badge}</div>}
       </i>
     );
   }

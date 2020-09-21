@@ -86,7 +86,22 @@ class Button extends React.Component<ButtonPropsType, any> {
 
     let iconEl;
     if (typeof iconType === 'string') {
-      iconEl = <Icon type={iconType} />;
+      if (iconType === 'loading') {
+        iconEl = (
+          <div className="fm-loading--circular fm-button__loading">
+            <span
+              className="fm-loading__spinner fm-loading__spinner--circular"
+              style={{ color: 'currentcolor', width: '20px', height: '20px' }}
+            >
+              <svg viewBox="25 25 50 50" className="fm-loading__circular">
+                <circle cx="50" cy="50" r="20" fill="none"></circle>
+              </svg>
+            </span>
+          </div>
+        );
+      } else {
+        iconEl = <Icon type={iconType} />;
+      }
     }
 
     return (

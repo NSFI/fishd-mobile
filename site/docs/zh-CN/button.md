@@ -159,6 +159,7 @@ render(){
    <div className="button-loading-md">
     <div className="label">加载状态</div>
     <div className="wrapper">
+      <Button type="primary" loading></Button>
       <Button type="primary" loading>加载状态</Button>
     </div>
   </div>
@@ -193,8 +194,8 @@ render(){
    <div className="button-loading-md">
     <div className="label">图标按钮</div>
     <div className="wrapper">
-      <Button type="primary" icon="plus-x1x"></Button>
-      <Button type="guide" icon="plus-x1x">按钮</Button>
+      <Button type="primary" icon="plus"></Button>
+      <Button type="guide" icon="chat-o" plain>按钮</Button>
     </div>
   </div>
   )
