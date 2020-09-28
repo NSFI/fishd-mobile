@@ -55,7 +55,7 @@ class NumberKey extends React.Component<NumberKeyProps, any> {
     );
     return (
       <div className={wrapCls}>
-        <div className={keyCls} onClick={this.hanldeClick}>
+        <div role="button" className={keyCls} onClick={this.hanldeClick}>
           {this.genContent()}
         </div>
       </div>
