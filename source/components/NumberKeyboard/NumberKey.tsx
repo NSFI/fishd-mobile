@@ -22,8 +22,9 @@ class NumberKey extends React.Component<NumberKeyProps, any> {
     text: '',
   };
 
-  hanldeClick = () => {
+  hanldeClick = (event: any) => {
     if (this.props.onPress) {
+      event.preventDefault();
       this.props.onPress(this.props.type || '', this.props.text);
     }
   };
