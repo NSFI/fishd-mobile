@@ -126,8 +126,11 @@ render() {
         <Steps 
           active={active}
           activeColor='blue'
-          activeIcon={<Icon type="fm-star" color='blue' style={{ width: '14px', height: '14px' }}></Icon>}
-          inactiveIcon={<Icon type="fm-moreinfo-copy" color='#ccc' style={{ width: '14px', height: '14px' }}></Icon>}
+          activeIcon={<Icon type="star" color='blue' style={{ width: '14px', height: '14px' }}></Icon>}
+          inactiveIcon={({ stepProcess, stepFinish }) => {
+            const isActive = stepFinish || stepProcess
+            return <Icon type="allow-right" color={ isActive ? 'blue' : '#ccc'} style={{ width: '14px', height: '14px' }}></Icon>
+          }}
         >
           <Step title="买家下单"></Step>
           <Step title="商家接单"></Step>
@@ -212,6 +215,6 @@ render() {
 
 | 属性 | 说明         | 类型                                            | 默认值    |
 | ---- | ------------ | ----------------------------------------------- | --------- |
-| activeIcon | 激活状态底部图标 | ReactNode | `对勾` |
-| inactiveIcon | 未激活状态底部图标 | ReactNode | `圆点` |
+| activeIcon | 激活状态底部图标 | ReactNode \| ({ stepFinish, stepProcess }) => ReactNode | `对勾` |
+| inactiveIcon | 未激活状态底部图标 | ReactNode \| ({ stepFinish, stepProcess }) => ReactNode | `圆点` |
 

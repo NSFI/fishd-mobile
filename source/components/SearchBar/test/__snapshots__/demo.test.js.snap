@@ -23,8 +23,8 @@ exports[`Renders SearchBar demo correctly 1`] = `
             class="fm-searchbar__icon"
           >
             <i
-              class="icon iconfont fm-icon fm-icon-fm-search"
-              style="width:14px;height:14px;color:#333"
+              class="icon iconfont fm-icon fm-icon-search"
+              style="color:#333;font-size:14px"
             />
           </div>
           <div

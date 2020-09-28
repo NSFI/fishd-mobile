@@ -1,4 +1,4 @@
-@import url("http://at.alicdn.com/t/font_1801276_5kf0jci7jbl.css");
+@import url("http://at.alicdn.com/t/font_1801276_m3qzwx2dhrm.css");
 .fm-icon {
   position: relative;
   color: inherit;
@@ -28,5 +28,16 @@
     height: 8px;
     background-color: #ee0a24;
     border-radius: 100%;
+  }
+
+  &-loading {
+    display: inline-block;
+    animation: cirleAnim 1s linear infinite;
+  }
+
+  @keyframes cirleAnim {
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

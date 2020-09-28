@@ -23,8 +23,8 @@ exports[`Renders Upload demo correctly 1`] = `
             class="fm-upload__upload"
           >
             <i
-              class="icon iconfont fm-icon fm-icon-fm-add"
-              style="width:30px;height:30px;color:#D8D8D8"
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
             />
             <input
               accept="image/*"
@@ -68,8 +68,8 @@ exports[`Renders Upload demo correctly 1`] = `
               class="fm-upload__delete"
             >
               <i
-                class="icon iconfont fm-icon fm-icon-fm-close"
-                style="width:10px;height:10px;color:#fff"
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
               />
             </div>
           </div>
@@ -88,8 +88,8 @@ exports[`Renders Upload demo correctly 1`] = `
               class="fm-upload__delete"
             >
               <i
-                class="icon iconfont fm-icon fm-icon-fm-close"
-                style="width:10px;height:10px;color:#fff"
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
               />
             </div>
           </div>
@@ -97,8 +97,8 @@ exports[`Renders Upload demo correctly 1`] = `
             class="fm-upload__upload"
           >
             <i
-              class="icon iconfont fm-icon fm-icon-fm-add"
-              style="width:30px;height:30px;color:#D8D8D8"
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
             />
             <input
               accept="image/*"
@@ -171,8 +171,8 @@ exports[`Renders Upload demo correctly 1`] = `
               class="fm-upload__delete"
             >
               <i
-                class="icon iconfont fm-icon fm-icon-fm-close"
-                style="width:10px;height:10px;color:#fff"
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
               />
             </div>
           </div>
@@ -191,8 +191,8 @@ exports[`Renders Upload demo correctly 1`] = `
               class="fm-upload__mask"
             >
               <i
-                class="icon iconfont fm-icon fm-icon-fm-error"
-                style="width:30px;height:30px;color:#fff"
+                class="icon iconfont fm-icon fm-icon-error-o"
+                style="color:#fff;font-size:30px"
               />
               <div
                 class="fm-upload__mask-message"
@@ -204,8 +204,8 @@ exports[`Renders Upload demo correctly 1`] = `
               class="fm-upload__delete"
             >
               <i
-                class="icon iconfont fm-icon fm-icon-fm-close"
-                style="width:10px;height:10px;color:#fff"
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
               />
             </div>
           </div>
@@ -213,8 +213,8 @@ exports[`Renders Upload demo correctly 1`] = `
             class="fm-upload__upload"
           >
             <i
-              class="icon iconfont fm-icon fm-icon-fm-add"
-              style="width:30px;height:30px;color:#D8D8D8"
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
             />
             <input
               accept="image/*"
@@ -258,8 +258,8 @@ exports[`Renders Upload demo correctly 1`] = `
               class="fm-upload__delete"
             >
               <i
-                class="icon iconfont fm-icon fm-icon-fm-close"
-                style="width:10px;height:10px;color:#fff"
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
               />
             </div>
           </div>
@@ -267,8 +267,8 @@ exports[`Renders Upload demo correctly 1`] = `
             class="fm-upload__upload"
           >
             <i
-              class="icon iconfont fm-icon fm-icon-fm-add"
-              style="width:30px;height:30px;color:#D8D8D8"
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
             />
             <input
               accept="image/*"
@@ -312,8 +312,8 @@ exports[`Renders Upload demo correctly 1`] = `
               class="fm-upload__delete"
             >
               <i
-                class="icon iconfont fm-icon fm-icon-fm-close"
-                style="width:10px;height:10px;color:#fff"
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
               />
             </div>
           </div>
@@ -321,8 +321,8 @@ exports[`Renders Upload demo correctly 1`] = `
             class="fm-upload__upload"
           >
             <i
-              class="icon iconfont fm-icon fm-icon-fm-add"
-              style="width:30px;height:30px;color:#D8D8D8"
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
             />
             <input
               accept="image/*"
@@ -355,8 +355,8 @@ exports[`Renders Upload demo correctly 1`] = `
             class="fm-upload__upload fm-upload__disabled"
           >
             <i
-              class="icon iconfont fm-icon fm-icon-fm-add"
-              style="width:30px;height:30px;color:#D8D8D8"
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
             />
             <input
               accept="image/*"

@@ -259,15 +259,13 @@ class Upload extends React.Component<UploadProps, any> {
                   {['uploading', 'failed'].includes(file.status) ? (
                     <div className={`${prefixCls}__mask`}>
                       {file.status === 'uploading' && <LoadMore color="#fff"></LoadMore>}
-                      {file.status === 'failed' && (
-                        <Icon type="fm-error" color="#fff" style={{ width: '30px', height: '30px' }}></Icon>
-                      )}
+                      {file.status === 'failed' && <Icon type="error-o" color="#fff" fontSize={30}></Icon>}
                       <div className={`${prefixCls}__mask-message`}>{file.message}</div>
                     </div>
                   ) : null}
                   {deletable && !disabled && (
                     <div className={`${prefixCls}__delete`} onClick={this.handleDelete.bind(this, file, index)}>
-                      <Icon type="fm-close" color="#fff" style={{ width: '10px', height: '10px' }}></Icon>
+                      <Icon type="cross" color="#fff" fontSize={10}></Icon>
                     </div>
                   )}
                 </div>
@@ -279,7 +277,7 @@ class Upload extends React.Component<UploadProps, any> {
               className={classnames(`${prefixCls}__upload`, disabled ? `${prefixCls}__disabled` : '')}
               style={previewStyle}
             >
-              <Icon type="fm-add" color="#D8D8D8" style={{ width: '30px', height: '30px' }}></Icon>
+              <Icon type="add" color="#D8D8D8" fontSize={30}></Icon>
               <input
                 className={`${prefixCls}__input`}
                 ref={ref => {

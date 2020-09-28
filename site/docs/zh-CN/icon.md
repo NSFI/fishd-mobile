@@ -201,6 +201,7 @@ render(){
       <div className="icon-item"><Icon type="cross" /><span className="icon-text">cross</span></div>
       <div className="icon-item"><Icon type="check" /><span className="icon-text">check</span></div>
       <div className="icon-item"><Icon type="fail" /><span className="icon-text">fail</span></div>
+      <div className="icon-item"><Icon type="loading" /><span className="icon-text">loading</span></div>
     </div>
   </div>
   )

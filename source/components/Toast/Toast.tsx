@@ -39,10 +39,10 @@ function notice(
 ) {
   const iconTypes: { [key: string]: string } = {
     info: '',
-    success: 'fm-success',
-    fail: 'fm-error',
-    offline: 'fm-dislike',
-    loading: 'fm-loading',
+    success: 'success',
+    fail: 'error-o',
+    offline: 'sad',
+    loading: 'loading',
   };
   const iconType = iconTypes[type];
   messageNeedHide = false;
@@ -69,7 +69,7 @@ function notice(
       style: {},
       content: iconType ? (
         <div className={`${prefixCls}-text ${prefixCls}-text-icon`} role="alert" aria-live="assertive">
-          <Icon type={iconType} size="lg" />
+          <Icon type={iconType} fontSize={32} />
           <div className={`${prefixCls}-text-info`}>{content}</div>
         </div>
       ) : (
