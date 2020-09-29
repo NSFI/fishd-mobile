@@ -1,50 +1,41 @@
-@import '../../../assets/css/themes/default.less';
-@import '../../../assets/css/mixin.less';
-
-.icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
-}
-
+@import url("//at.alicdn.com/t/font_1801276_m3qzwx2dhrm.css");
 .fm-icon {
-  fill: currentColor;
-  background-size: cover;
-  width: @icon-size-md;
-  height: @icon-size-md;
-
-  &-xxs {
-    width: @icon-size-xxs;
-    height: @icon-size-xxs;
+  position: relative;
+  color: inherit;
+  font-size: initial;
+  &-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    min-width: 16px;
+    padding: 0 3px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 12px;
+    font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
+    line-height: 1.2;
+    text-align: center;
+    background-color: #ee0a24;
+    border: 1px solid #fff;
+    border-radius: 16px;
+    transform: translate(50%, -50%);
+    transform-origin: 100%;
+  }
+  &-badge-dot {
+    width: 8px;
+    min-width: 0;
+    height: 8px;
+    background-color: #ee0a24;
+    border-radius: 100%;
   }
 
-  &-xs {
-    width: @icon-size-xs;
-    height: @icon-size-xs;
+  &-loading {
+    display: inline-block;
+    animation: cirleAnim 1s linear infinite;
   }
 
-  &-sm {
-    width: @icon-size-sm;
-    height: @icon-size-sm;
-  }
-
-  &-md {
-    width: @icon-size-md;
-    height: @icon-size-md;
-  }
-
-  &-lg {
-    width: @icon-size-lg;
-    height: @icon-size-lg;
-  }
-
-  &-fm-loading {
-    animation: cirle-anim 1s linear infinite;
-  }
-
-  @keyframes cirle-anim {
+  @keyframes cirleAnim {
     100% {
       transform: rotate(360deg);
     }

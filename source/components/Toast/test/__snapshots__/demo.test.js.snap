@@ -7,60 +7,72 @@ exports[`Renders Toast demo correctly 1`] = `
   >
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         文 本
       </span>
     </a>
     <br />
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         loading
       </span>
     </a>
     <br />
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         success
       </span>
     </a>
     <br />
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         error
       </span>
     </a>
     <br />
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         network failure
       </span>
     </a>
     <br />
     <a
       aria-disabled="false"
-      class="fm-button"
+      class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         自定义
       </span>
     </a>

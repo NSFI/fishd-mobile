@@ -7,7 +7,7 @@ export interface RadioProps extends RadioPropsType {
   prefixCls?: string;
   listPrefixCls?: string;
   className?: string;
-  checkedColor?: string;
+  checkedcolor?: string;
   shape?: string;
   style?: React.CSSProperties;
   innerStyle?: React.CSSProperties;
@@ -22,7 +22,7 @@ export default class Radio extends React.Component<RadioProps, any> {
   };
 
   render() {
-    const { className, style, checkedColor, shape, ...restProps } = this.props;
+    const { className, style, checkedcolor, shape, ...restProps } = this.props;
     const { prefixCls, children } = restProps;
     const innerStyle: any = this.props.innerStyle || {};
 
@@ -38,13 +38,13 @@ export default class Radio extends React.Component<RadioProps, any> {
     }
     const mark = (
       <label className={wrapCls} style={style}>
-        <FCheckbox {...restProps} type="radio" innerStyle={innerStyle} color={checkedColor} />
+        <FCheckbox {...restProps} type="radio" innerStyle={innerStyle} color={checkedcolor} />
         {children}
       </label>
     );
     if (this.props.wrapLabel) {
       return mark;
     }
-    return <FCheckbox {...this.props} type="radio" innerStyle={innerStyle} color={checkedColor} />;
+    return <FCheckbox {...this.props} type="radio" innerStyle={innerStyle} color={checkedcolor} />;
   }
 }

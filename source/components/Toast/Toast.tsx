@@ -4,7 +4,7 @@ import Notification from 'rmc-notification';
 import { ToastPropsType } from './PropsType';
 import Icon from '../Icon';
 
-const SHORT = 3;
+const SHORT = 2;
 
 const config: ToastPropsType = {
   duration: SHORT,
@@ -39,10 +39,10 @@ function notice(
 ) {
   const iconTypes: { [key: string]: string } = {
     info: '',
-    success: 'fm-success',
-    fail: 'fm-error',
-    offline: 'fm-dislike',
-    loading: 'fm-loading',
+    success: 'success',
+    fail: 'error-o',
+    offline: 'sad',
+    loading: 'loading',
   };
   const iconType = iconTypes[type];
   messageNeedHide = false;
@@ -69,7 +69,7 @@ function notice(
       style: {},
       content: iconType ? (
         <div className={`${prefixCls}-text ${prefixCls}-text-icon`} role="alert" aria-live="assertive">
-          <Icon type={iconType} size="lg" />
+          <Icon type={iconType} fontSize={32} />
           <div className={`${prefixCls}-text-info`}>{content}</div>
         </div>
       ) : (
@@ -93,22 +93,22 @@ function notice(
 export default {
   SHORT,
   LONG: 8,
-  show(content: React.ReactNode, duration?: number, mask?: boolean) {
+  show(content: React.ReactNode, duration?: number, mask: boolean = false) {
     return notice(content, 'info', duration, () => {}, mask);
   },
-  info(content: React.ReactNode, duration?: number, onClose?: () => void, mask?: boolean) {
+  info(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
     return notice(content, 'info', duration, onClose, mask);
   },
-  success(content: React.ReactNode, duration?: number, onClose?: () => void, mask?: boolean) {
+  success(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
     return notice(content, 'success', duration, onClose, mask);
   },
-  fail(content: React.ReactNode, duration?: number, onClose?: () => void, mask?: boolean) {
+  fail(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
     return notice(content, 'fail', duration, onClose, mask);
   },
-  offline(content: React.ReactNode, duration?: number, onClose?: () => void, mask?: boolean) {
+  offline(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
     return notice(content, 'offline', duration, onClose, mask);
   },
-  loading(content: React.ReactNode, duration?: number, onClose?: () => void, mask?: boolean) {
+  loading(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = true) {
     return notice(content, 'loading', duration, onClose, mask);
   },
   hide() {

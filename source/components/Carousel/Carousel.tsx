@@ -13,6 +13,7 @@ export interface CarouselProps extends CarouselPropsType {
   swipeSpeed?: number;
   easing?: () => void;
   style?: React.CSSProperties;
+  dotOut: boolean;
   dotStyle?: React.CSSProperties;
   dotActiveStyle?: React.CSSProperties;
   frameOverflow?: IFrameOverFlow;
@@ -30,6 +31,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
     arrows: false,
     autoplay: false,
     infinite: false,
+    dotOut: false,
     cellAlign: 'center',
     selectedIndex: 0,
     dotStyle: {},
@@ -95,7 +97,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
   };
 
   render() {
-    const { infinite, selectedIndex, beforeChange, afterChange, dots, ...restProps } = this.props;
+    const { infinite, selectedIndex, beforeChange, afterChange, dots, dotOut, ...restProps } = this.props;
 
     const { prefixCls, dotActiveStyle, dotStyle, className, vertical } = restProps;
 
@@ -144,6 +146,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 
     const wrapCls = classnames(prefixCls, className, {
       [`${prefixCls}-vertical`]: vertical,
+      [`${prefixCls}-dotout`]: dotOut && dots,
     });
 
     return <ReactCarousel {...newProps} className={wrapCls} decorators={Decorators} afterSlide={this.onChange} />;

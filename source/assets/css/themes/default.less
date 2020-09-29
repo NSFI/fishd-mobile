@@ -1,6 +1,6 @@
 @hd: 1px; // 基本单位
 
-// 色彩
+/** 色彩 **/
 
 // 主题色
 @color-blue: #337eff;
@@ -59,7 +59,7 @@
 // 边框色
 @border-color-base: #ebedf0;
 
-// 字体大小
+/** 字体大小 **/
 @font-size-icontext: 10 * @hd;
 @font-size-caption-sm: 12 * @hd;
 @font-size-base: 14 * @hd;
@@ -67,21 +67,19 @@
 @font-size-caption: 16 * @hd;
 @font-size-heading: 17 * @hd;
 
-// 圆角
+/** 圆角 **/
 @radius-xs: 2 * @hd;
 @radius-sm: 3 * @hd;
 @radius-md: 5 * @hd;
 @radius-lg: 7 * @hd;
 @radius-circle: 50%;
 
-// 边框尺寸
-// ---
+/** 边框尺寸 **/
 @border-width-sm: 1PX;
 @border-width-md: 1PX;
 @border-width-lg: 2 * @hd;
 
-// 间距
-// ---
+/** 间距 **/
 // 水平间距
 @h-spacing-sm: 5 * @hd;
 @h-spacing-md: 8 * @hd;
@@ -94,21 +92,18 @@
 @v-spacing-lg: 15 * @hd;
 @v-spacing-xl: 21 * @hd;
 
-// 高度
+/** 高度 **/
 @line-height-base: 1;           // 单行行高
 @line-height-paragraph: 1.5;    // 多行行高
 
-// 图标尺寸
-// ---
+/** 图标尺寸 **/
 @icon-size-xxs: 15 * @hd;
 @icon-size-xs: 18 * @hd;
 @icon-size-sm: 21 * @hd;
 @icon-size-md: 22 * @hd;       // 导航条上的图标、grid的图标大小
 @icon-size-lg: 36 * @hd;
 
-
-// 字体尺寸
-// ---
+/** 字体尺寸 **/
 @font-size-icontext: 10 * @hd;
 @font-size-caption-sm: 12 * @hd;
 @font-size-base: 14 * @hd;
@@ -116,12 +111,21 @@
 @font-size-caption: 16 * @hd;
 @font-size-heading: 17 * @hd;
 
+/** z-index **/
+@progress-zindex: 2000;
+@popover-zindex: 1999;
+@toast-zindex: 1999;
+@action-sheet-zindex: 1000; // actonsheet 会放到 popup / modal 中
+@picker-zindex: 1000;
+@popup-zindex: 999;
+@modal-zindex: 999; // modal.alert 应该最大，其他应该较小
+@tabs-pagination-zindex: 999;
 
-// 组件变量
-@actionsheet-item-height: 50 * @hd;
-@actionsheet-item-font-size: 16 * @hd;
+/** 透明度 **/
+@opacity-disabled: 0.3;   // switch checkbox radio 等组件禁用的透明度
 
-// button
+/** 组件变量 **/
+// Button
 @button-height: 47 * @hd;
 @button-font-size: 18 * @hd;
 
@@ -140,28 +144,25 @@
 @link-button-fill-tap: #ddd;
 @link-button-font-size: 16 * @hd;
 
-// switch
+// Switch
 @switch-fill: #337EFF;
 @switch-fill-android: @brand-primary;
 
-//overlay
+// Overlay
 @overlay-z-index: 1;
 @overlay-background-color: rgba(0, 0, 0, 0.5);
 
-// 透明度
-@opacity-disabled: 0.3;   // switch checkbox radio 等组件禁用的透明度
-
-// list
+// List
 @list-title-height: 30 * @hd;
 @list-item-height-sm: 35 * @hd;
 @list-item-height: 44 * @hd;
 
-// notice-bar
+// NoticeBar
 @notice-bar-fill: #fefcec;
 @notice-bar-height: 36 * @hd;
 @notice-bar-color: #f76a24;
 
-// input
+// Input
 @input-label-width: 17 * @hd;       // InputItem、TextareaItem 文字长度基础值
 @input-font-size: 17 * @hd;
 @input-color-icon: #7f7f83; // input clear icon 的背景色
@@ -169,35 +170,98 @@
 @input-icon-size: 16 * @hd;
 @input-error-color: #F24957;
 
+// Modal
 @modal-zindex: 999; // modal.alert 应该最大，其他应该较小
-
-// modal
 @modal-font-size-heading: 18 * @hd;
 @modal-button-font-size: 18 * @hd; // 按钮字号
 @modal-button-height: 50 * @hd; // 按钮高度
 
-// z-index
-@progress-zindex: 2000;
-@popover-zindex: 1999;
-@toast-zindex: 1999;
-@action-sheet-zindex: 1000; // actonsheet 会放到 popup / modal 中
-@picker-zindex: 1000;
-@popup-zindex: 999;
-@modal-zindex: 999; // modal.alert 应该最大，其他应该较小
-@tabs-pagination-zindex: 999;
-
-// toast
+// Toast
 @toast-fill: rgba(58, 58, 58, 0.9); // toast, activity-indicator 的背景颜色
 
-// picker
+// Picker
 @option-height: 42 * @hd;           // picker 标题的高度
 
-// tabs
+// Tabs
 @tabs-color: @brand-primary;
 @tabs-height: 43.5 * @hd;
 @tabs-font-size-heading: 15 * @hd;
 @tabs-ink-bar-height: @border-width-lg;
 
-// tab-bar
+// TabBar
 @tab-bar-fill: #ebeeef;
 @tab-bar-height: 50 * @hd;
+
+// Divider
+@divider-margin: @h-spacing-md 0;
+@divider-text-color: @color-neutral-4;
+@divider-font-size: @font-size-base;
+@divider-line-height: 24px;
+@divider-border-color: @border-color-base;
+@divider-content-padding: @h-spacing-md;
+@divider-content-left-width: 10%;
+@divider-content-right-width: 10%;
+
+// Label
+@label-width: 40 * @hd;
+@label-height: 20 * @hd;
+@label-font-size: 12 * @hd;
+@label-padding: 3 * @hd 8 * @hd;
+
+@label-width-sm: 32 * @hd;
+@label-height-sm: 17 * @hd;
+@label-font-size-sm: 10 * @hd;
+@label-padding-sm: 2 * @hd 6 * @hd;
+
+@label-width-lg: 48 * @hd;
+@label-height-lg: 24 * @hd;
+@label-font-size-lg: 14 * @hd;
+@label-padding-lg: 5 * @hd 10 * @hd;
+
+// Rate
+@rate-star-bg: #E6E8EB;
+@rate-star-color: #FFBB2A;
+@rate-star-disabled: #C8C9CC;
+@rate-star-size: @icon-size-md;
+@rate-star-hover-scale: scale(1.1);
+
+// ActionSheet
+@actionsheet-item-height: 50 * @hd;
+@actionsheet-item-font-size: 16 * @hd;
+@actionsheet-border-radius: 20 * @hd;
+
+// Carousel
+@dot-color: rgba(255, 255, 255, 0.3);
+@dot-active-color: #FFF;
+
+// NumberKeyboard
+@numberKeyboard-bg: #F2F3F5;
+@numberKeyboard-radius: 20 * @hd;
+@numberKeyboard-header-height: 30 * @hd;
+@numberKeyboard-title-size: 14 * @hd;
+@numberKeyboard-title-color: #646566;
+@numberKeyboard-title-done-color: #576b95;
+@numberKeyboard-title-done-size: 14 * @hd;
+@numberKeyboard-key-height: 56 * @hd;
+@numberKeyboard-key-size: 28 * @hd;
+@numberKeyboard-key-radius: 8 * @hd;
+@numberKeyboard-key-done-size: 16 * @hd;
+@numberKeyboard-key-done-color: #FFF;
+@numberKeyboard-key-done-bg: #1989FA;
+@numberKeyboard-key-done-active-bg: #0570DB;
+@numberKeyboard-icon-width: 32 * @hd;
+@numberKeyboard-icon-height: 22 * @hd;
+
+// Loadmore
+@loadmore-size: 30 * @hd;
+
+// Steps
+@steps-bg: #FFF;
+@steps-text-size: 12 * @hd;
+@steps-text-color: #222;
+@steps-line-color: #E1E3E6;
+@steps-active-color: #26BD71;
+
+// Progress
+@progress-radius: 4 * @hd;
+@progress-pivot-size: 10 * @hd;

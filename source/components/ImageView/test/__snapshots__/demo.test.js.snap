@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders ImageView demo correctly 1`] = `
+<div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      函数式用法
+    </div>
+    <div
+      class="demo-card"
+    >
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-default fm-button-normal"
+        role="button"
+      >
+        <span
+          class="fm-button-text"
+        >
+          显示图片
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      组件式用法
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="demo-img__wrap"
+      >
+        <img
+          alt="image"
+          class="demo-img"
+          src="https://placekitten.com/600/400"
+        />
+        <img
+          alt="image"
+          class="demo-img"
+          src="https://placekitten.com/1200/900"
+        />
+      </div>
+      <div
+        class="fm-imageView"
+      />
+    </div>
+  </div>
+</div>
+`;

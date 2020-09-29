@@ -9,7 +9,7 @@ export interface CheckboxProps extends CheckboxPropsType {
   className?: string;
   name?: string;
   wrapLabel?: boolean;
-  checkedColor?: string;
+  checkedcolor?: string;
   shape?: string;
   style?: React.CSSProperties;
   innerStyle?: React.CSSProperties;
@@ -24,7 +24,7 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
   };
 
   render() {
-    const { className, style, checkedColor, shape, ...restProps } = this.props;
+    const { className, style, checkedcolor, shape, ...restProps } = this.props;
     const { prefixCls, children } = restProps;
     const innerStyle: any = this.props.innerStyle || {};
 
@@ -40,13 +40,13 @@ export default class Checkbox extends React.Component<CheckboxProps, any> {
     }
     const mark = (
       <label className={wrapCls} style={style}>
-        <FCheckbox {...restProps} innerStyle={innerStyle} color={checkedColor}/>
+        <FCheckbox {...restProps} innerStyle={innerStyle} color={checkedcolor}/>
         {children}
       </label>
     );
     if (this.props.wrapLabel) {
       return mark;
     }
-    return <FCheckbox {...this.props} innerStyle={innerStyle} color={checkedColor}/>;
+    return <FCheckbox {...this.props} innerStyle={innerStyle} color={checkedcolor}/>;
   }
 }

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders SearchBar demo correctly 1`] = `
+<div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      基础用法
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="fm-searchbar"
+      >
+        <div
+          class="fm-searchbar__content"
+        >
+          <div
+            class="fm-searchbar__icon"
+          >
+            <i
+              class="icon iconfont fm-icon fm-icon-search"
+              style="color:#333;font-size:14px"
+            />
+          </div>
+          <div
+            class="fm-searchbar__body"
+          >
+            <input
+              class="fm-searchbar__input"
+              placeholder="请输入搜索关键词"
+              type="search"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

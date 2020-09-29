@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Label demo correctly 1`] = `
+<div>
+  <div
+    class="components-label-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      基础样式
+    </div>
+    <div
+      class="label-demo-body"
+    >
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#26BD71"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#F24957"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#969799"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+    </div>
+    <div
+      class="demo-title"
+    >
+      圆角样式
+    </div>
+    <div
+      class="label-demo-body"
+    >
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#26BD71"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#F24957"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-round"
+        style="background-color:#969799"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+    </div>
+    <div
+      class="demo-title"
+    >
+      标记样式
+    </div>
+    <div
+      class="label-demo-body"
+    >
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#26BD71"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#F24957"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-mark"
+        style="background-color:#969799"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+    </div>
+    <div
+      class="demo-title"
+    >
+      浅底样式
+    </div>
+    <div
+      class="label-demo-body"
+    >
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#26BD71"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#F24957"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-shallow"
+        style="color:#969799"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+    </div>
+    <div
+      class="demo-title"
+    >
+      空心样式
+    </div>
+    <div
+      class="label-demo-body"
+    >
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#26BD71"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#F24957"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#8875FF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label-plain"
+        style="color:#969799"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-label-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      标签大小
+    </div>
+    <div
+      class="label-demo-body"
+    >
+      <div
+        class="fm-label label fm-label fm-label-sm"
+        style="background-color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+      <div
+        class="fm-label label fm-label fm-label-lg"
+        style="background-color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-label-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      可关闭标签
+    </div>
+    <div
+      class="label-demo-body"
+    >
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#337EFF"
+      >
+        <span>
+          标签
+        </span>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#26BD71"
+      >
+        <span>
+          标签
+        </span>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#F24957"
+      >
+        <span>
+          标签
+        </span>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
+      </div>
+      <div
+        class="fm-label label fm-label"
+        style="background-color:#F29900"
+      >
+        <span>
+          标签
+        </span>
+        <i
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

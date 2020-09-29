@@ -1,0 +1,105 @@
+@import (reference) '../../../assets/css/index';
+
+@UploadPrefixCls: fm-upload;
+
+.@{UploadPrefixCls} {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__upload {
+    position: relative;
+    margin: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #FFFFFF;
+    border: 1px solid #F2F3F5;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #ccc;
+  }
+
+  &__preview {
+    position: relative;
+    margin: 0 8px 8px 0;
+  }
+
+  &__image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #F2F3F5;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    overflow: hidden;
+    &-message {
+      margin-top: 4px;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  &__delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -9px;
+    right: -9px;
+    width: 18px;
+    height: 18px;
+    background-color: #999;
+    border-radius: 18px;
+    border: 1px solid #fff;
+
+    &-icon {
+      font-style: normal;
+      color: #fff;
+      font-size: 20px;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  &__disabled {
+    opacity: 0.6;
+  }
+}

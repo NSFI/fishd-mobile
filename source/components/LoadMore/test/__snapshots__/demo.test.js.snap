@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders LoadMore demo correctly 1`] = `
+<div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      加载类型
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="fm-loadmore fm-loadmore__normal"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--circular"
+          style="color:#C8C9CC;width:30px;height:30px"
+        >
+          <svg
+            class="fm-loadmore__circular"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="fm-loadmore fm-loadmore__normal"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--spinner"
+          style="color:#C8C9CC;width:30px;height:30px"
+        >
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      自定义颜色
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="fm-loadmore fm-loadmore__normal"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--circular"
+          style="color:#1890ff;width:30px;height:30px"
+        >
+          <svg
+            class="fm-loadmore__circular"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="fm-loadmore fm-loadmore__normal"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--spinner"
+          style="color:#1890ff;width:30px;height:30px"
+        >
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      自定义大小
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="fm-loadmore fm-loadmore__normal"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--circular"
+          style="color:#C8C9CC;width:20px;height:20px"
+        >
+          <svg
+            class="fm-loadmore__circular"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+            />
+          </svg>
+        </span>
+      </div>
+      <div
+        class="fm-loadmore fm-loadmore__normal"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--spinner"
+          style="color:#C8C9CC;width:20px;height:20px"
+        >
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+          <i />
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      加载文案
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="fm-loadmore fm-loadmore__normal"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--circular"
+          style="color:#C8C9CC;width:30px;height:30px"
+        >
+          <svg
+            class="fm-loadmore__circular"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+            />
+          </svg>
+        </span>
+        <span
+          class="fm-loadmore__text"
+          style="font-size:14px"
+        >
+          加载中
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-tpl-demo-basic"
+  >
+    <div
+      class="demo-title"
+    >
+      垂直排列
+    </div>
+    <div
+      class="demo-card"
+    >
+      <div
+        class="fm-loadmore fm-loadmore__vertical"
+      >
+        <span
+          class="fm-loadmore__spinner fm-loadmore__spinner--circular"
+          style="color:#C8C9CC;width:30px;height:30px"
+        >
+          <svg
+            class="fm-loadmore__circular"
+            viewBox="25 25 50 50"
+          >
+            <circle
+              cx="50"
+              cy="50"
+              fill="none"
+              r="20"
+            />
+          </svg>
+        </span>
+        <span
+          class="fm-loadmore__text"
+          style="font-size:14px"
+        >
+          加载中
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

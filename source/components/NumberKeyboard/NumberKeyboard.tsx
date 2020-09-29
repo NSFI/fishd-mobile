@@ -47,7 +47,8 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
   componentDidMount() {
     if (this.props.hideOnClickOutside) {
       if (supportTouch) {
-        document.addEventListener('touchstart', this.doBlur, false);
+        // touchstart 事件发生顺序有点问题
+        document.addEventListener('mousedown', this.doBlur, false);
       } else {
         document.addEventListener('mousedown', this.doBlur, false);
       }
@@ -55,8 +56,7 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('touchstart', this.doBlur, false);
-    document.addEventListener('mousedown', this.doBlur, false);
+    document.removeEventListener('mousedown', this.doBlur, false);
   }
 
   genBasicKeys = () => {
@@ -219,6 +219,7 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
 
   hanldeClick = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
     e.nativeEvent.stopImmediatePropagation();
+    e.stopPropagation();
   };
 
   render() {
@@ -234,7 +235,7 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
         transitionAppear
       >
         {show ? (
-          <div className={wrapCls} onTouchStart={this.hanldeClick} onMouseDown={this.hanldeClick}>
+          <div className={wrapCls} onMouseDown={this.hanldeClick}>
             {this.genTitle()}
             <div className={`${prefixCls}__body`}>
               <div className={`${wrapCls}__keys`}>{this.genKeys()}</div>

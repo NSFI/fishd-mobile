@@ -2,7 +2,7 @@ export interface RadioPropsType {
   defaultChecked?: boolean;
   checked?: boolean;
   disabled?: boolean;
-  checkedColor?: string;
+  checkedcolor?: string;
   shape?: string;
   onChange?: (e: { target: { checked: boolean } }) => void;
   name?: string;

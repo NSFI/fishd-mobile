@@ -1,4 +1,4 @@
-@import '../../../assets/css/index';
+@import (reference) '../../../assets/css/index';
 
 @prefix: fm-carousel;
 
@@ -6,6 +6,10 @@
   position: relative;
 
   &-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12 * @hd 0;
     font-size: 18 * @hd;
     color: @color-text-base;
     background: none;
@@ -23,15 +27,19 @@
         height: 2 * @hd;
         margin: 0 3 * @hd;
         border-radius: 2 * @hd;
-        background: rgba(255, 255, 255, 0.3);
+        background: @dot-color;
       }
 
       &-active {
         >span {
-          background: #fff;
+          background: @dot-active-color;
           width: 12 * @hd;
         }
       }
     }
+  }
+
+  &-dotout {
+    padding-bottom: 26 * @hd;
   }
 }

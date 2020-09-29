@@ -1,0 +1,2771 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Avatar demo correctly 1`] = `
+<div>
+  <div
+    class="components-avatar-demo-basic demo-card"
+  >
+    <div
+      class="demo-title"
+    >
+      基础用法
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    />
+                  </div>
+                </div>
+              </div>
+              默认圆形 
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    >
+                      d
+                    </div>
+                  </div>
+                </div>
+              </div>
+              默认文字头像
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    >
+                      不
+                    </div>
+                  </div>
+                  <div
+                    class="fm-avatar-disabled"
+                  />
+                </div>
+              </div>
+              不可操作
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-avatar-demo-size demo-card"
+  >
+    <div
+      class="demo-title"
+    >
+      类型选择
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    >
+                      文
+                    </div>
+                  </div>
+                </div>
+              </div>
+               文字信息
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                  style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-image-content"
+                  />
+                </div>
+              </div>
+              图片头像
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-icon-content"
+                  >
+                    <i
+                      class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                    />
+                  </div>
+                </div>
+              </div>
+               字体图标
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-icon-content"
+                  >
+                    <div
+                      class="fm-avatar-icon-custom icon-md"
+                    >
+                       
+                      <img
+                        alt="scream icon"
+                        src="https://img.icons8.com/ios/2x/scream.png"
+                        style="height:50px;width:50px;background:#bdeaff"
+                      />
+                       
+                    </div>
+                  </div>
+                </div>
+              </div>
+               自定义图标 
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-avatar-demo-size demo-card"
+  >
+    <div
+      class="demo-title"
+    >
+      尺寸选择
+    </div>
+    <div
+      class="fm-tabs fm-tabs-horizontal"
+      style="margin-top:10px"
+    >
+      <div
+        class="fm-tabs-horizontal-nav-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-nav"
+        >
+          <div
+            class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
+            style="width:25%"
+          >
+            默认
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            加小
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            小
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            中
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            大
+          </div>
+          <div
+            class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
+            style="left:0%;width:25%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-horizontal-content-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-content"
+          style="height:100%"
+        >
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content default"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-xs"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-sm"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-md"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-lg"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                文
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         文字图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                         
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                         图片头像
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                         字体图标
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-xs"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         自定义图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                文
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         文字图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                         
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                         图片头像
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                         字体图标
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-sm"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         自定义图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                文
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         文字图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                         
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                         图片头像
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                         字体图标
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-md"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         自定义图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                文
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         文字图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://i.picsum.photos/id/722/300/300.jpg?hmac=9W3nCepg3HA4qJrDeIB4ugk5PmSRTM4Z4RRXlGfsMhI)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                        图片头像
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                         字体图标
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-lg"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         自定义图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-avatar-demo-size demo-card"
+  >
+    <div
+      class="demo-title"
+    >
+      形状选择
+    </div>
+    <div
+      class="fm-list"
+    >
+      <div
+        class="fm-list-body"
+      >
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    />
+                  </div>
+                </div>
+              </div>
+               默认圆形 -\`circle\` 
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    />
+                  </div>
+                </div>
+              </div>
+               方形 - \`square\`
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-text"
+                  style="border-radius:5px"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    />
+                  </div>
+                </div>
+              </div>
+               自定义 -  length
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-text"
+                  style="border-radius:1em"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    />
+                  </div>
+                </div>
+              </div>
+               自定义 -  em
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-text"
+                  style="border-radius:10px"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    />
+                  </div>
+                </div>
+              </div>
+                自定义 - px
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+        <div
+          class="fm-list-item fm-list-item-middle"
+        >
+          <div
+            class="fm-list-line"
+          >
+            <div
+              class="fm-list-content"
+            >
+              <div
+                class="fm-avatar fm-avatar-md"
+              >
+                <div
+                  class="fm-avatar-main fm-avatar-text"
+                  style="border-radius:10%"
+                >
+                  <div
+                    class="fm-avatar-content fm-avatar-text-content"
+                  >
+                    <div
+                      class="txt"
+                    />
+                  </div>
+                </div>
+              </div>
+                自定义 - %
+            </div>
+          </div>
+          <div
+            class="fm-list-ripple"
+            style="display:none"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="components-avatar-demo-badge demo-card"
+  >
+    <div
+      class="demo-title"
+    >
+      徽章选择
+    </div>
+    <div
+      class="fm-tabs fm-tabs-horizontal"
+      style="margin-top:10px"
+    >
+      <div
+        class="fm-tabs-horizontal-nav-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-nav"
+        >
+          <div
+            class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
+            style="width:25%"
+          >
+            仅提醒
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            文字
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            数字
+          </div>
+          <div
+            class="fm-tabs-horizontal-tab"
+            style="width:25%"
+          >
+            数字含上限
+          </div>
+          <div
+            class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
+            style="left:0%;width:25%"
+          />
+        </div>
+      </div>
+      <div
+        class="fm-tabs-horizontal-content-wrap"
+      >
+        <div
+          class="fm-tabs-horizontal-content"
+          style="height:100%"
+        >
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content dot"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-dot"
+                            />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content text"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              促销
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              特惠
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              打折
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              减免
+                            </sup>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              促销
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              特惠
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              打折
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              减免
+                            </sup>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content number"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              99+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              99+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              12
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              1
+                            </sup>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              1
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              13
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              99+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              99+
+                            </sup>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content numberMax"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-xs"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                x
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-sm"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                s
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-md"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                m
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                        <div
+                          class="fm-avatar fm-avatar-badge-wrap fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-square fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                l
+                              </div>
+                            </div>
+                          </div>
+                          <span
+                            class="fm-badge fm-avatar-badge"
+                          >
+                             
+                            <sup
+                              class="fm-badge-text"
+                            >
+                              999+
+                            </sup>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="fm-tabs-horizontal-content-tab"
+            style="height:100%"
+          >
+            <div
+              class="demo-tabs-content"
+            >
+              <div
+                class="fm-list"
+              >
+                <div
+                  class="fm-list-body"
+                >
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-text"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-text-content"
+                            >
+                              <div
+                                class="txt"
+                              >
+                                文
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         文字图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-image"
+                            style="background-image:url(https://unsplash.it/300/300)"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-image-content"
+                            />
+                          </div>
+                        </div>
+                        图片头像
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                         字体图标
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                  <div
+                    class="fm-list-item fm-list-item-middle"
+                  >
+                    <div
+                      class="fm-list-line"
+                    >
+                      <div
+                        class="fm-list-content"
+                      >
+                        <div
+                          class="fm-avatar fm-avatar-lg"
+                        >
+                          <div
+                            class="fm-avatar-main fm-avatar-circle fm-avatar-icon"
+                          >
+                            <div
+                              class="fm-avatar-content fm-avatar-icon-content"
+                            >
+                              <div
+                                class="fm-avatar-icon-custom icon-lg"
+                              >
+                                 
+                                <img
+                                  alt="scream icon"
+                                  src="https://img.icons8.com/ios/2x/scream.png"
+                                  style="height:50px;width:50px;background:#bdeaff"
+                                />
+                                 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                         自定义图标 
+                      </div>
+                    </div>
+                    <div
+                      class="fm-list-ripple"
+                      style="display:none"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

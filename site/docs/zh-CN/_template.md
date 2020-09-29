@@ -8,20 +8,25 @@
 
 ## 基础用法
 
-:::demo
+:::demo demo标题
 
 ```js
 
-render(){
- return(<div className="components-tpl-demo-basic">
-    <Button type="primary">基础用法</Button>
-  </div>)
+render() {
+  return (
+    <div className="components-tpl-demo-basic">
+      <div className="demo-title">基础用法</div>
+      <div className="demo-card">
+        <Button type="primary">Primary</Button>
+        <Button type="warning">Warning</Button>
+      </div>
+    </div>
+  );
 }
 ```
 
 ```less
 [class^="components-tpl-demo-"] .fm-button {
-  margin-right: 8px;
   margin-bottom: 12px;
 }
 ```

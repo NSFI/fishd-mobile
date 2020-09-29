@@ -1,4 +1,5 @@
-@import '../../../assets/css/index';
+@import (reference) '../../../assets/css/index';
+
 @ActionSheetPrefixCls: fm-action-sheet;
 
 .@{ActionSheetPrefixCls} {
@@ -10,8 +11,8 @@
   overflow: hidden;
 
   &-top {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-left-radius: @actionsheet-border-radius;
+    border-top-right-radius: @actionsheet-border-radius;
     overflow: hidden;
   }
 

@@ -41,7 +41,7 @@ export default class RadioItem extends React.Component<RadioItemProps, any> {
     }
 
     const extraProps: any = {};
-    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled', 'checkedColor', 'shape'].forEach(i => {
+    ['name', 'defaultChecked', 'checked', 'onChange', 'disabled', 'checkedcolor', 'shape'].forEach(i => {
       if (i in this.props) {
         extraProps[i] = (this.props as any)[i];
       }

@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Divider demo correctly 1`] = `
+<div>
+  <div
+    class="components-divider-demo"
+  >
+    <div
+      class="demo-title"
+    >
+      一般用法
+    </div>
+    <div
+      class="fm-divider fm-divider--hairline"
+      role="separator"
+    />
+  </div>
+  <div
+    class="components-divider-demo"
+  >
+    <div
+      class="demo-title"
+    >
+      展示文本
+    </div>
+    <div
+      class="fm-divider fm-divider--hairline fm-divider--content-left"
+      role="separator"
+    >
+      文本
+    </div>
+    <div
+      class="fm-divider fm-divider--hairline fm-divider--content-right"
+      role="separator"
+    >
+      文本
+    </div>
+  </div>
+  <div
+    class="components-divider-demo"
+  >
+    <div
+      class="demo-title"
+    >
+      Dashed
+    </div>
+    <div
+      class="fm-divider fm-divider--dashed fm-divider--hairline fm-divider--content-center"
+      role="separator"
+    >
+      文本
+    </div>
+  </div>
+  <div
+    class="components-divider-demo"
+  >
+    <div
+      class="demo-title"
+    >
+      自定义样式
+    </div>
+    <div
+      class="fm-divider fm-divider--hairline fm-divider--content-center"
+      role="separator"
+      style="color:#1989fa;border-color:#1989fa;padding:0 16px"
+    >
+      文本
+    </div>
+  </div>
+</div>
+`;

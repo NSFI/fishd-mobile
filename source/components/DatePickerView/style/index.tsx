@@ -1,1 +1,1 @@
-import './index.less';
+import '../../PickerView/style';

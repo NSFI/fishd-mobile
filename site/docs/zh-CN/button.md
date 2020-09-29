@@ -13,27 +13,242 @@
 ```js
 render(){
  return(
-   <div className="components-button-demo-basic demo-card">
-    <Button>default</Button>
-    <Button disabled>default disabled</Button>
-
-    <Button type="primary">primary</Button>
-    <Button type="primary" disabled>primary disabled</Button>
-
-    <Button type="warning">warning</Button>
-    <Button type="warning" disabled>warning disabled</Button>
-
-    <Button loading>loading button</Button>
-    <Button icon="fm-start">icon button</Button>
-
+   <div className="button-type-md">
+    <div className="label">按钮类型</div>
+    <div className="wrapper">
+      <Button type="primary">主要按钮</Button>
+      <Button type="guide">引导按钮</Button>
+      <Button>默认按钮</Button>
+      <Button type="danger">危险按钮</Button>
+      <Button type="warning">警告按钮</Button>
+    </div>
   </div>
   )
 }
 ```
 
 ```less
-[class^="components-button-demo-"] .fm-button {
-  margin-bottom: 12px;
+.button-type-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 朴素按钮
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-plain-md">
+    <div className="label">朴素按钮</div>
+    <div className="wrapper">
+      <Button type="primary" plain>朴素按钮</Button>
+      <Button type="guide" plain>朴素按钮</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-plain-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 细边框按钮
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-hairline-md">
+    <div className="label">细边框按钮</div>
+    <div className="wrapper">
+      <Button type="primary" plain hairline>细边框按钮</Button>
+      <Button type="guide" plain hairline>细边框按钮</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-hairline-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 禁用状态
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-hairline-md">
+    <div className="label">禁用状态</div>
+    <div className="wrapper">
+      <Button type="primary" disabled>禁用状态</Button>
+      <Button type="guide" plain disabled>禁用状态</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-hairline-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 加载状态
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-loading-md">
+    <div className="label">加载状态</div>
+    <div className="wrapper">
+      <Button type="primary" loading></Button>
+      <Button type="primary" loading>加载状态</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-loading-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 图标按钮
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-loading-md">
+    <div className="label">图标按钮</div>
+    <div className="wrapper">
+      <Button type="primary" icon="plus"></Button>
+      <Button type="guide" icon="chat-o" plain>按钮</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-loading-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 按钮形状
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-size-md">
+    <div className="label">按钮形状</div>
+    <div className="wrapper">
+      <Button type="primary" square>方形按钮</Button>
+      <Button type="primary" round>圆形按钮</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-size-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
 }
 ```
 
@@ -41,34 +256,112 @@ render(){
 
 ## 按钮尺寸
 
-:::demo 按钮有大、中、小三种尺寸。
-
-通过设置 `size` 为 `large` `small` 分别把按钮设为大、小尺寸。若不设置 `size`，则尺寸为中。
+:::demo
 
 ```js
-  state = {
-    size: 'large',
-  };
-
-  handleSizeChange = (e) => {
-    this.setState({ size: e.target.value });
-  }
-
-  render() {
-    const size = this.state.size;
-    return (
-      <div className="components-button-demo-size demo-card">
-        <Button size="small">small</Button>
-        <Button>middle</Button>
-        <Button size="large">large</Button>
-      </div>
-    );
-  }
+render(){
+ return(
+   <div className="button-size-md">
+    <div className="label">按钮尺寸</div>
+    <div className="wrapper">
+      <Button type="primary" size="large">大号按钮</Button>
+      <Button type="primary" size="normal">普通按钮</Button>
+      <Button type="primary" size="small">小型按钮</Button>
+      <Button type="primary" size="mini">迷你按钮</Button>
+    </div>
+  </div>
+  )
+}
 ```
 
 ```less
-[class^="components-button-demo-"] .fm-button {
-  margin-bottom: 12px;
+.button-size-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+  }
+}
+```
+
+:::
+
+## 块级元素
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-color-md">
+    <div className="label">块级元素</div>
+    <div className="wrapper">
+      <Button type="guide" block>块级元素</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-color-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+```
+
+:::
+
+## 自定义颜色
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-color-md">
+    <div className="label">自定义颜色</div>
+    <div className="wrapper">
+      <Button color="#6850FF">单色按钮</Button>
+      <Button color="#6850FF" plain>幽灵按钮</Button>
+      <Button color="linear-gradient(269deg, #A783FF 0%, #7921FF 100%)">渐变色按钮</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-color-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    color: #333;
+    letter-spacing: 0;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin: 12px 16px 0 0;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 ```
 
@@ -76,11 +369,12 @@ render(){
 
 ## API
 
-通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `shape` -> `size` -> `loading` -> `disabled`
-
-按钮的属性说明如下：
-
-| 属性 | 说明         | 类型                                            | 默认值    |
+| 参数 | 说明         | 类型                                            | 默认值    |
 | ---- | ------------ | ----------------------------------------------- | --------- |
-| size | 设置按钮大小 | Enum {'small', 'large', 'default'}              | 'default' |
-| type | 设置按钮类型 | Enum {'primary', 'dashed', 'danger', 'default'} | 'default' |
+| type | 类型，可选值为 primary guide warning danger | string | default
+| size | 尺寸，可选值为 large small mini | string             | normal |
+| color | 按钮颜色，支持传入linear-gradient渐变色| string | - |
+| plain | 是否为朴素按钮| boolean | false |
+| hairline | 是否使用 0.5px 边框| boolean | false |
+| square | 是否为方形按钮| boolean | false |
+| round | 是否为圆形按钮| boolean | false |

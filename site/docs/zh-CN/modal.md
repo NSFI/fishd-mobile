@@ -66,12 +66,13 @@ onWrapTouchStart = (e) => {
             <Modal
                 visible={this.state.modal1}
                 transparent
-                maskClosable={false}
+                closable
+                maskClosable={true}
                 onClose={this.onClose('modal1')}
                 title="标题"
                 footer={[{ text: '确认', onPress: () => { console.log('ok'); this.onClose('modal1')(); } }]}
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
-                afterClose={() => { alert('afterClose'); }}
+                afterClose={() => { Toast.info('afterClose'); }}
                 >
                 <div>
                 形式追随功能，而功能的存在是为了更好地解决问题
@@ -85,7 +86,7 @@ onWrapTouchStart = (e) => {
                 title="标题"
                 footer={[{ text: '确认', onPress: () => { console.log('ok'); this.onClose('modal2')(); } }]}
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
-                afterClose={() => { alert('afterClose'); }}
+                afterClose={() => { Toast.info('afterClose'); }}
                 >
             </Modal>
             <Modal
@@ -95,7 +96,7 @@ onWrapTouchStart = (e) => {
                 onClose={this.onClose('modal3')}
                 footer={[{ text: '确认', onPress: () => { console.log('ok'); this.onClose('modal3')(); } }]}
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
-                afterClose={() => { alert('afterClose'); }}
+                afterClose={() => { Toast.info('afterClose'); }}
                 >
                 <div>
                 形式追随功能，而功能的存在是为了更好地解决问题
@@ -143,10 +144,10 @@ ReactDOM.render(<ModalExample />, mountNode);
 :::demo
 
 ```js
-const alert = Modal.alert;
+const mAlert = Modal.alert;
 
 const showAlert = () => {
-  const alertInstance = alert('标题', '形式追随功能，而功能的存在是为了更好地解决问题', [
+  const alertInstance = mAlert('标题', '形式追随功能，而功能的存在是为了更好地解决问题', [
     { text: '取消', onPress: () => console.log('cancel'), style: 'default' },
     { text: '确认', onPress: () => console.log('ok') },
   ]);
@@ -168,13 +169,13 @@ class App extends React.Component {
         <div className="sub-content">
           <div className="sub-btn" onClick={showAlert} >确认弹窗</div>
           <div className="sub-btn" onClick={() =>
-            alert('标题', '', [
+            mAlert('标题', '', [
               { text: '取消', onPress: () => console.log('cancel') },
               { text: '确认', onPress: () => console.log('ok') },
             ])
           } >确认弹窗-无内文</div>
           <div className="sub-btn" onClick={() =>
-            alert('', '形式追随功能，而功能的存在是为了更好地解决问题', [
+            mAlert('', '形式追随功能，而功能的存在是为了更好地解决问题', [
               { text: '取消', onPress: () => console.log('cancel') },
               { text: '确认', onPress: () => console.log('ok') },
             ])
@@ -224,10 +225,10 @@ ReactDOM.render(<App />, mountNode);
 :::demo
 
 ```js
-const alert = Modal.alert;
+const mAlert = Modal.alert;
 
 const showAlert = () => {
-  const alertInstance = alert('标题', '形式追随功能，而功能的存在是为了更好地解决问题', [
+  const alertInstance = mAlert('标题', '形式追随功能，而功能的存在是为了更好地解决问题', [
     { text: '取消', onPress: () => console.log('cancel'), style: 'default' },
     { text: <span style={{color: '#F24957'}}>删除</span>, onPress: () => console.log('ok') },
   ]);
@@ -249,13 +250,13 @@ class App extends React.Component {
         <div className="sub-content">
           <div className="sub-btn" onClick={showAlert} >警告弹窗</div>
           <div className="sub-btn" onClick={() =>
-            alert('标题', '', [
+            mAlert('标题', '', [
               { text: '取消', onPress: () => console.log('cancel') },
               { text: <span style={{color: '#F24957'}}>删除</span>, onPress: () => console.log('ok') },
             ])
           } >警告弹窗-无内文</div>
           <div className="sub-btn" onClick={() =>
-            alert('', '形式追随功能，而功能的存在是为了更好地解决问题', [
+            mAlert('', '形式追随功能，而功能的存在是为了更好地解决问题', [
               { text: '取消', onPress: () => console.log('cancel') },
               { text: <span style={{color: '#F24957'}}>删除</span>, onPress: () => console.log('ok') },
             ])
@@ -394,7 +395,7 @@ ReactDOM.render(<App />, mountNode);
 
 :::demo
 ```js
-const alert = Modal.alert;
+const mAlert = Modal.alert;
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -406,7 +407,7 @@ class App extends React.Component {
 
         <div className="sub-content">
           <div className="sub-btn" onClick={() =>
-            alert('自定义内容', <img width="200px" src="https://ysf.nosdn.127.net/ausunifcvhchdzbexjvxcswemqeojqdf"/>, [
+            mAlert('自定义内容', <img width="200px" src="https://ysf.nosdn.127.net/ausunifcvhchdzbexjvxcswemqeojqdf"/>, [
               { text: '取消', onPress: () => console.log('cancel') },
               { text: '确认', onPress: () => console.log('ok') },
             ])

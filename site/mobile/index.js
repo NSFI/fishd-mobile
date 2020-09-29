@@ -9,6 +9,7 @@ import Layout from './pages/Layout';
 import Home from './pages/Home';
 import Demo from './pages/Demo';
 import './styles/base.less';
+// import './styles/font.less';
 
 initIframe();
 

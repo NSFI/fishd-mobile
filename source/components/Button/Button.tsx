@@ -4,18 +4,6 @@ import TouchFeedback from 'rmc-feedback';
 import { ButtonPropsType } from './PropsType';
 import Icon from '../Icon';
 
-export interface ButtonProps extends ButtonPropsType {
-  prefixCls?: string;
-  className?: string;
-  role?: string;
-  inline?: boolean;
-  icon?: React.ReactNode;
-  activeClassName?: string;
-  activeStyle?: boolean | React.CSSProperties;
-  style?: React.CSSProperties;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-}
-
 const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
 const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
 function isString(str: any) {
@@ -31,30 +19,40 @@ function insertSpace(child: any) {
     if (isTwoCNChar(child)) {
       child = child.split('').join(' ');
     }
-    return <span>{child}</span>;
+    return <span className="fm-button-text">{child}</span>;
   }
   return child;
 }
 
-class Button extends React.Component<ButtonProps, any> {
+class Button extends React.Component<ButtonPropsType, any> {
   static defaultProps = {
     prefixCls: 'fm-button',
-    size: 'large',
-    inline: false,
+    type: 'default',
+    size: 'normal',
+    plain: false,
+    hairline: false,
+    round: false,
+    square: false,
     disabled: false,
+    block: false,
     loading: false,
     activeStyle: {},
   };
 
   render() {
     const {
+      prefixCls,
       children,
       className,
-      prefixCls,
       type,
       size,
-      inline,
+      plain,
+      hairline,
+      color,
+      round,
+      square,
       disabled,
+      block,
       icon,
       loading,
       activeStyle,
@@ -65,12 +63,21 @@ class Button extends React.Component<ButtonProps, any> {
 
     const iconType: any = loading ? 'loading' : icon;
     const wrapCls = classnames(prefixCls, className, {
+      [`${prefixCls}-default`]: type === 'default',
       [`${prefixCls}-primary`]: type === 'primary',
-      [`${prefixCls}-ghost`]: type === 'ghost',
+      [`${prefixCls}-guide`]: type === 'guide',
       [`${prefixCls}-warning`]: type === 'warning',
+      [`${prefixCls}-danger`]: type === 'danger',
+      [`${prefixCls}-plain`]: plain,
+      [`${prefixCls}-hairline`]: hairline,
+      [`${prefixCls}-large`]: size === 'large',
+      [`${prefixCls}-normal`]: size === 'normal',
       [`${prefixCls}-small`]: size === 'small',
-      [`${prefixCls}-inline`]: inline,
+      [`${prefixCls}-mini`]: size === 'mini',
+      [`${prefixCls}-round`]: round,
+      [`${prefixCls}-square`]: square,
       [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-block`]: block,
       [`${prefixCls}-loading`]: loading,
       [`${prefixCls}-icon`]: !!iconType,
     });
@@ -79,20 +86,22 @@ class Button extends React.Component<ButtonProps, any> {
 
     let iconEl;
     if (typeof iconType === 'string') {
-      iconEl = (
-        <Icon
-          aria-hidden="true"
-          type={iconType}
-          size={size === 'small' ? 'xxs' : 'md'}
-          className={`${prefixCls}-icon`}
-        />
-      );
-    } else if (iconType) {
-      const rawCls = iconType.props && iconType.props.className;
-      const cls = classnames('am-icon', `${prefixCls}-icon`, size === 'small' ? 'am-icon-xxs' : 'am-icon-md');
-      iconEl = React.cloneElement(iconType, {
-        className: rawCls ? `${rawCls} ${cls}` : cls,
-      });
+      if (iconType === 'loading') {
+        iconEl = (
+          <div className="fm-loading--circular fm-button__loading">
+            <span
+              className="fm-loading__spinner fm-loading__spinner--circular"
+              style={{ color: 'currentcolor', width: '20px', height: '20px' }}
+            >
+              <svg viewBox="25 25 50 50" className="fm-loading__circular">
+                <circle cx="50" cy="50" r="20" fill="none"></circle>
+              </svg>
+            </span>
+          </div>
+        );
+      } else {
+        iconEl = <Icon type={iconType} />;
+      }
     }
 
     return (
@@ -107,6 +116,15 @@ class Button extends React.Component<ButtonProps, any> {
           {...restProps}
           onClick={disabled ? undefined : onClick}
           aria-disabled={disabled}
+          style={
+            color
+              ? {
+                  color: plain ? color : '#fff',
+                  background: plain ? '#fff' : color,
+                  borderColor: plain ? color : '#fff',
+                }
+              : {}
+          }
         >
           {iconEl}
           {kids}
