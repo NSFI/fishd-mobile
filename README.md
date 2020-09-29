@@ -57,3 +57,6 @@ husky cnpm时会有问题 => https://github.com/typicode/husky/issues/640
 ## travis
 [travis-ci](https://travis-ci.org/)需要github owner激活下travis
 ![Build Status](https://travis-ci.org/zrj1031/fishd-mobile.svg?branch=master)
+
+## LICENSE
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
