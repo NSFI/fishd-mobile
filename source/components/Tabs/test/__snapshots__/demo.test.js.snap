@@ -6,7 +6,7 @@ exports[`Renders Tabs demo correctly 1`] = `
     <div
       class="demo-title"
     >
-      基础用法
+      基本用法（数量2～4）
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
@@ -22,19 +22,22 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
             style="width:50%"
           >
-            Tabs1
+            标题1
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:50%"
           >
-            Tabs2
+            标题2
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:0%;width:50%"
+            style="left:calc(25% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -50,7 +53,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content1
+              标签内容1
             </div>
           </div>
           <div
@@ -60,7 +63,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content2
+              标签内容2
             </div>
           </div>
         </div>
@@ -80,25 +83,28 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
             style="width:33.333333333333336%"
           >
-            Tabs1
+            标题1
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs2
+            标题2
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs3
+            标题3
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:0%;width:33.333333333333336%"
+            style="left:calc(16.666666666666668% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -114,7 +120,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content1
+              标签内容1
             </div>
           </div>
           <div
@@ -124,7 +130,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content2
+              标签内容2
             </div>
           </div>
           <div
@@ -134,7 +140,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content3
+              标签内容3
             </div>
           </div>
         </div>
@@ -154,31 +160,34 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
             style="width:25%"
           >
-            Tabs1
+            标题1
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:25%"
           >
-            Tabs2
+            标题2
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:25%"
           >
-            Tabs3
+            标题3
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:25%"
           >
-            Tabs4
+            标题4
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:0%;width:25%"
+            style="left:calc(12.5% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -194,7 +203,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content1
+              标签内容1
             </div>
           </div>
           <div
@@ -204,7 +213,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content2
+              标签内容2
             </div>
           </div>
           <div
@@ -214,7 +223,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content3
+              标签内容3
             </div>
           </div>
           <div
@@ -224,7 +233,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content4
+              标签内容4
             </div>
           </div>
         </div>
@@ -250,25 +259,28 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
             style="width:33.333333333333336%"
           >
-            Tabs1
+            标签1
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs2
+            标签2
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs3
+            标签3
           </div>
           <div
             class="fm-tabs-horizontal-active-bar"
-            style="left:0%;width:33.333333333333336%"
+            style="left:calc(16.666666666666668% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -284,7 +296,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content1
+              标签内容1
             </div>
           </div>
           <div
@@ -294,7 +306,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content2
+              标签内容2
             </div>
           </div>
           <div
@@ -304,7 +316,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content3
+              标签内容3
             </div>
           </div>
         </div>
@@ -315,7 +327,7 @@ exports[`Renders Tabs demo correctly 1`] = `
     <div
       class="demo-title"
     >
-      跟手滚动
+      基本用法（数量4个以上）-选择标签自动滑动
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
@@ -330,61 +342,64 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs1
+            标签1
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs2
+            标签2
           </div>
           <div
             class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
             style="width:33.333333333333336%"
           >
-            Tabs3
+            标签3
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs4
+            标签4
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs5
+            标签5
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs6
+            标签6
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs7
+            标签7
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs8
+            标签8
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%"
           >
-            Tabs9
+            标签9
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:66.66666666666667%;width:33.333333333333336%"
+            style="left:calc(83.33333333333334% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -491,7 +506,7 @@ exports[`Renders Tabs demo correctly 1`] = `
     <div
       class="demo-title"
     >
-      纵向Tabs标签页
+      垂直标签
     </div>
     <div
       class="fm-tabs fm-tabs-vertical"
@@ -507,25 +522,28 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-vertical-tab fm-tabs-vertical-tab-active"
             style="height:33.333333333333336%"
           >
-            Tabs1
+            标签1
           </div>
           <div
             class="fm-tabs-vertical-tab"
             style="height:33.333333333333336%"
           >
-            Tabs2
+            标签2
           </div>
           <div
             class="fm-tabs-vertical-tab"
             style="height:33.333333333333336%"
           >
-            Tabs3
+            标签3
           </div>
           <div
             class="fm-tabs-vertical-active-bar fm-tabs-vertical-active-bar-animated"
-            style="top:0%;height:33.333333333333336%"
+            style="top:calc(16.666666666666668% - 10px);height:20px"
           />
         </div>
+        <div
+          class="fm-tabs-vertical-line"
+        />
       </div>
       <div
         class="fm-tabs-vertical-content-wrap"
@@ -541,7 +559,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content1
+              标签内容1
             </div>
           </div>
           <div
@@ -551,7 +569,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content2
+              标签内容2
             </div>
           </div>
           <div
@@ -561,7 +579,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content3
+              标签内容3
             </div>
           </div>
         </div>
@@ -572,7 +590,7 @@ exports[`Renders Tabs demo correctly 1`] = `
     <div
       class="demo-title"
     >
-      自定义样式
+      自定义颜色
     </div>
     <div
       class="fm-tabs fm-tabs-horizontal"
@@ -587,25 +605,28 @@ exports[`Renders Tabs demo correctly 1`] = `
             class="fm-tabs-horizontal-tab fm-tabs-horizontal-tab-active"
             style="width:33.333333333333336%;color:#000000"
           >
-            Tabs1
+            标签1
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%;color:#333333"
           >
-            Tabs2
+            标签2
           </div>
           <div
             class="fm-tabs-horizontal-tab"
             style="width:33.333333333333336%;color:#333333"
           >
-            Tabs3
+            标签3
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="background:#26BD71;left:0%;width:33.333333333333336%"
+            style="background:#26BD71;left:calc(16.666666666666668% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -621,7 +642,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content1
+              标签内容1
             </div>
           </div>
           <div
@@ -631,7 +652,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content2
+              标签内容2
             </div>
           </div>
           <div
@@ -641,7 +662,7 @@ exports[`Renders Tabs demo correctly 1`] = `
             <div
               class="demo-tabs-content"
             >
-              content3
+              标签内容3
             </div>
           </div>
         </div>

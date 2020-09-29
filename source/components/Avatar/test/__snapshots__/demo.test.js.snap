@@ -324,9 +324,12 @@ exports[`Renders Avatar demo correctly 1`] = `
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:0%;width:25%"
+            style="left:calc(12.5% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -1556,9 +1559,12 @@ exports[`Renders Avatar demo correctly 1`] = `
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:0%;width:25%"
+            style="left:calc(12.5% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"

@@ -118,39 +118,48 @@ class TabBar extends React.Component<TabsProps, any> {
       }
       return undefined;
     };
-    const defaultUnderLineStyle = {
-      [tabDirection === 'horizontal' ? 'left' : 'top']: `${tabPer * activeTabIndex!}%`,
-      [tabDirection === 'horizontal' ? 'width' : 'height']: `${tabPer}%`,
-    };
+    const defaultUnderLineStyle =
+      tabDirection === 'horizontal'
+        ? {
+            left: `calc(${tabPer * (activeTabIndex! + 0.5)}% - 20px)`,
+            width: '40px',
+          }
+        : {
+            top: `calc(${tabPer * (activeTabIndex! + 0.5)}% - 10px)`,
+            height: '20px',
+          };
 
     return (
-      <div
-        className={`${prefixCls}-${tabDirection}-nav`}
-        ref={ref => {
-          this.navScroller = ref;
-        }}
-      >
-        {tabs.map((tab, index) => (
-          <div
-            key={`${tab.title}-${index}`}
-            className={classnames(`${prefixCls}-${tabDirection}-tab`, {
-              [`${prefixCls}-${tabDirection}-tab-active`]: index === activeTabIndex,
-            })}
-            onClick={() => {
-              this.changeTab(index);
-            }}
-            style={{ [tabDirection === 'horizontal' ? 'width' : 'height']: `${tabPer}%`, color: getTextColor(index) }}
-          >
-            {tab.title}
-          </div>
-        ))}
+      <>
         <div
-          className={classnames(`${prefixCls}-${tabDirection}-active-bar`, {
-            [`${prefixCls}-${tabDirection}-active-bar-animated`]: animated,
-          })}
-          style={{ ...(tabsUnderlineStyle || {}), ...defaultUnderLineStyle }}
-        />
-      </div>
+          className={`${prefixCls}-${tabDirection}-nav`}
+          ref={ref => {
+            this.navScroller = ref;
+          }}
+        >
+          {tabs.map((tab, index) => (
+            <div
+              key={`${tab.title}-${index}`}
+              className={classnames(`${prefixCls}-${tabDirection}-tab`, {
+                [`${prefixCls}-${tabDirection}-tab-active`]: index === activeTabIndex,
+              })}
+              onClick={() => {
+                this.changeTab(index);
+              }}
+              style={{ [tabDirection === 'horizontal' ? 'width' : 'height']: `${tabPer}%`, color: getTextColor(index) }}
+            >
+              {tab.title}
+            </div>
+          ))}
+          <div
+            className={classnames(`${prefixCls}-${tabDirection}-active-bar`, {
+              [`${prefixCls}-${tabDirection}-active-bar-animated`]: animated,
+            })}
+            style={{ ...(tabsUnderlineStyle || {}), ...defaultUnderLineStyle }}
+          />
+        </div>
+        <div className={`${prefixCls}-${tabDirection}-line`} />
+      </>
     );
   }
 }
