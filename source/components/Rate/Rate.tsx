@@ -2,7 +2,7 @@
 import * as React from 'react';
 import RcRate from 'rc-rate';
 import 'rc-rate/assets/index.css';
-import Icon from '../Icon';
+import Icon, { IconProps } from '../Icon';
 import { RatePropsType, ThumbType, ModeType, SizeType } from './PropsType';
 
 export interface RateProps extends Partial<RatePropsType> {
@@ -24,20 +24,31 @@ class Rate extends React.Component<RateProps, any> {
     readOnly: false,
     disabled: false,
     onThumbChange: (val: ThumbType) => val,
-    character: () => <Icon type="fm-star-outline" />,
+    character: <Icon type="star" fontSize={30} />,
   };
 
   render() {
+    const fontSize = { lg: 30, md: 22, sm: 15 }[this.props.size as SizeType];
     const { prefixCls, style, ...rest } = this.props;
-    const sizeCls = { lg: `${prefixCls}-lg`, md: `${prefixCls}-md`, sm: `${prefixCls}-sm` }[
-      this.props.size as SizeType
-    ];
+    let characterProps: IconProps = { type: 'star' };
+    if (this.props.character && typeof this.props.character === 'function') {
+      characterProps = (this.props.character as Function)().props;
+    } else {
+      characterProps = (this.props.character as any).props;
+    }
 
     return (
-      <div className={`${sizeCls} ${this.props.disabled ? `${prefixCls}-disable` : `${prefixCls}-readonly`}`}>
+      <div className={`${this.props.disabled ? `${prefixCls}-disable` : `${prefixCls}-readonly`}`}>
         {
           {
-            normal: <RcRate prefixCls={prefixCls} {...rest} disabled={this.props.readonly || this.props.disabled} />,
+            normal: (
+              <RcRate
+                prefixCls={prefixCls}
+                {...rest}
+                character={() => <Icon type={characterProps.type} fontSize={fontSize} />}
+                disabled={this.props.readonly || this.props.disabled}
+              />
+            ),
             thumb: (
               <div className={this.props.className}>
                 {(['up', 'down'] as ThumbType[]).map((item: ThumbType) => (
@@ -62,7 +73,11 @@ class Rate extends React.Component<RateProps, any> {
                       allowHalf={false}
                       prefixCls={prefixCls}
                       character={() =>
-                        item === 'up' ? <Icon type="fm-dianzan-up" /> : <Icon type="fm-dianzan-down" />
+                        item === 'up' ? (
+                          <Icon type="like" fontSize={fontSize} />
+                        ) : (
+                          <Icon type="dislike" fontSize={fontSize} />
+                        )
                       }
                       style={this.props.style}
                       disabled={this.props.readonly || this.props.disabled}

@@ -18,5 +18,5 @@ export interface RatePropsType {
   disabled: boolean;
   onChange: (value: number) => {};
   onThumbChange: (value: ThumbType) => {};
-  character: (props: any) => ReactNode;
+  character: (props?: any) => ReactNode | ReactNode;
 }
