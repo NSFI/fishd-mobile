@@ -22,6 +22,7 @@ handleShow = (type, e) => {
 }
 
 handleBlur = () => {
+  console.log('>>> handleBlur');
   this.setState({
     keyboard: ''
   })

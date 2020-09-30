@@ -19,7 +19,7 @@ function insertSpace(child: any) {
     if (isTwoCNChar(child)) {
       child = child.split('').join(' ');
     }
-    return <span>{child}</span>;
+    return <span className="fm-button-text">{child}</span>;
   }
   return child;
 }
@@ -86,20 +86,22 @@ class Button extends React.Component<ButtonPropsType, any> {
 
     let iconEl;
     if (typeof iconType === 'string') {
-      iconEl = (
-        <Icon
-          aria-hidden="true"
-          type={`fm-${iconType}`}
-          size={size === 'small' ? 'xxs' : 'md'}
-          className={`${prefixCls}-icon`}
-        />
-      );
-    } else if (iconType) {
-      const rawCls = iconType.props && iconType.props.className;
-      const cls = classnames('fm-icon', `${prefixCls}-icon`, size === 'small' ? 'fm-icon-xxs' : 'fm-icon-md');
-      iconEl = React.cloneElement(iconType, {
-        className: rawCls ? `${rawCls} ${cls}` : cls,
-      });
+      if (iconType === 'loading') {
+        iconEl = (
+          <div className="fm-loading--circular fm-button__loading">
+            <span
+              className="fm-loading__spinner fm-loading__spinner--circular"
+              style={{ color: 'currentcolor', width: '20px', height: '20px' }}
+            >
+              <svg viewBox="25 25 50 50" className="fm-loading__circular">
+                <circle cx="50" cy="50" r="20" fill="none"></circle>
+              </svg>
+            </span>
+          </div>
+        );
+      } else {
+        iconEl = <Icon type={iconType} />;
+      }
     }
 
     return (

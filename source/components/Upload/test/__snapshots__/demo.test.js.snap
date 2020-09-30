@@ -22,15 +22,10 @@ exports[`Renders Upload demo correctly 1`] = `
           <div
             class="fm-upload__upload"
           >
-            <svg
-              class="fm-icon fm-icon-fm-add fm-icon-md"
-              color="#D8D8D8"
-              style="width:30px;height:30px"
-            >
-              <use
-                href="#fm-add"
-              />
-            </svg>
+            <i
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
+            />
             <input
               accept="image/*"
               class="fm-upload__input"
@@ -72,15 +67,10 @@ exports[`Renders Upload demo correctly 1`] = `
             <div
               class="fm-upload__delete"
             >
-              <svg
-                class="fm-icon fm-icon-fm-close fm-icon-md"
-                color="#fff"
-                style="width:10px;height:10px"
-              >
-                <use
-                  href="#fm-close"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
+              />
             </div>
           </div>
           <div
@@ -97,29 +87,19 @@ exports[`Renders Upload demo correctly 1`] = `
             <div
               class="fm-upload__delete"
             >
-              <svg
-                class="fm-icon fm-icon-fm-close fm-icon-md"
-                color="#fff"
-                style="width:10px;height:10px"
-              >
-                <use
-                  href="#fm-close"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
+              />
             </div>
           </div>
           <div
             class="fm-upload__upload"
           >
-            <svg
-              class="fm-icon fm-icon-fm-add fm-icon-md"
-              color="#D8D8D8"
-              style="width:30px;height:30px"
-            >
-              <use
-                href="#fm-add"
-              />
-            </svg>
+            <i
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
+            />
             <input
               accept="image/*"
               class="fm-upload__input"
@@ -190,15 +170,10 @@ exports[`Renders Upload demo correctly 1`] = `
             <div
               class="fm-upload__delete"
             >
-              <svg
-                class="fm-icon fm-icon-fm-close fm-icon-md"
-                color="#fff"
-                style="width:10px;height:10px"
-              >
-                <use
-                  href="#fm-close"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
+              />
             </div>
           </div>
           <div
@@ -215,15 +190,10 @@ exports[`Renders Upload demo correctly 1`] = `
             <div
               class="fm-upload__mask"
             >
-              <svg
-                class="fm-icon fm-icon-fm-error fm-icon-md"
-                color="#fff"
-                style="width:30px;height:30px"
-              >
-                <use
-                  href="#fm-error"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-error-o"
+                style="color:#fff;font-size:30px"
+              />
               <div
                 class="fm-upload__mask-message"
               >
@@ -233,29 +203,19 @@ exports[`Renders Upload demo correctly 1`] = `
             <div
               class="fm-upload__delete"
             >
-              <svg
-                class="fm-icon fm-icon-fm-close fm-icon-md"
-                color="#fff"
-                style="width:10px;height:10px"
-              >
-                <use
-                  href="#fm-close"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
+              />
             </div>
           </div>
           <div
             class="fm-upload__upload"
           >
-            <svg
-              class="fm-icon fm-icon-fm-add fm-icon-md"
-              color="#D8D8D8"
-              style="width:30px;height:30px"
-            >
-              <use
-                href="#fm-add"
-              />
-            </svg>
+            <i
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
+            />
             <input
               accept="image/*"
               class="fm-upload__input"
@@ -297,29 +257,19 @@ exports[`Renders Upload demo correctly 1`] = `
             <div
               class="fm-upload__delete"
             >
-              <svg
-                class="fm-icon fm-icon-fm-close fm-icon-md"
-                color="#fff"
-                style="width:10px;height:10px"
-              >
-                <use
-                  href="#fm-close"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
+              />
             </div>
           </div>
           <div
             class="fm-upload__upload"
           >
-            <svg
-              class="fm-icon fm-icon-fm-add fm-icon-md"
-              color="#D8D8D8"
-              style="width:30px;height:30px"
-            >
-              <use
-                href="#fm-add"
-              />
-            </svg>
+            <i
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
+            />
             <input
               accept="image/*"
               class="fm-upload__input"
@@ -361,29 +311,19 @@ exports[`Renders Upload demo correctly 1`] = `
             <div
               class="fm-upload__delete"
             >
-              <svg
-                class="fm-icon fm-icon-fm-close fm-icon-md"
-                color="#fff"
-                style="width:10px;height:10px"
-              >
-                <use
-                  href="#fm-close"
-                />
-              </svg>
+              <i
+                class="icon iconfont fm-icon fm-icon-cross"
+                style="color:#fff;font-size:10px"
+              />
             </div>
           </div>
           <div
             class="fm-upload__upload"
           >
-            <svg
-              class="fm-icon fm-icon-fm-add fm-icon-md"
-              color="#D8D8D8"
-              style="width:30px;height:30px"
-            >
-              <use
-                href="#fm-add"
-              />
-            </svg>
+            <i
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
+            />
             <input
               accept="image/*"
               class="fm-upload__input"
@@ -414,15 +354,10 @@ exports[`Renders Upload demo correctly 1`] = `
           <div
             class="fm-upload__upload fm-upload__disabled"
           >
-            <svg
-              class="fm-icon fm-icon-fm-add fm-icon-md"
-              color="#D8D8D8"
-              style="width:30px;height:30px"
-            >
-              <use
-                href="#fm-add"
-              />
-            </svg>
+            <i
+              class="icon iconfont fm-icon fm-icon-add"
+              style="color:#D8D8D8;font-size:30px"
+            />
             <input
               accept="image/*"
               class="fm-upload__input"

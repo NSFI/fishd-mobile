@@ -4,20 +4,20 @@
 .@{prefix} {
   position: relative;
   width: 100%;
-  border-radius: 4px;
+  border-radius: @progress-radius;
   &__portion {
     position: absolute;
     left: 0;
     top: 50%;
     height: 100%;
     transform: translate(0, -50%);
-    border-radius: 4px;
+    border-radius: @progress-radius;
   }
   &__pivot {
     position: absolute;
     top: 50%;
     padding: 0 5px;
-    font-size: 10px;
+    font-size: @progress-pivot-size;
     line-height: 1.6;
     text-align: center;
     word-break: keep-all;

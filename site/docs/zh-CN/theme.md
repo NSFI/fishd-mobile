@@ -4,7 +4,7 @@ ppfish-mobile 提供了一套默认主题，CSS 命名采用 BEM 的风格，方
 ## 样式变量
 ppfish-mobile 使用了 Less 对样式进行预处理，并内置了一些样式变量，通过替换样式变量即可定制你自己需要的主题。
 
-下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/NSFI/ppfish-mobile/blob/master/source/assets/css/themes/default.less)。
+下面是一些基本的样式变量，所有可用的颜色变量请参考 [配置文件](https://github.com/NSFI/fishd-mobile/blob/master/source/assets/css/themes/default.less)。
 ```less
 @hd: 1px; // 基本单位
 

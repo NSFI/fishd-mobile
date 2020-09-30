@@ -106,7 +106,7 @@ class Demo extends Component {
     return (
       <div className='u-demo'>
         <div className='u-demo__header'>
-          <div className='u-demo__back iconfont iconarrowleft' onClick={this.goBack}></div>
+          <div className='u-demo__back iconfont fm-icon-allow-left' onClick={this.goBack}></div>
           <div>{name.charAt(0).toUpperCase() + name.slice(1)}</div>
         </div>
         <h3 className='u-demo__title'>

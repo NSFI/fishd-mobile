@@ -14,7 +14,7 @@ export default class Home extends Component {
       <div className="u-home">
         <div className="u-header">
           <div className="u-info">
-            <h3 className="u-title">Fishd Mobile</h3>
+            <h3 className="u-title">Fish Design Mobile</h3>
             <p className="u-desc">基于 React 实现的高质量的企业级 UI 组件库</p>
             <div className='u-action-list'>
               <Button className="u-action" type="primary" size="large" onClick={this.goStart}>

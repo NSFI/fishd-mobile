@@ -21,7 +21,7 @@ class SearchBar extends React.Component<SearchBarProps, any> {
       <div className={wrapCls}>
         <div className={`${prefixCls}__content`}>
           <div className={`${prefixCls}__icon`}>
-            <Icon type="fm-search" style={{ width: '14px', height: '14px', color: '#333' }} />
+            <Icon type="search" fontSize={14} color="#333" />
           </div>
           <div className={`${prefixCls}__body`}>
             <input className={`${prefixCls}__input`} type="search" placeholder="请输入搜索关键词" />

@@ -18,7 +18,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           主要按钮
         </span>
       </a>
@@ -27,7 +29,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-guide fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           引导按钮
         </span>
       </a>
@@ -36,7 +40,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-default fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           默认按钮
         </span>
       </a>
@@ -45,7 +51,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-danger fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           危险按钮
         </span>
       </a>
@@ -54,7 +62,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-warning fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           警告按钮
         </span>
       </a>
@@ -76,7 +86,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-plain fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           朴素按钮
         </span>
       </a>
@@ -85,7 +97,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-guide fm-button-plain fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           朴素按钮
         </span>
       </a>
@@ -107,7 +121,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-plain fm-button-hairline fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           细边框按钮
         </span>
       </a>
@@ -116,7 +132,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-guide fm-button-plain fm-button-hairline fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           细边框按钮
         </span>
       </a>
@@ -138,7 +156,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal fm-button-disabled"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           禁用状态
         </span>
       </a>
@@ -147,7 +167,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-guide fm-button-plain fm-button-normal fm-button-disabled"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           禁用状态
         </span>
       </a>
@@ -169,15 +191,55 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal fm-button-loading fm-button-icon"
         role="button"
       >
-        <svg
-          aria-hidden="true"
-          class="fm-button-icon fm-icon fm-icon-fm-loading fm-icon-md"
+        <div
+          class="fm-loading--circular fm-button__loading"
         >
-          <use
-            href="#fm-loading"
-          />
-        </svg>
-        <span>
+          <span
+            class="fm-loading__spinner fm-loading__spinner--circular"
+            style="color:currentcolor;width:20px;height:20px"
+          >
+            <svg
+              class="fm-loading__circular"
+              viewBox="25 25 50 50"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="none"
+                r="20"
+              />
+            </svg>
+          </span>
+        </div>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal fm-button-loading fm-button-icon"
+        role="button"
+      >
+        <div
+          class="fm-loading--circular fm-button__loading"
+        >
+          <span
+            class="fm-loading__spinner fm-loading__spinner--circular"
+            style="color:currentcolor;width:20px;height:20px"
+          >
+            <svg
+              class="fm-loading__circular"
+              viewBox="25 25 50 50"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                fill="none"
+                r="20"
+              />
+            </svg>
+          </span>
+        </div>
+        <span
+          class="fm-button-text"
+        >
           加载状态
         </span>
       </a>
@@ -199,29 +261,21 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal fm-button-icon"
         role="button"
       >
-        <svg
-          aria-hidden="true"
-          class="fm-button-icon fm-icon fm-icon-fm-dislike fm-icon-md"
-        >
-          <use
-            href="#fm-dislike"
-          />
-        </svg>
+        <i
+          class="icon iconfont fm-icon fm-icon-plus"
+        />
       </a>
       <a
         aria-disabled="false"
-        class="fm-button fm-button-guide fm-button-normal fm-button-icon"
+        class="fm-button fm-button-guide fm-button-plain fm-button-normal fm-button-icon"
         role="button"
       >
-        <svg
-          aria-hidden="true"
-          class="fm-button-icon fm-icon fm-icon-fm-dislike fm-icon-md"
+        <i
+          class="icon iconfont fm-icon fm-icon-chat-o"
+        />
+        <span
+          class="fm-button-text"
         >
-          <use
-            href="#fm-dislike"
-          />
-        </svg>
-        <span>
           按 钮
         </span>
       </a>
@@ -243,7 +297,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal fm-button-square"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           方形按钮
         </span>
       </a>
@@ -252,7 +308,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal fm-button-round"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           圆形按钮
         </span>
       </a>
@@ -274,7 +332,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-large"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           大号按钮
         </span>
       </a>
@@ -283,7 +343,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           普通按钮
         </span>
       </a>
@@ -292,7 +354,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-small"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           小型按钮
         </span>
       </a>
@@ -301,7 +365,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-primary fm-button-mini"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           迷你按钮
         </span>
       </a>
@@ -323,7 +389,9 @@ exports[`Renders Button demo correctly 1`] = `
         class="fm-button fm-button-guide fm-button-normal fm-button-block"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           块级元素
         </span>
       </a>
@@ -346,7 +414,9 @@ exports[`Renders Button demo correctly 1`] = `
         role="button"
         style="color:#fff;background:#6850FF;border-color:#fff"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           单色按钮
         </span>
       </a>
@@ -356,7 +426,9 @@ exports[`Renders Button demo correctly 1`] = `
         role="button"
         style="color:#6850FF;background:#fff;border-color:#6850FF"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           幽灵按钮
         </span>
       </a>
@@ -366,7 +438,9 @@ exports[`Renders Button demo correctly 1`] = `
         role="button"
         style="color:#fff;background:linear-gradient(269deg, #A783FF 0%, #7921FF 100%);border-color:#fff"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           渐变色按钮
         </span>
       </a>

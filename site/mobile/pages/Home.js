@@ -37,7 +37,7 @@ export default class Home extends Component {
         return (
           <div className='u-home__demo' key={subMenu[nameKey]} onClick={this.handleClick.bind(this, subMenu.key)}>
             <span>{subMenu[nameKey]}</span>
-            <span className='iconfont iconarrowright' />
+            <span className='iconfont fm-icon-allow-right' />
           </div>
         );
       });

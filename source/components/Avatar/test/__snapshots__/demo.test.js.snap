@@ -217,13 +217,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                   <div
                     class="fm-avatar-content fm-avatar-icon-content"
                   >
-                    <svg
-                      class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-md"
-                    >
-                      <use
-                        href="#user"
-                      />
-                    </svg>
+                    <i
+                      class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                    />
                   </div>
                 </div>
               </div>
@@ -328,9 +324,12 @@ exports[`Renders Avatar demo correctly 1`] = `
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:0%;width:25%"
+            style="left:calc(12.5% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -518,13 +517,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-xs"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -537,13 +532,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-sm"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -556,13 +547,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-md"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -575,13 +562,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-lg"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -799,13 +782,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-xs"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -956,13 +935,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-sm"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1113,13 +1088,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-md"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1269,13 +1240,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-lg"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>
@@ -1592,9 +1559,12 @@ exports[`Renders Avatar demo correctly 1`] = `
           </div>
           <div
             class="fm-tabs-horizontal-active-bar fm-tabs-horizontal-active-bar-animated"
-            style="left:0%;width:25%"
+            style="left:calc(12.5% - 20px);width:40px"
           />
         </div>
+        <div
+          class="fm-tabs-horizontal-line"
+        />
       </div>
       <div
         class="fm-tabs-horizontal-content-wrap"
@@ -2741,13 +2711,9 @@ exports[`Renders Avatar demo correctly 1`] = `
                             <div
                               class="fm-avatar-content fm-avatar-icon-content"
                             >
-                              <svg
-                                class="fm-avatar-icon-font fm-icon fm-icon-user fm-icon-lg"
-                              >
-                                <use
-                                  href="#user"
-                                />
-                              </svg>
+                              <i
+                                class="fm-avatar-icon-font icon iconfont fm-icon fm-icon-user"
+                              />
                             </div>
                           </div>
                         </div>

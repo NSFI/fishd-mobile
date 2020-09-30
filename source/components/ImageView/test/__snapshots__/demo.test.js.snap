@@ -18,7 +18,9 @@ exports[`Renders ImageView demo correctly 1`] = `
         class="fm-button fm-button-default fm-button-normal"
         role="button"
       >
-        <span>
+        <span
+          class="fm-button-text"
+        >
           显示图片
         </span>
       </a>

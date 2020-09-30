@@ -44,6 +44,7 @@ render() {
 ```less
 [class^="components-actionSheet-demo-"] .fm-button {
   margin-bottom: 12px;
+  width: 100%;
 }
 ```
 
@@ -98,6 +99,7 @@ render() {
 ```less
 [class^="components-actionSheet-demo-"] .fm-button {
   margin-bottom: 12px;
+  width: 100%;
 }
 ```
 
@@ -146,6 +148,13 @@ render() {
       </Button>
     </div>
   );
+}
+```
+
+```less
+[class^="components-actionSheet-demo-"] .fm-button {
+  margin-bottom: 12px;
+  width: 100%;
 }
 ```
 

@@ -10,7 +10,9 @@ exports[`Renders Toast demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         文 本
       </span>
     </a>
@@ -20,7 +22,9 @@ exports[`Renders Toast demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         loading
       </span>
     </a>
@@ -30,7 +34,9 @@ exports[`Renders Toast demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         success
       </span>
     </a>
@@ -40,7 +46,9 @@ exports[`Renders Toast demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         error
       </span>
     </a>
@@ -50,7 +58,9 @@ exports[`Renders Toast demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         network failure
       </span>
     </a>
@@ -60,7 +70,9 @@ exports[`Renders Toast demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         自定义
       </span>
     </a>

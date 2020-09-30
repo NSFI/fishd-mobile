@@ -2,13 +2,13 @@
 @StepsPrefixCls: fm-steps;
 
 .@{StepsPrefixCls} {
-  padding: 10px 10px 22px 10px;
-  font-size: 12px;
-  color: #222;
-  background-color: #fff;
+  padding: 10 * @hd 10 * @hd 22 * @hd 10 * @hd;
+  font-size: @steps-text-size;
+  color: @steps-text-color;
+  background-color: @steps-bg;
 
   &__description {
-    margin-top: 5px;
+    margin-top: 5 * @hd;
   }
 
   &__vertical {
@@ -16,58 +16,65 @@
       box-sizing: border-box;
       width: 100%;
       position: relative;
-      padding-left: 20px;
+      padding-left: 20 * @hd;
     }
+
     .@{StepsPrefixCls}__step {
       position: relative;
-      padding: 10px 0;
+      padding: 10 * @hd 0;
 
       &-process {
         .@{StepsPrefixCls}__title {
-          color: #26BD71;
+          color: @steps-active-color;
         }
 
         .@{StepsPrefixCls}__icon {
-          background: #26BD71;
+          background: @steps-active-color;
         }
       }
 
       &-finish {
         .@{StepsPrefixCls}__line {
-          background: #26BD71;
+          background: @steps-active-color;
         }
 
         .@{StepsPrefixCls}__icon {
-          background: #26BD71;
+          background: @steps-active-color;
         }
       }
     }
+
     .@{StepsPrefixCls}__dot {
       display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
-      top: 10px;
-      left: -15px;
+      top: 10 * @hd;
+      left: -15 * @hd;
       z-index: 1;
       background-color: #fff;
       transform: translate(-50%, 0);
     }
+
     .@{StepsPrefixCls}__icon {
       display: block;
-      width: 5px;
-      height: 5px;
+      width: 5 * @hd;
+      height: 5 * @hd;
       background-color: #D8D8D8;
-      border-radius: 5px;
+      border-radius: 5 * @hd;
       transition: background-color 0.3s;
     }
+
     .@{StepsPrefixCls}__line {
       position: absolute;
-      top: 10px;
-      left: -15.5px;
-      width: 1px;
+      top: 10 * @hd;
+      left: -15.5 * @hd;
+      width: 1 * @hd;
       height: 100%;
-      background-color: #E1E3E6;
+      background-color: @steps-line-color;
       transition: background-color 0.3s;
     }
+
     .@{StepsPrefixCls}__step:last-child .@{StepsPrefixCls}__line {
       width: 0;
     }
@@ -79,7 +86,7 @@
       width: 100%;
       display: flex;
       position: relative;
-      margin-bottom: 10px;
+      margin-bottom: 10 * @hd;
     }
 
     .@{StepsPrefixCls}__step {
@@ -88,21 +95,21 @@
 
       &-process {
         .@{StepsPrefixCls}__title {
-          color: #26BD71;
+          color: @steps-active-color;
         }
 
         .@{StepsPrefixCls}__icon {
-          background: #26BD71;
+          background: @steps-active-color;
         }
       }
 
       &-finish {
         .@{StepsPrefixCls}__line {
-          background: #26BD71;
+          background: @steps-active-color;
         }
 
         .@{StepsPrefixCls}__icon {
-          background: #26BD71;
+          background: @steps-active-color;
         }
       }
     }
@@ -129,21 +136,24 @@
     }
 
     .@{StepsPrefixCls}__dot {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
-      top: 30px;
+      top: 30 * @hd;
       left: 0;
       z-index: 1;
-      padding: 0 6px;
+      padding: 0 6 * @hd;
       background-color: #fff;
       transform: translate(-50%, -50%);
     }
 
     .@{StepsPrefixCls}__icon {
       display: block;
-      width: 5px;
-      height: 5px;
+      width: 5 * @hd;
+      height: 5 * @hd;
       background-color: #D8D8D8;
-      border-radius: 5px;
+      border-radius: 5 * @hd;
       transition: background-color 0.3s;
     }
 
@@ -160,11 +170,11 @@
 
     .@{StepsPrefixCls}__line {
       position: absolute;
-      top: 30px;
+      top: 30 * @hd;
       left: 0;
       width: calc(100%);
-      height: 1px;
-      background-color: #E1E3E6;
+      height: 1 * @hd;
+      background-color: @steps-line-color;
       transition: background-color 0.3s;
     }
 

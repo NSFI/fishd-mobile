@@ -1,5 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
+import { isFunction } from '../../utils';
 import Icon from '../Icon';
 
 export interface StepProps {
@@ -9,8 +10,8 @@ export interface StepProps {
   stepNumber: number;
   activeColor: string;
   inactiveColor: string;
-  activeIcon?: React.ReactNode;
-  inactiveIcon?: React.ReactNode;
+  activeIcon?: React.ReactNode | Function;
+  inactiveIcon?: React.ReactNode | Function;
   description?: string;
 }
 
@@ -31,6 +32,16 @@ class Step extends React.Component<StepProps, any> {
     const stepProcess = stepNumber - 1 === Number(active);
     const stepFinish = stepNumber - 1 < Number(active);
 
+    let renderActiveIcon = activeIcon;
+    if (isFunction(activeIcon)) {
+      renderActiveIcon = activeIcon({ stepProcess, stepFinish });
+    }
+
+    let renderInactiveIcon = inactiveIcon;
+    if (isFunction(inactiveIcon)) {
+      renderInactiveIcon = inactiveIcon({ stepProcess, stepFinish });
+    }
+
     const wrapClass = classNames(`${prefixCls}__step`, {
       [`${prefixCls}__step-process`]: stepProcess,
       [`${prefixCls}__step-finish`]: stepFinish,
@@ -44,10 +55,8 @@ class Step extends React.Component<StepProps, any> {
         </div>
         <div className={`${prefixCls}__dot`}>
           {stepProcess
-            ? activeIcon || (
-                <Icon type="fm-wancheng" color={activeColor} style={{ width: '14px', height: '14px' }}></Icon>
-              )
-            : inactiveIcon || (
+            ? renderActiveIcon || <Icon type="success" color={activeColor} fontSize={14}></Icon>
+            : renderInactiveIcon || (
                 <i
                   className={`${prefixCls}__icon`}
                   style={{ backgroundColor: stepFinish || stepProcess ? activeColor : inactiveColor }}

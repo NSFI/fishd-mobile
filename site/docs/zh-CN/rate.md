@@ -186,7 +186,7 @@ render() {
       <div className="demo-title">
         自定义形状
       </div>
-      <Rate className="components-rate" value={this.state.value} character={() => <Icon type="fm-dian" />} onChange={this.onChange} />
+      <Rate className="components-rate" value={this.state.value} character={() => <Icon type="dot" />} onChange={this.onChange} />
     </div>
   );
 }
@@ -392,7 +392,7 @@ onChange = (value) => {
   this.setState({
     value,
   });
-  Toast.info('满意度: 3星')
+  Toast.info(`满意度: ${value}星`)
 };
 
 render() {
@@ -424,7 +424,7 @@ render() {
 | mode | 组件模式 | 'normal' \| 'thumb' | true |
 | allowClear | 是否允许再次点击后清除 | boolean | true |
 | allowHalf | 是否允许半选 | boolean | false |
-| character | 自定义字符 | ReactNode \| (RateProps) => ReactNode | &lt;Icon type="fm-star-outline" /> |
+| character | 自定义字符 | ReactNode \| (RateProps) => ReactNode | &lt;Icon type="star" /> |
 | className | 自定义样式类名 | string | - |
 | count | star 总数 | number | 5 |
 | defaultValue | 默认值 | number | 0 |

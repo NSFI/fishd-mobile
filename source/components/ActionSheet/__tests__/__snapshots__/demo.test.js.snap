@@ -10,7 +10,9 @@ exports[`Renders ActionSheet demo correctly 1`] = `
       class="fm-button fm-button-primary fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         基础用法
       </span>
     </a>
@@ -23,7 +25,9 @@ exports[`Renders ActionSheet demo correctly 1`] = `
       class="fm-button fm-button-primary fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         单行分享
       </span>
     </a>
@@ -36,7 +40,9 @@ exports[`Renders ActionSheet demo correctly 1`] = `
       class="fm-button fm-button-primary fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         多行分享
       </span>
     </a>

@@ -1,4 +1,4 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/themes/default.less';
 
 @rate-prefix-cls: fm-rate;
 
@@ -15,31 +15,8 @@
     color: @rate-star-disabled;
   }
 
-  &-lg {
-    font-size: @icon-size-lg;
-
-    .fm-icon {
-      width: @icon-size-lg;
-      height: @icon-size-lg;
-    }
-  }
-
-  &-md {
-    font-size: @icon-size-md;
-
-    .fm-icon {
-      width: @icon-size-md;
-      height: @icon-size-md;
-    }
-  }
-
-  &-sm {
-    font-size: @icon-size-xxs;
-
-    .fm-icon {
-      width: @icon-size-xxs;
-      height: @icon-size-xxs;
-    }
+  .fm-icon {
+    position: unset;
   }
 
   &-disabled &-star {

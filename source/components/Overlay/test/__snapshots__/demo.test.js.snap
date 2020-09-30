@@ -15,7 +15,9 @@ exports[`Renders Overlay demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         显示遮罩
       </span>
     </a>
@@ -34,7 +36,9 @@ exports[`Renders Overlay demo correctly 1`] = `
       class="fm-button fm-button-default fm-button-normal"
       role="button"
     >
-      <span>
+      <span
+        class="fm-button-text"
+      >
         嵌入内容
       </span>
     </a>
