@@ -62,6 +62,7 @@ onWrapTouchStart = (e) => {
               <div className="sub-btn" onClick={this.showModal('modal1')} >提示弹窗</div>
               <div className="sub-btn" onClick={this.showModal('modal2')} >提示弹窗-无内文</div>
               <div className="sub-btn" onClick={this.showModal('modal3')} >提示弹窗-无标题</div>
+              <div className="sub-btn" onClick={this.showModal('modal4')} >popup</div>
             </div>
             <Modal
                 visible={this.state.modal1}
@@ -93,7 +94,7 @@ onWrapTouchStart = (e) => {
                 visible={this.state.modal3}
                 transparent
                 maskClosable={false}
-                onClose={this.onClose('modal3')}
+                onClose={this.onClose('modal32')}
                 footer={[{ text: '确认', onPress: () => { console.log('ok'); this.onClose('modal3')(); } }]}
                 wrapProps={{ onTouchStart: this.onWrapTouchStart }}
                 afterClose={() => { Toast.info('afterClose'); }}
@@ -101,6 +102,21 @@ onWrapTouchStart = (e) => {
                 <div>
                 形式追随功能，而功能的存在是为了更好地解决问题
                 </div>
+            </Modal>
+
+            <Modal
+              popup
+              visible={this.state.modal4}
+              onClose={this.onClose('modal4')}
+              animationType="slide-up"
+              afterClose={() => { alert('afterClose'); }}
+              closable={true}
+            >
+              <List renderHeader={() => <div>信息标题</div>} className="popup-list">
+                {['信息1', '信息2', '信息3'].map((i, index) => (
+                  <List.Item key={index}>{i}</List.Item>
+                ))}
+              </List>
             </Modal>
        </div>
     );

@@ -1,8 +1,10 @@
+/* eslint-disable max-classes-per-file */
 import classnames from 'classnames';
 import * as React from 'react';
 import Dialog from 'rmc-dialog';
 import TouchFeedback from 'rmc-feedback';
 import { Action, ModalPropsType, CallbackOrActions } from './PropsType';
+
 export abstract class ModalComponent<P, S> extends React.Component<P, S> {
   static alert: (
     title: React.ReactNode,
