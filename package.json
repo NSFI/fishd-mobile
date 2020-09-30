@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "@ysf/ppfish-mobile",
-  "version": "1.0.0",
-=======
-  "name": "ppfish-mobile",
-  "version": "0.0.1",
->>>>>>> dev
+  "version": "1.0.1",
   "description": "ppfish-mobile",
   "main": "lib/components/index.js",
   "module": "es/components/index.js",
