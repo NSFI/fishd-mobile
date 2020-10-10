@@ -48,6 +48,13 @@ export default [
         published: true
       },
       {
+        key: 'form',
+        type: 'markdown',
+        name: 'Form 表单',
+        nameEn: 'Form',
+        published: true
+      },
+      {
         key: 'switch',
         type: 'markdown',
         name: 'Switch 滑动开关',
