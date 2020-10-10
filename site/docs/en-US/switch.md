@@ -1,4 +1,4 @@
-# switch 动作面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：唐志华】
+# Switch 动作面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：唐志华】
 
 Select between two status, e.g. Select On or Off.
 

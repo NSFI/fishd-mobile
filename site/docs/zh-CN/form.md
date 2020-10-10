@@ -47,7 +47,7 @@ class InputDemo extends React.Component {
                 message: "请输入您的手机号"
               }
             ]
-          })(<InputItem type='phone' placeholder='请输入手机号' labelWidth={80}>手机号</InputItem>)
+          })(<InputItem type='phone' placeholder='请输入手机号' labelWidth={80} autocomplete='off'>手机号</InputItem>)
         }
         {getFieldDecorator("password", {
             rules: [
@@ -56,7 +56,7 @@ class InputDemo extends React.Component {
                 message: "请输入密码"
               }
             ]
-          })(<InputItem type='password' placeholder='请输入密码' labelWidth={80}>密码</InputItem>)
+          })(<InputItem type='password' placeholder='请输入密码' labelWidth={80} autocomplete='new-password'>密码</InputItem>)
         }
         {getFieldDecorator("content", {
             validateTrigger: 'onBlur',
@@ -67,7 +67,7 @@ class InputDemo extends React.Component {
                 validator: this.checkContent,
               }
             ]
-          })(<InputItem type='text' placeholder='请输入内容' labelWidth={80}>异步校验</InputItem>)
+          })(<InputItem type='text' placeholder='请输入内容' labelWidth={80} autocomplete='off'>异步校验</InputItem>)
         }
         <a className='u-button' onClick={this.handleSubmit}>
           提交
