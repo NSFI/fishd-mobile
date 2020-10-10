@@ -29,7 +29,7 @@ function transformCode(codes, filename) {
   //     }
   //   }`
   // ]
-  let components = [];//用于存Button, Slider, Col这样的组件类名
+  let components = ['Input'];//用于存Button, Slider, Col这样的组件类名
   let subComponents = [];//用于缓存 const Col = Grid.Col;中的 Col，避免CheckComponentVisitor再去
   let classNames = [];  //Demo Demo2 Demo3 Demo4
   let classNameIndex = 2;
@@ -236,7 +236,6 @@ function transformCode(codes, filename) {
     import PropTypes from 'prop-types';
     import * as rcForm from 'rc-form';
     // Table 组件的“可伸缩列” Demo 使用
-    ${components.includes('Table') ? `import { Resizable } from 'react-resizable'` : ''};
     ${components.length ? `import {${components.join(',')}} from '../../../source/components/index.tsx';` : ''}
 
     ${classNames.map((classname, index) => `let ${classname} = (() => {

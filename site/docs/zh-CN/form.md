@@ -13,9 +13,8 @@
 :::demo
 
 ```js
+const InputItem = Form.addErrorExplanation(Input);
 class InputDemo extends React.Component {
-  state = {}
-
   handleSubmit = () => {
     this.props.form.validateFields(async (errors, value) => {
       if (errors === null) {
@@ -38,7 +37,6 @@ class InputDemo extends React.Component {
 
   render () {
     const { getFieldDecorator } = this.props.form;
-    const InputItem = Form.addErrorExplanation(Input);
     return (
       <div className='components-input-demo-basic'>
         <div className='demo-title'>基础用法</div>
@@ -110,5 +108,3 @@ ReactDOM.render(<InputDemoWrapper />, mountNode)
 | ---- | ------------ | ----------------------------------------------- | --------- |
 | addErrorExplanation | 对原生的组件，如 InputItem，Picker 等组件，需要用 addErrorExplanation 包裹，返回一个新的组件。该新组件支持错误提示，将在 getFieldDecorator 中使用：const MyInputItem = addErrorExplanation(InputItem)。 | (WrappedComponent: React.Component) => React.Component | - |
 | create | 创建表单 | (option: Object) => (WrappedComponent: React.Component) => React.Component | - |
-
-

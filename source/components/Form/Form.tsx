@@ -2,7 +2,7 @@
 import React from 'react';
 import { createForm } from 'rc-form';
 
-export const addErrorExplanation = Component => {
+const addErrorExplanation = Component => {
   class NewComponent extends React.Component {
     props: any;
 
@@ -27,7 +27,7 @@ export const addErrorExplanation = Component => {
   return NewComponent;
 };
 
-export const create = options => {
+const create = options => {
   return FormComponent => {
     class NewFormComponent extends React.Component {
       props: any;
