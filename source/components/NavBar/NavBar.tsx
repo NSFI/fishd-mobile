@@ -4,7 +4,7 @@ import { NavBarProps } from './PropsType';
 
 export default class NavBar extends React.Component<NavBarProps, any> {
   static defaultProps = {
-    prefixCls: 'am-navbar',
+    prefixCls: 'fm-navbar',
     mode: 'dark',
     onLeftClick: () => {},
   };

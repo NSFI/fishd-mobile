@@ -36,20 +36,34 @@
   }
 
   &-notice-content {
+    .@{toastPrefixCls}-text.@{toastPrefixCls}-text-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 88 * @hd;
+      max-width: 70%;
+      min-height: 88 * @hd;
+    }
     .@{toastPrefixCls}-text {
       min-width: 60 * @hd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       border-radius: @radius-sm;
       color: @color-text-base-inverse;
       background-color: @toast-fill;
       line-height: @line-height-paragraph;
-      padding: @v-spacing-md @h-spacing-lg;
+      padding: 16 * @hd;
 
       &.@{toastPrefixCls}-text-icon {
+        line-height: 1;
         border-radius: @radius-md;
         padding: @v-spacing-lg @h-spacing-lg;
 
         .@{toastPrefixCls}-text-info {
-          margin-top: @v-spacing-sm;
+          margin-top: @v-spacing-lg;
         }
       }
     }

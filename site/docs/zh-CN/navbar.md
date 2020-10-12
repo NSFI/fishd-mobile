@@ -4,20 +4,19 @@
 
 ## 一般用法
 
-:::demo 一般用法。
+:::demo 基本用法
 ```js
 render(){
  return(
     <div className="components-navbar-demo">
       <div className="demo-title">
-        一般用法
+        基本用法
       </div>
       <NavBar
         onLeftClick={() => console.log('onLeftClick')}
-        leftContent="Back"
-      >
-      NavBar导航栏示例
-      </NavBar>
+        leftContent={<Icon type="allow-left" fontSize={20} />}
+        rightContent="按钮"
+      >标题</NavBar>
     </div>
   )
 }
@@ -39,9 +38,11 @@ render(){
        <NavBar
         mode="light"
         leftContent={[
-          <i className="iconfont fm-home"></i>
+          <Icon type="allow-left" fontSize={20} />,
+          <span>返回</span>
         ]}
-      >NavBar导航栏示例</NavBar> 
+        rightContent="按钮"
+      >标题</NavBar> 
     </div>
   )
 }
@@ -63,13 +64,13 @@ render(){
       <NavBar
         mode="dark"
         leftContent={[
-          <i className="iconfont fm-home"></i>
+          <Icon type="home-o" fontSize={20} />
         ]}
         rightContent={[
-          <i className="iconfont fm-search" style={{'marginRight': '20px'}}></i>,
-          <i className="iconfont fm-more"></i>
+          <Icon type="search" fontSize={20} style={{ marginRight: '10px' }} />,
+          <Icon type="plus" fontSize={20} />,
         ]}
-      >NavBar导航栏示例</NavBar>
+      >标题</NavBar>
     </div>
   )
 }
@@ -77,8 +78,7 @@ render(){
 
 :::
 
-
-## 定义模式
+## 自定义导航
 
 :::demo dark和light可选择。
 ```js
@@ -86,22 +86,79 @@ render(){
  return(
     <div className="components-navbar-demo">
         <div className="demo-title">
-          选择模式
+          自定义导航
         </div>
         <NavBar
-          mode="light"
           leftContent={[
-            <i className="iconfont fm-home"></i>
+            <Icon type="allow-left" fontSize={20} />
           ]}
           rightContent={[
-            <i className="iconfont fm-search" style={{'marginRight': '20px'}}></i>,
-            <i className="iconfont fm-more"></i>
+            <Icon type="plus" fontSize={20} />,
           ]}
-        >NavBar导航栏示例</NavBar>
+        ><div class="u-search"><Icon type="search" fontSize={14} color='#B2B5C2' style={{ marginRight: '5px' }} />搜索</div></NavBar>
     </div>
   )
 }
 ```
+```less
+.components-navbar-demo {
+  .u-search {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    height: 30px;
+    padding: 0 13px;
+    font-size: 12px;
+    background: #fff;
+    color: #B2B5C2;
+    border: 1px solid #e1e3e6;
+    border-radius: 15px;
+  }
+}
+```
+:::
+
+:::
+
+## 自定义导航
+
+:::demo dark和light可选择。
+```js
+render(){
+ return(
+    <div className="components-navbar-demo">
+        <div className="demo-title">
+          自定义导航
+        </div>
+        <NavBar
+          style={{ background: '#337EFF' }}
+          leftContent={[
+            <Icon type="allow-left" fontSize={20} color='#fff' />
+          ]}
+          rightContent={[
+            <Icon type="plus" fontSize={20} color='#fff' />,
+          ]}
+        ><div class="u-search"><Icon type="search" fontSize={14} color='#B2B5C2' style={{ marginRight: '5px' }} />搜索</div></NavBar>
+    </div>
+  )
+}
+```
+```less
+.components-navbar-demo {
+  .u-search {
+    display: flex;
+    align-items: center;
+    width: 220px;
+    height: 30px;
+    padding: 0 13px;
+    font-size: 12px;
+    background: #fff;
+    color: #B2B5C2;
+    border-radius: 15px;
+  }
+}
+```
+:::
 
 :::
 

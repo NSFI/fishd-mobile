@@ -5,77 +5,108 @@ exports[`Renders Toast demo correctly 1`] = `
   <div
     class="components-toast-demo"
   >
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-default fm-button-normal"
-      role="button"
+    <div
+      class="demo-title"
     >
-      <span
-        class="fm-button-text"
-      >
-        文 本
-      </span>
-    </a>
-    <br />
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-default fm-button-normal"
-      role="button"
+      文字提示
+    </div>
+    <div
+      class="demo-wrap"
     >
-      <span
-        class="fm-button-text"
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal"
+        role="button"
       >
-        loading
-      </span>
-    </a>
-    <br />
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-default fm-button-normal"
-      role="button"
+        <span
+          class="fm-button-text"
+        >
+          文本提示
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal"
+        role="button"
+      >
+        <span
+          class="fm-button-text"
+        >
+          长文字提示
+        </span>
+      </a>
+    </div>
+    <div
+      class="demo-title"
     >
-      <span
-        class="fm-button-text"
-      >
-        success
-      </span>
-    </a>
-    <br />
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-default fm-button-normal"
-      role="button"
+      加载提示
+    </div>
+    <div
+      class="demo-wrap"
     >
-      <span
-        class="fm-button-text"
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal"
+        role="button"
       >
-        error
-      </span>
-    </a>
-    <br />
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-default fm-button-normal"
-      role="button"
+        <span
+          class="fm-button-text"
+        >
+          加载提示
+        </span>
+      </a>
+    </div>
+    <div
+      class="demo-title"
     >
-      <span
-        class="fm-button-text"
-      >
-        network failure
-      </span>
-    </a>
-    <br />
-    <a
-      aria-disabled="false"
-      class="fm-button fm-button-default fm-button-normal"
-      role="button"
+      成功/失败提示
+    </div>
+    <div
+      class="demo-wrap"
     >
-      <span
-        class="fm-button-text"
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-guide fm-button-normal"
+        role="button"
       >
-        自定义
-      </span>
-    </a>
+        <span
+          class="fm-button-text"
+        >
+          成功提示
+        </span>
+      </a>
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-danger fm-button-normal"
+        role="button"
+      >
+        <span
+          class="fm-button-text"
+        >
+          失败提示
+        </span>
+      </a>
+    </div>
+    <div
+      class="demo-title"
+    >
+      自定义图标
+    </div>
+    <div
+      class="demo-wrap"
+    >
+      <a
+        aria-disabled="false"
+        class="fm-button fm-button-primary fm-button-normal"
+        role="button"
+      >
+        <span
+          class="fm-button-text"
+        >
+          自定义图标
+        </span>
+      </a>
+    </div>
   </div>
 </div>
 `;
