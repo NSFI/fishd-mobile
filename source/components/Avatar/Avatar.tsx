@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import * as React from 'react';
 import { AvatarPropsType } from './PropsType';
 
-import Icon from '../Icon';
+import Icon, { IconProps } from '../Icon';
 import Badge, { BadgeProps } from '../Badge';
 
 function getRound(shape) {
@@ -13,13 +13,14 @@ function getRound(shape) {
   round = round && !isNaN(Number(round)) ? `${round}px` : round;
   return round;
 }
+const getObjType = obj => Object.prototype.toString.call(obj);
 // const badge:BadgeProps = {};
 export interface AvatarProps extends AvatarPropsType {
   prefixCls?: string;
   className?: string;
   imageUrl?: string;
   style?: React.CSSProperties;
-  icon?: string | React.ReactNode;
+  icon?: string | IconProps | React.ReactNode;
   disabled?: boolean;
   badge?: BadgeProps;
   // shape?: string | number | undefined;
@@ -175,11 +176,19 @@ class Avatar extends React.Component<AvatarProps, any> {
 
   renderIcon() {
     const { prefixCls, icon, size } = this.props;
-    if (Object.prototype.toString.call(icon) === '[object String]') {
-      return <Icon type="user" className={`${prefixCls}-icon-font`} size={size} />;
+    if (getObjType(icon) === '[object String]') {
+      const iconType = icon as string;
+      return <Icon type={iconType} className={`${prefixCls}-icon-font`} size={size} />;
     }
-
-    return <div className={`${prefixCls}-icon-custom icon-${size}`}> {icon} </div>;
+    if (getObjType(icon) === '[object Object]') {
+      const iconNode = icon as IconProps;
+      if ('props' in iconNode) {
+        return <div className={`${prefixCls}-icon-custom icon-${size}`}> {icon} </div>;
+      }
+      const iconProps = icon as IconProps;
+      return <Icon {...iconProps} className={`${prefixCls}-icon-font`} size={size} />;
+    }
+    return null;
   }
 
   renderContent() {

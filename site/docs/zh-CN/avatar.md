@@ -38,9 +38,7 @@ render(){
   //margin-bottom: 15px ;
   margin-right: 15px ;
 }
-.fm-avatar-icon-font {
-    background: #3a7dbf;
-}
+
 
 ```
 :::
@@ -86,9 +84,7 @@ render(){
 [class^="components-avatar-demo-"] .fm-avatar {
   margin-right: 15px ;
 }
-.fm-avatar-icon-font {
-    background: #3a7dbf;
-}
+
 
 ```
 
@@ -150,7 +146,7 @@ render(){
             <Item> 
               <Avatar type="icon" icon="user" size="xs"/>
               <Avatar type="icon" icon="user" size="sm"/>
-              <Avatar type="icon" icon="user" />
+              <Avatar type="icon" icon={{ type: "user" }} />
               <Avatar type="icon" icon="user" size="lg"/>
             </Item>
             <Item>
@@ -209,9 +205,7 @@ render(){
 .demo-tabs-content.default {
   margin: 15px;
 }
-.fm-avatar-icon-font {
-    background: #3a7dbf;
-}
+
 
 ```
 
@@ -254,9 +248,7 @@ render(){
   margin-bottom: 15px ;
   margin-right: 15px ;
 }
-.fm-avatar-icon-font {
-    background: #3a7dbf;
-}
+
 
 ```
 
@@ -423,9 +415,7 @@ render(){
   }
 }
 
-.fm-avatar-icon-font {
-    background: #3a7dbf;
-}
+
 
 ```
 
