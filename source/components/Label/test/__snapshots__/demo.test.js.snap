@@ -347,7 +347,7 @@ exports[`Renders Label demo correctly 1`] = `
           标签
         </span>
         <i
-          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-cross"
         />
       </div>
       <div
@@ -358,7 +358,7 @@ exports[`Renders Label demo correctly 1`] = `
           标签
         </span>
         <i
-          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-cross"
         />
       </div>
       <div
@@ -369,7 +369,7 @@ exports[`Renders Label demo correctly 1`] = `
           标签
         </span>
         <i
-          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-cross"
         />
       </div>
       <div
@@ -380,7 +380,7 @@ exports[`Renders Label demo correctly 1`] = `
           标签
         </span>
         <i
-          class="fm-label-closeable icon iconfont fm-icon fm-icon-fm-close"
+          class="fm-label-closeable icon iconfont fm-icon fm-icon-cross"
         />
       </div>
     </div>
