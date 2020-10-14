@@ -3,21 +3,35 @@
   word-break: break-all;
   overflow-x: hidden;
   color: #333;
+  .u-part_1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55px;
+  }
+  .u-part_2 {
+    position: absolute;
+    left: 0;
+    top: 450px;
+    width: 40px;
+    z-index: -1;
+  }
   .u-logo {
     text-align: center;
     img {
-      width: 200px;
-      height: 54px;
+      width: 100px;
+      height: auto;
     }
   }
   .u-desc {
+    margin-top: 4px;
+    padding-bottom: 20px;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     color: #333;
-    padding: 20px 0;
   }
   &__title {
-    margin: 28px 0 9px 16px;
+    margin: 30px 0 9px 16px;
     font-size: 12px;
     color: #337EFF;
     font-weight: normal;

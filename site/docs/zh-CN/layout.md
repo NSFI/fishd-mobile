@@ -10,7 +10,7 @@
 
 ```js
 render(){
-  const {Row, Col} = Layout 
+  const { Row, Col } = Layout 
   return(
   <div className="components-layout-demo-basic">
     <div className="demo-title">

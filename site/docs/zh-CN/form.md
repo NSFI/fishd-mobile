@@ -16,23 +16,29 @@
 const InputItem = Form.addErrorExplanation(Input);
 class InputDemo extends React.Component {
   handleSubmit = () => {
-    this.props.form.validateFields(async (errors, value) => {
+    console.log('>>> 提交')
+    this.props.form.validateFields({ force: true }, (errors, value) => {
+      console.log('>>> 表单验证结果', errors)
       if (errors === null) {
-        Toast.success('提交完成');
+        Toast.success('提交完成', 1);
       }
     });
   };
 
-  checkContent = (rule, value, callback) => {
-    Toast.loading('验证中...', 999)
+  checkContent = (rule, value) => {
     setTimeout(() => {
-      Toast.hide()
-      if (value != 123) {
-        callback(new Error('内容不正确'))
-      } else {
-        callback()
-      }
-    }, 1000)
+      Toast.loading('验证中...', 999, false)
+    }, 0)
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        Toast.hide();
+        if (value != 123) {
+          reject('内容不正确')
+        } else {
+          resolve()
+        }
+      }, 1000)
+    })
   };
 
   render () {
@@ -40,38 +46,40 @@ class InputDemo extends React.Component {
     return (
       <div className='components-input-demo-basic'>
         <div className='demo-title'>基础用法</div>
-         {getFieldDecorator("phone", {
-            rules: [
-              {
-                required: true,
-                message: "请输入您的手机号"
-              }
-            ]
-          })(<InputItem type='phone' placeholder='请输入手机号' labelWidth={80} autocomplete='off'>手机号</InputItem>)
-        }
-        {getFieldDecorator("password", {
-            rules: [
-              {
-                required: true,
-                message: "请输入密码"
-              }
-            ]
-          })(<InputItem type='password' placeholder='请输入密码' labelWidth={80} autocomplete='new-password'>密码</InputItem>)
-        }
-        {getFieldDecorator("content", {
-            validateTrigger: 'onBlur',
-            rules: [
-              {
-                required: true,
-                message: "请输入内容",
-                validator: this.checkContent,
-              }
-            ]
-          })(<InputItem type='text' placeholder='请输入内容' labelWidth={80} autocomplete='off'>异步校验</InputItem>)
-        }
-        <a className='u-button' onClick={this.handleSubmit}>
+        <div className='u-form'>
+          {getFieldDecorator("phone", {
+              rules: [
+                {
+                  required: true,
+                  message: "请输入您的手机号"
+                }
+              ]
+            })(<InputItem type='phone' placeholder='请输入手机号' labelWidth={80} autoComplete='off'>手机号</InputItem>)
+          }
+          {getFieldDecorator("password", {
+              rules: [
+                {
+                  required: true,
+                  message: "请输入密码"
+                }
+              ]
+            })(<InputItem type='password' placeholder='请输入密码' labelWidth={80} autoComplete='new-password'>密码</InputItem>)
+          }
+          {getFieldDecorator("content", {
+              validateTrigger: 'onBlur',
+              rules: [
+                {
+                  required: true,
+                  message: "请输入内容",
+                  asyncValidator: this.checkContent,
+                }
+              ]
+            })(<InputItem type='text' placeholder='请输入内容' labelWidth={80} autoComplete='off'>异步校验</InputItem>)
+          }
+        </div>
+        <Button className='u-button' onClick={this.handleSubmit}>
           提交
-        </a>
+        </Button>
       </div>
     )
   }
@@ -84,7 +92,10 @@ ReactDOM.render(<InputDemoWrapper />, mountNode)
 
 ```less
 .components-input-demo-basic {
-  padding-bottom: 40px;
+  padding-bottom: 10px;
+  .u-form {
+    background: #fff;
+  }
 }
 [class^="components-input-demo-"] .u-button {
   display: block;
@@ -96,7 +107,7 @@ ReactDOM.render(<InputDemoWrapper />, mountNode)
   text-align: center;
 }
 .form-error-explain {
-  padding: 0 10px;
+  padding: 0 16px;
 }
 ```
 

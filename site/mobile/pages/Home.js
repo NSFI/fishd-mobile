@@ -50,8 +50,10 @@ export default class Home extends Component {
     });
     return (
       <div className='u-home'>
+        <img className="u-part_1" src="../images/part_1.png" alt=""/>
+        <img className="u-part_2" src="../images/part_2.png" alt=""/>
         <div className='u-logo'>
-          <img src='https://hgkcdn.oss-cn-shanghai.aliyuncs.com/test/unanqvsjrxhnpwqrulcuumqxicpwsojh.png' />
+          <img src='../images/logo.png' />
         </div>
         <p className='u-desc'>{this.messages.introduce}</p>
         {menuList}

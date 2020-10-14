@@ -21,7 +21,7 @@ export default class RuleColor extends React.Component {
           <div className="main-color-item" onClick={() => {
             this.handleClick('#337EFF')
           }}>
-            Blue
+            FishBlue
             <div className="value">#337EFF</div>
           </div>
         </div>
@@ -31,26 +31,67 @@ export default class RuleColor extends React.Component {
           <div className="aux-color-item" onClick={() => {
             this.handleClick('#F24957')
           }}>
-            Danger
+            FishRed
             <div className="value">#F24957</div>
           </div>
           <div className="aux-color-item" onClick={() => {
             this.handleClick('#26BD71')
           }}>
-            Success
+            FishGreen
             <div className="value">#26BD71</div>
           </div>
           <div className="aux-color-item" onClick={() => {
-            this.handleClick('#FFAF0F')
+            this.handleClick('#F2A60F')
           }}>
-            Warning
-            <div className="value">#FFAF0F</div>
+            FishOrange
+            <div className="value">#F2A60F</div>
           </div>
           <div className="aux-color-item" onClick={() => {
             this.handleClick('#337EFF')
           }}>
-            Info
+            FishBlue
             <div className="value">#337EFF</div>
+          </div>
+        </div>
+
+        <h3 id="ext-color-title" className="md-heading">扩展色</h3>
+        <p className="desc md-paragraph"></p>
+        <div className="ext-color-container">
+          <div className="ext-color-item" onClick={() => {
+            this.handleClick('#F260B6')
+          }}>
+            FishPink
+            <div className="value">#F260B6</div>
+          </div>
+          <div className="ext-color-item" onClick={() => {
+            this.handleClick('#8875FF')
+          }}>
+            FishPurple
+            <div className="value">#8875FF</div>
+          </div>
+          <div className="ext-color-item" onClick={() => {
+            this.handleClick('#33BBFF')
+          }}>
+            FishSkyBlue
+            <div className="value">#33BBFF</div>
+          </div>
+          <div className="ext-color-item" onClick={() => {
+            this.handleClick('#3DD9AF')
+          }}>
+            FishBlueGreen
+            <div className="value">#3DD9AF</div>
+          </div>
+          <div className="ext-color-item" onClick={() => {
+            this.handleClick('#AACC00')
+          }}>
+            FishGrassGreen
+            <div className="value">#AACC00</div>
+          </div>
+          <div className="ext-color-item" onClick={() => {
+            this.handleClick('#FFE23D')
+          }}>
+            FishLightYellow
+            <div className="value">#FFE23D</div>
           </div>
         </div>
 
@@ -61,19 +102,25 @@ export default class RuleColor extends React.Component {
             <div className="neu-color-item" onClick={() => {
               this.handleClick('#222222')
             }}>
-              #3 Black
+              SystemGray-1
               <div className="value">#222222</div>
+            </div>
+            <div className="neu-color-item" onClick={() => {
+              this.handleClick('#333333')
+            }}>
+              SystemGray-2
+              <div className="value">#333333</div>
             </div>
             <div className="neu-color-item" onClick={() => {
               this.handleClick('#666666')
             }}>
-              #6 Black
+              SystemGray-3
               <div className="value">#666666</div>
             </div>
             <div className="neu-color-item" onClick={() => {
               this.handleClick('#999999')
             }}>
-              #9 Black
+              SystemGray-4
               <div className="value">#999999</div>
             </div>
           </div>
@@ -81,20 +128,26 @@ export default class RuleColor extends React.Component {
             <div className="neu-color-item" onClick={() => {
               this.handleClick('#CCCCCC')
             }}>
-              #C Black
+              SystemGray-5
               <div className="value">#CCCCCC</div>
             </div>
             <div className="neu-color-item" onClick={() => {
-              this.handleClick('#F2F2F5')
+              this.handleClick('#E1E3E6')
             }}>
-              Light Black
-              <div className="value">#F2F2F5</div>
+              SystemGray-6
+              <div className="value">#E1E3E6</div>
             </div>
             <div className="neu-color-item" onClick={() => {
-              this.handleClick('#F7F7FA')
+              this.handleClick('#F2F3F5')
             }}>
-              Extra Light Black
-              <div className="value">#F7F7FA</div>
+              SystemGray-7
+              <div className="value">#F2F3F5</div>
+            </div>
+            <div className="neu-color-item" onClick={() => {
+              this.handleClick('#F7F8FA')
+            }}>
+              SystemGray-8
+              <div className="value">#F7F8FA</div>
             </div>
           </div>
         </div>

@@ -8,8 +8,8 @@ import '@/lib/lang'
 import Layout from './pages/Layout';
 import Home from './pages/Home';
 import Demo from './pages/Demo';
+import Color from './pages/Color';
 import './styles/base.less';
-// import './styles/font.less';
 
 initIframe();
 
@@ -20,6 +20,7 @@ const genRoutes = function (lang) {
   return (
     <Route path={`/${lang}`} component={Layout}>
       <IndexRoute component={Home} />
+      {/* <Route path={`/${lang}/color`} component={Color}></Route> */}
       <Route path={`/${lang}/:demo`} component={Demo}></Route>
       <Redirect from="*" to={`/${lang}`} />
     </Route>
