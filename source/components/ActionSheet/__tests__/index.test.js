@@ -2,19 +2,19 @@ import ActionSheet from '../index.tsx';
 
 describe('ActionSheet', () => {
   it('showActionSheetWithOptions correctly', () => {
-    const BUTTONS = ['操作一', '操作二', '操作三', '删除'];
-    ActionSheet.showActionSheetWithOptions(
-      {
-        options: BUTTONS,
-        destructiveButtonIndex: BUTTONS.length - 1,
-        message: '我是描述我是描述',
-        maskClosable: true,
-      },
-      buttonIndex => {
-        // console.log(BUTTONS[buttonIndex]);
-        expect(BUTTONS[buttonIndex]).toBe('操作一');
-      },
-    );
+    const BUTTONS = ['选项1', '选项2', '选项3', '破坏性选项操作'];
+    ActionSheet.showActionSheetWithOptions({
+      options: BUTTONS,
+      cancelText: 'cancel',
+      destructiveButtonIndex: BUTTONS.length - 1,
+      message: '标题或描述',
+      maskClosable: true,
+      cancelButtonText: '取消',
+      wrapProps: {},
+      onSelect: buttonIndex => {
+        expect(BUTTONS[buttonIndex]).toBe('选项1');
+      }
+    });
     expect([document.querySelector('.fm-action-sheet')]).toHaveLength(1);
     document.querySelectorAll('.fm-action-sheet-button-list-item')[0].click();
   });
