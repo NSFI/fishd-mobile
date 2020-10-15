@@ -7,6 +7,7 @@ import { transform } from 'babel-standalone'
 import collect from '@/lib/collect'
 import eventbus from '@/lib/eventbus'
 import Home from '@/pages/Home'
+import part_1 from '../images/part_1.png';
 
 import arrayTreeFilter from 'array-tree-filter'
 import * as rcForm from 'rc-form'
@@ -110,7 +111,7 @@ class Demo extends Component {
           <div>{name.charAt(0).toUpperCase() + name.slice(1)}</div>
         </div> */}
         <h3 className='u-demo__title'>
-        <img className="u-part_1" src="../images/part_1.png" alt=""/>
+        <img className="u-part_1" src={part_1} alt=""/>
           <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
           <div className='u-demo__subTitle'>UI组件</div>
         </h3>
