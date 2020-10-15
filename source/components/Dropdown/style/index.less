@@ -3,16 +3,6 @@
 }
 
 .fm-dropdown-menu {
-  &_bar {
-    position: relative;
-    display: flex;
-    height: 50px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-    &--opened {
-      z-index: 11;
-    }
-  }
   &__item {
     display: flex;
     flex: 1;
@@ -28,6 +18,33 @@
     padding: 0 8px;
     font-size: 15px;
     line-height: 22px;
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: -4px;
+      margin-top: -5px;
+      border: 3px solid;
+      border-color: transparent transparent #dcdee0 #dcdee0;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      opacity: 0.8;
+      content: '';
+    }
+  }
+  &_bar {
+    position: relative;
+    display: flex;
+    height: 50px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    &--opened {
+      z-index: 11;
+      .fm-dropdown-menu__title::after {
+        margin-top: -1px;
+        transform: rotate(135deg);
+        border-color: transparent transparent currentColor currentColor;
+      }
+    }
   }
 }
 
