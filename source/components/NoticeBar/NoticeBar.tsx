@@ -5,7 +5,7 @@ import Marquee, { MarqueeProps } from './Marquee';
 import { NoticeBarPropsType } from './PropsType';
 
 export interface NoticeWebProps extends NoticeBarPropsType {
-  marqueeProps?: MarqueeProps;
+  marqueeprops?: MarqueeProps;
   className?: string;
   prefixCls?: string;
   style?: React.CSSProperties;
@@ -47,7 +47,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
       className,
       prefixCls,
       action,
-      marqueeProps,
+      marqueeprops,
       ...restProps
     } = this.props;
 
@@ -93,7 +93,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
           <Marquee
             prefixCls={prefixCls}
             text={children as string}
-            {...marqueeProps}
+            {...marqueeprops}
           />
         </div>
         {operationDom}
