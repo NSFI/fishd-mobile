@@ -18,7 +18,10 @@ module.exports = {
   outputPath: './_site/desktop',
   // 同webpack publicPath
   publicPath: './',
+  // css路径配置
   MiniCssExtractPluginPublicPath: '../',
+  // 网站图标
+  favicon: './site/desktop/assets/favicon.ico',
   // dll配置
   dll: {
     name: 'desktopDll',
