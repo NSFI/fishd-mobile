@@ -11,17 +11,25 @@ render() {
   return (
     <div className="components-divider-demo">
       <div className="demo-title">
-        一般用法
+        基本用法
       </div>
-      <Divider />
+      <div className="demo-card">
+        <Divider />
+      </div>
     </div>  
   );
+}
+```
+```less
+[class^="components-divider-demo"] .demo-card {
+  padding: 32px 20px !important;
+  background-color: #fff;
 }
 ```
 :::
 
 ## 展示文本
-:::demo 展示文本
+:::demo 文本位置
 
 ```js
 render() {
@@ -30,15 +38,24 @@ render() {
       <div className="demo-title">
         展示文本
       </div>
+      <div className="demo-card">
       <Divider contentPosition={"left"}>文本</Divider>
       <Divider contentPosition={"right"}>文本</Divider>
+    </div> 
+
     </div> 
   );
 }
 ```
+```less
+[class^="components-divider-demo"] .demo-card {
+  padding: 32px 20px;
+  background-color: #fff;
+}
+```
 :::
 
-:::demo Dashed
+:::demo 虚线
 
 ```js
 render() {
@@ -47,9 +64,17 @@ render() {
       <div className="demo-title">
         Dashed
       </div>
+      <div className="demo-card">
       <Divider dashed={true}>文本</Divider>
     </div> 
+    </div> 
   );
+}
+```
+```less
+[class^="components-divider-demo"] .demo-card {
+  padding: 32px 20px;
+  background-color: #fff;
 }
 ```
 :::
@@ -63,13 +88,22 @@ render() {
       <div className="demo-title">
         自定义样式
       </div>
+      <div className="demo-card">
       <Divider
-        style={{ color: '#1989fa', borderColor: '#1989fa', padding: '0 16px' }}
+        dashed={true}
+        style={{ color: '#337EFF', borderColor: '#337EFF', padding: '0 16px' }}
       >
-        文本
+        FishDesign Mobile
       </Divider>
     </div> 
+    </div> 
   );
+}
+```
+```less
+[class^="components-divider-demo"] .demo-card {
+  padding: 32px 20px;
+  background-color: #fff;
 }
 ```
 :::

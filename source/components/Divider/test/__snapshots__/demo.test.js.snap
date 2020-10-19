@@ -8,12 +8,16 @@ exports[`Renders Divider demo correctly 1`] = `
     <div
       class="demo-title"
     >
-      一般用法
+      基本用法
     </div>
     <div
-      class="fm-divider fm-divider--hairline"
-      role="separator"
-    />
+      class="demo-card"
+    >
+      <div
+        class="fm-divider fm-divider--hairline"
+        role="separator"
+      />
+    </div>
   </div>
   <div
     class="components-divider-demo"
@@ -24,16 +28,20 @@ exports[`Renders Divider demo correctly 1`] = `
       展示文本
     </div>
     <div
-      class="fm-divider fm-divider--hairline fm-divider--content-left"
-      role="separator"
+      class="demo-card"
     >
-      文本
-    </div>
-    <div
-      class="fm-divider fm-divider--hairline fm-divider--content-right"
-      role="separator"
-    >
-      文本
+      <div
+        class="fm-divider fm-divider--hairline fm-divider--content-left"
+        role="separator"
+      >
+        文本
+      </div>
+      <div
+        class="fm-divider fm-divider--hairline fm-divider--content-right"
+        role="separator"
+      >
+        文本
+      </div>
     </div>
   </div>
   <div
@@ -45,10 +53,14 @@ exports[`Renders Divider demo correctly 1`] = `
       Dashed
     </div>
     <div
-      class="fm-divider fm-divider--dashed fm-divider--hairline fm-divider--content-center"
-      role="separator"
+      class="demo-card"
     >
-      文本
+      <div
+        class="fm-divider fm-divider--dashed fm-divider--hairline fm-divider--content-center"
+        role="separator"
+      >
+        文本
+      </div>
     </div>
   </div>
   <div
@@ -60,11 +72,15 @@ exports[`Renders Divider demo correctly 1`] = `
       自定义样式
     </div>
     <div
-      class="fm-divider fm-divider--hairline fm-divider--content-center"
-      role="separator"
-      style="color:#1989fa;border-color:#1989fa;padding:0 16px"
+      class="demo-card"
     >
-      文本
+      <div
+        class="fm-divider fm-divider--dashed fm-divider--hairline fm-divider--content-center"
+        role="separator"
+        style="color:#337EFF;border-color:#337EFF;padding:0 16px"
+      >
+        FishDesign Mobile
+      </div>
     </div>
   </div>
 </div>
