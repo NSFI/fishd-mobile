@@ -106,6 +106,7 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
         ref={selectRef}
         className={classNames('fm-cascade-select', {
           active: expand,
+          selected: !!selectItem,
         })}
         onClick={e => {
           e.stopPropagation();
