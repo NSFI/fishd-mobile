@@ -57,7 +57,14 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
     }
   }, [selectId]);
 
-  const handleExpandSubCol = (index, item) => {
+  useEffect(() => {
+    window.addEventListener('click', () => {
+      setExpand(false);
+    });
+  }, []);
+
+  const handleExpandSubCol = (e, index, item) => {
+    e.stopPropagation();
     const { children = [] } = item;
     setSelectItem(item);
     if (children.length > 0) {
@@ -73,7 +80,8 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
     }
   };
 
-  const handleBack = () => {
+  const handleBack = e => {
+    e.stopPropagation();
     setSelectColIndex(pre => pre - 1);
     setCols(pre => {
       const final = [...pre];
@@ -82,7 +90,9 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
     });
   };
 
-  const handleSelectAll = () => {
+  const handleSelectAll = e => {
+    e.stopPropagation();
+
     // TODO
     setExpand(false);
   };
@@ -94,7 +104,10 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
         className={classNames('fm-cascade-select', {
           active: expand,
         })}
-        onClick={() => setExpand(pre => !pre)}
+        onClick={e => {
+          e.stopPropagation();
+          setExpand(pre => !pre);
+        }}
       >
         {selectItem?.label || '请选择'}
       </div>
@@ -140,7 +153,7 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
                     selected: item.key === selectItem?.key || item.key === selectItem?.parentKey,
                   })}
                   key={item.key}
-                  onClick={() => handleExpandSubCol(colIndex, item)}
+                  onClick={e => handleExpandSubCol(e, colIndex, item)}
                 >
                   {item.label}
                   {!!item.children && <Icon type="allow-right" fontSize={12} />}
