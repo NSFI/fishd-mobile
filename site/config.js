@@ -146,6 +146,13 @@ export default [
         published: true
       },
       {
+        key: 'cascade',
+        type: 'markdown',
+        name: 'Cascade 级联筛选器',
+        nameEn: 'Cascade',
+        published: true
+      },
+      {
         key: 'datePickerView',
         type: 'markdown',
         name: 'DataPickerView 日期选择面板',
