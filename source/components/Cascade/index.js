@@ -140,8 +140,7 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
           style={
             selectRef.current
               ? {
-                  top:
-                    selectRef.current?.getBoundingClientRect().top + selectRef.current?.getBoundingClientRect().height,
+                  top: selectRef.current?.offsetTop + selectRef.current?.getBoundingClientRect().height,
                 }
               : {}
           }
