@@ -6,6 +6,7 @@ import Icon from '../Icon';
 
 function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
   const selectRef = useRef(null);
+  const selectFocusRef = useRef(null);
   const [expand, setExpand] = useState(false);
   const [cols, setCols] = useState([cascadeData]);
   const [selectColIndex, setSelectColIndex] = useState(0);
@@ -65,6 +66,7 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
 
   const handleExpandSubCol = (e, index, item) => {
     e.stopPropagation();
+    selectRef.current.focus();
     const { children = [] } = item;
     setSelectItem(item);
     if (children.length > 0) {
@@ -75,13 +77,14 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
         return final;
       });
     } else {
-      setExpand(false);
+      selectRef.current.blur();
       onSelect(item.key);
     }
   };
 
   const handleBack = e => {
     e.stopPropagation();
+    selectRef.current.focus();
     setSelectColIndex(pre => pre - 1);
     setCols(pre => {
       const final = [...pre];
@@ -106,7 +109,19 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
         })}
         onClick={e => {
           e.stopPropagation();
-          setExpand(pre => !pre);
+          if (!selectFocusRef.current) {
+            selectRef.current.blur();
+          }
+          selectFocusRef.current = false;
+        }}
+        tabIndex="-1"
+        onBlur={() => {
+          selectFocusRef.current = false;
+          setExpand(false);
+        }}
+        onFocus={() => {
+          selectFocusRef.current = true;
+          setExpand(true);
         }}
       >
         {selectItem?.label || '请选择'}

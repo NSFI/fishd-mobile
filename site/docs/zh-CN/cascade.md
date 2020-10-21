@@ -68,7 +68,7 @@ render(){
 
 ```less
 .fm-cascade-wrapper {
-  margin-bottom: 20px;
+  margin-bottom: 250px;
 }
 ```
 
