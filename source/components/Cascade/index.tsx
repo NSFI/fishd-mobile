@@ -1,19 +1,31 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useEffect, useRef } from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import classNames from 'classnames';
-import './index.less';
 import Icon from '../Icon';
 
-function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
-  const selectRef = useRef(null);
-  const selectFocusRef = useRef(null);
-  const [expand, setExpand] = useState(false);
-  const [cols, setCols] = useState([cascadeData]);
-  const [selectColIndex, setSelectColIndex] = useState(0);
-  const [selectItem, setSelectItem] = useState(undefined);
+interface Item {
+  label: string;
+  key: string | number;
+  parentKey?: string | number;
+  children?: Item[];
+}
 
-  const flatArr = [];
-  const flatArray = (arr = []) => {
+interface Props {
+  onSelect: (number) => void;
+  cascadeData: Item[];
+  selectId?: string | number;
+}
+
+const Cascade: FC<Props> = ({ onSelect, selectId, cascadeData }) => {
+  const selectRef = useRef<HTMLDivElement>(null);
+  const selectFocusRef = useRef(false);
+  const [expand, setExpand] = useState(false);
+  const [cols, setCols] = useState<Item[][]>([cascadeData]);
+  const [selectColIndex, setSelectColIndex] = useState(0);
+  const [selectItem, setSelectItem] = useState<Item | undefined>(undefined);
+
+  const flatArr: Item[] = [];
+  const flatArray = (arr: Item[] = []) => {
     arr.forEach(item => {
       flatArr.push(item);
       if (item.children) {
@@ -23,7 +35,7 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
     return flatArr;
   };
 
-  const parentKeys = [];
+  const parentKeys: (string | number)[] = [];
   const findParentKeys = (arr, key) => {
     const self = arr.find(item => item.key === key);
     parentKeys.unshift(self.key);
@@ -34,11 +46,11 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
   };
 
   const formatCols = [cascadeData];
-  const formatColsFn = (arr, keys) => {
+  const formatColsFn = (arr: Item[], keys: (string | number)[]) => {
     const pKey = [...keys];
     const sk = pKey.shift();
     const self = arr.find(item => item.key === sk);
-    if (self.children) {
+    if (self?.children) {
       formatCols.push(self.children);
     }
     if (pKey.length > 0) {
@@ -66,7 +78,7 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
 
   const handleExpandSubCol = (e, index, item) => {
     e.stopPropagation();
-    selectRef.current.focus();
+    selectRef.current?.focus();
     const { children = [] } = item;
     setSelectItem(item);
     if (children.length > 0) {
@@ -77,14 +89,14 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
         return final;
       });
     } else {
-      selectRef.current.blur();
+      selectRef.current?.blur();
       onSelect(item.key);
     }
   };
 
   const handleBack = e => {
     e.stopPropagation();
-    selectRef.current.focus();
+    selectRef.current?.focus();
     setSelectColIndex(pre => pre - 1);
     setCols(pre => {
       const final = [...pre];
@@ -111,11 +123,11 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
         onClick={e => {
           e.stopPropagation();
           if (!selectFocusRef.current) {
-            selectRef.current.blur();
+            selectRef.current?.blur();
           }
           selectFocusRef.current = false;
         }}
-        tabIndex="-1"
+        tabIndex={-1}
         onBlur={() => {
           selectFocusRef.current = false;
           setExpand(false);
@@ -180,6 +192,6 @@ function Cascade({ onSelect = () => {}, selectId, cascadeData = [] }) {
       </div>
     </div>
   );
-}
+};
 
 export default Cascade;
