@@ -109,8 +109,35 @@ const Cascade: FC<Props> = ({ onSelect, selectId, cascadeData }) => {
     e.stopPropagation();
     // 若当前选中项没有子项，此时的选中全部应为选中父项
     if (!selectItem?.children) {
-      const allItem = cols[selectColIndex].find(item => item.key === selectItem?.parentKey);
-      setSelectItem(allItem);
+      // 需要递归查找  1-1-1-3连续点击返回回到了1，此时selectItem的parentKey是找不到的
+      const flatColArr: Item[] = [];
+      const flatColArray = (arr: Item[] = []) => {
+        arr.forEach(item => {
+          flatColArr.push(item);
+          if (item.children) {
+            flatColArray(item.children);
+          }
+        });
+        return flatColArr;
+      };
+      flatColArray(cols[selectColIndex]);
+
+      let finalItem: Item | undefined;
+      const findFinalItem = key => {
+        if (finalItem) return;
+        const allItem = cols[selectColIndex].find(item => item.key === key);
+        if (!allItem) {
+          findFinalItem(flatColArr.find(item => item.key === key)?.parentKey);
+        } else {
+          finalItem = allItem;
+        }
+      };
+
+      findFinalItem(selectItem?.parentKey);
+      setSelectItem(finalItem);
+      onSelect(finalItem?.key);
+    } else {
+      onSelect(selectItem?.key);
     }
     setExpand(false);
   };
