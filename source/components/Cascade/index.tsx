@@ -107,8 +107,11 @@ const Cascade: FC<Props> = ({ onSelect, selectId, cascadeData }) => {
 
   const handleSelectAll = e => {
     e.stopPropagation();
-
-    // TODO
+    // 若当前选中项没有子项，此时的选中全部应为选中父项
+    if (!selectItem?.children) {
+      const allItem = cols[selectColIndex].find(item => item.key === selectItem?.parentKey);
+      setSelectItem(allItem);
+    }
     setExpand(false);
   };
 
