@@ -1,48 +1,217 @@
 .u-home {
-  .u-header {
-    padding: 100px 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  position: relative;
+  .center-bg {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 40px;
+    height: 800px;
+    background-image: url('../../assets/img/home/center-bg.png');
+    background-size: cover;
   }
-  .u-title {
-    font-size: 50px;
-    font-weight: bold;
+  .left-bg {
+    position: absolute;
+    top: 219px;
+    left: 0;
+    width: 100px;
+    height: 530px;
+    background-image: url('../../assets/img/home/left-bg.png');
+    background-position: center right;
   }
-  .u-desc {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
+  .right-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 277px;
+    height: 152px;
+    background-image: url('../../assets/img/home/right-bg.png');
+    background-position: center center;
   }
-  .u-action-list {
-    display: flex;
-    align-items: center;
-  }
-  .u-action {
-    margin-right: 10px;
-  }
-  .github {
-    border: 1px solid #dbdbdb;
-    height: 40px;
-    width: 120px;
-    border-radius: 2px;
-    background: url('../../assets/fd-web-2.2-github@2x.svg') center no-repeat;
-    background-size: 88px;
-  }
-  .github:hover {
-    border: 1px solid #337eff;
-    background: url('../../assets/fd-github-active.svg') center no-repeat;
-    background-size: 88px;
-  }
-  .u-logo {
-    width: 400px;
-    height: 400px;
+  .content-wrapper {
+    position: relative;
+    .banner {
+      padding: 82px 0 74px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .logo {
+        width: 440px;
+        height: 440px;
+      }
+      .title {
+        font-size: 36px;
+        color: #2E2E33;
+        margin-bottom: 8px;
+      }
+      .desc {
+        font-family: PingFangSC-Regular;
+        font-size: 20px;
+        color: #848B99;
+        max-width: 468px;
+        margin-bottom: 28px;
+      }
+      .button {
+        width: 167px;
+        height: 40px;
+        background: #337EFF;
+        border-radius: 100px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-family: PingFangSC-Semibold;
+        font-size: 16px;
+        color: #FFF;
+        letter-spacing: 0;
+        text-decoration: none;
+        &:hover {
+          background: #4c8eff;
+        }
+        &.mobile {
+          margin-left: 10px;
+        }
+        img {
+          width: 16px;
+          height: 16px;
+          margin-left: 14px;
+        }
+      }
+    }
+    .design {
+      text-align: center;
+      margin: 0 auto;
+      padding-bottom: 120px;
+      .title {
+        font-size: 28px;
+        color: #27282a;
+        text-align: center;
+        margin-bottom: 36px;
+      }
+      .design-list {
+        display: flex;
+        justify-content: center;
+      }
+      .principle {
+        width: 268px;
+        height: 228px;
+        &:not(:last-child) {
+          margin-right: 36px;
+        }
+        i {
+          display: inline-block;
+          text-align: center;
+          width: 12px;
+          height: 1px;
+          background: #337eff;
+          margin-bottom: 20px;
+        }
+        h3 {
+          font-size: 18px;
+          margin-bottom: 16px;
+          color: #4f5059;
+        }
+        p {
+          font-size: 14px;
+          color: #85888f;
+        }
+        img {
+          width: 120px;
+          -webkit-user-drag: none;
+          user-select: none;
+        }
+      }
+
+      .lottie-item {
+        position: relative;
+        width: 120px;
+        height: 100px;
+        margin: auto;
+      }
+    }
+    .resource {
+      text-align: center;
+      margin: 0 auto;
+      padding-bottom: 120px;
+      .title {
+        font-size: 28px;
+        color: #27282a;
+        text-align: center;
+        margin-bottom: 36px;
+      }
+      .resource-list {
+        display: flex;
+        justify-content: center;
+      }
+      .resource-item {
+        width: 268px;
+        &:not(:last-child) {
+          margin-right: 36px;
+        }
+        img {
+          width: 100%;
+          -webkit-user-drag: none;
+          user-select: none;
+          margin-bottom: 12px;
+        }
+        a {
+          font-size: 18px;
+          color: #4f5059;
+          text-decoration: none;
+          display: inline-block;
+        }
+        a:hover {
+          color: #337eff;
+        }
+      }
+    }
+    .footer {
+      background-color: #292c33;
+      text-align: center;
+      .logo {
+        padding: 55px 0 22px;
+        img {
+          width: 40px;
+        }
+        h3 {
+          font-size: 24px;
+          color: #d2d3d6;
+        }
+        .version {
+          font-size: 13px;
+          color: #65676e;
+        }
+      }
+      .link-item {
+        font-size: 14px;
+        color: #fff;
+        display: inline-block;
+        min-width: 56px;
+        margin-bottom: 50px;
+        text-decoration: none;
+        &:not(:last-child) {
+          margin-right: 50px;
+        }
+      }
+      .github {
+        border-top: 1px solid #404349;
+        padding: 15px 0;
+        img {
+          height: 20px;
+          position: relative;
+          top: -5px;
+        }
+        span {
+          display: inline-block;
+          margin-left: 8px;
+          font-size: 16px;
+          color: #fff;
+        }
+      }
+    }
   }
 }
 
 .u-qrcode {
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
 }
