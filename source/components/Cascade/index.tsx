@@ -62,9 +62,14 @@ const Cascade: FC<Props> = ({ onSelect, selectId, cascadeData }) => {
   useEffect(() => {
     if (selectId) {
       const arr = flatArray(cascadeData);
-      setSelectItem(arr.find(item => item.key === selectId));
+      const sItem = arr.find(item => item.key === selectId);
+      setSelectItem(sItem);
       const keys = findParentKeys(arr, selectId);
-      setSelectColIndex(keys.length - 2);
+      if (sItem?.children) {
+        setSelectColIndex(keys.length - 1);
+      } else {
+        setSelectColIndex(keys.length - 2);
+      }
       const finalCols = formatColsFn(arr, keys);
       setCols(finalCols);
     }
@@ -105,40 +110,11 @@ const Cascade: FC<Props> = ({ onSelect, selectId, cascadeData }) => {
     });
   };
 
-  const handleSelectAll = e => {
+  const handleSelectAll = (e, colIndex, col) => {
     e.stopPropagation();
-    // 若当前选中项没有子项，此时的选中全部应为选中父项
-    if (!selectItem?.children) {
-      // 需要递归查找  1-1-1-3连续点击返回回到了1，此时selectItem的parentKey是找不到的
-      const flatColArr: Item[] = [];
-      const flatColArray = (arr: Item[] = []) => {
-        arr.forEach(item => {
-          flatColArr.push(item);
-          if (item.children) {
-            flatColArray(item.children);
-          }
-        });
-        return flatColArr;
-      };
-      flatColArray(cols[selectColIndex]);
-
-      let finalItem: Item | undefined;
-      const findFinalItem = key => {
-        if (finalItem) return;
-        const allItem = cols[selectColIndex].find(item => item.key === key);
-        if (!allItem) {
-          findFinalItem(flatColArr.find(item => item.key === key)?.parentKey);
-        } else {
-          finalItem = allItem;
-        }
-      };
-
-      findFinalItem(selectItem?.parentKey);
-      setSelectItem(finalItem);
-      onSelect(finalItem?.key);
-    } else {
-      onSelect(selectItem?.key);
-    }
+    const allItem = cols[colIndex - 1].find(item => item.key === col[0].parentKey);
+    setSelectItem(allItem);
+    onSelect(allItem?.key);
     setExpand(false);
   };
 
@@ -200,7 +176,7 @@ const Cascade: FC<Props> = ({ onSelect, selectId, cascadeData }) => {
                 </div>
               )}
               {colIndex !== 0 && !!selectItem && (
-                <div className="item all" onClick={handleSelectAll}>
+                <div className="item all" onClick={e => handleSelectAll(e, colIndex, col)}>
                   全部
                 </div>
               )}
