@@ -1,16 +1,18 @@
 .u-demo {
   box-sizing: border-box;
   min-height: 100vh;
-  background: url(//ysf.nosdn.127.net/zeenqqdsasgclvvedsbvueqvkzpufgoj) top right no-repeat;
   background-color: #f7f8fa;
-  background-position-y: 40px;
-  background-size: 100px 59px;
   overflow-x: hidden;
+  .u-part_1 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55px;
+  }
   &__header {
     position: sticky;
     top: 0;
     height: 50px;
-    margin-bottom: 20px;
     line-height: 50px;
     text-align: center;
     background-color: #fff;
@@ -26,10 +28,9 @@
   }
   &__title {
     position: relative;
-    padding: 0 10px;
+    padding: 20px 10px;
     font-size: 20px;
     color: #222;
-    margin-bottom: 15px;
     &::after {
       content: '';
       position: absolute;

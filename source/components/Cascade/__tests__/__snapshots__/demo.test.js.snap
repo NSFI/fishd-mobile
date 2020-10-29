@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders Cascade demo correctly 1`] = `
+<div>
+  <div>
+    <div
+      class="fm-cascade-wrapper"
+    >
+      <div
+        class="fm-cascade-select"
+        tabindex="-1"
+      >
+        请选择
+      </div>
+      <div
+        style="position:absolute;top:0;left:0;width:100%"
+      >
+        <div
+          class="cascade-column"
+        >
+          <div
+            class="col selectCol fullWidth"
+          >
+            <div
+              class="item"
+            >
+              label-1
+              <i
+                class="icon iconfont fm-icon fm-icon-allow-right"
+                style="font-size:12px"
+              />
+            </div>
+            <div
+              class="item"
+            >
+              label-2
+              <i
+                class="icon iconfont fm-icon fm-icon-allow-right"
+                style="font-size:12px"
+              />
+            </div>
+          </div>
+          <div
+            class="col fullWidth"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="fm-cascade-wrapper"
+    >
+      <div
+        class="fm-cascade-select"
+        tabindex="-1"
+      >
+        请选择
+      </div>
+      <div
+        style="position:absolute;top:0;left:0;width:100%"
+      >
+        <div
+          class="cascade-column"
+        >
+          <div
+            class="col selectCol fullWidth"
+          >
+            <div
+              class="item"
+            >
+              label-1
+              <i
+                class="icon iconfont fm-icon fm-icon-allow-right"
+                style="font-size:12px"
+              />
+            </div>
+            <div
+              class="item"
+            >
+              label-2
+              <i
+                class="icon iconfont fm-icon fm-icon-allow-right"
+                style="font-size:12px"
+              />
+            </div>
+          </div>
+          <div
+            class="col fullWidth"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

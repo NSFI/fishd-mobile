@@ -18,6 +18,8 @@ module.exports = {
   outputPath: './_site/mobile',
   // 同webpack publicPath
   publicPath: './',
+  // 网站图标
+  favicon: './site/mobile/assets/favicon.ico',
   // dll配置
   dll: {
     name: 'mobileDll',

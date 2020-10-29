@@ -104,50 +104,58 @@
   display: flex;
 
   &__doc {
-    width: calc(100% - 360px);
-    max-width: 1200px;
+    width: calc(100% - 494px);
+    // max-width: 1200px;
   }
 
   // 模拟器
   &__simulator {
-    margin-left: 40px;
     flex: 0 0 auto;
     position: sticky;
     top: 100px;
     margin-top: 80px;
-    width: 320px;
-    height: 570px;
-    background: url("../../assets/img/simulator.png") no-repeat;
+    margin-left: 10px;
+    width: 474px;
+    height: 890px;
+    background: url("../../images/phone.png") no-repeat;
     background-size: 100% 100%;
     border-radius: 6px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, .2), 0 1px 4px rgba(0, 0, 0, .2);
 
     .u-address {
       position: absolute;
-      top: 28px;
-      left: 20px;
+      top: 96px;
+      left: 80px;
       font-size: 12px;
-      width: 250px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      width: 340px;
+      height: 30px;
+      cursor: pointer;
     }
 
-    .u-refresh {
+    .u-back {
       position: absolute;
-      top: 26px;
-      right: 12px;
-      width: 20px;
-      height: 20px;
-      background-color: #e5e5e6;
+      position: absolute;
+      bottom: 110px;
+      left: 90px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
     }
+    .u-next {
+      position: absolute;
+      bottom: 110px;
+      left: 160px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+
 
     .u-iframe {
       position: absolute;
-      left: 0;
-      top: 60px;
-      width: 320px;
-      height: 472px;
+      left: 68px;
+      top: 136px;
+      width: 360px;
+      height: 606px;
     }
   }
 }

@@ -3,6 +3,7 @@ import * as React from 'react';
 import Notification from 'rmc-notification';
 import { ToastPropsType } from './PropsType';
 import Icon from '../Icon';
+import LoadMore from '../LoadMore';
 
 const SHORT = 2;
 
@@ -39,7 +40,7 @@ function notice(
 ) {
   const iconTypes: { [key: string]: string } = {
     info: '',
-    success: 'success',
+    success: 'check',
     fail: 'error-o',
     offline: 'sad',
     loading: 'loading',
@@ -69,7 +70,11 @@ function notice(
       style: {},
       content: iconType ? (
         <div className={`${prefixCls}-text ${prefixCls}-text-icon`} role="alert" aria-live="assertive">
-          <Icon type={iconType} fontSize={32} />
+          {iconType === 'loading' ? (
+            <LoadMore type="spinner" color="#FFF"></LoadMore>
+          ) : (
+            <Icon type={iconType} fontSize={32} />
+          )}
           <div className={`${prefixCls}-text-info`}>{content}</div>
         </div>
       ) : (

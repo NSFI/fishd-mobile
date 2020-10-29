@@ -7,6 +7,7 @@ import { transform } from 'babel-standalone'
 import collect from '@/lib/collect'
 import eventbus from '@/lib/eventbus'
 import Home from '@/pages/Home'
+import part_1 from '../images/part_1.png';
 
 import arrayTreeFilter from 'array-tree-filter'
 import * as rcForm from 'rc-form'
@@ -105,11 +106,12 @@ class Demo extends Component {
     const name = this.props.params.demo
     return (
       <div className='u-demo'>
-        <div className='u-demo__header'>
+        {/* <div className='u-demo__header'>
           <div className='u-demo__back iconfont fm-icon-allow-left' onClick={this.goBack}></div>
           <div>{name.charAt(0).toUpperCase() + name.slice(1)}</div>
-        </div>
+        </div> */}
         <h3 className='u-demo__title'>
+        <img className="u-part_1" src={part_1} alt=""/>
           <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
           <div className='u-demo__subTitle'>UI组件</div>
         </h3>

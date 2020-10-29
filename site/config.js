@@ -48,6 +48,13 @@ export default [
         published: true
       },
       {
+        key: 'form',
+        type: 'markdown',
+        name: 'Form 表单',
+        nameEn: 'Form',
+        published: true
+      },
+      {
         key: 'switch',
         type: 'markdown',
         name: 'Switch 滑动开关',
@@ -136,6 +143,13 @@ export default [
         type: 'markdown',
         name: 'Dropdown 下拉框筛选',
         nameEn: 'Dropdown',
+        published: true
+      },
+      {
+        key: 'cascade',
+        type: 'markdown',
+        name: 'Cascade 级联筛选器',
+        nameEn: 'Cascade',
         published: true
       },
       {

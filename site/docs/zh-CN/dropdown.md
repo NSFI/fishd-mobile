@@ -183,7 +183,7 @@ class DropDownDemo extends React.Component {
                 <div className="title">团购</div>
                 <Switch />
               </div>
-              <Button type="primary">确定</Button>
+              <Button type="primary" block>确定</Button>
           </DropdownItem>
         </DropdownMenu>
       </div>

@@ -71,6 +71,14 @@ export default class Components extends React.Component {
     message.success(`${tip}:` + url)
   }
 
+  handleBack = () => {
+    window.history.back()
+  }
+
+  handleNext = () => {
+    window.history.forward()
+  }
+
   render () {
     const lang = window.$lang
     const nameKey = window.$lang === 'zh-CN' ? 'name' : 'nameEn'
@@ -79,7 +87,7 @@ export default class Components extends React.Component {
     const prevLink = this.plainComponentList[componentIndex - 1]
     const nextLink = this.plainComponentList[componentIndex + 1]
     const { isMobile, demoUrl } = this.state
-    // TODO: 如果动态g改变iframe url会导致影响父页面的浏览器历史栈，导致前进后退异常
+    // TODO: 如果动态改变iframe url会导致影响父页面的浏览器历史栈，导致前进后退异常
     const demoName = this.props.params.demo || ''
     const demoLink = config.genDemoUrl(window.$lang, demoName)
     // const demoUrl = config.genDemoUrl(lang, demoName)
@@ -199,8 +207,9 @@ export default class Components extends React.Component {
                     </Row>
                   </div>
                   <div className="u-fished__simulator">
-                    <div className="u-address" onClick={this.handleCopyUrl.bind(this, demoLink)}>{demoLink}</div>
-                    <div className="u-refresh"></div>
+                    <div className="u-address" onClick={this.handleCopyUrl.bind(this, demoLink)}></div>
+                    <div className="u-back" onClick={this.handleBack}></div>
+                    <div className="u-next" onClick={this.handleNext}></div>
                     <iframe
                       className="u-iframe"
                       sandbox="allow-scripts allow-top-navigation allow-same-origin allow-forms"

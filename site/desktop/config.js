@@ -1,7 +1,7 @@
-import componentsConfig from '../config'
-import { getPlainComponentsList } from './utils'
+import componentsConfig from '../config';
+import { getPlainComponentsList } from './utils';
 
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 export const config = {
   /**
@@ -10,8 +10,8 @@ export const config = {
    */
   demoBaseUrl: isProd ? 'https://nsfi.github.io/fishd-mobile-demo/#/' : 'http://localhost:4100/#/',
   // 如果是自己启动的项目，请注意demo路径是否正确
-  genDemoUrl (lang, demoName) {
-    return `${this.demoBaseUrl}${lang}/${demoName}`
+  genDemoUrl(lang, demoName) {
+    return `${this.demoBaseUrl}${lang}/${demoName}`;
   },
   codeEdit: true,
   nav: [
@@ -58,17 +58,18 @@ export const config = {
         },
         {
           key: 'update',
-          type: 'markdown',
+          type: 'react',
           name: '更新日志',
           nameEn: 'Update logs',
+          component: require('../docs/react/changeLog'),
           published: true
         }
       ]
     },
     ...componentsConfig
   ]
-}
+};
 
-export const components = config.nav
+export const components = config.nav;
 
-export const plainComponents = getPlainComponentsList(components)
+export const plainComponents = getPlainComponentsList(components);

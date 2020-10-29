@@ -20,7 +20,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         class="fm-notice-bar-icon"
       >
         <i
-          class="iconfont fm-laba"
+          class="icon iconfont fm-icon fm-icon-audio"
           style="font-size:12px"
         />
       </div>
@@ -81,7 +81,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         class="fm-notice-bar-icon"
       >
         <i
-          class="iconfont fm-laba"
+          class="icon iconfont fm-icon fm-icon-audio"
           style="font-size:12px"
         />
       </div>
@@ -107,7 +107,8 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         role="button"
       >
         <i
-          class="iconfont fm-close"
+          class="icon iconfont fm-icon fm-icon-cross"
+          style="font-size:12px"
         />
       </div>
     </div>
@@ -120,7 +121,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         class="fm-notice-bar-icon"
       >
         <i
-          class="iconfont fm-laba"
+          class="icon iconfont fm-icon fm-icon-audio"
           style="font-size:12px"
         />
       </div>
@@ -172,7 +173,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         class="fm-notice-bar-icon"
       >
         <i
-          class="iconfont fm-laba"
+          class="icon iconfont fm-icon fm-icon-audio"
           style="font-size:12px"
         />
       </div>
@@ -233,7 +234,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         class="fm-notice-bar-icon"
       >
         <i
-          class="iconfont fm-laba"
+          class="icon iconfont fm-icon fm-icon-audio"
           style="font-size:12px"
         />
       </div>
@@ -259,7 +260,8 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         role="button"
       >
         <i
-          class="iconfont fm-moreinfo-copy"
+          class="icon iconfont fm-icon fm-icon-allow-right"
+          style="font-size:12px"
         />
       </div>
     </div>
@@ -272,7 +274,7 @@ exports[`Renders NoticeBar demo correctly 1`] = `
         class="fm-notice-bar-icon"
       >
         <i
-          class="iconfont fm-laba"
+          class="icon iconfont fm-icon fm-icon-audio"
           style="font-size:12px"
         />
       </div>

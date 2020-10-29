@@ -1,15 +1,16 @@
 @import (reference) '../../../assets/css/index';
 
 @navbar-height: 45 * @hd;
-@navbarPrefixCls: am-navbar;
+@navbarPrefixCls: fm-navbar;
 
 .@{navbarPrefixCls} {
   display: flex;
   align-items: center;
   height: @navbar-height;
-  background-color: @brand-primary;
-  color: @fill-base;
-
+  background-color: #FFF;
+  color: #333;
+  font-size: 16 * @hd;
+  
   &-left,
   &-title,
   &-right {
@@ -21,7 +22,7 @@
 
   &-left {
     padding-left: @h-spacing-lg;
-    font-size: @link-button-font-size;
+    color: #333;
 
     &-icon {
       margin-right: @h-spacing-sm;
@@ -31,14 +32,14 @@
 
   &-title {
     justify-content: center;
-    font-size: 18 * @hd;
     white-space: nowrap;
+    font-weight: 500;
   }
 
   &-right {
     justify-content: flex-end;
-    font-size: @link-button-font-size;
     margin-right: @h-spacing-lg;
+    color: #333;
   }
 
   &-light {

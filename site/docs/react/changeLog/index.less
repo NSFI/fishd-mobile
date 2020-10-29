@@ -1,0 +1,51 @@
+.changelog {
+  color: #45454d;
+  &-title {
+    font-size: 32px;
+    color: #18181a;
+  }
+  &-description {
+    margin: 30px 0;
+  }
+  &-timeline {
+    li {
+      list-style-type: initial;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+    ul > li {
+      margin-left: 20px;
+      padding-left: 4px;
+    }
+    ol > li {
+      margin-left: 20px;
+      padding-left: 4px;
+    }
+    ul > li:empty {
+      display: none;
+    }
+    ol > li > p,
+    ul > li > p {
+      margin: 0.2em 0;
+    }
+  }
+
+  .fishd-timeline-item {
+    list-style: none;
+    padding-bottom: 36px;
+  }
+  .fishd-timeline-item-tail {
+    left: 8px;
+  }
+  .fishd-timeline-item-content {
+    p {
+      code {
+        display: inline-block;
+        background: #f2f2f5;
+        padding: 3px 10px;
+        border-radius: 2px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
+import logo from '../images/logo.png';
+import part_1 from '../images/part_1.png';
+import part_2 from '../images/part_2.png';
 import { config } from '../config';
 import './Home.less';
 
@@ -50,8 +53,10 @@ export default class Home extends Component {
     });
     return (
       <div className='u-home'>
+        <img className="u-part_1" src={part_1} alt=""/>
+        <img className="u-part_2" src={part_2} alt=""/>
         <div className='u-logo'>
-          <img src='https://hgkcdn.oss-cn-shanghai.aliyuncs.com/test/unanqvsjrxhnpwqrulcuumqxicpwsojh.png' />
+          <img src={logo} />
         </div>
         <p className='u-desc'>{this.messages.introduce}</p>
         {menuList}

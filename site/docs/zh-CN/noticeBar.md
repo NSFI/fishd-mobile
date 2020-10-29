@@ -42,7 +42,7 @@ render() {
       <NoticeBar
         mode="closable"
         action={<span style={{ color: '#a1a1a1' }}
-        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}>不再提醒</span>}>
+        marqueeprops={{ loop: true, style: {padding: '0 7.5px'}}}>不再提醒</span>}>
         真正的创新是没有原型可以参考的
       </NoticeBar>
     </div>);
@@ -67,13 +67,13 @@ render() {
       <div className='demo-title'>滚动播放</div>
       <NoticeBar
         style={{marginBottom: 10}}
-        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}>
+        marqueeprops={{ loop: true, style: {padding: '0 7.5px'}}}>
         不同盯着空白页太久，勇敢的跨出第一步，其他的自然而然就发生
       </NoticeBar>
 
       <NoticeBar
         icon={null}
-        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}>
+        marqueeprops={{ loop: true, style: {padding: '0 7.5px'}}}>
         不同盯着空白页太久，勇敢的跨出第一步，其他的自然而然就发生
       </NoticeBar>
     </div>);
@@ -105,7 +105,7 @@ render() {
 
       <NoticeBar
         mode="link"
-        marqueeProps={{ loop: true, style: {padding: '0 7.5px'}}}
+        marqueeprops={{ loop: true, style: {padding: '0 7.5px'}}}
         action={<span>查看更多</span>} onClick={() => console.log("查看更多")}>
         真正的创新是没有原型可以参考的
       </NoticeBar>
@@ -125,7 +125,7 @@ render() {
 |属性 | 说明 | 类型 | 默认值|
 |----|-----|------|------|
 | mode    | 提示类型，可选 `closable`,`link`   | String |  ''  |
-| icon    | 在开始位置设置图标  |  ReactNode | `<Icon type={require('./trips.svg')} size="xxs" />`|
-| onClick | 点击关闭或者操作区域的回调函数        | (): void |   |
-| marqueeProps | marquee 参数  | Object | `{loop: false, leading: 500, trailing: 800, fps: 40, style: {}}`  |
-| action | 用于替换操作 icon 的文案 | ReactElement | |
+| icon    | 在开始位置设置图标  |  ReactNode | `<Icon type="audio" fontSize={12} />`|
+| onClick | 点击关闭或者操作区域的回调函数        | (): void | -  |
+| marqueeprops | marquee 参数  | Object | `{loop: false, leading: 500, trailing: 800, fps: 40, style: {}}`  |
+| action | 用于替换操作 icon 的文案 | ReactElement | -  |

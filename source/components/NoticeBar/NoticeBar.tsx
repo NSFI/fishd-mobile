@@ -1,10 +1,11 @@
 import classnames from 'classnames';
 import * as React from 'react';
+import Icon from '../Icon';
 import Marquee, { MarqueeProps } from './Marquee';
 import { NoticeBarPropsType } from './PropsType';
 
 export interface NoticeWebProps extends NoticeBarPropsType {
-  marqueeProps?: MarqueeProps;
+  marqueeprops?: MarqueeProps;
   className?: string;
   prefixCls?: string;
   style?: React.CSSProperties;
@@ -14,7 +15,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
   static defaultProps = {
     prefixCls: 'fm-notice-bar',
     mode: '',
-    icon: <i className="iconfont fm-laba" style={{fontSize: 12}}></i>,
+    icon: <Icon type="audio" fontSize={12} />,
     onClick() {},
   };
 
@@ -46,7 +47,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
       className,
       prefixCls,
       action,
-      marqueeProps,
+      marqueeprops,
       ...restProps
     } = this.props;
 
@@ -60,7 +61,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
           role="button"
           aria-label="close"
         >
-          {action ? action : <i className="iconfont fm-close" ></i>}
+          {action ? action : <Icon type="cross" fontSize={12} />}
         </div>
       );
     } else {
@@ -71,7 +72,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
             role="button"
             aria-label="go to detail"
           >
-            {action ? action :  <i className="iconfont fm-moreinfo-copy" ></i>}
+            {action ? action : <Icon type="allow-right" fontSize={12} />}
           </div>
         );
       }
@@ -92,7 +93,7 @@ export default class NoticeBar extends React.Component<NoticeWebProps, any> {
           <Marquee
             prefixCls={prefixCls}
             text={children as string}
-            {...marqueeProps}
+            {...marqueeprops}
           />
         </div>
         {operationDom}
