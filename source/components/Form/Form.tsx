@@ -69,4 +69,4 @@ const create = options => {
 export default {
   addErrorExplanation,
   create,
-};
+} as any;
