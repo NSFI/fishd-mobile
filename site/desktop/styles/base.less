@@ -1,4 +1,9 @@
 @import './default.less';
+// 全局ppfish覆盖样式
+.fishd-popover-inner {
+  box-shadow: 0 10px 30px 0 rgba(23,23,26,0.15);
+}
+
 .scrollbar() {
   /* 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 */
   &::-webkit-scrollbar {
@@ -145,7 +150,8 @@ body {
     //层级关系需要保留，作样式覆盖
     /* stylelint-disable */
     .nav-item {
-      font-family: PingFangSC-Medium;
+      // font-family: PingFangSC-Medium;
+      font-family: PingFangSC-Regular;
       font-size: 16px;
       margin: 0 0 0 20px;
       float: left;

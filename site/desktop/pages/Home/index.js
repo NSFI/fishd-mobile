@@ -8,6 +8,7 @@ import conciseData from '../../assets/lottie/concise.json';
 import immediateData from '../../assets/lottie/immediate.json';
 import elegentData from '../../assets/lottie/elegent.json';
 import adaptabilityData from '../../assets/lottie/adaptability.json';
+import packageJson from '../../../../package.json';
 
 const locales = {
   misc: {
@@ -22,7 +23,7 @@ const locales = {
     'business': '业务组件',
     'feedback': '反馈建议',
     'demo': '演示环境',
-    'version': 'v0.0.1'
+    'version': packageJson.version
   }
 }
 
@@ -86,7 +87,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="u-home">
-        <div className="center-bg"></div>
+        {/* <div className="center-bg"></div> */}
         <div className="left-bg"></div>
         <div className="right-bg"></div>
         <div className="content-wrapper">
@@ -173,7 +174,7 @@ export default class Home extends Component {
             <div className="logo">
               <img src={'//ysf.nosdn.127.net/cipiqsfpsbyreuwspfkybadithmnnlmc'} alt="logo"/>
               <h3>Fish Design</h3>
-              <p className="version">- {this.getLocale('misc.version')} -</p>
+              <p className="version">- V {this.getLocale('misc.version')} -</p>
             </div>
             <div className="link-list">
               <Link to="/home" className="link-item">首页</Link>
