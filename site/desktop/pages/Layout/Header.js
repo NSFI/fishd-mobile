@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router';
-import { Row, Col, Affix } from 'ppfish';
+import { Row, Col, Affix, Icon } from 'ppfish';
 import gitIcon from '../../assets/img/github.png';
 import packageJson from '../../../../package.json';
 import { algolia } from '../../../config';
@@ -80,7 +80,7 @@ export default class Header extends Component {
           </Col>
           <Col xs={24} sm={24} md={24} lg={18} xl={19} xxl={20} className="header-navbar">
             <div id="search-box" className="search-box">
-              <span className="iconfont icon-search" />
+              <Icon type="search-line" style={{ color: '#337EFF', fontSize: 16, marginRight: 8 }} />
               <input type="text" placeholder={this.i18n.search} className="fishd-input" />
             </div>
             <ul className="nav">
@@ -97,16 +97,6 @@ export default class Header extends Component {
                   {this.i18n.web}
                 </a>
               </li>
-              {/* <div className='nav-item' style={{ color: '#000' }}>
-                <div className='fishd-dropdown-link' onClick={this.switchLang}>
-                  {lang === 'zh-CN' ? 'En' : '中文'}
-                </div>
-              </div> */}
-              {/* <div className="nav-item" style={{ color: '#000' }}>
-                <div className="fishd-dropdown-link" onClick={this.switchLang}>
-                  {lang === 'zh-CN' ? 'En' : '中文'}
-                </div>
-              </div> */}
               <div style={{ display: 'none' }}>
                 {lang === 'zh-CN' ? <a href="#/en-US/"></a> : <a href="#/zh-CN/"></a> }
               </div>

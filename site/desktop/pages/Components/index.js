@@ -147,7 +147,7 @@ export default class Components extends React.Component {
                   }))
                 return (
                   menuList.length &&
-                  <SubMenu key={item.key} title={item[nameKey]}>
+                  <SubMenu key={item.key} title={<span className="misc-type">{item[nameKey]}</span>}>
                     {
                       menuList.map(component => {
                         return (

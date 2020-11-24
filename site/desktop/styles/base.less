@@ -1,10 +1,12 @@
 @import './default.less';
+
 // 全局ppfish覆盖样式
 .fishd-popover-inner {
-  box-shadow: 0 10px 30px 0 rgba(23,23,26,0.15);
+  box-shadow: 0 10px 30px 0 rgba(23, 23, 26, 0.15);
 }
 
 .scrollbar() {
+
   /* 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 */
   &::-webkit-scrollbar {
     width: 4px;
@@ -25,6 +27,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   .scrollbar();
+
   &::-webkit-scrollbar {
     width: 4px;
   }
@@ -32,7 +35,7 @@
 
 html,
 body {
-  font-family: PingFangSC-Medium;
+  font-family: PingFangSC-Regular;
   height: 100%;
 }
 
@@ -43,12 +46,14 @@ body {
 
 //主站样式
 .app {
+
   //顶部fixed
   .fixed-header-layout {
-    > .fishd-affix {
+    >.fishd-affix {
       z-index: 11;
     }
   }
+
   .fish-header {
     z-index: 1;
     height: 64px;
@@ -59,16 +64,20 @@ body {
     left: 0;
     width: 100%;
     position: relative;
+
     @media (max-width: @screen-lg) {
       height: 128px;
     }
+
     .header-title {
       text-align: left;
+
       img {
         height: 36px;
         margin: 13px 0 13px 24px;
       }
     }
+
     h1 {
       position: relative;
       margin: 0;
@@ -79,6 +88,7 @@ body {
       font-size: 16px;
       color: #45474d;
       font-weight: bold;
+
       a {
         text-decoration: none;
         font-size: 16px;
@@ -87,6 +97,7 @@ body {
         text-align: center;
         display: block;
       }
+
       img {
         vertical-align: sub;
         pointer-events: none;
@@ -100,6 +111,7 @@ body {
       line-height: 22px;
       padding-left: 60px;
       margin: 22px auto 0;
+
       .icon-search {
         position: absolute;
         left: 38px;
@@ -108,6 +120,7 @@ body {
         color: #337eff;
         margin-right: 4px;
       }
+
       input {
         font-size: 14px;
         margin-top: -5px;
@@ -125,6 +138,19 @@ body {
         border-radius: 4px;
         transition: all 0.3s;
       }
+
+      input::-webkit-input-placeholder {
+        color: #C4C4CC;
+      }
+
+      input::-moz-input-placeholder {
+        color: #C4C4CC;
+      }
+
+      input::-ms-input-placeholder {
+        color: #C4C4CC;
+      }
+
       input:focus {
         outline: 0;
       }
@@ -158,14 +184,17 @@ body {
       list-style: none;
       position: relative;
       cursor: pointer;
+
       &:last-child {
         cursor: default;
         margin-left: 34px;
       }
+
       .nav-lang {
         cursor: pointer;
         display: inline-block;
         height: 100%;
+
         &.active {
           font-weight: 700;
           opacity: 1;
@@ -173,15 +202,18 @@ body {
           color: @primary-color;
         }
       }
+
       a {
         text-decoration: none;
-        color: #383838;
+        color: #43434D;
         display: block;
         padding: 0 10px;
         transition: all ease 0.3s;
+
         &.active,
         &:hover {
           color: @primary-color;
+
           &:before {
             content: "";
             display: block;
@@ -197,6 +229,7 @@ body {
         }
       }
     }
+
     .nav-version {
       background: @primary-color;
       font-size: 12px;
@@ -208,10 +241,12 @@ body {
       margin-right: 20px;
       padding: 0 20px;
     }
+
     .u-github {
       display: flex;
       align-items: center;
     }
+
     /* stylelint-enable */
   }
 
@@ -226,8 +261,8 @@ body {
   .img-icon-@{size} {
     display: inline-block;
     vertical-align: baseline;
-    width: ~'@{size}px';
-    height: ~'@{size}px';
+    width:~'@{size}px';
+    height:~'@{size}px';
   }
 }
 

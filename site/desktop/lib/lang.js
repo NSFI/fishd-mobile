@@ -20,7 +20,7 @@ const langMap = {
       web: 'Web组件',
       mobile: 'Mobile组件',
       demo: '演示环境',
-      search: '在 Fish Design 中搜索'
+      search: '在 Fish Design 中搜索...'
     }
   }
 };
