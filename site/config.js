@@ -209,6 +209,13 @@ export default [
         published: true
       },
       {
+        key: 'listView',
+        type: 'markdown',
+        name: 'ListView 长列表',
+        nameEn: 'ListView',
+        published: true
+      },
+      {
         key: 'badge',
         type: 'markdown',
         name: 'Badge 徽标数',
@@ -285,6 +292,13 @@ export default [
     nameEn: 'Action Feedback',
     key: 'Action Feedback',
     children: [
+      {
+        key: 'pullRefresh',
+        type: 'markdown',
+        name: 'PullRefresh 下拉刷新',
+        nameEn: 'PullRefresh',
+        published: true
+      },
       {
         key: 'loadMore',
         type: 'markdown',

@@ -6,15 +6,7 @@ import * as ReactDOM from 'react-dom';
 import Dialog from 'rmc-dialog';
 import TouchFeedback from 'rmc-feedback';
 import { ActionSheetWithOptions, ShareActionSheetWithOptions, ShareOption } from './PropsType';
-
-const getDataAttr = (props: { [key: string]: any }) => {
-  return Object.keys(props).reduce<{ [key: string]: string }>((prev, key) => {
-    if (key.substr(0, 5) === 'aria-' || key.substr(0, 5) === 'data-' || key === 'role') {
-      prev[key] = props[key];
-    }
-    return prev;
-  }, {});
-};
+import { getDataAttr } from '../../utils';
 
 const NORMAL = 'NORMAL';
 const SHARE = 'SHARE';
