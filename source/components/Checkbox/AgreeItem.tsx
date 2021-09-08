@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import * as React from 'react';
-import getDataAttr from '../../utils/getDataAttr';
+import { getDataAttr } from '../../utils';
 import Checkbox from './Checkbox';
 import { CheckboxPropsType } from './PropsType';
 

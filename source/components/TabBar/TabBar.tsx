@@ -1,6 +1,8 @@
+/* eslint-disable max-classes-per-file */
 import * as React from 'react';
-import getDataAttr from '../_util/getDataAttr';
+import { getDataAttr } from '../../utils';
 import { TabBarItemProps, TabBarProps } from './PropsType';
+
 import Tab from './Tab';
 import Tabs from './Tabs';
 
@@ -54,37 +56,32 @@ class AntTabBar extends React.Component<AntTabbarProps, any> {
       }
     });
     return tabs;
-  }
+  };
 
   renderTabBar = () => {
-    const {
-      barTintColor,
-      prefixCls,
-      tintColor,
-      unselectedTintColor,
-      hidden,
-      tabBarPosition,
-    } = this.props;
+    const { barTintColor, prefixCls, tintColor, unselectedTintColor, hidden, tabBarPosition } = this.props;
     const tabsData = this.getTabs();
 
-    const content = Array.isArray(tabsData) ? tabsData.map((cProps, index) => {
-      return (
-        <Tab
-          key={index}
-          prefixCls={`${this.props.prefixCls}-tab`}
-          badge={cProps.badge}
-          dot={cProps.dot}
-          selected={cProps.selected}
-          icon={cProps.icon}
-          selectedIcon={cProps.selectedIcon}
-          title={cProps.title}
-          tintColor={tintColor}
-          unselectedTintColor={unselectedTintColor}
-          dataAttrs={getDataAttr(cProps)}
-          onClick={() => cProps.onPress && cProps.onPress()}
-        />
-      );
-    }) : null;
+    const content = Array.isArray(tabsData)
+      ? tabsData.map((cProps, index) => {
+          return (
+            <Tab
+              key={index}
+              prefixCls={`${this.props.prefixCls}-tab`}
+              badge={cProps.badge}
+              dot={cProps.dot}
+              selected={cProps.selected}
+              icon={cProps.icon}
+              selectedIcon={cProps.selectedIcon}
+              title={cProps.title}
+              tintColor={tintColor}
+              unselectedTintColor={unselectedTintColor}
+              dataAttrs={getDataAttr(cProps)}
+              onClick={() => cProps.onPress && cProps.onPress()}
+            />
+          );
+        })
+      : null;
     let cls = `${prefixCls}-bar`;
     if (hidden) {
       cls += ` ${prefixCls}-bar-hidden-${tabBarPosition}`;
@@ -95,7 +92,7 @@ class AntTabBar extends React.Component<AntTabbarProps, any> {
         {content}
       </div>
     );
-  }
+  };
 
   render() {
     const {

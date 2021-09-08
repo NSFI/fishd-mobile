@@ -1,18 +1,9 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "airbnb-typescript/base",
-    "plugin:react/recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
-  ],
+  "plugins": ["@typescript-eslint"],
+  "extends": ["airbnb-typescript/base", "plugin:react/recommended", "plugin:prettier/recommended", "prettier"],
   "parserOptions": {
-    // "project": "./tsconfig.eslint.json"
     "project": "./tsconfig.json"
   },
   "rules": {
@@ -27,7 +18,7 @@
   },
   "settings": {
     "react": {
-        "version": "detect"
+      "version": "detect"
     }
   }
 }

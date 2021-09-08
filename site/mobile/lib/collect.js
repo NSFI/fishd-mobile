@@ -1,55 +1,55 @@
-'use strict'
-import React from 'react'
-import marked from 'marked'
-import less from 'less'
+'use strict';
+import React from 'react';
+import marked from 'marked';
+import less from 'less';
 
 // 依赖收集
-module.exports = function (WrappedComponent, DefaultComponent) {
+module.exports = function(WrappedComponent, DefaultComponent) {
   return class DocComponent extends React.Component {
-    constructor (props) {
-      super(props)
-      this.renderer = new marked.Renderer()
+    constructor(props) {
+      super(props);
+      this.renderer = new marked.Renderer();
       this.renderer.table = (header, body) => {
-        return `<table class="md-table"><thead>${header}</thead><tbody>${body}</tbody></table>`
-      }
-      this.renderer.listitem = function (text) {
-        return `<li class="md-listitem">${text}</li>`
-      }
-      this.renderer.paragraph = function (text) {
-        return `<p class="md-paragraph">${text}</p>`
-      }
-      this.renderer.heading = function (text, level, raw) {
+        return `<table class="md-table"><thead>${header}</thead><tbody>${body}</tbody></table>`;
+      };
+      this.renderer.listitem = function(text) {
+        return `<li class="md-listitem">${text}</li>`;
+      };
+      this.renderer.paragraph = function(text) {
+        return `<p class="md-paragraph">${text}</p>`;
+      };
+      this.renderer.heading = function(text, level, raw) {
         if (this.options.headerIds) {
-          return '<h' + level + ' id="' + text + '" class="md-heading">' + text + '</h' + level + '>\n'
+          return '<h' + level + ' id="' + text + '" class="md-heading">' + text + '</h' + level + '>\n';
         }
-        return '<h' + level + ' class="md-heading" >' + text + '</h' + level + '>\n'
-      }
-      if (this.props.renderer) this.renderer = this.props.renderer
+        return '<h' + level + ' class="md-heading" >' + text + '</h' + level + '>\n';
+      };
+      if (this.props.renderer) this.renderer = this.props.renderer;
     }
 
-    render () {
-      let markdown = ''
-      let demos = []
+    render() {
+      let markdown = '';
+      let demos = [];
       // TODO: 国际化
       try {
-        markdown = require(`@docs/zh-CN/${this.props.params.demo}.md`).default
+        markdown = require(`@docs/zh-CN/${this.props.params.demo}.md`).default;
       } catch (e) {
-        markdown = require(`@docs/zh-CN/quickStart.md`).default
+        markdown = require(`@docs/zh-CN/quickStart.md`).default;
       }
 
       const html = marked(
         markdown.replace(/:::\s?(demo|display)\s?([^]+?):::/g, (match, p1, p2, offset) => {
-          const id = 'fishd_' + offset.toString(36)
+          const id = 'fishd_' + offset.toString(36);
           //分类匹配出less/js/jsx/css
-          const descriptionSource = p2.replace(/(`{3})([^`]|[^`][\s\S]*?[^`])\1(?!`)/gi, (markdown) => {
-            const [ all, type, code ] = markdown.match(/```(.*)\n?([^]+)```/)
+          const descriptionSource = p2.replace(/(`{3})([^`]|[^`][\s\S]*?[^`])\1(?!`)/gi, markdown => {
+            const [all, type, code] = markdown.match(/```(.*)\n?([^]+)```/);
             switch (type.trim()) {
               case 'js':
               case 'jsx':
-                this.jsCode = code
-                break
+                this.jsCode = code;
+                break;
               case 'less':
-                this.lessCodeSource = marked(all)
+                this.lessCodeSource = marked(all);
                 less.render(
                   `
                 #${id} {
@@ -57,12 +57,12 @@ module.exports = function (WrappedComponent, DefaultComponent) {
                 }
               `,
                   (e, compiledCode) => {
-                    this.lessCode = compiledCode.css
-                  }
-                )
-                break
+                    this.lessCode = compiledCode.css;
+                  },
+                );
+                break;
               case 'css':
-                this.cssCodeSource = marked(all)
+                this.cssCodeSource = marked(all);
                 less.render(
                   `
                 #${id} {
@@ -70,17 +70,17 @@ module.exports = function (WrappedComponent, DefaultComponent) {
                 }
               `,
                   (e, compiledCode) => {
-                    this.cssCode = compiledCode.css
-                  }
-                )
-                break
+                    this.cssCode = compiledCode.css;
+                  },
+                );
+                break;
               default:
-                break
+                break;
             }
-            return ''
-          })
+            return '';
+          });
           //replace剩下的是description
-          this.description = marked(descriptionSource)
+          this.description = marked(descriptionSource);
           demos.push({
             id,
             description: this.description,
@@ -88,15 +88,15 @@ module.exports = function (WrappedComponent, DefaultComponent) {
             lessCodeSource: this.lessCodeSource,
             cssCodeSource: this.cssCodeSource,
             lessCode: this.lessCode,
-            cssCode: this.cssCode
-          })
+            cssCode: this.cssCode,
+          });
 
-          return `<div id=${id} class="demo-container"></div>`
+          return `<div id=${id} class="demo-container"></div>`;
         }),
-        { renderer: this.renderer }
-      )
+        { renderer: this.renderer },
+      );
 
-      return demos.length ? <WrappedComponent {...this.props} html={html} demos={demos} /> : <DefaultComponent />
+      return demos.length ? <WrappedComponent {...this.props} html={html} demos={demos} /> : <DefaultComponent />;
     }
-  }
-}
+  };
+};

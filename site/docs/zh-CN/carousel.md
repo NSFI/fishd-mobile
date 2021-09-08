@@ -21,8 +21,8 @@ render(){
     <Carousel
       autoplay={false}
       infinite
-      beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-      afterChange={index => console.log('slide to', index)}
+      beforeChange={(from, to) => {}}
+      afterChange={index => {}}
     >
       {this.state.data.map(val => (
         <div
@@ -127,8 +127,8 @@ render(){
       dotOut={true}
       dotStyle={{background: 'rgba(51, 126, 255, 0.3)'}}
       dotActiveStyle={{background: '#337EFF'}}
-      beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-      afterChange={index => console.log('slide to', index)}
+      beforeChange={(from, to) => {}}
+      afterChange={index => {}}
     >
       {this.state.data.map(val => (
         <div
