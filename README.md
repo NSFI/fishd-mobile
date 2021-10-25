@@ -1,8 +1,20 @@
-# ppfish-design-mobile
+<img src="https://ysf.qiyukf.net/operation/47281777f053234001a98a9445377dbe" alt="logo" width="160" />
+
+# ppfish-mobile
+![tag](https://img.shields.io/bundlephobia/min/ppfish-mobile)
+![tag](https://img.shields.io/github/forks/NSFI/fishd-mobile)
+![tag](https://img.shields.io/github/stars/NSFI/fishd-mobile)
+![tag](https://img.shields.io/github/license/NSFI/fishd-mobile)
+
 [在线文档](https://nsfi.github.io/fishd-mobile-site/index.html#/zh-CN/components/quickStart)
 
 ## 快速开始
+```bash
+npm i ppfish-mobile --save
 ```
+
+## 贡献指南
+```bash
 # 安装依赖
 npm install
 
@@ -47,16 +59,7 @@ fm create 组件名称
 * antd、ppfish
   * 组件UI测试：snapshot，有一个统一的实现方法demoTest.js，去render打快照(demo.test.js)
   * 交互逻辑测试(index.test.js)
-* [vant](https://github.com/youzan/vant)列了一些交互逻辑测试
-
-## git commit
-
-husky lint-staged travis-ci commitizen conventional-changelog
-husky cnpm时会有问题 => https://github.com/typicode/husky/issues/640
-
-## travis
-[travis-ci](https://travis-ci.org/)需要github owner激活下travis
-![Build Status](https://travis-ci.org/zrj1031/fishd-mobile.svg?branch=master)
+* [vant](https://github.com/youzan/vant) 列了一些交互逻辑测试
 
 ## LICENSE
 [MIT](https://en.wikipedia.org/wiki/MIT_License)
