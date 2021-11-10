@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect, createRef } from 'react';
 import classNames from 'classnames';
+import { useClickAway } from 'ahooks';
 import { CSSTransition } from 'react-transition-group';
 import { DropdownMenuPropsType } from './PropsType';
 import DropdownItem from './DropdownItem';
@@ -14,13 +15,9 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
   const renderChildren = Array.isArray(children) ? children : [children];
   const cssTransitionNodeRefs = useRef<any[]>(renderChildren.map(() => createRef()));
 
-  useEffect(() => {
-    const fn = () => setDropDownMenuValue('');
-    window.addEventListener('click', fn, false);
-    return () => {
-      window.removeEventListener('click', fn);
-    };
-  }, []);
+  useClickAway(() => {
+    setDropDownMenuValue('');
+  }, dropDownMenuRef);
 
   useEffect(() => {
     if (dropDownMenuValue) {
@@ -91,7 +88,12 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
                   }
             }
           >
-            <div className="fm-overlay" />
+            <div
+              className="fm-overlay"
+              onClick={() => {
+                setDropDownMenuValue('');
+              }}
+            />
             <div
               className="fm-dropdown-item__content"
               style={direction === 'down' ? { top: 0 } : { bottom: 0 }}
