@@ -1,6 +1,54 @@
 # Dropdown 下拉菜单 【交互：刘莹莹 |视觉：徐剑杰 |开发：赵仁建】
 
 ## 基础用法
+:::demo
+
+```js
+const dropdownOptions1 = [
+  { text: '全部商品', value: 0 },
+  { text: '新款商品', value: 1 },
+  { text: '活动商品', value: 2, disabled: true },
+]
+
+const DropdownItem = Dropdown.DropdownItem
+
+class DropDownDemo extends React.Component {
+  state = {
+    dropDownValue1: 1,
+  }
+  setDropDownValue1 = (value) => {
+    this.setState({
+      dropDownValue1: value
+    })
+  }
+  render () {
+    return (
+      <div className="dropdown-container">
+        <Dropdown>
+          <DropdownItem
+            options={dropdownOptions1}
+            value={this.state.dropDownValue1}
+            onChange={this.setDropDownValue1}
+          />
+        </Dropdown>
+      </div>
+    )
+  }
+}
+ReactDOM.render(<DropDownDemo />, mountNode)
+```
+
+```less
+.dropdown-container {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  background-color: #f7f8fa;
+}
+```
+
+:::
 
 :::demo
 
@@ -15,7 +63,7 @@ const dropdownOptions2 = [
   { text: '好评排序', value: 'b' },
 ]
 
-const DropdownItem = DropdownMenu.DropdownItem
+const DropdownItem = Dropdown.DropdownItem
 
 class DropDownDemo extends React.Component {
   state = {
@@ -35,7 +83,7 @@ class DropDownDemo extends React.Component {
   render () {
     return (
       <div className="dropdown-container">
-        <DropdownMenu>
+        <Dropdown>
           <DropdownItem
             options={dropdownOptions1}
             value={this.state.dropDownValue1}
@@ -46,7 +94,7 @@ class DropDownDemo extends React.Component {
             value={this.state.dropDownValue2}
             onChange={this.setDropDownValue2}
           />
-        </DropdownMenu>
+        </Dropdown>
       </div>
     )
   }
@@ -58,6 +106,7 @@ ReactDOM.render(<DropDownDemo />, mountNode)
 .dropdown-container {
   position: absolute;
   left: 0;
+  top: 200px;
   width: 100%;
   background-color: #f7f8fa;
 }
@@ -80,7 +129,7 @@ const dropdownOptions2 = [
   { text: '好评排序', value: 'b' },
 ]
 
-const DropdownItem = DropdownMenu.DropdownItem
+const DropdownItem = Dropdown.DropdownItem
 
 class DropDownDemo extends React.Component {
   state = {
@@ -100,7 +149,7 @@ class DropDownDemo extends React.Component {
   render () {
     return (
       <div className="dropdown-container">
-        <DropdownMenu activeColor="#ee0a24" direction="up">
+        <Dropdown activeColor="#ee0a24" direction="up">
           <DropdownItem
             options={dropdownOptions1}
             value={this.state.dropDownValue1}
@@ -111,7 +160,7 @@ class DropDownDemo extends React.Component {
             value={this.state.dropDownValue2}
             onChange={this.setDropDownValue2}
           />
-        </DropdownMenu>
+        </Dropdown>
       </div>
     )
   }
@@ -123,7 +172,7 @@ ReactDOM.render(<DropDownDemo />, mountNode)
 .dropdown-container {
   position: absolute;
   left: 0;
-  top: 200px;
+  top: 300px;
   width: 100%;
   background-color: #f7f8fa;
 }
@@ -148,7 +197,7 @@ const dropdownOptions2 = [
   { text: '好评排序', value: 'b' },
 ]
 
-const DropdownItem = DropdownMenu.DropdownItem
+const DropdownItem = Dropdown.DropdownItem
 
 class DropDownDemo extends React.Component {
   state = {
@@ -168,7 +217,7 @@ class DropDownDemo extends React.Component {
   render () {
     return (
       <div className="dropdown-container">
-        <DropdownMenu>
+        <Dropdown>
          <DropdownItem
             options={dropdownOptions1}
             value={this.state.dropDownValue1}
@@ -185,7 +234,7 @@ class DropDownDemo extends React.Component {
               </div>
               <Button type="primary" block>确定</Button>
           </DropdownItem>
-        </DropdownMenu>
+        </Dropdown>
       </div>
     )
   }
@@ -197,7 +246,7 @@ ReactDOM.render(<DropDownDemo />, mountNode)
 .dropdown-container {
   position: absolute;
   left: 0;
-  top: 300px;
+  top: 400px;
   width: 100%;
   background-color: #f7f8fa;
   .fm-switch-cell {
@@ -231,7 +280,7 @@ ReactDOM.render(<DropDownDemo />, mountNode)
 
 ## API
 
-### DropdownMenu Props
+### Dropdown Props
 
 | 参数        | 说明                       | 类型                | 默认值    |
 | ----------- | -------------------------- | ------------------- | --------- |

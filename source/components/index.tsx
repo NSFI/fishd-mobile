@@ -19,7 +19,7 @@ export { default as Badge } from './Badge/index';
 export { default as DatePickerView } from './DatePickerView/index';
 export { default as DatePicker } from './DatePicker/index';
 export { default as TabBar } from './TabBar/index';
-export { default as DropdownMenu } from './Dropdown/index';
+export { default as Dropdown } from './Dropdown/index';
 export { default as Cascade } from './Cascade/index';
 export { default as Overlay } from './Overlay/index';
 export { default as LoadMore } from './LoadMore/index';
