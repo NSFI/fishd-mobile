@@ -7,10 +7,12 @@ import DropdownItem from './DropdownItem';
 
 const DropdownMenu: React.FC<DropdownMenuPropsType> & {
   DropdownItem?: any;
-} = ({ activeColor = '#1989fa', direction = 'down', children }) => {
+} = ({ activeColor = '#1989fa', direction = 'down', children = [] }) => {
   const [dropDownMenuValue, setDropDownMenuValue] = useState('');
   const dropDownMenuRef = useRef<HTMLDivElement>(null);
-  const cssTransitionNodeRefs = useRef<any[]>(children.map(() => createRef()));
+
+  const renderChildren = Array.isArray(children) ? children : [children];
+  const cssTransitionNodeRefs = useRef<any[]>(renderChildren.map(() => createRef()));
 
   useEffect(() => {
     const fn = () => setDropDownMenuValue('');
@@ -55,7 +57,7 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
   return (
     <div className="fm-dropdown-menu" ref={dropDownMenuRef}>
       <div className={classNames('fm-dropdown-menu_bar', { 'fm-dropdown-menu_bar--opened': !!dropDownMenuValue })}>
-        {children.map((Item, index) => (
+        {renderChildren.map((Item, index) => (
           <DropdownItem
             {...Item.props}
             key={index}
@@ -65,7 +67,7 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
           />
         ))}
       </div>
-      {children.map(({ props: { options, value, onChange, children: DropdownItemChildren } }, index) => (
+      {renderChildren.map(({ props: { options, value, onChange, children: DropdownItemChildren } }, index) => (
         <CSSTransition
           in={value === dropDownMenuValue}
           timeout={0}
@@ -85,7 +87,6 @@ const DropdownMenu: React.FC<DropdownMenuPropsType> & {
                   }
                 : {
                     top: 0,
-                    // bottom: `calc(100vh - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
                     bottom: `calc(${window.innerHeight}px - ${dropDownMenuRef.current?.getBoundingClientRect().top}px)`,
                   }
             }
