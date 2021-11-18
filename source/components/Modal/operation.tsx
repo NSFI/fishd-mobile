@@ -1,13 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import closest from '../_util/closest';
+import { closest } from '../../utils/dom';
 import Modal from './Modal';
 import { Action } from './PropsType';
 
-export default function operation(
-  actions = [{ text: '确定' }],
-  platform = 'ios',
-) {
+export default function operation(actions = [{ text: '确定' }], platform = 'ios') {
   let closed = false;
 
   const prefixCls = 'fm-modal';
@@ -23,7 +20,7 @@ export default function operation(
 
   const footer = actions.map((button: Action<React.CSSProperties>) => {
     // tslint:disable-next-line:only-arrow-functions
-    const orginPress = button.onPress || function() {};
+    const orginPress = button.onPress || function noop() {};
     button.onPress = () => {
       if (closed) {
         return;
