@@ -37,3 +37,5 @@ export { default as Rate } from './Rate/index';
 export { default as Avatar } from './Avatar/index';
 export { default as ListView } from './ListView/index';
 export { default as PullRefresh } from './PullRefresh/index';
+export { default as CheckList } from './CheckList/index';
+export { default as Ellipsis } from './Ellipsis/index';

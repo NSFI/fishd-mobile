@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import closest from '../_util/closest';
+import { closest } from '../../utils/dom';
 import Modal from './Modal';
 import { CallbackOrActions } from './PropsType';
 
@@ -15,10 +15,7 @@ export default function prompt(
 ) {
   let closed = false;
 
-  defaultValue =
-    typeof defaultValue === 'string'
-      ? defaultValue
-      : typeof defaultValue === 'number' ? `${defaultValue}` : '';
+  defaultValue = String(defaultValue);
 
   if (!callbackOrActions) {
     // console.log('Must specify callbackOrActions');
@@ -34,7 +31,7 @@ export default function prompt(
   };
 
   function onChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const target = e.target;
+    const { target } = e;
     const inputType = target.getAttribute('type');
     if (inputType !== null) {
       data[inputType] = target.value;
@@ -51,6 +48,7 @@ export default function prompt(
   function onBlurFixWechat() {
     // https://github.com/ant-design/ant-design-mobile/issues/3137
     if (/MicroMessenger/.test(navigator.userAgent)) {
+      // eslint-disable-next-line no-self-assign
       document.body.scrollTop = document.body.scrollTop;
     }
   }
@@ -158,10 +156,8 @@ export default function prompt(
       return;
     }
     const { text = '', password = '' } = data;
-    const callbackArgs =
-      type === 'login-password'
-        ? [text, password]
-        : type === 'secure-text' ? [password] : [text];
+    // eslint-disable-next-line no-nested-ternary
+    const callbackArgs = type === 'login-password' ? [text, password] : type === 'secure-text' ? [password] : [text];
 
     return callback(...callbackArgs);
   }
@@ -181,19 +177,15 @@ export default function prompt(
       },
     ];
   } else {
-    actions = callbackOrActions.map(item => {
-      return {
-        text: item.text,
-        onPress: () => {
-          return handleConfirm(item.onPress);
-        },
-      };
-    });
+    actions = callbackOrActions.map(item => ({
+      text: item.text,
+      onPress: () => handleConfirm(item.onPress),
+    }));
   }
 
   const footer = actions.map(button => {
     // tslint:disable-next-line:only-arrow-functions
-    const orginPress = button.onPress || function() {};
+    const orginPress = button.onPress || function noop() {};
     button.onPress = () => {
       if (closed) {
         return;

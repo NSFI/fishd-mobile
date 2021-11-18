@@ -4,11 +4,11 @@
 
 .@{ActionSheetPrefixCls} {
   position: fixed;
-  left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: env(safe-area-inset-bottom);
+  left: 0;
   overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
 
   &-top {
     border-top-left-radius: @actionsheet-border-radius;
@@ -27,9 +27,9 @@
 
   &-title,
   &-message {
-    background-color: #fff;
     padding: 15px;
     text-align: center;
+    background-color: #fff;
   }
 
   &-title {
@@ -37,8 +37,8 @@
   }
 
   &-message {
-    color: @color-text-caption;
     font-size: @font-size-base;
+    color: @color-text-caption;
   }
 
   &-button-list {
@@ -46,17 +46,17 @@
     color: @color-text-base;
 
     &-item {
-      font-size: @actionsheet-item-font-size;
+      position: relative;
+      overflow: hidden;
+      height: @actionsheet-item-height;
       padding: 0 8 * @hd;
       margin: 0;
-      position: relative;
-      height: @actionsheet-item-height;
+      font-size: @actionsheet-item-font-size;
       line-height: @actionsheet-item-height;
-      box-sizing: border-box;
-      white-space: nowrap;
       text-overflow: ellipsis;
-      overflow: hidden;
+      white-space: nowrap;
       background-color: #fff;
+      box-sizing: border-box;
       .hairline('top');
 
       &&-active {
@@ -66,20 +66,20 @@
 
     &-badge {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
 
       .am-badge {
-        margin-left: 8 * @hd;
         flex-shrink: 0;
+        margin-left: 8 * @hd;
       }
     }
 
     &-item-content {
       display: inline-block;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .@{ActionSheetPrefixCls}-cancel-button {
@@ -110,47 +110,47 @@
     &-list {
       position: relative;
       display: flex;
+      overflow-x: auto;
       padding: 15px 0 15px 10px;
       background-color: @fill-base;
-      overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       &-item {
         flex: none;
         margin: 0 12 * @hd 0 0;
 
         &-icon {
-          margin-bottom: 9px;
-          width: 60 * @hd;
-          height: 60 * @hd;
-          background-color: @fill-base;
-          border-radius: @radius-md;
           display: flex;
           justify-content: center;
           align-items: center;
+          width: 60 * @hd;
+          height: 60 * @hd;
+          margin-bottom: 9px;
+          border-radius: @radius-md;
+          background-color: @fill-base;
         }
 
         &-title {
-          color: @color-text-base;
           font-size: @font-size-icontext;
           text-align: center;
+          color: @color-text-base;
         }
       }
     }
 
     &-cancel-button {
       position: relative;
-      font-size: @actionsheet-item-font-size;
-      text-align: center;
-      color: @color-text-base;
+      overflow: hidden;
+      height: @actionsheet-item-height;
       padding: 0 8 * @hd;
       margin: 0;
-      height: @actionsheet-item-height;
+      font-size: @actionsheet-item-font-size;
       line-height: @actionsheet-item-height;
-      box-sizing: border-box;
-      white-space: nowrap;
+      text-align: center;
       text-overflow: ellipsis;
-      overflow: hidden;
+      white-space: nowrap;
+      color: @color-text-base;
       background-color: @fill-base;
+      box-sizing: border-box;
       .hairline('top');
 
       &&-active {
@@ -161,32 +161,31 @@
 
   &-wrap {
     position: fixed;
-    overflow: auto;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1000;
-    -webkit-overflow-scrolling: touch;
+    overflow: auto;
     outline: 0;
+    -webkit-overflow-scrolling: touch;
   }
 
   &-mask {
     position: fixed;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    height: 100%;
+    left: 0;
     z-index: 1000;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 
     &-hidden {
       display: none;
     }
   }
 
-  // 隐藏掉 dialog 默认的 x 按钮
   &-close {
     display: none;
   }

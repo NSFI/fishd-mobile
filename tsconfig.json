@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "strictNullChecks": true,
+    "typeRoots": ["./source/typings", "./node_modules/@types"],
     "moduleResolution": "node",
     "jsx": "react",
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "allowSyntheticDefaultImports":true,
     "target": "es6",
-    "noImplicitAny": false
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports":true,
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false
   },
   "exclude": [
     "node_modules",
