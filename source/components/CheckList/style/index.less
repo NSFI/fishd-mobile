@@ -1,3 +1,13 @@
 @import (reference) '../../../assets/css/index.less';
 
+@primaryColor: #337EFF;
 @prefix: fm-check-list;
+.@{prefix}-item {
+  &-extra {
+    font-size: 16px;
+    color: @primaryColor;
+  }
+  &-readonly {
+    cursor: unset;
+  }
+}
