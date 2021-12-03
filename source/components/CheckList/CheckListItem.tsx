@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react'
 import { ListItemProps } from '../list'
 import ListItem from '../List/ListItem'
 import { NativeProps, withNativeProps } from '../../utils/native-props'
-import { CheckListContext } from './context'
+import { CheckListContext } from './CheckListContext'
 import classNames from 'classnames'
 
 const classPrefix = `fm-check-list-item`

@@ -2,8 +2,8 @@ import React, { FC, ReactNode } from 'react'
 import { NativeProps, withNativeProps } from '../../utils/native-props'
 import List from '../List/List'
 import { mergeProps } from '../../utils/merge-props'
-import { CheckListContext } from './context'
-import { usePropsValue } from '../../utils/use-props-value'
+import { CheckListContext } from './CheckListContext'
+import { useControllableValue } from 'ahooks';
 import Icon from '../Icon';
 
 export type CheckListProps = {
@@ -25,7 +25,7 @@ const defaultProps = {
 export const CheckList: FC<CheckListProps> = p => {
   const props = mergeProps(defaultProps, p)
 
-  const [value, setValue] = usePropsValue(props)
+  const [value, setValue] = useControllableValue(props)
 
   function check(val: string) {
     if (props.multiple) {

@@ -1,9 +1,9 @@
-import { CheckList } from './check-list'
+import { CheckList } from './CheckListProvider'
 import { attachPropertiesToComponent } from '../../utils/attach-properties-to-component'
-import { CheckListItem } from './check-list-item'
+import { CheckListItem } from './CheckListItem'
 
-export type { CheckListProps } from './check-list'
-export type { CheckListItemProps } from './check-list-item'
+export type { CheckListProps } from './CheckListProvider'
+export type { CheckListItemProps } from './CheckListItem'
 
 export default attachPropertiesToComponent(CheckList, {
   Item: CheckListItem,
