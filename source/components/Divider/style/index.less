@@ -1,26 +1,26 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 @dividerPrefixCls: fm-divider;
 
 .@{dividerPrefixCls} {
   display: flex;
   align-items: center;
   margin: @divider-margin;
-  color: @divider-text-color;
   font-size: @divider-font-size;
   line-height: @divider-line-height;
-  border-color: @divider-border-color;
+  color: @divider-text-color;
   border-style: solid;
   border-width: 0;
+  border-color: @divider-border-color;
 
   &::before,
   &::after {
-    display: block;
     flex: 1;
-    box-sizing: border-box;
+    display: block;
     height: 1px;
-    border-color: inherit;
     border-style: inherit;
     border-width: @border-width-sm 0 0;
+    border-color: inherit;
+    box-sizing: border-box;
   }
 
   &::before {

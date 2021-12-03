@@ -1,6 +1,13 @@
 import Radio from './Radio';
-import RadioItem from './RadioItem';
+import RadioGroup from './RadioGroup';
+export type { RadioProps } from './Radio';
+export type { RadioGroupProps } from './RadioGroup'
 
-Radio.RadioItem = RadioItem;
+type CompoundedType = typeof Radio & {
+  Group: typeof RadioGroup;
+};
 
-export default Radio;
+const Compounded = Radio as CompoundedType;
+Compounded.Group = RadioGroup;
+
+export default Compounded;

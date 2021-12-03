@@ -9,10 +9,10 @@
     position: fixed;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
-    height: 100%;
+    left: 0;
     z-index: @modal-zindex;
+    height: 100%;
     background-color: @fill-mask;
 
     &-hidden {
@@ -22,20 +22,21 @@
 
   &-wrap {
     position: fixed;
-    overflow: auto;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    height: 100%;
     z-index: @modal-zindex;
-    -webkit-overflow-scrolling: touch;
-    outline: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    overflow: auto;
+    height: 100%;
+    outline: 0;
+    -webkit-overflow-scrolling: touch;
     // fixed a layer issue with animated Tabs in the x5 kernel browser
     transform: translateZ(1px);
+
     &-popup {
       display: block;
     }
@@ -44,8 +45,8 @@
   &-transparent {
     width: 270 * @hd;
     .@{modalPrefixClass}-content {
-      border-radius: @radius-lg;
       padding-top: @v-spacing-lg;
+      border-radius: @radius-lg;
 
       .@{modalPrefixClass}-body {
         padding: 0 @h-spacing-lg @v-spacing-lg;
@@ -75,8 +76,8 @@
     margin: 0;
     font-size: @modal-font-size-heading;
     line-height: @line-height-base;
-    color: @color-text-base;
     text-align: center;
+    color: @color-text-base;
   }
 
   &-header {
@@ -85,24 +86,24 @@
 
   &-content {
     position: relative;
-    background-color: @fill-base;
-    border: 0;
-    background-clip: padding-box;
-    text-align: center;
-    height: 100%;
     overflow: hidden;
+    height: 100%;
+    text-align: center;
+    border: 0;
+    background-color: @fill-base;
+    background-clip: padding-box;
   }
 
   &-close {
-    border: 0;
-    padding: 0;
-    background-color: transparent;
-    outline: none;
     position: absolute;
     right: @h-spacing-lg;
     z-index: 999;
-    height: @icon-size-sm;
     width: @icon-size-sm;
+    height: @icon-size-sm;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    outline: none;
 
     &-x {
       display: inline-block;
@@ -110,15 +111,14 @@
       height: 15 * @hd;
       background-repeat: no-repeat;
       background-size: cover;
-      // .encoded-svg-background('modal_delete');
     }
   }
 
   &-body {
-    font-size: @font-size-subhead;
-    color: @color-text-caption;
-    height: 100%;
-    line-height: @line-height-paragraph;
     overflow: auto;
+    height: 100%;
+    font-size: @font-size-subhead;
+    line-height: @line-height-paragraph;
+    color: @color-text-caption;
   }
 }

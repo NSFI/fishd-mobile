@@ -1,4 +1,4 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @ActionSheetPrefixCls: fm-action-sheet;
 
@@ -107,6 +107,7 @@
       position: relative;
       .hairline('top');
     }
+
     &-list {
       position: relative;
       display: flex;
@@ -114,6 +115,7 @@
       padding: 15px 0 15px 10px;
       background-color: @fill-base;
       -webkit-overflow-scrolling: touch;
+
       &-item {
         flex: none;
         margin: 0 12 * @hd 0 0;

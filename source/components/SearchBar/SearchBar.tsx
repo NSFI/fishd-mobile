@@ -1,35 +1,108 @@
-import * as React from 'react';
+import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
 import classnames from 'classnames';
+import { useControllableValue } from 'ahooks';
+
+import Input, { InputProps, InputRef } from '../Input';
 import Icon from '../Icon';
 
-export interface SearchBarProps {
-  prefixCls?: string;
+export type SearchBarProps = Pick<InputProps, 'onFocus' | 'onBlur'> & {
   className?: string;
-}
+  style?: React.CSSProperties;
+  /** 输入值 */
+  value?: string;
+  /** 提示文本 */
+  placeholder?: string;
+  /** 是否允许清除内容 */
+  clearable?: boolean;
+  /** 是否展示取消按钮 */
+  showCancelButton?: boolean;
+  /** 取消按钮文案 */
+  cancelText?: string;
+  /** 点击取消按钮后是否清空输入框 */
+  clearOnCancel?: boolean;
+  /** 输入框回车时触发 */
+  onSearch?: (val: string) => void;
+  /** 输入框内容变化时触发 */
+  onChange?: (val: string) => void;
+  /** 点击清除按钮后触发 */
+  onClear?: () => void;
+  /** 点击取消按钮时触发 */
+  onCancel?: () => void;
+};
 
-class SearchBar extends React.Component<SearchBarProps, any> {
-  static defaultProps = {
-    prefixCls: 'fm-searchbar',
-  };
+export type SearchRef = InputRef;
 
-  render() {
-    const { className, prefixCls } = this.props;
+const classPrefix = `fm-searchbar`;
 
-    const wrapCls = classnames(prefixCls, className, {});
+const SearchBar = (props, ref) => {
+  const {
+    className,
+    style,
+    placeholder = '请输入搜索关键词',
+    showCancelButton,
+    cancelText = '取消',
+    clearOnCancel = true,
+    clearable,
+  } = props;
+  const [focus, setFocus] = useState(false);
+  const [value, setValue] = useControllableValue<string>(props);
+  const inputRef = useRef<InputRef>(null);
+  const SearchBarClassName = classnames(classPrefix, {}, className);
 
-    return (
-      <div className={wrapCls}>
-        <div className={`${prefixCls}__content`}>
-          <div className={`${prefixCls}__icon`}>
-            <Icon type="search" fontSize={14} color="#333" />
-          </div>
-          <div className={`${prefixCls}__body`}>
-            <input className={`${prefixCls}__input`} type="search" placeholder="请输入搜索关键词" />
-          </div>
+  useImperativeHandle(ref, () => ({
+    clear: () => inputRef.current?.clear(),
+    focus: () => inputRef.current?.focus(),
+    blur: () => inputRef.current?.blur(),
+  }));
+
+  return (
+    <div className={SearchBarClassName} style={style}>
+      <div className={`${classPrefix}__content`}>
+        <div className={`${classPrefix}__icon`}>
+          <Icon type="search" fontSize={14} color="#333" />
+        </div>
+        <div className={`${classPrefix}__body`}>
+          <Input
+            ref={inputRef as any}
+            placeholder={placeholder}
+            value={value}
+            clearable={clearable}
+            onFocus={e => {
+              setFocus(true);
+              props.onFocus?.(e);
+            }}
+            onBlur={e => {
+              setFocus(false);
+              props.onBlur?.(e);
+            }}
+            onClear={() => {
+              props.onClear?.();
+            }}
+            onChange={text => {
+              setValue(text);
+            }}
+          />
         </div>
       </div>
-    );
-  }
-}
+      {focus && showCancelButton && (
+        <a
+          className={`${classPrefix}__cancel`}
+          onMouseDown={e => {
+            e.preventDefault();
+          }}
+          onClick={() => {
+            if (clearOnCancel) {
+              inputRef.current?.clear();
+              props.onClear?.();
+            }
+            inputRef.current?.blur();
+          }}
+        >
+          {cancelText}
+        </a>
+      )}
+    </div>
+  );
+};
 
-export default SearchBar;
+export default forwardRef<SearchRef, SearchBarProps>(SearchBar);

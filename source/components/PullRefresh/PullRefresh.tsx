@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, ReactElement, ReactNode, useMemo } from 'react';
+import React, { useEffect, useRef, ReactNode, useMemo } from 'react';
 import { useReactive } from 'ahooks';
 import useTouch from '../../hooks/useTouch/index';
 import { getScrollTop, preventDefault } from '../../utils';
 import useScrollParent from '../../hooks/useScrollParent';
 
-export type PullRefreshPropsType = {
+export type PullRefreshProps = {
   /** 是否加载中 */
   loading: boolean;
   /** 下拉文案 */
@@ -39,7 +39,7 @@ export type PullRefreshPropsType = {
 
 type PullRefreshStatus = 'normal' | 'loading' | 'loosing' | 'pulling' | 'success';
 
-export default function PullRefresh({
+const PullRefresh: React.FC<PullRefreshProps> = ({
   loading = false,
   headHeight = 50,
   customPulling,
@@ -55,7 +55,7 @@ export default function PullRefresh({
   disabled = false,
   children,
   onRefresh,
-}: PullRefreshPropsType): ReactElement {
+}) => {
   const prefixCls = 'fm-pull-refresh';
   const rootRef = useRef<HTMLDivElement>(null);
   const reachTopRef = useRef<boolean>(false);
@@ -236,4 +236,6 @@ export default function PullRefresh({
       </div>
     </div>
   );
-}
+};
+
+export default PullRefresh;

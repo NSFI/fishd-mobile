@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
-import classnames from 'classnames';
 import * as React from 'react';
+import classnames from 'classnames';
 import Dialog from 'rmc-dialog';
 import TouchFeedback from 'rmc-feedback';
 import { Action, ModalPropsType, CallbackOrActions } from './PropsType';
@@ -23,10 +23,7 @@ export abstract class ModalComponent<P, S> extends React.Component<P, S> {
     platform?: string,
   ) => { close: () => void };
 
-  static operation: (
-    actions?: Action<React.CSSProperties>[],
-    platform?: string,
-  ) => { close: () => void };
+  static operation: (actions?: Action<React.CSSProperties>[], platform?: string) => { close: () => void };
 }
 
 export interface ModalProps extends ModalPropsType<React.CSSProperties> {
@@ -81,12 +78,7 @@ export default class Modal extends ModalComponent<ModalProps, any> {
 
     return (
       <TouchFeedback activeClassName={`${prefixCls}-button-active`} key={i}>
-        <a
-          className={`${prefixCls}-button`}
-          role="button"
-          style={buttonStyle}
-          onClick={onClickFn}
-        >
+        <a className={`${prefixCls}-button`} role="button" style={buttonStyle} onClick={onClickFn}>
           {button.text || `Button`}
         </a>
       </TouchFeedback>
@@ -112,15 +104,13 @@ export default class Modal extends ModalComponent<ModalProps, any> {
     } = this.props;
 
     const btnGroupClass = classnames(
-      `${prefixCls}-button-group-${
-        footer.length === 2 && !operation ? 'h' : 'v'
-      }`,
+      `${prefixCls}-button-group-${footer.length === 2 && !operation ? 'h' : 'v'}`,
       `${prefixCls}-button-group-${operation ? 'operation' : 'normal'}`,
     );
     const footerDom = footer.length ? (
       <div className={btnGroupClass} role="group">
         {footer.map((button, i) =>
-        // tslint:disable-next-line:jsx-no-multiline-js
+          // tslint:disable-next-line:jsx-no-multiline-js
           this.renderFooterButton(button, prefixCls, i),
         )}
       </div>
@@ -136,8 +126,7 @@ export default class Modal extends ModalComponent<ModalProps, any> {
         transName = maskTransName = 'fm-slide-up';
       }
       if (popup) {
-        transName =
-          animationType === 'slide-up' ? 'fm-slide-up' : 'fm-slide-down';
+        transName = animationType === 'slide-up' ? 'fm-slide-up' : 'fm-slide-down';
         maskTransName = 'fm-fade';
       }
     }

@@ -1,53 +1,42 @@
+import React from 'react';
 import classnames from 'classnames';
-import * as React from 'react';
 import Notification from 'rmc-notification';
-import { ToastPropsType } from './PropsType';
+
 import Icon from '../Icon';
 import LoadMore from '../LoadMore';
 
-const SHORT = 2;
-
-const config: ToastPropsType = {
-  duration: SHORT,
-  mask: true,
+export type ToastProps = {
+  icon?: 'success' | 'error' | 'loading' | React.ReactNode;
+  duration?: number;
+  mask?: boolean;
+  content?: React.ReactNode;
+  onClose?: () => void;
 };
 
 let messageInstance: any;
 let messageNeedHide: boolean;
 const prefixCls = 'fm-toast';
 
-function getMessageInstance(mask: boolean, callback: (notification: any) => void) {
-  (Notification as any).newInstance(
-    {
-      prefixCls,
-      style: {}, // clear rmc-notification default style
-      transitionName: 'fm-fade',
-      className: classnames({
-        [`${prefixCls}-mask`]: mask,
-        [`${prefixCls}-nomask`]: !mask,
-      }),
-    },
-    (notification: any) => callback && callback(notification),
-  );
-}
+const getMessageInstance: (config: ToastProps) => Promise<any> = ({ mask }) =>
+  new Promise(resolve => {
+    (Notification as any).newInstance(
+      {
+        prefixCls,
+        style: {}, // clear rmc-notification default style
+        transitionName: 'fm-fade',
+        className: classnames({
+          [`${prefixCls}-mask`]: mask,
+          [`${prefixCls}-nomask`]: !mask,
+        }),
+      },
+      (notification: any) => resolve(notification),
+    );
+  });
 
-function notice(
-  content: React.ReactNode,
-  type: string,
-  duration = config.duration,
-  onClose: (() => void) | undefined | null,
-  mask = config.mask,
-) {
-  const iconTypes: { [key: string]: string } = {
-    info: '',
-    success: 'check',
-    fail: 'error-o',
-    offline: 'sad',
-    loading: 'loading',
-  };
-  const iconType = iconTypes[type];
+function Toast(props: ToastProps = {}) {
+  const { icon, duration = 3, mask = false, content, onClose } = props;
   messageNeedHide = false;
-  getMessageInstance(mask, notification => {
+  getMessageInstance({ mask }).then(notification => {
     if (!notification) {
       return;
     }
@@ -65,20 +54,23 @@ function notice(
 
     messageInstance = notification;
 
+    let iconNode: React.ReactNode = null;
+    if (icon === 'loading') {
+      iconNode = <LoadMore className="fm-toast-loading" type="spinner" color="#fff"></LoadMore>;
+    } else if (icon === 'error') {
+      iconNode = <Icon type="error-o" fontSize={32} />;
+    } else if (icon === 'success') {
+      iconNode = <Icon type="check" fontSize={32} />;
+    } else {
+      iconNode = icon;
+    }
+
     notification.notice({
       duration,
       style: {},
-      content: iconType ? (
-        <div className={`${prefixCls}-text ${prefixCls}-text-icon`} role="alert" aria-live="assertive">
-          {iconType === 'loading' ? (
-            <LoadMore type="spinner" color="#FFF"></LoadMore>
-          ) : (
-            <Icon type={iconType} fontSize={32} />
-          )}
-          <div className={`${prefixCls}-text-info`}>{content}</div>
-        </div>
-      ) : (
+      content: (
         <div className={`${prefixCls}-text`} role="alert" aria-live="assertive">
+          {iconNode}
           <div>{content}</div>
         </div>
       ),
@@ -96,39 +88,30 @@ function notice(
 }
 
 export default {
-  SHORT,
-  LONG: 8,
-  show(content: React.ReactNode, duration?: number, mask: boolean = false) {
-    return notice(content, 'info', duration, () => {}, mask);
+  show(config: ToastProps | React.ReactNode) {
+    if (typeof config === 'string' || React.isValidElement(config)) {
+      return Toast({ content: config });
+    }
+    return Toast(config || {});
   },
-  info(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
-    return notice(content, 'info', duration, onClose, mask);
+  info(content: React.ReactNode) {
+    return Toast({ content });
   },
-  success(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
-    return notice(content, 'success', duration, onClose, mask);
+  success(content: React.ReactNode) {
+    return Toast({ icon: 'success', content });
   },
-  fail(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
-    return notice(content, 'fail', duration, onClose, mask);
+  error(content: React.ReactNode) {
+    return Toast({ icon: 'error', content });
   },
-  offline(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = false) {
-    return notice(content, 'offline', duration, onClose, mask);
+  loading(content: React.ReactNode) {
+    return Toast({ icon: 'loading', content, duration: 0, mask: true });
   },
-  loading(content: React.ReactNode, duration?: number, onClose?: () => void, mask: boolean = true) {
-    return notice(content, 'loading', duration, onClose, mask);
-  },
-  hide() {
+  clear() {
     if (messageInstance) {
       messageInstance.destroy();
       messageInstance = null;
     } else {
       messageNeedHide = true;
-    }
-  },
-  config(conf: Partial<ToastPropsType> = {}) {
-    const { duration = SHORT, mask } = conf;
-    config.duration = duration;
-    if (mask === false) {
-      config.mask = false;
     }
   },
 };

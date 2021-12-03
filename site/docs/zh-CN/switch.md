@@ -1,139 +1,98 @@
-# Switch 动作面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：唐志华】
+# Switch 动作面板 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
 
 在两个互斥对象进行选择，eg：选择开或关。
 
-## 规则
-- 只在 List 中使用。
-- 避免增加额外的文案来描述当前 Switch 的值。
-
 :::demo
 
-```js
+```jsx
+const Demo = () => {
+  const [checked, setChecked] = React.useState(false);
+  const [customChecked, setCustomChecked] = React.useState('on');
 
-class SwitchExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      checked: false,
-      checked1: true,
-      checked2: false,
-      checked3: true,
-      checked4: true,
-      checked5: true,
-      checked6: true,
-      checked7: true
-    };
-  }
-
-  render() {
-    return (
-      <div className="components-switch-demo-basic">
-            <div className="demo-title">基本用法</div>
-            <div className="switch-content demo-card">
-                <Switch
-                    checked={this.state.checked}
-                    onClick={() => {
-                        this.setState({
-                            checked: !this.state.checked,
-                        });
-                    }}
-                />
-                <Switch
-                    style={{marginLeft: '20px'}}
-                    checked={this.state.checked1}
-                    onChange={() => {
-                        this.setState({
-                            checked1: !this.state.checked1,
-                        });
-                    }}
-                />
-            </div>
-            <div className="demo-title">禁用状态</div>
-            <div className="switch-content demo-card">
-                <Switch
-                    disabled
-                    checked={this.state.checked2}
-                />
-                <Switch
-                    style={{marginLeft: '20px'}}
-                    disabled
-                    checked={this.state.checked3}
-                />
-            </div>
-            <div className="demo-title">加载状态</div>
-            <div className="switch-content demo-card">
-                <Switch
-                    platform="ios"
-                    loading
-                    disabled
-                />
-                <span style={{marginLeft: '20px'}}>
-                    <Switch
-                        platform="android"
-                        loading
-                        disabled
-                    />
-                </span>
-                
-            </div>
-            <div className="demo-title">自定义颜色</div>
-            <div className="switch-content demo-card">
-                <Switch
-                    checked={this.state.checked7}
-                    onChange={() => {
-                        this.setState({
-                            checked7: !this.state.checked7,
-                        });
-                    }}
-                    platform="ios"
-                    color="#4dd865"
-                />
-                <Switch
-                    style={{marginLeft: '20px'}}
-                    checked={this.state.checked4}
-                    onChange={() => {
-                        this.setState({
-                            checked4: !this.state.checked4,
-                        });
-                    }}
-                    platform="android"
-                    color="#4dd865"
-                />
-            </div>
-            
-            
-       </div>
-    );
-  }
-}
-
-ReactDOM.render(<SwitchExample />, mountNode);
-
-
+  const beforeChange = () => {
+    return new Promise(resolve => {
+      setTimeout(resolve, 1000);
+    });
+  };
+  return (
+    <div className="components-tpl-demo-basic">
+      <div className="demo-title">基础用法</div>
+      <div className="demo-card">
+        <Switch></Switch>
+      </div>
+      <div className="demo-title">受控组件</div>
+      <div className="demo-card">
+        <Switch checked={checked} onChange={setChecked}></Switch>
+        <span style={{ marginLeft: 8 }}>{String(checked)}</span>
+      </div>
+      <div className="demo-title">禁用</div>
+      <div className="demo-card">
+        <Switch disabled></Switch>
+      </div>
+      <div className="demo-title">加载中</div>
+      <div className="demo-card">
+        <Switch loading></Switch>
+        <Switch loading defaultChecked style={{ marginLeft: 8 }}></Switch>
+      </div>
+      <div className="demo-title">默认值</div>
+      <div className="demo-card">
+        <Switch defaultChecked={true}></Switch>
+      </div>
+      <div className="demo-title">自定义显示值</div>
+      <div className="demo-card">
+        <Switch checkedText="开" uncheckedText="关"></Switch>
+        <Switch checkedText="0" uncheckedText="1" style={{ marginLeft: 8 }}></Switch>
+      </div>
+      <div className="demo-title">自定义激活值</div>
+      <div className="demo-card">
+        <Switch checked={customChecked} onChange={setCustomChecked} checkedValue="on" uncheckedValue="off"></Switch>
+        <span style={{ marginLeft: 8 }}>{String(customChecked)}</span>
+      </div>
+      <div className="demo-title">自定义颜色</div>
+      <div className="demo-card">
+        <Switch color="pink"></Switch>
+        <Switch
+          color="pink"
+          checkedText="开"
+          checkedTextColor="#fff"
+          uncheckedText="关"
+          uncheckedTextColor="pink"
+          style={{ marginLeft: 8 }}
+        ></Switch>
+      </div>
+      <div className="demo-title">异步</div>
+      <div className="demo-card">
+        <Switch beforeChange={beforeChange}></Switch>
+      </div>
+    </div>
+  );
+};
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^="components-switch-demo-"] .switch-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    align-items: center;
+[class^='components-tpl-demo-'] .demo-card {
+  padding: 12px;
+  background: #fff;
 }
 ```
 
 :::
 
-
-
 ## API
 
-|属性 | 说明 | 类型 | 默认值
-|----|-----|------|------
-| checked    | 是否默认选中    | Boolean       |   false  |
-| disabled   | 是否不可修改    | Boolean       |   false  |
-| onChange   | change 事件触发的回调函数 | (checked: bool): void |  无  |
-| color | 开关打开后的颜色 | String | #337EFF  |
-| name | switch 的 name    | String   |      |
-| platform |  设定组件的平台特有样式, 可选值为 `android`, `ios`， 默认为 `ios`  | String | `'ios'`|
-| onClick   | click事件触发的回调函数，当switch为disabled时，入参的值始终是默认传入的checked值。 | (checked: bool): void |  无  |
+| 属性               | 说明                      | 类型                                                   | 默认值  |
+| ------------------ | ------------------------- | ------------------------------------------------------ | ------- |
+| checked            | 激活值                    | boolean \| number \| string                            | `false` |
+| defaultChecked     | 默认激活值                | boolean \| number \| string                            | `false` |
+| loading            | 是否加载中                | boolean                                                | `false` |
+| disabled           | 是否禁用                  | boolean                                                | `false` |
+| color              | 开关打开后的颜色          | string                                                 | `#337EFF` |
+| checkedValue       | 自定义激活值              | boolean \| number \| string                            | `true`  |
+| uncheckedValue     | 自定义未激活值            | boolean \| number \| string                            | `false` |
+| checkedText        | 激活展示文本              | React.ReactNode                                        | `true`  |
+| uncheckedText      | 未激活展示文本            | React.ReactNode                                        | `true`  |
+| checkedTextColor   | 激活展示文本颜色          | string                                                 | `#fff`  |
+| uncheckedTextColor | 未激活展示颜色            | string                                                 | `#333`  |
+| onChange           | change 事件触发的回调函数 | (checked: boolean \| number \| string ): void          | -       |
+| beforeChange       | 变化前执行                | (checked: boolean \| number \| string ): Promise\<void\> | -       |

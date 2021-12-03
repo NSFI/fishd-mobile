@@ -10,7 +10,7 @@
 
 :::demo
 
-```js
+```jsx
 state = {
   value: null,
   sValue: null,
@@ -169,14 +169,14 @@ render() {
             extra="请选择(可选)"
             value={this.state.value}
             onChange={v => {
-              this.setState({ value: v }) 
+              this.setState({ value: v })
             }}
             onDismiss={ () => {
               Toast.info('取消选择');
             }}
             onPickerChange={(v) => {}}
           >
-            <List.Item extra={this.state.value ? this.state.value : '水果' }>单列</List.Item>
+            <List.Item extra={this.state.value ? this.state.value : '水果' } arrow clickable>单列</List.Item>
           </Picker>
           <Picker
             data={seasons}
@@ -191,7 +191,7 @@ render() {
               Toast.info('取消选择');
             }}
           >
-            <List.Item extra={this.state.sValue ? this.state.sValue.join(',') : '年份/季节' }>多列</List.Item>
+            <List.Item extra={this.state.sValue ? this.state.sValue.join(',') : '年份/季节' } arrow clickable>多列</List.Item>
           </Picker>
           <Picker
             data={province}
@@ -206,7 +206,7 @@ render() {
               Toast.info('取消选择');
             }}
           >
-            <List.Item extra={this.fmtValue(province) || '地区选择'}>级联</List.Item>
+            <List.Item extra={this.fmtValue(province) || '地区选择'} arrow clickable>级联</List.Item>
           </Picker>
         </List>
       </div>
@@ -219,16 +219,16 @@ render() {
 
 ## API
 
-| 属性 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| data | 数据源 | `Array<{value, label}>` / `Array<Array<{value, label}>>` | - |
-| value | 值, 格式是`[value1, value2, value3]`, 对应数据源的相应级层 value | Array<any> | - |
-| cascade | 是否级联 | boolean | `false` |
-| cols | 列数 | number | `3` |
-| itemStyle | 每列样式 | object | - |
-| indicatorStyle | indicator 样式 | object | - |
-| disabled | 是否不可用 | boolean | `false` |
-| onChange | 选中后的回调 | `(val): void` | - |
-| onOk | 点击选中时执行的回调 | `(val): void` | - |
-| onDismiss | 点击取消时执行的回调 | `(): void` | - |
-| onVisibleChange | 当显隐状态变化时回调函数 | `(visible: bool): void` | - |
+| 属性            | 说明                                                             | 类型                                                     | 默认值  |
+| --------------- | ---------------------------------------------------------------- | -------------------------------------------------------- | ------- |
+| data            | 数据源                                                           | `Array<{value, label}>` / `Array<Array<{value, label}>>` | -       |
+| value           | 值, 格式是`[value1, value2, value3]`, 对应数据源的相应级层 value | Array<any>                                               | -       |
+| cascade         | 是否级联                                                         | boolean                                                  | `false` |
+| cols            | 列数                                                             | number                                                   | `3`     |
+| itemStyle       | 每列样式                                                         | object                                                   | -       |
+| indicatorStyle  | indicator 样式                                                   | object                                                   | -       |
+| disabled        | 是否不可用                                                       | boolean                                                  | `false` |
+| onChange        | 选中后的回调                                                     | `(val): void`                                            | -       |
+| onOk            | 点击选中时执行的回调                                             | `(val): void`                                            | -       |
+| onDismiss       | 点击取消时执行的回调                                             | `(): void`                                               | -       |
+| onVisibleChange | 当显隐状态变化时回调函数                                         | `(visible: bool): void`                                  | -       |

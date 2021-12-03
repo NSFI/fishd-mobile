@@ -30,7 +30,7 @@ export interface UploadProps {
   previewFullImage?: boolean; // 是否支持图片预览
   previewOptions?: any; // 图片预览额外参数
   showUpload?: boolean; // 是否显示上传按钮
-  capture?: string; // 图片选取模式 可选capture
+  capture?: any; // 图片选取模式 可选capture
   accept?: string;
   imageFit?: string; // 图片展示模式
   resultType?: string; // result-type字段表示文件读取结果的类型，上传大文件时，建议使用 file 类型，避免卡顿。

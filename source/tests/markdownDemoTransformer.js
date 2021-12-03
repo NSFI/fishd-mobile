@@ -18,7 +18,7 @@ const w3c = [
   'section', 'select', 'small', 'source', 'span', 'strong', 'style', 'sub', 'summary', 'sup', 'table', 'tbody', 'td',
   'textarea', 'tfoot', 'th', 'thead', 'time', 'title', 'tr', 'track', 'u', 'ul', 'var', 'video', 'wbr',
 ];
-const DEFAULT_INJECT = ['React', 'ReactDOM', 'PropTypes', 'Resizable', 'rcForm'];
+const DEFAULT_INJECT = ['React', 'ReactDOM', 'PropTypes', 'Resizable'];
 const DEMO_EXPORTS_REG = /^demo/i; //检测demo代码片段中导出作为Demo测试类的类名或者变量名称
 
 function transformCode(codes, filename) {
@@ -234,7 +234,6 @@ function transformCode(codes, filename) {
     import React from 'react';
     import ReactDOM from 'react-dom';
     import PropTypes from 'prop-types';
-    import * as rcForm from 'rc-form';
     // Table 组件的“可伸缩列” Demo 使用
     ${components.length ? `import {${components.join(',')}} from '../../../source/components/index.tsx';` : ''}
 

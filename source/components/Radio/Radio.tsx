@@ -1,50 +1,81 @@
+import React, { useContext } from 'react';
 import classnames from 'classnames';
-import FCheckbox from 'fishd-checkbox';
-import * as React from 'react';
-import { RadioPropsType } from './PropsType';
+import { useControllableValue } from 'ahooks';
+import { RadioGroupContext } from './RadioGroupContext';
 
-export interface RadioProps extends RadioPropsType {
-  prefixCls?: string;
-  listPrefixCls?: string;
+import Icon from '../Icon';
+
+export type RadioValue = string | number;
+export type RadioProps = {
   className?: string;
-  checkedcolor?: string;
-  shape?: string;
   style?: React.CSSProperties;
-  innerStyle?: React.CSSProperties;
-}
+  checked?: boolean;
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  value?: RadioValue;
+  block?: boolean;
+  id?: string;
+  icon?: (checked: boolean) => React.ReactNode;
+  onChange?: (checked: boolean) => void;
+};
 
-export default class Radio extends React.Component<RadioProps, any> {
-  static RadioItem: any;
+const classPrefix = `fm-radio`;
 
-  static defaultProps = {
-    prefixCls: 'fm-radio',
-    wrapLabel: true,
+const Radio: React.FC<RadioProps> = props => {
+  let { className, style, value, disabled } = props;
+  let [checked, setChecked] = useControllableValue(props, {
+    defaultValue: false,
+    defaultValuePropName: 'defaultChecked',
+    valuePropName: 'checked',
+  });
+  const groupContext = useContext(RadioGroupContext);
+
+  if (groupContext && value !== undefined) {
+    checked = groupContext.value.includes(value);
+    setChecked = (checked: boolean) => {
+      if (checked) {
+        groupContext.check(value as RadioValue);
+      } else {
+        groupContext.uncheck(value as RadioValue);
+      }
+      props.onChange?.(checked);
+    };
+    disabled = disabled || groupContext.disabled;
+  }
+
+  const RadioClassName = classnames(classPrefix, className, {
+    [`${classPrefix}-checked`]: checked,
+    [`${classPrefix}-disabled`]: disabled,
+    [`${classPrefix}-block`]: props.block,
+  });
+
+  const renderIcon = () => {
+    if (props.icon) {
+      return <div>{props.icon(checked)}</div>;
+    }
+
+    return <div className={`${classPrefix}__icon`}>{checked && <Icon type="check"></Icon>}</div>;
   };
 
-  render() {
-    const { className, style, checkedcolor, shape, ...restProps } = this.props;
-    const { prefixCls, children } = restProps;
-    const innerStyle: any = this.props.innerStyle || {};
+  return (
+    <label className={RadioClassName} style={style}>
+      <input
+        type="radio"
+        checked={checked}
+        onChange={e => {
+          setChecked(e.target.checked);
+        }}
+        onClick={e => {
+          e.stopPropagation();
+          e.nativeEvent.stopImmediatePropagation();
+        }}
+        disabled={disabled}
+        id={props.id}
+      />
+      {renderIcon()}
+      {props.children && <div className={`${classPrefix}__content`}>{props.children}</div>}
+    </label>
+  );
+};
 
-    if(shape === 'square') {
-      innerStyle.borderRadius = '3px';
-    }
-
-    const wrapCls = classnames(`${prefixCls}-wrapper`, className);
-    if ('class' in restProps) {
-      // Todo https://github.com/developit/preact-compat/issues/422
-      /* tslint:disable:no-string-literal */
-      delete (restProps as any)['class'];
-    }
-    const mark = (
-      <label className={wrapCls} style={style}>
-        <FCheckbox {...restProps} type="radio" innerStyle={innerStyle} color={checkedcolor} />
-        {children}
-      </label>
-    );
-    if (this.props.wrapLabel) {
-      return mark;
-    }
-    return <FCheckbox {...this.props} type="radio" innerStyle={innerStyle} color={checkedcolor} />;
-  }
-}
+export default Radio;

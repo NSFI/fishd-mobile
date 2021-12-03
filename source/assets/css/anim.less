@@ -1,19 +1,19 @@
-// TODO 动画样式的全局样式
+/* 动画样式的全局样式 */
 .fm {
   .effect() {
-    animation-duration: .2s;
+    animation-duration: 0.2s;
     animation-fill-mode: both;
-    animation-timing-function: cubic-bezier(.55, 0, .55, .2);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
   }
 
   .effect-easeIn() {
-    animation-duration: .2s;
+    animation-duration: 0.2s;
     animation-fill-mode: both;
     animation-timing-function: ease-in;
   }
 
   .effect-easeOut() {
-    animation-duration: .2s;
+    animation-duration: 0.2s;
     animation-fill-mode: both;
     animation-timing-function: ease-out;
   }
@@ -34,16 +34,16 @@
 
   &-fade-enter&-fade-enter-active,
   &-fade-appear&-fade-appear-active {
-    animation-name: amFadeIn;
+    animation-name: am-fade-in;
     animation-play-state: running;
   }
 
   &-fade-leave&-fade-leave-active {
-    animation-name: amFadeOut;
+    animation-name: am-fade-out;
     animation-play-state: running;
   }
 
-  @keyframes amFadeIn {
+  @keyframes am-fade-in {
     0% {
       opacity: 0;
     }
@@ -53,7 +53,7 @@
     }
   }
 
-  @keyframes amFadeOut {
+  @keyframes am-fade-out {
     0% {
       opacity: 1;
     }
@@ -66,6 +66,7 @@
   &-slide-up-enter,
   &-slide-up-appear {
     .effect-easeOut();
+
     transform: translate3d(0, 100%, 0);
     animation-play-state: paused;
   }
@@ -78,16 +79,16 @@
 
   &-slide-up-enter&-slide-up-enter-active,
   &-slide-up-appear&-slide-up-appear-active {
-    animation-name: amSlideUpIn;
+    animation-name: am-slide-up-in;
     animation-play-state: running;
   }
 
   &-slide-up-leave&-slide-up-leave-active {
-    animation-name: amSlideUpOut;
+    animation-name: am-slide-up-out;
     animation-play-state: running;
   }
 
-  @keyframes amSlideUpIn {
+  @keyframes am-slide-up-in {
     0% {
       transform: translate3d(0, 100%, 0);
     }
@@ -97,7 +98,7 @@
     }
   }
 
-  @keyframes amSlideUpOut {
+  @keyframes am-slide-up-out {
     0% {
       transform: translate3d(0, 0, 0);
     }
@@ -130,16 +131,16 @@
 
   &-zoom-enter&-zoom-enter-active,
   &-zoom-appear&-zoom-appear-active {
-    animation-name: amZoomIn;
+    animation-name: am-zoom-in;
     animation-play-state: running;
   }
 
   &-zoom-leave&-zoom-leave-active {
-    animation-name: amZoomOut;
+    animation-name: am-zoom-out;
     animation-play-state: running;
   }
 
-  @keyframes amZoomIn {
+  @keyframes am-zoom-in {
     0% {
       opacity: 0;
       transform-origin: 50% 50%;
@@ -153,7 +154,7 @@
     }
   }
 
-  @keyframes amZoomOut {
+  @keyframes am-zoom-out {
     0% {
       opacity: 1;
       transform-origin: 50% 50%;
@@ -182,16 +183,16 @@
 
   &-slide-down-enter&-slide-down-enter-active,
   &-slide-down-appear&-slide-down-appear-active {
-    animation-name: amSlideDownIn;
+    animation-name: am-slide-down-in;
     animation-play-state: running;
   }
 
   &-slide-down-leave&-slide-down-leave-active {
-    animation-name: amSlideDownOut;
+    animation-name: am-slide-down-out;
     animation-play-state: running;
   }
 
-  @keyframes amSlideDownIn {
+  @keyframes am-slide-down-in {
     0% {
       transform: translate(0, -100%);
     }
@@ -201,7 +202,7 @@
     }
   }
 
-  @keyframes amSlideDownOut {
+  @keyframes am-slide-down-out {
     0% {
       transform: translate3d(0, 0, 0);
     }

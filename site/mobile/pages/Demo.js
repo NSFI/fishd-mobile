@@ -2,7 +2,7 @@
 /* eslint-disable no-new-func */
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { cold } from 'react-hot-loader';
+// import { cold } from 'react-hot-loader';
 import { transform } from 'babel-standalone';
 import collect from '@/lib/collect';
 import eventbus from '@/lib/eventbus';
@@ -10,7 +10,6 @@ import Home from '@/pages/Home';
 import part_1 from '../images/part_1.png';
 
 import arrayTreeFilter from 'array-tree-filter';
-import * as rcForm from 'rc-form';
 import * as source from '../../../index';
 
 import './Demo.less';
@@ -64,8 +63,8 @@ class Demo extends Component {
 
   renderSource = (value, playerId) => {
     new Promise(resolve => {
-      const args = ['context', 'React', 'ReactDOM', 'rcForm', 'arrayTreeFilter'];
-      const argv = [this, React, ReactDOM, rcForm, arrayTreeFilter];
+      const args = ['context', 'React', 'ReactDOM', 'arrayTreeFilter'];
+      const argv = [this, React, ReactDOM, arrayTreeFilter];
       source &&
         Object.keys(source).forEach(key => {
           args.push(key);
@@ -133,4 +132,5 @@ class Demo extends Component {
   }
 }
 
-export default collect(cold(Demo), Home);
+export default collect(Demo, Home);
+// export default collect(cold(Demo), Home);

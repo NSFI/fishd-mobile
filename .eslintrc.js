@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   rules: {
+    'prettier/prettier': 0,
     'class-methods-use-this': 0,
     'no-plusplus': 0,
     'import/extensions': 0,

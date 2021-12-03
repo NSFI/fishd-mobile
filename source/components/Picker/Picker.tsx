@@ -1,10 +1,10 @@
 import React from 'react';
 import RMCCascader from 'rmc-cascader/lib/Cascader';
+import RMCPopupCascader from 'rmc-cascader/lib/Popup';
+import { CascaderValue } from 'rmc-cascader/lib/CascaderTypes';
 import RMCMultiPicker from 'rmc-picker/lib/MultiPicker';
 import RMCPicker from 'rmc-picker/lib/Picker';
-import RMCPopupCascader from 'rmc-cascader/lib/Popup';
 import { IPopupPickerProps } from 'rmc-picker/lib/PopupPickerTypes';
-import { CascaderValue } from 'rmc-cascader/lib/CascaderTypes';
 
 export interface PickerData {
   value: string | number;

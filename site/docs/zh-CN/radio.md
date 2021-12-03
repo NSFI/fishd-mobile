@@ -1,4 +1,4 @@
-# Radio 单选框 【交互：刘莹莹 |视觉：徐剑杰 |开发：于雯】
+# Radio 单选框 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
 
 ## 何时使用
 
@@ -9,41 +9,53 @@
 
 :::demo 基础样式。
 
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 0,
-    };    
-  }
+```jsx
+const Demo = () => {
+  const [value, setValue] = React.useState('');
 
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
+  return (
+    <div className="components-noticebar-demo-basic">
+      <div className="demo-title">基础样式</div>
+      <List style={{ padding: 16 }}>
+        <Radio style={{ marginBottom: 12 }} defaultChecked block>
+          选项一
+        </Radio>
+        <Radio block>选项二</Radio>
+      </List>
+      <div className="demo-title">水平排列</div>
+      <List style={{ padding: 16 }}>
+        <Radio style={{ marginRight: 12 }} defaultChecked>
+          选项一
+        </Radio>
+        <Radio style={{ marginRight: 12 }}>选项二</Radio>
+      </List>
 
-  render() {
-    const { value } = this.state;
-    const RadioItem = Radio.RadioItem;
+      <div className="demo-title">禁用状态</div>
+      <List style={{ padding: 16 }}>
+        <Radio style={{ marginBottom: 12 }} defaultChecked block disabled>
+          选项一
+        </Radio>
+        <Radio block disabled>
+          选项二
+        </Radio>
+      </List>
 
-    const data = [
-      { value: 0, label: '选项一' },
-      { value: 1, label: '选项二' },
-    ];
-
-    return (
-      <div className='components-radio-demo-basic'>
-       <div className='demo-title'>基础样式</div>
+      <div className="demo-title">在List中使用</div>
+      <Radio.Group value={value} onChange={setValue}>
         <List>
-          {data.map(i => (
-            <Radio.RadioItem key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
-              {i.label}
-            </Radio.RadioItem>
-          ))}
+          <List.Item>
+            <Radio value="a">选项一</Radio>
+          </List.Item>
+          <List.Item>
+            <Radio value="b">选项二</Radio>
+          </List.Item>
         </List>
-      </div>);
-  }
+      </Radio.Group>
+    </div>
+  );
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
@@ -51,227 +63,28 @@
   padding-bottom: 20px;
 }
 ```
+
 :::
-
-
-## 水平排列
-
-:::demo 水平排列。
-
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 0,
-    };    
-  }
-
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
-
-  render() {
-    const { value } = this.state;
-    const RadioItem = Radio.RadioItem;
-
-    const data = [
-      { value: 0, label: '选项一' },
-      { value: 1, label: '选项二' },
-    ];
-
-    return (
-      <div className='components-radio-demo-basic'>
-       <div className='demo-title'>水平排列</div>
-        <List className="m-radio-list">
-          {data.map(i => (
-            <Radio.RadioItem key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
-              {i.label}
-            </Radio.RadioItem>
-          ))}
-        </List>
-      </div>);
-  }
-```
-
-```less
-.components-radio-demo-basic {
-  padding-bottom: 20px;
-}
-.m-radio-list {
-  .fm-list-body {
-    display: flex;
-  }
-}
-```
-:::
-
-## 禁用状态
-
-:::demo 禁用状态。
-
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 0,
-    };    
-  }
-
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
-
-  render() {
-    const { value } = this.state;
-    const RadioItem = Radio.RadioItem;
-
-    const data = [
-      { value: 0, label: '选项一' },
-      { value: 1, label: '选项二' },
-    ];
-
-    return (
-      <div className='components-radio-demo-basic'>
-       <div className='demo-title'>禁用状态</div>
-        <List>
-          {data.map(i => (
-            <Radio.RadioItem key={i.value} disabled checked={value === i.value} onChange={() => this.onChange(i.value)}>
-              {i.label}
-            </Radio.RadioItem>
-          ))}
-        </List>
-      </div>);
-  }
-```
-
-```less
-.components-radio-demo-basic {
-  padding-bottom: 20px;
-}
-```
-:::
-
-## 自定义颜色
-
-:::demo 自定义颜色。
-
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 0,
-    };    
-  }
-
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
-
-  render() {
-    const { value } = this.state;
-    const RadioItem = Radio.RadioItem;
-
-    const data = [
-      { value: 0, label: '选项一' },
-      { value: 1, label: '选项二' },
-    ];
-
-    return (
-      <div className='components-radio-demo-basic'>
-        <div className='demo-title'>自定义颜色</div>
-        <List>
-          {data.map(i => (
-            <Radio.RadioItem checkedcolor="#07c160" key={i.value} checked={value === i.value} onChange={() => this.onChange(i.value)}>
-              {i.label}
-            </Radio.RadioItem>
-          ))}
-        </List>
-      </div>);
-  }
-```
-
-```less
-.components-radio-demo-basic {
-  padding-bottom: 20px;
-}
-```
-```less
-.components-radio-demo-basic {
-  padding-bottom: 20px;
-}
-```
-:::
-
-## 自定义形状
-
-:::demo 自定义形状。
-
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 0,
-    };    
-  }
-
-  onChange = (value) => {
-    this.setState({
-      value,
-    });
-  };
-
-  render() {
-    const { value } = this.state;
-    const RadioItem = Radio.RadioItem;
-
-    const data = [
-      { value: 0, label: '选项一' },
-      { value: 1, label: '选项二' },
-    ];
-
-    return (
-      <div className='components-radio-demo-basic'>
-       <div className='demo-title'>自定义形状</div>
-        <List>
-          {data.map(i => (
-            <Radio.RadioItem key={i.value} shape="square" checked={value === i.value} onChange={() => this.onChange(i.value)}>
-              {i.label}
-            </Radio.RadioItem>
-          ))}
-        </List>
-      </div>);
-  }
-```
-
-```less
-.components-radio-demo-basic {
-  padding-bottom: 20px;
-}
-```
-:::
-
 
 ## API
 
 ### Radio
 
-| 属性 | 说明 | 类型 | 默认值 |
-| ----|-----|------|------ |
-| name    |   name  | String |   无  |
-| defaultChecked |   初始是否选中   | Boolean  | 无  |
-| checked    |   指定当前是否选中  | Boolean  | 无  |
-| checkedcolor    |   选中状态颜色   | Boolean  | 无  |
-| shape           |   形状，可选值为 square   | String  | round  |
-| disabled      |  禁用  | Boolean |  false  |
-| onChange    | change 事件触发的回调函数 | (e: Object): void |   无  |
+| 属性           | 说明                                   | 类型                                | 默认值  |
+| -------------- | -------------------------------------- | ----------------------------------- | ------- |
+| checked        | 是否选中                               | boolean                             | `false` |
+| defaultChecked | 是否默认选中                           | boolean                             | `false` |
+| disabled       | 是否禁用                               | boolean                             | `false` |
+| block          | 是否渲染为块级元素                     | boolean                             | `false` |
+| value          | `Radio`绑定的值，配合`Radio.Group`使用 | RadioValue                          | -       |
+| icon           | 自定义 icon 渲染                       | (checked: boolean): React.ReactNode | -       |
+| onChange       | change 事件触发的回调函数              | (checked: boolean): void            | -       |
 
-### Radio.RadioItem
+### Radio.Group
 
-基于`List.Item`对`Radio`进行封装,`List.Item`的`extra`属性固定传入`Radio`,其他属性和`List.Item`一致。
-其他 API 和 Radio 相同。
+| 属性         | 说明                      | 类型                      | 默认值  |
+| ------------ | ------------------------- | ------------------------- | ------- |
+| value        | 选项值                    | RadioValue                | -       |
+| defaultValue | 默认选项值                | RadioValue                | -       |
+| disabled     | 是否禁用                  | boolean                   | `false` |
+| onChange     | change 事件触发的回调函数 | (value: RadioValue): void | -       |

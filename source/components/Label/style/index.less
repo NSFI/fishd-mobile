@@ -1,43 +1,49 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @labelPrefixCls: fm-label;
 
 .@{labelPrefixCls} {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: @label-width;
   // default normal
   min-height: @label-height;
-  min-width: @label-width;
   padding: @label-padding;
   font-size: @label-font-size;
-  border-radius: @radius-xs;
-  color: @color-text-base-inverse;
-  position: relative;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: @color-text-base-inverse;
+  border-radius: @radius-xs;
   box-sizing: border-box;
+
   &-closeable {
     margin-left: 5 * @hd;
     font-size: 8 * @hd;
   }
+
   &-sm {
-    min-height: @label-height-sm;
     min-width: @label-width-sm;
-    font-size: @label-font-size-sm;
+    min-height: @label-height-sm;
     padding: @label-padding-sm;
+    font-size: @label-font-size-sm;
   }
+
   &-lg {
-    min-height: @label-height-lg;
     min-width: @label-width-lg;
-    font-size: @label-font-size-lg;
+    min-height: @label-height-lg;
     padding: @label-padding-lg;
+    font-size: @label-font-size-lg;
   }
+
   &-round {
     border-radius: 999 * @hd;
   }
+
   &-mark {
     border-radius: 0 100 * @hd 100 * @hd 0;
   }
+
   &-plain {
     &::before {
       position: absolute;
@@ -51,6 +57,7 @@
       pointer-events: none;
     }
   }
+
   &-shallow {
     &::before {
       position: absolute;
@@ -64,6 +71,7 @@
       pointer-events: none;
       opacity: 0.2;
     }
+
     &::after {
       position: absolute;
       top: 0;

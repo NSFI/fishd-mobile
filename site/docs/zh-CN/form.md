@@ -1,113 +1,211 @@
 # Form 表单 【交互：刘莹莹 |视觉：徐剑杰 |开发：韩高钶】
 
-组件描述
+表单提交组件
 
 ## 何时使用
 
-场景描述
+用于用户数据提交场景
 
-## 基础用法
-
-表单校验
+## 垂直布局
 
 :::demo
 
 ```js
-const InputItem = Form.addErrorExplanation(Input);
-class InputDemo extends React.Component {
-  handleSubmit = () => {
-    console.log('>>> 提交')
-    this.props.form.validateFields({ force: true }, (errors, value) => {
-      console.log('>>> 表单验证结果', errors)
-      if (errors === null) {
-        Toast.success('提交完成', 1);
-      }
+const Demo = () => {
+  const [form] = Form.useForm();
+  const onFinish = values => {
+    Toast.show({
+      content: JSON.stringify(values),
     });
   };
+  return (
+    <div className="components-form-demo-basic">
+      <div className="demo-title">垂直布局</div>
+      <div className="demo-block">
+        <Form
+          form={form}
+          onFinish={onFinish}
+          footer={
+            <div style={{ padding: 12 }}>
+              <Button type="primary" size="small" htmlType="submit" block>
+                提 交
+              </Button>
+            </div>
+          }
+        >
+          <Form.Item name="name" label="姓名" rules={[{ required: true, message: '姓名不能为空' }]}>
+            <Input placeholder="请输入姓名" clearable />
+          </Form.Item>
 
-  checkContent = (rule, value) => {
-    setTimeout(() => {
-      Toast.loading('验证中...', 999, false)
-    }, 0)
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        Toast.hide();
-        if (value != 123) {
-          reject('内容不正确')
-        } else {
-          resolve()
-        }
-      }, 1000)
-    })
-  };
+          <Form.Item name="age" label="年龄">
+            <Input placeholder="请输入年龄" clearable />
+          </Form.Item>
 
-  render () {
-    const { getFieldDecorator } = this.props.form;
-    return (
-      <div className='components-input-demo-basic'>
-        <div className='demo-title'>基础用法</div>
-        <div className='u-form'>
-          {getFieldDecorator("phone", {
-              rules: [
-                {
-                  required: true,
-                  message: "请输入您的手机号"
-                }
-              ]
-            })(<InputItem type='phone' placeholder='请输入手机号' labelWidth={80} autoComplete='off'>手机号</InputItem>)
-          }
-          {getFieldDecorator("password", {
-              rules: [
-                {
-                  required: true,
-                  message: "请输入密码"
-                }
-              ]
-            })(<InputItem type='password' placeholder='请输入密码' labelWidth={80} autoComplete='new-password'>密码</InputItem>)
-          }
-          {getFieldDecorator("content", {
-              validateTrigger: 'onBlur',
-              rules: [
-                {
-                  required: true,
-                  message: "请输入内容",
-                  asyncValidator: this.checkContent,
-                }
-              ]
-            })(<InputItem type='text' placeholder='请输入内容' labelWidth={80} autoComplete='off'>异步校验</InputItem>)
-          }
-        </div>
-        <Button className='u-button' onClick={this.handleSubmit}>
-          提交
-        </Button>
+          <Form.Item name="sex" label="性别">
+            <Radio.Group>
+              <Radio value="男" style={{ marginRight: 8 }}>
+                男
+              </Radio>
+              <Radio value="女" style={{ marginRight: 8 }}>
+                女
+              </Radio>
+            </Radio.Group>
+          </Form.Item>
+
+          <Form.Item name="fruit" label="喜欢的水果">
+            <Checkbox.Group>
+              <Checkbox value="车厘子" style={{ marginRight: 8 }}>
+                车厘子
+              </Checkbox>
+              <Checkbox value="莲雾" style={{ marginRight: 8 }}>
+                莲雾
+              </Checkbox>
+            </Checkbox.Group>
+          </Form.Item>
+
+          <Form.Item name="rate" label="评分">
+            <Rate allowHalf />
+          </Form.Item>
+        </Form>
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
-const InputDemoWrapper = Form.create()(InputDemo)
-ReactDOM.render(<InputDemoWrapper />, mountNode)
-
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-.components-input-demo-basic {
-  padding-bottom: 10px;
-  .u-form {
-    background: #fff;
-  }
+[class^='components-form-demo-'] .demo-block {
 }
-[class^="components-input-demo-"] .u-button {
-  display: block;
-  padding: 10px 0;
-  color: #337EFF;
-  background: #fff;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: center;
-}
-.form-error-explain {
-  padding: 0 16px;
+```
+
+:::
+
+## 水平布局
+
+:::demo
+
+```js
+const Demo = () => {
+  const [form] = Form.useForm();
+  const onFinish = values => {
+    Toast.show({
+      content: JSON.stringify(values),
+    });
+  };
+  return (
+    <div className="components-form-demo-basic">
+      <div className="demo-title">水平布局</div>
+      <div className="demo-block">
+        <Form
+          layout="horizontal"
+          form={form}
+          onFinish={onFinish}
+          footer={
+            <div style={{ padding: 12 }}>
+              <Button type="primary" size="small" htmlType="submit" block>
+                提 交
+              </Button>
+            </div>
+          }
+        >
+          <Form.Item
+            name="name"
+            label="姓名"
+            validateTrigger={['onBlur']}
+            rules={[{ required: true, message: '姓名不能为空' }]}
+          >
+            <Input placeholder="请输入姓名" clearable />
+          </Form.Item>
+
+          <Form.Item name="age" label="年龄">
+            <Input placeholder="请输入年龄" clearable />
+          </Form.Item>
+
+          <Form.Item name="sex" label="性别">
+            <Radio.Group>
+              <Radio value="男" style={{ marginRight: 8 }}>
+                男
+              </Radio>
+              <Radio value="女" style={{ marginRight: 8 }}>
+                女
+              </Radio>
+            </Radio.Group>
+          </Form.Item>
+
+          <Form.Item name="fruit" label="喜欢的水果">
+            <Checkbox.Group>
+              <Checkbox value="车厘子" style={{ marginRight: 8 }}>
+                车厘子
+              </Checkbox>
+              <Checkbox value="莲雾" style={{ marginRight: 8 }}>
+                莲雾
+              </Checkbox>
+            </Checkbox.Group>
+          </Form.Item>
+
+          <Form.Item name="rate" label="评分">
+            <Rate allowHalf />
+          </Form.Item>
+
+          <Form.List
+            name="remarks"
+            rules={[
+              {
+                validator: async (_, value) => {
+                  if (!value || value.length < 2) {
+                    return Promise.reject(new Error('至少输入两条爱好'));
+                  }
+                },
+              },
+            ]}
+          >
+            {(fields, { add, remove }, { errors }) => (
+              <div>
+                {fields.map((field, index) => (
+                  <Form.Item
+                    key={field.key}
+                    label={index === 0 ? '爱好' : ' '}
+                    required={false}
+                    extra={<Icon type="cross" onClick={() => remove(field.name)}></Icon>}
+                  >
+                    <Form.Item
+                      {...field}
+                      validateTrigger={['onChange', 'onBlur']}
+                      rules={[
+                        {
+                          required: true,
+                          whitespace: true,
+                          message: '请输入内容',
+                        },
+                      ]}
+                      noStyle
+                    >
+                      <Input placeholder="爱好内容，例如篮球、足球" style={{ width: '60%' }} />
+                    </Form.Item>
+                  </Form.Item>
+                ))}
+                <Form.Item label={fields.length > 0 ? ' ' : '爱好'}>
+                  <Form.ErrorList style={{ marginBottom: 10 }} errors={errors} />
+                  <Button size="small" type="primary" plain onClick={() => add()} style={{ width: '60%' }}>
+                    添 加
+                  </Button>
+                </Form.Item>
+              </div>
+            )}
+          </Form.List>
+        </Form>
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<Demo />, mountNode);
+```
+
+```less
+[class^='components-form-demo-'] .demo-block {
 }
 ```
 
@@ -115,7 +213,55 @@ ReactDOM.render(<InputDemoWrapper />, mountNode)
 
 ## API
 
-| 属性 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| addErrorExplanation | 对原生的组件，如 InputItem，Picker 等组件，需要用 addErrorExplanation 包裹，返回一个新的组件。该新组件支持错误提示，将在 getFieldDecorator 中使用：const MyInputItem = addErrorExplanation(InputItem)。 | (WrappedComponent: React.Component) => React.Component | - |
-| create | 创建表单 | (option: Object) => (WrappedComponent: React.Component) => React.Component | - |
+### Form
+
+| 属性        | 说明                                                       | 类型                     | 默认值     |
+| ----------- | ---------------------------------------------------------- | ------------------------ | ---------- |
+| layout      | 布局模式                                                   | `vertical \| horizontal` | `vertical` |
+| labelWidth  | 水平布局时，label 的宽度，支持`auto`                       | string                   | `6em`      |
+| header      | form 头部自定义内容，通常用来放置原生提交按钮              | React.ReactNode          | -          |
+| footer      | form 底部自定义内容，通常用来放置原生提交按钮              | React.ReactNode          | -          |
+| hasFeedback | 是否展示错误反馈                                           | boolean                  | `true`     |
+| form        | 经 Form.useForm() 创建的 form 控制实例，不提供时会自动创建 | FormInstance             | -          |
+
+其他参数参见 https://www.npmjs.com/package/rc-field-form
+
+### Form.Item
+
+| 属性        | 说明                                        | 类型                     | 默认值     |
+| ----------- | ------------------------------------------- | ------------------------ | ---------- |
+| layout      | 布局模式                                    | `vertical \| horizontal` | `vertical` |
+| hasFeedback | 是否展示错误反馈                            | boolean                  | `true`     |
+| label       | 名称                                        | `vertical \| horizontal` | `vertical` |
+| labelWidth  | 水平布局时，label 的宽度，支持`auto`        | string                   | `6em`      |
+| required    | 是否必填，如果不传则根据 rules 规则自动计算 | boolean                  | -          |
+| disabled    | 是否禁用                                    | boolean                  | `false`    |
+| noStyle     | 不使用样式，只使用字段管理                  | boolean                  | `false`    |
+| hidden      | 是否隐藏整个字段                            | boolean                  | `false`    |
+| name        | 字段名，支持数组                            | NamePath                 | -          |
+| rules       | 校验规则                                    | Rule[]                   | -          |
+
+其他参数参见 https://www.npmjs.com/package/rc-field-form
+
+### Form.List
+
+| 属性         | 说明                                                              | 类型                                                                                     | 默认值 |
+| ------------ | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------ |
+| children     | 渲染函数                                                          | (fields: Field[], operation: { add, remove, move }, meta: { errors }) => React.ReactNode | -      |
+| initialValue | 设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准 | any[]                                                                                    | -      |
+| name         | 字段名，支持数组                                                  | NamePath                                                                                 | -      |
+| rules        | 校验规则，仅支持自定义规则。需要配合 ErrorList 一同使用。         | { validator, message }[]                                                                 | -      |
+
+其他参数参见 https://www.npmjs.com/package/rc-field-form
+
+### Form.ErrorList
+
+错误展示组件，仅限配合 Form.List 的 rules 一同使用
+
+| 属性   | 说明     | 类型        | 默认值 |
+| ------ | -------- | ----------- | ------ |
+| errors | 错误列表 | ReactNode[] | -      |
+
+### Form.useForm
+
+参数参见 https://www.npmjs.com/package/rc-field-form

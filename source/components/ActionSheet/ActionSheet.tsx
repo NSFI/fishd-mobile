@@ -1,8 +1,8 @@
 /* eslint-disable no-case-declarations */
 /* tslint:disable:jsx-no-multiline-js */
-import classnames from 'classnames';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import classnames from 'classnames';
 import Dialog from 'rmc-dialog';
 import TouchFeedback from 'rmc-feedback';
 import { ActionSheetWithOptions, ShareActionSheetWithOptions, ShareOption } from './PropsType';
@@ -32,7 +32,6 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareA
   const div = document.createElement('div');
   document.body.appendChild(div);
 
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   queue.push(close);
 
   function close() {

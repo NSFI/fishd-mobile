@@ -1,4 +1,4 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @badgePrefixClass: fm-badge;
 
@@ -9,33 +9,33 @@
   vertical-align: middle;
 
   &-text {
+    position: absolute;
+    top: -1 * @v-spacing-sm;
+    z-index: 10;
+    min-width: @icon-size-xs / 2;
+    height: @icon-size-xs;
+    padding: 0 @h-spacing-sm;
+    font-size: @font-size-caption-sm;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', SimSun, sans-serif;
+    line-height: @icon-size-xs;
+    text-align: center;
+    white-space: nowrap;
+    color: @color-text-base-inverse;
+    border-radius: 2 * @v-spacing-sm;
+    background-color: @brand-important;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    position: absolute;
-    top: -1 * @v-spacing-sm;
-    height: @icon-size-xs;
-    line-height: @icon-size-xs;
-    min-width: @icon-size-xs / 2;
-    border-radius: 2 * @v-spacing-sm;
-    padding: 0 @h-spacing-sm;
-    text-align: center;
-    font-size: @font-size-caption-sm;
-    color: @color-text-base-inverse;
-    background-color: @brand-important;
-    white-space: nowrap;
     transform: translateX(-45%);
     transform-origin: -10% center;
-    z-index: 10;
-    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5FAE\8F6F\96C5\9ED1", SimSun, sans-serif;
 
     a {
       color: @color-text-base-inverse;
     }
 
     p {
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
   }
 
@@ -45,41 +45,41 @@
 
   &-dot {
     position: absolute;
-    transform: translateX(-50%);
-    transform-origin: 0 center;
     top: -2 * @border-width-lg;
-    height: 0.5 * @link-button-font-size;
+    z-index: 10;
     width: 0.5 * @link-button-font-size;
+    height: 0.5 * @link-button-font-size;
     border-radius: 100%;
     background: @brand-important;
-    z-index: 10;
+    transform: translateX(-50%);
+    transform-origin: 0 center;
 
     &-large {
-      height: @link-button-font-size;
       width: @link-button-font-size;
+      height: @link-button-font-size;
     }
   }
 
   &-not-a-wrapper &-text,
   &-not-a-wrapper &-dot {
+    position: relative;
     top: auto;
     display: block;
-    position: relative;
     transform: translateX(0);
   }
 
   &-corner {
+    position: absolute;
+    top: 0.5 * @link-button-font-size;
+    right: -2 * @link-button-font-size;
     width: 5 * @link-button-font-size;
     padding: 0.5 * @link-button-font-size;
-    position: absolute;
-    right: -2 * @link-button-font-size;
-    top: 0.5 * @link-button-font-size;
-    background-color: @brand-important;
-    color: @color-text-base-inverse;
-    white-space: nowrap;
-    transform: rotate(45deg);
-    text-align: center;
     font-size: @font-size-subhead;
+    text-align: center;
+    white-space: nowrap;
+    color: @color-text-base-inverse;
+    background-color: @brand-important;
+    transform: rotate(45deg);
 
     &-wrapper {
       overflow: hidden;

@@ -1,54 +1,57 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @prefixCls: fm-number-keyboard;
 @prefixClsKey: fm-number-key;
 
 .@{prefixCls} {
   position: fixed;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   z-index: 500;
 
   &__header {
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: @numberKeyboard-header-height;
     padding-top: 6 * @hd;
     background-color: @numberKeyboard-bg;
     border-top-right-radius: @numberKeyboard-radius;
     border-top-left-radius: @numberKeyboard-radius;
+
     &-title {
-      font-weight: normal;
       font-size: @numberKeyboard-title-size;
+      font-weight: normal;
       color: @numberKeyboard-title-color;
     }
+
     &-left {
       position: absolute;
       left: 0;
       height: 100%;
       padding: 0 16 * @hd;
     }
+
     &-right {
       position: absolute;
       right: 0;
       height: 100%;
       padding: 0 16 * @hd;
-      color: @numberKeyboard-title-done-color;
       font-size: @numberKeyboard-title-done-size;
-      background-color: transparent;
+      color: @numberKeyboard-title-done-color;
       border: none;
+      background-color: transparent;
       outline: none;
       cursor: pointer;
     }
   }
 
   &__body {
-    background-color: @numberKeyboard-bg;
-    padding: 6px 0 0 6px;
     display: flex;
+    padding: 6px 0 0 6px;
+    background-color: @numberKeyboard-bg;
   }
 
   &__keys {
@@ -74,14 +77,14 @@
 
   &__key {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: @numberKeyboard-key-height;
-    background-color: #fff;
     font-size: @numberKeyboard-key-size;
     border: none;
     border-radius: @numberKeyboard-key-radius;
+    background-color: #fff;
     cursor: pointer;
     user-select: none;
 

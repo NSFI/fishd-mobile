@@ -1,41 +1,45 @@
-@import url("//at.alicdn.com/t/font_1801276_4kz56chbhit.css");
+@import url('//at.alicdn.com/t/font_1801276_xjfim5jr0n8.css');
+
 .fm-icon {
   position: relative;
-  color: inherit;
   font-size: initial;
+  line-height: 1;
+  color: inherit;
+
   &-badge {
     position: absolute;
     top: 0;
     right: 0;
-    box-sizing: border-box;
     min-width: 16px;
     padding: 0 3px;
-    color: #fff;
-    font-weight: 500;
     font-size: 12px;
     font-family: -apple-system-font, Helvetica Neue, Arial, sans-serif;
+    font-weight: 500;
     line-height: 1.2;
     text-align: center;
-    background-color: #ee0a24;
+    color: #fff;
     border: 1px solid #fff;
     border-radius: 16px;
+    background-color: #ee0a24;
+    box-sizing: border-box;
     transform: translate(50%, -50%);
     transform-origin: 100%;
   }
+
   &-badge-dot {
     width: 8px;
     min-width: 0;
     height: 8px;
-    background-color: #ee0a24;
     border-radius: 100%;
+    background-color: #ee0a24;
   }
 
   &-loading {
     display: inline-block;
-    animation: cirleAnim 1s linear infinite;
+    animation: cirle-anim 1s linear infinite;
   }
 
-  @keyframes cirleAnim {
+  @keyframes cirle-anim {
     100% {
       transform: rotate(360deg);
     }

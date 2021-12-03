@@ -1,9 +1,9 @@
-import React, { ReactElement, useRef, useEffect, ReactNode } from 'react';
+import React, { useRef, useEffect, ReactNode } from 'react';
 import { useMount, usePersistFn } from 'ahooks';
 import { getElementRect } from '../../utils/dom';
 import useScrollParent from '../../hooks/useScrollParent';
 
-export type ListViewPropsType = {
+export type ListViewProps = {
   /** 禁止响应，通常多列tab时可能需要用到 */
   disabled: boolean;
   /** 是否加载中 */
@@ -34,7 +34,7 @@ export type ListViewPropsType = {
   onScroll?: (e: Event) => void;
 };
 
-export default function ListView({
+const ListView: React.FC<ListViewProps> = ({
   disabled = false,
   loading = false,
   finished = false,
@@ -50,7 +50,7 @@ export default function ListView({
   customError,
   onLoad,
   onScroll,
-}: ListViewPropsType): ReactElement {
+}) => {
   const prefixCls = 'fm-listview';
   const rootRef = useRef<HTMLDivElement>(null);
   const placeholderRef = useRef<HTMLDivElement>(null);
@@ -120,4 +120,6 @@ export default function ListView({
       {placeholder}
     </div>
   );
-}
+};
+
+export default ListView;

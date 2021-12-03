@@ -1,375 +1,140 @@
-/* eslint-disable no-multi-assign */
-/* eslint-disable no-console */
-/* eslint-disable no-plusplus */
-/* eslint-disable no-return-assign */
+import React, { useRef, useState, useImperativeHandle } from 'react';
 import classnames from 'classnames';
-import * as React from 'react';
-import TextArea from './TextArea';
-import { InputPropsType } from './PropsType';
-import { formatNumber } from '../../utils/format/number';
+import { useControllableValue } from 'ahooks';
 
-import InputItem from './InputItem';
+import Icon from '../Icon';
+import { mergeProps } from '../../utils/merge-props';
+import { fixControlledValue } from '../../utils/fix-controlled-value'
 
-export type HTMLInputProps = Omit<
-  React.HTMLProps<HTMLInputElement>,
-  'onChange' | 'onFocus' | 'onBlur' | 'value' | 'defaultValue' | 'type'
->;
-export interface InputProps extends InputPropsType, HTMLInputProps {
-  prefixCls?: string;
-  className?: string;
-  autoAdjustHeight?: boolean;
-  onExtraClick?: React.MouseEventHandler<HTMLDivElement>;
-}
+type NativeInputProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+type EnterKeyHintProps = NativeInputProps extends { enterKeyHint?: unknown }
+  ? {
+      enterKeyHint?: NativeInputProps['enterKeyHint'];
+    }
+  : {};
 
-function normalizeValue(value?: string) {
-  if (typeof value === 'undefined' || value === null) {
-    return '';
-  }
-  return String(value);
-}
-
-function noop() {}
-
-class Input extends React.Component<InputProps, any> {
-  static TextArea: typeof TextArea;
-
-  static defaultProps = {
-    prefixCls: 'fm-input',
-    type: 'text',
-    editable: true,
-    disabled: false,
-    placeholder: '',
-    clear: false,
-    center: false,
-    onChange: noop,
-    onBlur: noop,
-    onFocus: noop,
-    extra: '',
-    onExtraClick: noop,
-    error: false,
-    errorMessage: '',
-    labelWidth: 90,
-    updatePlaceholder: false,
+export type InputProps = Pick<
+  NativeInputProps,
+  | 'maxLength'
+  | 'minLength'
+  | 'max'
+  | 'min'
+  | 'autoComplete'
+  | 'pattern'
+  | 'type'
+  | 'autoCapitalize'
+  | 'autoCorrect'
+  | 'onFocus'
+  | 'onBlur'
+  | 'onKeyDown'
+  | 'onKeyUp'
+> &
+  EnterKeyHintProps & {
+    className?: string;
+    style?: React.CSSProperties;
+    id?: string;
+    value?: string;
+    defaultValue?: string;
+    placeholder?: string;
+    disabled?: boolean;
+    readOnly?: boolean;
+    clearable?: boolean;
+    prefix?: React.ReactNode;
+    suffix?: React.ReactNode;
+    onChange?: (val: string) => void;
+    onClear?: () => void;
+    onEnterPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   };
 
-  inputRef!: Input | null;
+export type InputRef = {
+  clear: () => void;
+  focus: () => void;
+  blur: () => void;
+};
 
-  private debounceTimeout!: number | null;
+const classPrefix = `fm-input`;
 
-  constructor(props: InputProps) {
-    super(props);
-    this.state = {
-      placeholder: props.placeholder,
-      value: normalizeValue(props.value || props.defaultValue),
-    };
-  }
+const defaultProps = {
+  defaultValue: '',
+  autoComplete: 'off',
+};
 
-  // eslint-disable-next-line react/no-deprecated
-  componentWillReceiveProps(nextProps: InputProps) {
-    if ('placeholder' in nextProps && !nextProps.updatePlaceholder) {
-      this.setState({
-        placeholder: nextProps.placeholder,
-      });
-    }
-    if ('value' in nextProps) {
-      this.setState({
-        value: nextProps.value,
-      });
-    }
-  }
+const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (p, ref) => {
+  const props = mergeProps(defaultProps, p);
+  const { className, style, clearable } = props;
+  const InputClassName = classnames(`${classPrefix}__wrapper`, {}, className);
+  const [value, setValue] = useControllableValue(props);
+  const [focus, setFocus] = useState(false);
+  const nativeInputRef = useRef<HTMLInputElement>(null);
 
-  componentWillUnmount() {
-    if (this.debounceTimeout) {
-      window.clearTimeout(this.debounceTimeout);
-      this.debounceTimeout = null;
-    }
-  }
+  useImperativeHandle(ref, () => ({
+    clear: () => {
+      setValue('');
+    },
+    focus: () => nativeInputRef.current?.focus(),
+    blur: () => nativeInputRef.current?.blur(),
+  }));
 
-  onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const el = e.target;
-    const { value: rawVal } = el;
-
-    let prePos = 0;
-    try {
-      // some input type do not support selection, see https://html.spec.whatwg.org/multipage/input.html#do-not-apply
-      prePos = el.selectionEnd || 0;
-    } catch (error) {
-      console.warn('Get selection error:', error);
-    }
-
-    const { value: preCtrlVal = '' } = this.state;
-    const { type } = this.props;
-
-    let ctrlValue = rawVal;
-    let valueLen;
-    switch (type) {
-      case 'bankCard':
-        ctrlValue = rawVal.replace(/\D/g, '').replace(/(....)(?=.)/g, '$1 ');
-        break;
-      case 'phone':
-        ctrlValue = rawVal.replace(/\D/g, '').substring(0, 11);
-        valueLen = ctrlValue.length;
-        if (valueLen > 3 && valueLen < 8) {
-          ctrlValue = `${ctrlValue.substr(0, 3)} ${ctrlValue.substr(3)}`;
-        } else if (valueLen >= 8) {
-          ctrlValue = `${ctrlValue.substr(0, 3)} ${ctrlValue.substr(3, 4)} ${ctrlValue.substr(7)}`;
-        }
-        break;
-      case 'number':
-        ctrlValue = rawVal.replace(/\D/g, '');
-        break;
-      case 'digit':
-        ctrlValue = formatNumber(rawVal, true);
-        el.value = ctrlValue;
-        break;
-      case 'text':
-      case 'password':
-      default:
-        break;
-    }
-
-    this.handleOnChange(ctrlValue, ctrlValue !== rawVal, () => {
-      switch (type) {
-        case 'bankCard':
-        case 'phone':
-        case 'number':
-          // controlled input type needs to adjust the position of the caret
-          try {
-            // some input type do not support selection, see https://html.spec.whatwg.org/multipage/input.html#do-not-apply
-            let pos = this.calcPos(prePos, preCtrlVal, rawVal, ctrlValue, [' '], /\D/g);
-            if ((type === 'phone' && (pos === 4 || pos === 9)) || (type === 'bankCard' && pos > 0 && pos % 5 === 0)) {
-              pos -= 1;
-            }
-            el.selectionStart = el.selectionEnd = pos;
-          } catch (error) {
-            console.warn('Set selection error:', error);
-          }
-          break;
-        default:
-          break;
-      }
-    });
+  const clearInput = () => {
+    setValue('');
+    props.onClear?.();
   };
 
-  handleOnChange = (value: string, isMutated: boolean = false, adjustPos: Function = noop) => {
-    const { onChange } = this.props;
-
-    if (!('value' in this.props)) {
-      this.setState({ value });
-    } else {
-      this.setState({ value: this.props.value });
+  const handleKeydown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (props.onEnterPress && (e.code === 'Enter' || e.keyCode === 13)) {
+      props.onEnterPress(e);
     }
-    if (onChange) {
-      if (isMutated) {
-        setTimeout(() => {
-          onChange(value);
-          adjustPos();
-        });
-      } else {
-        onChange(value);
-        adjustPos();
-      }
-    } else {
-      adjustPos();
-    }
+    props.onKeyDown?.(e);
   };
+  return (
+    <div className={InputClassName}>
+      {props.prefix && <span className={`${classPrefix}__prefix`}>{props.prefix}</span>}
+      <input
+        ref={nativeInputRef}
+        id={props.id}
+        className={classPrefix}
+        style={style}
+        value={fixControlledValue(value)}
+        onChange={e => {
+          setValue(e.target.value);
+        }}
+        onFocus={e => {
+          setFocus(true);
+          props.onFocus?.(e);
+        }}
+        onBlur={e => {
+          setFocus(false);
+          props.onBlur?.(e);
+        }}
+        placeholder={props.placeholder}
+        disabled={props.disabled}
+        readOnly={props.readOnly}
+        maxLength={props.maxLength}
+        minLength={props.minLength}
+        max={props.max}
+        min={props.min}
+        autoComplete={props.autoComplete}
+        enterKeyHint={props.enterKeyHint}
+        pattern={props.pattern}
+        type={props.type}
+        autoCapitalize={props.autoCapitalize}
+        autoCorrect={props.autoCorrect}
+        onKeyDown={handleKeydown}
+        onKeyUp={props.onKeyUp}
+      />
+      {clearable && focus && value && !props.disabled && !props.readOnly && (
+        <Icon
+          className={`${classPrefix}__clear`}
+          type="error-o"
+          onMouseDown={e => {
+            e.preventDefault();
+          }}
+          onClick={clearInput}
+        ></Icon>
+      )}
+      {props.suffix && <span className={`${classPrefix}__suffix`}>{props.suffix}</span>}
+    </div>
+  );
+};
 
-  // calculate the position of the caret
-  calcPos = (
-    prePos: number,
-    preCtrlVal: string,
-    rawVal: string,
-    ctrlVal: string,
-    placeholderChars: Array<string>,
-    maskReg: RegExp,
-  ) => {
-    const editLength = rawVal.length - preCtrlVal.length;
-    const isAddition = editLength > 0;
-    let pos = prePos;
-    if (isAddition) {
-      const additionStr = rawVal.substr(pos - editLength, editLength);
-      let ctrlCharCount = additionStr.replace(maskReg, '').length;
-      pos -= editLength - ctrlCharCount;
-      let placeholderCharCount = 0;
-      while (ctrlCharCount > 0) {
-        if (placeholderChars.indexOf(ctrlVal.charAt(pos - ctrlCharCount + placeholderCharCount)) === -1) {
-          ctrlCharCount--;
-        } else {
-          placeholderCharCount++;
-        }
-      }
-      pos += placeholderCharCount;
-    }
-    return pos;
-  };
-
-  onInputFocus = (value?: string) => {
-    if (this.debounceTimeout) {
-      clearTimeout(this.debounceTimeout);
-      this.debounceTimeout = null;
-    }
-    this.setState({
-      focus: true,
-    });
-    if (this.props.onFocus) {
-      this.props.onFocus(value);
-    }
-  };
-
-  onInputBlur = (value?: string) => {
-    if (this.inputRef) {
-      // this.inputRef may be null if customKeyboard unmount
-      this.debounceTimeout = window.setTimeout(() => {
-        if (document.activeElement !== (this.inputRef && this.inputRef.inputRef)) {
-          this.setState({
-            focus: false,
-          });
-        }
-      }, 200);
-    }
-    if (this.props.onBlur) {
-      // fix autoFocus item blur with flash
-      setTimeout(() => {
-        // fix ios12 wechat browser click failure after input
-        if (document.body) {
-          // eslint-disable-next-line no-self-assign
-          document.body.scrollTop = document.body.scrollTop;
-        }
-      }, 100);
-      this.props.onBlur(value);
-    }
-  };
-
-  clearInput = () => {
-    if (this.props.type !== 'password' && this.props.updatePlaceholder) {
-      this.setState({
-        placeholder: this.props.value,
-      });
-    }
-    this.setState({
-      value: '',
-    });
-    if (this.props.onChange) {
-      this.props.onChange('');
-    }
-    this.focus();
-  };
-
-  // this is instance method for user to use
-  focus = () => {
-    if (this.inputRef) {
-      this.inputRef.focus();
-    }
-  };
-
-  render() {
-    const props = { ...this.props };
-    delete props.updatePlaceholder;
-
-    const {
-      prefixCls,
-      editable,
-      style,
-      clear,
-      children,
-      error,
-      errorMessage,
-      center,
-      className,
-      extra,
-      labelWidth,
-      type,
-      onExtraClick,
-      autoAdjustHeight,
-      ...restProps
-    } = props;
-    const { name, disabled, maxLength } = restProps;
-    const { value } = this.state;
-
-    const { focus, placeholder } = this.state;
-
-    const wrapCls = classnames(`${prefixCls}-item`, className, {
-      [`${prefixCls}-disabled`]: disabled,
-      [`${prefixCls}-error`]: error,
-      [`${prefixCls}-focus`]: focus,
-      [`${prefixCls}-center`]: center,
-    });
-
-    const labelCls = classnames(`${prefixCls}-label`);
-
-    const controlCls = `${prefixCls}-control`;
-
-    let inputType: any = 'text';
-    let inputMode: any = 'text';
-    if (type === 'bankCard' || type === 'phone') {
-      inputType = 'tel';
-      inputMode = 'numeric';
-    } else if (type === 'password') {
-      inputType = 'password';
-    } else if (type === 'digit') {
-      inputType = 'text';
-      inputMode = 'decimal';
-    } else if (type !== 'text' && type !== 'number') {
-      inputType = type;
-    }
-
-    let patternProps;
-    if (type === 'number') {
-      inputMode = 'decimal';
-      patternProps = {
-        pattern: '[0-9]*',
-      };
-    }
-
-    let classNameProps;
-    if (type === 'digit') {
-      classNameProps = {
-        className: 'h5numInput', // the name is bad! todos rename.
-      };
-    }
-
-    return (
-      <div className={wrapCls}>
-        {children ? (
-          <div className={labelCls} style={{ width: labelWidth }}>
-            {children}
-          </div>
-        ) : null}
-        <div className={controlCls}>
-          <div className={`${prefixCls}-body`}>
-            <InputItem
-              {...patternProps}
-              {...restProps}
-              {...classNameProps}
-              value={normalizeValue(value)}
-              defaultValue={undefined}
-              ref={(el: any) => (this.inputRef = el)}
-              style={style}
-              type={inputType}
-              inputMode={inputMode}
-              maxLength={maxLength}
-              name={name}
-              placeholder={placeholder}
-              onChange={this.onInputChange}
-              onFocus={this.onInputFocus}
-              onBlur={this.onInputBlur}
-              readOnly={!editable}
-              disabled={disabled}
-            />
-            {clear && editable && !disabled && value && `${value}`.length > 0 ? (
-              <div className={`${prefixCls}-clear`} onClick={this.clearInput} />
-            ) : null}
-            {extra !== '' ? (
-              <div className={`${prefixCls}-extra`} onClick={onExtraClick}>
-                {extra}
-              </div>
-            ) : null}
-          </div>
-          {error && errorMessage && <div className={`${prefixCls}-errorMessage`}>{errorMessage}</div>}
-        </div>
-      </div>
-    );
-  }
-}
-
-export default Input;
+export default React.forwardRef<InputRef, InputProps>(Input);

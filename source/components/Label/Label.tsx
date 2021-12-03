@@ -66,7 +66,7 @@ class Label extends React.Component<LabelProps, any> {
     };
 
     const CloseIcon = closeable && (
-      <Icon className={`${prefixCls}-closeable`} type="cross" size="xxs" onClick={this.handleClose} />
+      <Icon className={`${prefixCls}-closeable`} type="cross" onClick={this.handleClose} />
     );
 
     return !this.state.closed ? (

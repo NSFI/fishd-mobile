@@ -6,11 +6,6 @@ export type CancelCallBack = () => PromiseLike<any> | void;
 
 export type CloseCallBack = () => PromiseLike<any> | void;
 
-export interface ShareOption {
-  icon: React.ReactNode;
-  title: string;
-}
-
 export interface ActionSheetOptions {
   maskClosable?: boolean;
   cancelButtonIndex?: number;
@@ -24,6 +19,10 @@ export interface ActionSheetOptions {
   onSelect?: SelectCallBack;
   onCancel?: CancelCallBack;
   onClose?: CloseCallBack;
+}
+export interface ShareOption {
+  icon: React.ReactNode;
+  title: string;
 }
 
 export interface ActionSheetWithOptions extends ActionSheetOptions {

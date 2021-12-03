@@ -1,146 +1,105 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
-@switchPrefixCls: fm-switch;
+@prefix: fm-switch;
 
-.@{switchPrefixCls} {
-  display: inline-block;
-  vertical-align: middle;
-  box-sizing: border-box;
+.@{prefix} {
   position: relative;
+  display: inline-block;
+  box-sizing: border-box;
   cursor: pointer;
-  align-self: center;
+  vertical-align: middle;
 
-  .checkbox {
-    width: 51 * @hd;
-    height: 31 * @hd;
-    border-radius: 31 * @hd;
-    box-sizing: border-box;
-    background: #e5e5e5;
-    z-index: 0;
-    margin: 0;
-    padding: 0;
-    appearance: none;
-    border: 0;
-    cursor: pointer;
+  .@{prefix}__text {
     position: relative;
-    transition: all 300ms;
+    z-index: 2;
+    margin: 0 10px 0 34px;
+    font-size: 13px;
+    font-weight: bold;
+    color: @color-text-paragraph;
+    transition: margin 0.2s;
+  }
 
-    &:before {
-      content: ' ';
+  .@{prefix}__loading {
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    z-index: 1;
+    margin-top: -8px;
+    font-size: 16px;
+  }
+
+  .@{prefix}__checkbox {
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    align-items: center;
+    min-width: 50 * @hd;
+    height: 30 * @hd;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border-radius: 30 * @hd;
+    transition: all 300ms;
+    box-sizing: border-box;
+    appearance: none;
+    cursor: pointer;
+    vertical-align: middle;
+
+    &::before {
       position: absolute;
-      left: 1.5 * @hd;
-      top: 1.5 * @hd;
-      width: 48 * @hd;
-      height: 28 * @hd;
-      border-radius: 28 * @hd;
-      box-sizing: border-box;
-      background: @fill-base;
+      top: 0;
+      left: 0;
       z-index: 1;
-      transition: all 200ms;
+      width: 100%;
+      height: 30 * @hd;
+      border-radius: 30 * @hd;
+      background: #f0f0f2;
+      transition: all 0.2s;
+      content: ' ';
+      box-sizing: border-box;
       transform: scale(1);
     }
 
-    &:after {
-      content: ' ';
-      height: 27 * @hd;
-      width: 27 * @hd;
-      border-radius: 28 * @hd;
-      background: @fill-base;
+    &::after {
       position: absolute;
+      top: 2 * @hd;
+      left: 2 * @hd;
       z-index: 2;
-      left: 1.5 * @hd;
-      top: 1.5 * @hd;
-      transform: translateX(0);
-      transition: all 200ms;
-      box-shadow: 2 * @hd 2 * @hd 4 * @hd rgba(0, 0, 0, 0.21);
-    }
-
-    &.checkbox-disabled {
-      z-index: 3;
+      width: 26 * @hd;
+      height: 26 * @hd;
+      border-radius: 26 * @hd;
+      background: @fill-base;
+      transition: left 0.2s;
+      content: ' ';
     }
   }
 
-  input[type="checkbox"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    border: 0 none;
-    appearance: none;
-    &:checked {
-      & + .checkbox {
-        background: @switch-fill;
-
-        &:before {
-          transform: scale(0);
-        }
-
-        &:after {
-          transform: translateX(20 * @hd);
-        }
-        
-      }
-    }
-
-    &:disabled {
-      & + .checkbox {
-        opacity: @opacity-disabled;
-      }
-    }
-  }
-
-  &&-android {
-    .checkbox {
-      width: 51 * @hd;
-      height: 31 * @hd;
-      border-radius: @radius-sm;
-      background: #a7aaa6;
-
-      &:before {
-        display: none;
-      }
-
-      &:after {
-        width: 27 * @hd;
-        height: 27 * @hd;
-        border-radius: @radius-xs;
-        box-shadow: none;
-        left: 1.5 * @hd;
-        top: 1.5 * @hd;
-      }
-    }
-
-    // input[type="checkbox"] {
-    //   &:checked {
-    //     & + .checkbox {
-    //       background: @switch-fill-android;
-
-    //       &:before {
-    //         transform: scale(0);
-    //       }
-
-    //       &:after {
-    //         transform: translateX(35 * @hd);
-    //       }
-    //     }
-    //   }
-    // }
-  }
-  .fm-icon-fm-loading{
-    position: absolute;
-    left: 10px;
-    z-index: 1;
-    width: 11px;
-    height: 11px;
-    top: 10px;
-  }
-  &&-checked{
-    .fm-icon-fm-loading{
+  &--checked {
+    .@{prefix}__loading {
       left: 100%;
-      margin-left: -20px;
+      margin-left: -23px;
     }
+
+    .@{prefix}__text {
+      margin: 0 34px 0 10px;
+      color: #fff;
+    }
+
+    .@{prefix}__checkbox {
+      background: @switch-fill;
+
+      &::before {
+        transform: scale(0);
+      }
+
+      &::after {
+        left: calc(100% - 28px);
+      }
+    }
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    opacity: @opacity-disabled;
   }
 }

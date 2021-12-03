@@ -18,7 +18,7 @@ export default class Header extends Component {
 
   constructor(props) {
     super(props);
-    this.i18n = window.$messages;
+    this.i18n = window.$messages || {};
   }
 
   componentDidMount() {

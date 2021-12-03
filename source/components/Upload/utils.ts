@@ -11,7 +11,7 @@ export function toArray<T>(item: T | T[]): T[] {
 export function readFile(file: File, resultType: ResultType) {
   return new Promise(resolve => {
     if (resultType === 'file') {
-      resolve();
+      resolve(null);
       return;
     }
 

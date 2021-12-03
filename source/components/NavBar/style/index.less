@@ -1,4 +1,4 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @navbar-height: 45 * @hd;
 @navbarPrefixCls: fm-navbar;
@@ -7,17 +7,17 @@
   display: flex;
   align-items: center;
   height: @navbar-height;
-  background-color: #FFF;
-  color: #333;
   font-size: 16 * @hd;
-  
+  color: #333;
+  background-color: #fff;
+
   &-left,
   &-title,
   &-right {
     flex: 1;
-    height: 100%;
     display: flex;
     align-items: center;
+    height: 100%;
   }
 
   &-left {
@@ -25,15 +25,15 @@
     color: #333;
 
     &-icon {
-      margin-right: @h-spacing-sm;
       display: inherit;
+      margin-right: @h-spacing-sm;
     }
   }
 
   &-title {
     justify-content: center;
-    white-space: nowrap;
     font-weight: 500;
+    white-space: nowrap;
   }
 
   &-right {
@@ -43,8 +43,8 @@
   }
 
   &-light {
-    background-color: @fill-base;
     color: @brand-primary;
+    background-color: @fill-base;
   }
 
   &-light &-title {

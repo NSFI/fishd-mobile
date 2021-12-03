@@ -1,9 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { hot } from 'react-hot-loader'
 import { Router, hashHistory, Route, IndexRoute, Redirect } from 'react-router'
 import initIframe from '@/lib/iframe'
-import { setLang } from '@/lib/lang'
+import '@/lib/lang';
 
 import Home from './pages/Home'
 import Components from './pages/Components'
@@ -16,7 +15,7 @@ import './styles/index.less'
 initIframe()
 
 // TODO: 国际化
-const currentLang = window.$lang
+const currentLang = window.$lang || 'zh-CN'
 const langs = ['en-US', 'zh-CN']
 
 const genRoutes = function (lang) {
@@ -47,6 +46,4 @@ const App = () => (
   </Router>
 )
 
-const Gvm = hot(module)(App)
-
-render(<Gvm />, document.getElementById('app'))
+render(<App />, document.getElementById('app'))

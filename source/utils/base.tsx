@@ -1,3 +1,5 @@
+export const inBrowser = typeof window !== 'undefined' && window !== null;
+
 export function noop() {}
 
 export function isDef(val: unknown): boolean {
@@ -38,4 +40,9 @@ export function getDataAttr(props: { [key: string]: any }) {
   }, {});
 }
 
-export const inBrowser = typeof window !== 'undefined' && window !== null;
+export function toArray<T>(value?: T | T[] | null | false): T[] {
+  if (value === undefined || value === null || value === false) {
+    return [];
+  }
+  return Array.isArray(value) ? value : [value];
+}

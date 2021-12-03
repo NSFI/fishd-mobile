@@ -1,52 +1,81 @@
+import React, { useContext } from 'react';
 import classnames from 'classnames';
-import FCheckbox from 'fishd-checkbox';
-import * as React from 'react';
+import { useControllableValue } from 'ahooks';
+import { CheckboxGroupContext } from './CheckboxGroupContext';
 
-import { CheckboxPropsType } from './PropsType';
+import Icon from '../Icon';
 
-export interface CheckboxProps extends CheckboxPropsType {
-  prefixCls?: string;
+export type CheckboxValue = string | number;
+export type CheckboxProps = {
   className?: string;
-  name?: string;
-  wrapLabel?: boolean;
-  checkedcolor?: string;
-  shape?: string;
   style?: React.CSSProperties;
-  innerStyle?: React.CSSProperties;
-}
+  checked?: boolean;
+  defaultChecked?: boolean;
+  disabled?: boolean;
+  value?: CheckboxValue;
+  block?: boolean;
+  id?: string;
+  icon?: (checked: boolean) => React.ReactNode;
+  onChange?: (checked: boolean) => void;
+};
 
-export default class Checkbox extends React.Component<CheckboxProps, any> {
-  static CheckboxItem: any;
-  static AgreeItem: any;
-  static defaultProps = {
-    prefixCls: 'fm-checkbox',
-    wrapLabel: true,
+const classPrefix = `fm-checkbox`;
+
+const Checkbox: React.FC<CheckboxProps> = props => {
+  let { className, style, value, disabled } = props;
+  let [checked, setChecked] = useControllableValue(props, {
+    defaultValue: false,
+    defaultValuePropName: 'defaultChecked',
+    valuePropName: 'checked',
+  });
+  const groupContext = useContext(CheckboxGroupContext);
+
+  if (groupContext && value !== undefined) {
+    checked = groupContext.value.includes(value);
+    setChecked = (checked: boolean) => {
+      if (checked) {
+        groupContext.check(value as CheckboxValue);
+      } else {
+        groupContext.uncheck(value as CheckboxValue);
+      }
+      props.onChange?.(checked);
+    };
+    disabled = disabled || groupContext.disabled;
+  }
+
+  const CheckboxClassName = classnames(classPrefix, className, {
+    [`${classPrefix}-checked`]: checked,
+    [`${classPrefix}-disabled`]: disabled,
+    [`${classPrefix}-block`]: props.block,
+  });
+
+  const renderIcon = () => {
+    if (props.icon) {
+      return <div>{props.icon(checked)}</div>;
+    }
+
+    return <div className={`${classPrefix}__icon`}>{checked && <Icon type="check"></Icon>}</div>;
   };
 
-  render() {
-    const { className, style, checkedcolor, shape, ...restProps } = this.props;
-    const { prefixCls, children } = restProps;
-    const innerStyle: any = this.props.innerStyle || {};
+  return (
+    <label className={CheckboxClassName} style={style}>
+      <input
+        type="checkbox"
+        checked={checked}
+        onChange={e => {
+          setChecked(e.target.checked);
+        }}
+        onClick={e => {
+          e.stopPropagation();
+          e.nativeEvent.stopImmediatePropagation();
+        }}
+        disabled={disabled}
+        id={props.id}
+      />
+      {renderIcon()}
+      {props.children && <div className={`${classPrefix}__content`}>{props.children}</div>}
+    </label>
+  );
+};
 
-    if(shape === 'square') {
-      innerStyle.borderRadius = '3px';
-    }
-
-    const wrapCls = classnames(`${prefixCls}-wrapper`, className);
-    // Todo: wait for https://github.com/developit/preact-compat/issues/422, then we can remove class below
-    if ('class' in restProps) {
-      /* tslint:disable:no-string-literal */
-      delete (restProps as any)['class'];
-    }
-    const mark = (
-      <label className={wrapCls} style={style}>
-        <FCheckbox {...restProps} innerStyle={innerStyle} color={checkedcolor}/>
-        {children}
-      </label>
-    );
-    if (this.props.wrapLabel) {
-      return mark;
-    }
-    return <FCheckbox {...this.props} innerStyle={innerStyle} color={checkedcolor}/>;
-  }
-}
+export default Checkbox;

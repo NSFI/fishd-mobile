@@ -1,72 +1,59 @@
-/* eslint-disable */
 import React from 'react';
-import { createForm } from 'rc-form';
+import classnames from 'classnames';
+import RcForm, { FormProps as RcFormProps, FormInstance } from 'rc-field-form';
+import { FormContext, FormContextType } from './context';
 
-const addErrorExplanation = Component => {
-  class NewFormItemComponent extends React.Component {
-    props: any;
+import List from '../List';
 
-    render = () => {
-      const { getFieldError, fieldKey, ...restProps } = this.props;
-      const error = getFieldError(fieldKey);
-      const errorMsg = error ? error.join('') : '';
-
-      return (
-        <>
-          <Component {...restProps} />
-          {errorMsg && (
-            <span style={{ color: '#f5222d', lineHeight: '30px' }} className="form-error-explain">
-              {errorMsg}
-            </span>
-          )}
-        </>
-      );
-    };
-  }
-
-  return NewFormItemComponent;
-};
-
-const create = options => {
-  return FormComponent => {
-    class NewFormComponent extends React.Component {
-      props: any;
-
-      myGetFieldDecorator = (name, option: any = {}) => element => {
-        // 下面这行代码主要用于validator；如果不使用validator可以删除
-        option.validateFirst = option.validateFirst === undefined ? true : option.validateFirst;
-
-        return this.props.form.getFieldDecorator(
-          name,
-          option,
-        )(
-          React.cloneElement(element, {
-            fieldKey: name,
-            // eslint-disable-next-line react/prop-types
-            getFieldError: this.props.form.getFieldError,
-          }),
-        );
-      };
-
-      render = () => {
-        return (
-          <FormComponent
-            {...this.props}
-            form={{
-              // eslint-disable-next-line react/prop-types
-              ...this.props.form,
-              getFieldDecorator: this.myGetFieldDecorator,
-            }}
-          />
-        );
-      };
-    }
-
-    return createForm(options)(NewFormComponent);
+export type FormProps = RcFormProps &
+  Partial<FormContextType> & {
+    className?: string;
+    style?: React.CSSProperties;
+    labelWidth?: string;
+    header?: React.ReactNode;
+    footer?: React.ReactNode;
   };
+
+const classPrefix = `fm-form`;
+
+const Form: React.ForwardRefRenderFunction<FormInstance, FormProps> = (props, ref) => {
+  const {
+    className,
+    style,
+    layout = 'vertical',
+    hasFeedback = true,
+    labelWidth = '6em',
+    children,
+    header,
+    footer,
+    ...formProps
+  } = props;
+  const FormClassName = classnames(
+    classPrefix,
+    {
+      [`${classPrefix}--vertical`]: layout === 'vertical',
+      [`${classPrefix}--horizontal`]: layout === 'horizontal',
+    },
+    className,
+  );
+
+  return (
+    <RcForm ref={ref} className={FormClassName} style={style} {...formProps}>
+      {header && <div className={`${classPrefix}__header`}>{header}</div>}
+      <List>
+        <FormContext.Provider
+          value={{
+            labelWidth,
+            hasFeedback,
+            layout,
+          }}
+        >
+          {children}
+        </FormContext.Provider>
+      </List>
+      {footer && <div className={`${classPrefix}__footer`}>{footer}</div>}
+    </RcForm>
+  );
 };
 
-export default {
-  addErrorExplanation,
-  create,
-} as any;
+export default React.forwardRef<FormInstance, FormProps>(Form);

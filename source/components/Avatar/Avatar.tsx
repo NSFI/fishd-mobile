@@ -178,7 +178,7 @@ class Avatar extends React.Component<AvatarProps, any> {
     const { prefixCls, icon, size } = this.props;
     if (getObjType(icon) === '[object String]') {
       const iconType = icon as string;
-      return <Icon type={iconType} className={`${prefixCls}-icon-font`} size={size} />;
+      return <Icon type={iconType} className={`${prefixCls}-icon-font`} />;
     }
     if (getObjType(icon) === '[object Object]') {
       const iconNode = icon as IconProps;
@@ -186,7 +186,7 @@ class Avatar extends React.Component<AvatarProps, any> {
         return <div className={`${prefixCls}-icon-custom icon-${size}`}> {icon} </div>;
       }
       const iconProps = icon as IconProps;
-      return <Icon {...iconProps} className={`${prefixCls}-icon-font`} size={size} />;
+      return <Icon {...iconProps} className={`${prefixCls}-icon-font`} />;
     }
     return null;
   }

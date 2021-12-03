@@ -1,4 +1,4 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @avatarPrefixClass: fm-avatar;
 
@@ -18,78 +18,86 @@
   display: inline-block;
   width: @sizeMD;
   height: @sizeMD;
-  &-main{
-    width: 100%;
-    height: 100%;
+
+  &-main {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    background: #D2D5DB;
+    width: 100%;
+    height: 100%;
+    background: #d2d5db;
     vertical-align: middle;
   }
 
   &-disabled {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0,0,0,.4);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
     cursor: not-allowed;
   }
 
   // ------ type ------
   &-icon {
-    &-content{
+    &-content {
       position: relative;
       width: 100%;
       height: 100%;
       text-align: center;
     }
   }
+
   &-icon-font {
     position: absolute;
-    bottom: 0;
-    right: 0;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
-    margin: auto;
     padding: 0;
+    margin: auto;
     // background: #369;
   }
+
   &-icon-custom {
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
+
   &-image {
-    background-repeat: no-repeat;
     background-position: 0 0;
+    background-repeat: no-repeat;
     background-size: cover;
   }
-  &-text{
+
+  &-text {
     position: relative;
     font-family: PingFangSC-Regular;
-    color: #FFFFFF;
-    letter-spacing: 0;
     text-align: center;
-    &-content{
+    color: #fff;
+    letter-spacing: 0;
+
+    &-content {
       position: absolute;
-      left: 50%;
       top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
     }
   }
+
   &-icon {
 
   }
 
   // ------ round(shape) - circle / square |  rect - width/height/round ------
-  &-circle{
+  &-circle {
     border-radius: 50%;
   }
-  &-square{
+
+  &-square {
     border-radius: 4px;
   }
 
@@ -99,118 +107,129 @@
     height: @sizeXS;
     font-size: 10.5px;
     .@{avatarPrefixClass}-icon-font {
-      line-height: @sizeXS;
       font-size: floor(@sizeXS*0.65);
+      line-height: @sizeXS;
     }
   }
+
   &-sm {
     width: @sizeSM;
     height: @sizeSM;
     font-size: 14px;
     .@{avatarPrefixClass}-icon-font {
-      line-height: @sizeSM;
       font-size: floor(@sizeSM*0.65);
+      line-height: @sizeSM;
     }
   }
+
   &-md {
     width: @sizeMD;
     height: @sizeMD;
     font-size: 21px;
     .@{avatarPrefixClass}-icon-font {
-      line-height: @sizeMD;
       font-size: floor(@sizeMD*0.65);
+      line-height: @sizeMD;
     }
   }
+
   &-lg {
     width: @sizeLG;
     height: @sizeLG;
     font-size: 28px;
     .@{avatarPrefixClass}-icon-font {
-      line-height:@sizeLG;
       font-size: floor(@sizeLG*0.65);
+      line-height: @sizeLG;
     }
   }
   // ------ hybird -----
-    // - Badge
-    &-badge {
-      .fm-badge-dot{
-        border: 1px solid #fff;
-        right: 0;
-      }
-      .fm-badge-text {
-          border: 1px solid #fff;
-          transform: translateX(0);
-          left: -1.2em;
-          top: -1em;
-      }
-    }
-    &-square + &-badge {
-      .fm-badge-dot {
-        right: -0.4em;
-      }
-      .fm-badge-text  {
-        left: -1em;
-      }
-    }
-    &-xs &-badge  {
-      .fm-badge-dot {
-        top: -@sizeXS/4;
-        width: @sizeXS/4;
-        height: @sizeXS/4;
-      }
-      .fm-badge-text {
-        font-size: 8px;
-        line-height: 12px;
-        height: 12px;
-      }
-      // - ……
+  // - Badge
+  &-badge {
+    .fm-badge-dot {
+      right: 0;
+      border: 1px solid #fff;
     }
 
-    &-sm &-badge  {
-      .fm-badge-dot {
-        top: -@sizeSM/4;
-        width: @sizeSM/4;
-        height: @sizeSM/4;
-      }
-      .fm-badge-text {
-        font-size: 8px;
-        line-height: 14px;
-        height: 14px;
-      }
-      // - ……
+    .fm-badge-text {
+      top: -1em;
+      left: -1.2em;
+      border: 1px solid #fff;
+      transform: translateX(0);
+    }
+  }
+
+  &-square + &-badge {
+    .fm-badge-dot {
+      right: -0.4em;
     }
 
-    &-md  &-badge  {
-      .fm-badge-dot {
-        top: -@sizeMD/4;
-        width: @sizeMD/4;
-        height: @sizeMD/4;
-      }
-      .fm-badge-text {
-        font-size: 10px;
-        line-height: 16px;
-        height: 16px;
-
-      }
-      // - ……
+    .fm-badge-text {
+      left: -1em;
     }
-    &-lg  &-badge  {
-      .fm-badge-dot {
-        top: -@sizeLG/4;
-        width: @sizeLG/4;
-        height: @sizeLG/4;
-      }
-      .fm-badge-text {
-        font-size: 12px;
-        line-height: 18px;
-        height: 18px;
-      }
-      // - ……
+  }
+
+  &-xs &-badge {
+    .fm-badge-dot {
+      top: -@sizeXS/4;
+      width: @sizeXS/4;
+      height: @sizeXS/4;
+    }
+
+    .fm-badge-text {
+      height: 12px;
+      font-size: 8px;
+      line-height: 12px;
     }
     // - ……
+  }
+
+  &-sm &-badge {
+    .fm-badge-dot {
+      top: -@sizeSM/4;
+      width: @sizeSM/4;
+      height: @sizeSM/4;
+    }
+
+    .fm-badge-text {
+      height: 14px;
+      font-size: 8px;
+      line-height: 14px;
+    }
+    // - ……
+  }
+
+  &-md &-badge {
+    .fm-badge-dot {
+      top: -@sizeMD/4;
+      width: @sizeMD/4;
+      height: @sizeMD/4;
+    }
+
+    .fm-badge-text {
+      height: 16px;
+      font-size: 10px;
+      line-height: 16px;
+    }
+    // - ……
+  }
+
+  &-lg &-badge {
+    .fm-badge-dot {
+      top: -@sizeLG/4;
+      width: @sizeLG/4;
+      height: @sizeLG/4;
+    }
+
+    .fm-badge-text {
+      height: 18px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    // - ……
+  }
+  // - ……
 
   // ------ layout ------
   &-inline {
-    
+
   }
 }

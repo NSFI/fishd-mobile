@@ -1,71 +1,68 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @toastPrefixCls: fm-toast;
 
 .@{toastPrefixCls} {
   position: fixed;
-  width: 100%;
   z-index: @toast-zindex;
+  width: 100%;
   font-size: @font-size-base;
   text-align: center;
+  word-break: break-all;
 
-  > span {
+  >span {
     max-width: 50%;
   }
 
   &&-mask {
-    height: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 0;
-    top: 0;
+    height: 100%;
     transform: translateZ(1px);
   }
 
   &&-nomask {
     position: fixed;
-    max-width: 50%;
-    width: auto;
-    left: 50%;
     top: 50%;
+    left: 50%;
+    width: auto;
+    max-width: 50%;
     transform: translateZ(1px);
+
     .@{toastPrefixCls}-notice {
       transform: translateX(-50%) translateY(-50%);
     }
   }
 
+  &-loading {
+    margin-bottom: 10 * @hd;
+  }
+
   &-notice-content {
     .@{toastPrefixCls}-text.@{toastPrefixCls}-text-icon {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       flex-direction: column;
       width: 88 * @hd;
       max-width: 70%;
       min-height: 88 * @hd;
     }
+
     .@{toastPrefixCls}-text {
-      min-width: 60 * @hd;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
-      border-radius: @radius-sm;
-      color: @color-text-base-inverse;
-      background-color: @toast-fill;
-      line-height: @line-height-paragraph;
+      align-items: center;
+      flex-direction: column;
+      min-width: 60 * @hd;
       padding: 16 * @hd;
-
-      &.@{toastPrefixCls}-text-icon {
-        line-height: 1;
-        border-radius: @radius-md;
-        padding: @v-spacing-lg @h-spacing-lg;
-
-        .@{toastPrefixCls}-text-info {
-          margin-top: @v-spacing-lg;
-        }
-      }
+      line-height: @line-height-paragraph;
+      color: @color-text-base-inverse;
+      border-radius: @radius-sm;
+      background-color: @toast-fill;
     }
   }
 }

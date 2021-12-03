@@ -1,6 +1,14 @@
 import Input from './Input';
 import TextArea from './TextArea';
 
-Input.TextArea = TextArea;
+type CompoundedType = typeof Input & {
+  TextArea: typeof TextArea;
+};
 
-export default Input;
+const Compounded = Input as CompoundedType;
+Compounded.TextArea = TextArea;
+
+export type { InputProps, InputRef } from './Input';
+export type { TextAreaProps, TextAreaRef } from './TextArea';
+
+export default Compounded;

@@ -1,13 +1,13 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @flexPrefixCls: fm-flexbox;
 
 /* flexbox */
 .@{flexPrefixCls} {
-  text-align: left;
   // overflow: hidden;
   display: flex;
   align-items: center;
+  text-align: left;
 
   &&-dir-row {
     flex-direction: row;
@@ -108,10 +108,10 @@
   }
 
   & &-item {
-    box-sizing: border-box;
     flex: 1;
-    margin-left: 8 * @hd;
     min-width: 10 * @hd;
+    margin-left: 8 * @hd;
+    box-sizing: border-box;
 
     &:first-child {
       margin-left: 0;

@@ -1,4 +1,4 @@
-# Checkbox 复选框 【交互：刘莹莹 | 视觉：徐剑杰 |开发：于雯】
+# Checkbox 复选框 【交互：刘莹莹 | 视觉：徐剑杰 |开发：韩高钶】
 
 ## 何时使用
 
@@ -9,59 +9,53 @@
 
 :::demo 基础样式
 
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      valList: [0, 1, 4],
-    };    
-  }
+```jsx
+const Demo = () => {
+  const [value, setValue] = React.useState('');
 
-  onChange = (value, e) => {
-    const { valList } = this.state;
-    const checked = e.target.checked;
+  return (
+    <div className="components-noticebar-demo-basic">
+      <div className="demo-title">基础样式</div>
+      <List style={{ padding: 16 }}>
+        <Checkbox style={{ marginBottom: 12 }} defaultChecked block>
+          选项一
+        </Checkbox>
+        <Checkbox block>选项二</Checkbox>
+      </List>
+      <div className="demo-title">水平排列</div>
+      <List style={{ padding: 16 }}>
+        <Checkbox style={{ marginRight: 12 }} defaultChecked>
+          选项一
+        </Checkbox>
+        <Checkbox style={{ marginRight: 12 }}>选项二</Checkbox>
+      </List>
 
-    if(checked) {
-      valList.push(value);
-    }else {
-      const idx = valList.indexOf(value);
-      if(idx > -1) {
-        valList.splice(idx, 1);
-      }
-    }
+      <div className="demo-title">禁用状态</div>
+      <List style={{ padding: 16 }}>
+        <Checkbox style={{ marginBottom: 12 }} defaultChecked block disabled>
+          选项一
+        </Checkbox>
+        <Checkbox block disabled>
+          选项二
+        </Checkbox>
+      </List>
 
-    this.setState({
-      valList,
-    });
-  }
-  
-  render() {
-    const CheckboxItem = Checkbox.CheckboxItem;
-    const { valList } = this.state;
-    const data = [
-      {value: 0, label: '选项一'},
-      {value: 1, label: '选项二'},
-      {value: 2, label: '选项三'},
-      {value: 3, label: '选项四'},
-      {value: 4, label: '选项五'},
-    ]
-
-    return (
-      <div className='components-checkbox-demo-basic'>
-        <div className='demo-title'>基础样式</div>
+      <div className="demo-title">在List中使用</div>
+      <Checkbox.Group value={value} onChange={setValue}>
         <List>
-        {data.map(i => (
-          <CheckboxItem
-            key={i.value}
-            onChange={(e) => this.onChange(i.value, e)}
-            checked={valList.includes(i.value)}
-            disabled={i.value === 3 || i.value === 4}>
-            {i.label}
-          </CheckboxItem>
-        ))}
+          <List.Item>
+            <Checkbox value="a">选项一</Checkbox>
+          </List.Item>
+          <List.Item>
+            <Checkbox value="b">选项二</Checkbox>
+          </List.Item>
         </List>
-      </div>);
-  }
+      </Checkbox.Group>
+    </div>
+  );
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
@@ -69,162 +63,28 @@
   padding-bottom: 20px;
 }
 ```
+
 :::
-
-## 自定义颜色
-
-:::demo 自定义颜色
-
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      valList: [0, 1, 4],
-    };    
-  }
-
-  onChange = (value, e) => {
-    const { valList } = this.state;
-    const checked = e.target.checked;
-
-    if(checked) {
-      valList.push(value);
-    }else {
-      const idx = valList.indexOf(value);
-      if(idx > -1) {
-        valList.splice(idx, 1);
-      }
-    }
-
-    this.setState({
-      valList,
-    });
-  }
-  
-  render() {
-    const CheckboxItem = Checkbox.CheckboxItem;
-    const { valList } = this.state;
-    const data = [
-      {value: 0, label: '选项一'},
-      {value: 1, label: '选项二'},
-      {value: 2, label: '选项三'},
-      {value: 3, label: '选项四'},
-      {value: 4, label: '选项五'},
-    ]
-
-    return (
-      <div className='components-checkbox-demo-basic'>
-        <div className='demo-title'>自定义颜色</div>
-        <List>
-        {data.map(i => (
-          <CheckboxItem
-            key={i.value}
-            onChange={(e) => this.onChange(i.value, e)}
-            checked={valList.includes(i.value)}
-            disabled={i.value === 3 || i.value === 4}
-            checkedcolor="#07c160">
-            {i.label}
-          </CheckboxItem>
-        ))}
-        </List>
-      </div>);
-  }
-```
-
-```less
-.components-checkbox-demo-basic {
-  padding-bottom: 20px;
-}
-```
-:::
-
-## 自定义形状
-
-:::demo 自定义形状
-
-```js
-  constructor(props){
-    super(props);
-    this.state = {
-      valList: [0, 1, 4],
-    };    
-  }
-
-  onChange = (value, e) => {
-    const { valList } = this.state;
-    const checked = e.target.checked;
-
-    if(checked) {
-      valList.push(value);
-    }else {
-      const idx = valList.indexOf(value);
-      if(idx > -1) {
-        valList.splice(idx, 1);
-      }
-    }
-
-    this.setState({
-      valList,
-    });
-  }
-  
-  render() {
-    const CheckboxItem = Checkbox.CheckboxItem;
-    const { valList } = this.state;
-    const data = [
-      {value: 0, label: '选项一'},
-      {value: 1, label: '选项二'},
-      {value: 2, label: '选项三'},
-      {value: 3, label: '选项四'},
-      {value: 4, label: '选项五'},
-    ]
-
-    return (
-      <div className='components-checkbox-demo-basic'>
-        <div className='demo-title'>自定义形状</div>
-        <List>
-        {data.map(i => (
-          <CheckboxItem
-            key={i.value}
-            onChange={(e) => this.onChange(i.value, e)}
-            checked={valList.includes(i.value)}
-            disabled={i.value === 3 || i.value === 4}
-            shape="square">
-            {i.label}
-          </CheckboxItem>
-        ))}
-        </List>
-      </div>);
-  }
-```
-
-```less
-.components-checkbox-demo-basic {
-  padding-bottom: 20px;
-}
-```
-:::
-
-
 
 ## API
 
 ### Checkbox
 
-|属性 | 说明 | 类型 | 默认值|
-|----|-----|------|------|
-| defaultChecked  |  初始是否选中  | Boolean   | 无  |
-| checked         |   指定当前是否选中   | Boolean  | 无  |
-| checkedcolor    |   选中状态颜色   | Boolean  | 无  |
-| shape           |   形状，可选值为 square   | String  | round  |
-| disabled        |    失效状态    | Boolean |  false  |
-| onChange        | change 事件触发的回调函数 | (e: Object): void |   无  |
+| 属性           | 说明                                         | 类型                                | 默认值  |
+| -------------- | -------------------------------------------- | ----------------------------------- | ------- |
+| checked        | 是否选中                                     | boolean                             | `false` |
+| defaultChecked | 是否默认选中                                 | boolean                             | `false` |
+| disabled       | 是否禁用                                     | boolean                             | `false` |
+| block          | 是否渲染为块级元素                           | boolean                             | `false` |
+| value          | `Checkbox`绑定的值，配合`Checkbox.Group`使用 | CheckboxValue                       | -       |
+| icon           | 自定义 icon 渲染                             | (checked: boolean): React.ReactNode | -       |
+| onChange       | change 事件触发的回调函数                    | (checked: boolean): void            | -       |
 
-### Checkbox.CheckboxItem
+### Checkbox.Group
 
-基于`List.Item`对`Checkbox`进行封装,`List.Item`的`thumb`属性固定传入`Checkbox`,其他属性和`List.Item`一致。
-其他 API 和 Checkbox 相同。
-
-### Checkbox.AgreeItem
-
-用于同意协议这种场景的复选框
+| 属性         | 说明                      | 类型                         | 默认值  |
+| ------------ | ------------------------- | ---------------------------- | ------- |
+| value        | 选项值                    | CheckboxValue[]              | -       |
+| defaultValue | 默认选项值                | CheckboxValue[]              | -       |
+| disabled     | 是否禁用                  | boolean                      | `false` |
+| onChange     | change 事件触发的回调函数 | (value: CheckboxValue): void | -       |

@@ -1,4 +1,4 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 @prefix: fm-loadmore;
 
 .@{prefix} {
@@ -8,8 +8,8 @@
 
   &__vertical {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     .@{prefix}__text {
       margin-top: 8 * @hd;
@@ -19,8 +19,8 @@
 
   &__normal {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     .@{prefix}__text {
       margin-left: 8 * @hd;
       color: @color-neutral-4;
@@ -31,8 +31,8 @@
     position: relative;
     display: inline-block;
     width: @loadmore-size;
-    height: @loadmore-size;
     max-width: 100%;
+    height: @loadmore-size;
     max-height: 100%;
     vertical-align: middle;
     animation: fm-rotate 0.8s linear infinite;
@@ -52,8 +52,8 @@
           width: 2 * @hd;
           height: 25%;
           margin: 0 auto;
-          background-color: currentColor;
           border-radius: 40%;
+          background-color: currentColor;
           content: ' ';
         }
       }

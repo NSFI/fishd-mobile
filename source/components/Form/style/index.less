@@ -1,3 +1,36 @@
-.form-error-explain {
-  font-size: 14px;
+@import (reference) '../../../assets/css/index.less';
+@prefix: fm-form;
+
+.@{prefix}-item {
+  font-size: @font-size-base;
+
+  .fm-list-item__content {
+    align-items: stretch;
+  }
+
+  &__label {
+    display: block;
+    height: 100%;
+    line-height: 1.5;
+    color: @color-text-base;
+  }
+
+  &__error {
+    font-size: 12px;
+    color: @color-red;
+  }
+
+  &__required {
+    margin-left: 4px;
+    color: @color-red;
+  }
+
+  .fm-list-item__prefix {
+    color: @color-text-base;
+  }
+}
+
+.@{prefix}-errors {
+  font-size: 12px;
+  color: @color-red;
 }

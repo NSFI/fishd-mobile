@@ -1,112 +1,58 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 @import './textarea.less';
 
 @inputPrefixCls: fm-input;
 
-.@{inputPrefixCls}-center {
-  align-items: center;
-}
-.@{inputPrefixCls}-item {
-  padding: 10px 16px;
-  background-color: @fill-base;
+.@{inputPrefixCls}__wrapper {
   display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: @font-size-base;
+  line-height: 1.5;
 
-  .@{inputPrefixCls}-label {
-    flex: 0 0 auto;
-    color: @color-neutral-1;
-    font-size: @font-size-base;
-    margin-left: 0;
-    margin-right: @h-spacing-sm;
-    line-height: 24px;
-    text-align: left;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  .@{inputPrefixCls}-control {
+  .@{inputPrefixCls} {
     flex: 1;
-    font-size: @font-size-base;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1.5em;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
+    color: @color-neutral-1;
+    border: 0;
+    background: 0 0;
+    outline: none;
+    box-sizing: border-box;
+    appearance: none;
 
-    input {
-      flex: 1;
-      width: 100%;
-      color: @color-neutral-1;
-      font-size: @font-size-base;
-      appearance: none;
-      border: 0;
-      background-color: transparent;
-      line-height: 24px;
-      box-sizing: border-box;
-      outline: none;
-      caret-color: @brand-primary;
-
-      &::placeholder {
-        color: @color-text-placeholder;
-      }
-
-      &:disabled {
-        color: @color-text-disabled;
-        background-color: #fff;
-      }
-    }
-  }
-
-  .@{inputPrefixCls}-body {
-    display: flex;
-    align-items: center;
-  }
-
-  .@{inputPrefixCls}-clear {
-    display: none;
-    width: @input-icon-size;
-    height: @input-icon-size;
-    border-radius: @radius-circle;
-    overflow: hidden;
-    font-style: normal;
-    color: @fill-base;
-    background-color: @input-color-icon;
-    background-repeat: no-repeat;
-    .encoded-svg-background('input_item_delete');
-
-    background-size: @input-icon-size auto;
-    background-position: 2 * @hd 2 * @hd;
-    cursor: pointer;
-  }
-
-  &.@{inputPrefixCls}-focus {
-    .@{inputPrefixCls}-clear {
-      display: block;
-    }
-  }
-
-  .@{inputPrefixCls}-extra {
-    flex: 0 0 auto;
-    min-width: 0;
-    overflow: hidden;
-    padding-right: 0;
-    line-height: 24px;
-    color: @color-text-caption;
-    font-size: @font-size-subhead;
-    margin-left: @h-spacing-sm;
-  }
-
-  &.@{inputPrefixCls}-error {
-    .@{inputPrefixCls}-control {
-      input {
-        color: @input-error-color;
-      }
+    &::placeholder {
+      color: @color-text-placeholder;
     }
 
-    .@{inputPrefixCls}-errorMessage {
-      margin-top: 5px;
-      font-size: @font-size-base;
-      color: @input-error-color;
-    }
-  }
-
-  &.@{inputPrefixCls}-disabled {
-    .@{inputPrefixCls}-label {
+    &:disabled {
       color: @color-text-disabled;
     }
+  }
+
+  .@{inputPrefixCls}__prefix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    margin-right: 4 * @hd;
+  }
+
+  .@{inputPrefixCls}__suffix {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    margin-left: 4 * @hd;
+  }
+
+  .@{inputPrefixCls}__clear {
+    flex: 0 0 auto;
+    margin-left: 4 * @hd;
+    color: @input-color-icon;
+    cursor: pointer;
   }
 }

@@ -1,4 +1,4 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @prefix: fm-carousel;
 
@@ -7,15 +7,15 @@
 
   &-wrap {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     padding: 12 * @hd 0;
     font-size: 18 * @hd;
+    text-align: center;
     color: @color-text-base;
     background: none;
-    text-align: center;
     zoom: 1;
-    width: 100%;
 
     &-dot {
       display: inline-block;
@@ -32,8 +32,8 @@
 
       &-active {
         >span {
-          background: @dot-active-color;
           width: 12 * @hd;
+          background: @dot-active-color;
         }
       }
     }

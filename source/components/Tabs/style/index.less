@@ -1,30 +1,35 @@
-@import (reference) '../../../assets/css/index';
+@import (reference) '../../../assets/css/index.less';
 
 @tabsPrefixCls: fm-tabs;
 
 .@{tabsPrefixCls} {
   overflow: hidden;
+
   &-horizontal {
     background: white;
+
     &-nav-wrap {
       position: relative;
-      height: 44px;
       overflow: hidden;
+      height: 44px;
     }
+
     &-nav {
+      position: relative;
+      overflow-x: auto;
+      overflow-y: hidden;
       width: 100%;
+      height: 100%;
+      padding-bottom: 10px;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      box-sizing: content-box;
+
       &::-webkit-scrollbar {
         display: none;
       }
-      overflow-x: auto;
-      overflow-y: hidden;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      position: relative;
-      padding-bottom: 10px;
-      box-sizing: content-box;
-      height: 100%;
     }
+
     &-line {
       position: absolute;
       bottom: 0;
@@ -33,39 +38,47 @@
       height: 1px;
       background: #f0f1f3;
     }
+
     &-tab {
-      overflow: hidden;
-      white-space: nowrap;
-      text-align: center;
-      line-height: 44px;
       display: inline-block;
-      color: #333333;
+      overflow: hidden;
+      line-height: 44px;
+      text-align: center;
+      white-space: nowrap;
+      color: #333;
+
       &-active {
-        color: #333333;
         font-weight: 500;
+        color: #333;
       }
     }
+
     &-active-bar {
       position: absolute;
       bottom: 10px;
-      background: @color-blue;
-      height: 2px;
       left: 0;
       z-index: 10;
       width: 40px;
+      height: 2px;
+      background: @color-blue;
+
       &-animated {
         transition: left 0.5s ease-in-out;
       }
     }
+
     &-content-wrap {
       position: relative;
       width: 100%;
     }
+
     &-content {
       white-space: nowrap;
+
       &-animated {
         transition: left 0.5s ease-in-out;
       }
+
       &-tab {
         display: inline-block;
         width: 100%;
@@ -74,28 +87,33 @@
       }
     }
   }
+
   &-vertical {
     display: flex;
     background: white;
+
     &-nav-wrap {
-      height: 100%;
-      width: 80px;
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
+      width: 80px;
+      height: 100%;
     }
+
     &-nav {
+      position: relative;
       overflow-x: hidden;
       overflow-y: auto;
+      width: 100%;
+      height: 100%;
+      padding-right: 10px;
+      -webkit-overflow-scrolling: touch;
+      box-sizing: content-box;
+
       &::-webkit-scrollbar {
         display: none;
       }
-      -webkit-overflow-scrolling: touch;
-      position: relative;
-      padding-right: 10px;
-      box-sizing: content-box;
-      width: 100%;
-      height: 100%;
     }
+
     &-line {
       position: absolute;
       top: 0;
@@ -104,29 +122,34 @@
       height: 100%;
       background: #f0f1f3;
     }
+
     &-tab {
-      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #333333;
+      overflow: hidden;
+      color: #333;
+
       &-active {
-        color: #333333;
         font-weight: 500;
+        color: #333;
       }
     }
+
     &-active-bar {
       position: absolute;
+      top: 0;
       right: 10px;
-      background: @color-blue;
+      z-index: 10;
       width: 2px;
       height: 100%;
-      top: 0;
-      z-index: 10;
+      background: @color-blue;
+
       &-animated {
         transition: top 0.5s ease-in-out;
       }
     }
+
     &-content {
       overflow: auto;
     }

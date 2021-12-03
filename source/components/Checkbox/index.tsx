@@ -1,8 +1,13 @@
-import AgreeItem from './AgreeItem';
 import Checkbox from './Checkbox';
-import CheckboxItem from './CheckboxItem';
+import CheckboxGroup from './CheckboxGroup';
+export type { CheckboxProps } from './Checkbox';
+export type { CheckboxGroupProps } from './CheckboxGroup'
 
-Checkbox.CheckboxItem = CheckboxItem;
-Checkbox.AgreeItem = AgreeItem;
+type CompoundedType = typeof Checkbox & {
+  Group: typeof CheckboxGroup;
+};
 
-export default Checkbox;
+const Compounded = Checkbox as CompoundedType;
+Compounded.Group = CheckboxGroup;
+
+export default Compounded;
