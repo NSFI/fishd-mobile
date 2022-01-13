@@ -221,7 +221,7 @@ render(){
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 0 solid #EDEEF0;
+      border: 0 solid #edeef0;
       border-width: 0 1px 1px 0;
       box-sizing: border-box;
     }
@@ -292,7 +292,7 @@ render(){
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 0 solid #EDEEF0;
+      border: 0 solid #edeef0;
       border-width: 0 1px 1px 0;
       box-sizing: border-box;
     }
@@ -361,7 +361,7 @@ render(){
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border: 0 solid #EDEEF0;
+      border: 0 solid #edeef0;
       border-width: 0 1px 1px 0;
       box-sizing: border-box;
     }
@@ -392,11 +392,11 @@ render(){
 
 ## API
 
-| 参数 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| type | 内置 icon 名称 | string |
-| dot | 是否显示图标右上角小红点 | boolean             | false |
-| badge | 图标右上角徽标的内容| string | - |
-| color | 图标颜色| string | inherit |
-| size | 图标大小，如 20px 2em，默认单位为px| number \| string | inherit |
-| onClick | 点击图标时触发| event: Event | - |
+| 参数    | 说明                                 | 类型               | 默认值    |
+| ------- | ------------------------------------ | ------------------ | --------- |
+| type    | 内置 icon 名称                       | `string`           |
+| dot     | 是否显示图标右上角小红点             | `boolean`          | `false`   |
+| badge   | 图标右上角徽标的内容                 | `string`           | -         |
+| color   | 图标颜色                             | `string`           | `inherit` |
+| size    | 图标大小，如 20px 2em，默认单位为 px | `number \| string` | `inherit` |
+| onClick | 点击图标时触发                       | `event: Event`     | -         |

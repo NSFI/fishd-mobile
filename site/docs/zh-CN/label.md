@@ -1,7 +1,7 @@
 # Label 标签 【交互：刘莹莹 | 视觉：徐剑杰 |开发：周明阳】
 
-
 标签组件，用于标记和选择。
+
 ## 基础用法
 
 :::demo
@@ -79,6 +79,7 @@
   }
 }
 ```
+
 :::
 
 :::demo
@@ -115,6 +116,7 @@
   }
 }
 ```
+
 :::
 
 :::demo
@@ -162,16 +164,16 @@
   }
 }
 ```
-:::
 
+:::
 
 ## API
 
-| 属性            | 说明                           | 类型    | 默认值 |
-| --------------- | ------------------------------ | ------- | ------ |
-| color           | 标签颜色                   | string | '#337EFF'  |
-| size        | 标签大小 可选`lg`,`md`,`sm`              | boolean | 'md'   |
-| type | 标签类型 可选`normal`,`plain`,`round`,`mark`,`shallow` | string  | 'normal' |
-| closeable | 标签是否可以关闭 | boolean  | 'false' |
-| onClose | 标签关闭时的回调 | function  | '-' |
-| afterClose | 关闭后的回调 | function  | '-' |
+| 属性       | 说明                                                   | 类型     | 默认值    |
+| ---------- | ------------------------------------------------------ | -------- | --------- |
+| color      | 标签颜色                                               | string   | '#337EFF' |
+| size       | 标签大小 可选`lg`,`md`,`sm`                            | boolean  | 'md'      |
+| type       | 标签类型 可选`normal`,`plain`,`round`,`mark`,`shallow` | string   | 'normal'  |
+| closeable  | 标签是否可以关闭                                       | boolean  | 'false'   |
+| onClose    | 标签关闭时的回调                                       | function | '-'       |
+| afterClose | 关闭后的回调                                           | function | '-'       |

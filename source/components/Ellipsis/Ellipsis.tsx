@@ -1,5 +1,5 @@
 import React, { useState, useRef, useLayoutEffect } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { mergeProps } from '../../utils/merge-props';
 
 function pxToNumber(value: string | null): number {
@@ -43,7 +43,7 @@ const defaultProps = {
 const Ellipsis: React.FC<EllipsisProps> = p => {
   const props = mergeProps(defaultProps, p);
   const { className, style, content, direction, rows } = props;
-  const EllipsisClassName = classnames(classPrefix, {}, className);
+  const EllipsisClassName = classNames(classPrefix, {}, className);
 
   const rootRef = useRef<HTMLDivElement>(null);
   const [ellipsised, setEllipsised] = useState<EllipsisedValue>({});

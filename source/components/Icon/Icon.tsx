@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 export type IconProps = {
   className?: string;
@@ -17,7 +17,7 @@ const classPrefix = `fm-check-list`;
 
 const Icon: React.FC<IconProps> = props => {
   const { className, style, type, color, fontSize, dot, badge } = props;
-  const IconClassName = classnames(classPrefix, 'fm-icon', 'fm-iconfont', `fm-icon-${type}`, className);
+  const IconClassName = classNames(classPrefix, 'fm-icon', 'fm-iconfont', `fm-icon-${type}`, className);
 
   const formatStyle = { ...style };
   if (color) {

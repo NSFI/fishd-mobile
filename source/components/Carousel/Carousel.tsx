@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import ReactCarousel from 'fishd-nuka-carousel';
 import { CarouselPropsType } from './PropsType';
@@ -127,7 +127,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
               arr.push(i);
             }
             const dotDom = arr.map(index => {
-              const dotCls = classnames(`${prefixCls}-wrap-dot`, {
+              const dotCls = classNames(`${prefixCls}-wrap-dot`, {
                 [`${prefixCls}-wrap-dot-active`]: index === currentSlide,
               });
               const currentDotStyle = index === currentSlide ? dotActiveStyle : dotStyle;
@@ -144,7 +144,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
       ];
     }
 
-    const wrapCls = classnames(prefixCls, className, {
+    const wrapCls = classNames(prefixCls, className, {
       [`${prefixCls}-vertical`]: vertical,
       [`${prefixCls}-dotout`]: dotOut && dots,
     });

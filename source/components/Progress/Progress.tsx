@@ -1,7 +1,7 @@
 /* eslint-disable prefer-template */
 import React from 'react';
-import classnames from 'classnames';
-import { isDef } from '../../utils/index';
+import classNames from 'classnames';
+import { isDef } from '../../utils/base';
 
 export interface ProgressProps {
   prefixCls?: string;
@@ -67,7 +67,7 @@ class Progress extends React.Component<ProgressProps, any> {
 
     const background = inactive ? '#cacaca' : color;
 
-    const wrapCls = classnames(prefixCls, className, {});
+    const wrapCls = classNames(prefixCls, className, {});
 
     const text = isDef(pivotText) ? pivotText : `${percentage}%`;
 

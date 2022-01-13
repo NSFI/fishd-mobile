@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   height: @navbar-height;
-  font-size: 16 * @hd;
+  font-size: 16px;
   color: #333;
   background-color: #fff;
 
@@ -21,12 +21,12 @@
   }
 
   &-left {
-    padding-left: @h-spacing-lg;
+    padding-left: 16px;
     color: #333;
 
     &-icon {
       display: inherit;
-      margin-right: @h-spacing-sm;
+      margin-right: @space-xs;
     }
   }
 
@@ -38,16 +38,16 @@
 
   &-right {
     justify-content: flex-end;
-    margin-right: @h-spacing-lg;
+    margin-right: 16px;
     color: #333;
   }
 
   &-light {
-    color: @brand-primary;
-    background-color: @fill-base;
+    color: @color-primary;
+    background-color: @color-gray-9;
   }
 
   &-light &-title {
-    color: @color-text-base;
+    color: @color-gray-1;
   }
 }

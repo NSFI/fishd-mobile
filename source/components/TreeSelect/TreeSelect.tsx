@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 
 export interface TreeSelectProps {
@@ -9,7 +9,7 @@ export interface TreeSelectProps {
 const classPrefix = `fm-tree-select`;
 
 const TreeSelect: React.FC<TreeSelectProps> = ({ className }) => {
-  const TreeSelectClassName = classnames(classPrefix, {}, className);
+  const TreeSelectClassName = classNames(classPrefix, {}, className);
   return <div className={TreeSelectClassName}></div>;
 };
 

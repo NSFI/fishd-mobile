@@ -1,5 +1,5 @@
 import React, { Children, cloneElement } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 export interface StepsProps {
   prefixCls?: string;
@@ -37,7 +37,7 @@ class Steps extends React.Component<StepsProps, any> {
     } = this.props;
     const filteredChildren = React.Children.toArray(children).filter(c => !!c);
 
-    const wrapCls = classnames(prefixCls, className, `${prefixCls}__${direction}`);
+    const wrapCls = classNames(prefixCls, className, `${prefixCls}__${direction}`);
 
     return (
       <div className={wrapCls}>

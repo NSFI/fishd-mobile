@@ -1,16 +1,12 @@
 # Layout 布局 【交互：刘莹莹 |视觉：徐剑杰 |开发：周旋】
 
-
-
 ## 何时使用
-
-
 
 :::demo
 
 ```js
 render(){
-  const { Row, Col } = Layout 
+  const { Row, Col } = Layout
   return(
   <div className="components-layout-demo-basic">
     <div className="demo-title">
@@ -99,7 +95,6 @@ render(){
 ```
 
 ```less
-
 .components-layout-demo-basic {
   .fm-col {
     margin-bottom: 10px;
@@ -109,50 +104,37 @@ render(){
     text-align: center;
     background-clip: content-box;
     &:nth-child(odd) {
-      background-color: #337EFF;
+      background-color: #337eff;
     }
 
     &:nth-child(even) {
-      background-color: #337EFF;
+      background-color: #337eff;
       opacity: 0.8;
     }
   }
 }
-
 ```
-
 
 :::
 
 ## API
 
+### Row API
 
-### Row Props
+| 参数    | 说明                                                                                   | 类型                     | 默认值  |
+| ------- | -------------------------------------------------------------------------------------- | ------------------------ | ------- |
+| type    | 布局方式，可选值为`flex`                                                               | `string`                 | -       |
+| gutter  | 列元素之间的间距（单位为 px）                                                          | `number \| string`       | -       |
+| tag     | 自定义元素标签                                                                         | `string`                 | `div`   |
+| justify | Flex 主轴对齐方式，可选值为 `start` `end` `center` <br> `space-around` `space-between` | `string`                 | `start` |
+| align   | Flex 交叉轴对齐方式，可选值为 `top` `center` `bottom`                                  | `string`                 | `top`   |
+| onClick | 点击回调                                                                               | `(event: Event) => void` | -       |
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| type | 布局方式，可选值为`flex` | _string_ | - |
-| gutter | 列元素之间的间距（单位为 px） | _number \| string_ | - |
-| tag | 自定义元素标签 | _string_ | `div` |
-| justify | Flex 主轴对齐方式，可选值为 `start` `end` `center` <br> `space-around` `space-between` | _string_ | `start` |
-| align | Flex 交叉轴对齐方式，可选值为 `top` `center` `bottom` | _string_ | `top` |
+### Col API
 
-### Col Props
-
-| 参数   | 说明           | 类型               | 默认值 |
-| ------ | -------------- | ------------------ | ------ |
-| span   | 列元素宽度     | _number \| string_ | -      |
-| offset | 列元素偏移距离 | _number \| string_ | -      |
-| tag    | 自定义元素标签 | _string_           | `div`  |
-
-### Row Events
-
-| 事件名 | 说明       | 回调参数       |
-| ------ | ---------- | -------------- |
-| onClick  | 点击时触发 | _event: Event_ |
-
-### Col Events
-
-| 事件名 | 说明       | 回调参数       |
-| ------ | ---------- | -------------- |
-| onClick  | 点击时触发 | _event: Event_ |
+| 参数    | 说明           | 类型                     | 默认值 |
+| ------- | -------------- | ------------------------ | ------ |
+| span    | 列元素宽度     | `number \| string`       | -      |
+| offset  | 列元素偏移距离 | `number \| string`       | -      |
+| tag     | 自定义元素标签 | `string`                 | `div`  |
+| onClick | 点击回调       | `(event: Event) => void` | -      |

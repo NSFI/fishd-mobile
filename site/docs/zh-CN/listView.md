@@ -101,19 +101,19 @@ render() {
 
 ## API
 
-| 属性           | 说明                                           | 类型               | 默认值       |
-| -------------- | ---------------------------------------------- | ------------------ | ------------ |
-| loading        | 是否加载中                                     | boolean            | `false`      |
-| finished       | 是否全部加载完成                               | boolean            | `false`      |
-| error          | 是否加载异常                                   | boolean            | `false`      |
-| disabled       | 禁止响应，通常多列 tab 时可能需要用到          | boolean            | `false`      |
-| loadingText    | 加载中文案                                     | string             | `加载中...`  |
-| finishedText   | 加载结束文案                                   | string             | `没有更多了` |
-| immediateCheck | 是否初始化检查加载                             | string             | `加载异常`   |
-| offset         | 滚动条与底部距离小于 offset 时触发 onLoad 事件 | number             | `50`         |
-| children       | 内容元素                                       | ReactNode          | -            |
-| customLoading  | 自定义 loading                                 | ReactNode          | -            |
-| customFinished | 自定义 finished                                | ReactNode          | -            |
-| customError    | 自定义 error                                   | ReactNode          | -            |
-| onLoad         | 加载更多事件                                   | () => void         | -            |
-| onScroll       | 滚动事件                                       | (e: Event) => void | -            |
+| 属性           | 说明                                           | 类型                 | 默认值       |
+| -------------- | ---------------------------------------------- | -------------------- | ------------ |
+| loading        | 是否加载中                                     | `boolean`            | `false`      |
+| finished       | 是否全部加载完成                               | `boolean`            | `false`      |
+| error          | 是否加载异常                                   | `boolean`            | `false`      |
+| disabled       | 禁止响应，通常多列 tab 时可能需要用到          | `boolean`            | `false`      |
+| loadingText    | 加载中文案                                     | `string`             | `加载中...`  |
+| finishedText   | 加载结束文案                                   | `string`             | `没有更多了` |
+| immediateCheck | 是否初始化检查加载                             | `string`             | `加载异常`   |
+| offset         | 滚动条与底部距离小于 offset 时触发 onLoad 事件 | `number`             | `50`         |
+| children       | 内容元素                                       | `React.ReactNode`    | -            |
+| customLoading  | 自定义 loading                                 | `React.ReactNode`    | -            |
+| customFinished | 自定义 finished                                | `React.ReactNode`    | -            |
+| customError    | 自定义 error                                   | `React.ReactNode`    | -            |
+| onLoad         | 加载更多事件                                   | `() => void`         | -            |
+| onScroll       | 滚动事件                                       | `(e: Event) => void` | -            |

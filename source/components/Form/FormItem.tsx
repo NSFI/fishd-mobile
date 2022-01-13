@@ -1,5 +1,5 @@
 import React, { useRef, useState, useCallback, useContext } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { Field, FormInstance } from 'rc-field-form';
 import FieldContext from 'rc-field-form/lib/FieldContext';
 import { FieldProps } from 'rc-field-form/lib/Field';
@@ -82,7 +82,7 @@ const FormItemLayout: React.FC<FormItemLayoutProps> = props => {
     </label>
   ) : null;
 
-  const FormItemClassName = classnames(classPrefix, {}, className);
+  const FormItemClassName = classNames(classPrefix, {}, className);
   return (
     <List.Item
       className={FormItemClassName}

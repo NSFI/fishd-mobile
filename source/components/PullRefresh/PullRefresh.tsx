@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, ReactNode, useMemo } from 'react';
 import { useReactive } from 'ahooks';
-import useTouch from '../../hooks/useTouch/index';
-import { getScrollTop, preventDefault } from '../../utils';
-import useScrollParent from '../../hooks/useScrollParent';
+import { useTouch } from '../../hooks/use-touch';
+import { useScrollParent } from '../../hooks/use-scroll-parent';
+
+import { getScrollTop, preventDefault } from '../../utils/dom';
 
 export type PullRefreshProps = {
   /** 是否加载中 */

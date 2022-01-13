@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 
 export interface LoadMoreProps {
@@ -42,12 +42,12 @@ class LoadMore extends React.Component<LoadMoreProps, any> {
   render() {
     const { className, prefixCls, style, type, color, size, textSize, vertical, text } = this.props;
 
-    const wrapCls = classnames(prefixCls, className, {
+    const wrapCls = classNames(prefixCls, className, {
       [`${prefixCls}__vertical`]: vertical,
       [`${prefixCls}__normal`]: !vertical,
     });
 
-    const spinnerCls = classnames(`${prefixCls}__spinner`, `${prefixCls}__spinner--${type}`);
+    const spinnerCls = classNames(`${prefixCls}__spinner`, `${prefixCls}__spinner--${type}`);
 
     const spStyle = { color, width: size, height: size };
 

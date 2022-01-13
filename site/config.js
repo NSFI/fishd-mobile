@@ -272,10 +272,10 @@ export default [
         published: true,
       },
       {
-        key: 'overlay',
+        key: 'mask',
         type: 'markdown',
-        name: 'Overlay 遮罩',
-        nameEn: 'Overlay',
+        name: 'Mask 遮罩',
+        nameEn: 'Mask',
         published: true,
       },
       {

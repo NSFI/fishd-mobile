@@ -1,9 +1,11 @@
 import React, { useState, useRef, forwardRef, useImperativeHandle } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 
 import Input, { InputProps, InputRef } from '../Input';
 import Icon from '../Icon';
+
+import { mergeProps } from '../../utils/merge-props';
 
 export type SearchBarProps = Pick<InputProps, 'onFocus' | 'onBlur'> & {
   className?: string;
@@ -33,21 +35,18 @@ export type SearchBarProps = Pick<InputProps, 'onFocus' | 'onBlur'> & {
 export type SearchRef = InputRef;
 
 const classPrefix = `fm-searchbar`;
-
-const SearchBar = (props, ref) => {
-  const {
-    className,
-    style,
-    placeholder = '请输入搜索关键词',
-    showCancelButton,
-    cancelText = '取消',
-    clearOnCancel = true,
-    clearable,
-  } = props;
+const defaultProps = {
+  placeholder: '请输入搜索关键词',
+  cancelText: '取消',
+  clearOnCancel: true,
+};
+const SearchBar = (p, ref) => {
+  const props = mergeProps(defaultProps, p);
+  const { className, style, placeholder, showCancelButton, cancelText, clearOnCancel, clearable } = props;
   const [focus, setFocus] = useState(false);
   const [value, setValue] = useControllableValue<string>(props);
   const inputRef = useRef<InputRef>(null);
-  const SearchBarClassName = classnames(classPrefix, {}, className);
+  const SearchBarClassName = classNames(classPrefix, {}, className);
 
   useImperativeHandle(ref, () => ({
     clear: () => inputRef.current?.clear(),

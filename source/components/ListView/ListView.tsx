@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, ReactNode } from 'react';
 import { useMount, usePersistFn } from 'ahooks';
 import { getElementRect } from '../../utils/dom';
-import useScrollParent from '../../hooks/useScrollParent';
+import { useScrollParent } from '../../hooks/use-scroll-parent';
 
 export type ListViewProps = {
   /** 禁止响应，通常多列tab时可能需要用到 */

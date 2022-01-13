@@ -88,6 +88,15 @@ render() {
 
 ## API
 
-| 属性  | 说明 | 类型   | 默认值 |
-| ----- | ---- | ------ | ------ |
-| title | 标题 | string | -      |
+| 属性             | 说明                         | 类型         | 默认值             |
+| ---------------- | ---------------------------- | ------------ | ------------------ |
+| value            | 输入值                       | `string`     | -                  |
+| placeholder      | 提示文本                     | `string`     | `请输入搜索关键词` |
+| clearable        | 是否允许清除                 | `boolean`    | -                  |
+| showCancelButton | 是否展示取消按钮             | `boolean`    | -                  |
+| cancelText       | 取消按钮文案                 | `string`     | `取消`             |
+| clearOnCancel    | 点击取消按钮后是否清空输入框 | `boolean`    | `true`             |
+| onSearch         | 输入框回车时触发             | `() => void` | -                  |
+| onChange         | 输入框内容变化时触发         | `() => void` | -                  |
+| onClear          | 点击清除按钮后触发           | `() => void` | -                  |
+| onCancel         | 点击取消按钮时触发           | `() => void` | -                  |

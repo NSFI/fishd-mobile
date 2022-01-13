@@ -4,7 +4,7 @@
 
 .@{toastPrefixCls} {
   position: fixed;
-  z-index: @toast-zindex;
+  z-index: 1000;
   width: 100%;
   font-size: @font-size-base;
   text-align: center;
@@ -21,7 +21,6 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    transform: translateZ(1px);
   }
 
   &&-nomask {
@@ -30,11 +29,7 @@
     left: 50%;
     width: auto;
     max-width: 50%;
-    transform: translateZ(1px);
-
-    .@{toastPrefixCls}-notice {
-      transform: translateX(-50%) translateY(-50%);
-    }
+    transform: translateX(-50%) translateY(-50%);
   }
 
   &-loading {
@@ -60,9 +55,9 @@
       min-width: 60 * @hd;
       padding: 16 * @hd;
       line-height: @line-height-paragraph;
-      color: @color-text-base-inverse;
+      color: @color-gray-9;
       border-radius: @radius-sm;
-      background-color: @toast-fill;
+      background-color: rgba(58, 58, 58, 0.9);
     }
   }
 }

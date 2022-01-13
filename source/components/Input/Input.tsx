@@ -1,5 +1,5 @@
 import React, { useRef, useState, useImperativeHandle } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 
 import Icon from '../Icon';
@@ -62,7 +62,7 @@ const defaultProps = {
 const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (p, ref) => {
   const props = mergeProps(defaultProps, p);
   const { className, style, clearable } = props;
-  const InputClassName = classnames(`${classPrefix}__wrapper`, {}, className);
+  const InputClassName = classNames(`${classPrefix}__wrapper`, {}, className);
   const [value, setValue] = useControllableValue(props);
   const [focus, setFocus] = useState(false);
   const nativeInputRef = useRef<HTMLInputElement>(null);

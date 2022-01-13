@@ -66,7 +66,7 @@ const ToastDemo = () => {
 
       <div className="demo-title">成功/失败提示</div>
       <div className="demo-wrap">
-        <Button type="guide" onClick={showToastSuccess}>
+        <Button type="success" onClick={showToastSuccess}>
           成功提示
         </Button>
         <Button type="danger" onClick={showToastError}>
@@ -108,13 +108,13 @@ ReactDOM.render(<ToastDemo />, mountNode);
 
 ## Toast.show
 
-| 属性     | 说明                           | 类型                                                      | 默认值  |
-| -------- | ------------------------------ | --------------------------------------------------------- | ------- |
-| icon     | 图标                           | `'success'` \| `'fail'` \| `'loading'` \| React.ReactNode | -       |
-| content  | 提示内容                       | React.ReactNode \| string                                 | -       |
-| duration | 自动关闭的延时，单位/秒        | number                                                    | `3`     |
-| mask     | 是否显示透明蒙层，防止触摸穿透 | boolean                                                   | `false` |
-| onClose  | 关闭后回调                     | () => void                                                | -       |
+| 属性     | 说明                           | 类型                                            | 默认值  |
+| -------- | ------------------------------ | ----------------------------------------------- | ------- |
+| icon     | 图标                           | `success \| fail \| loading \| React.ReactNode` | -       |
+| content  | 提示内容                       | `React.ReactNode`                               | -       |
+| duration | 自动关闭的延时，单位/秒        | `number`                                        | `3`     |
+| mask     | 是否显示透明蒙层，防止触摸穿透 | `boolean`                                       | `false` |
+| onClose  | 关闭后回调                     | `() => void`                                    | -       |
 
 ## Toast.clear
 

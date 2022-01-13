@@ -1,8 +1,10 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import TouchFeedback from 'rmc-feedback';
 
-import Icon from '../Icon'
+import Icon from '../Icon';
+
+import { mergeProps } from '../../utils/merge-props';
 
 export interface ListItemProps {
   className?: string;
@@ -12,17 +14,21 @@ export interface ListItemProps {
   description?: React.ReactNode;
   prefix?: React.ReactNode;
   extra?: React.ReactNode;
-  clickable?: React.ReactNode;
+  clickable?: boolean;
   arrow?: boolean | React.ReactNode;
   disabled?: boolean;
   onClick?: (e: React.MouseEvent) => void;
 }
 
 const classPrefix = `fm-list-item`;
+const defaultProps = {
+  disabled: false
+}
 
-const ListItem: React.FC<ListItemProps> = props => {
+const ListItem: React.FC<ListItemProps> = p => {
+  const props = mergeProps(defaultProps, p)
   const { className, clickable, prefix, title, children, description, extra, arrow, disabled } = props;
-  const ListItemClassName = classnames(
+  const ListItemClassName = classNames(
     classPrefix,
     {
       [`${classPrefix}--disabled`]: disabled,
@@ -32,7 +38,7 @@ const ListItem: React.FC<ListItemProps> = props => {
 
   return (
     <TouchFeedback activeClassName={clickable ? `${classPrefix}--active` : ''} disabled={disabled}>
-      <div className={ListItemClassName} onClick={disabled ? undefined : props.onClick }>
+      <div className={ListItemClassName} onClick={disabled ? undefined : props.onClick}>
         <div className={`${classPrefix}__content`}>
           {/* 前缀 */}
           {prefix && <div className={`${classPrefix}__prefix`}>{prefix}</div>}

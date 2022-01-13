@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { FlexItemPropsType } from './PropsType';
 
@@ -15,7 +15,7 @@ export default class FlexItem extends React.Component<FlexItemProps, any> {
 
   render() {
     const { children, className, prefixCls, style, ...restProps } = this.props;
-    const wrapCls = classnames(`${prefixCls}-item`, className);
+    const wrapCls = classNames(`${prefixCls}-item`, className);
     return (
       <div className={wrapCls} style={style} {...restProps}>
         {children}

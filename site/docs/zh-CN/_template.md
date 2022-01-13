@@ -8,11 +8,10 @@
 
 ## 基础用法
 
-:::demo demo标题
+:::demo demo 标题
 
 ```js
-
-render() {
+const Demo = () => {
   return (
     <div className="components-tpl-demo-basic">
       <div className="demo-title">基础用法</div>
@@ -22,11 +21,13 @@ render() {
       </div>
     </div>
   );
-}
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^="components-tpl-demo-"] .fm-button {
+[class^='components-tpl-demo-'] .fm-button {
   margin-bottom: 12px;
 }
 ```
@@ -35,8 +36,6 @@ render() {
 
 ## API
 
-| 属性 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| title | 标题 | string | - |
-
-
+| 属性  | 说明 | 类型   | 默认值 |
+| ----- | ---- | ------ | ------ |
+| title | 标题 | string | -      |

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { DropdownItemPropsType } from './PropsType';
 
 const DropdownItem: React.FC<DropdownItemPropsType> = ({
@@ -20,7 +20,7 @@ const DropdownItem: React.FC<DropdownItemPropsType> = ({
   return (
     <div className="fm-dropdown-menu__item">
       <div
-        className={classnames('fm-dropdown-menu__title', isActive ? 'fm-dropdown-menu__title--active' : '')}
+        className={classNames('fm-dropdown-menu__title', isActive ? 'fm-dropdown-menu__title--active' : '')}
         style={{
           color: isActive ? activeColor : '#222',
         }}

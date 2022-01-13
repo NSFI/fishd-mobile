@@ -1,0 +1,27 @@
+@import (reference) '../../../assets/css/index.less';
+
+@prefix: fm-mask;
+
+.@{prefix} {
+  --z-index: var(--fm-mask-z-index, 1000);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-index);
+  width: 100%;
+  height: 100%;
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    z-index: 1;
+  }
+}

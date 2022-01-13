@@ -1,157 +1,117 @@
-/* eslint-disable max-classes-per-file */
-import * as React from 'react';
-import classnames from 'classnames';
-import Dialog from 'rmc-dialog';
-import TouchFeedback from 'rmc-feedback';
-import { Action, ModalPropsType, CallbackOrActions } from './PropsType';
+import React, { useState } from 'react';
+import classNames from 'classnames';
+import { useSpring, animated } from '@react-spring/web';
+import { useUnmountedRef } from 'ahooks';
 
-export abstract class ModalComponent<P, S> extends React.Component<P, S> {
-  static alert: (
-    title: React.ReactNode,
-    message: React.ReactNode,
-    actions?: Action<React.CSSProperties>[],
-    platform?: string,
-  ) => { close: () => void };
+import Mask from '../Mask';
+import Icon from '../Icon';
+import ActionButton, { Action } from './ModalAction';
 
-  static prompt: (
-    title: React.ReactNode,
-    message: React.ReactNode,
-    callbackOrActions: CallbackOrActions<React.CSSProperties>,
-    type?: 'default' | 'secure-text' | 'login-password',
-    defaultValue?: string,
-    placeholders?: string[],
-    platform?: string,
-  ) => { close: () => void };
+import { mergeProps } from '../../utils/merge-props';
+import { VarProps } from '../../utils/var-props';
 
-  static operation: (actions?: Action<React.CSSProperties>[], platform?: string) => { close: () => void };
-}
-
-export interface ModalProps extends ModalPropsType<React.CSSProperties> {
-  prefixCls?: string;
-  transitionName?: string;
-  maskTransitionName?: string;
+export interface ModalProps {
   className?: string;
-  wrapClassName?: string;
-  wrapProps?: Partial<React.HTMLProps<HTMLDivElement>>;
-  platform?: string;
-  style?: React.CSSProperties;
-  bodyStyle?: React.CSSProperties;
+  style?: React.CSSProperties & VarProps<'--fm-modal-z-index'>;
+
+  visible?: boolean;
+  getContainer?: HTMLElement | (() => HTMLElement) | null;
+  closeOnClickModal?: boolean;
+  closeOnAction?: boolean;
+
+  title?: React.ReactNode;
+  content?: React.ReactNode;
+  actions?: Action[];
+
+  onAction?: (action: Action, index: number) => void | Promise<void>;
+  onClose?: () => void;
+  afterShow?: () => void;
+  afterClose?: () => void;
 }
 
-export default class Modal extends ModalComponent<ModalProps, any> {
-  static defaultProps = {
-    prefixCls: 'fm-modal',
-    transparent: false,
-    popup: false,
-    animationType: 'slide-down',
-    animated: true,
-    style: {},
-    onShow() {},
-    footer: [],
-    closable: false,
-    operation: false,
-    platform: 'ios',
-  };
+const defaultProps = {
+  actions: [],
+  closeOnAction: false,
+  closeOnClickModal: false,
+};
 
-  renderFooterButton(button: Action<React.CSSProperties>, prefixCls: string | undefined, i: number) {
-    let buttonStyle = {};
-    if (button.style) {
-      buttonStyle = button.style;
-      if (typeof buttonStyle === 'string') {
-        const styleMap: {
-          [key: string]: object;
-        } = {
-          cancel: {},
-          default: {},
-          destructive: { color: 'red' },
-        };
-        buttonStyle = styleMap[buttonStyle] || {};
-      }
-    }
+const classPrefix = `fm-modal`;
 
-    const onClickFn = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault();
-      if (button.onPress) {
-        button.onPress();
-      }
-    };
+const Modal: React.FC<ModalProps> = p => {
+  const props = mergeProps(defaultProps, p);
+  const { className } = props;
+  const ModalClassName = classNames(classPrefix, {}, className);
+  const unmountedRef = useUnmountedRef();
+  const [active, setActive] = useState(props.visible);
 
-    return (
-      <TouchFeedback activeClassName={`${prefixCls}-button-active`} key={i}>
-        <a className={`${prefixCls}-button`} role="button" style={buttonStyle} onClick={onClickFn}>
-          {button.text || `Button`}
-        </a>
-      </TouchFeedback>
-    );
-  }
-
-  render() {
-    const {
-      prefixCls,
-      className,
-      wrapClassName,
-      transitionName,
-      maskTransitionName,
-      style,
-      platform,
-      footer = [],
-      operation,
-      animated,
-      transparent,
-      popup,
-      animationType,
-      ...restProps
-    } = this.props;
-
-    const btnGroupClass = classnames(
-      `${prefixCls}-button-group-${footer.length === 2 && !operation ? 'h' : 'v'}`,
-      `${prefixCls}-button-group-${operation ? 'operation' : 'normal'}`,
-    );
-    const footerDom = footer.length ? (
-      <div className={btnGroupClass} role="group">
-        {footer.map((button, i) =>
-          // tslint:disable-next-line:jsx-no-multiline-js
-          this.renderFooterButton(button, prefixCls, i),
-        )}
-      </div>
-    ) : null;
-
-    let transName;
-    let maskTransName;
-    if (animated) {
-      // tslint:disable-next-line:prefer-conditional-expression
-      if (transparent) {
-        transName = maskTransName = 'fm-fade';
+  const style = useSpring({
+    opacity: props.visible ? 1 : 0,
+    xScale: props.visible ? 1 : 0,
+    config: {
+      precision: 0.01,
+      mass: 1,
+      tension: 200,
+      friction: 30,
+      clamp: true,
+    },
+    onStart: () => {
+      setActive(true);
+    },
+    onRest: () => {
+      if (unmountedRef.current) return;
+      setActive(props.visible);
+      if (props.visible) {
+        props.afterShow?.();
       } else {
-        transName = maskTransName = 'fm-slide-up';
+        props.afterClose?.();
       }
-      if (popup) {
-        transName = animationType === 'slide-up' ? 'fm-slide-up' : 'fm-slide-down';
-        maskTransName = 'fm-fade';
-      }
-    }
+    },
+  });
 
-    const wrapCls = classnames(wrapClassName, {
-      [`${prefixCls}-wrap-popup`]: popup,
-    });
-    const cls = classnames(className, {
-      [`${prefixCls}-transparent`]: transparent,
-      [`${prefixCls}-popup`]: popup,
-      [`${prefixCls}-popup-${animationType}`]: popup && animationType,
-      [`${prefixCls}-android`]: platform === 'android',
-    });
+  return (
+    <div className={ModalClassName} style={props.style}>
+      <Mask
+        className={`${classPrefix}-mask`}
+        visible={props.visible}
+        getContainer={props.getContainer}
+        onMaskClick={props.closeOnClickModal ? props?.onClose : undefined}
+      ></Mask>
+      <div className={`${classPrefix}-wrap`} style={{ display: active ? 'unset' : 'none' }}>
+        <animated.div
+          className={`${classPrefix}-main`}
+          style={{
+            ...style,
+            transform: style.xScale
+              .to({
+                range: [0, 0.25, 0.5, 0.75, 1],
+                output: [0.4, 0.8, 1, 1.1, 1],
+              })
+              .to(x => `scale(${x})`),
+          }}
+        >
+          <Icon className={`${classPrefix}-close`} type="cross" onClick={props?.onClose}></Icon>
+          <div className={`${classPrefix}-header`}>{props.title}</div>
+          <div className={`${classPrefix}-body`}>{props.content}</div>
+          <div className={`${classPrefix}-footer`}>
+            {props.actions.map((action, index) => {
+              return (
+                <ActionButton
+                  action={action}
+                  key={action.key}
+                  onAction={async () => {
+                    await Promise.all([action.onClick?.(), props.onAction?.(action, index)]);
+                    if (props.closeOnAction) {
+                      props.onClose?.();
+                    }
+                  }}
+                ></ActionButton>
+              );
+            })}
+          </div>
+        </animated.div>
+      </div>
+    </div>
+  );
+};
 
-    return (
-      <Dialog
-        {...restProps}
-        prefixCls={prefixCls}
-        className={cls}
-        wrapClassName={wrapCls}
-        transitionName={transitionName || transName}
-        maskTransitionName={maskTransitionName || maskTransName}
-        style={style}
-        footer={footerDom}
-      />
-    );
-  }
-}
+export default Modal;

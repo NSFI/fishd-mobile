@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { FlexPropsType as BasePropsType } from './PropsType';
 
@@ -33,7 +33,7 @@ export default class Flex extends React.Component<FlexProps, any> {
       ...restProps
     } = this.props;
 
-    const wrapCls = classnames(prefixCls, className, {
+    const wrapCls = classNames(prefixCls, className, {
       [`${prefixCls}-dir-row`]: direction === 'row',
       [`${prefixCls}-dir-row-reverse`]: direction === 'row-reverse',
       [`${prefixCls}-dir-column`]: direction === 'column',

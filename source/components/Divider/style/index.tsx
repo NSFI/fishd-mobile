@@ -1,2 +1,2 @@
-import '../../../assets/css/index';
+import '../../../assets/css/index.less';
 import './index.less';

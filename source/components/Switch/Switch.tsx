@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import Icon from '../Icon';
 
@@ -41,7 +41,7 @@ const Switch: React.FC<SwitchProps> = props => {
     defaultValuePropName: 'defaultChecked',
   });
 
-  const SwitchClassName = classnames(
+  const SwitchClassName = classNames(
     classPrefix,
     {
       [`${classPrefix}--checked`]: checked === checkedValue,

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import CollapseIcon from './CollapseIcon';
 import DeleteIcon from './DeleteIcon';
@@ -48,8 +48,8 @@ class NumberKey extends React.Component<NumberKeyProps, any> {
   render() {
     const { className, prefixCls, large, wider, color } = this.props;
 
-    const wrapCls = classnames(`${prefixCls}__wrapper`, className, wider ? `${prefixCls}__wider` : '');
-    const keyCls = classnames(
+    const wrapCls = classNames(`${prefixCls}__wrapper`, className, wider ? `${prefixCls}__wider` : '');
+    const keyCls = classNames(
       `${prefixCls}__key`,
       large ? `${prefixCls}__large` : '',
       color ? `${prefixCls}__${color}` : '',

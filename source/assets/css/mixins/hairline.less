@@ -12,7 +12,7 @@
   content: '';
 }
 
-.hairline(@direction, @color: @border-color-base) when (@direction = 'top') {
+.hairline(@direction, @color: @color-gray-6) when (@direction ='top') {
   border-top: 1px solid @color;
 
   html:not([data-scale]) & {
@@ -35,7 +35,7 @@
   }
 }
 
-.hairline(@direction, @color: @border-color-base) when (@direction = 'right') {
+.hairline(@direction, @color: @color-gray-6) when (@direction ='right') {
   border-right: 1px solid @color;
 
   html:not([data-scale]) & {
@@ -59,7 +59,7 @@
   }
 }
 
-.hairline(@direction, @color: @border-color-base) when (@direction = 'bottom') {
+.hairline(@direction, @color: @color-gray-6) when (@direction ='bottom') {
   border-bottom: 1px solid @color;
 
   html:not([data-scale]) & {
@@ -82,7 +82,7 @@
   }
 }
 
-.hairline(@direction, @color: @border-color-base) when (@direction = 'left') {
+.hairline(@direction, @color: @color-gray-6) when (@direction ='left') {
   border-left: 1px solid @color;
 
   html:not([data-scale]) & {
@@ -105,7 +105,7 @@
   }
 }
 
-.hairline(@direction, @color: @border-color-base, @radius: 0) when (@direction = 'all') {
+.hairline(@direction, @color: @color-gray-6, @radius: 0) when (@direction ='all') {
   border: 1px solid @color;
   border-radius: @radius;
 
@@ -132,7 +132,7 @@
   }
 }
 
-.hairline-remove(@position) when (@position = 'left') {
+.hairline-remove(@position) when (@position ='left') {
   border-left: 0;
 
   &::before {
@@ -140,7 +140,7 @@
   }
 }
 
-.hairline-remove(@position) when (@position = 'right') {
+.hairline-remove(@position) when (@position ='right') {
   border-right: 0;
 
   &::after {
@@ -148,7 +148,7 @@
   }
 }
 
-.hairline-remove(@position) when (@position = 'top') {
+.hairline-remove(@position) when (@position ='top') {
   border-top: 0;
 
   &::before {
@@ -156,7 +156,7 @@
   }
 }
 
-.hairline-remove(@position) when (@position = 'bottom') {
+.hairline-remove(@position) when (@position ='bottom') {
   border-bottom: 0;
 
   &::after {
@@ -164,7 +164,7 @@
   }
 }
 
-.hairline-remove(@position) when (@position = 'all') {
+.hairline-remove(@position) when (@position ='all') {
   border: 0;
 
   &::before {

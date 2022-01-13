@@ -1,10 +1,10 @@
 import * as React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import Icon from '../Icon';
 import LoadMore from '../LoadMore';
 import ImageView from '../ImageView';
 
-import { isPromise, addUnit } from '../../utils';
+import { isPromise, addUnit } from '../../utils/base';
 import { readFile, isOversize, toArray } from './utils';
 
 export interface FileItem {
@@ -235,7 +235,7 @@ class Upload extends React.Component<UploadProps, any> {
       previewImage,
     } = this.props;
 
-    const wrapCls = classnames(prefixCls, className, {});
+    const wrapCls = classNames(prefixCls, className, {});
 
     const previewStyle = {
       width: addUnit(previewSize),
@@ -274,7 +274,7 @@ class Upload extends React.Component<UploadProps, any> {
 
           {fileList.length < (maxCount as number) && showUpload ? (
             <div
-              className={classnames(`${prefixCls}__upload`, disabled ? `${prefixCls}__disabled` : '')}
+              className={classNames(`${prefixCls}__upload`, disabled ? `${prefixCls}__disabled` : '')}
               style={previewStyle}
             >
               <Icon type="add" color="#D8D8D8" fontSize={30}></Icon>

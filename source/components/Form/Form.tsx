@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import RcForm, { FormProps as RcFormProps, FormInstance } from 'rc-field-form';
 import { FormContext, FormContextType } from './context';
 
@@ -28,7 +28,7 @@ const Form: React.ForwardRefRenderFunction<FormInstance, FormProps> = (props, re
     footer,
     ...formProps
   } = props;
-  const FormClassName = classnames(
+  const FormClassName = classNames(
     classPrefix,
     {
       [`${classPrefix}--vertical`]: layout === 'vertical',

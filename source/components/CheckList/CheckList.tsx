@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 
 export interface CheckListProps {
@@ -9,7 +9,7 @@ export interface CheckListProps {
 const classPrefix = `fm-check-list`;
 
 const CheckList: React.FC<CheckListProps> = ({ className }) => {
-  const CheckListClassName = classnames(classPrefix, {}, className);
+  const CheckListClassName = classNames(classPrefix, {}, className);
   return <div className={CheckListClassName}></div>;
 };
 

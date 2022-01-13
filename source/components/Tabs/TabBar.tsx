@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { TabsPropsType } from './PropsType';
 
@@ -140,7 +140,7 @@ class TabBar extends React.Component<TabsProps, any> {
           {tabs.map((tab, index) => (
             <div
               key={`${tab.title}-${index}`}
-              className={classnames(`${prefixCls}-${tabDirection}-tab`, {
+              className={classNames(`${prefixCls}-${tabDirection}-tab`, {
                 [`${prefixCls}-${tabDirection}-tab-active`]: index === activeTabIndex,
               })}
               onClick={() => {
@@ -152,7 +152,7 @@ class TabBar extends React.Component<TabsProps, any> {
             </div>
           ))}
           <div
-            className={classnames(`${prefixCls}-${tabDirection}-active-bar`, {
+            className={classNames(`${prefixCls}-${tabDirection}-active-bar`, {
               [`${prefixCls}-${tabDirection}-active-bar-animated`]: animated,
             })}
             style={{ ...(tabsUnderlineStyle || {}), ...defaultUnderLineStyle }}

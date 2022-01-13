@@ -1,10 +1,18 @@
-import alert from './alert';
 import Modal from './Modal';
-import operation from './operation';
-import prompt from './prompt';
+import { show } from './show';
+import { alert } from './alert';
+import { confirm } from './confirm';
+export type { ModalProps } from './Modal';
 
-Modal.alert = alert;
-Modal.prompt = prompt;
-Modal.operation = operation;
+type CompoundedType = typeof Modal & {
+  show: typeof show;
+  alert: typeof alert;
+  confirm: typeof confirm;
+};
 
-export default Modal;
+const Compounded = Modal as CompoundedType;
+Compounded.show = show;
+Compounded.alert = alert;
+Compounded.confirm = confirm;
+
+export default Compounded;

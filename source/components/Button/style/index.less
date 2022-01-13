@@ -1,15 +1,17 @@
 @import (reference) '../../../assets/css/index.less';
 
 @buttonPrefixCls: fm-button;
-@guideColor: #26BD71;
-@dangerColor: #EE0A24;
-@warningColor: #FFAF0F;
-@primaryColor: #337EFF;
 
-.plain(@plainColor) {
-  color: @plainColor;
-  border: 1px solid @plainColor;
-  background-color: #fff;
+.plain(@color) {
+  color: @color;
+  border: 1px solid @color;
+  background-color: transparent;
+}
+
+.none(@color) {
+  color: @color;
+  border: 1px solid transparent;
+  background-color: transparent;
 }
 
 .@{buttonPrefixCls} {
@@ -75,40 +77,60 @@
   }
 
   &-default {
-    color: #323233;
+    color: @color-gray-1;
     border: 1px solid #ebedf0;
     background-color: #fff;
   }
 
   &-primary {
     color: #fff;
-    background-color: @primaryColor;
-    &.@{buttonPrefixCls}-plain {
-      .plain(@primaryColor);
+    background-color: @color-primary;
+
+    &.@{buttonPrefixCls}-fill-outline {
+      .plain(@color-primary);
+    }
+
+    &.@{buttonPrefixCls}-fill-none {
+      .none(@color-primary);
     }
   }
 
-  &-guide {
+  &-success {
     color: #fff;
-    background-color: @guideColor;
-    &.@{buttonPrefixCls}-plain {
-      .plain(@guideColor);
-    }
-  }
+    background-color: @color-success;
 
-  &-danger {
-    color: #fff;
-    background-color: @dangerColor;
-    &.@{buttonPrefixCls}-plain {
-      .plain(@dangerColor);
+    &.@{buttonPrefixCls}-fill-outline {
+      .plain(@color-success);
+    }
+
+    &.@{buttonPrefixCls}-fill-none {
+      .none(@color-success);
     }
   }
 
   &-warning {
     color: #fff;
-    background-color: @warningColor;
-    &.@{buttonPrefixCls}-plain {
-      .plain(@warningColor);
+    background-color: @color-warning;
+
+    &.@{buttonPrefixCls}-fill-outline {
+      .plain(@color-warning);
+    }
+
+    &.@{buttonPrefixCls}-fill-none {
+      .none(@color-warning);
+    }
+  }
+
+  &-danger {
+    color: #fff;
+    background-color: @color-danger;
+
+    &.@{buttonPrefixCls}-fill-outline {
+      .plain(@color-danger);
+    }
+
+    &.@{buttonPrefixCls}-fill-none {
+      .none(@color-danger);
     }
   }
 
@@ -126,7 +148,7 @@
   }
 
   &-normal {
-    padding: 0 20px;
+    padding: 0 16px;
     font-size: 14px;
   }
 
@@ -142,20 +164,20 @@
     font-size: 10px;
   }
 
-  .fm-icon + .fm-button-text,
-  .fm-button__loading + .fm-button-text {
-    margin-left: 4px;
+  .fm-button__loading {
+    display: flex;
+    align-items: center;
   }
 
   .fm-loading__spinner {
     position: relative;
     display: inline-block;
-    width: 30px;
+    width: 20px;
     max-width: 100%;
-    height: 30px;
+    height: 20px;
     max-height: 100%;
     vertical-align: middle;
-    animation: fm-rotate 0.8s linear infinite;
+    animation: fm-rotate 2s linear infinite;
 
     @keyframes fm-rotate {
       0% {
@@ -168,8 +190,8 @@
     }
   }
 
-  .fm-loading__spinner--circular {
-    animation-duration: 2s;
+  .fm-loading__text {
+    margin-left: 4px;
   }
 
   .fm-loading__circular {

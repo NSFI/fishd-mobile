@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { BadgePropsTypes } from './PropsType';
 
@@ -43,7 +43,7 @@ export default class Badge extends React.Component<BadgeProps, any> {
       text = '';
     }
 
-    const scrollNumberCls = classnames({
+    const scrollNumberCls = classNames({
       [`${prefixCls}-dot`]: dot,
       [`${prefixCls}-dot-large`]: dot && size === 'large',
       [`${prefixCls}-text`]: !dot && !corner,
@@ -51,7 +51,7 @@ export default class Badge extends React.Component<BadgeProps, any> {
       [`${prefixCls}-corner-large`]: corner && size === 'large',
     });
 
-    const badgeCls = classnames(prefixCls, className, {
+    const badgeCls = classNames(prefixCls, className, {
       [`${prefixCls}-not-a-wrapper`]: !children,
       [`${prefixCls}-corner-wrapper`]: corner,
       [`${prefixCls}-hot`]: !!hot,

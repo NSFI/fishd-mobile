@@ -1,8 +1,8 @@
 /* eslint-disable prefer-const */
 /* eslint-disable no-plusplus */
-import classnames from 'classnames';
-import TouchFeedback from 'rmc-feedback';
 import * as React from 'react';
+import classNames from 'classnames';
+import TouchFeedback from 'rmc-feedback';
 import { GridPropsType, DataItem } from './PropsType';
 import Flex from '../Flex/index';
 
@@ -39,7 +39,7 @@ class Grid extends React.Component<GridProps, any> {
         </>
       );
     }
-    const cls = classnames(prefixCls, {
+    const cls = classNames(prefixCls, {
       [`column-num-${columnNum}`]: true,
       [`${prefixCls}-item-content`]: true,
       [`${prefixCls}-item-content__border`]: !!gutter && border,
@@ -143,7 +143,7 @@ class Grid extends React.Component<GridProps, any> {
 
     const rowsArr = this.getRows(rowCount, dataLength);
     const renderEl = rowsArr;
-    const cls = classnames(prefixCls, className, {
+    const cls = classNames(prefixCls, className, {
       [`${prefixCls}-square`]: square,
       [`${prefixCls}-line`]: border && !gutter,
     });

@@ -10,19 +10,19 @@
 
   &-text {
     position: absolute;
-    top: -1 * @v-spacing-sm;
+    top: -1 * @space-sm;
     z-index: 10;
     min-width: @icon-size-xs / 2;
     height: @icon-size-xs;
-    padding: 0 @h-spacing-sm;
-    font-size: @font-size-caption-sm;
+    padding: 0 @space-xs;
+    font-size: @font-size-sm;
     font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', SimSun, sans-serif;
     line-height: @icon-size-xs;
     text-align: center;
     white-space: nowrap;
-    color: @color-text-base-inverse;
-    border-radius: 2 * @v-spacing-sm;
-    background-color: @brand-important;
+    color: @color-gray-9;
+    border-radius: 2 * @space-sm;
+    background-color: @color-danger;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -30,7 +30,7 @@
     transform-origin: -10% center;
 
     a {
-      color: @color-text-base-inverse;
+      color: @color-gray-9;
     }
 
     p {
@@ -50,7 +50,7 @@
     width: 0.5 * @link-button-font-size;
     height: 0.5 * @link-button-font-size;
     border-radius: 100%;
-    background: @brand-important;
+    background: @color-danger;
     transform: translateX(-50%);
     transform-origin: 0 center;
 
@@ -74,11 +74,11 @@
     right: -2 * @link-button-font-size;
     width: 5 * @link-button-font-size;
     padding: 0.5 * @link-button-font-size;
-    font-size: @font-size-subhead;
+    font-size: @font-size-lg;
     text-align: center;
     white-space: nowrap;
-    color: @color-text-base-inverse;
-    background-color: @brand-important;
+    color: @color-gray-9;
+    background-color: @color-danger;
     transform: rotate(45deg);
 
     &-wrapper {

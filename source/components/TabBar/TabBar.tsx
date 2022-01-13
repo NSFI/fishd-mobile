@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import * as React from 'react';
-import { getDataAttr } from '../../utils';
+import { getDataAttr } from '../../utils/base';
 import { TabBarItemProps, TabBarProps } from './PropsType';
 
 import Tab from './Tab';

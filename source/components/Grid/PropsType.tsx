@@ -1,6 +1,6 @@
 export interface DataItem {
-  icon?: any;
-  text?: any;
+  icon?: React.ReactNode;
+  text?: React.ReactNode;
   [key: string]: any;
 }
 

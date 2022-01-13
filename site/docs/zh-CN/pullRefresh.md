@@ -57,20 +57,20 @@ render() {
 
 ## API
 
-| 属性              | 说明                                     | 类型       | 默认值            |
-| ----------------- | ---------------------------------------- | ---------- | ----------------- |
-| loading           | 是否加载中                               | boolean    | `false`           |
-| disabled          | 是否禁用                                 | boolean    | `false`           |
-| pullingText       | 下拉文案                                 | string     | `下拉即可刷新...` |
-| loosingText       | 释放文案                                 | string     | `释放即可刷新...` |
-| loadingText       | 加载文案                                 | string     | `加载中...`       |
-| successText       | 加载成功文案                             | string     | -                 |
-| successDuration   | 加载成功文案持续时间                     | number     | `500`             |
-| animationDuration | 动画时长                                 | number     | `300`             |
-| headHeight        | 头部高度                                 | number     | `50`              |
-| pullDistance      | 触发下拉刷新的距离，默认等于`headHeight` | number     | `50`              |
-| customPulling     | 自定义下拉节点                           | ReactNode  | -                 |
-| customLoosing     | 自定义释放节点                           | ReactNode  | -                 |
-| customLoading     | 自定义加载节点                           | ReactNode  | -                 |
-| children          | 内容元素                                 | ReactNode  | -                 |
-| onRefresh         | 刷新事件                                 | () => void | -                 |
+| 属性              | 说明                                     | 类型              | 默认值            |
+| ----------------- | ---------------------------------------- | ----------------- | ----------------- |
+| loading           | 是否加载中                               | `boolean`         | `false`           |
+| disabled          | 是否禁用                                 | `boolean`         | `false`           |
+| pullingText       | 下拉文案                                 | `string`          | `下拉即可刷新...` |
+| loosingText       | 释放文案                                 | `string`          | `释放即可刷新...` |
+| loadingText       | 加载文案                                 | `string`          | `加载中...`       |
+| successText       | 加载成功文案                             | `string`          | -                 |
+| successDuration   | 加载成功文案持续时间                     | `number`          | `500`             |
+| animationDuration | 动画时长                                 | `number`          | `300`             |
+| headHeight        | 头部高度                                 | `number`          | `50`              |
+| pullDistance      | 触发下拉刷新的距离，默认等于`headHeight` | `number`          | `50`              |
+| customPulling     | 自定义下拉节点                           | `React.ReactNode` | -                 |
+| customLoosing     | 自定义释放节点                           | `React.ReactNode` | -                 |
+| customLoading     | 自定义加载节点                           | `React.ReactNode` | -                 |
+| children          | 内容元素                                 | `React.ReactNode` | -                 |
+| onRefresh         | 刷新事件                                 | `() => void`      | -                 |

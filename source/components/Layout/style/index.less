@@ -51,6 +51,7 @@
 }
 
 .generate-col(24);
+
 .generate-col(@n, @i: 1) when (@i =< @n) {
   .@{colPrefixCls}-@{i} {
     width: @i * 100% / 24;

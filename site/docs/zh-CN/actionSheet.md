@@ -4,7 +4,7 @@
 
 ## 何时使用
 
-从底部弹出的模态框，提供和当前场景相关的2个以上的操作动作，支持提供标题和描述。
+从底部弹出的模态框，提供和当前场景相关的 2 个以上的操作动作，支持提供标题和描述。
 
 ## 基础用法
 
@@ -42,7 +42,7 @@ render() {
 ```
 
 ```less
-[class^="components-actionSheet-demo-"] .fm-button {
+[class^='components-actionSheet-demo-'] .fm-button {
   margin-bottom: 12px;
   width: 100%;
 }
@@ -97,7 +97,7 @@ render() {
 ```
 
 ```less
-[class^="components-actionSheet-demo-"] .fm-button {
+[class^='components-actionSheet-demo-'] .fm-button {
   margin-bottom: 12px;
   width: 100%;
 }
@@ -152,7 +152,7 @@ render() {
 ```
 
 ```less
-[class^="components-actionSheet-demo-"] .fm-button {
+[class^='components-actionSheet-demo-'] .fm-button {
   margin-bottom: 12px;
   width: 100%;
 }
@@ -161,33 +161,32 @@ render() {
 :::
 
 ## API
+
 组件提供了一些静态方法，使用方式和参数如下：
 
-ActionSheet.showActionSheetWithOptions(config)
+### ActionSheet.showActionSheetWithOptions(config)
 
-| 属性 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| options | 按钮标题列表 | 	Array< string >  | - |
-| title | 标题 | string | - |
-| message | 描述 | string | - |
-| cancelText | 取消按钮文本 | string | `取消` |
-| destructiveButtonIndex | 按钮列表中破坏性按钮（一般为删除）的索引位置 | number | - |
-| maskClosable | 点击蒙层是否允许关闭 | boolean | `true` |
-| onSelect | 点击选项时触发，禁用或加载状态下不会触发 | (buttonIndex: number) : Promise | - |
-| onCancel | 点击取消按钮时触发 | () : Promise | - |
-| onClose | 关闭面板时触发 | () : Promise | - |
+| 属性                   | 说明                                         | 类型                                     | 默认值 |
+| ---------------------- | -------------------------------------------- | ---------------------------------------- | ------ |
+| options                | 按钮标题列表                                 | `string[]`                               | -      |
+| title                  | 标题                                         | `string`                                 | -      |
+| message                | 描述                                         | `string`                                 | -      |
+| cancelText             | 取消按钮文本                                 | `string`                                 | `取消` |
+| destructiveButtonIndex | 按钮列表中破坏性按钮（一般为删除）的索引位置 | `number`                                 | -      |
+| maskClosable           | 点击蒙层是否允许关闭                         | `boolean`                                | `true` |
+| onSelect               | 点击选项时触发，禁用或加载状态下不会触发     | `(buttonIndex: number) => void \| Promise<void>` | -      |
+| onCancel               | 点击取消按钮时触发                           | `() => void \| Promise<void>`                    | -      |
+| onClose                | 关闭面板时触发                               | `() => void \| Promise<void>`                    | -      |
 
+### ActionSheet.showShareActionSheetWithOptions(config)
 
-ActionSheet.showShareActionSheetWithOptions(config)
-
-| 属性 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| options | 分享按钮列表 | 	Array< {icon: ReactNode, title: string} > 或 二维数组  | - |
-| title | 标题 | string | - |
-| message | 描述 | string | - |
-| cancelText | 取消按钮文本 | string | `取消` |
-| maskClosable | 点击蒙层是否允许关闭 | boolean | `true` |
-| onSelect | 点击选项时触发，禁用或加载状态下不会触发 | (buttonIndex: number, rowIndex: number) : Promise | - |
-| onCancel | 点击取消按钮时触发 | () : Promise | - |
-| onClose | 关闭面板时触发 | () : Promise | - |
-
+| 属性         | 说明                                     | 类型                                                       | 默认值 |
+| ------------ | ---------------------------------------- | ---------------------------------------------------------- | ------ |
+| options      | 分享按钮列表                             | `{icon: ReactNode, title: string}[] 或 二维数组`           | -      |
+| title        | 标题                                     | `string`                                                   | -      |
+| message      | 描述                                     | `string`                                                   | -      |
+| cancelText   | 取消按钮文本                             | `string`                                                   | `取消` |
+| maskClosable | 点击蒙层是否允许关闭                     | `boolean`                                                  | `true` |
+| onSelect     | 点击选项时触发，禁用或加载状态下不会触发 | `(buttonIndex: number, rowIndex: number) => void \| Promise<void>` | -      |
+| onCancel     | 点击取消按钮时触发                       | `() => void \| Promise<void>`                                      | -      |
+| onClose      | 关闭面板时触发                           | `() => void \| Promise<void>`                                      | -      |

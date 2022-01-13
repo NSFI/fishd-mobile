@@ -4,33 +4,33 @@
 .@{prefix}-item {
   font-size: @font-size-base;
 
-  .fm-list-item__content {
-    align-items: stretch;
-  }
-
   &__label {
     display: block;
     height: 100%;
     line-height: 1.5;
-    color: @color-text-base;
+    color: @color-gray-1;
   }
 
   &__error {
     font-size: 12px;
-    color: @color-red;
+    color: @color-danger;
   }
 
   &__required {
     margin-left: 4px;
-    color: @color-red;
+    color: @color-danger;
+  }
+
+  .fm-list-item__content {
+    align-items: stretch;
   }
 
   .fm-list-item__prefix {
-    color: @color-text-base;
+    color: @color-gray-1;
   }
 }
 
 .@{prefix}-errors {
   font-size: 12px;
-  color: @color-red;
+  color: @color-danger;
 }

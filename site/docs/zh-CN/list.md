@@ -89,13 +89,16 @@ ReactDOM.render(<Demo />, mountNode);
 
 ### List
 
-| 属性         | 说明        | 类型     | 默认值 |
-| ------------ | ----------- | -------- | ------ |
-| renderHeader | list heder  | (): void | 无     |
-| renderFooter | list footer | (): void | 无     |
-
 ### List.Item
 
-| 属性  | 说明     | 类型                 | 默认值 |
-| ----- | -------- | -------------------- | ------ |
-| extra | 右边内容 | String/React.Element | 无     |
+| 属性        | 说明         | 类型                            | 默认值  |
+| ----------- | ------------ | ------------------------------- | ------- |
+| title       | 标题         | `React.reactNode`               | -       |
+| children    | 主题内容     | `React.reactNode`               | -       |
+| description | 描述         | `React.reactNode`               | -       |
+| prefix      | 前缀内容     | `React.reactNode`               | -       |
+| extra       | 后缀内容     | `React.reactNode`               | -       |
+| arrow       | 是否展示箭头 | `boolean`                       | -       |
+| clickable   | 是否可点击   | `boolean`                       | -       |
+| disabled    | 是否禁用     | `boolean`                       | `false` |
+| onClick     | 点击事件     | `(e: React.MouseEvent) => void` | -       |

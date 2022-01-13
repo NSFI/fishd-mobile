@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import Notification from 'rmc-notification';
 
 import Icon from '../Icon';
@@ -24,7 +24,7 @@ const getMessageInstance: (config: ToastProps) => Promise<any> = ({ mask }) =>
         prefixCls,
         style: {}, // clear rmc-notification default style
         transitionName: 'fm-fade',
-        className: classnames({
+        className: classNames({
           [`${prefixCls}-mask`]: mask,
           [`${prefixCls}-nomask`]: !mask,
         }),

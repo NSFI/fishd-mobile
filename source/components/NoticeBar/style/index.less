@@ -13,28 +13,26 @@
 
   &-content {
     flex: 1;
+    overflow: hidden;
     width: 100%;
-    margin: auto @h-spacing-lg;
-    .ellipsis();
+    margin: auto 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &-icon {
     display: flex;
     align-items: center;
-    margin-left: @h-spacing-lg;
-
-    .@{noticeBarPrefixCls}-trips {
-      // .encoded-svg-background-i(@icon-trips);
-    }
+    margin-left: 16px;
 
     & + div {
-      margin-left: @h-spacing-sm;
+      margin-left: @space-xs;
     }
   }
 
   &-operation {
     display: flex;
     align-items: center;
-    padding-right: @h-spacing-md;
+    padding-right: @space-base;
   }
 }

@@ -17,7 +17,7 @@ render(){
     <div className="label">按钮类型</div>
     <div className="wrapper">
       <Button type="primary">主要按钮</Button>
-      <Button type="guide">引导按钮</Button>
+      <Button type="success">成功按钮</Button>
       <Button>默认按钮</Button>
       <Button type="danger">危险按钮</Button>
       <Button type="warning">警告按钮</Button>
@@ -32,12 +32,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -54,8 +53,8 @@ render(){
    <div className="button-plain-md">
     <div className="label">朴素按钮</div>
     <div className="wrapper">
-      <Button type="primary" plain>朴素按钮</Button>
-      <Button type="guide" plain>朴素按钮</Button>
+      <Button type="primary" fill="outline">朴素按钮</Button>
+      <Button type="success" fill="outline">朴素按钮</Button>
     </div>
   </div>
   )
@@ -67,12 +66,45 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+}
+```
+
+:::
+
+## 文本按钮
+
+:::demo
+
+```js
+render(){
+ return(
+   <div className="button-plain-md">
+    <div className="label">文本按钮</div>
+    <div className="wrapper">
+      <Button type="primary" fill="none">文本按钮</Button>
+      <Button type="success" fill="none">文本按钮</Button>
+    </div>
+  </div>
+  )
+}
+```
+
+```less
+.button-plain-md {
+  padding: 0 16px 24px;
+  .label {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .fm-button {
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -89,8 +121,8 @@ render(){
    <div className="button-hairline-md">
     <div className="label">细边框按钮</div>
     <div className="wrapper">
-      <Button type="primary" plain hairline>细边框按钮</Button>
-      <Button type="guide" plain hairline>细边框按钮</Button>
+      <Button type="primary" fill="outline" hairline>细边框按钮</Button>
+      <Button type="success" fill="outline" hairline>细边框按钮</Button>
     </div>
   </div>
   )
@@ -102,12 +134,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -125,7 +156,7 @@ render(){
     <div className="label">禁用状态</div>
     <div className="wrapper">
       <Button type="primary" disabled>禁用状态</Button>
-      <Button type="guide" plain disabled>禁用状态</Button>
+      <Button type="primary" fill="outline" disabled>禁用状态</Button>
     </div>
   </div>
   )
@@ -137,12 +168,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -159,8 +189,10 @@ render(){
    <div className="button-loading-md">
     <div className="label">加载状态</div>
     <div className="wrapper">
-      <Button type="primary" loading></Button>
-      <Button type="primary" loading>加载状态</Button>
+      <Button type="primary" loading>加载按钮</Button>
+      <Button type="primary" fill="outline" loading>加载按钮</Button>
+      <Button type="primary" loading loadingText="加载中">加载按钮</Button>
+      <Button type="primary" fill="outline" loading loadingText="加载中">加载按钮</Button>
     </div>
   </div>
   )
@@ -172,12 +204,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -194,8 +225,13 @@ render(){
    <div className="button-loading-md">
     <div className="label">图标按钮</div>
     <div className="wrapper">
-      <Button type="primary" icon="plus"></Button>
-      <Button type="guide" icon="chat-o" plain>按钮</Button>
+      <Button type="primary">
+        <Icon type="plus"></Icon>
+      </Button>
+      <Button type="primary" fill="outline">
+        <Icon type="chat-o" style={{ marginRight: 4 }}></Icon>
+        <span>按钮</span>
+      </Button>
     </div>
   </div>
   )
@@ -207,12 +243,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -242,12 +277,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -279,12 +313,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -301,7 +334,7 @@ render(){
    <div className="button-color-md">
     <div className="label">块级元素</div>
     <div className="wrapper">
-      <Button type="guide" block>块级元素</Button>
+      <Button type="primary" block>块级元素</Button>
     </div>
   </div>
   )
@@ -313,15 +346,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
-    &:last-child {
-      margin-right: 0;
-    }
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -339,7 +368,7 @@ render(){
     <div className="label">自定义颜色</div>
     <div className="wrapper">
       <Button color="#6850FF">单色按钮</Button>
-      <Button color="#6850FF" plain>幽灵按钮</Button>
+      <Button color="#6850FF" fill="outline">幽灵按钮</Button>
       <Button color="linear-gradient(269deg, #A783FF 0%, #7921FF 100%)">渐变色按钮</Button>
     </div>
   </div>
@@ -352,15 +381,11 @@ render(){
   padding: 0 16px 24px;
   .label {
     font-size: 12px;
-    color: #333;
-    letter-spacing: 0;
     margin-bottom: 12px;
   }
   .fm-button {
-    margin: 12px 16px 0 0;
-    &:last-child {
-      margin-right: 0;
-    }
+    margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 ```
@@ -369,12 +394,19 @@ render(){
 
 ## API
 
-| 参数 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| type | 类型，可选值为 primary guide warning danger | string | default
-| size | 尺寸，可选值为 large small mini | string             | normal |
-| color | 按钮颜色，支持传入linear-gradient渐变色| string | - |
-| plain | 是否为朴素按钮| boolean | false |
-| hairline | 是否使用 0.5px 边框| boolean | false |
-| square | 是否为方形按钮| boolean | false |
-| round | 是否为圆形按钮| boolean | false |
+| 参数            | 说明                                      | 类型                                                 | 默认值    |
+| --------------- | ----------------------------------------- | ---------------------------------------------------- | --------- |
+| activeClassName | 自定义激活类名                            | `string`                                             | -         |
+| activeStyle     | 自定义激活样式，设置 false 禁用激活效果   | `boolean \| React.CSSProperties`                      | -         |
+| htmlType        | 原生 html 类型                            | `submit \| reset \| button`                          | `button`  |
+| type            | 类型                                      | `primary \| success \| warning \| danger \| default` | `default` |
+| fill            | 按钮填充效果                              | `solid \| outline \| none`                           | `solid`   |
+| size            | 尺寸                                      | `large \| normal \| small \| mini`                         | `normal`  |
+| hairline        | 是否使用 0.5px 边框                       | `boolean`                                            | `false`   |
+| color           | 按钮颜色，支持传入 linear-gradient 渐变色 | `string`                                             | -         |
+| square          | 是否为方形按钮                            | `boolean`                                            | `false`   |
+| round           | 是否为圆形按钮                            | `boolean`                                            | `false`   |
+| block           | 是否渲染为块                              | `boolean`                                            | `false`   |
+| disabled        | 是否禁用                                  | `boolean`                                            | `false`   |
+| loading         | 加载状态                                  | `boolean`                                            | `false`   |
+| loadingText     | 加载文案                                  | `boolean`                                            | -   |

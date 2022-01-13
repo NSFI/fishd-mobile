@@ -1,6 +1,6 @@
 /* eslint-disable prefer-destructuring */
 import * as React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { PhotoSlider } from 'react-photo-view';
 import 'react-photo-view/dist/index.css';
 import { IPhotoSliderProps } from 'react-photo-view/dist/PhotoSlider';
@@ -68,7 +68,7 @@ class ImageView extends React.Component<ImageViewProps, any> {
     const { className, prefixCls, visible, isFn, ...restProps } = this.props;
     const { index } = this.state;
     const { innerVisible } = this.state;
-    const wrapCls = classnames(prefixCls, className, {});
+    const wrapCls = classNames(prefixCls, className, {});
     const v = isFn ? innerVisible : visible;
     return (
       <div className={wrapCls}>

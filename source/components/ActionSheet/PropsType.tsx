@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export type SelectCallBack = (index: number, rowIndex: number) => PromiseLike<any> | void;
+export type SelectCallBack = (index: number, rowIndex: number) => Promise<void> | void;
 
-export type CancelCallBack = () => PromiseLike<any> | void;
+export type CancelCallBack = () => Promise<void> | void;
 
-export type CloseCallBack = () => PromiseLike<any> | void;
+export type CloseCallBack = () => Promise<void> | void;
 
 export interface ActionSheetOptions {
   maskClosable?: boolean;

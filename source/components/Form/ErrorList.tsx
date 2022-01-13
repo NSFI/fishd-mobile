@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import React from 'react';
 
 export interface CheckListProps {
@@ -10,7 +10,7 @@ export interface CheckListProps {
 const classPrefix = `fm-form-errors`;
 
 const CheckList: React.FC<CheckListProps> = ({ className, style, errors = [] }) => {
-  const CheckListClassName = classnames(classPrefix, {}, className);
+  const CheckListClassName = classNames(classPrefix, {}, className);
   return errors && errors.length ? (
     <div className={CheckListClassName} style={style}>
       {errors.map((error, index) => (

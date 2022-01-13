@@ -1,9 +1,9 @@
 # Tabs 标签页
 
-
 ## 一般用法
 
 :::demo 基础用法
+
 ```js
 render() {
   return (
@@ -80,8 +80,10 @@ render() {
   font-size: 12px;
 }
 ```
+
 :::
 :::demo 无动画
+
 ```js
 render() {
   return (
@@ -119,9 +121,10 @@ render() {
 
 :::
 
-
 ## 跟手滚动
+
 :::demo 跟手滚动
+
 ```js
 render() {
   const tabs = [
@@ -157,8 +160,10 @@ render() {
 
 :::
 
-## 纵向Tabs标签页
-:::demo 纵向Tabs标签页
+## 纵向 Tabs 标签页
+
+:::demo 纵向 Tabs 标签页
+
 ```js
 render() {
   return (
@@ -194,6 +199,7 @@ render() {
   padding: 20px;
 }
 ```
+
 :::
 
 ## 自定义样式
@@ -236,20 +242,20 @@ render() {
   padding: 50px 0;
 }
 ```
-:::
 
+:::
 
 ## API
 
-| 属性 | 说明         | 类型      | 默认值    |
-|----|-----|------|------
-| tabs   | 标签数据   | array |   -|
-| tabDirection | 标签页方向, "vertical" 或 "horizontal" | string | `horizontal`
-|initialPage|初始标签页的下标或者key值|number或string|-|
-|count|一屏展示的标签数量|number|`4`|
-|useOnPan|是否跟手滚动|boolean|`true`|
-|swipeable|是否可以通过左右滑动来切换Tab(只适用于横向标签页)|boolean|`false`|
-|animated|Tab切换是否使用动画|boolean|`true`|
-|tabsUnderlineStyle|被激活Tab下划线的样式|object|-|
-|tabBarActiveTextColor|被激活Tab的文字颜色|string|`#337eff`|
-|tabBarInactiveTextColor|未被激活Tab的文字颜色|string|-|
+| 属性                    | 说明                                               | 类型             | 默认值       |
+| ----------------------- | -------------------------------------------------- | ---------------- | ------------ |
+| tabs                    | 标签数据                                           | array            | -            |
+| tabDirection            | 标签页方向, "vertical" 或 "horizontal"             | string           | `horizontal` |
+| initialPage             | 初始标签页的下标或者 key 值                        | number 或 string | -            |
+| count                   | 一屏展示的标签数量                                 | number           | `4`          |
+| useOnPan                | 是否跟手滚动                                       | boolean          | `true`       |
+| swipeable               | 是否可以通过左右滑动来切换 Tab(只适用于横向标签页) | boolean          | `false`      |
+| animated                | Tab 切换是否使用动画                               | boolean          | `true`       |
+| tabsUnderlineStyle      | 被激活 Tab 下划线的样式                            | object           | -            |
+| tabBarActiveTextColor   | 被激活 Tab 的文字颜色                              | string           | `#337eff`    |
+| tabBarInactiveTextColor | 未被激活 Tab 的文字颜色                            | string           | -            |

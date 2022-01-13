@@ -9,13 +9,13 @@
 
 .@{prefix}-item {
   padding-left: 12px;
-  color: @color-text-base;
+  color: @color-gray-1;
 
   &__content {
     display: flex;
     align-items: center;
     padding: 12px 12px 12px 0;
-    border-bottom: 1px solid @border-color-base;
+    border-bottom: 1px solid @color-gray-6;
   }
 
   &__prefix {
@@ -31,33 +31,33 @@
   &__title {
     margin-bottom: 4px;
     font-size: 14px;
-    color: @color-text-secondary;
+    color: @color-gray-3;
   }
 
   &__description {
     margin-top: 4px;
     font-size: 12px;
-    color: @color-text-secondary;
+    color: @color-gray-3;
   }
 
   &__extra {
     flex: 0 0 auto;
     font-size: 14px;
-    color: @color-text-secondary;
+    color: @color-gray-3;
   }
 
   &__arrow {
     flex: 0 0 auto;
     margin-left: 8px;
     font-size: 14px;
-    color: @color-text-secondary;
+    color: @color-gray-3;
   }
 
-  // &:nth-last-of-type(1) {
-  //   .@{prefix}-item__content {
-  //     border-bottom: none;
-  //   }
-  // }
+  &:nth-last-of-type(1) {
+    .@{prefix}-item__content {
+      border-bottom: none;
+    }
+  }
 }
 
 .@{prefix}-item--disabled * {
@@ -65,9 +65,9 @@
 }
 
 .@{prefix}-item--active {
-  background-color: @fill-tap;
+  background-color: @color-gray-7;
 
   .@{prefix}-item__content {
-    border-color: @fill-tap;
+    border-color: @color-gray-7;
   }
 }

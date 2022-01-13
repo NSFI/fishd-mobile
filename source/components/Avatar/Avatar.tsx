@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { AvatarPropsType } from './PropsType';
 
@@ -51,10 +51,10 @@ class Avatar extends React.Component<AvatarProps, any> {
     const clsSize = `${prefixCls}-${size}`;
 
     const wrapBradgeCls = badge && `${prefixCls}-badge-wrap`;
-    const wrapCls = classnames(prefixCls, wrapBradgeCls, clsSize);
+    const wrapCls = classNames(prefixCls, wrapBradgeCls, clsSize);
 
     const { className, hot, corner, ...badgeRestProps } = badge || { className: '' };
-    const badgeCls = classnames(`${prefixCls}-badge`, className, {});
+    const badgeCls = classNames(`${prefixCls}-badge`, className, {});
 
     return (
       <div className={`${wrapCls}`}>
@@ -93,8 +93,8 @@ class Avatar extends React.Component<AvatarProps, any> {
 
     // const clsShape = `${prefixCls}-${shape}`;
     const clsType = `${prefixCls}-${type}`;
-    const wrapCls = classnames(`${prefixCls}-main`, className, clsShape, clsType, {});
-    const contentCls = classnames(`${prefixCls}-content`, `${clsType}-content`);
+    const wrapCls = classNames(`${prefixCls}-main`, className, clsShape, clsType, {});
+    const contentCls = classNames(`${prefixCls}-content`, `${clsType}-content`);
 
     const styleImage = type === 'image' && { backgroundImage: `url(${imageUrl})` };
     const warpStyle = {
@@ -140,8 +140,8 @@ class Avatar extends React.Component<AvatarProps, any> {
     const clsSize = `${prefixCls}-${size}`;
     // const clsShape = `${prefixCls}-${shape}`;
     const clsType = `${prefixCls}-${type}`;
-    const wrapCls = classnames(prefixCls, className, clsSize, clsShape, clsType, {});
-    const contentCls = classnames(`${prefixCls}-content`, `${clsType}-content`);
+    const wrapCls = classNames(prefixCls, className, clsSize, clsShape, clsType, {});
+    const contentCls = classNames(`${prefixCls}-content`, `${clsType}-content`);
 
     const styleImage = type === 'image' && { backgroundImage: `url(${imageUrl})` };
     const warpStyle = {

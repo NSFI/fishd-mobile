@@ -14,7 +14,7 @@ function getDirection(x: number, y: number) {
   return '';
 }
 
-export default function useTouch() {
+export function useTouch() {
   const startX = useRef(0);
   const startY = useRef(0);
   const deltaX = useRef(0);

@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { DividerPropsType } from './PropsType';
 
@@ -18,7 +18,7 @@ class Divider extends React.Component<DividerProps, any> {
 
   render() {
     const { className, prefixCls, dashed, hairline, contentPosition, style, children, ...restProps } = this.props;
-    const wrapCls = classnames(prefixCls, className, {
+    const wrapCls = classNames(prefixCls, className, {
       [`${prefixCls}--dashed`]: dashed,
       [`${prefixCls}--hairline`]: hairline,
       [`${prefixCls}--content-${contentPosition}`]: children,

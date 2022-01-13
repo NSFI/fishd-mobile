@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { LabelPropsType } from './PropsType';
 import { Icon } from '..';
@@ -48,7 +48,7 @@ class Label extends React.Component<LabelProps, any> {
   render() {
     const { className, prefixCls, children, closeable, size, style, type, color } = this.props;
 
-    const wrapCls = classnames(prefixCls, className, {
+    const wrapCls = classNames(prefixCls, className, {
       [`${prefixCls}`]: type === 'normal',
       [`${prefixCls}-plain`]: type === 'plain',
       [`${prefixCls}-round`]: type === 'round',

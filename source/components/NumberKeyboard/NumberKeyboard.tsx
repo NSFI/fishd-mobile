@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import Animate from 'rc-animate';
 import { NumberKeyboardPropsType, KeyPropsType } from './PropsType';
@@ -225,7 +225,7 @@ class NumberKeyboard extends React.Component<NumberKeyboardProps, any> {
   render() {
     const { className, prefixCls, show } = this.props;
 
-    const wrapCls = classnames(prefixCls, className, {});
+    const wrapCls = classNames(prefixCls, className, {});
 
     return (
       <Animate

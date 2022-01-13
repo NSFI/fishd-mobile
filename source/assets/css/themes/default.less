@@ -1,235 +1,134 @@
-@hd: 1px; // 基本单位
+/** 基本单位 */
+@hd: 1px;
 
 /** 色彩 **/
-
 @color-primary: #337EFF;
-@color-success: #26BD71;
-@color-warning: #F2A60F;
+@color-primary-hover: #5C98FF;
+@color-primary-active: #3D84FF;
+@color-success: #00BF80;
+@color-warning: #FFAA00;
 @color-danger: #F24957;
+@color-danger-hover: #F56D79;
+@color-danger-active: #F3525F;
 
-// 主题色
-@color-blue: #337EFF;
-@color-green: #26BD71;
-@color-orange: #F2A60F;
-@color-red: #F24957;
-
-// 中性色
-@color-neutral-1: #222;
-@color-neutral-2: #333;
-@color-neutral-3: #666;
-@color-neutral-4: #999;
-@color-neutral-5: #CCC;
-@color-neutral-6: #E1E3E6;
-@color-neutral-7: #F2F3F5;
-@color-neutral-8: #F7F8FA;
-
-// 文字色
-@color-text-base: #222; // 基本
-@color-text-base-inverse: #FFF; // 基本 - 反色
-@color-text-secondary: #999; // 辅助色
-@color-text-placeholder: #C9CACD; // 文本框提示
-@color-text-disabled: #BBB; // 失效
-@color-text-caption: #999; // 辅助描述
-@color-text-paragraph: #333; // 段落
-@color-link: @brand-primary;
-
-// 背景色
-@fill-base: #FFF; // 组件默认背景
-@fill-body: #F5F5F9; // 页面背景
-@fill-tap: #DDD; // 组件默认背景 - 按下
-@fill-disabled: #DDD; // 通用失效背景
-@fill-mask: rgba(0, 0, 0, 0.4); // 遮罩背景
-@color-icon-base: #CCC; // 许多小图标的背景，比如一些小圆点，加减号
-@fill-grey: #f7f7f7;
-
-// 全局/品牌色
-@brand-primary: #337EFF;
-@brand-primary-tap: #0e80d2;
-@brand-success: #6abf47;
-@brand-warning: #ffc600;
-@brand-error: #F24957;
-@brand-important: #f24957; // 用于小红点
-@brand-wait: #108ee9;
-
-// 边框色
-@border-color-base: #e8e9eb;
+/** 中性色 */
+@color-gray-1: #222222; // 一级灰（正文）
+@color-gray-2: #666666; // 二级灰（较弱的正文）
+@color-gray-3: #999999; // 三级灰（说明文字）
+@color-gray-4: #BFBFBF; // 四级灰（弱提示类文字，例如输入框内的暗文）
+@color-gray-5: #D9D9DB; // 五级灰（深边框色）
+@color-gray-6: #E6E7EB; // 六级灰（浅边框色）
+@color-gray-7: #F0F0F2; // 七级灰（深背景色）
+@color-gray-8: #F5F5F7; // 八级灰（浅背景色）
+@color-gray-9: #FFF; // 九级灰（白色）
 
 /** 字体大小 **/
-@font-size-icontext: 10 * @hd;
-@font-size-caption-sm: 12 * @hd;
+@font-size-xs: 10 * @hd;
+@font-size-sm: 12 * @hd;
 @font-size-base: 14 * @hd;
-@font-size-subhead: 15 * @hd;
-@font-size-caption: 16 * @hd;
-@font-size-heading: 17 * @hd;
+@font-size-lg: 15 * @hd;
+@font-size-xl: 16 * @hd;
+@font-size-2xl: 17 * @hd;
 
 /** 圆角 **/
 @radius-xs: 2 * @hd;
 @radius-sm: 4 * @hd;
-@radius-md: 6 * @hd;
+@radius-base: 6 * @hd;
 @radius-lg: 8 * @hd;
 @radius-circle: 50%;
 
 /** 边框尺寸 **/
 @border-width-sm: 1px;
-@border-width-md: 1px;
+@border-width-base: 1px;
 @border-width-lg: 2 * @hd;
 
 /** 间距 **/
-// 水平间距
-@h-spacing-sm: 4 * @hd;
-@h-spacing-md: 8 * @hd;
-@h-spacing-lg: 16 * @hd;
+@space-xs: 4 * @hd;
+@space-sm: 6 * @hd;
+@space-base: 8 * @hd;
+@space-lg: 10 * @hd;
+@space-xl: 12 * @hd;
 
-// 垂直间距
-@v-spacing-xs: 4 * @hd;
-@v-spacing-sm: 6 * @hd;
-@v-spacing-md: 8 * @hd;
-@v-spacing-lg: 14 * @hd;
-@v-spacing-xl: 20 * @hd;
-
-/** 高度 **/
-@line-height-base: 1; // 单行行高
-@line-height-paragraph: 1.5; // 多行行高
+/** 行高 **/
+@line-height-base: 1;
+@line-height-paragraph: 1.5;
 
 /** 图标尺寸 **/
-@icon-size-xxs: 15 * @hd;
 @icon-size-xs: 18 * @hd;
 @icon-size-sm: 21 * @hd;
-@icon-size-md: 22 * @hd; // 导航条上的图标、grid的图标大小
+@icon-size-md: 22 * @hd;
 @icon-size-lg: 36 * @hd;
 
-/** 字体尺寸 **/
-@font-size-icontext: 10 * @hd;
-@font-size-caption-sm: 12 * @hd;
-@font-size-base: 14 * @hd;
-@font-size-subhead: 15 * @hd;
-@font-size-caption: 16 * @hd;
-@font-size-heading: 17 * @hd;
-
-/** z-index **/
-@progress-zindex: 2000;
-@popover-zindex: 1999;
-@toast-zindex: 1999;
-@action-sheet-zindex: 1000; // actonsheet 会放到 popup / modal 中
-@picker-zindex: 1000;
-@popup-zindex: 999;
-@modal-zindex: 999; // modal.alert 应该最大，其他应该较小
-@tabs-pagination-zindex: 999;
-
 /** 透明度 **/
-@opacity-disabled: 0.4; // switch checkbox radio 等组件禁用的透明度
+@opacity-disabled: 0.4;
 
 /** 组件变量 **/
 // Button
 @button-height: 47 * @hd;
 @button-font-size: 18 * @hd;
-
 @button-height-sm: 30 * @hd;
 @button-font-size-sm: 13 * @hd;
-
-@primary-button-fill: @brand-primary;
-@primary-button-fill-tap: @brand-primary-tap;
-
-@ghost-button-color: @brand-primary; // 同时应用于背景、文字颜色、边框色
-@ghost-button-fill-tap: fade(@brand-primary, 60%);
-
-@warning-button-fill: #e94f4f;
-@warning-button-fill-tap: #d24747;
-
-@link-button-fill-tap: #ddd;
 @link-button-font-size: 16 * @hd;
 
 // Switch
-@switch-fill: #337EFF;
-@switch-fill-android: @brand-primary;
-
-// Overlay
-@overlay-z-index: 1;
-@overlay-background-color: rgba(0, 0, 0, 0.5);
-
-// List
-@list-title-height: 30 * @hd;
-@list-item-height-sm: 35 * @hd;
-@list-item-height: 44 * @hd;
+@switch-fill: @color-primary;
 
 // NoticeBar
 @notice-bar-fill: #fefcec;
 @notice-bar-height: 36 * @hd;
 @notice-bar-color: #f76a24;
 
-// Input
-@input-label-width: 17 * @hd; // InputItem、TextareaItem 文字长度基础值
-@input-font-size: 17 * @hd;
-@input-color-icon: #7f7f83; // input clear icon 的背景色
-@input-color-icon-tap: @brand-primary;
-@input-icon-size: 16 * @hd;
-@input-error-color: #F24957;
-
-// Modal
-@modal-zindex: 999; // modal.alert 应该最大，其他应该较小
-@modal-font-size-heading: 18 * @hd;
-@modal-button-font-size: 18 * @hd; // 按钮字号
-@modal-button-height: 50 * @hd; // 按钮高度
-
-// Toast
-@toast-fill: rgba(58, 58, 58, 0.9); // toast, activity-indicator 的背景颜色
-
-// Picker
-@option-height: 42 * @hd; // picker 标题的高度
-
-// Tabs
-@tabs-color: @brand-primary;
+/** Tabs */
+@tabs-color: @color-primary;
 @tabs-height: 43.5 * @hd;
 @tabs-font-size-heading: 15 * @hd;
 @tabs-ink-bar-height: @border-width-lg;
 
-// TabBar
+/** TabBar */
 @tab-bar-fill: #ebeeef;
 @tab-bar-height: 50 * @hd;
 
-// Divider
-@divider-margin: @h-spacing-md 0;
-@divider-text-color: @color-neutral-4;
+/** Divider */
+@divider-margin: @space-base 0;
+@divider-text-color: @color-gray-4;
 @divider-font-size: @font-size-base;
 @divider-line-height: 24px;
-@divider-border-color: @border-color-base;
-@divider-content-padding: @h-spacing-md;
+@divider-border-color: @color-gray-6;
+@divider-content-padding: @space-base;
 @divider-content-left-width: 10%;
 @divider-content-right-width: 10%;
 
-// Label
+/** Label */
 @label-width: 40 * @hd;
 @label-height: 20 * @hd;
 @label-font-size: 12 * @hd;
 @label-padding: 3 * @hd 8 * @hd;
-
 @label-width-sm: 32 * @hd;
 @label-height-sm: 17 * @hd;
 @label-font-size-sm: 10 * @hd;
 @label-padding-sm: 2 * @hd 6 * @hd;
-
 @label-width-lg: 48 * @hd;
 @label-height-lg: 24 * @hd;
 @label-font-size-lg: 14 * @hd;
 @label-padding-lg: 5 * @hd 10 * @hd;
 
-// Rate
+/** Rate */
 @rate-star-bg: #E6E8EB;
 @rate-star-color: #FFBB2A;
 @rate-star-disabled: #C8C9CC;
 @rate-star-size: @icon-size-md;
 @rate-star-hover-scale: scale(1.1);
 
-// ActionSheet
+/** ActionSheet */
 @actionsheet-item-height: 50 * @hd;
 @actionsheet-item-font-size: 16 * @hd;
 @actionsheet-border-radius: 20 * @hd;
 
-// Carousel
+/** Carousel */
 @dot-color: rgba(255, 255, 255, 0.3);
 @dot-active-color: #FFF;
 
-// NumberKeyboard
+/** NumberKeyboard */
 @numberKeyboard-bg: #F2F3F5;
 @numberKeyboard-radius: 20 * @hd;
 @numberKeyboard-header-height: 30 * @hd;
@@ -247,16 +146,16 @@
 @numberKeyboard-icon-width: 32 * @hd;
 @numberKeyboard-icon-height: 22 * @hd;
 
-// Loadmore
+/** Loadmore */
 @loadmore-size: 30 * @hd;
 
-// Steps
+/** Steps */
 @steps-bg: #FFF;
 @steps-text-size: 12 * @hd;
-@steps-text-color: #222;
+@steps-text-color: #222222;
 @steps-line-color: #E1E3E6;
-@steps-active-color: #26BD71;
+@steps-active-color: @color-success;
 
-// Progress
+/** Progress */
 @progress-radius: 4 * @hd;
 @progress-pivot-size: 10 * @hd;

@@ -1,200 +1,67 @@
 @import (reference) '../../../assets/css/index.less';
 
-@modalPrefixClass: fm-modal;
+@prefix: fm-modal;
 
-@import './Dialog.less';
+.@{prefix} {
+  --z-index: var(--fm-modal-z-index, 1000);
 
-.@{modalPrefixClass} {
-  .button-common() {
-    display: block;
-    height: @modal-button-height;
-    font-size: @modal-button-font-size;
-    line-height: @modal-button-height;
-    text-align: center;
-    text-decoration: none;
-    color: @color-link;
-    outline: none;
-    box-sizing: border-box;
-    .ellipsis();
+  position: fixed;
+  z-index: var(--z-index);
+}
+
+.@{prefix}-mask {
+  z-index: 0;
+}
+
+.@{prefix}-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 75vw;
+  transform: translate(-50%, -50%);
+}
+
+.@{prefix}-main {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.@{prefix}-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 14px;
+  color: @color-gray-3;
+}
+
+.@{prefix}-header {
+  padding-top: 24px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.@{prefix}-body {
+  padding: 8px 24px 24px;
+}
+
+.@{prefix}-footer {
+  display: flex;
+  border-top: 1px solid @color-gray-8;
+
+  .fm-button {
+    border-right: 1px solid @color-gray-8;
   }
 
-  &-button-group-h {
-    position: relative;
-    .hairline('top');
-
-    display: flex;
-
-    .@{modalPrefixClass}-button {
-      -webkit-touch-callout: none;
-      flex: 1;
-      .button-common();
-
-      &:first-child {
-        color: @color-text-base;
-      }
-
-      &:last-child {
-        position: relative;
-        .hairline('left');
-      }
-    }
-  }
-
-  &-button-group-v {
-    .@{modalPrefixClass}-button {
-      position: relative;
-      display: block;
-      -webkit-touch-callout: none;
-      .hairline('top');
-      .button-common();
-    }
-  }
-
-  &-button-active {
-    background-color: @fill-tap;
-  }
-
-  &-input-container {
-    margin-top: @v-spacing-md;
-    .hairline('all', @border-color-base, @radius-sm);
-  }
-
-  &-input {
-    height: 36 * @hd;
-    line-height: @line-height-base;
-
-    &:nth-child(2) {
-      position: relative;
-      .hairline('top');
-    }
-
-    input {
-      position: relative;
-      top: 1px;
-      width: 98%;
-      height: 34 * @hd;
-      margin: 0;
-      border: 0;
-      box-sizing: border-box;  // maybe not need it ?
-      &::placeholder {
-        padding-left: @h-spacing-md;
-        font-size: @font-size-base;
-        color: #ccc;
-      }
-    }
-  }
-
-  &&-transparent.@{modalPrefixClass}-android {
-    .@{modalPrefixClass}-content {
-      border-radius: 0;
-
-      .@{modalPrefixClass}-header {
-        padding: @v-spacing-md 24 * @hd 12 * @hd;
-
-        .@{modalPrefixClass}-title {
-          font-size: 21 * @hd;
-          text-align: left;
-          color: @color-text-base;
-        }
-      }
-
-      .@{modalPrefixClass}-body {
-        padding: 0 24 * @hd @v-spacing-lg;
-        text-align: left;
-        color: @color-text-base;
-
-        .@{modalPrefixClass}-input-container {
-          .hairline-remove('all');
-          .hairline('bottom');
-          .@{modalPrefixClass}-input {
-            &:first-child {
-              .hairline-remove('top');
-            }
-          }
-        }
-      }
-
-      .@{modalPrefixClass}-footer {
-        padding-bottom: 2 * @v-spacing-sm;
-
-        .@{modalPrefixClass}-button-group-h {
-          justify-content: flex-end;
-          overflow: hidden;
-          padding: 0 2 * @v-spacing-sm;
-          .hairline-remove('top');
-
-          .@{modalPrefixClass}-button {
-            flex: initial;
-            height: 48 * @hd;
-            padding: 0 @h-spacing-lg;
-            margin-left: 3 * @hd;
-            box-sizing: border-box;
-
-            &:first-child {
-              color: #777;
-            }
-
-            &:last-child {
-              .hairline-remove('left');
-            }
-          }
-        }
-
-        .@{modalPrefixClass}-button-group-v.@{modalPrefixClass}-button-group-normal {
-          display: flex;
-          justify-content: flex-end;
-          overflow: hidden;
-          padding: 0 2 * @v-spacing-sm;
-
-          .@{modalPrefixClass}-button {
-            .hairline-remove('top');
-
-            height: 48 * @hd;
-            padding: 0 @h-spacing-lg;
-            margin-left: 3 * @hd;
-            box-sizing: border-box;
-          }
-        }
-        .@{modalPrefixClass}-button-group-operation {
-          .@{modalPrefixClass}-button {
-            padding-left: 15 * @hd;
-            text-align: start;
-          }
-        }
-      }
-    }
-  }
-
-  &&-operation {
-    .@{modalPrefixClass}-content {
-      height: auto;
-      padding-top: 0;
-      border-radius: @radius-lg;
-
-      .@{modalPrefixClass}-body {
-        padding: 0 !important;
-      }
-
-      .@{modalPrefixClass}-button {
-        padding-left: @h-spacing-lg;
-        text-align: left;
-        color: @color-text-base;
-      }
-    }
-  }
-
-  &-alert-content,
-  &-propmt-content {
-    zoom: 1;
-    overflow: hidden;
+  .fm-button:nth-last-of-type(1) {
+    border-right-color: inherit;
   }
 }
 
-.fm-modal-close-x::after {
-  content: '\D7';
-  font-size: 20px;
-}
-
-.fm-modal-popup .fm-modal-close-x {
-  margin-top: 10px;
+.@{prefix}-action {
+  flex: 1;
+  border: none;
 }

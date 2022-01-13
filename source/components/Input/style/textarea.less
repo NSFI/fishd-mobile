@@ -12,7 +12,7 @@
     padding-right: 16px;
     font-size: @font-size-base;
     line-height: 1.5;
-    color: @color-neutral-1;
+    color: @color-gray-1;
     border: 0;
     background-color: transparent;
     outline: none;
@@ -21,14 +21,14 @@
     appearance: none;
     word-break: break-word;
     word-wrap: break-word;
-    caret-color: @brand-primary;
+    caret-color: @color-primary;
 
     &::placeholder {
-      color: @color-text-placeholder;
+      color: @color-gray-4;
     }
 
     &:disabled {
-      color: @color-text-disabled;
+      color: @color-gray-3;
     }
   }
 
@@ -37,13 +37,13 @@
     top: 0;
     right: 0;
     flex: 0 0 auto;
-    color: @input-color-icon;
+    color: @color-gray-3;
     cursor: pointer;
   }
 
   .@{textareaPrefixCls}__count {
-    font-size: @font-size-caption-sm;
+    font-size: @font-size-sm;
     text-align: right;
-    color: @color-text-placeholder;
+    color: @color-gray-4;
   }
 }

@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { NavBarProps } from './PropsType';
 
@@ -23,7 +23,7 @@ export default class NavBar extends React.Component<NavBarProps, any> {
     } = this.props;
 
     return (
-      <div {...restProps} className={classnames(className, prefixCls, `${prefixCls}-${mode}`)}>
+      <div {...restProps} className={classNames(className, prefixCls, `${prefixCls}-${mode}`)}>
         <div className={`${prefixCls}-left`} role="button" onClick={onLeftClick}>
           {icon ? (
             // tslint:disable-next-line:jsx-no-multiline-js

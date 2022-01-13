@@ -1,89 +1,33 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { closest } from '../../utils/dom';
-import Modal from './Modal';
-import { Action } from './PropsType';
+import { ReactNode } from 'react';
+import { show } from './show';
+import { ModalProps } from './index';
+import { mergeProps } from '../../utils/merge-props';
 
-export default function alert(
-  title: React.ReactNode,
-  message: React.ReactNode,
-  actions = [{ text: '确定' }],
-  platform = 'ios',
-) {
-  let closed = false;
+export type ModalAlertProps = Omit<ModalProps, 'visible' | 'closeOnAction' | 'actions'> & {
+  confirmText?: ReactNode;
+  onConfirm?: () => void | Promise<void>;
+};
 
-  if (!title && !message) {
-    // console.log('Must specify either an alert title, or message, or both');
-    return {
-      close: () => {},
-    };
-  }
-
-  const div: any = document.createElement('div');
-  document.body.appendChild(div);
-
-  function close() {
-    ReactDOM.unmountComponentAtNode(div);
-    if (div && div.parentNode) {
-      div.parentNode.removeChild(div);
-    }
-  }
-
-  const footer = actions.map((button: Action<React.CSSProperties>) => {
-    // tslint:disable-next-line:only-arrow-functions
-    const orginPress = button.onPress || function noop() {};
-    button.onPress = () => {
-      if (closed) {
-        return;
-      }
-
-      const res = orginPress();
-      if (res && res.then) {
-        res
-          .then(() => {
-            closed = true;
-            close();
-          })
-          .catch(() => {});
-      } else {
-        closed = true;
-        close();
-      }
-    };
-    return button;
-  });
-
-  const prefixCls = 'fm-modal';
-
-  function onWrapTouchStart(e: React.TouchEvent<HTMLDivElement>) {
-    if (!/iPhone|iPod|iPad/i.test(navigator.userAgent)) {
-      return;
-    }
-    const pNode = closest(e.target as Element, `.${prefixCls}-footer`);
-    if (!pNode) {
-      e.preventDefault();
-    }
-  }
-
-  ReactDOM.render(
-    <Modal
-      visible
-      transparent
-      title={title}
-      transitionName="fm-zoom"
-      closable={false}
-      maskClosable={false}
-      footer={footer}
-      maskTransitionName="fm-fade"
-      platform={platform}
-      wrapProps={{ onTouchStart: onWrapTouchStart }}
-    >
-      <div className={`${prefixCls}-alert-content`}>{message}</div>
-    </Modal>,
-    div,
-  );
-
-  return {
-    close,
+export function alert(p: ModalAlertProps) {
+  const defaultProps = {
+    confirmText: '确认',
   };
+  const props = mergeProps(defaultProps, p);
+  return new Promise<void>(resolve => {
+    show({
+      ...props,
+      closeOnAction: true,
+      actions: [
+        {
+          key: 'confirm',
+          text: props.confirmText,
+          type: 'primary',
+        },
+      ],
+      onAction: props.onConfirm,
+      onClose: () => {
+        resolve();
+      },
+    });
+  });
 }

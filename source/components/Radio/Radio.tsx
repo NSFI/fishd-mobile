@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import { RadioGroupContext } from './RadioGroupContext';
 
@@ -43,7 +43,7 @@ const Radio: React.FC<RadioProps> = props => {
     disabled = disabled || groupContext.disabled;
   }
 
-  const RadioClassName = classnames(classPrefix, className, {
+  const RadioClassName = classNames(classPrefix, className, {
     [`${classPrefix}-checked`]: checked,
     [`${classPrefix}-disabled`]: disabled,
     [`${classPrefix}-block`]: props.block,

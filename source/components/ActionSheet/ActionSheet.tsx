@@ -2,11 +2,11 @@
 /* tslint:disable:jsx-no-multiline-js */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import Dialog from 'rmc-dialog';
 import TouchFeedback from 'rmc-feedback';
 import { ActionSheetWithOptions, ShareActionSheetWithOptions, ShareOption } from './PropsType';
-import { getDataAttr } from '../../utils';
+import { getDataAttr } from '../../utils/base';
 
 const NORMAL = 'NORMAL';
 const SHARE = 'SHARE';
@@ -106,7 +106,7 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareA
               {titleMsg}
               {normalOptions.map((item, index) => {
                 const itemProps = {
-                  className: classnames(`${prefixCls}-button-list-item`, {
+                  className: classNames(`${prefixCls}-button-list-item`, {
                     [`${prefixCls}-destructive-button`]: destructiveButtonIndex === index,
                   }),
                   onClick: () => cb(index),
@@ -126,7 +126,7 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareA
                 <div className={`${prefixCls}-gap`}></div>
                 <TouchFeedback activeClassName={`${prefixCls}-button-list-item-active`}>
                   <div
-                    className={classnames(`${prefixCls}-button-list-item`, {
+                    className={classNames(`${prefixCls}-button-list-item`, {
                       [`${prefixCls}-cancel-button`]: true,
                     })}
                     onClick={() => handleCancel()}
@@ -185,7 +185,7 @@ function createActionSheet(flag: string, config: ActionSheetWithOptions | ShareA
       break;
   }
 
-  const rootCls = classnames(`${prefixCls}-${mode}`, className);
+  const rootCls = classNames(`${prefixCls}-${mode}`, className);
 
   ReactDOM.render(
     <Dialog

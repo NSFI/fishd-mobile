@@ -26,10 +26,10 @@ render() {
 ```
 
 ```less
-[class^="components-tpl-demo-"] .fm-loadmore {
+[class^='components-tpl-demo-'] .fm-loadmore {
   margin-right: 10px;
 }
-[class^="components-tpl-demo-"] .demo-card {
+[class^='components-tpl-demo-'] .demo-card {
   padding: 32px 20px;
   background-color: #fff;
 }
@@ -57,10 +57,10 @@ render() {
 ```
 
 ```less
-[class^="components-tpl-demo-"] .fm-loadmore {
+[class^='components-tpl-demo-'] .fm-loadmore {
   margin-right: 10px;
 }
-[class^="components-tpl-demo-"] .demo-card {
+[class^='components-tpl-demo-'] .demo-card {
   padding: 32px 20px;
   background-color: #fff;
 }
@@ -88,10 +88,10 @@ render() {
 ```
 
 ```less
-[class^="components-tpl-demo-"] .fm-loadmore {
+[class^='components-tpl-demo-'] .fm-loadmore {
   margin-right: 10px;
 }
-[class^="components-tpl-demo-"] .demo-card {
+[class^='components-tpl-demo-'] .demo-card {
   padding: 32px 20px;
   background-color: #fff;
 }
@@ -118,10 +118,10 @@ render() {
 ```
 
 ```less
-[class^="components-tpl-demo-"] .fm-loadmore {
+[class^='components-tpl-demo-'] .fm-loadmore {
   margin-right: 10px;
 }
-[class^="components-tpl-demo-"] .demo-card {
+[class^='components-tpl-demo-'] .demo-card {
   padding: 32px 20px;
   background-color: #fff;
 }
@@ -148,10 +148,10 @@ render() {
 ```
 
 ```less
-[class^="components-tpl-demo-"] .fm-loadmore {
+[class^='components-tpl-demo-'] .fm-loadmore {
   margin-right: 10px;
 }
-[class^="components-tpl-demo-"] .demo-card {
+[class^='components-tpl-demo-'] .demo-card {
   padding: 32px 20px;
   background-color: #fff;
 }
@@ -161,11 +161,11 @@ render() {
 
 ## API
 
-| 属性 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| type | 类型，可选值为 `spinner` | string | `circular` |
-| color | 颜色 | string | `#C8C9CC` |
-| size | 加载图标大小，默认单位为`px` | string |`30px`|
-| text | 加载文案 | string | - |
-| textSize | 文字大小，默认单位为`px` | string | `14px` |
-| vertical | 是否垂直排列图标和文字内容 | boolean | `false` |
+| 属性     | 说明                         | 类型                  | 默认值     |
+| -------- | ---------------------------- | --------------------- | ---------- |
+| type     | 类型                         | `spinner \| circular` | `circular` |
+| color    | 颜色                         | `string`              | `#C8C9CC`  |
+| size     | 加载图标大小，默认单位为`px` | `string`              | `30px`     |
+| text     | 加载文案                     | `string`              | -          |
+| textSize | 文字大小，默认单位为`px`     | `string`              | `14px`     |
+| vertical | 是否垂直排列图标和文字内容   | `boolean`             | `false`    |

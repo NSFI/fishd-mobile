@@ -1,4 +1,4 @@
-// import classnames from 'classnames';
+// import classNames from 'classnames';
 import * as React from 'react';
 import RcRate from 'rc-rate';
 import 'rc-rate/assets/index.css';

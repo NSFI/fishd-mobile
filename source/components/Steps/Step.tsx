@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import { isFunction } from '../../utils';
 import Icon from '../Icon';
+import { isFunction } from '../../utils/base';
 
 export interface StepProps {
   prefixCls?: string;

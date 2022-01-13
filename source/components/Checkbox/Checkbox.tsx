@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import { CheckboxGroupContext } from './CheckboxGroupContext';
 
@@ -43,7 +43,7 @@ const Checkbox: React.FC<CheckboxProps> = props => {
     disabled = disabled || groupContext.disabled;
   }
 
-  const CheckboxClassName = classnames(classPrefix, className, {
+  const CheckboxClassName = classNames(classPrefix, className, {
     [`${classPrefix}-checked`]: checked,
     [`${classPrefix}-disabled`]: disabled,
     [`${classPrefix}-block`]: props.block,

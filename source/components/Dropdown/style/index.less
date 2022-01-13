@@ -4,10 +4,10 @@
 
 .fm-dropdown-menu {
   &__item {
-    display: flex;
     flex: 1;
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
     min-width: 0;
     cursor: pointer;
   }
@@ -27,7 +27,6 @@
       margin-top: -5px;
       border: 3px solid;
       border-color: transparent transparent #dcdee0 #dcdee0;
-      -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
       opacity: 0.8;
       content: '';
@@ -59,38 +58,38 @@
   left: 0;
   z-index: 10;
   overflow: hidden;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
 
   .fm-overlay {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2020;
     width: 100%;
     height: 100%;
-    z-index: 2020;
     background-color: rgba(0, 0, 0, 0.7);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
   }
 
   &__content {
     position: absolute;
     left: 0;
+    z-index: 2021;
     width: 100%;
     max-height: 80%;
-    z-index: 2021;
     background-color: #fff;
-    transition: transform .3s ease;
+    transition: transform 0.3s ease;
 
     .fm-cell {
       position: relative;
       display: flex;
-      box-sizing: border-box;
+      overflow: hidden;
       width: 100%;
       padding: 10px 16px;
-      overflow: hidden;
       font-size: 14px;
       line-height: 24px;
-      box-shadow: inset 0 0 1px 0 #E6E7EB;
+      box-shadow: inset 0 0 1px 0 #e6e7eb;
+      box-sizing: border-box;
     }
   }
 }

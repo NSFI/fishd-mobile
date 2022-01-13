@@ -56,8 +56,8 @@
       }
 
       &-title {
-        margin: @v-spacing-xs 0 0 0;
-        font-size: @font-size-icontext;
+        margin: @space-xs 0 0 0;
+        font-size: @font-size-xs;
         line-height: @line-height-base;
         text-align: center;
       }
@@ -91,7 +91,7 @@
 .common-pagination() {
   position: absolute;
   top: 0;
-  z-index: @tabs-pagination-zindex;
+  z-index: 1000;
   display: block;
   width: 59 * @hd;
   height: 100%;

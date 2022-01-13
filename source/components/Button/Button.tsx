@@ -1,26 +1,25 @@
 import React from 'react';
-import classnames from 'classnames';
+import classNames from 'classnames';
 import TouchFeedback from 'rmc-feedback';
 
-import Icon from '../Icon';
 import { mergeProps } from '../../utils/merge-props';
 export interface ButtonProps {
   className?: string;
   style?: React.CSSProperties;
+  activeClassName?: string;
+  activeStyle?: boolean | React.CSSProperties;
   htmlType?: 'submit' | 'reset' | 'button';
-  type?: 'primary' | 'guide' | 'default' | 'warning' | 'danger';
+  type?: 'primary' | 'success' | 'default' | 'warning' | 'danger';
+  fill?: 'solid' | 'outline' | 'none';
   size?: 'large' | 'normal' | 'small' | 'mini';
-  plain?: boolean;
   hairline?: boolean;
   color?: string;
   round?: boolean;
   square?: boolean;
-  disabled?: boolean;
   block?: boolean;
+  disabled?: boolean;
   loading?: boolean;
-  activeClassName?: string;
-  activeStyle?: boolean | React.CSSProperties;
-  icon?: React.ReactNode;
+  loadingText?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
@@ -28,14 +27,13 @@ const defaultProps = {
   type: 'default',
   htmlType: 'button',
   size: 'normal',
-  plain: false,
+  fill: 'solid',
   hairline: false,
   round: false,
   square: false,
   disabled: false,
   block: false,
   loading: false,
-  activeStyle: {},
 };
 
 const classPrefix = `fm-button`;
@@ -45,32 +43,32 @@ const Button: React.FC<ButtonProps> = p => {
   const {
     className,
     style,
+    activeStyle,
+    activeClassName,
     htmlType,
     type,
-    plain,
+    fill,
     hairline,
     size,
     round,
     square,
     disabled,
     block,
-    icon,
     loading,
-    activeStyle,
-    activeClassName,
+    loadingText,
     color,
     onClick,
     children,
     ...restProps
   } = props;
-  const iconType = loading ? 'loading' : icon;
-  const ButtonClassName = classnames(classPrefix, className, {
+
+  const ButtonClassName = classNames(classPrefix, className, {
     [`${classPrefix}-default`]: type === 'default',
     [`${classPrefix}-primary`]: type === 'primary',
-    [`${classPrefix}-guide`]: type === 'guide',
+    [`${classPrefix}-success`]: type === 'success',
     [`${classPrefix}-warning`]: type === 'warning',
     [`${classPrefix}-danger`]: type === 'danger',
-    [`${classPrefix}-plain`]: plain,
+    [`${classPrefix}-fill-${fill}`]: !!fill,
     [`${classPrefix}-hairline`]: hairline,
     [`${classPrefix}-large`]: size === 'large',
     [`${classPrefix}-normal`]: size === 'normal',
@@ -81,52 +79,48 @@ const Button: React.FC<ButtonProps> = p => {
     [`${classPrefix}-disabled`]: disabled,
     [`${classPrefix}-block`]: block,
     [`${classPrefix}-loading`]: loading,
-    [`${classPrefix}-icon`]: !!iconType,
   });
-  const ButtonStyle = color
-    ? {
-        color: plain ? color : '#fff',
-        background: plain ? '#fff' : color,
-        borderColor: plain ? color : '#fff',
-        ...style,
-      }
-    : { ...style };
 
-  let iconEl;
-  if (typeof iconType === 'string') {
-    if (iconType === 'loading') {
-      iconEl = (
-        <div className="fm-loading--circular fm-button__loading">
-          <span
-            className="fm-loading__spinner fm-loading__spinner--circular"
-            style={{ color: 'currentcolor', width: '20px', height: '20px' }}
-          >
-            <svg viewBox="25 25 50 50" className="fm-loading__circular">
-              <circle cx="50" cy="50" r="20" fill="none"></circle>
-            </svg>
-          </span>
-        </div>
-      );
-    } else {
-      iconEl = <Icon type={iconType} />;
-    }
+  const ButtonStyle: React.CSSProperties = {};
+  if (fill === 'solid' && color) {
+    ButtonStyle.background = color;
+    ButtonStyle.borderColor = color;
+    ButtonStyle.color = '#fff';
   }
+  if (fill === 'outline' && color) {
+    ButtonStyle.borderColor = color;
+    ButtonStyle.color = color;
+  }
+  if (fill === 'none' && color) {
+    ButtonStyle.color = color;
+  }
+
   return (
     <TouchFeedback
-      activeClassName={activeClassName || (activeStyle ? `${classPrefix}-active` : undefined)}
       disabled={disabled}
+      activeClassName={activeClassName ? activeClassName : `${classPrefix}-active`}
       activeStyle={activeStyle}
     >
       <button
-        {...restProps}
         className={ButtonClassName}
-        style={ButtonStyle}
+        style={{ ...ButtonStyle, ...style }}
         type={htmlType}
         onClick={disabled ? undefined : onClick}
         disabled={disabled}
+        {...restProps}
       >
-        {iconEl}
-        {children}
+        {props.loading ? (
+          <div className="fm-button__loading">
+            <span className="fm-loading__spinner" style={{ color: 'currentcolor', width: '20px', height: '20px' }}>
+              <svg viewBox="25 25 50 50" className="fm-loading__circular">
+                <circle cx="50" cy="50" r="20" fill="none"></circle>
+              </svg>
+            </span>
+            {loadingText && <span className="fm-loading__text">{loadingText}</span>}
+          </div>
+        ) : (
+          children
+        )}
       </button>
     </TouchFeedback>
   );

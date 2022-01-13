@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classNames from 'classnames';
 import * as React from 'react';
 import { TabsPropsType } from './PropsType';
 import TabBar from './TabBar';
@@ -208,7 +208,7 @@ class Tabs extends React.Component<TabsProps, any> {
     const { prefixCls, tabDirection, style, children } = this.props;
 
     const { activeTabIndex, count } = this.state;
-    const wrapCls = classnames(prefixCls, `${prefixCls}-${tabDirection}`, {});
+    const wrapCls = classNames(prefixCls, `${prefixCls}-${tabDirection}`, {});
 
     return (
       <div className={wrapCls} style={style}>
@@ -218,7 +218,7 @@ class Tabs extends React.Component<TabsProps, any> {
         <div className={`${prefixCls}-${tabDirection}-content-wrap`}>
           {Array.isArray(children) && children.length > 0 ? (
             <div
-              className={classnames(`${prefixCls}-${tabDirection}-content`)}
+              className={classNames(`${prefixCls}-${tabDirection}-content`)}
               ref={(div: HTMLDivElement) => {
                 this.contentScroller = div;
               }}

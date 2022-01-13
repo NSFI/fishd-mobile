@@ -188,7 +188,7 @@ const Demo = () => {
                 ))}
                 <Form.Item label={fields.length > 0 ? ' ' : '爱好'}>
                   <Form.ErrorList style={{ marginBottom: 10 }} errors={errors} />
-                  <Button size="small" type="primary" plain onClick={() => add()} style={{ width: '60%' }}>
+                  <Button size="small" type="primary" fill="outline" onClick={() => add()} style={{ width: '60%' }}>
                     添 加
                   </Button>
                 </Form.Item>
@@ -218,11 +218,11 @@ ReactDOM.render(<Demo />, mountNode);
 | 属性        | 说明                                                       | 类型                     | 默认值     |
 | ----------- | ---------------------------------------------------------- | ------------------------ | ---------- |
 | layout      | 布局模式                                                   | `vertical \| horizontal` | `vertical` |
-| labelWidth  | 水平布局时，label 的宽度，支持`auto`                       | string                   | `6em`      |
-| header      | form 头部自定义内容，通常用来放置原生提交按钮              | React.ReactNode          | -          |
-| footer      | form 底部自定义内容，通常用来放置原生提交按钮              | React.ReactNode          | -          |
-| hasFeedback | 是否展示错误反馈                                           | boolean                  | `true`     |
-| form        | 经 Form.useForm() 创建的 form 控制实例，不提供时会自动创建 | FormInstance             | -          |
+| labelWidth  | 水平布局时，label 的宽度，支持`auto`                       | `string`                 | `6em`      |
+| header      | form 头部自定义内容，通常用来放置原生提交按钮              | `React.ReactNode`        | -          |
+| footer      | form 底部自定义内容，通常用来放置原生提交按钮              | `React.ReactNode`        | -          |
+| hasFeedback | 是否展示错误反馈                                           | `boolean`                | `true`     |
+| form        | 经 Form.useForm() 创建的 form 控制实例，不提供时会自动创建 | `FormInstance`           | -          |
 
 其他参数参见 https://www.npmjs.com/package/rc-field-form
 
@@ -231,26 +231,26 @@ ReactDOM.render(<Demo />, mountNode);
 | 属性        | 说明                                        | 类型                     | 默认值     |
 | ----------- | ------------------------------------------- | ------------------------ | ---------- |
 | layout      | 布局模式                                    | `vertical \| horizontal` | `vertical` |
-| hasFeedback | 是否展示错误反馈                            | boolean                  | `true`     |
+| hasFeedback | 是否展示错误反馈                            | `boolean`                | `true`     |
 | label       | 名称                                        | `vertical \| horizontal` | `vertical` |
-| labelWidth  | 水平布局时，label 的宽度，支持`auto`        | string                   | `6em`      |
-| required    | 是否必填，如果不传则根据 rules 规则自动计算 | boolean                  | -          |
-| disabled    | 是否禁用                                    | boolean                  | `false`    |
-| noStyle     | 不使用样式，只使用字段管理                  | boolean                  | `false`    |
-| hidden      | 是否隐藏整个字段                            | boolean                  | `false`    |
-| name        | 字段名，支持数组                            | NamePath                 | -          |
-| rules       | 校验规则                                    | Rule[]                   | -          |
+| labelWidth  | 水平布局时，label 的宽度，支持`auto`        | `string`                 | `6em`      |
+| required    | 是否必填，如果不传则根据 rules 规则自动计算 | `boolean`                | -          |
+| disabled    | 是否禁用                                    | `boolean`                | `false`    |
+| noStyle     | 不使用样式，只使用字段管理                  | `boolean`                | `false`    |
+| hidden      | 是否隐藏整个字段                            | `boolean`                | `false`    |
+| name        | 字段名，支持数组                            | `NamePath`               | -          |
+| rules       | 校验规则                                    | `Rule[]`                 | -          |
 
 其他参数参见 https://www.npmjs.com/package/rc-field-form
 
 ### Form.List
 
-| 属性         | 说明                                                              | 类型                                                                                     | 默认值 |
-| ------------ | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------ |
-| children     | 渲染函数                                                          | (fields: Field[], operation: { add, remove, move }, meta: { errors }) => React.ReactNode | -      |
-| initialValue | 设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准 | any[]                                                                                    | -      |
-| name         | 字段名，支持数组                                                  | NamePath                                                                                 | -      |
-| rules        | 校验规则，仅支持自定义规则。需要配合 ErrorList 一同使用。         | { validator, message }[]                                                                 | -      |
+| 属性         | 说明                                                              | 类型                                                                                       | 默认值 |
+| ------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------ |
+| children     | 渲染函数                                                          | `(fields: Field[], operation: { add, remove, move }, meta: { errors }) => React.ReactNode` | -      |
+| initialValue | 设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准 | `any[]`                                                                                    | -      |
+| name         | 字段名，支持数组                                                  | `NamePath`                                                                                 | -      |
+| rules        | 校验规则，仅支持自定义规则。需要配合 ErrorList 一同使用。         | `{ validator, message }[]`                                                                 | -      |
 
 其他参数参见 https://www.npmjs.com/package/rc-field-form
 
@@ -260,7 +260,7 @@ ReactDOM.render(<Demo />, mountNode);
 
 | 属性   | 说明     | 类型        | 默认值 |
 | ------ | -------- | ----------- | ------ |
-| errors | 错误列表 | ReactNode[] | -      |
+| errors | 错误列表 | `ReactNode[]` | -      |
 
 ### Form.useForm
 
