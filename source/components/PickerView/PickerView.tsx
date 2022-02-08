@@ -1,107 +1,92 @@
 import React from 'react';
-import RMCCascader from 'rmc-cascader/lib/Cascader';
-import RMCMultiPicker from 'rmc-picker/lib/MultiPicker';
-import RMCPicker from 'rmc-picker/lib/Picker';
+import classNames from 'classnames';
+import { useControllableValue, useDebounceFn } from 'ahooks';
+import PickerColumn from './PickerColumn';
 
-export interface PickerData {
-  value: string | number;
+import { useColumns } from './use-columns';
+import { mergeProps } from '../../utils/merge-props';
+import { usePickerValueExtend } from './use-picker-value-extend';
+
+export type PickerColumnValue = string | null;
+
+export type PickerColumnItem = {
   label: React.ReactNode;
-  children?: PickerData[];
-}
+  value: string;
+  loading?: boolean;
+};
+
+export type PickerValueExtend = {
+  items: (PickerColumnItem | null)[];
+};
+
+export type PickerViewColumn = (PickerColumnItem | string)[];
 
 export interface PickerViewProps {
-  prefixCls?: string;
   className?: string;
-  pickerPrefixCls?: string;
-  data: PickerData[] | PickerData[][];
-  cascade?: boolean;
-  cols?: number;
-  value?: any[];
-  indicatorStyle?: React.CSSProperties;
-  itemStyle?: React.CSSProperties;
-  onChange?: (value?: any) => void;
-  onScrollChange?: (value?: any) => void;
+  style?: React.CSSProperties;
+  columns: PickerViewColumn[] | ((value: PickerColumnValue[]) => PickerViewColumn[]);
+  value?: PickerColumnValue[];
+  defaultValue?: PickerColumnValue[];
+  onChange?: (value: PickerColumnValue[], extend: PickerValueExtend) => void;
+  onSelect?: (item?: PickerColumnItem) => void;
 }
 
-function getDefaultProps() {
-  return {
-    prefixCls: 'fm-picker',
-    pickerPrefixCls: 'fm-picker-col',
-    cols: 3,
-    cascade: false,
-    value: [],
-    onChange() {},
-  };
-}
+const defaultProps = {
+  columns: [],
+  defaultValue: [],
+};
 
-class PickerView extends React.Component<PickerViewProps, any> {
-  static defaultProps = getDefaultProps();
+const classPrefix = `fm-picker-view`;
 
-  isMultiPicker = () => {
-    if (!this.props.data) {
-      return false;
-    }
-    return Array.isArray(this.props.data[0]);
-  };
+const PickerView: React.FC<PickerViewProps> = p => {
+  const props = mergeProps(defaultProps, p);
+  const { className } = props;
+  const PickerViewClassName = classNames(classPrefix, {}, className);
+  const { run } = useDebounceFn(
+    value => {
+      props.onChange?.([...value], generateValueExtend(value));
+    },
+    {
+      wait: 0,
+      leading: false,
+      trailing: true,
+    },
+  );
 
-  getCol = () => {
-    const { data, pickerPrefixCls, indicatorStyle, itemStyle } = this.props;
+  const [state, setState] = useControllableValue<PickerColumnValue[]>(
+    { ...props, onChange: run },
+    {
+      defaultValue: props.defaultValue,
+    },
+  );
 
-    const formattedData = this.isMultiPicker() ? data : [data];
-
-    return (formattedData as PickerData[][]).map((col, index) => {
-      return (
-        <RMCPicker
-          key={index}
-          prefixCls={pickerPrefixCls}
-          style={{ flex: 1 }}
-          indicatorStyle={indicatorStyle}
-          itemStyle={itemStyle}
-        >
-          {col.map(item => {
-            return (
-              <RMCPicker.Item key={item.value} value={item.value}>
-                {item.label}
-              </RMCPicker.Item>
-            );
-          })}
-        </RMCPicker>
-      );
-    });
+  const columns = useColumns(props.columns, state);
+  const generateValueExtend = usePickerValueExtend(columns);
+  const handleSelect = (value: PickerColumnValue, index: number) => {
+    /** TODO: 待优化，由于事件队列的原因，handleSelect多次触发，但是state无法获取最新值
+     * 例如：两列情况下无初始选择值时，会依次触发
+     * [x]
+     * [undefined, y]
+     * [x, y]
+     */
+    state[index] = value;
+    setState(state)
+    const selectItem = columns[index].find(v => v.value === value);
+    props.onSelect?.(selectItem);
   };
 
-  render() {
-    const { props } = this;
-    let picker;
-    if (props.cascade) {
-      picker = (
-        <RMCCascader
-          prefixCls={props.prefixCls}
-          pickerPrefixCls={props.pickerPrefixCls}
-          data={props.data as PickerData[]}
-          value={props.value}
-          onChange={props.onChange}
-          onScrollChange={props.onScrollChange}
-          cols={props.cols}
-          indicatorStyle={props.indicatorStyle}
-          pickerItemStyle={props.itemStyle}
-        />
-      );
-    } else {
-      picker = (
-        <RMCMultiPicker
-          prefixCls={props.prefixCls}
-          selectedValue={props.value}
-          onValueChange={props.onChange}
-          onScrollChange={props.onScrollChange}
-          style={{ flexDirection: 'row' }}
-        >
-          {this.getCol()}
-        </RMCMultiPicker>
-      );
-    }
-    return picker;
-  }
-}
+  return (
+    <div className={PickerViewClassName}>
+      {columns.map((column, index) => {
+        return <PickerColumn key={index} index={index} column={column} value={state[index]} onSelect={handleSelect} />;
+      })}
+      <div className={`${classPrefix}__indicator`}>
+        <div className={`${classPrefix}__indicator-top`}></div>
+        <div className={`${classPrefix}__indicator-mid`}></div>
+        <div className={`${classPrefix}__indicator-bottom`}></div>
+      </div>
+    </div>
+  );
+};
 
 export default PickerView;

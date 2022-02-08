@@ -30,7 +30,7 @@ const defaultProps = {
   forceRender: false,
   opacity: 0.6,
   disableBodyScroll: true,
-  getContainer: null,
+  getContainer: () => document.body,
   theme: 'dark',
 };
 
@@ -53,13 +53,6 @@ const Mask: React.FC<MaskProps> = p => {
 
   const { opacity } = useSpring({
     opacity: props.visible ? 1 : 0,
-    config: {
-      precision: 0.01,
-      mass: 1,
-      tension: 200,
-      friction: 30,
-      clamp: true,
-    },
     onStart: () => {
       setActive(true);
     },

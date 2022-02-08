@@ -16,28 +16,36 @@ const Demo = () => {
   return (
     <div className="components-noticebar-demo-basic">
       <div className="demo-title">基础样式</div>
-      <List style={{ padding: 16 }}>
-        <Radio style={{ marginBottom: 12 }} defaultChecked block>
-          选项一
-        </Radio>
-        <Radio block>选项二</Radio>
+      <List>
+        <List.Item>
+          <Radio defaultChecked block>
+            选项一
+          </Radio>
+        </List.Item>
+        <List.Item>
+          <Radio block>选项二</Radio>
+        </List.Item>
       </List>
       <div className="demo-title">水平排列</div>
       <List style={{ padding: 16 }}>
         <Radio style={{ marginRight: 12 }} defaultChecked>
           选项一
         </Radio>
-        <Radio style={{ marginRight: 12 }}>选项二</Radio>
+        <Radio>选项二</Radio>
       </List>
 
       <div className="demo-title">禁用状态</div>
-      <List style={{ padding: 16 }}>
-        <Radio style={{ marginBottom: 12 }} defaultChecked block disabled>
-          选项一
-        </Radio>
-        <Radio block disabled>
-          选项二
-        </Radio>
+      <List>
+        <List.Item>
+          <Radio defaultChecked block disabled>
+            选项一
+          </Radio>
+        </List.Item>
+        <List.Item>
+          <Radio block disabled>
+            选项二
+          </Radio>
+        </List.Item>
       </List>
 
       <div className="demo-title">在List中使用</div>
@@ -88,3 +96,11 @@ ReactDOM.render(<Demo />, mountNode);
 | defaultValue | 默认选项值                | RadioValue                | -       |
 | disabled     | 是否禁用                  | boolean                   | `false` |
 | onChange     | change 事件触发的回调函数 | (value: RadioValue): void | -       |
+
+## 样式变量
+
+| 属性                 | 说明         | 类型     | 默认值 |
+| -------------------- | ------------ | -------- | ------ |
+| --fm-radio-icon-size | 图标大小     | `string` | `20px` |
+| --fm-radio-font-size | 文本大小     | `string` | `14px` |
+| --fm-radio-gap       | 图标文本间距 | `string` | `8px`  |

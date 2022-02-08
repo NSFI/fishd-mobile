@@ -1,17 +1,25 @@
+import React from 'react';
 import classNames from 'classnames';
-import * as React from 'react';
+import { VarProps } from '../../utils/var-props';
+import { mergeProps } from '../../utils/merge-props';
 
 export interface LoadMoreProps {
-  prefixCls?: string;
   className?: string;
-  style?: React.CSSProperties;
+  style?: React.CSSProperties & VarProps<'---fm-loadmore-color' | '--fm-loadmore-size' | '--fm-loadmore-font-size'>;
   type?: 'circular' | 'spinner';
   color?: string;
-  size?: string | number;
-  textSize: string | number;
-  vertical?: boolean;
+  size?: string;
   text?: string;
+  vertical?: boolean;
 }
+
+const classPrefix = 'fm-loadmore';
+
+const defaultProps = {
+  prefixCls: 'fm-loadmore',
+  type: 'circular',
+  vertical: false,
+};
 
 function LoadMoreIcon(props: LoadMoreProps) {
   if (props.type === 'spinner') {
@@ -23,49 +31,34 @@ function LoadMoreIcon(props: LoadMoreProps) {
   }
 
   return (
-    <svg className={`${props.prefixCls}__circular`} viewBox="25 25 50 50">
+    <svg className={`${classPrefix}__circular`} viewBox="25 25 50 50">
       <circle cx="50" cy="50" r="20" fill="none" />
     </svg>
   );
 }
 
-class LoadMore extends React.Component<LoadMoreProps, any> {
-  static defaultProps = {
-    prefixCls: 'fm-loadmore',
-    type: 'circular',
-    color: '#C8C9CC',
-    size: '30px',
-    textSize: '14px',
-    vertical: false,
+const LoadMore: React.FC<LoadMoreProps> = p => {
+  const props = mergeProps(defaultProps, p);
+  const { className, style, type, vertical, text } = props;
+
+  const wrapCls = classNames(classPrefix, className, {
+    [`${classPrefix}__vertical`]: vertical,
+    [`${classPrefix}__normal`]: !vertical,
+  });
+
+  const spinnerCls = classNames(`${classPrefix}__spinner`, `${classPrefix}__spinner--${type}`);
+
+  const varStyle = {
+    '--fm-loadmore-size': props.size,
+    '--fm-loadmore-color': props.color,
   };
 
-  render() {
-    const { className, prefixCls, style, type, color, size, textSize, vertical, text } = this.props;
-
-    const wrapCls = classNames(prefixCls, className, {
-      [`${prefixCls}__vertical`]: vertical,
-      [`${prefixCls}__normal`]: !vertical,
-    });
-
-    const spinnerCls = classNames(`${prefixCls}__spinner`, `${prefixCls}__spinner--${type}`);
-
-    const spStyle = { color, width: size, height: size };
-
-    const textStyle = { fontSize: textSize };
-
-    return (
-      <div className={wrapCls} style={style}>
-        <span className={spinnerCls} style={spStyle}>
-          {LoadMoreIcon(this.props)}
-        </span>
-        {text && (
-          <span className={`${prefixCls}__text`} style={textStyle}>
-            {text}
-          </span>
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div className={wrapCls} style={{ ...style, ...varStyle }}>
+      <span className={spinnerCls}>{LoadMoreIcon(props)}</span>
+      {text && <span className={`${classPrefix}__text`}>{text}</span>}
+    </div>
+  );
+};
 
 export default LoadMore;

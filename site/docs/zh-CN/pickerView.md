@@ -11,93 +11,59 @@
 :::demo
 
 ```js
-state = {
-  value: null
-}
-
-onChange = (value) => {
-  this.setState({ value })
-}
-
-render() {
-  const seasons = [
-    [
-      {
-        label: '2013',
-        value: '2013',
-      },
-      {
-        label: '2014',
-        value: '2014',
-      },
-    ],
-    [
-      {
-        label: '春',
-        value: '春',
-      },
-      {
-        label: '夏',
-        value: '夏',
-      },
-    ],
+const Demo = () => {
+  const columns = [
+    ['A', 'B', 'C', 'D', 'E', 'F'],
+    ['1', '2', '3', '我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目'],
   ];
+  const handleChange = (value, extendValue) => {
+    console.log('pickerView:', value, extendValue.items);
+  };
   return (
     <div className="components-tpl-demo-basic">
       <div className="demo-title">基础用法</div>
       <div className="demo-card">
-        <PickerView
-          onChange={this.onChange}
-          value={this.state.value}
-          data={seasons}
-          cascade={false}
-        />
+        <PickerView columns={columns} onChange={handleChange} />
       </div>
     </div>
   );
-}
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 :::
 
-## 单选
+## 受控模式
 
 :::demo
 
 ```js
-state = {
-  value: null
-}
-
-onChange = (value) => {
-  this.setState({ value })
-}
-
-render() {
-  const seasons = [
-    {
-      label: '春',
-      value: '春',
-    },
-    {
-      label: '夏',
-      value: '夏',
-    },
+const Demo = () => {
+  const columns = [
+    ['A', 'B', 'C', 'D', 'E', 'F'],
+    ['1', '2', '3', '我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目'],
   ];
+  const [value, setValue] = React.useState(['B', '3']);
+
   return (
     <div className="components-tpl-demo-basic">
-      <div className="demo-title">单选</div>
+      <div className="demo-title">受控模式：{JSON.stringify(value)}</div>
       <div className="demo-card">
         <PickerView
-          onChange={this.onChange}
-          value={this.state.value}
-          data={seasons}
-          cascade={false}
+          columns={columns}
+          value={value}
+          onChange={(value, extendValue) => {
+            setValue(value);
+            console.log('受控pickerView:', value, extendValue.items);
+          }}
         />
       </div>
     </div>
   );
-}
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 :::
@@ -107,123 +73,197 @@ render() {
 :::demo
 
 ```js
-state = {
-  value: null
-}
-
-onChange = (value) => {
-  this.setState({ value })
-}
-
-render() {
-  const province = [
+const Demo = () => {
+  const [options, setOptions] = React.useState([
     {
-      label: '北京',
-      value: '01',
+      label: '浙江省',
+      value: 'zhejiang',
       children: [
         {
-          label: '东城区',
-          value: '01-1',
+          label: '杭州市',
+          value: 'hangzhou',
         },
         {
-          label: '西城区',
-          value: '01-2',
-        },
-        {
-          label: '崇文区',
-          value: '01-3',
-        },
-        {
-          label: '宣武区',
-          value: '01-4',
+          label: '宁波市',
+          value: 'ningbo',
         },
       ],
     },
     {
-      label: '浙江',
-      value: '02',
+      label: '江苏省',
+      value: 'jiangsu',
       children: [
         {
-          label: '杭州',
-          value: '02-1',
-          children: [
-            {
-              label: '西湖区',
-              value: '02-1-1',
-            },
-            {
-              label: '上城区',
-              value: '02-1-2',
-            },
-            {
-              label: '江干区',
-              value: '02-1-3',
-            },
-            {
-              label: '下城区',
-              value: '02-1-4',
-            },
-          ],
+          label: '南京',
+          value: 'nanjing',
         },
         {
-          label: '宁波',
-          value: '02-2',
-          children: [
-            {
-              label: '海曙区',
-              value: '02-2-1',
-            },
-            {
-              label: '舟山区',
-              value: '02-2-2',
-            },
-          ],
-        },
-        {
-          label: '温州',
-          value: '02-3',
-        },
-        {
-          label: '嘉兴',
-          value: '02-4',
-        },
-        {
-          label: '湖州',
-          value: '02-5',
-        },
-        {
-          label: '绍兴',
-          value: '02-6',
+          label: '苏州',
+          value: 'suzhou',
         },
       ],
     },
-  ];
+  ]);
+  const [value, setValue] = React.useState([]);
   return (
     <div className="components-tpl-demo-basic">
-      <div className="demo-title">级联</div>
+      <div className="demo-title">级联：{JSON.stringify(value)}</div>
       <div className="demo-card">
-        <PickerView
-          onChange={this.onChange}
-          value={this.state.value}
-          data={province}
-          cascade
+        <CascadePickerView
+          value={value}
+          options={options}
+          onChange={(value, extendValue) => {
+            setValue(value);
+            console.log('受控CascadePickerView:', value, extendValue.items);
+          }}
         />
       </div>
     </div>
   );
-}
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 :::
 
-## API
+## 异步级联
 
-| 属性 | 说明         | 类型                                            | 默认值    |
-| ---- | ------------ | ----------------------------------------------- | --------- |
-| data | 数据源 | `Array<{value, label}>` / `Array<Array<{value, label}>>` | - |
-| value | 值, 格式是`[value1, value2, value3]`, 对应数据源的相应级层 value | Array<any> | - |
-| cascade | 是否级联 | boolean | `false` |
-| cols | 列数 | number | `3` |
-| onChange | 选中后的回调 | `(val): void` | - |
-| itemStyle | 每列样式 | object | - |
-| indicatorStyle | indicator 样式 | object | - |
+:::demo
+
+```js
+const Demo = () => {
+  const [options, setOptions] = React.useState([
+    {
+      label: '浙江省',
+      value: 'zhejiang',
+      leaf: false,
+    },
+    {
+      label: '江苏省',
+      value: 'jiangsu',
+      leaf: false,
+    },
+  ]);
+  const [value, setValue] = React.useState([]);
+  const sleep = delay => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve();
+      }, delay);
+    });
+  };
+  const loadData = async item => {
+    await sleep(2000);
+    if (item.value === 'zhejiang') {
+      return [
+        {
+          label: '杭州市',
+          value: 'hangzhou',
+          leaf: true,
+        },
+        {
+          label: '宁波市',
+          value: 'ningbo',
+          leaf: true,
+        },
+      ];
+    }
+    if (item.value === 'jiangsu') {
+      return [
+        {
+          label: '南京',
+          value: 'nanjing',
+          leaf: true,
+        },
+        {
+          label: '苏州',
+          value: 'suzhou',
+          leaf: true,
+        },
+      ];
+    }
+  };
+  return (
+    <div className="components-tpl-demo-basic">
+      <div className="demo-title">异步加载级联：{JSON.stringify(value)}</div>
+      <div className="demo-card">
+        <CascadePickerView
+          value={value}
+          options={options}
+          lazy
+          lazyLoad={loadData}
+          onOptionsUpdate={setOptions}
+          onChange={(value, extendValue) => {
+            setValue(value);
+            console.log('异步加载CascadePickerView:', value, extendValue.items);
+          }}
+        />
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<Demo />, mountNode);
+```
+
+:::
+
+## PickerView
+
+| 属性         | 说明           | 类型                                                                          | 默认值 |
+| ------------ | -------------- | ----------------------------------------------------------------------------- | ------ |
+| columns      | 列数据         | `PickerViewColumn[] \| ((value: PickerColumnValue[]) => PickerViewColumn[]);` | `[]`   |
+| value        | 值             | `PickerColumnValue[]`                                                         | -      |
+| defaultValue | 默认值         | `PickerColumnValue[]`                                                         | `[]`   |
+| onChange     | 选项值改变回调 | `(value: PickerColumnValue[], extend: PickerValueExtend) => void;`            | -      |
+| onSelect     | 单列选中回调   | `onSelect?: (item?: PickerColumnItem) => void;`                               | -      |
+
+#### PickerColumnItem
+
+```ts
+export type PickerColumnItem = {
+  label: React.ReactNode;
+  value: string;
+  loading?: boolean;
+};
+```
+
+#### PickerViewColumn
+
+```ts
+export type PickerViewColumn = (PickerColumnItem | string)[];
+```
+
+#### PickerColumnValue
+
+```ts
+export type PickerColumnValue = string | null;
+```
+
+#### PickerValueExtend
+
+```ts
+export type PickerValueExtend = {
+  items: (PickerColumnItem | null)[];
+};
+```
+
+## CascaderPickerView
+
+| 属性            | 说明                 | 类型                                                       | 默认值  |
+| --------------- | -------------------- | ---------------------------------------------------------- | ------- |
+| options         | 级联配置             | `CascadePickerOption`                                      | `[]`    |
+| lazy            | 是否异步加载         | `boolean`                                                  | `false` |
+| lazyLoad        | 异步加载函数         | `(CascadePickerOption) => Promise<CascadePickerOption[]>;` | -       |
+| onOptionsUpdate | 异步加载后，最新配置 | `(CascadePickerOption) => void;`                           | -       |
+
+#### CascadePickerOption
+```ts
+export type CascadePickerOption = {
+  label: string;
+  value: string;
+  leaf?: boolean;
+  children?: CascadePickerOption[];
+};
+```

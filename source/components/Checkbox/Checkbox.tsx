@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import { CheckboxGroupContext } from './CheckboxGroupContext';
+import { VarProps } from '../../utils/var-props';
 
 import Icon from '../Icon';
 
 export type CheckboxValue = string | number;
 export type CheckboxProps = {
   className?: string;
-  style?: React.CSSProperties;
+  style?: React.CSSProperties & VarProps<'fm-checkbox-icon-size' | 'fm-checkbox-font-size' | 'fm-checkbox-gap'>;
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;

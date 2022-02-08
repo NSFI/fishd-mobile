@@ -13,17 +13,20 @@ const Demo = () => {
   const [keyboard, setKeyboard] = React.useState('');
   const [value, setValue] = React.useState('');
 
-  const handleShow = (type, e) => {
-    // e.nativeEvent.stopImmediatePropagation();
+  const handleShow = type => {
     setKeyboard(type);
   };
 
-  const handleBlur = () => {
+  const handleClose = () => {
     setKeyboard('');
   };
 
   const hanldeInput = text => {
     Toast.show(`点击${text}`);
+  };
+
+  const hanldeConfirm = text => {
+    Toast.show(`确认完成`);
   };
 
   const hanldeDelete = () => {
@@ -37,63 +40,59 @@ const Demo = () => {
   return (
     <div className="components-numberKeyboard-demo-basic">
       <List>
-        <List.Item onClick={() => handleShow('A')}>普通键盘</List.Item>
-        <List.Item onClick={() => handleShow('B')}>右侧栏键盘</List.Item>
+        <List.Item onClick={() => handleShow('A')}>默认键盘</List.Item>
+        <List.Item onClick={() => handleShow('B')}>自定义键盘</List.Item>
         <List.Item onClick={() => handleShow('C')}>身份证键盘</List.Item>
         <List.Item onClick={() => handleShow('D')}>带标题键盘</List.Item>
         <List.Item onClick={() => handleShow('E')}>配置多个按键</List.Item>
         <List.Item onClick={() => handleShow('F')}>双向绑定</List.Item>
       </List>
       <NumberKeyboard
-        show={keyboard === 'A'}
-        onBlur={handleBlur}
+        visible={keyboard === 'A'}
+        onClose={handleClose}
         onInput={hanldeInput}
         onDelete={hanldeDelete}
       ></NumberKeyboard>
       <NumberKeyboard
-        show={keyboard === 'B'}
+        visible={keyboard === 'B'}
         theme="custom"
-        onBlur={handleBlur}
+        onClose={handleClose}
         onInput={hanldeInput}
         onDelete={hanldeDelete}
         extraKey="."
-        closeButtonText="完成"
       ></NumberKeyboard>
       <NumberKeyboard
-        show={keyboard === 'C'}
-        onBlur={handleBlur}
+        visible={keyboard === 'C'}
+        onClose={handleClose}
         onInput={hanldeInput}
         onDelete={hanldeDelete}
         extraKey="X"
-        closeButtonText="完成"
       ></NumberKeyboard>
       <NumberKeyboard
-        show={keyboard === 'D'}
-        onBlur={handleBlur}
+        visible={keyboard === 'D'}
+        onClose={handleClose}
         onInput={hanldeInput}
         onDelete={hanldeDelete}
         extraKey="."
         title="键盘标题"
-        closeButtonText="完成"
       ></NumberKeyboard>
       <NumberKeyboard
-        show={keyboard === 'E'}
-        onBlur={handleBlur}
+        visible={keyboard === 'E'}
+        theme="custom"
+        onClose={handleClose}
         onInput={hanldeInput}
         onDelete={hanldeDelete}
-        theme="custom"
+        onConfirm={hanldeConfirm}
         extraKey={['00', '.']}
         title="多个按键"
-        closeButtonText="完成"
       ></NumberKeyboard>
       <NumberKeyboard
-        show={keyboard === 'F'}
-        onBlur={handleBlur}
+        visible={keyboard === 'F'}
+        onClose={handleClose}
         onChange={handleChange}
         extraKey="."
         title={value || '请输入价格'}
         value={value}
-        closeButtonText="完成"
       ></NumberKeyboard>
     </div>
   );
@@ -112,26 +111,27 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## API
 
-| 属性               | 说明                           | 类型                        | 默认值    |
-| ------------------ | ------------------------------ | --------------------------- | --------- |
-| value              | 当前输入值                     | `string`                    | -         |
-| show               | 是否显示键盘                   | `boolean`                   | -         |
-| title              | 键盘标题                       | `string \| React.ReactNode` | -         |
-| theme              | 样式风格，可选值为`custom`     | `string`                    | `default` |
-| extraKey           | 底部额外按键的内容             | `string \| string[]`        | -         |
-| closeButtonText    | 关闭按钮文字，空则不展示       | `string`                    | -         |
-| deleteButtonText   | 删除按钮文字，空则展示删除图标 | `string`                    | -         |
-| showDeleteKey      | 是否展示删除图标               | `boolean`                   | `true`    |
-| hideOnClickOutside | 点击外部时是否收起键盘         | `boolean`                   | `true`    |
+| 属性                | 说明                                                  | 类型                 | 默认值    |
+| ------------------- | ----------------------------------------------------- | -------------------- | --------- |
+| theme               | 样式风格                                              | `custom | default`   | `default` |
+| value               | 当前输入值                                            | `string`             | -         |
+| visible                | 是否显示键盘                                          | `boolean`            | -         |
+| title               | 标题                                                  | `React.ReactNode`    | -         |
+| extraKey            | 额外按键的内容，注意`default`主题只能添加一个额外的键 | `string \| string[]` | -         |
+| showClose           | 是否展示顶部关闭按钮                                  | `boolean`            | `true`    |
+| closeText           | 关闭按钮文案                                          | `string`             | `关闭`    |
+| confirmText         | 确认按钮文案                                          | `string`             | `完成`    |
+| closeOnClickOutside | 点击外部时是否收起键盘                                | `boolean`            | `true`    |
+| closeOnConfirm      | 点击确认时是否收起键盘                                | `boolean`            | `true`    |
 
 ## Event
 
-| 事件名   | 说明                           | 回调参数          |
-| -------- | ------------------------------ | ----------------- |
-| onInput  | 点击按键时触发                 | `key: 按键内容`   |
-| onDelete | 点击删除键时触发               | -                 |
-| onChange | 键盘内容改变时触发             | `value: 键盘内容` |
-| onShow   | 键盘完全弹出时触发             | -                 |
-| onHide   | 键盘完全收起时触发             | -                 |
-| onClose  | 点击关闭按钮时触发             | -                 |
-| onBlur   | 点击关闭按钮或非键盘区域时触发 | -                 |
+| 事件名     | 说明                 | 类型                      |
+| ---------- | -------------------- | ------------------------- |
+| onInput    | 点击按键时触发       | `(key: string) => void`   |
+| onDelete   | 点击删除键时触发     | `() => void`              |
+| onChange   | 键盘内容改变时触发   | `(value: string) => void` |
+| onClose    | 点击关闭按钮时触发   | `() => void`              |
+| onConfirm  | 点击确认按钮时触发   | `() => void`              |
+| afterShow  | 键盘显示动画完成回调 | `() => void`              |
+| afterClose | 键盘关闭动画完成回调 | `() => void`              |

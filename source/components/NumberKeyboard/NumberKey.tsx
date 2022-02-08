@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+import React, { useMemo } from 'react';
 import classNames from 'classnames';
-import * as React from 'react';
 import CollapseIcon from './CollapseIcon';
 import DeleteIcon from './DeleteIcon';
 
-export interface NumberKeyProps {
+export type NumberKeyProps = {
   prefixCls?: string;
   className?: string;
   type?: string;
@@ -12,56 +11,46 @@ export interface NumberKeyProps {
   color?: string;
   wider?: boolean;
   large?: boolean;
-  loading?: boolean;
   onPress?: (type: string, text: number | string) => void;
-}
+};
 
-class NumberKey extends React.Component<NumberKeyProps, any> {
-  static defaultProps = {
-    prefixCls: 'fm-number-key',
-    text: '',
+const classPrefix = 'fm-number-key';
+
+const NumberKey: React.FC<NumberKeyProps> = props => {
+  const { className, large, wider, color, type = '', text } = props;
+
+  const hanldeClick = e => {
+    e.preventDefault();
+    props.onPress?.(type, text);
   };
 
-  hanldeClick = (event: any) => {
-    if (this.props.onPress) {
-      event.preventDefault();
-      this.props.onPress(this.props.type || '', this.props.text);
-    }
-  };
-
-  genContent = () => {
-    const isExtra = this.props.type === 'extra';
-    const isDelete = this.props.type === 'delete';
-    const { text } = this.props;
-
+  const content = useMemo(() => {
+    let contentNode: React.ReactNode = text;
+    const isDelete = type === 'delete';
+    const isClose = type === 'close';
     if (isDelete) {
-      return text || <DeleteIcon></DeleteIcon>;
+      contentNode = <DeleteIcon></DeleteIcon>;
     }
-
-    if (isExtra) {
-      return text || <CollapseIcon></CollapseIcon>;
+    if (isClose) {
+      contentNode = <CollapseIcon></CollapseIcon>;
     }
+    return contentNode;
+  }, [text, type]);
 
-    return text;
-  };
+  const wrapCls = classNames(`${classPrefix}__wrapper`, className, wider ? `${classPrefix}__wider` : '');
+  const keyCls = classNames(
+    `${classPrefix}__key`,
+    large ? `${classPrefix}__large` : '',
+    color ? `${classPrefix}__${color}` : '',
+  );
 
-  render() {
-    const { className, prefixCls, large, wider, color } = this.props;
-
-    const wrapCls = classNames(`${prefixCls}__wrapper`, className, wider ? `${prefixCls}__wider` : '');
-    const keyCls = classNames(
-      `${prefixCls}__key`,
-      large ? `${prefixCls}__large` : '',
-      color ? `${prefixCls}__${color}` : '',
-    );
-    return (
-      <div className={wrapCls}>
-        <div role="button" className={keyCls} onClick={this.hanldeClick}>
-          {this.genContent()}
-        </div>
+  return (
+    <div className={wrapCls}>
+      <div role="button" className={keyCls} onClick={hanldeClick}>
+        {content}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default NumberKey;

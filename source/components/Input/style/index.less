@@ -7,8 +7,12 @@
   display: flex;
   align-items: center;
   width: 100%;
-  font-size: @font-size-base;
+  font-size: 14px;
   line-height: 1.5;
+
+  &.is-disabled {
+    opacity: 0.6;
+  }
 
   .@{inputPrefixCls} {
     flex: 1;
@@ -19,19 +23,16 @@
     max-height: 100%;
     padding: 0;
     margin: 0;
-    color: @color-gray-1;
+    color: var(--color-gray-1);
     border: 0;
     background: 0 0;
     outline: none;
     box-sizing: border-box;
     appearance: none;
+    caret-color: var(--color-primary);
 
     &::placeholder {
-      color: @color-gray-4;
-    }
-
-    &:disabled {
-      color: @color-gray-3;
+      color: var(--color-gray-4);
     }
   }
 
@@ -39,20 +40,20 @@
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    margin-right: 4 * @hd;
+    margin-right: 4px;
   }
 
   .@{inputPrefixCls}__suffix {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    margin-left: 4 * @hd;
+    margin-left: 4px;
   }
 
   .@{inputPrefixCls}__clear {
     flex: 0 0 auto;
-    margin-left: 4 * @hd;
-    color: @color-gray-3;
+    margin-left: 4px;
+    color: var(--color-gray-3);
     cursor: pointer;
   }
 }

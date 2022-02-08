@@ -1,7 +1,5 @@
-/* eslint-disable no-case-declarations */
-/* tslint:disable:jsx-no-multiline-js */
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Dialog from 'rmc-dialog';
 import TouchFeedback from 'rmc-feedback';

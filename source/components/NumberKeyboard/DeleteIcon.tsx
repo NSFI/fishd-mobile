@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-export default function CollapseIcon() {
+const DeleteIcon: React.FC<{}> = () => {
   return (
     <svg className="fm-number-key__icon" viewBox="0 0 30 24" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -9,4 +9,5 @@ export default function CollapseIcon() {
       />
     </svg>
   );
-}
+};
+export default DeleteIcon;

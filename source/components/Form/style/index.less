@@ -2,23 +2,23 @@
 @prefix: fm-form;
 
 .@{prefix}-item {
-  font-size: @font-size-base;
+  font-size: 14px;
 
   &__label {
     display: block;
     height: 100%;
     line-height: 1.5;
-    color: @color-gray-1;
+    color: var(--color-gray-1);
   }
 
   &__error {
     font-size: 12px;
-    color: @color-danger;
+    color: var(--color-danger);
   }
 
   &__required {
     margin-left: 4px;
-    color: @color-danger;
+    color: var(--color-danger);
   }
 
   .fm-list-item__content {
@@ -26,11 +26,11 @@
   }
 
   .fm-list-item__prefix {
-    color: @color-gray-1;
+    color: var(--color-gray-1);
   }
 }
 
 .@{prefix}-errors {
   font-size: 12px;
-  color: @color-danger;
+  color: var(--color-danger);
 }

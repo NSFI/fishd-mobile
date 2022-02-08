@@ -8,50 +8,43 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 500;
+  z-index: 1010;
 
   &__header {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: @numberKeyboard-header-height;
-    padding-top: 6 * @hd;
-    background-color: @numberKeyboard-bg;
-    border-top-right-radius: @numberKeyboard-radius;
-    border-top-left-radius: @numberKeyboard-radius;
+    height: 30px;
+    padding-top: 6px;
+    background-color: var(--color-gray-8);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
 
-    &-title {
-      font-size: @numberKeyboard-title-size;
-      font-weight: normal;
-      color: @numberKeyboard-title-color;
-    }
+  &__title {
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--color-gray-2);
+  }
 
-    &-left {
-      position: absolute;
-      left: 0;
-      height: 100%;
-      padding: 0 16 * @hd;
-    }
-
-    &-right {
-      position: absolute;
-      right: 0;
-      height: 100%;
-      padding: 0 16 * @hd;
-      font-size: @numberKeyboard-title-done-size;
-      color: @numberKeyboard-title-done-color;
-      border: none;
-      background-color: transparent;
-      outline: none;
-      cursor: pointer;
-    }
+  &__close {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: 0 16px;
+    font-size: 14px;
+    color: var(--color-primary);
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
   }
 
   &__body {
     display: flex;
     padding: 6px 0 0 6px;
-    background-color: @numberKeyboard-bg;
+    background-color: var(--color-gray-8);
   }
 
   &__keys {
@@ -80,10 +73,10 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: @numberKeyboard-key-height;
-    font-size: @numberKeyboard-key-size;
+    height: 56px;
+    font-size: 28px;
     border: none;
-    border-radius: @numberKeyboard-key-radius;
+    border-radius: 8px;
     background-color: #fff;
     cursor: pointer;
     user-select: none;
@@ -94,12 +87,13 @@
   }
 
   &__blue {
-    font-size: @numberKeyboard-key-done-size;
-    color: @numberKeyboard-key-done-color;
-    background-color: @numberKeyboard-key-done-bg;
+    font-size: 16px;
+    color: #fff;
+    background-color: var(--color-primary);
 
     &:active {
-      background-color: @numberKeyboard-key-done-active-bg;
+      background-color: var(--color-primary);
+      opacity: 0.6;
     }
   }
 
@@ -113,7 +107,7 @@
   }
 
   &__icon {
-    width: @numberKeyboard-icon-width;
-    height: @numberKeyboard-icon-height;
+    width: 32px;
+    height: 22px;
   }
 }

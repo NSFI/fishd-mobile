@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import Icon from '../Icon';
+import LoadMore from '../LoadMore';
 
 export type ValueType = boolean | number | string;
 
@@ -100,7 +101,7 @@ const Switch: React.FC<SwitchProps> = props => {
           </div>
         )}
       </div>
-      {props.loading || changing ? <Icon className={`${classPrefix}__loading`} type="loading" /> : null}
+      {props.loading || changing ? <LoadMore className={`${classPrefix}__loading`} size='20px'></LoadMore> : null}
     </div>
   );
 };

@@ -5,14 +5,18 @@
 .@{textareaPrefixCls}__wrapper {
   position: relative;
 
+  &.is-disabled {
+    opacity: 0.6;
+  }
+
   .@{textareaPrefixCls} {
     display: block;
     overflow: visible;
     width: 100%;
     padding-right: 16px;
-    font-size: @font-size-base;
+    font-size: 14px;
     line-height: 1.5;
-    color: @color-gray-1;
+    color: var(--color-gray-1);
     border: 0;
     background-color: transparent;
     outline: none;
@@ -21,14 +25,10 @@
     appearance: none;
     word-break: break-word;
     word-wrap: break-word;
-    caret-color: @color-primary;
+    caret-color: var(--color-primary);
 
     &::placeholder {
-      color: @color-gray-4;
-    }
-
-    &:disabled {
-      color: @color-gray-3;
+      color: var(--color-gray-4);
     }
   }
 
@@ -37,13 +37,13 @@
     top: 0;
     right: 0;
     flex: 0 0 auto;
-    color: @color-gray-3;
+    color: var(--color-gray-3);
     cursor: pointer;
   }
 
   .@{textareaPrefixCls}__count {
-    font-size: @font-size-sm;
+    font-size: 12px;
     text-align: right;
-    color: @color-gray-4;
+    color: var(--color-gray-4);
   }
 }

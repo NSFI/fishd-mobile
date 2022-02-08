@@ -4,7 +4,7 @@ import { useControllableValue } from 'ahooks';
 
 import Icon from '../Icon';
 import { mergeProps } from '../../utils/merge-props';
-import { fixControlledValue } from '../../utils/fix-controlled-value'
+import { fixControlledValue } from '../../utils/fix-controlled-value';
 
 type NativeInputProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 type EnterKeyHintProps = NativeInputProps extends { enterKeyHint?: unknown }
@@ -62,7 +62,13 @@ const defaultProps = {
 const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (p, ref) => {
   const props = mergeProps(defaultProps, p);
   const { className, style, clearable } = props;
-  const InputClassName = classNames(`${classPrefix}__wrapper`, {}, className);
+  const InputClassName = classNames(
+    `${classPrefix}__wrapper`,
+    {
+      'is-disabled': props.disabled,
+    },
+    className,
+  );
   const [value, setValue] = useControllableValue(props);
   const [focus, setFocus] = useState(false);
   const nativeInputRef = useRef<HTMLInputElement>(null);

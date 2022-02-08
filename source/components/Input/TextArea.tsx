@@ -64,7 +64,13 @@ const TextArea: React.ForwardRefRenderFunction<TextAreaRef, TextAreaProps> = (p,
     clearable,
     ...textAreaProps
   } = props;
-  const InputClassName = classNames(`${classPrefix}__wrapper`, {}, className);
+  const TextAreaClassName = classNames(
+    `${classPrefix}__wrapper`,
+    {
+      'is-disabled': props.disabled,
+    },
+    className,
+  );
   const [value, setValue] = useControllableValue(props);
   const nativeTextAreaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -89,7 +95,7 @@ const TextArea: React.ForwardRefRenderFunction<TextAreaRef, TextAreaProps> = (p,
   };
 
   return (
-    <div className={InputClassName} style={style}>
+    <div className={TextAreaClassName} style={style}>
       <textarea
         ref={nativeTextAreaRef}
         {...textAreaProps}

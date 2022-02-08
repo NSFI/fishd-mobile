@@ -2,13 +2,14 @@ import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import { RadioGroupContext } from './RadioGroupContext';
+import { VarProps } from '../../utils/var-props';
 
 import Icon from '../Icon';
 
 export type RadioValue = string | number;
 export type RadioProps = {
   className?: string;
-  style?: React.CSSProperties;
+  style?: React.CSSProperties & VarProps<'fm-radio-icon-size' | 'fm-radio-font-size' | 'fm-radio-gap'>;
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;

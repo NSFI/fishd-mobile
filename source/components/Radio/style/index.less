@@ -5,7 +5,7 @@
 .@{prefix} {
   display: inline-flex;
   align-items: center;
-  font-size: 15px;
+  font-size: var(--fm-radio-font-size, 14px);
   vertical-align: middle;
 
   &__icon {
@@ -13,11 +13,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    width: var(--fm-radio-icon-size, 20px);
+    height: var(--fm-radio-icon-size, 20px);
+    margin-right: var(--fm-radio-gap, 8px);
     font-size: 0;
-    border: 1px solid @color-gray-6;
+    border: 1px solid var(--color-gray-6);
     border-radius: 50%;
     box-sizing: border-box;
   }
@@ -25,8 +25,8 @@
   &-checked {
     .@{prefix}__icon {
       color: #fff;
-      border-color: @color-primary;
-      background-color: @color-primary;
+      border-color: var(--color-primary);
+      background-color: var(--color-primary);
     }
   }
 
@@ -36,10 +36,13 @@
 }
 
 .@{prefix}-disabled {
+  cursor: not-allowed;
+  color: var(--color-gray-3);
+
   .@{prefix}__icon {
-    color: @color-gray-6;
-    border-color: @color-gray-6;
-    background-color: @color-gray-8;
+    color: var(--color-gray-5);
+    border-color: var(--color-gray-5);
+    background-color: var(--color-gray-8);
   }
 }
 

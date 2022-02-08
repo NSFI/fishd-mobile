@@ -11,9 +11,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     .@{prefix}__text {
-      margin-top: 8 * @hd;
-      color: @color-gray-4;
+      margin-top: 8px;
+      font-size: var(--fm-loadmore-font-size, 14px);
+      color: var(--color-gray-4);
     }
   }
 
@@ -21,19 +23,20 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
+
     .@{prefix}__text {
-      margin-left: 8 * @hd;
-      color: @color-gray-4;
+      margin-left: 8px;
+      font-size: var(--fm-loadmore-font-size, 14px);
+      color: var(--color-gray-4);
     }
   }
 
   &__spinner {
     position: relative;
     display: inline-block;
-    width: @loadmore-size;
-    max-width: 100%;
-    height: @loadmore-size;
-    max-height: 100%;
+    width: var(--fm-loadmore-size, 30px);
+    height: var(--fm-loadmore-size, 30px);
+    color: var(--fm-loadmore-color, #bfbfbf);
     vertical-align: middle;
     animation: fm-rotate 0.8s linear infinite;
 
@@ -49,7 +52,7 @@
 
         &::before {
           display: block;
-          width: 2 * @hd;
+          width: 2px;
           height: 25%;
           margin: 0 auto;
           border-radius: 40%;

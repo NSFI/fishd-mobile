@@ -7,34 +7,31 @@
 :::demo
 
 ```js
-state = {
-  loading: false
-}
-handleRefresh = () => {
-  this.setState({
-    loading: true
-  })
+const Demo = () => {
+  const [loading, setLoading] = React.useState(false);
 
-  setTimeout(() => {
-    this.setState({
-      loading: false
-    })
-  }, 2000);
-}
-render() {
-  const { loading } = this.state;
+  const handleRefresh = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      Toast.show('刷新完成');
+    }, 2000);
+  };
+
   return (
     <div className="components-tpl-demo-basic">
       <NoticeBar>请在移动端打开体验</NoticeBar>
       <div className="demo-title">基础用法</div>
       <div className="demo-card">
-        <PullRefresh loading={loading} onRefresh={this.handleRefresh}>
+        <PullRefresh loading={loading} onRefresh={handleRefresh}>
           <div className="pull-area">下拉此处区域，触发刷新</div>
         </PullRefresh>
       </div>
     </div>
   );
-}
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less

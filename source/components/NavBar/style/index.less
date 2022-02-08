@@ -1,12 +1,11 @@
 @import (reference) '../../../assets/css/index.less';
 
-@navbar-height: 45 * @hd;
 @navbarPrefixCls: fm-navbar;
 
 .@{navbarPrefixCls} {
   display: flex;
   align-items: center;
-  height: @navbar-height;
+  height: 45px;
   font-size: 16px;
   color: #333;
   background-color: #fff;
@@ -26,7 +25,7 @@
 
     &-icon {
       display: inherit;
-      margin-right: @space-xs;
+      margin-right: 4px;
     }
   }
 
@@ -43,11 +42,11 @@
   }
 
   &-light {
-    color: @color-primary;
-    background-color: @color-gray-9;
+    color: var(--color-primary);
+    background-color: var(--color-gray-9);
   }
 
   &-light &-title {
-    color: @color-gray-1;
+    color: var(--color-gray-1);
   }
 }

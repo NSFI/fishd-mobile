@@ -46,14 +46,7 @@ const Modal: React.FC<ModalProps> = p => {
 
   const style = useSpring({
     opacity: props.visible ? 1 : 0,
-    xScale: props.visible ? 1 : 0,
-    config: {
-      precision: 0.01,
-      mass: 1,
-      tension: 200,
-      friction: 30,
-      clamp: true,
-    },
+    xscale: props.visible ? 1 : 0,
     onStart: () => {
       setActive(true);
     },
@@ -81,7 +74,7 @@ const Modal: React.FC<ModalProps> = p => {
           className={`${classPrefix}-main`}
           style={{
             ...style,
-            transform: style.xScale
+            transform: style.xscale
               .to({
                 range: [0, 0.25, 0.5, 0.75, 1],
                 output: [0.4, 0.8, 1, 1.1, 1],

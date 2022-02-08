@@ -23,11 +23,11 @@ render(){
 .demo-icon {
   margin-bottom: 32px;
   .wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
     background-color: #fff;
-    padding: 25px 0;
+    padding: 12px 0;
     .icon-item {
-      width: 20vw;
       text-align: center;
     }
   }
@@ -68,11 +68,11 @@ render(){
 .demo-icon {
   margin-bottom: 32px;
   .wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
     background-color: #fff;
-    padding: 25px 0;
+    padding: 12px 0;
     .icon-item {
-      width: 20vw;
       text-align: center;
     }
   }
@@ -113,11 +113,11 @@ render(){
 .demo-icon {
   margin-bottom: 32px;
   .wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
     background-color: #fff;
-    padding: 25px 0;
+    padding: 12px 0;
     .icon-item {
-      width: 20vw;
       text-align: center;
     }
   }
@@ -158,14 +158,12 @@ render(){
 .demo-icon {
   margin-bottom: 32px;
   .wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
     background-color: #fff;
-    padding: 25px 0;
+    padding: 12px 0;
     .icon-item {
-      width: 20vw;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      text-align: center;
     }
   }
   .fm-icon {
@@ -211,19 +209,15 @@ render(){
 .demo-icon {
   margin-bottom: 32px;
   .wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-row-gap: 20px;
     background-color: #fff;
+    padding: 12px 0;
     .icon-item {
-      width: calc(20vw - 1px);
-      height: calc(20vw - 1px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 0 solid #edeef0;
-      border-width: 0 1px 1px 0;
-      box-sizing: border-box;
+      text-align: center;
     }
   }
   .fm-icon {
@@ -282,19 +276,15 @@ render(){
 .demo-icon {
   margin-bottom: 32px;
   .wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-row-gap: 20px;
     background-color: #fff;
+    padding: 12px 0;
     .icon-item {
-      width: calc(20vw - 1px);
-      height: calc(20vw - 1px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 0 solid #edeef0;
-      border-width: 0 1px 1px 0;
-      box-sizing: border-box;
+      text-align: center;
     }
   }
   .fm-icon {
@@ -351,19 +341,15 @@ render(){
 .demo-icon {
   margin-bottom: 32px;
   .wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-row-gap: 20px;
     background-color: #fff;
+    padding: 12px 0;
     .icon-item {
-      width: calc(20vw - 1px);
-      height: calc(20vw - 1px);
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 0 solid #edeef0;
-      border-width: 0 1px 1px 0;
-      box-sizing: border-box;
+      text-align: center;
     }
   }
   .fm-icon {

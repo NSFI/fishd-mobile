@@ -16,11 +16,15 @@ const Demo = () => {
   return (
     <div className="components-noticebar-demo-basic">
       <div className="demo-title">基础样式</div>
-      <List style={{ padding: 16 }}>
-        <Checkbox style={{ marginBottom: 12 }} defaultChecked block>
-          选项一
-        </Checkbox>
-        <Checkbox block>选项二</Checkbox>
+      <List>
+        <List.Item>
+          <Checkbox defaultChecked block>
+            选项一
+          </Checkbox>
+        </List.Item>
+        <List.Item>
+          <Checkbox block>选项二</Checkbox>
+        </List.Item>
       </List>
       <div className="demo-title">水平排列</div>
       <List style={{ padding: 16 }}>
@@ -31,16 +35,20 @@ const Demo = () => {
       </List>
 
       <div className="demo-title">禁用状态</div>
-      <List style={{ padding: 16 }}>
-        <Checkbox style={{ marginBottom: 12 }} defaultChecked block disabled>
-          选项一
-        </Checkbox>
-        <Checkbox block disabled>
-          选项二
-        </Checkbox>
+      <List>
+        <List.Item>
+          <Checkbox defaultChecked block disabled>
+            选项一
+          </Checkbox>
+        </List.Item>
+        <List.Item>
+          <Checkbox block disabled>
+            选项二
+          </Checkbox>
+        </List.Item>
       </List>
 
-      <div className="demo-title">在List中使用</div>
+      <div className="demo-title">Checkbox.Group</div>
       <Checkbox.Group value={value} onChange={setValue}>
         <List>
           <List.Item>
@@ -88,3 +96,11 @@ ReactDOM.render(<Demo />, mountNode);
 | defaultValue | 默认选项值                | CheckboxValue[]              | -       |
 | disabled     | 是否禁用                  | boolean                      | `false` |
 | onChange     | change 事件触发的回调函数 | (value: CheckboxValue): void | -       |
+
+## 样式变量
+
+| 属性                    | 说明         | 类型     | 默认值 |
+| ----------------------- | ------------ | -------- | ------ |
+| --fm-checkbox-icon-size | 图标大小     | `string` | `20px` |
+| --fm-checkbox-font-size | 文本大小     | `string` | `14px` |
+| --fm-checkbox-gap       | 图标文本间距 | `string` | `8px`  |

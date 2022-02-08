@@ -16,7 +16,7 @@ const Demo = () => {
       <div className="demo-title">基础用法</div>
       <div className="demo-card">
         <Button onClick={() => setVisible(true)}>显示遮罩</Button>
-        <Mask visible={visible} onMaskClick={() => setVisible(false)} style={{ '--fm-mask-z-index': 1010 }} />
+        <Mask visible={visible} onMaskClick={() => setVisible(false)} />
       </div>
 
       <div className="demo-title">渲染到body</div>
@@ -54,7 +54,7 @@ const Demo = () => {
       <div className="demo-card">
         <Button onClick={() => setVisible5(true)}>显示遮罩</Button>
         <div style={{ transform: 'translateY(0)', width: '100%', height: 200 }}>
-          <Mask visible={visible5} onMaskClick={() => setVisible5(false)} />
+          <Mask visible={visible5} disableBodyScroll={false} onMaskClick={() => setVisible5(false)} />
         </div>
       </div>
     </div>

@@ -3,10 +3,8 @@
 @prefix: fm-modal;
 
 .@{prefix} {
-  --z-index: var(--fm-modal-z-index, 1000);
-
   position: fixed;
-  z-index: var(--z-index);
+  z-index: var(--fm-modal-z-index, 1000);
 }
 
 .@{prefix}-mask {
@@ -18,7 +16,7 @@
   top: 50%;
   left: 50%;
   z-index: 1;
-  width: 75vw;
+  width: var(--fm-modal-width, 75vw);
   transform: translate(-50%, -50%);
 }
 
@@ -35,7 +33,7 @@
   top: 12px;
   right: 12px;
   font-size: 14px;
-  color: @color-gray-3;
+  color: var(--color-gray-3);
 }
 
 .@{prefix}-header {
@@ -50,14 +48,14 @@
 
 .@{prefix}-footer {
   display: flex;
-  border-top: 1px solid @color-gray-8;
+  border-top: 1px solid var(--color-gray-8);
 
   .fm-button {
-    border-right: 1px solid @color-gray-8;
+    border-right: 1px solid var(--color-gray-8);
   }
 
   .fm-button:nth-last-of-type(1) {
-    border-right-color: inherit;
+    border-right-color: transparent;
   }
 }
 

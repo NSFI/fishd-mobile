@@ -18,9 +18,6 @@ const Demo = () => {
     Modal.alert({
       title: '提示',
       content: '网易云商',
-      style: {
-        '--fm-modal-z-index': 1001,
-      },
       onConfirm: () => {
         Toast.show(`确认完成`);
       },
@@ -249,4 +246,5 @@ const close = Modal.show(Modal.props);
 
 | 属性               | 说明       | 类型     | 默认值 |
 | ------------------ | ---------- | -------- | ------ |
+| --fm-modal-width | 对话框宽度 | `string` | `75vw` |
 | --fm-modal-z-index | 对话框层级 | `number` | `1000` |
