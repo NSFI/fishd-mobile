@@ -38,7 +38,7 @@ const Demo = () => {
   };
 
   return (
-    <div className="components-numberKeyboard-demo-basic">
+    <div>
       <List>
         <List.Item onClick={() => handleShow('A')}>默认键盘</List.Item>
         <List.Item onClick={() => handleShow('B')}>自定义键盘</List.Item>
@@ -101,10 +101,6 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-numberKeyboard-demo-'] .fm-button {
-  margin-right: 8px;
-  margin-bottom: 12px;
-}
 ```
 
 :::
@@ -115,7 +111,7 @@ ReactDOM.render(<Demo />, mountNode);
 | ------------------- | ----------------------------------------------------- | -------------------- | --------- |
 | theme               | 样式风格                                              | `custom | default`   | `default` |
 | value               | 当前输入值                                            | `string`             | -         |
-| visible                | 是否显示键盘                                          | `boolean`            | -         |
+| visible             | 是否显示键盘                                          | `boolean`            | -         |
 | title               | 标题                                                  | `React.ReactNode`    | -         |
 | extraKey            | 额外按键的内容，注意`default`主题只能添加一个额外的键 | `string \| string[]` | -         |
 | showClose           | 是否展示顶部关闭按钮                                  | `boolean`            | `true`    |

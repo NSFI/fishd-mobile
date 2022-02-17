@@ -1,93 +1,26 @@
-@import (reference) '../../../assets/css/index.less';
+@import (reference) '../../../assets/css/index';
 
-@pickerPopupPrefixCls: fm-picker-popup;
-@pickerPrefixCls: fm-picker-col;
+@prefix: fm-picker;
 
-.@{pickerPopupPrefixCls} {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  width: 100%;
-  padding-bottom: env(safe-area-inset-bottom);
-  border-radius: 16*@hd 16*@hd 0 0;
-  background-color: @color-gray-9;
-
-  &-wrap {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    overflow: auto;
-    outline: 0;
-    -webkit-overflow-scrolling: touch;
-    transform: translateZ(1px);
-  }
-
-  &-mask {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    transform: translateZ(1px);
-
-    &-hidden {
-      display: none;
-    }
-  }
-
-  &-header {
-    position: relative;
+.@{prefix} {
+  &__header {
     display: flex;
     align-items: center;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 1px;
-    background-image: -webkit-linear-gradient(top, #e7e7e7, #e7e7e7, transparent, transparent);
-    background-image: linear-gradient(to bottom, #e7e7e7, #e7e7e7, transparent, transparent);
-    .hairline('bottom');
-
-    & & {
-      &-left {
-        color: @color-gray-1;
-      }
-
-      &-right {
-        text-align: right;
-        color: @color-primary;
-      }
-    }
+    padding: 8px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-gray-6);
   }
 
-  &-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 42px;
-    padding: @space-base 16px;
-    font-size: @font-size-base;
-    color: @color-gray-1;
-    box-sizing: border-box;
-  }
-
-  &-title {
+  &__title {
     flex: 1;
-    font-size: @font-size-2xl;
-    text-align: center;
-    color: @color-gray-1;
   }
 
-  & &-close {
-    display: none;
+  &__confirm {
+    padding: 4px;
+    color: var(--color-primary);
   }
-}
 
-.@{pickerPrefixCls} {
-  flex: 1;
+  &__cancel {
+    padding: 4px;
+  }
 }

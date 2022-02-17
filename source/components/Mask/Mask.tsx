@@ -6,7 +6,7 @@ import { useSpring, animated } from '@react-spring/web';
 import { useLockScroll } from '../../hooks/use-lock-scroll';
 import { mergeProps } from '../../utils/merge-props';
 import { VarProps } from '../../utils/var-props';
-import { renderToContainer } from '../../utils/render-to-container';
+import { GetContainer, renderToContainer } from '../../utils/render-to-container';
 
 export interface MaskProps {
   className?: string;
@@ -14,7 +14,7 @@ export interface MaskProps {
   visible?: boolean;
   destroyOnClose?: boolean;
   forceRender?: boolean;
-  getContainer?: HTMLElement | (() => HTMLElement) | null;
+  getContainer?: GetContainer;
   disableBodyScroll?: boolean;
   opacity?: number;
   theme?: 'dark' | 'light';
@@ -30,7 +30,7 @@ const defaultProps = {
   forceRender: false,
   opacity: 0.6,
   disableBodyScroll: true,
-  getContainer: () => document.body,
+  getContainer: null,
   theme: 'dark',
 };
 

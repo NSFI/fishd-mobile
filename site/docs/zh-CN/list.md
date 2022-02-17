@@ -18,60 +18,69 @@ const Demo = () => {
   };
 
   return (
-    <div className="components-noticebar-demo-basic">
-      <div className="demo-title">基础用法</div>
-      <List>
-        <List.Item extra="这里是说明">标题</List.Item>
-        <List.Item extra="这里是说明">标题</List.Item>
-      </List>
+    <div>
+      <DemoBlock title="基础用法" noStyle>
+        <List>
+          <List.Item extra="这里是说明">标题</List.Item>
+          <List.Item extra="这里是说明">标题</List.Item>
+        </List>
+      </DemoBlock>
 
-      <div className="demo-title">可跳转样式</div>
-      <List>
-        <List.Item extra="这里是说明" arrow clickable onClick={handleClick}>
-          标题
-        </List.Item>
-        <List.Item extra="这里是说明" arrow clickable onClick={handleClick}>
-          标题
-        </List.Item>
-      </List>
+      <DemoBlock title="可跳转样式" noStyle>
+        <List>
+          <List.Item extra="这里是说明" arrow clickable onClick={handleClick}>
+            标题
+          </List.Item>
+          <List.Item extra="这里是说明" arrow clickable onClick={handleClick}>
+            标题
+          </List.Item>
+        </List>
+      </DemoBlock>
 
-      <div className="demo-title">带图标样式</div>
-      <List>
-        <List.Item prefix={<Icon type="user" fontSize={24} />} extra="这里是说明" clickable arrow onClick={handleClick}>
-          我是内容
-        </List.Item>
-        <List.Item
-          prefix={<Icon type="user" fontSize={24} />}
-          description="这里是描述"
-          extra="这里是说明"
-          clickable
-          arrow
-          onClick={handleClick}
-        >
-          我是内容
-        </List.Item>
-        <List.Item
-          prefix={<Icon type="user" fontSize={24} />}
-          title="小标题"
-          description="这里是描述"
-          extra="这里是说明"
-          clickable
-          arrow
-          onClick={handleClick}
-        >
-          我是内容
-        </List.Item>
-      </List>
-
-      <div className="demo-title">禁用</div>
-      <List>
-        <List.Item extra="这里是说明" disabled>
-          标题
-        </List.Item>
-        <List.Item extra="这里是说明" disabled>
-          标题
-        </List.Item>
-      </List>
+      <DemoBlock title="带图标样式" noStyle>
+        <List>
+          <List.Item
+            prefix={<Icon type="user" fontSize={24} />}
+            extra="这里是说明"
+            clickable
+            arrow
+            onClick={handleClick}
+          >
+            我是内容
+          </List.Item>
+          <List.Item
+            prefix={<Icon type="user" fontSize={24} />}
+            description="这里是描述"
+            extra="这里是说明"
+            clickable
+            arrow
+            onClick={handleClick}
+          >
+            我是内容
+          </List.Item>
+          <List.Item
+            prefix={<Icon type="user" fontSize={24} />}
+            title="小标题"
+            description="这里是描述"
+            extra="这里是说明"
+            clickable
+            arrow
+            onClick={handleClick}
+          >
+            我是内容
+          </List.Item>
+        </List>
+      </DemoBlock>
+      <DemoBlock title="禁用" noStyle>
+        <List>
+          <List.Item extra="这里是说明" disabled>
+            标题
+          </List.Item>
+          <List.Item extra="这里是说明" disabled>
+            标题
+          </List.Item>
+        </List>
+      </DemoBlock>
     </div>
   );
 };
@@ -80,9 +89,6 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-.components-noticebar-demo-basic {
-  padding-bottom: 20px;
-}
 ```
 
 :::

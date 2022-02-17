@@ -279,6 +279,13 @@ export default [
         published: true,
       },
       {
+        key: 'popup',
+        type: 'popup',
+        name: 'Popup 弹窗',
+        nameEn: 'Popup',
+        published: true,
+      },
+      {
         key: 'divider',
         type: 'markdown',
         name: 'Divider 分割线',

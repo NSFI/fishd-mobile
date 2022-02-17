@@ -14,7 +14,6 @@ function getRound(shape) {
   return round;
 }
 const getObjType = obj => Object.prototype.toString.call(obj);
-// const badge:BadgeProps = {};
 export interface AvatarProps extends AvatarPropsType {
   prefixCls?: string;
   className?: string;
@@ -23,7 +22,6 @@ export interface AvatarProps extends AvatarPropsType {
   icon?: string | IconProps | React.ReactNode;
   disabled?: boolean;
   badge?: BadgeProps;
-  // shape?: string | number | undefined;
 }
 
 class Avatar extends React.Component<AvatarProps, any> {
@@ -91,7 +89,6 @@ class Avatar extends React.Component<AvatarProps, any> {
       clsShape = `${prefixCls}-${shape}`;
     }
 
-    // const clsShape = `${prefixCls}-${shape}`;
     const clsType = `${prefixCls}-${type}`;
     const wrapCls = classNames(`${prefixCls}-main`, className, clsShape, clsType, {});
     const contentCls = classNames(`${prefixCls}-content`, `${clsType}-content`);
@@ -105,7 +102,6 @@ class Avatar extends React.Component<AvatarProps, any> {
 
     return (
       <div className={wrapCls} style={warpStyle}>
-        {/* <div className={`${prefixCls}-main`}></div> */}
         <div className={contentCls}>{this.renderContent()}</div>
 
         {disabled && <div className={`${prefixCls}-disabled`}></div>}
@@ -136,9 +132,7 @@ class Avatar extends React.Component<AvatarProps, any> {
     } else if (['circle', 'square'].includes(String(shape))) {
       clsShape = `${prefixCls}-${shape}`;
     }
-    // debugger;
     const clsSize = `${prefixCls}-${size}`;
-    // const clsShape = `${prefixCls}-${shape}`;
     const clsType = `${prefixCls}-${type}`;
     const wrapCls = classNames(prefixCls, className, clsSize, clsShape, clsType, {});
     const contentCls = classNames(`${prefixCls}-content`, `${clsType}-content`);
@@ -166,11 +160,6 @@ class Avatar extends React.Component<AvatarProps, any> {
   }
 
   renderImage() {
-    /* const { imageUrl } = this.props;
-    return <div className="image" style={{
-      'backgroundImage': `url(${imageUrl})`
-    }}>
-    </div>; */
     return null;
   }
 

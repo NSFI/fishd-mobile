@@ -19,15 +19,12 @@ const Demo = () => {
   };
 
   return (
-    <div className="components-tpl-demo-basic">
+    <DemoBlock title="基础用法" noStyle>
       <NoticeBar>请在移动端打开体验</NoticeBar>
-      <div className="demo-title">基础用法</div>
-      <div className="demo-card">
-        <PullRefresh loading={loading} onRefresh={handleRefresh}>
-          <div className="pull-area">下拉此处区域，触发刷新</div>
-        </PullRefresh>
-      </div>
-    </div>
+      <PullRefresh loading={loading} onRefresh={handleRefresh}>
+        <div className="pull-area">下拉此处区域，触发刷新</div>
+      </PullRefresh>
+    </DemoBlock>
   );
 };
 
@@ -35,18 +32,14 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .demo-card {
-  margin-bottom: 12px;
-
-  .pull-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    font-size: 14px;
-    color: #999;
-    background-color: #fff;
-  }
+.pull-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  font-size: 14px;
+  color: #999;
+  background-color: #fff;
 }
 ```
 

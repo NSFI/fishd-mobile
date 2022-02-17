@@ -1,3 +1,9 @@
 import Picker from './Picker';
+import { show } from './show';
+import { attachPropertiesToComponent } from '../../utils/attach-properties-to-component';
 
-export default Picker;
+export type { PickerProps } from './Picker';
+
+export default attachPropertiesToComponent(Picker, {
+  show
+});

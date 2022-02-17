@@ -1,6 +1,7 @@
 import Steps from './Steps';
 import Step from './Step';
+import { attachPropertiesToComponent } from '../../utils/attach-properties-to-component';
 
-Steps.Step = Step;
-
-export default Steps;
+export default attachPropertiesToComponent(Steps, {
+  Step,
+});

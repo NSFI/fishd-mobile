@@ -1,143 +1,89 @@
-import React from 'react';
-import RMCCascader from 'rmc-cascader/lib/Cascader';
-import RMCPopupCascader from 'rmc-cascader/lib/Popup';
-import { CascaderValue } from 'rmc-cascader/lib/CascaderTypes';
-import RMCMultiPicker from 'rmc-picker/lib/MultiPicker';
-import RMCPicker from 'rmc-picker/lib/Picker';
-import { IPopupPickerProps } from 'rmc-picker/lib/PopupPickerTypes';
+import React, { useEffect, useRef, useState } from 'react';
+import classNames from 'classnames';
+import { useControllableValue } from 'ahooks';
+import Popup, { PopupProps } from '../Popup';
+import PickerView, { PickerColumnValue, PickerValueExtend, PickerViewProps, PickerViewRef } from '../PickerView';
+import { mergeProps } from '../../utils/merge-props';
 
-export interface PickerData {
-  value: string | number;
-  label: React.ReactNode;
-  children?: PickerData[];
-}
-
-export interface PickerProps extends IPopupPickerProps {
+export type PickerProps = {
   className?: string;
-  prefixCls?: string;
-  pickerPrefixCls?: string;
-  popupPrefixCls?: string;
-  data: PickerData[] | PickerData[][];
-  cascade?: boolean;
-  cols?: number;
-  value?: any[];
-  indicatorStyle?: React.CSSProperties;
-  itemStyle?: React.CSSProperties;
-  onOk?: (value?: CascaderValue) => void;
-  onChange?: (value?: CascaderValue) => void;
-  onScrollChange?: (value?: any) => void;
-  onPickerChange?: (value?: any) => void;
-}
+  style?: React.CSSProperties;
+  title?: string;
+  visible?: boolean;
+  value?: PickerColumnValue[];
+  defaultValue?: PickerColumnValue[];
+  confirmText?: string;
+  cancelText?: string;
+  onSelect?: (value: PickerColumnValue[], extendValue: PickerValueExtend) => void;
+  onConfirm?: (value: PickerColumnValue[], extendValue: PickerValueExtend) => void;
+  onCancel?: () => void;
+  onClose?: () => void;
+} & Pick<PopupProps, 'afterShow' | 'afterClose' | 'getContainer' | 'mask'> &
+  Pick<PickerViewProps, 'columns'>;
 
-function getDefaultProps() {
-  return {
-    prefixCls: 'fm-picker',
-    pickerPrefixCls: 'fm-picker-col',
-    popupPrefixCls: 'fm-picker-popup',
-    cols: 3,
-    cascade: false,
-    value: [],
-    onChange() {},
-  };
-}
+const classPrefix = `fm-picker`;
+const defaultProps = {
+  visible: false,
+  confirmText: '确定',
+  cancelText: '取消',
+};
 
-class Picker extends React.Component<PickerProps, any> {
-  static defaultProps = getDefaultProps();
+const Picker: React.FC<PickerProps> = p => {
+  const props = mergeProps(defaultProps, p);
+  const PickerClassName = classNames(classPrefix, {}, props.className);
+  const pickerViewRef = useRef<PickerViewRef>(null);
+  const [value, setValue] = useControllableValue({
+    ...props,
+    onChange: value => {
+      props.onConfirm?.(value, pickerViewRef?.current?.generateValueExtend?.(value));
+    },
+  });
+  const [innerValue, setInnerValue] = useState(value);
 
-  isMultiPicker = () => {
-    if (!this.props.data) {
-      return false;
-    }
-    return Array.isArray(this.props.data[0]);
-  };
+  /** sync innerValue */
+  useEffect(() => {
+    if (value === innerValue) return;
+    setInnerValue(value);
+  }, [value]);
 
-  getCol = () => {
-    const { data, pickerPrefixCls, indicatorStyle, itemStyle } = this.props;
-
-    const formattedData = this.isMultiPicker() ? data : [data];
-
-    return (formattedData as PickerData[][]).map((col, index) => {
-      return (
-        <RMCPicker
-          key={index}
-          prefixCls={pickerPrefixCls}
-          style={{ flex: 1 }}
-          indicatorStyle={indicatorStyle}
-          itemStyle={itemStyle}
-        >
-          {col.map(item => {
-            return (
-              <RMCPicker.Item key={item.value} value={item.value}>
-                {item.label}
-              </RMCPicker.Item>
-            );
-          })}
-        </RMCPicker>
-      );
-    });
+  const handleCancel = () => {
+    props.onCancel?.();
+    props.onClose?.();
   };
 
-  onPickerChange = (v: any) => {
-    if (this.props.onPickerChange) {
-      this.props.onPickerChange(v);
-    }
+  const handleConfirm = () => {
+    setValue(innerValue);
+    props.onClose?.();
   };
 
-  render() {
-    const {
-      children,
-      value = [],
-      popupPrefixCls,
-      itemStyle,
-      indicatorStyle,
-      cascade,
-      prefixCls,
-      pickerPrefixCls,
-      data,
-      cols,
-      ...restProps
-    } = this.props;
-    let picker;
-    let popupMoreProps = {};
-    if (cascade) {
-      picker = (
-        <RMCCascader
-          prefixCls={prefixCls}
-          pickerPrefixCls={pickerPrefixCls}
-          data={data as PickerData[]}
-          onChange={this.onPickerChange}
-          cols={cols}
-          indicatorStyle={indicatorStyle}
-          pickerItemStyle={itemStyle}
-        />
-      );
-    } else {
-      picker = (
-        <RMCMultiPicker prefixCls={prefixCls} style={{ flexDirection: 'row' }} onValueChange={this.onPickerChange}>
-          {this.getCol()}
-        </RMCMultiPicker>
-      );
-      popupMoreProps = {
-        pickerValueProp: 'selectedValue',
-        pickerValueChangeProp: 'onValueChange',
-      };
-    }
-    return (
-      <RMCPopupCascader
-        cascader={picker}
-        prefixCls={popupPrefixCls}
-        value={value}
-        dismissText="取消"
-        okText="确定"
-        transitionName="fm-slide-up"
-        maskTransitionName="fm-fade"
-        {...popupMoreProps}
-        {...restProps}
-      >
-        {children || null}
-      </RMCPopupCascader>
-    );
-  }
-}
+  const handleValueChange = (value: PickerColumnValue[], extendValue: PickerValueExtend) => {
+    setInnerValue(value);
+    props.onSelect?.(value, extendValue);
+  };
+
+  return (
+    <Popup visible={props.visible} onMaskClick={handleCancel}>
+      <div className={PickerClassName}>
+        <div className={`${classPrefix}__header`}>
+          <a className={`${classPrefix}__cancel`} onClick={handleCancel}>
+            {props.cancelText}
+          </a>
+          <div className={`${classPrefix}__title`}>{props.title}</div>
+          <a className={`${classPrefix}__confirm`} onClick={handleConfirm}>
+            {props.confirmText}
+          </a>
+        </div>
+        <div className={`${classPrefix}__body`}>
+          <PickerView
+            ref={pickerViewRef}
+            value={innerValue}
+            columns={props.columns}
+            onChange={handleValueChange}
+          ></PickerView>
+        </div>
+      </div>
+    </Popup>
+  );
+};
 
 export default Picker;

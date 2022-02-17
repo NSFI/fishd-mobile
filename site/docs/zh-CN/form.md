@@ -19,56 +19,53 @@ const Demo = () => {
     });
   };
   return (
-    <div className="components-form-demo-basic">
-      <div className="demo-title">垂直布局</div>
-      <div className="demo-block">
-        <Form
-          form={form}
-          onFinish={onFinish}
-          footer={
-            <div style={{ padding: 12 }}>
-              <Button type="primary" size="small" htmlType="submit" block>
-                提 交
-              </Button>
-            </div>
-          }
-        >
-          <Form.Item name="name" label="姓名" rules={[{ required: true, message: '姓名不能为空' }]}>
-            <Input placeholder="请输入姓名" clearable />
-          </Form.Item>
+    <DemoBlock title="垂直布局" noStyle>
+      <Form
+        form={form}
+        onFinish={onFinish}
+        footer={
+          <div style={{ padding: 12 }}>
+            <Button type="primary" size="small" htmlType="submit" block>
+              提 交
+            </Button>
+          </div>
+        }
+      >
+        <Form.Item name="name" label="姓名" rules={[{ required: true, message: '姓名不能为空' }]}>
+          <Input placeholder="请输入姓名" clearable />
+        </Form.Item>
 
-          <Form.Item name="age" label="年龄">
-            <Input placeholder="请输入年龄" clearable />
-          </Form.Item>
+        <Form.Item name="age" label="年龄">
+          <Input placeholder="请输入年龄" clearable />
+        </Form.Item>
 
-          <Form.Item name="sex" label="性别">
-            <Radio.Group>
-              <Radio value="男" style={{ marginRight: 8 }}>
-                男
-              </Radio>
-              <Radio value="女" style={{ marginRight: 8 }}>
-                女
-              </Radio>
-            </Radio.Group>
-          </Form.Item>
+        <Form.Item name="sex" label="性别">
+          <Radio.Group>
+            <Radio value="男" style={{ marginRight: 8 }}>
+              男
+            </Radio>
+            <Radio value="女" style={{ marginRight: 8 }}>
+              女
+            </Radio>
+          </Radio.Group>
+        </Form.Item>
 
-          <Form.Item name="fruit" label="喜欢的水果">
-            <Checkbox.Group>
-              <Checkbox value="车厘子" style={{ marginRight: 8 }}>
-                车厘子
-              </Checkbox>
-              <Checkbox value="莲雾" style={{ marginRight: 8 }}>
-                莲雾
-              </Checkbox>
-            </Checkbox.Group>
-          </Form.Item>
+        <Form.Item name="fruit" label="喜欢的水果">
+          <Checkbox.Group>
+            <Checkbox value="车厘子" style={{ marginRight: 8 }}>
+              车厘子
+            </Checkbox>
+            <Checkbox value="莲雾" style={{ marginRight: 8 }}>
+              莲雾
+            </Checkbox>
+          </Checkbox.Group>
+        </Form.Item>
 
-          <Form.Item name="rate" label="评分">
-            <Rate allowHalf />
-          </Form.Item>
-        </Form>
-      </div>
-    </div>
+        <Form.Item name="rate" label="评分">
+          <Rate allowHalf />
+        </Form.Item>
+      </Form>
+    </DemoBlock>
   );
 };
 
@@ -76,8 +73,6 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-form-demo-'] .demo-block {
-}
 ```
 
 :::
@@ -95,109 +90,106 @@ const Demo = () => {
     });
   };
   return (
-    <div className="components-form-demo-basic">
-      <div className="demo-title">水平布局</div>
-      <div className="demo-block">
-        <Form
-          layout="horizontal"
-          form={form}
-          onFinish={onFinish}
-          footer={
-            <div style={{ padding: 12 }}>
-              <Button type="primary" size="small" htmlType="submit" block>
-                提 交
-              </Button>
-            </div>
-          }
+    <DemoBlock title="水平布局" noStyle>
+      <Form
+        layout="horizontal"
+        form={form}
+        onFinish={onFinish}
+        footer={
+          <div style={{ padding: 12 }}>
+            <Button type="primary" size="small" htmlType="submit" block>
+              提 交
+            </Button>
+          </div>
+        }
+      >
+        <Form.Item
+          name="name"
+          label="姓名"
+          validateTrigger={['onBlur']}
+          rules={[{ required: true, message: '姓名不能为空' }]}
         >
-          <Form.Item
-            name="name"
-            label="姓名"
-            validateTrigger={['onBlur']}
-            rules={[{ required: true, message: '姓名不能为空' }]}
-          >
-            <Input placeholder="请输入姓名" clearable />
-          </Form.Item>
+          <Input placeholder="请输入姓名" clearable />
+        </Form.Item>
 
-          <Form.Item name="age" label="年龄">
-            <Input placeholder="请输入年龄" clearable />
-          </Form.Item>
+        <Form.Item name="age" label="年龄">
+          <Input placeholder="请输入年龄" clearable />
+        </Form.Item>
 
-          <Form.Item name="sex" label="性别">
-            <Radio.Group>
-              <Radio value="男" style={{ marginRight: 8 }}>
-                男
-              </Radio>
-              <Radio value="女" style={{ marginRight: 8 }}>
-                女
-              </Radio>
-            </Radio.Group>
-          </Form.Item>
+        <Form.Item name="sex" label="性别">
+          <Radio.Group>
+            <Radio value="男" style={{ marginRight: 8 }}>
+              男
+            </Radio>
+            <Radio value="女" style={{ marginRight: 8 }}>
+              女
+            </Radio>
+          </Radio.Group>
+        </Form.Item>
 
-          <Form.Item name="fruit" label="喜欢的水果">
-            <Checkbox.Group>
-              <Checkbox value="车厘子" style={{ marginRight: 8 }}>
-                车厘子
-              </Checkbox>
-              <Checkbox value="莲雾" style={{ marginRight: 8 }}>
-                莲雾
-              </Checkbox>
-            </Checkbox.Group>
-          </Form.Item>
+        <Form.Item name="fruit" label="喜欢的水果">
+          <Checkbox.Group>
+            <Checkbox value="车厘子" style={{ marginRight: 8 }}>
+              车厘子
+            </Checkbox>
+            <Checkbox value="莲雾" style={{ marginRight: 8 }}>
+              莲雾
+            </Checkbox>
+          </Checkbox.Group>
+        </Form.Item>
 
-          <Form.Item name="rate" label="评分">
-            <Rate allowHalf />
-          </Form.Item>
+        <Form.Item name="rate" label="评分">
+          <Rate allowHalf />
+        </Form.Item>
 
-          <Form.List
-            name="remarks"
-            rules={[
-              {
-                validator: async (_, value) => {
-                  if (!value || value.length < 2) {
-                    return Promise.reject(new Error('至少输入两条爱好'));
-                  }
-                },
+        <Form.List
+          name="remarks"
+          rules={[
+            {
+              validator: async (_, value) => {
+                if (!value || value.length < 2) {
+                  return Promise.reject(new Error('至少输入两条爱好'));
+                }
               },
-            ]}
-          >
-            {(fields, { add, remove }, { errors }) => (
-              <div>
-                {fields.map((field, index) => (
+            },
+          ]}
+        >
+          {(fields, { add, remove }, { errors }) => (
+            <div>
+              {fields.map((field, index) => (
+                <Form.Item
+                  key={field.key}
+                  label={index === 0 ? '爱好' : ' '}
+                  required={false}
+                  extra={<Icon type="cross" onClick={() => remove(field.name)}></Icon>}
+                >
                   <Form.Item
-                    key={field.key}
-                    label={index === 0 ? '爱好' : ' '}
-                    required={false}
-                    extra={<Icon type="cross" onClick={() => remove(field.name)}></Icon>}
+                    {...field}
+                    validateTrigger={['onChange', 'onBlur']}
+                    rules={[
+                      {
+                        required: true,
+                        whitespace: true,
+                        message: '请输入内容',
+                      },
+                    ]}
+                    noStyle
                   >
-                    <Form.Item
-                      {...field}
-                      validateTrigger={['onChange', 'onBlur']}
-                      rules={[
-                        {
-                          required: true,
-                          whitespace: true,
-                          message: '请输入内容',
-                        },
-                      ]}
-                      noStyle
-                    >
-                      <Input placeholder="爱好内容，例如篮球、足球" style={{ width: '60%' }} />
-                    </Form.Item>
+                    <Input placeholder="爱好内容，例如篮球、足球" style={{ width: '60%' }} />
                   </Form.Item>
-                ))}
-                <Form.Item label={fields.length > 0 ? ' ' : '爱好'}>
-                  <Form.ErrorList style={{ marginBottom: 10 }} errors={errors} />
-                  <Button size="small" type="primary" fill="outline" onClick={() => add()} style={{ width: '60%' }}>
-                    添 加
-                  </Button>
                 </Form.Item>
-              </div>
-            )}
-          </Form.List>
-        </Form>
-      </div>
-    </div>
+              ))}
+              <Form.Item label={fields.length > 0 ? ' ' : '爱好'}>
+                <Form.ErrorList style={{ marginBottom: 10 }} errors={errors} />
+                <Button size="small" type="primary" fill="outline" onClick={() => add()} style={{ width: '60%' }}>
+                  添 加
+                </Button>
+              </Form.Item>
+            </div>
+          )}
+        </Form.List>
+      </Form>
+    </DemoBlock>
   );
 };
 
@@ -205,8 +197,6 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-form-demo-'] .demo-block {
-}
 ```
 
 :::
@@ -258,8 +248,8 @@ ReactDOM.render(<Demo />, mountNode);
 
 错误展示组件，仅限配合 Form.List 的 rules 一同使用
 
-| 属性   | 说明     | 类型        | 默认值 |
-| ------ | -------- | ----------- | ------ |
+| 属性   | 说明     | 类型          | 默认值 |
+| ------ | -------- | ------------- | ------ |
 | errors | 错误列表 | `ReactNode[]` | -      |
 
 ### Form.useForm

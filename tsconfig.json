@@ -5,6 +5,7 @@
     "jsx": "react",
     "target": "es6",
     "strictNullChecks": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports":true,
     "noImplicitAny": false,
     "noUnusedParameters": false,

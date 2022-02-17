@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import TouchFeedback from 'rmc-feedback';
 
 import { mergeProps } from '../../utils/merge-props';
+import { LoadMore } from '..';
 export interface ButtonProps {
   className?: string;
   style?: React.CSSProperties;
@@ -109,18 +110,7 @@ const Button: React.FC<ButtonProps> = p => {
         disabled={disabled}
         {...restProps}
       >
-        {props.loading ? (
-          <div className="fm-button__loading">
-            <span className="fm-loading__spinner" style={{ color: 'currentcolor', width: '20px', height: '20px' }}>
-              <svg viewBox="25 25 50 50" className="fm-loading__circular">
-                <circle cx="50" cy="50" r="20" fill="none"></circle>
-              </svg>
-            </span>
-            {loadingText && <span className="fm-loading__text">{loadingText}</span>}
-          </div>
-        ) : (
-          children
-        )}
+        {props.loading ? <LoadMore text={loadingText} size="14px" color="inhert" /> : children}
       </button>
     </TouchFeedback>
   );

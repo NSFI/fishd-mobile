@@ -2,22 +2,21 @@
 
 ## 何时使用
 
+行列布局场景下可使用
+
 :::demo
 
 ```js
 render(){
   const { Row, Col } = Layout
   return(
-  <div className="components-layout-demo-basic">
-    <div className="demo-title">
-      基础用法
-    </div>
-    <Row>
-      <Col span="12">ospan:12</Col>
-      <Col span="12">span:12</Col>
-    </Row>
-
-    <Row>
+  <div>
+    <DemoBlock title="基础用法">
+      <Row>
+        <Col span="12">ospan:12</Col>
+        <Col span="12">span:12</Col>
+      </Row>
+      <Row>
       <Col span="8">span:8</Col>
       <Col span="8">span:8</Col>
       <Col span="8">span:8</Col>
@@ -33,11 +32,11 @@ render(){
       <Col span="4">span:4</Col>
       <Col span="10" offset="4">offset:4,span:10</Col>
     </Row>
+    </DemoBlock>
 
-    <div className="demo-title">
-      元素间增加间距
-    </div>
-    <Row gutter="20">
+
+    <DemoBlock title="元素间增加间距">
+      <Row gutter="20">
       <Col span="12">span: 12</Col>
       <Col span="12">span: 12</Col>
     </Row>
@@ -52,10 +51,10 @@ render(){
       <Col span="6">span: 6</Col>
       <Col span="6">span: 6</Col>
     </Row>
-    <div className="demo-title">
-      柔性布局
-    </div>
-    {/* 左对齐 */}
+    </DemoBlock>
+
+    <DemoBlock title="柔性布局">
+     {/* 左对齐 */}
     <Row type="flex">
       <Col span="6">span: 6</Col>
       <Col span="6">span: 6</Col>
@@ -89,28 +88,29 @@ render(){
       <Col span="6">span: 6</Col>
       <Col span="6">span: 6</Col>
     </Row>
+   </DemoBlock>
   </div>
   )
 }
 ```
 
 ```less
-.components-layout-demo-basic {
-  .fm-col {
-    margin-bottom: 10px;
-    color: #fff;
-    font-size: 13px;
-    line-height: 30px;
-    text-align: center;
-    background-clip: content-box;
-    &:nth-child(odd) {
-      background-color: #337eff;
-    }
+.fm-row {
+  margin-bottom: 12px;
+}
+.fm-col {
+  color: #fff;
+  font-size: 13px;
+  line-height: 30px;
+  text-align: center;
+  background-clip: content-box;
+  &:nth-child(odd) {
+    background-color: #337eff;
+  }
 
-    &:nth-child(even) {
-      background-color: #337eff;
-      opacity: 0.8;
-    }
+  &:nth-child(even) {
+    background-color: #337eff;
+    opacity: 0.8;
   }
 }
 ```

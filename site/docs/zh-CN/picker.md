@@ -10,225 +10,112 @@
 
 :::demo
 
-```jsx
-state = {
-  value: null,
-  sValue: null,
-  addressValue: null,
-}
-
-fmtValue = (data) => {
-  const value = this.state.addressValue;
-  if (!value) {
-    return '';
-  }
-  const treeChildren = arrayTreeFilter(data, (c, level) => {
-    return c.value === value[level];
-  });
-  return treeChildren.map((v) => {
-    return v.label;
-  }).join(',');
-}
-
-render() {
-  const fruit = [
-    {
-      label: '苹果',
-      value: '苹果',
-    },
-    {
-      label: '橘子',
-      value: '橘子',
-    },
-    {
-      label: '香蕉',
-      value: '香蕉',
-    },
-  ]
-  const seasons = [
-    [
-      {
-        label: '2019',
-        value: '2019',
-      },
-      {
-        label: '2020',
-        value: '2020',
-      },
-    ],
-    [
-      {
-        label: '春',
-        value: '春',
-      },
-      {
-        label: '夏',
-        value: '夏',
-      },
-      {
-        label: '秋',
-        value: '秋',
-      },
-      {
-        label: '冬',
-        value: '冬',
-      },
-    ],
+```js
+const Demo = () => {
+  const columns = [
+    ['A', 'B', 'C', 'D', 'E', 'F'],
+    ['1', '2', '3', '我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目'],
   ];
-  const province = [
-    {
-      label: '北京',
-      value: '01',
-      children: [
-        {
-          label: '东城区',
-          value: '01-1',
-        },
-        {
-          label: '西城区',
-          value: '01-2',
-        },
-        {
-          label: '崇文区',
-          value: '01-3',
-        },
-        {
-          label: '宣武区',
-          value: '01-4',
-        },
-      ],
-    },
-    {
-      label: '浙江',
-      value: '02',
-      children: [
-        {
-          label: '杭州',
-          value: '02-1',
-          children: [
-            {
-              label: '西湖区',
-              value: '02-1-1',
-            },
-            {
-              label: '上城区',
-              value: '02-1-2',
-            },
-            {
-              label: '江干区',
-              value: '02-1-3',
-            },
-            {
-              label: '下城区',
-              value: '02-1-4',
-            },
-          ],
-        },
-        {
-          label: '宁波',
-          value: '02-2',
-          children: [
-            {
-              label: '海曙区',
-              value: '02-2-1',
-            },
-            {
-              label: '舟山区',
-              value: '02-2-2',
-            },
-          ],
-        },
-        {
-          label: '温州',
-          value: '02-3',
-        },
-        {
-          label: '嘉兴',
-          value: '02-4',
-        },
-        {
-          label: '湖州',
-          value: '02-5',
-        },
-        {
-          label: '绍兴',
-          value: '02-6',
-        },
-      ],
-    },
-  ];
+  const [current, setCurrent] = React.useState(null);
+  const [value, setValue] = React.useState(['B', '2']);
+
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">基础用法</div>
-      <div className="demo-card">
-        <List>
-          <Picker
-            data={fruit}
-            title="选择水果"
-            cascade={false}
-            extra="请选择(可选)"
-            value={this.state.value}
-            onChange={v => {
-              this.setState({ value: v })
-            }}
-            onDismiss={ () => {
-              Toast.info('取消选择');
-            }}
-            onPickerChange={(v) => {}}
-          >
-            <List.Item extra={this.state.value ? this.state.value : '水果' } arrow clickable>单列</List.Item>
-          </Picker>
-          <Picker
-            data={seasons}
-            title="选择季节"
-            cascade={false}
-            extra="请选择(可选)"
-            value={this.state.sValue}
-            onChange={v => {
-              this.setState({ sValue: v })
-            }}
-            onDismiss={ () => {
-              Toast.info('取消选择');
-            }}
-          >
-            <List.Item extra={this.state.sValue ? this.state.sValue.join(',') : '年份/季节' } arrow clickable>多列</List.Item>
-          </Picker>
-          <Picker
-            data={province}
-            title="地区选择"
-            cascade
-            extra="请选择(可选)"
-            value={this.state.addressValue}
-            onChange={v => {
-              this.setState({ addressValue: v })
-            }}
-            onDismiss={ () => {
-              Toast.info('取消选择');
-            }}
-          >
-            <List.Item extra={this.fmtValue(province) || '地区选择'} arrow clickable>级联</List.Item>
-          </Picker>
-        </List>
-      </div>
-    </div>
+    <DemoBlock title="基础用法" noStyle>
+      <List>
+        <List.Item
+          arrow
+          onClick={() => {
+            setCurrent('popup1');
+          }}
+        >
+          选择：{value.join('-')}
+        </List.Item>
+      </List>
+      <Picker
+        visible={current === 'popup1'}
+        value={value}
+        columns={columns}
+        bodyStyle={{
+          minHeight: '40vh',
+        }}
+        onConfirm={(val, extendValue) => {
+          setValue(val);
+        }}
+        onClose={() => {
+          setCurrent(null);
+        }}
+      ></Picker>
+    </DemoBlock>
   );
-}
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 :::
 
-## API
+## 函数式调用
 
-| 属性            | 说明                                                             | 类型                                                     | 默认值  |
-| --------------- | ---------------------------------------------------------------- | -------------------------------------------------------- | ------- |
-| data            | 数据源                                                           | `Array<{value, label}>` / `Array<Array<{value, label}>>` | -       |
-| value           | 值, 格式是`[value1, value2, value3]`, 对应数据源的相应级层 value | Array<any>                                               | -       |
-| cascade         | 是否级联                                                         | boolean                                                  | `false` |
-| cols            | 列数                                                             | number                                                   | `3`     |
-| itemStyle       | 每列样式                                                         | object                                                   | -       |
-| indicatorStyle  | indicator 样式                                                   | object                                                   | -       |
-| disabled        | 是否不可用                                                       | boolean                                                  | `false` |
-| onChange        | 选中后的回调                                                     | `(val): void`                                            | -       |
-| onOk            | 点击选中时执行的回调                                             | `(val): void`                                            | -       |
-| onDismiss       | 点击取消时执行的回调                                             | `(): void`                                               | -       |
-| onVisibleChange | 当显隐状态变化时回调函数                                         | `(visible: bool): void`                                  | -       |
+:::demo
+
+```js
+const Demo = () => {
+  const columns = [
+    ['A', 'B', 'C', 'D', 'E', 'F'],
+    ['1', '2', '3', '我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目我是超长的的项目'],
+  ];
+  const [value, setValue] = React.useState([]);
+  return (
+    <DemoBlock title="函数式调用" noStyle>
+      <List>
+        <List.Item
+          arrow
+          onClick={() => {
+            Picker.show({
+              defaultValue: value,
+              columns: columns,
+            })
+              .then(res => {
+                setValue(res);
+              })
+              .catch(() => {
+                Toast.show('取消选择');
+              });
+          }}
+        >
+          选择：{value.join('-')}
+        </List.Item>
+      </List>
+    </DemoBlock>
+  );
+};
+
+ReactDOM.render(<Demo />, mountNode);
+```
+
+:::
+
+## Picker
+
+| 属性         | 说明             | 类型                                                                          | 默认值  |
+| ------------ | ---------------- | ----------------------------------------------------------------------------- | ------- |
+| visible      | 是否显示         | `boolean`                                                                     | `false` |
+| columns      | 列数据           | `PickerViewColumn[] \| ((value: PickerColumnValue[]) => PickerViewColumn[]);` | `[]`    |
+| value        | 值               | `PickerColumnValue[]`                                                         | -       |
+| defaultValue | 默认值           | `PickerColumnValue[]`                                                         | `[]`    |
+| confirmText  | 确认文案         | `string`                                                                      | `确认`  |
+| cancelText   | 取消文案         | `string`                                                                      | `取消`  |
+| onSelect     | 选择器改变时触发 | `(value: PickerColumnValue[], extend: PickerValueExtend) => void`             | -       |
+| onConfirm    | 确认时触发       | `(value: PickerColumnValue[], extend: PickerValueExtend) => void`             | -       |
+| onCancel     | 取消时触发       | `() => void`                                                                  | -       |
+| onClose      | 关闭时触发       | `() => void`                                                                  | -       |
+
+此外还有`Popup`组件的`'afterShow' | 'afterClose' | 'getContainer' | 'mask'`
+
+## Picker.show 函数式调用
+
+```
+show: (props: Omit<PickerProps, 'value' | 'visible'>) => Promise<PickerValue[] | null>
+```
+
+当选择器确认时，会`resolve`调用返回的`promise`，取消或者点击遮罩关闭则会执行`reject`

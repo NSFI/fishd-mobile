@@ -14,51 +14,56 @@ const Demo = () => {
   const [value, setValue] = React.useState('');
 
   return (
-    <div className="components-noticebar-demo-basic">
-      <div className="demo-title">基础样式</div>
-      <List>
-        <List.Item>
-          <Radio defaultChecked block>
-            选项一
-          </Radio>
-        </List.Item>
-        <List.Item>
-          <Radio block>选项二</Radio>
-        </List.Item>
-      </List>
-      <div className="demo-title">水平排列</div>
-      <List style={{ padding: 16 }}>
-        <Radio style={{ marginRight: 12 }} defaultChecked>
-          选项一
-        </Radio>
-        <Radio>选项二</Radio>
-      </List>
-
-      <div className="demo-title">禁用状态</div>
-      <List>
-        <List.Item>
-          <Radio defaultChecked block disabled>
-            选项一
-          </Radio>
-        </List.Item>
-        <List.Item>
-          <Radio block disabled>
-            选项二
-          </Radio>
-        </List.Item>
-      </List>
-
-      <div className="demo-title">在List中使用</div>
-      <Radio.Group value={value} onChange={setValue}>
+    <div>
+      <DemoBlock title="基础样式" noStyle>
         <List>
           <List.Item>
-            <Radio value="a">选项一</Radio>
+            <Radio defaultChecked block>
+              选项一
+            </Radio>
           </List.Item>
           <List.Item>
-            <Radio value="b">选项二</Radio>
+            <Radio block>选项二</Radio>
           </List.Item>
         </List>
-      </Radio.Group>
+      </DemoBlock>
+
+      <DemoBlock title="水平排列">
+        <List>
+          <Radio style={{ marginRight: 12 }} defaultChecked>
+            选项一
+          </Radio>
+          <Radio>选项二</Radio>
+        </List>
+      </DemoBlock>
+
+      <DemoBlock title="禁用状态" noStyle>
+        <List>
+          <List.Item>
+            <Radio defaultChecked block disabled>
+              选项一
+            </Radio>
+          </List.Item>
+          <List.Item>
+            <Radio block disabled>
+              选项二
+            </Radio>
+          </List.Item>
+        </List>
+      </DemoBlock>
+
+      <DemoBlock title="单选组" noStyle>
+        <Radio.Group value={value} onChange={setValue}>
+          <List>
+            <List.Item>
+              <Radio value="a">选项一</Radio>
+            </List.Item>
+            <List.Item>
+              <Radio value="b">选项二</Radio>
+            </List.Item>
+          </List>
+        </Radio.Group>
+      </DemoBlock>
     </div>
   );
 };
@@ -67,9 +72,6 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-.components-radio-demo-basic {
-  padding-bottom: 20px;
-}
 ```
 
 :::

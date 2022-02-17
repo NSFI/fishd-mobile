@@ -9,91 +9,99 @@
 :::demo
 
 ```js
-state = {
-  refreshLoading: false,
-  loading: false,
-  finished: false,
-  error: false,
-  pageNo: 1,
-  list: [],
-}
-
-handleRefresh = () => {
-  this.setState({
-    refreshLoading: true,
+const Demo = () => {
+  const [state, setState] = React.useState({
+    refreshLoading: false,
+    loading: false,
+    finished: false,
+    error: false,
     pageNo: 1,
-  })
+    list: [],
+  });
 
-  console.log('[debug]刷新数据', this.state.pageNo)
-  setTimeout(() => {
-    const newList = []
-    for(let i = 0; i < 10; i++) {
-      const articalIndex = i + 1
-      newList.push(`文章${articalIndex}`)
-    }
-    this.setState(state => {
+  const handleRefresh = () => {
+    setState(state => {
       return {
-        pageNo: state.pageNo + 1,
-        refreshLoading: false,
-        list: newList
-      }
-    })
-  }, 2000);
-}
+        ...state,
+        refreshLoading: true,
+        pageNo: 1,
+      };
+    });
 
-loadmore = () => {
-  this.setState({
-    loading: true
-  })
-
-  console.log('[debug]加载数据', this.state.pageNo)
-  setTimeout(() => {
-    this.setState(state => {
-      const newList = []
-      const startIndex = state.list.length
-      for(let i = 0; i < 10; i++) {
-        const articalIndex = startIndex + i + 1
-        newList.push(`文章${articalIndex}`)
+    console.log('[debug]刷新数据', state.pageNo);
+    setTimeout(() => {
+      const newList = [];
+      for (let i = 0; i < 10; i++) {
+        const articalIndex = i + 1;
+        newList.push(`文章${articalIndex}`);
       }
+
+      setState(state => {
+        return {
+          ...state,
+          pageNo: state.pageNo + 1,
+          refreshLoading: false,
+          list: newList,
+        };
+      });
+    }, 2000);
+  };
+  const loadmore = () => {
+    setState(state => {
       return {
-        loading: false,
-        finished: state.list.length > 50,
-        list: [...state.list, ...newList],
-        pageNo: state.pageNo + 1
-      }
-    })
-  }, 1000);
-}
+        ...state,
+        loading: true,
+      };
+    });
 
-render() {
-  const { refreshLoading, loading, finished, error, list } = this.state
+    setTimeout(() => {
+      setState(state => {
+        const newList = [];
+        const startIndex = state.list.length;
+        for (let i = 0; i < 10; i++) {
+          const articalIndex = startIndex + i + 1;
+          newList.push(`文章${articalIndex}`);
+        }
+        return {
+          ...state,
+          loading: false,
+          finished: state.list.length > 50,
+          list: [...state.list, ...newList],
+          pageNo: state.pageNo + 1,
+        };
+      });
+    }, 1000);
+  };
   return (
-    <div className="components-tpl-demo-basic">
+    <DemoBlock title="配合PullRefresh使用" noStyle>
       <NoticeBar>请在移动端打开体验</NoticeBar>
-      <div className="demo-title">基础用法</div>
-      <div className="demo-card">
-        <PullRefresh loading={refreshLoading} onRefresh={this.handleRefresh}>
-          <ListView loading={loading || refreshLoading} finished={finished} error={error} onLoad={this.loadmore}>
-            {list.map(text => {
-              return <div key={text} className="list-item">{text}</div>
-            })}
-          </ListView>
-        </PullRefresh>
-      </div>
-    </div>
+      <PullRefresh loading={state.refreshLoading} onRefresh={handleRefresh}>
+        <ListView
+          loading={state.loading || state.refreshLoading}
+          finished={state.finished}
+          error={state.error}
+          onLoad={loadmore}
+        >
+          {state.list.map(text => {
+            return (
+              <div key={text} className="list-item">
+                {text}
+              </div>
+            );
+          })}
+        </ListView>
+      </PullRefresh>
+    </DemoBlock>
   );
-}
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .demo-card {
-  padding: 0;
-  background: #fff;
-
-  .list-item {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-  }
+.list-item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
 }
 ```
 

@@ -15,41 +15,34 @@ const Demo = () => {
     });
   };
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">基础用法</div>
-      <div className="demo-card">
+    <div>
+      <DemoBlock title="基础用法">
         <Switch></Switch>
-      </div>
-      <div className="demo-title">受控组件</div>
-      <div className="demo-card">
+      </DemoBlock>
+      <DemoBlock title="受控组件">
         <Switch checked={checked} onChange={setChecked}></Switch>
         <span style={{ marginLeft: 8 }}>{String(checked)}</span>
-      </div>
-      <div className="demo-title">禁用</div>
-      <div className="demo-card">
+      </DemoBlock>
+      <DemoBlock title="禁用">
         <Switch disabled></Switch>
-      </div>
-      <div className="demo-title">加载中</div>
-      <div className="demo-card">
+      </DemoBlock>
+      <DemoBlock title="加载中">
         <Switch loading></Switch>
         <Switch loading defaultChecked style={{ marginLeft: 8 }}></Switch>
-      </div>
-      <div className="demo-title">默认值</div>
-      <div className="demo-card">
+      </DemoBlock>
+      <DemoBlock title="默认值">
         <Switch defaultChecked={true}></Switch>
-      </div>
-      <div className="demo-title">自定义显示值</div>
-      <div className="demo-card">
+      </DemoBlock>
+      <DemoBlock title="自定义显示值">
         <Switch checkedText="开" uncheckedText="关"></Switch>
         <Switch checkedText="0" uncheckedText="1" style={{ marginLeft: 8 }}></Switch>
-      </div>
-      <div className="demo-title">自定义激活值</div>
-      <div className="demo-card">
+      </DemoBlock>
+      <DemoBlock title="自定义激活值">
         <Switch checked={customChecked} onChange={setCustomChecked} checkedValue="on" uncheckedValue="off"></Switch>
         <span style={{ marginLeft: 8 }}>{String(customChecked)}</span>
-      </div>
-      <div className="demo-title">自定义颜色</div>
-      <div className="demo-card">
+      </DemoBlock>
+
+      <DemoBlock title="自定义颜色">
         <Switch color="pink"></Switch>
         <Switch
           color="pink"
@@ -59,11 +52,10 @@ const Demo = () => {
           uncheckedTextColor="pink"
           style={{ marginLeft: 8 }}
         ></Switch>
-      </div>
-      <div className="demo-title">异步</div>
-      <div className="demo-card">
+      </DemoBlock>
+      <DemoBlock title="异步">
         <Switch beforeChange={beforeChange}></Switch>
-      </div>
+      </DemoBlock>
     </div>
   );
 };
@@ -71,10 +63,6 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .demo-card {
-  padding: 12px;
-  background: #fff;
-}
 ```
 
 :::

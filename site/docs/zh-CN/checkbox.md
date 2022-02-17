@@ -14,51 +14,55 @@ const Demo = () => {
   const [value, setValue] = React.useState('');
 
   return (
-    <div className="components-noticebar-demo-basic">
-      <div className="demo-title">基础样式</div>
-      <List>
-        <List.Item>
-          <Checkbox defaultChecked block>
-            选项一
-          </Checkbox>
-        </List.Item>
-        <List.Item>
-          <Checkbox block>选项二</Checkbox>
-        </List.Item>
-      </List>
-      <div className="demo-title">水平排列</div>
-      <List style={{ padding: 16 }}>
-        <Checkbox style={{ marginRight: 12 }} defaultChecked>
-          选项一
-        </Checkbox>
-        <Checkbox style={{ marginRight: 12 }}>选项二</Checkbox>
-      </List>
-
-      <div className="demo-title">禁用状态</div>
-      <List>
-        <List.Item>
-          <Checkbox defaultChecked block disabled>
-            选项一
-          </Checkbox>
-        </List.Item>
-        <List.Item>
-          <Checkbox block disabled>
-            选项二
-          </Checkbox>
-        </List.Item>
-      </List>
-
-      <div className="demo-title">Checkbox.Group</div>
-      <Checkbox.Group value={value} onChange={setValue}>
+    <div>
+      <DemoBlock title="基础样式" noStyle>
         <List>
           <List.Item>
-            <Checkbox value="a">选项一</Checkbox>
+            <Checkbox defaultChecked block>
+              选项一
+            </Checkbox>
           </List.Item>
           <List.Item>
-            <Checkbox value="b">选项二</Checkbox>
+            <Checkbox block>选项二</Checkbox>
           </List.Item>
         </List>
-      </Checkbox.Group>
+      </DemoBlock>
+      <DemoBlock title="水平排列">
+        <List>
+          <Checkbox style={{ marginRight: 12 }} defaultChecked>
+            选项一
+          </Checkbox>
+          <Checkbox>选项二</Checkbox>
+        </List>
+      </DemoBlock>
+
+      <DemoBlock title="禁用状态" noStyle>
+        <List>
+          <List.Item>
+            <Checkbox defaultChecked block disabled>
+              选项一
+            </Checkbox>
+          </List.Item>
+          <List.Item>
+            <Checkbox block disabled>
+              选项二
+            </Checkbox>
+          </List.Item>
+        </List>
+      </DemoBlock>
+
+      <DemoBlock title="多选组" noStyle>
+        <Checkbox.Group value={value} onChange={setValue}>
+          <List>
+            <List.Item>
+              <Checkbox value="a">选项一</Checkbox>
+            </List.Item>
+            <List.Item>
+              <Checkbox value="b">选项二</Checkbox>
+            </List.Item>
+          </List>
+        </Checkbox.Group>
+      </DemoBlock>
     </div>
   );
 };

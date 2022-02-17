@@ -1,13 +1,11 @@
 import List from './List';
 import ListItem from './ListItem';
+import { attachPropertiesToComponent } from '../../utils/attach-properties-to-component';
+
 export type { ListProps } from './List';
 export type { ListItemProps } from './ListItem';
 
-type CompoundedType = typeof List & {
-  Item: typeof ListItem;
-};
 
-const Compounded = List as CompoundedType;
-Compounded.Item = ListItem;
-
-export default Compounded;
+export default attachPropertiesToComponent(List, {
+  Item: ListItem
+});

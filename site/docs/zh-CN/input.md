@@ -15,60 +15,31 @@ class InputDemo extends React.Component {
   render() {
     const { mark, phone, hasError, content } = this.state;
     return (
-      <div className="components-input-demo-basic">
-        <div className="demo-title">Input-基础用法</div>
-        <div className="demo-block">
+      <div>
+        <DemoBlock title="Input-基础用法">
           <Input placeholder="请输入标题" clearable={true}></Input>
-        </div>
-
-        <div className="demo-title">Input-前缀和后缀</div>
-        <div className="demo-block">
+        </DemoBlock>
+        <DemoBlock title="Input-前缀和后缀">
           <Input placeholder="请输入金额" clearable={true} prefix={<span>¥</span>} suffix={<span>RMB</span>}></Input>
-        </div>
-
-        <div className="demo-title">Input-禁用</div>
-        <div className="demo-block">
+        </DemoBlock>
+        <DemoBlock title="Input-禁用">
           <Input value="网易云商yyds" placeholder="请输入标题" disabled={true} clearable={true}></Input>
-        </div>
-
-        <div className="demo-title">Input-只读</div>
-        <div className="demo-block">
+        </DemoBlock>
+        <DemoBlock title="Input-只读">
           <Input value="网易云商yyds" placeholder="请输入标题" readOnly={true} clearable={true}></Input>
-        </div>
-
-        <div className="demo-title">TextArea-自适应高度</div>
-        <div className="demo-block">
+        </DemoBlock>
+        <DemoBlock title="TextArea-自适应高度">
           <Input.TextArea placeholder="请输入内容" clearable={true} autoSize={true} rows={1}></Input.TextArea>
-        </div>
-
-        <div className="demo-title">TextArea-显示字数</div>
-        <div className="demo-block">
+        </DemoBlock>
+        <DemoBlock title="TextArea-显示字数">
           <Input.TextArea placeholder="请输入内容" clearable={true} showCount={true} maxLength={20}></Input.TextArea>
-        </div>
-
-        <div className="demo-title">TextArea-禁用</div>
-        <div className="demo-block">
-          <Input.TextArea
-            value="网易云商yyds"
-            disabled={true}
-            placeholder="请输入内容"
-            clearable={true}
-            showCount={true}
-            maxLength={20}
-          ></Input.TextArea>
-        </div>
-
-        <div className="demo-title">TextArea-只读</div>
-        <div className="demo-block">
-          <Input.TextArea
-            value="网易云商yyds"
-            readOnly
-            placeholder="请输入内容"
-            clearable={true}
-            showCount={true}
-            maxLength={20}
-          ></Input.TextArea>
-        </div>
+        </DemoBlock>
+        <DemoBlock title="TextArea-禁用">
+          <Input.TextArea value="网易云商yyds" disabled={true} placeholder="请输入内容"></Input.TextArea>
+        </DemoBlock>
+        <DemoBlock title="TextArea-只读">
+          <Input.TextArea value="网易云商yyds" readOnly placeholder="请输入内容"></Input.TextArea>
+        </DemoBlock>
       </div>
     );
   }
@@ -78,13 +49,6 @@ ReactDOM.render(<InputDemo />, mountNode);
 ```
 
 ```less
-.components-input-demo-basic {
-  padding-bottom: 40px;
-}
-[class^='components-input-demo-'] .demo-block {
-  padding: 12px;
-  background: #fff;
-}
 ```
 
 :::

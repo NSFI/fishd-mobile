@@ -1,6 +1,3 @@
-describe('<DatePickerView />', () => {
-  it('trigger event correctly', () => {
-    // todos: write test!
-    expect(true).toBe(true);
-  });
-});
+import webDemoTest from '../../../tests/demoTest';
+
+webDemoTest('DatePickerView');

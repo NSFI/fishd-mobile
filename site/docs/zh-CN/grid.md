@@ -2,14 +2,12 @@
 
 ## 何时使用
 
-遵循一定规则来使用固定格子进行页面的布局设计，使布局规范简洁有规则
+宫格可以在水平方向上把页面分隔成等宽度的区块，用于展示内容或进行页面导航。
 
 :::demo
 
 ```js
-state = {}
-
-render(){
+const Demo = () => {
   const data = Array.from(new Array(9)).map((_val, i) => ({
     icon: 'https://gw.alipayobjects.com/zos/rmsportal/nywPmnTAvTmLusPxHPSu.png',
     text: `name${i}`,
@@ -17,45 +15,63 @@ render(){
   const data2 = [
     'https://img.yzcdn.cn/vant/apple-1.jpg',
     'https://img.yzcdn.cn/vant/apple-2.jpg',
-    'https://img.yzcdn.cn/vant/apple-3.jpg'
-  ]
- return(
-    <div className="components-grid-demo-basic">
-      <div className="demo-title">基础用法</div>
-      <Grid data={data} activeStyle={false} />
-      <div className="demo-title">自定义-列数</div>
-      <Grid data={data} columnNum={3} />
-      <div className="demo-title">自定义-内容</div>
-      <Grid
-        data={data2}
-        columnNum={3}
-        border={false}
-        itemStyle={{ padding: 0 }}
-        activeStyle={false}
-        renderItem={dataItem => (
-          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%'}}>
-            <img src={dataItem} style={{ width: '100%', height: '80px' }} alt="" />
-          </div>
-        )}
-      />
-      <div className="demo-title">正方形内容</div>
-      <Grid data={data} square={true} />
-      <div className="demo-title">无边框</div>
-      <Grid data={data} border={false} />
-      <div className="demo-title">格子间距</div>
-      <Grid data={data} columnNum={3} gutter={16} />
-      <div className="demo-title">格子间距 + 正方形</div>
-      <Grid data={data} columnNum={3} gutter={16} square={true}/>
-      <div className="demo-title">自定义背景</div>
-      <Grid data={data} columnNum={3} itemStyle={{ background: '#337EFF' }} />
+    'https://img.yzcdn.cn/vant/apple-3.jpg',
+  ];
+
+  return (
+    <div>
+      <DemoBlock title="基础用法" noStyle>
+        <Grid data={data} activeStyle={false} />
+      </DemoBlock>
+
+      <DemoBlock title="自定义-列数" noStyle>
+        <Grid data={data} columnNum={3} />
+      </DemoBlock>
+
+      <DemoBlock title="自定义-内容" noStyle>
+        <Grid
+          data={data2}
+          columnNum={3}
+          border={false}
+          itemStyle={{ padding: 0 }}
+          activeStyle={false}
+          renderItem={dataItem => (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+              <img src={dataItem} style={{ width: '100%', height: '80px' }} alt="" />
+            </div>
+          )}
+        />
+      </DemoBlock>
+
+      <DemoBlock title="正方形内容" noStyle>
+        <Grid data={data} square={true} />
+      </DemoBlock>
+
+      <DemoBlock title="无边框" noStyle>
+        <Grid data={data} border={false} />
+      </DemoBlock>
+
+      <DemoBlock title="间距" noStyle>
+        <Grid data={data} columnNum={3} gutter={16} />
+      </DemoBlock>
+
+      <DemoBlock title="间距 + 正方形" noStyle>
+        <Grid data={data} columnNum={3} gutter={16} square={true} />
+      </DemoBlock>
+
+      <DemoBlock title="自定义背景颜色" noStyle>
+        <Grid data={data} columnNum={3} itemStyle={{ background: '#337EFF' }} />
+      </DemoBlock>
     </div>
-  )
-}
+  );
+};
+
+ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-.components-grid-demo-basic {
-  padding-bottom: 40px;
+.demo-block__body {
+  background-color: transparent;
 }
 ```
 

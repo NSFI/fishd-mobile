@@ -60,25 +60,22 @@ const Demo = () => {
     });
   };
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">函数式调用</div>
-      <div className="demo-card">
-        <List>
-          <List.Item arrow onClick={handleAlertClick}>
-            提示弹窗
-          </List.Item>
-          <List.Item arrow onClick={handleAsyncAlertClick}>
-            异步提示弹窗
-          </List.Item>
-          <List.Item arrow onClick={handleConfirmClick}>
-            确认弹窗
-          </List.Item>
-          <List.Item arrow onClick={handleAsyncConfirmClick}>
-            异步确认弹窗
-          </List.Item>
-        </List>
-      </div>
-    </div>
+    <DemoBlock title="函数式调用" noStyle>
+      <List>
+        <List.Item arrow onClick={handleAlertClick}>
+          提示弹窗
+        </List.Item>
+        <List.Item arrow onClick={handleAsyncAlertClick}>
+          异步提示弹窗
+        </List.Item>
+        <List.Item arrow onClick={handleConfirmClick}>
+          确认弹窗
+        </List.Item>
+        <List.Item arrow onClick={handleAsyncConfirmClick}>
+          异步确认弹窗
+        </List.Item>
+      </List>
+    </DemoBlock>
   );
 };
 
@@ -143,45 +140,42 @@ const Demo = () => {
     },
   ];
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">组件式调用</div>
-      <div className="demo-card">
-        <List>
-          <List.Item
-            arrow
-            onClick={() => {
-              setShow(true);
-            }}
-          >
-            组件式弹窗
-          </List.Item>
-          <List.Item
-            arrow
-            onClick={() => {
-              setAsyncShow(true);
-            }}
-          >
-            组件式异步弹窗
-          </List.Item>
-        </List>
-        <Modal
-          visible={show}
-          title="提示"
-          content="网易云商"
-          actions={actions}
-          onAction={handleAction}
-          onClose={() => setShow(false)}
-        ></Modal>
-        <Modal
-          visible={asyncShow}
-          title="提示"
-          content="网易云商"
-          actions={asyncActions}
-          closeOnAction={true}
-          onClose={() => setAsyncShow(false)}
-        ></Modal>
-      </div>
-    </div>
+    <DemoBlock title="组件式调用" noStyle>
+      <List>
+        <List.Item
+          arrow
+          onClick={() => {
+            setShow(true);
+          }}
+        >
+          组件式弹窗
+        </List.Item>
+        <List.Item
+          arrow
+          onClick={() => {
+            setAsyncShow(true);
+          }}
+        >
+          组件式异步弹窗
+        </List.Item>
+      </List>
+      <Modal
+        visible={show}
+        title="提示"
+        content="网易云商"
+        actions={actions}
+        onAction={handleAction}
+        onClose={() => setShow(false)}
+      ></Modal>
+      <Modal
+        visible={asyncShow}
+        title="提示"
+        content="网易云商"
+        actions={asyncActions}
+        closeOnAction={true}
+        onClose={() => setAsyncShow(false)}
+      ></Modal>
+    </DemoBlock>
   );
 };
 
@@ -246,5 +240,5 @@ const close = Modal.show(Modal.props);
 
 | 属性               | 说明       | 类型     | 默认值 |
 | ------------------ | ---------- | -------- | ------ |
-| --fm-modal-width | 对话框宽度 | `string` | `75vw` |
+| --fm-modal-width   | 对话框宽度 | `string` | `75vw` |
 | --fm-modal-z-index | 对话框层级 | `number` | `1000` |

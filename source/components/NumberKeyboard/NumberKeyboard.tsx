@@ -4,14 +4,15 @@ import { useClickAway, useUnmountedRef } from 'ahooks';
 import { animated, useSpring } from '@react-spring/web';
 import NumberKey from './NumberKey';
 import { mergeProps } from '../../utils/merge-props';
-import { renderToContainer } from '../../utils/render-to-container';
-export interface KeyPropsType {
+import { GetContainer, renderToContainer } from '../../utils/render-to-container';
+
+export type KeyPropsType = {
   text: string | number;
   type?: string;
   wider?: boolean;
 }
 
-export interface NumberKeyboardProps {
+export type NumberKeyboardProps = {
   className?: string;
   style?: React.CSSProperties;
   theme: 'custom' | 'default'; // 键盘类型
@@ -24,7 +25,7 @@ export interface NumberKeyboardProps {
   closeText: string;
   closeOnClickOutside: boolean; // 点击外部是否关闭键盘
   closeOnConfirm: boolean; // 点击确认是否关闭键盘
-  getContainer?: HTMLElement | (() => HTMLElement) | null;
+  getContainer?: GetContainer;
   onInput?: (text: string | number) => void;
   onDelete?: () => void;
   onChange?: (value: string) => void;
@@ -100,7 +101,7 @@ const NumberKeyboard: React.FC<NumberKeyboardProps> = p => {
   }, [visible]);
 
   useClickAway(e => {
-    /** 冒泡事件中穿插react渲染，如果不做处理则会导致无法弹起键盘 */
+    /** 保证外部点击事件在当前组件展示之后才生效 */
     if (e.timeStamp > visibleTime && visible && closeOnClickOutside) {
       handleClose();
     }

@@ -9,13 +9,14 @@ import ActionButton, { Action } from './ModalAction';
 
 import { mergeProps } from '../../utils/merge-props';
 import { VarProps } from '../../utils/var-props';
+import { GetContainer } from '../../utils/render-to-container';
 
 export interface ModalProps {
   className?: string;
   style?: React.CSSProperties & VarProps<'--fm-modal-z-index'>;
 
   visible?: boolean;
-  getContainer?: HTMLElement | (() => HTMLElement) | null;
+  getContainer?: GetContainer;
   closeOnClickModal?: boolean;
   closeOnAction?: boolean;
 

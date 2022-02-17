@@ -13,25 +13,18 @@
 ```js
 const Demo = () => {
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">样式类型</div>
-      <div className="demo-card">
-        <LoadMore></LoadMore>
-        <LoadMore type="spinner"></LoadMore>
-      </div>
-    </div>
+    <DemoBlock title="样式类型">
+      <LoadMore></LoadMore>
+      <LoadMore type="spinner"></LoadMore>
+    </DemoBlock>
   );
 };
 ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .fm-loadmore {
-  margin-right: 10px;
-}
-[class^='components-tpl-demo-'] .demo-card {
-  padding: 32px 20px;
-  background-color: #fff;
+.fm-loadmore {
+  margin-right: 12px;
 }
 ```
 
@@ -44,25 +37,18 @@ ReactDOM.render(<Demo />, mountNode);
 ```js
 const Demo = () => {
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">自定义颜色</div>
-      <div className="demo-card">
-        <LoadMore color="#337eff"></LoadMore>
-        <LoadMore color="#337eff" type="spinner"></LoadMore>
-      </div>
-    </div>
+    <DemoBlock title="自定义颜色">
+      <LoadMore color="#337eff"></LoadMore>
+      <LoadMore color="#337eff" type="spinner"></LoadMore>
+    </DemoBlock>
   );
 };
 ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .fm-loadmore {
-  margin-right: 10px;
-}
-[class^='components-tpl-demo-'] .demo-card {
-  padding: 32px 20px;
-  background-color: #fff;
+.fm-loadmore {
+  margin-right: 12px;
 }
 ```
 
@@ -75,26 +61,19 @@ ReactDOM.render(<Demo />, mountNode);
 ```js
 const Demo = () => {
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">自定义大小</div>
-      <div className="demo-card">
-        <LoadMore size="40px"></LoadMore>
-        <LoadMore size="30px"></LoadMore>
-        <LoadMore size="20px"></LoadMore>
-      </div>
-    </div>
+    <DemoBlock title="自定义大小">
+      <LoadMore size="40px"></LoadMore>
+      <LoadMore size="30px"></LoadMore>
+      <LoadMore size="20px"></LoadMore>
+    </DemoBlock>
   );
 };
 ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .fm-loadmore {
-  margin-right: 10px;
-}
-[class^='components-tpl-demo-'] .demo-card {
-  padding: 32px 20px;
-  background-color: #fff;
+.fm-loadmore {
+  margin-right: 12px;
 }
 ```
 
@@ -107,25 +86,15 @@ ReactDOM.render(<Demo />, mountNode);
 ```js
 const Demo = () => {
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">加载文案</div>
-      <div className="demo-card">
-        <LoadMore text="加载中"></LoadMore>
-      </div>
-    </div>
+    <DemoBlock title="加载文案">
+      <LoadMore text="加载中..."></LoadMore>
+    </DemoBlock>
   );
 };
 ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .fm-loadmore {
-  margin-right: 10px;
-}
-[class^='components-tpl-demo-'] .demo-card {
-  padding: 32px 20px;
-  background-color: #fff;
-}
 ```
 
 :::
@@ -137,25 +106,15 @@ ReactDOM.render(<Demo />, mountNode);
 ```js
 const Demo = () => {
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">垂直排列</div>
-      <div className="demo-card">
-        <LoadMore text="加载中" vertical></LoadMore>
-      </div>
-    </div>
+    <DemoBlock title="垂直排列">
+      <LoadMore text="加载中..." vertical></LoadMore>
+    </DemoBlock>
   );
 };
 ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .fm-loadmore {
-  margin-right: 10px;
-}
-[class^='components-tpl-demo-'] .demo-card {
-  padding: 32px 20px;
-  background-color: #fff;
-}
 ```
 
 :::

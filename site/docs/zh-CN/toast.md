@@ -52,38 +52,33 @@ const ToastDemo = () => {
     });
   };
   return (
-    <div className="components-toast-demo">
-      <div className="demo-title">文字提示</div>
-      <div className="demo-wrap">
+    <div>
+      <DemoBlock title="文字提示">
         <Button onClick={showToast}>文本提示</Button>
         <Button onClick={showLongToast}>长文本提示</Button>
-      </div>
+      </DemoBlock>
 
-      <div className="demo-title">加载提示</div>
-      <div className="demo-wrap">
+      <DemoBlock title="加载提示">
         <Button onClick={showToastLoading}>加载提示</Button>
-      </div>
+      </DemoBlock>
 
-      <div className="demo-title">成功/失败提示</div>
-      <div className="demo-wrap">
+      <DemoBlock title="成功/失败提示">
         <Button type="success" onClick={showToastSuccess}>
           成功提示
         </Button>
         <Button type="danger" onClick={showToastError}>
           失败提示
         </Button>
-      </div>
+      </DemoBlock>
 
-      <div className="demo-title">成功/失败提示</div>
-      <div className="demo-wrap">
-        <Button onClick={showToastWithoutMask}>背景可点击</Button>
-        <Button onClick={showToastWithMask}>背景不可点击</Button>
-      </div>
+      <DemoBlock title="背景锁定">
+        <Button onClick={showToastWithMask}>锁定</Button>
+        <Button onClick={showToastWithoutMask}>不锁定</Button>
+      </DemoBlock>
 
-      <div className="demo-title">自定义图标</div>
-      <div className="demo-wrap">
+      <DemoBlock title="自定义图标">
         <Button onClick={showToastCustom}>自定义图标</Button>
-      </div>
+      </DemoBlock>
     </div>
   );
 };
@@ -92,15 +87,8 @@ ReactDOM.render(<ToastDemo />, mountNode);
 ```
 
 ```less
-.components-toast-demo {
-  margin-top: 10px;
-  width: 100%;
-  .demo-wrap {
-    padding: 0 16px;
-  }
-  .fm-button {
-    margin-right: 10px;
-  }
+.fm-button {
+  margin-right: 12px;
 }
 ```
 

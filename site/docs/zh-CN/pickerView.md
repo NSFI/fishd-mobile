@@ -20,12 +20,9 @@ const Demo = () => {
     console.log('pickerView:', value, extendValue.items);
   };
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">基础用法</div>
-      <div className="demo-card">
-        <PickerView columns={columns} onChange={handleChange} />
-      </div>
-    </div>
+    <DemoBlock title="基础用法" noStyle>
+      <PickerView columns={columns} onChange={handleChange} />
+    </DemoBlock>
   );
 };
 
@@ -47,19 +44,16 @@ const Demo = () => {
   const [value, setValue] = React.useState(['B', '3']);
 
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">受控模式：{JSON.stringify(value)}</div>
-      <div className="demo-card">
-        <PickerView
-          columns={columns}
-          value={value}
-          onChange={(value, extendValue) => {
-            setValue(value);
-            console.log('受控pickerView:', value, extendValue.items);
-          }}
-        />
-      </div>
-    </div>
+    <DemoBlock title={`受控模式：${JSON.stringify(value)}`} noStyle>
+      <PickerView
+        columns={columns}
+        value={value}
+        onChange={(value, extendValue) => {
+          setValue(value);
+          console.log('受控pickerView:', value, extendValue.items);
+        }}
+      />
+    </DemoBlock>
   );
 };
 
@@ -106,19 +100,16 @@ const Demo = () => {
   ]);
   const [value, setValue] = React.useState([]);
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">级联：{JSON.stringify(value)}</div>
-      <div className="demo-card">
-        <CascadePickerView
-          value={value}
-          options={options}
-          onChange={(value, extendValue) => {
-            setValue(value);
-            console.log('受控CascadePickerView:', value, extendValue.items);
-          }}
-        />
-      </div>
-    </div>
+    <DemoBlock title={`级联：${JSON.stringify(value)}`} noStyle>
+      <CascadePickerView
+        value={value}
+        options={options}
+        onChange={(value, extendValue) => {
+          setValue(value);
+          console.log('受控CascadePickerView:', value, extendValue.items);
+        }}
+      />
+    </DemoBlock>
   );
 };
 
@@ -154,6 +145,7 @@ const Demo = () => {
     });
   };
   const loadData = async item => {
+    console.log('[info] 选中项', item);
     await sleep(2000);
     if (item.value === 'zhejiang') {
       return [
@@ -185,22 +177,19 @@ const Demo = () => {
     }
   };
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">异步加载级联：{JSON.stringify(value)}</div>
-      <div className="demo-card">
-        <CascadePickerView
-          value={value}
-          options={options}
-          lazy
-          lazyLoad={loadData}
-          onOptionsUpdate={setOptions}
-          onChange={(value, extendValue) => {
-            setValue(value);
-            console.log('异步加载CascadePickerView:', value, extendValue.items);
-          }}
-        />
-      </div>
-    </div>
+    <DemoBlock title={`异步加载级联：${JSON.stringify(value)}`} noStyle>
+      <CascadePickerView
+        value={value}
+        options={options}
+        lazy
+        lazyLoad={loadData}
+        onOptionsUpdate={setOptions}
+        onChange={(value, extendValue) => {
+          console.log('异步加载CascadePickerView:', value, extendValue.items);
+          setValue(value);
+        }}
+      />
+    </DemoBlock>
   );
 };
 
@@ -211,13 +200,13 @@ ReactDOM.render(<Demo />, mountNode);
 
 ## PickerView
 
-| 属性         | 说明           | 类型                                                                          | 默认值 |
-| ------------ | -------------- | ----------------------------------------------------------------------------- | ------ |
-| columns      | 列数据         | `PickerViewColumn[] \| ((value: PickerColumnValue[]) => PickerViewColumn[]);` | `[]`   |
-| value        | 值             | `PickerColumnValue[]`                                                         | -      |
-| defaultValue | 默认值         | `PickerColumnValue[]`                                                         | `[]`   |
-| onChange     | 选项值改变回调 | `(value: PickerColumnValue[], extend: PickerValueExtend) => void;`            | -      |
-| onSelect     | 单列选中回调   | `onSelect?: (item?: PickerColumnItem) => void;`                               | -      |
+| 属性         | 说明           | 类型                                                                                                       | 默认值 |
+| ------------ | -------------- | ---------------------------------------------------------------------------------------------------------- | ------ |
+| columns      | 列数据         | `PickerViewColumn[] \| ((value: PickerColumnValue[]) => PickerViewColumn[])`                               | `[]`   |
+| value        | 值             | `PickerColumnValue[]`                                                                                      | -      |
+| defaultValue | 默认值         | `PickerColumnValue[]`                                                                                      | `[]`   |
+| onChange     | 选项值改变回调 | `(value: PickerColumnValue[], extend: PickerValueExtend) => void`                                          | -      |
+| onItemSelect | 单列选中回调   | `(value: PickerColumnValue, extendItem: PickerColumnItem, columnIndex: number, itemIndex: number) => void` | -      |
 
 #### PickerColumnItem
 
@@ -251,14 +240,15 @@ export type PickerValueExtend = {
 
 ## CascaderPickerView
 
-| 属性            | 说明                 | 类型                                                       | 默认值  |
-| --------------- | -------------------- | ---------------------------------------------------------- | ------- |
-| options         | 级联配置             | `CascadePickerOption`                                      | `[]`    |
-| lazy            | 是否异步加载         | `boolean`                                                  | `false` |
-| lazyLoad        | 异步加载函数         | `(CascadePickerOption) => Promise<CascadePickerOption[]>;` | -       |
-| onOptionsUpdate | 异步加载后，最新配置 | `(CascadePickerOption) => void;`                           | -       |
+| 属性            | 说明                 | 类型                                                               | 默认值  |
+| --------------- | -------------------- | ------------------------------------------------------------------ | ------- |
+| options         | 级联配置             | `CascadePickerOption[]`                                            | `[]`    |
+| lazy            | 是否异步加载         | `boolean`                                                          | `false` |
+| lazyLoad        | 异步加载函数         | `(option: CascadePickerOption) => Promise<CascadePickerOption[]>;` | -       |
+| onOptionsUpdate | 异步加载后，最新配置 | `(optons: CascadePickerOption[]) => void;`                         | -       |
 
 #### CascadePickerOption
+
 ```ts
 export type CascadePickerOption = {
   label: string;

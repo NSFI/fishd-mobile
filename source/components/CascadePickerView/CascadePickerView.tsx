@@ -18,8 +18,8 @@ export type CascadePickerViewProps = {
   style?: React.CSSProperties;
   options: CascadePickerOption[];
   lazy?: boolean;
-  lazyLoad?: (CascadePickerOption) => Promise<CascadePickerOption[]>;
-  onOptionsUpdate?: (CascadePickerOption) => void;
+  lazyLoad?: (option: CascadePickerOption) => Promise<CascadePickerOption[]>;
+  onOptionsUpdate?: (options: CascadePickerOption[]) => void;
 } & Omit<PickerViewProps, 'columns'>;
 
 const classPrefix = `fm-cascade-picker-view`;
@@ -34,7 +34,7 @@ const CascadePickerView: React.FC<CascadePickerViewProps> = p => {
   const { valueItemRecord, depth } = useCascadeOptions(props.options);
   const [loadingNode, setLoadingNode] = useState<CascadePickerOption | null>(null);
 
-  const handleSelect = async pickerItem => {
+  const handleItemSelect = async (value, pickerItem, columnIndex: number, itemIndex: number) => {
     try {
       if (!pickerItem || pickerItem.leaf || (pickerItem && pickerItem.children && pickerItem.children.length)) {
         return;
@@ -42,7 +42,6 @@ const CascadePickerView: React.FC<CascadePickerViewProps> = p => {
       if (lazy && lazyLoad) {
         setLoadingNode(pickerItem);
         const nodes = await lazyLoad(pickerItem);
-        // TODO: 特殊情况下，跨层级情况下存在value相同的项，需支持
         const newOptions = extendOptions({
           options,
           pickerItem,
@@ -60,7 +59,7 @@ const CascadePickerView: React.FC<CascadePickerViewProps> = p => {
       className={CascadePickerViewClassName}
       {...pickerViewProps}
       columns={selected => getColumns({ selected, depth, options: props.options, valueItemRecord, loadingNode })}
-      onSelect={handleSelect}
+      onItemSelect={handleItemSelect}
     ></PickerView>
   );
 };

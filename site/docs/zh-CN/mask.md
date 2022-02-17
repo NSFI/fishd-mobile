@@ -13,20 +13,17 @@ const Demo = () => {
   const [visible5, setVisible5] = React.useState(false);
   return (
     <div className="components-tpl-demo-basic">
-      <div className="demo-title">基础用法</div>
-      <div className="demo-card">
+      <DemoBlock title="基础用法">
         <Button onClick={() => setVisible(true)}>显示遮罩</Button>
         <Mask visible={visible} onMaskClick={() => setVisible(false)} />
-      </div>
+      </DemoBlock>
 
-      <div className="demo-title">渲染到body</div>
-      <div className="demo-card">
+      <DemoBlock title="渲染到body">
         <Button onClick={() => setVisible2(true)}>显示遮罩</Button>
         <Mask visible={visible2} getContainer={() => document.body} onMaskClick={() => setVisible2(false)} />
-      </div>
+      </DemoBlock>
 
-      <div className="demo-title">自定义内容</div>
-      <div className="demo-card">
+      <DemoBlock title="自定义内容">
         <Button onClick={() => setVisible3(true)}>显示遮罩</Button>
         <Mask visible={visible3} onMaskClick={() => setVisible3(false)} destroyOnClose={true}>
           <div className="demo-content">
@@ -37,10 +34,9 @@ const Demo = () => {
             <p>低头思故乡</p>
           </div>
         </Mask>
-      </div>
+      </DemoBlock>
 
-      <div className="demo-title">白色主题</div>
-      <div className="demo-card">
+      <DemoBlock title="白色主题">
         <Button onClick={() => setVisible4(true)}>显示遮罩</Button>
         <Mask
           theme="light"
@@ -48,15 +44,14 @@ const Demo = () => {
           getContainer={() => document.body}
           onMaskClick={() => setVisible4(false)}
         />
-      </div>
+      </DemoBlock>
 
-      <div className="demo-title">局部渲染</div>
-      <div className="demo-card">
+      <DemoBlock title="局部渲染">
         <Button onClick={() => setVisible5(true)}>显示遮罩</Button>
         <div style={{ transform: 'translateY(0)', width: '100%', height: 200 }}>
           <Mask visible={visible5} disableBodyScroll={false} onMaskClick={() => setVisible5(false)} />
         </div>
-      </div>
+      </DemoBlock>
     </div>
   );
 };
@@ -65,33 +60,26 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] {
-  .demo-card {
-    padding: 12px;
-    background: #fff;
+.demo-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 100px;
+  padding: 12px;
+  overflow-y: auto;
+  color: #333;
+  border-radius: 4px;
+  background: #fff;
+  h3 {
+    margin-bottom: 8px;
   }
-
-  .demo-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 150px;
-    height: 100px;
-    padding: 12px;
-    overflow-y: auto;
-    color: #333;
-    border-radius: 4px;
-    background: #fff;
-    h3 {
-      margin-bottom: 8px;
-    }
-    p {
-      margin-bottom: 8px;
-    }
+  p {
+    margin-bottom: 8px;
   }
 }
 ```

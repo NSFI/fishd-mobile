@@ -40,6 +40,7 @@ const defaultProps = {
   cancelText: '取消',
   clearOnCancel: true,
 };
+
 const SearchBar = (p, ref) => {
   const props = mergeProps(defaultProps, p);
   const { className, style, placeholder, showCancelButton, cancelText, clearOnCancel, clearable } = props;

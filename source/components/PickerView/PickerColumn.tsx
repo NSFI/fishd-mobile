@@ -14,7 +14,7 @@ export interface PickerColumnProps {
   index: number;
   column: PickerColumnItem[];
   value: PickerColumnValue;
-  onSelect: (value: PickerColumnValue, index: number) => void
+  onSelect: (value: PickerColumnValue, columnIndex: number, itemIndex: number) => void
 }
 
 const defaultProps = {}
@@ -45,6 +45,12 @@ const PickerColumn: React.FC<PickerColumnProps> = (p) => {
       pointer: { touch: true },
     },
   );
+
+  const onSelect = (val: PickerColumnValue) => {
+    const columnIndex = props.index
+    const itemIndex = props.column.findIndex(item => item.value === val)
+    props.onSelect(val, columnIndex, itemIndex)
+  }
   
   /** reset ui */
   useLayoutEffect(() => {
@@ -67,11 +73,7 @@ const PickerColumn: React.FC<PickerColumnProps> = (p) => {
         onSelect(firstItem.value)
       }
     }
-  }, [column, value])
-
-  const onSelect = (val: PickerColumnValue) => {
-    props.onSelect(val, props.index)
-  }
+  }, [value, column])
 
   const selectIndex = (index: number) => {
     scrollToIndex(index)

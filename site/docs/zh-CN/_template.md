@@ -13,13 +13,9 @@
 ```js
 const Demo = () => {
   return (
-    <div className="components-tpl-demo-basic">
-      <div className="demo-title">基础用法</div>
-      <div className="demo-card">
-        <Button type="primary">Primary</Button>
-        <Button type="warning">Warning</Button>
-      </div>
-    </div>
+    <DemoBlock title="基础用法">
+      <Button type="primary">Primary</Button>
+    </DemoBlock>
   );
 };
 
@@ -27,9 +23,6 @@ ReactDOM.render(<Demo />, mountNode);
 ```
 
 ```less
-[class^='components-tpl-demo-'] .fm-button {
-  margin-bottom: 12px;
-}
 ```
 
 :::

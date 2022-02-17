@@ -2,23 +2,16 @@ import { useForm } from 'rc-field-form';
 import Form from './Form';
 import FormItem from './FormItem';
 import FormList from './FormList';
-import ErrorList from './ErrorList'
+import ErrorList from './ErrorList';
+import { attachPropertiesToComponent } from '../../utils/attach-properties-to-component';
 
-export { FormProps } from './form';
-export { FormInstance } from 'rc-field-form';
+export type { FormInstance } from 'rc-field-form';
+export type { FormProps } from './form';
 export type FormLayout = 'vertical' | 'horizontal';
 
-type CompoundedType = typeof Form & {
-  Item: typeof FormItem;
-  List: typeof FormList;
-  ErrorList: typeof ErrorList;
-  useForm: typeof useForm;
-};
-
-const Compounded = Form as CompoundedType;
-Compounded.Item = FormItem;
-Compounded.List = FormList;
-Compounded.ErrorList = ErrorList;
-Compounded.useForm = useForm;
-
-export default Form;
+export default attachPropertiesToComponent(Form, {
+  Item: FormItem,
+  List: FormList,
+  ErrorList,
+  useForm,
+});
