@@ -5,22 +5,22 @@
   display: flex;
   align-items: center;
   margin: @divider-margin;
+  color: @divider-text-color;
   font-size: @divider-font-size;
   line-height: @divider-line-height;
-  color: @divider-text-color;
+  border-color: @divider-border-color;
   border-style: solid;
   border-width: 0;
-  border-color: @divider-border-color;
 
   &::before,
   &::after {
-    flex: 1;
     display: block;
+    flex: 1;
+    box-sizing: border-box;
     height: 1px;
+    border-color: inherit;
     border-style: inherit;
     border-width: @border-width-sm 0 0;
-    border-color: inherit;
-    box-sizing: border-box;
   }
 
   &::before {

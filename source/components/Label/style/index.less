@@ -5,17 +5,17 @@
 .@{labelPrefixCls} {
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   min-width: @label-width;
   // default normal
   min-height: @label-height;
   padding: @label-padding;
+  color: @color-gray-9;
   font-size: @label-font-size;
   text-align: center;
-  color: @color-gray-9;
   border-radius: @radius-xs;
-  box-sizing: border-box;
 
   &-closeable {
     margin-left: 5 * @hd;
@@ -67,9 +67,9 @@
       left: 0;
       border: 1px solid currentColor;
       border-radius: inherit;
+      opacity: 0.2;
       content: '';
       pointer-events: none;
-      opacity: 0.2;
     }
 
     &::after {
@@ -78,10 +78,10 @@
       right: 0;
       bottom: 0;
       left: 0;
-      content: '';
-      pointer-events: none;
       background-color: currentColor;
       opacity: 0.1;
+      content: '';
+      pointer-events: none;
     }
   }
 }

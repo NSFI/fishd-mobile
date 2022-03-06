@@ -1,15 +1,13 @@
 import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
-import { CheckboxGroupContext } from './CheckboxGroupContext';
-import { VarProps } from '../../utils/var-props';
 
+import { CheckboxGroupContext } from './CheckboxGroupContext';
 import Icon from '../Icon';
+import { NativeProps, getNativeAttr } from '../../utils/native-props';
 
 export type CheckboxValue = string | number;
 export type CheckboxProps = {
-  className?: string;
-  style?: React.CSSProperties & VarProps<'fm-checkbox-icon-size' | 'fm-checkbox-font-size' | 'fm-checkbox-gap'>;
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;
@@ -18,12 +16,13 @@ export type CheckboxProps = {
   id?: string;
   icon?: (checked: boolean) => React.ReactNode;
   onChange?: (checked: boolean) => void;
-};
+} & NativeProps<'fm-checkbox-icon-size' | 'fm-checkbox-font-size' | 'fm-checkbox-gap'>;
 
 const classPrefix = `fm-checkbox`;
 
 const Checkbox: React.FC<CheckboxProps> = props => {
   let { className, style, value, disabled } = props;
+  const nativeAttr = getNativeAttr(props);
   let [checked, setChecked] = useControllableValue(props, {
     defaultValue: false,
     defaultValuePropName: 'defaultChecked',
@@ -59,7 +58,7 @@ const Checkbox: React.FC<CheckboxProps> = props => {
   };
 
   return (
-    <label className={CheckboxClassName} style={style}>
+    <label className={CheckboxClassName} style={style} {...nativeAttr}>
       <input
         type="checkbox"
         checked={checked}

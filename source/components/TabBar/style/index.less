@@ -8,24 +8,24 @@
 @badge-prefix-cls: fm-badge;
 
 @easing-in-out: cubic-bezier(0.35, 0, 0.25, 1);
-@effect-duration: .3s;
+@effect-duration: 0.3s;
 @page-hide-color: rgba(255, 255, 255, 0);
 @page-show-color: rgba(255, 255, 255, 1);
 
 .@{tabbar-prefix-cls} {
-  overflow: hidden;
   height: 100%;
+  overflow: hidden;
 
   &-bar {
     position: relative;
     bottom: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
     width: 100%;
     height: @tab-bar-height;
-    box-sizing: border-box;
     transition-duration: 0.2s;
     transition-property: height bottom;
     .hairline('top');
@@ -41,11 +41,11 @@
     }
 
     .@{tabbar-prefix-cls}-tab {
-      flex: 1;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex: 1;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       width: 100%;
       text-align: center;
 
@@ -95,40 +95,41 @@
   display: block;
   width: 59 * @hd;
   height: 100%;
-  pointer-events: none;
   content: ' ';
+  pointer-events: none;
 }
 
 .@{tabs-prefix-cls} {
   position: relative;
-  flex: 1;
   display: flex;
-  overflow: hidden;
+  flex: 1;
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
-  box-sizing: border-box;
+  overflow: hidden;
 
   * {
     box-sizing: border-box;
   }
 
   &-content-wrap {
-    flex: 1;
     display: flex;
+    flex: 1;
     width: 100%;
     height: 100%;
     min-height: 0;
 
     &-animated {
-      transition: transform @effect-duration @easing-in-out, left @effect-duration @easing-in-out, top @effect-duration @easing-in-out;
+      transition: transform @effect-duration @easing-in-out, left @effect-duration @easing-in-out,
+        top @effect-duration @easing-in-out;
       will-change: transform, left, top;
     }
   }
 
   &-pane-wrap {
     flex-shrink: 0;
-    overflow-y: auto;
     width: 100%;
+    overflow-y: auto;
   }
 
   &-tab-bar-wrap {
@@ -142,8 +143,8 @@
       }
 
       &-pane-wrap-inactive {
-        overflow: visible;
         height: 0;
+        overflow: visible;
       }
     }
   }
@@ -186,19 +187,19 @@
 .@{tabs-default-bar-prefix-cls} {
   position: relative;
   z-index: 1;
-  flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  overflow: visible;
+  flex-shrink: 0;
   width: 100%;
   height: 100%;
+  overflow: visible;
 
   &-tab {
     position: relative;
-    flex-shrink: 0;
     display: flex;
-    justify-content: center;
+    flex-shrink: 0;
     align-items: center;
+    justify-content: center;
     height: @tabs-height;
     font-size: @tabs-font-size-heading;
     line-height: @tabs-height;
@@ -232,7 +233,8 @@
   }
 
   &-animated &-underline {
-    transition: top @effect-duration @easing-in-out, left @effect-duration @easing-in-out, color @effect-duration @easing-in-out, width @effect-duration @easing-in-out;
+    transition: top @effect-duration @easing-in-out, left @effect-duration @easing-in-out,
+      color @effect-duration @easing-in-out, width @effect-duration @easing-in-out;
     will-change: top, left, width, color;
   }
 

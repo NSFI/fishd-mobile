@@ -166,6 +166,7 @@ const Demo = () => {
         actions={actions}
         onAction={handleAction}
         onClose={() => setShow(false)}
+        data-ysf='modal'
       ></Modal>
       <Modal
         visible={asyncShow}

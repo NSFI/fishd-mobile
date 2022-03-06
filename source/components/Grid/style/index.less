@@ -26,15 +26,15 @@
       .@{gridPrefixCls}-item-content {
         position: relative;
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
         width: 100%;
         height: 100%;
         padding: @space-xl @space-base;
         text-align: center;
         background-color: @color-gray-9;
-        box-sizing: border-box;
 
         &__border {
           &::after {
@@ -50,9 +50,9 @@
 
         .@{gridPrefixCls}-text {
           margin-top: @space-base;
+          color: @color-gray-1;
           font-size: @font-size-sm;
           text-align: center;
-          color: @color-gray-1;
         }
       }
     }
@@ -86,8 +86,8 @@
     .@{gridPrefixCls}-item {
       &::before {
         display: block;
-        content: ' ';
         padding-bottom: 100%;
+        content: ' ';
       }
 
       .@{gridPrefixCls}-item-content {

@@ -1,16 +1,17 @@
 .fm-cascade-wrapper {
   .fm-cascade-select {
-    width: 100%;
-    height: 50px;
+    position: relative;
     display: flex;
     align-items: center;
-    font-size: 15px;
-    color: #C9CACD;
-    background: #FFF;
-    box-shadow: inset 0 0 0 0 #E6E7EB;
-    padding: 0 16px;
     box-sizing: border-box;
-    position: relative;
+    width: 100%;
+    height: 50px;
+    padding: 0 16px;
+    color: #c9cacd;
+    font-size: 15px;
+    background: #fff;
+    box-shadow: inset 0 0 0 0 #e6e7eb;
+
     &::after {
       position: absolute;
       top: 50%;
@@ -18,63 +19,74 @@
       margin-top: -5px;
       border: 3px solid;
       border-color: transparent transparent #dcdee0 #dcdee0;
-      -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
       opacity: 0.8;
       content: '';
     }
+
     &.active {
       &::after {
         margin-top: -1px;
+        border-color: #fff #fff #337eff #337eff;
         transform: rotate(135deg);
-        border-color: #fff #fff #337EFF #337EFF;
       }
     }
+
     &.selected {
       color: #333;
     }
+
     &:focus {
       outline: none;
     }
   }
+
   .cascade-column {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
     max-height: 0;
     overflow: hidden;
-    transition: all .3s ease;
-    background-color: #fff;
-    display: flex;
-    font-size: 14px;
     color: #333;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    font-size: 14px;
+    background-color: #fff;
     box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 
     &.expand {
       max-height: 280px;
     }
+
     .col {
-      flex: 1 0 50%;
       position: relative;
-      transition: all .3s ease;
-      &.selectCol {
+      flex: 1 0 50%;
+      transition: all 0.3s ease;
+
+      &.select-col {
         border-right: 0.5px solid #e6e7e8;
       }
-      &.fullWidth {
+
+      &.full-width {
         flex-basis: 100%;
       }
+
       .item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         height: 40px;
         padding: 0 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
         &.selected {
-          color: #337EFF;
+          color: #337eff;
         }
-        &.back, &.all {
+
+        &.back,
+        &.all {
           justify-content: flex-start;
+
           i {
             margin-right: 6px;
           }

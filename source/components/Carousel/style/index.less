@@ -7,13 +7,13 @@
 
   &-wrap {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 12 * @hd 0;
+    color: @color-gray-1;
     font-size: 18 * @hd;
     text-align: center;
-    color: @color-gray-1;
     background: none;
     zoom: 1;
 
@@ -21,17 +21,17 @@
       display: inline-block;
       zoom: 1;
 
-      >span {
+      > span {
         display: block;
         width: 6 * @hd;
         height: 2 * @hd;
         margin: 0 3 * @hd;
-        border-radius: 2 * @hd;
         background: @dot-color;
+        border-radius: 2 * @hd;
       }
 
       &-active {
-        >span {
+        > span {
           width: 12 * @hd;
           background: @dot-active-color;
         }

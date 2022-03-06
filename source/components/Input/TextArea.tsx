@@ -65,7 +65,7 @@ const TextArea: React.ForwardRefRenderFunction<TextAreaRef, TextAreaProps> = (p,
     ...textAreaProps
   } = props;
   const TextAreaClassName = classNames(
-    `${classPrefix}__wrapper`,
+    `${classPrefix}`,
     {
       'is-disabled': props.disabled,
     },
@@ -99,7 +99,7 @@ const TextArea: React.ForwardRefRenderFunction<TextAreaRef, TextAreaProps> = (p,
       <textarea
         ref={nativeTextAreaRef}
         {...textAreaProps}
-        className={classPrefix}
+        className={`${classPrefix}__inner`}
         rows={rows}
         value={value}
         onChange={e => {

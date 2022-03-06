@@ -3,17 +3,17 @@
 
 .@{SearchBarPrefixCls} {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
   width: 100%;
   font-size: 14px;
-  box-sizing: border-box;
 
   &__content {
-    flex: 1;
     display: flex;
-    justify-content: space-between;
+    flex: 1;
     align-items: center;
+    justify-content: space-between;
     width: 0;
     padding: 4px 12px;
     background-color: var(--color-gray-8);
@@ -25,8 +25,8 @@
   }
 
   &__body {
-    flex: 1;
     display: flex;
+    flex: 1;
     line-height: 24px;
   }
 

@@ -15,7 +15,7 @@ const Demo = () => {
     <div className="components-tpl-demo-basic">
       <DemoBlock title="基础用法">
         <Button onClick={() => setVisible(true)}>显示遮罩</Button>
-        <Mask visible={visible} onMaskClick={() => setVisible(false)} />
+        <Mask visible={visible} onMaskClick={() => setVisible(false)} data-ysf="ceshi" />
       </DemoBlock>
 
       <DemoBlock title="渲染到body">

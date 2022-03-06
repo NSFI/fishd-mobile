@@ -7,14 +7,11 @@ import Mask from '../Mask';
 import Icon from '../Icon';
 import ActionButton, { Action } from './ModalAction';
 
-import { mergeProps } from '../../utils/merge-props';
-import { VarProps } from '../../utils/var-props';
 import { GetContainer } from '../../utils/render-to-container';
+import { mergeProps } from '../../utils/merge-props';
+import { NativeProps, getNativeAttr } from '../../utils/native-props';
 
-export interface ModalProps {
-  className?: string;
-  style?: React.CSSProperties & VarProps<'--fm-modal-z-index'>;
-
+export type ModalProps = {
   visible?: boolean;
   getContainer?: GetContainer;
   closeOnClickModal?: boolean;
@@ -28,7 +25,7 @@ export interface ModalProps {
   onClose?: () => void;
   afterShow?: () => void;
   afterClose?: () => void;
-}
+} & NativeProps<'--fm-modal-z-index'>;
 
 const defaultProps = {
   actions: [],
@@ -40,6 +37,7 @@ const classPrefix = `fm-modal`;
 
 const Modal: React.FC<ModalProps> = p => {
   const props = mergeProps(defaultProps, p);
+  const nativeAttr = getNativeAttr(props);
   const { className } = props;
   const ModalClassName = classNames(classPrefix, {}, className);
   const unmountedRef = useUnmountedRef();
@@ -63,7 +61,7 @@ const Modal: React.FC<ModalProps> = p => {
   });
 
   return (
-    <div className={ModalClassName} style={props.style}>
+    <div className={ModalClassName} style={props.style} {...nativeAttr}>
       <Mask
         className={`${classPrefix}-mask`}
         visible={props.visible}

@@ -1,31 +1,9 @@
 @import './default.less';
 
-// 全局ppfish覆盖样式
-.fishd-popover-inner {
-  box-shadow: 0 10px 30px 0 rgba(23, 23, 26, 0.15);
-}
-
-.scrollbar() {
-
-  /* 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 */
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 0;
-    background-color: #fff;
-  }
-
-  /* 定义滑块 内阴影+圆角 */
-  &::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-    background-color: rgba(153, 153, 153, 0.6);
-  }
-}
-
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
   .scrollbar();
 
   &::-webkit-scrollbar {
@@ -35,24 +13,47 @@
 
 html,
 body {
-  font-family: PingFangSC-Regular;
   height: 100%;
+  font-family: PingFangSC-Regular, sans-serif;
 }
 
-// 小屏下的drawer按钮位置调整
+/* 全局ppfish覆盖样式 */
+.fishd-popover-inner {
+  box-shadow: 0 10px 30px 0 rgba(23, 23, 26, 0.15);
+}
+
+.scrollbar() {
+  /* 定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸 */
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 0;
+    background-color: #fff;
+  }
+
+  /* 定义滑块 内阴影+圆角 */
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(153, 153, 153, 0.6);
+    border-radius: 100px;
+  }
+}
+
+/* 小屏下的drawer按钮位置调整 */
 .drawer-handle {
   top: 144px !important;
 }
 
-//主站样式
+/* 主站样式 */
+
+/* stylelint-disable */
 .app {
 
-  //顶部fixed
+  /* 顶部fixed */
   .fixed-header-layout {
     >.fishd-affix {
       z-index: 11;
     }
   }
+
 
   .fish-header {
     z-index: 1;
@@ -173,10 +174,7 @@ body {
       }
     }
 
-    //层级关系需要保留，作样式覆盖
-    /* stylelint-disable */
     .nav-item {
-      // font-family: PingFangSC-Medium;
       font-family: PingFangSC-Regular;
       font-size: 16px;
       margin: 0 0 0 20px;
@@ -246,23 +244,23 @@ body {
       display: flex;
       align-items: center;
     }
-
-    /* stylelint-enable */
   }
+
+  /* stylelint-enable */
+
 
   .main {
-    min-height: 500px;
     clear: both;
+    min-height: 500px;
   }
-
 }
 
 .img-icon-gen(@size) {
   .img-icon-@{size} {
     display: inline-block;
+    width: ~'@{size}px';
+    height: ~'@{size}px';
     vertical-align: baseline;
-    width:~'@{size}px';
-    height:~'@{size}px';
   }
 }
 

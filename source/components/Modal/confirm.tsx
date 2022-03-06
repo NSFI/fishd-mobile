@@ -3,14 +3,14 @@ import { ModalProps } from './index';
 import { mergeProps } from '../../utils/merge-props';
 import { ReactNode } from 'react';
 
-export type ModalAlertProps = Omit<ModalProps, 'visible' | 'closeOnAction' | 'actions'> & {
+export type ModalConfirmProps = Omit<ModalProps, 'visible' | 'closeOnAction' | 'actions'> & {
   confirmText?: ReactNode;
   cancelText?: ReactNode;
   onConfirm?: () => void | Promise<void>;
   onCancel?: () => void | Promise<void>;
 };
 
-export function confirm(p: ModalAlertProps) {
+export function confirm(p: ModalConfirmProps) {
   const defaultProps = {
     confirmText: '确认',
     cancelText: '取消',

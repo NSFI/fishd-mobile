@@ -166,7 +166,7 @@ const Cascade: FC<Props> = ({ onSelect, selectId, cascadeData }) => {
           {[...cols, []].map((col, colIndex) => (
             <div
               key={colIndex}
-              className={classNames('col', { selectCol: selectColIndex === colIndex, fullWidth: cols.length === 1 })}
+              className={classNames('col', { 'select-col': selectColIndex === colIndex, 'full-width': cols.length === 1 })}
               style={cols.length > 2 ? { transform: `translateX(${(cols.length - 2) * -100}%)` } : {}}
             >
               {colIndex === selectColIndex && colIndex !== 0 && (

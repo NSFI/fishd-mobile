@@ -4,20 +4,20 @@
 
 .@{noticeBarPrefixCls} {
   display: flex;
-  overflow: hidden;
   height: @notice-bar-height;
+  overflow: hidden;
+  color: @notice-bar-color;
   font-size: @font-size-base;
   line-height: @notice-bar-height;
-  color: @notice-bar-color;
   background-color: @notice-bar-fill;
 
   &-content {
     flex: 1;
-    overflow: hidden;
     width: 100%;
     margin: auto 16px;
-    text-overflow: ellipsis;
+    overflow: hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &-icon {

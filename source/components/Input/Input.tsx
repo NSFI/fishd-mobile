@@ -63,7 +63,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (p, ref) => 
   const props = mergeProps(defaultProps, p);
   const { className, style, clearable } = props;
   const InputClassName = classNames(
-    `${classPrefix}__wrapper`,
+    `${classPrefix}`,
     {
       'is-disabled': props.disabled,
     },
@@ -98,7 +98,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (p, ref) => 
       <input
         ref={nativeInputRef}
         id={props.id}
-        className={classPrefix}
+        className={`${classPrefix}__inner`}
         style={style}
         value={fixControlledValue(value)}
         onChange={e => {

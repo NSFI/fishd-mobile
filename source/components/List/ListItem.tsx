@@ -22,11 +22,11 @@ export interface ListItemProps {
 
 const classPrefix = `fm-list-item`;
 const defaultProps = {
-  disabled: false
-}
+  disabled: false,
+};
 
 const ListItem: React.FC<ListItemProps> = p => {
-  const props = mergeProps(defaultProps, p)
+  const props = mergeProps(defaultProps, p);
   const { className, clickable, prefix, title, children, description, extra, arrow, disabled } = props;
   const ListItemClassName = classNames(
     classPrefix,

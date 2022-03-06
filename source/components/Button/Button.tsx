@@ -1,12 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
+
 import TouchFeedback from 'rmc-feedback';
+import LoadMore from '../LoadMore';
 
 import { mergeProps } from '../../utils/merge-props';
-import { LoadMore } from '..';
-export interface ButtonProps {
-  className?: string;
-  style?: React.CSSProperties;
+import { NativeProps, getNativeAttr } from '../../utils/native-props';
+
+export type ButtonProps = {
   activeClassName?: string;
   activeStyle?: boolean | React.CSSProperties;
   htmlType?: 'submit' | 'reset' | 'button';
@@ -22,7 +23,7 @@ export interface ButtonProps {
   loading?: boolean;
   loadingText?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-}
+} & NativeProps;
 
 const defaultProps = {
   type: 'default',
@@ -58,23 +59,14 @@ const Button: React.FC<ButtonProps> = p => {
     loading,
     loadingText,
     color,
-    onClick,
     children,
-    ...restProps
+    onClick,
   } = props;
+  const nativeAttr = getNativeAttr(props);
 
-  const ButtonClassName = classNames(classPrefix, className, {
-    [`${classPrefix}-default`]: type === 'default',
-    [`${classPrefix}-primary`]: type === 'primary',
-    [`${classPrefix}-success`]: type === 'success',
-    [`${classPrefix}-warning`]: type === 'warning',
-    [`${classPrefix}-danger`]: type === 'danger',
+  const ButtonClassName = classNames(classPrefix, className, [`${classPrefix}-${type}`, `${classPrefix}-${size}`], {
     [`${classPrefix}-fill-${fill}`]: !!fill,
     [`${classPrefix}-hairline`]: hairline,
-    [`${classPrefix}-large`]: size === 'large',
-    [`${classPrefix}-normal`]: size === 'normal',
-    [`${classPrefix}-small`]: size === 'small',
-    [`${classPrefix}-mini`]: size === 'mini',
     [`${classPrefix}-round`]: round,
     [`${classPrefix}-square`]: square,
     [`${classPrefix}-disabled`]: disabled,
@@ -83,6 +75,7 @@ const Button: React.FC<ButtonProps> = p => {
   });
 
   const ButtonStyle: React.CSSProperties = {};
+
   if (fill === 'solid' && color) {
     ButtonStyle.background = color;
     ButtonStyle.borderColor = color;
@@ -108,9 +101,9 @@ const Button: React.FC<ButtonProps> = p => {
         type={htmlType}
         onClick={disabled ? undefined : onClick}
         disabled={disabled}
-        {...restProps}
+        {...nativeAttr}
       >
-        {props.loading ? <LoadMore text={loadingText} size="14px" color="inhert" /> : children}
+        {props.loading ? <LoadMore text={loadingText} /> : children}
       </button>
     </TouchFeedback>
   );

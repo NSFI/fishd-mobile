@@ -13,19 +13,19 @@
   &__header {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 30px;
     padding-top: 6px;
     background-color: var(--color-gray-8);
-    border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   &__title {
-    font-size: 14px;
-    font-weight: normal;
     color: var(--color-gray-2);
+    font-weight: normal;
+    font-size: 14px;
   }
 
   &__close {
@@ -33,10 +33,10 @@
     right: 0;
     height: 100%;
     padding: 0 16px;
-    font-size: 14px;
     color: var(--color-primary);
-    border: none;
+    font-size: 14px;
     background-color: transparent;
+    border: none;
     outline: none;
     cursor: pointer;
   }
@@ -48,36 +48,36 @@
   }
 
   &__keys {
-    flex: 3;
     display: flex;
+    flex: 3;
     flex-wrap: wrap;
   }
 
   &__sidebar {
-    flex: 1;
     display: flex;
+    flex: 1;
     flex-direction: column;
   }
 }
 
 .@{prefixClsKey} {
   &__wrapper {
-    box-sizing: border-box;
     flex: 1;
     flex-basis: 33%;
+    box-sizing: border-box;
     padding: 0 6px 6px 0;
   }
 
   &__key {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 56px;
     font-size: 28px;
+    background-color: #fff;
     border: none;
     border-radius: 8px;
-    background-color: #fff;
     cursor: pointer;
     user-select: none;
 
@@ -87,8 +87,8 @@
   }
 
   &__blue {
-    font-size: 16px;
     color: #fff;
+    font-size: 16px;
     background-color: var(--color-primary);
 
     &:active {

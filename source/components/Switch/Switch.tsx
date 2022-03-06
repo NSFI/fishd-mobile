@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
-import Icon from '../Icon';
 import LoadMore from '../LoadMore';
+import { getNativeAttr, NativeProps } from '../../utils/native-props';
+import { mergeProps } from '../../utils/merge-props';
 
 export type ValueType = boolean | number | string;
 
 export type SwitchProps = {
-  className?: string;
-  style?: React.CSSProperties;
   checked?: ValueType;
   defaultChecked?: ValueType;
   loading?: boolean;
@@ -16,16 +15,18 @@ export type SwitchProps = {
   color?: string;
   checkedValue: ValueType;
   uncheckedValue: ValueType;
-  checkedText?: string;
-  uncheckedText?: string;
-  checkedTextColor?: string;
-  uncheckedTextColor?: string;
+  checkedText?: React.ReactNode;
+  uncheckedText?: React.ReactNode;
   beforeChange?: (val: ValueType) => Promise<void>;
-};
+} & NativeProps<'--fm-switch-color' | '--fm-switch-size' | '--fm-switch-width' | '--fm-switch-height'>;
 
 const classPrefix = `fm-switch`;
+const defaultProps = {
+  style: {},
+};
 
-const Switch: React.FC<SwitchProps> = props => {
+const Switch: React.FC<SwitchProps> = p => {
+  const props = mergeProps(defaultProps, p);
   const {
     className,
     style,
@@ -36,6 +37,7 @@ const Switch: React.FC<SwitchProps> = props => {
     checkedValue = true,
     uncheckedValue = false,
   } = props;
+  const nativeAttr = getNativeAttr(props);
   const [changing, setChanging] = useState(false);
   const [checked, setChecked] = useControllableValue<ValueType>(props, {
     valuePropName: 'checked',
@@ -76,32 +78,18 @@ const Switch: React.FC<SwitchProps> = props => {
 
   const textTip = checked === checkedValue ? checkedText : uncheckedText;
 
-  const customStyle: React.CSSProperties = {};
-
-  if (checked && props.color) {
-    customStyle.backgroundColor = props.color;
-  }
-
-  const textStyle: React.CSSProperties = {};
-
-  if (checked && props.checkedTextColor) {
-    textStyle.color = props.checkedTextColor;
-  }
-
-  if (!checked && props.uncheckedTextColor) {
-    textStyle.color = props.uncheckedTextColor;
+  const varStyle = {
+    '--fm-switch-color': props.color
   }
 
   return (
-    <div className={SwitchClassName} style={style} onClick={onClick}>
-      <div className={`${classPrefix}__checkbox`} style={customStyle}>
-        {textTip && (
-          <div className={`${classPrefix}__text`} style={textStyle}>
-            {textTip}
-          </div>
-        )}
+    <div className={SwitchClassName} style={{ ...style, ...varStyle }} onClick={onClick} {...nativeAttr}>
+      <div className={`${classPrefix}__checkbox`}>
+        {textTip && <div className={`${classPrefix}__text`}>{textTip}</div>}
+        <div className={`${classPrefix}__node`}>
+          {props.loading || changing ? <LoadMore className={`${classPrefix}__loading`}></LoadMore> : null}
+        </div>
       </div>
-      {props.loading || changing ? <LoadMore className={`${classPrefix}__loading`} size='20px'></LoadMore> : null}
     </div>
   );
 };

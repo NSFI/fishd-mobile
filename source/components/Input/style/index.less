@@ -1,35 +1,36 @@
 @import (reference) '../../../assets/css/index.less';
-@import './textarea.less';
 
 @inputPrefixCls: fm-input;
 
-.@{inputPrefixCls}__wrapper {
+.@{inputPrefixCls} {
+  --fm-input-font-size: 14px;
+  --fm-input-line-height: 1.5;
+
   display: flex;
   align-items: center;
   width: 100%;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: var(--fm-input-font-size);
+  line-height: var(--fm-input-line-height);
 
-  &.is-disabled {
-    opacity: 0.6;
+  &.is-disabled &__inner {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
   }
 
-  .@{inputPrefixCls} {
-    flex: 1;
+  &__inner {
     display: inline-block;
-    width: 100%;
-    max-width: 100%;
-    min-height: 1.5em;
-    max-height: 100%;
-    padding: 0;
-    margin: 0;
-    color: var(--color-gray-1);
-    border: 0;
-    background: 0 0;
-    outline: none;
+    flex: 1;
     box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--color-gray-1);
+    font-size: inherit;
+    line-height: inherit;
+    background: 0 0;
+    border: 0;
+    outline: none;
     appearance: none;
-    caret-color: var(--color-primary);
 
     &::placeholder {
       color: var(--color-gray-4);
@@ -37,24 +38,29 @@
   }
 
   .@{inputPrefixCls}__prefix {
-    flex: 0 0 auto;
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     margin-right: 4px;
+    font-size: inherit;
+    line-height: inherit;
   }
 
   .@{inputPrefixCls}__suffix {
-    flex: 0 0 auto;
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     margin-left: 4px;
+    font-size: inherit;
+    line-height: inherit;
   }
 
   .@{inputPrefixCls}__clear {
     flex: 0 0 auto;
     margin-left: 4px;
-    font-size: 14px;
     color: var(--color-gray-3);
+    font-size: inherit;
+    line-height: inherit;
     cursor: pointer;
   }
 }

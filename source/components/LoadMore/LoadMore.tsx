@@ -1,17 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
-import { VarProps } from '../../utils/var-props';
 import { mergeProps } from '../../utils/merge-props';
+import { NativeProps, getNativeAttr } from '../../utils/native-props';
 
-export interface LoadMoreProps {
-  className?: string;
-  style?: React.CSSProperties & VarProps<'---fm-loadmore-color' | '--fm-loadmore-size' | '--fm-loadmore-font-size'>;
+export type LoadMoreProps = {
   type?: 'circular' | 'spinner';
   color?: string;
   size?: string;
   text?: string;
   vertical?: boolean;
-}
+} & NativeProps<'--fm-loadmore-color' | '--fm-loadmore-size' | '--fm-loadmore-font-size'>;
 
 const classPrefix = 'fm-loadmore';
 
@@ -39,6 +37,7 @@ function LoadMoreIcon(props: LoadMoreProps) {
 
 const LoadMore: React.FC<LoadMoreProps> = p => {
   const props = mergeProps(defaultProps, p);
+  const nativeAttr = getNativeAttr(props);
   const { className, style, type, vertical, text } = props;
 
   const wrapCls = classNames(classPrefix, className, {
@@ -54,7 +53,7 @@ const LoadMore: React.FC<LoadMoreProps> = p => {
   };
 
   return (
-    <div className={wrapCls} style={{ ...style, ...varStyle }}>
+    <div className={wrapCls} style={{ ...style, ...varStyle }} {...nativeAttr}>
       <span className={spinnerCls}>{LoadMoreIcon(props)}</span>
       {text && <span className={`${classPrefix}__text`}>{text}</span>}
     </div>

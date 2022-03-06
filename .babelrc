@@ -1,9 +1,5 @@
 {
-  "presets": [
-    ["@babel/preset-env", { "modules": "commonjs" }],
-    "@babel/preset-react",
-    "@babel/preset-typescript"
-  ],
+  "presets": [["@babel/preset-env", { "modules": "commonjs" }], "@babel/preset-react", "@babel/preset-typescript"],
   "plugins": [
     "react-hot-loader/babel",
     "@babel/plugin-proposal-numeric-separator",

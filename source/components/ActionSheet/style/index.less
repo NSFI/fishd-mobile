@@ -7,13 +7,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  overflow: hidden;
   padding-bottom: env(safe-area-inset-bottom);
+  overflow: hidden;
 
   &-top {
+    overflow: hidden;
     border-top-left-radius: @actionsheet-border-radius;
     border-top-right-radius: @actionsheet-border-radius;
-    overflow: hidden;
   }
 
   &-bottom {
@@ -37,26 +37,26 @@
   }
 
   &-message {
-    font-size: @font-size-base;
     color: @color-gray-3;
+    font-size: @font-size-base;
   }
 
   &-button-list {
-    text-align: center;
     color: @color-gray-1;
+    text-align: center;
 
     &-item {
       position: relative;
-      overflow: hidden;
+      box-sizing: border-box;
       height: @actionsheet-item-height;
-      padding: 0 8 * @hd;
       margin: 0;
+      padding: 0 8 * @hd;
+      overflow: hidden;
       font-size: @actionsheet-item-font-size;
       line-height: @actionsheet-item-height;
-      text-overflow: ellipsis;
       white-space: nowrap;
+      text-overflow: ellipsis;
       background-color: #fff;
-      box-sizing: border-box;
       .hairline('top');
 
       &&-active {
@@ -66,8 +66,8 @@
 
     &-badge {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
 
       .am-badge {
         flex-shrink: 0;
@@ -78,8 +78,8 @@
     &-item-content {
       display: inline-block;
       overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .@{ActionSheetPrefixCls}-cancel-button {
@@ -111,8 +111,8 @@
     &-list {
       position: relative;
       display: flex;
-      overflow-x: auto;
       padding: 15px 0 15px 10px;
+      overflow-x: auto;
       background-color: @color-gray-9;
       -webkit-overflow-scrolling: touch;
 
@@ -122,37 +122,37 @@
 
         &-icon {
           display: flex;
-          justify-content: center;
           align-items: center;
+          justify-content: center;
           width: 60 * @hd;
           height: 60 * @hd;
           margin-bottom: 9px;
-          border-radius: @radius-base;
           background-color: @color-gray-9;
+          border-radius: @radius-base;
         }
 
         &-title {
+          color: @color-gray-1;
           font-size: @font-size-xs;
           text-align: center;
-          color: @color-gray-1;
         }
       }
     }
 
     &-cancel-button {
       position: relative;
-      overflow: hidden;
+      box-sizing: border-box;
       height: @actionsheet-item-height;
-      padding: 0 8 * @hd;
       margin: 0;
+      padding: 0 8 * @hd;
+      overflow: hidden;
+      color: @color-gray-1;
       font-size: @actionsheet-item-font-size;
       line-height: @actionsheet-item-height;
+      white-space: nowrap;
       text-align: center;
       text-overflow: ellipsis;
-      white-space: nowrap;
-      color: @color-gray-1;
       background-color: @color-gray-9;
-      box-sizing: border-box;
       .hairline('top');
 
       &&-active {

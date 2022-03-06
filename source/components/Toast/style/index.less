@@ -10,7 +10,7 @@
   text-align: center;
   word-break: break-all;
 
-  >span {
+  > span {
     max-width: 50%;
   }
 
@@ -18,8 +18,8 @@
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100%;
   }
 
@@ -39,9 +39,9 @@
   &-notice-content {
     .@{toastPrefixCls}-text.@{toastPrefixCls}-text-icon {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       width: 88 * @hd;
       max-width: 70%;
       min-height: 88 * @hd;
@@ -49,15 +49,15 @@
 
     .@{toastPrefixCls}-text {
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       min-width: 60 * @hd;
       padding: 16 * @hd;
-      line-height: @line-height-paragraph;
       color: @color-gray-9;
-      border-radius: @radius-sm;
+      line-height: @line-height-paragraph;
       background-color: rgba(58, 58, 58, 0.9);
+      border-radius: @radius-sm;
     }
   }
 }

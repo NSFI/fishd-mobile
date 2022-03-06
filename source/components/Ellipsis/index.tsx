@@ -1,5 +1,5 @@
 import Ellipsis from './Ellipsis';
 
-export { EllipsisProps } from './Ellipsis';
+export type { EllipsisProps } from './Ellipsis';
 
 export default Ellipsis;

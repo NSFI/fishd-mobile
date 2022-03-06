@@ -2,30 +2,35 @@
 
 @textareaPrefixCls: fm-textarea;
 
-.@{textareaPrefixCls}__wrapper {
-  position: relative;
+.@{textareaPrefixCls} {
+  --fm-textarea-font-size: 14px;
+  --fm-textarea-line-height: 1.5;
 
-  &.is-disabled {
-    opacity: 0.6;
+  position: relative;
+  font-size: var(--fm-textarea-font-size);
+  line-height: var(--fm-textarea-line-height);
+
+  &.is-disabled &__inner {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
   }
 
-  .@{textareaPrefixCls} {
+  &__inner {
     display: block;
-    overflow: visible;
+    box-sizing: border-box;
     width: 100%;
     padding-right: 16px;
-    font-size: 14px;
-    line-height: 1.5;
+    overflow: visible;
     color: var(--color-gray-1);
-    border: 0;
-    background-color: transparent;
-    outline: none;
-    resize: none;
-    box-sizing: border-box;
-    appearance: none;
-    word-break: break-word;
+    font-size: inherit;
+    line-height: inherit;
     word-wrap: break-word;
-    caret-color: var(--color-primary);
+    word-break: break-word;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    appearance: none;
+    resize: none;
 
     &::placeholder {
       color: var(--color-gray-4);
@@ -37,14 +42,15 @@
     top: 0;
     right: 0;
     flex: 0 0 auto;
-    font-size: 14px;
     color: var(--color-gray-3);
+    font-size: inherit;
+    line-height: inherit;
     cursor: pointer;
   }
 
   .@{textareaPrefixCls}__count {
-    font-size: 12px;
-    text-align: right;
     color: var(--color-gray-4);
+    font-size: 14px;
+    text-align: right;
   }
 }

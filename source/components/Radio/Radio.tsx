@@ -2,14 +2,12 @@ import React, { useContext } from 'react';
 import classNames from 'classnames';
 import { useControllableValue } from 'ahooks';
 import { RadioGroupContext } from './RadioGroupContext';
-import { VarProps } from '../../utils/var-props';
 
 import Icon from '../Icon';
+import { getNativeAttr, NativeProps } from '../../utils/native-props';
 
 export type RadioValue = string | number;
 export type RadioProps = {
-  className?: string;
-  style?: React.CSSProperties & VarProps<'fm-radio-icon-size' | 'fm-radio-font-size' | 'fm-radio-gap'>;
   checked?: boolean;
   defaultChecked?: boolean;
   disabled?: boolean;
@@ -18,12 +16,13 @@ export type RadioProps = {
   id?: string;
   icon?: (checked: boolean) => React.ReactNode;
   onChange?: (checked: boolean) => void;
-};
+} & NativeProps<'fm-radio-icon-size' | 'fm-radio-font-size' | 'fm-radio-gap'>;
 
 const classPrefix = `fm-radio`;
 
 const Radio: React.FC<RadioProps> = props => {
   let { className, style, value, disabled } = props;
+  const nativeAttr = getNativeAttr(props)
   let [checked, setChecked] = useControllableValue(props, {
     defaultValue: false,
     defaultValuePropName: 'defaultChecked',
@@ -59,7 +58,7 @@ const Radio: React.FC<RadioProps> = props => {
   };
 
   return (
-    <label className={RadioClassName} style={style}>
+    <label className={RadioClassName} style={style} {...nativeAttr}>
       <input
         type="radio"
         checked={checked}

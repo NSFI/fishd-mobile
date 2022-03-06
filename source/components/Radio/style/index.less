@@ -9,24 +9,24 @@
   vertical-align: middle;
 
   &__icon {
-    flex: 0 0 auto;
     display: flex;
-    justify-content: center;
+    flex: 0 0 auto;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     width: var(--fm-radio-icon-size, 20px);
     height: var(--fm-radio-icon-size, 20px);
     margin-right: var(--fm-radio-gap, 8px);
     font-size: 14px;
     border: 1px solid var(--color-gray-6);
     border-radius: 50%;
-    box-sizing: border-box;
   }
 
   &-checked {
     .@{prefix}__icon {
       color: #fff;
-      border-color: var(--color-primary);
       background-color: var(--color-primary);
+      border-color: var(--color-primary);
     }
   }
 
@@ -36,13 +36,13 @@
 }
 
 .@{prefix}-disabled {
-  cursor: not-allowed;
   color: var(--color-gray-3);
+  cursor: not-allowed;
 
   .@{prefix}__icon {
     color: var(--color-gray-5);
-    border-color: var(--color-gray-5);
     background-color: var(--color-gray-8);
+    border-color: var(--color-gray-5);
   }
 }
 

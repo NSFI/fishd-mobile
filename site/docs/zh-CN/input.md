@@ -16,16 +16,16 @@ class InputDemo extends React.Component {
     const { mark, phone, hasError, content } = this.state;
     return (
       <div>
-        <DemoBlock title="Input-基础用法">
+        <DemoBlock title="基础用法">
           <Input placeholder="请输入标题" clearable={true}></Input>
         </DemoBlock>
-        <DemoBlock title="Input-前缀和后缀">
+        <DemoBlock title="前缀和后缀">
           <Input placeholder="请输入金额" clearable={true} prefix={<span>¥</span>} suffix={<span>RMB</span>}></Input>
         </DemoBlock>
-        <DemoBlock title="Input-禁用">
+        <DemoBlock title="禁用">
           <Input value="网易云商yyds" placeholder="请输入标题" disabled={true} clearable={true}></Input>
         </DemoBlock>
-        <DemoBlock title="Input-只读">
+        <DemoBlock title="只读">
           <Input value="网易云商yyds" placeholder="请输入标题" readOnly={true} clearable={true}></Input>
         </DemoBlock>
         <DemoBlock title="TextArea-自适应高度">

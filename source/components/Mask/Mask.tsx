@@ -5,12 +5,10 @@ import { useSpring, animated } from '@react-spring/web';
 
 import { useLockScroll } from '../../hooks/use-lock-scroll';
 import { mergeProps } from '../../utils/merge-props';
-import { VarProps } from '../../utils/var-props';
 import { GetContainer, renderToContainer } from '../../utils/render-to-container';
+import { getNativeAttr, NativeProps } from '../../utils/native-props';
 
-export interface MaskProps {
-  className?: string;
-  style?: React.CSSProperties & VarProps<'--fm-mask-z-index'>;
+export type MaskProps = {
   visible?: boolean;
   destroyOnClose?: boolean;
   forceRender?: boolean;
@@ -22,7 +20,7 @@ export interface MaskProps {
   afterShow?: () => void;
   afterClose?: () => void;
   onMaskClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-}
+} & NativeProps<'--fm-mask-z-index'>;
 
 const defaultProps = {
   visible: true,
@@ -39,6 +37,7 @@ const classPrefix = `fm-mask`;
 const Mask: React.FC<MaskProps> = p => {
   const props = mergeProps(defaultProps, p);
   const { className, style } = props;
+  const nativeAttr = getNativeAttr(props);
   const MaskClassName = classNames(classPrefix, {}, className);
   const unmountedRef = useUnmountedRef();
   const [active, setActive] = useState(props.visible);
@@ -95,6 +94,7 @@ const Mask: React.FC<MaskProps> = p => {
         opacity,
         display: active ? 'unset' : 'none',
       }}
+      {...nativeAttr}
     >
       {props.onMaskClick && <div className={`${classPrefix}__bg`} role="button" onClick={props.onMaskClick}></div>}
       <div className={`${classPrefix}__content`}>{shouldRenderContent ? props.children : null}</div>
