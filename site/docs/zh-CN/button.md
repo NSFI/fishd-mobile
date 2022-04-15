@@ -200,10 +200,10 @@ ReactDOM.render(<Demo />, mountNode);
 const Demo = () => {
   return (
     <DemoBlock title="按钮形状">
-      <Button type="primary" square>
+      <Button type="primary" shape="square">
         方形按钮
       </Button>
-      <Button type="primary" round>
+      <Button type="primary" shape="round">
         圆形按钮
       </Button>
     </DemoBlock>

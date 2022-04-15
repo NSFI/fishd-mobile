@@ -14,10 +14,8 @@ export type ButtonProps = {
   type?: 'primary' | 'success' | 'default' | 'warning' | 'danger';
   fill?: 'solid' | 'outline' | 'none';
   size?: 'large' | 'normal' | 'small' | 'mini';
-  hairline?: boolean;
+  shape?: 'square' | 'round';
   color?: string;
-  round?: boolean;
-  square?: boolean;
   block?: boolean;
   disabled?: boolean;
   loading?: boolean;
@@ -30,11 +28,8 @@ const defaultProps = {
   htmlType: 'button',
   size: 'normal',
   fill: 'solid',
-  hairline: false,
-  round: false,
-  square: false,
-  disabled: false,
   block: false,
+  disabled: false,
   loading: false,
 };
 
@@ -50,10 +45,8 @@ const Button: React.FC<ButtonProps> = p => {
     htmlType,
     type,
     fill,
-    hairline,
     size,
-    round,
-    square,
+    shape,
     disabled,
     block,
     loading,
@@ -65,10 +58,8 @@ const Button: React.FC<ButtonProps> = p => {
   const nativeAttr = getNativeAttr(props);
 
   const ButtonClassName = classNames(classPrefix, className, [`${classPrefix}-${type}`, `${classPrefix}-${size}`], {
+    [`${classPrefix}-${shape}`]: !!shape,
     [`${classPrefix}-fill-${fill}`]: !!fill,
-    [`${classPrefix}-hairline`]: hairline,
-    [`${classPrefix}-round`]: round,
-    [`${classPrefix}-square`]: square,
     [`${classPrefix}-disabled`]: disabled,
     [`${classPrefix}-block`]: block,
     [`${classPrefix}-loading`]: loading,
